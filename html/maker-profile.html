@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>김메이커의 마이메이크 — e4ds make</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/custom.css">
+  <style>
+    /* 그라디언트 헤더 */
+    .profile-hero { background: linear-gradient(135deg, #2563eb 0%, #7c3aed 50%, #ec4899 100%); }
+
+    /* 아바타 */
+    .maker-avatar { width:112px; height:112px; border-radius:50%; background:rgba(255,255,255,.2); border:4px solid rgba(255,255,255,.4); backdrop-filter:blur(6px); display:flex; align-items:center; justify-content:center; font-size:2.8rem; font-weight:700; color:#fff; position:relative; flex-shrink:0; }
+    .maker-award-badge { position:absolute; bottom:-2px; right:-2px; width:36px; height:36px; border-radius:50%; background:#eab308; border:2px solid #fff; display:flex; align-items:center; justify-content:center; font-size:1rem; }
+
+    /* 역할 배지 */
+    .role-badge { display:inline-flex; align-items:center; gap:.4rem; padding:.25rem .75rem; background:rgba(255,255,255,.15); border-radius:9999px; font-size:.82rem; font-weight:500; color:#fff; }
+
+    /* 메타 정보 */
+    .meta-item { display:flex; align-items:center; gap:.4rem; font-size:.83rem; color:rgba(255,255,255,.8); }
+
+    /* SNS 링크 버튼 */
+    .sns-btn { display:inline-flex; align-items:center; gap:.35rem; padding:.25rem .75rem; background:rgba(255,255,255,.12); border-radius:9999px; font-size:.82rem; color:rgba(255,255,255,.85); text-decoration:none; transition:background .15s; }
+    .sns-btn:hover { background:rgba(255,255,255,.25); color:#fff; }
+
+    /* 인라인 배지 */
+    .maker-badge { display:inline-flex; align-items:center; gap:.35rem; padding:.2rem .65rem; border-radius:9999px; font-size:.75rem; font-weight:600; border:1px solid; }
+    .badge-yellow { background:#fefce8; color:#92400e; border-color:#fde68a; }
+    .badge-blue   { background:#eff6ff; color:#1e40af; border-color:#bfdbfe; }
+    .badge-purple { background:#f5f3ff; color:#5b21b6; border-color:#ddd6fe; }
+    .badge-green  { background:#f0fdf4; color:#166534; border-color:#bbf7d0; }
+    .badge-orange { background:#fff7ed; color:#9a3412; border-color:#fed7aa; }
+    .badge-gray   { background:#f9fafb; color:#374151; border-color:#d1d5db; }
+
+    /* 통계 바 */
+    .stat-item { display:flex; align-items:center; gap:.75rem; }
+    .stat-icon { width:36px; height:36px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:1rem; flex-shrink:0; }
+
+    /* 탭 */
+    .mp-tab-btn { color:#6b7280; padding:.5rem 1.25rem; border:0; background:transparent; white-space:nowrap; }
+    .mp-tab-btn.active { color:#2563eb; font-weight:600; border-bottom:2px solid #2563eb; }
+    .mp-tab-pane { display:none; }
+    .mp-tab-pane.active { display:block; }
+
+    /* 프로젝트 가로형 카드 */
+    .proj-card { border:2px solid #e5e7eb; border-radius:.75rem; overflow:hidden; transition:all .3s; cursor:pointer; }
+    .proj-card:hover { border-color:#93c5fd; box-shadow:0 8px 24px rgba(0,0,0,.1); transform:translateY(-2px); }
+    .proj-card-img { width:208px; flex-shrink:0; position:relative; overflow:hidden; }
+    .proj-card-img img { width:100%; height:100%; object-fit:cover; transition:transform .5s; }
+    .proj-card:hover .proj-card-img img { transform:scale(1.05); }
+    @media(max-width:576px) { .proj-card { flex-direction:column!important; } .proj-card-img { width:100%; height:160px; } }
+
+    /* 활동 카드 */
+    .activity-type-icon { width:40px; height:40px; border-radius:.75rem; display:flex; align-items:center; justify-content:center; flex-shrink:0; font-size:1.1rem; }
+
+    /* 뱃지 카드 */
+    .badge-card { display:flex; flex-direction:column; align-items:center; gap:.5rem; padding:1.25rem; border-radius:.75rem; border:1px solid; text-align:center; }
+    .badge-card-icon { width:48px; height:48px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:1.3rem; }
+
+    /* 활동 요약 카드 */
+    .summary-card { display:flex; align-items:center; gap:.75rem; padding:1rem; border-radius:.75rem; }
+    .summary-icon { width:36px; height:36px; display:flex; align-items:center; justify-content:center; font-size:1rem; flex-shrink:0; border-radius:50%; }
+
+    /* 공개설정 상태 */
+    .privacy-item { display:flex; align-items:center; gap:.4rem; padding:.4rem .75rem; border-radius:.5rem; font-size:.78rem; font-weight:500; }
+    .privacy-on  { background:#f0fdf4; color:#166534; }
+    .privacy-off { background:#f9fafb; color:#9ca3af; }
+
+    /* 콘테스트 이력 호버 */
+    .contest-item { border:1px solid #e5e7eb; border-radius:.5rem; padding:.75rem; cursor:pointer; transition:all .15s; }
+    .contest-item:hover { border-color:#93c5fd; background:#eff6ff; }
+
+    /* 아바타 small */
+    .av-sm { width:24px; height:24px; border-radius:50%; background:#dbeafe; color:#1d4ed8; display:inline-flex; align-items:center; justify-content:center; font-size:.7rem; font-weight:700; }
+  </style>
+</head>
+<body class="bg-light">
+  <div id="header-placeholder"></div>
+  <main>
+
+    <!-- Breadcrumb -->
+    <div class="bg-white border-bottom">
+      <div class="container-xl py-3">
+        <nav aria-label="breadcrumb"><ol class="breadcrumb mb-0 small">
+          <li class="breadcrumb-item"><a href="index.html" class="text-decoration-none">홈</a></li>
+          <li class="breadcrumb-item"><a href="projects.html" class="text-decoration-none">프로젝트</a></li>
+          <li class="breadcrumb-item active">김메이커의 마이메이크</li>
+        </ol></nav>
+      </div>
+    </div>
+
+    <!-- ── 프로필 헤더 (그라디언트) ── -->
+    <section class="profile-hero text-white py-5">
+      <div class="container-xl">
+        <div class="d-flex flex-column flex-md-row align-items-start align-items-md-center gap-4">
+
+          <!-- 아바타 -->
+          <div class="maker-avatar">
+            김
+            <div class="maker-award-badge">🏆</div>
+          </div>
+
+          <!-- 기본 정보 -->
+          <div class="flex-grow-1">
+            <h1 class="fw-bold fs-3 mb-1">김메이커</h1>
+            <p class="mb-2" style="color:rgba(255,255,255,.9);font-size:1.05rem;">로봇공학과 AI를 좋아하는 메이커입니다</p>
+
+            <!-- 역할/경력 -->
+            <div class="d-flex flex-wrap gap-2 mb-2">
+              <span class="role-badge">💼 임베디드 엔지니어</span>
+              <span class="role-badge">⏱ 중급 (3~5년)</span>
+            </div>
+
+            <!-- 위치 / 가입일 -->
+            <div class="d-flex flex-wrap gap-3 mb-3">
+              <span class="meta-item">📍 서울, 대한민국</span>
+              <span class="meta-item">📅 2024년 3월 가입</span>
+            </div>
+
+            <!-- SNS 링크 -->
+            <div class="d-flex flex-wrap gap-2 mb-3">
+              <a href="https://github.com/kimmaker92" target="_blank" class="sns-btn">🐙 GitHub</a>
+              <a href="https://linkedin.com/in/kimmaker92" target="_blank" class="sns-btn">💼 LinkedIn</a>
+              <a href="https://kimmaker.dev" target="_blank" class="sns-btn">🌐 웹사이트</a>
+            </div>
+
+            <!-- 인라인 배지 -->
+            <div class="d-flex flex-wrap gap-2">
+              <span class="maker-badge badge-yellow">🏆 수상자</span>
+              <span class="maker-badge badge-blue">⭐ 인기 메이커</span>
+              <span class="maker-badge badge-purple">🚀 콘테스트 완주</span>
+            </div>
+          </div>
+
+          <!-- 팔로우 / 메시지 버튼 -->
+          <div class="d-flex flex-column gap-2 flex-shrink-0">
+            <button class="btn fw-semibold px-4 py-2 rounded-3" id="follow-btn"
+              style="background:#fff;color:#7c3aed;border:none;">
+              👥 팔로우
+            </button>
+            <button class="btn fw-semibold px-4 py-2 rounded-3"
+              style="background:rgba(255,255,255,.15);color:#fff;border:2px solid rgba(255,255,255,.4);">
+              💬 메시지
+            </button>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ── 통계 바 ── -->
+    <div class="bg-white border-bottom shadow-sm">
+      <div class="container-xl py-4">
+        <div class="d-flex flex-wrap gap-4 gap-md-5">
+          <div class="stat-item">
+            <div class="stat-icon bg-primary bg-opacity-10" style="color:#2563eb;">🚀</div>
+            <div><div class="fw-bold fs-5">5</div><div class="text-muted" style="font-size:.78rem;">프로젝트</div></div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-icon bg-danger bg-opacity-10" style="color:#ef4444;">❤️</div>
+            <div><div class="fw-bold fs-5">999</div><div class="text-muted" style="font-size:.78rem;">총 좋아요</div></div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-icon bg-secondary bg-opacity-10" style="color:#6b7280;">👁</div>
+            <div><div class="fw-bold fs-5">14,350</div><div class="text-muted" style="font-size:.78rem;">총 조회</div></div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-icon bg-purple" style="background:#f5f3ff;color:#7c3aed;">🏆</div>
+            <div><div class="fw-bold fs-5">3</div><div class="text-muted" style="font-size:.78rem;">콘테스트 참가</div></div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-icon" style="background:#fefce8;color:#ca8a04;">⭐</div>
+            <div><div class="fw-bold fs-5">2</div><div class="text-muted" style="font-size:.78rem;">수상</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── 본문: 3열 레이아웃 ── -->
+    <div class="container-xl py-5">
+      <div class="row g-5">
+
+        <!-- 왼쪽 사이드바 (1/3) -->
+        <div class="col-lg-4">
+          <div class="d-flex flex-column gap-4">
+
+            <!-- 상세 소개 -->
+            <div class="card border-0 shadow-sm rounded-4 p-4">
+              <h6 class="fw-bold mb-3 d-flex align-items-center gap-2">👥 소개</h6>
+              <p class="small text-muted lh-lg mb-0">ESP32, Arduino, Raspberry Pi를 활용한 IoT 프로젝트와 로봇 제작을 즐깁니다. 오픈소스 커뮤니티에 기여하고 지식을 나누는 것을 좋아합니다.</p>
+            </div>
+
+            <!-- 기술 스택 & 관심 분야 -->
+            <div class="card border-0 shadow-sm rounded-4 p-4">
+              <div class="mb-4">
+                <h6 class="fw-bold mb-3 d-flex align-items-center gap-2">💻 기술 스택</h6>
+                <div class="d-flex flex-wrap gap-2">
+                  <span class="badge px-3 py-2" style="background:#f5f3ff;color:#6d28d9;border:1px solid #ddd6fe;">Arduino</span>
+                  <span class="badge px-3 py-2" style="background:#f5f3ff;color:#6d28d9;border:1px solid #ddd6fe;">ESP32</span>
+                  <span class="badge px-3 py-2" style="background:#f5f3ff;color:#6d28d9;border:1px solid #ddd6fe;">Python</span>
+                  <span class="badge px-3 py-2" style="background:#f5f3ff;color:#6d28d9;border:1px solid #ddd6fe;">ROS</span>
+                  <span class="badge px-3 py-2" style="background:#f5f3ff;color:#6d28d9;border:1px solid #ddd6fe;">3D 프린팅</span>
+                </div>
+              </div>
+              <div>
+                <h6 class="fw-bold mb-3 d-flex align-items-center gap-2">🏷️ 관심 분야</h6>
+                <div class="d-flex flex-wrap gap-2">
+                  <span class="badge px-3 py-2" style="background:#f0fdf4;color:#166534;border:1px solid #bbf7d0;">로봇공학</span>
+                  <span class="badge px-3 py-2" style="background:#f0fdf4;color:#166534;border:1px solid #bbf7d0;">AI/ML</span>
+                  <span class="badge px-3 py-2" style="background:#f0fdf4;color:#166534;border:1px solid #bbf7d0;">IoT</span>
+                  <span class="badge px-3 py-2" style="background:#f0fdf4;color:#166534;border:1px solid #bbf7d0;">자율주행</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- 콘테스트 이력 -->
+            <div class="card border-0 shadow-sm rounded-4 p-4">
+              <h6 class="fw-bold mb-3 d-flex align-items-center gap-2">🏆 콘테스트 이력</h6>
+              <div class="d-flex flex-column gap-2">
+                <a href="contest-detail.html" class="text-decoration-none">
+                  <div class="contest-item">
+                    <div class="d-flex align-items-start justify-content-between gap-2">
+                      <div>
+                        <div class="small fw-semibold text-dark">AI 로봇 챌린지 2026</div>
+                        <div class="text-muted" style="font-size:.76rem;">2026년 3월</div>
+                      </div>
+                      <span class="badge" style="background:#f3f4f6;color:#374151;border:1px solid #d1d5db;font-size:.73rem;flex-shrink:0;">2위 · 최우수상</span>
+                    </div>
+                  </div>
+                </a>
+                <a href="contest-detail.html" class="text-decoration-none">
+                  <div class="contest-item">
+                    <div class="d-flex align-items-start justify-content-between gap-2">
+                      <div>
+                        <div class="small fw-semibold text-dark">아두이노 입문자 대회 2025</div>
+                        <div class="text-muted" style="font-size:.76rem;">2025년 10월</div>
+                      </div>
+                      <span class="badge" style="background:#eff6ff;color:#1d4ed8;border:1px solid #bfdbfe;font-size:.73rem;flex-shrink:0;">5위 · 장려상</span>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- 오른쪽 탭 영역 (2/3) -->
+        <div class="col-lg-8">
+
+          <!-- 탭 네비게이션 -->
+          <ul class="nav border-bottom mb-4 flex-nowrap overflow-auto" style="gap:0;">
+            <li class="nav-item"><button class="mp-tab-btn active" data-target="#mp-tab-projects">🚀 프로젝트 (2)</button></li>
+            <li class="nav-item"><button class="mp-tab-btn" data-target="#mp-tab-activity">💬 활동 내역 (3)</button></li>
+            <li class="nav-item"><button class="mp-tab-btn" data-target="#mp-tab-achievements">⭐ 뱃지 &amp; 업적</button></li>
+          </ul>
+
+          <!-- ── 프로젝트 탭 ── -->
+          <div class="mp-tab-pane active" id="mp-tab-projects">
+            <div class="d-flex flex-column gap-4">
+
+              <!-- 프로젝트 카드 1 -->
+              <a href="project-detail.html" class="text-decoration-none">
+                <div class="proj-card d-flex">
+                  <div class="proj-card-img">
+                    <img src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=400" alt="AI 음성인식 자율주행 로봇">
+                    <div style="position:absolute;top:.75rem;left:.75rem;">
+                      <span class="badge" style="background:#eab308;color:#fff;font-size:.75rem;">🏆 최우수상</span>
+                    </div>
+                  </div>
+                  <div class="flex-grow-1 p-4 d-flex flex-column justify-content-between">
+                    <div>
+                      <div class="d-flex flex-wrap align-items-center gap-2 mb-2">
+                        <span class="badge" style="background:#eff6ff;color:#1d4ed8;border:1px solid #bfdbfe;font-size:.75rem;">로봇공학</span>
+                        <span class="badge" style="background:#f0fdf4;color:#166534;font-size:.75rem;">완료</span>
+                        <span class="badge" style="background:#f5f3ff;color:#6d28d9;border:1px solid #ddd6fe;font-size:.75rem;">🏆 콘테스트</span>
+                      </div>
+                      <h6 class="fw-bold text-dark mb-1" style="font-size:1.05rem;">AI 음성인식 자율주행 로봇</h6>
+                      <p class="small text-muted mb-2">라즈베리파이와 OpenCV로 실내 자율주행이 가능한 배송 로봇</p>
+                      <p class="text-muted" style="font-size:.78rem;">🏆 AI 로봇 챌린지 2026</p>
+                    </div>
+                    <div class="d-flex align-items-center justify-content-between pt-3 border-top mt-2">
+                      <div class="d-flex gap-3 small text-muted">
+                        <span>❤️ 567</span>
+                        <span>👁 8,930</span>
+                      </div>
+                      <span class="small text-primary fw-semibold">프로젝트 보기 →</span>
+                    </div>
+                  </div>
+                </div>
+              </a>
+
+              <!-- 프로젝트 카드 2 -->
+              <a href="project-detail.html" class="text-decoration-none">
+                <div class="proj-card d-flex">
+                  <div class="proj-card-img">
+                    <img src="https://images.unsplash.com/photo-1581092333203-42374bcf7d89?w=400" alt="오픈소스 자율주행 로봇">
+                  </div>
+                  <div class="flex-grow-1 p-4 d-flex flex-column justify-content-between">
+                    <div>
+                      <div class="d-flex flex-wrap align-items-center gap-2 mb-2">
+                        <span class="badge" style="background:#eff6ff;color:#1d4ed8;border:1px solid #bfdbfe;font-size:.75rem;">로봇공학</span>
+                        <span class="badge" style="background:#fefce8;color:#854d0e;font-size:.75rem;">진행중</span>
+                        <span class="badge" style="background:#f5f3ff;color:#6d28d9;border:1px solid #ddd6fe;font-size:.75rem;">🏆 콘테스트</span>
+                      </div>
+                      <h6 class="fw-bold text-dark mb-1" style="font-size:1.05rem;">오픈소스 자율주행 로봇</h6>
+                      <p class="small text-muted mb-2">라즈베리파이와 AI 비전을 활용한 실내 자율주행 로봇 프로젝트</p>
+                      <p class="text-muted" style="font-size:.78rem;">🏆 AI 로봇 챌린지 2026</p>
+                    </div>
+                    <div class="d-flex align-items-center justify-content-between pt-3 border-top mt-2">
+                      <div class="d-flex gap-3 small text-muted">
+                        <span>❤️ 432</span>
+                        <span>👁 5,420</span>
+                      </div>
+                      <span class="small text-primary fw-semibold">프로젝트 보기 →</span>
+                    </div>
+                  </div>
+                </div>
+              </a>
+
+            </div>
+          </div>
+
+          <!-- ── 활동 내역 탭 ── -->
+          <div class="mp-tab-pane" id="mp-tab-activity">
+            <div class="d-flex flex-column gap-3">
+
+              <!-- 활동 1: 진행공유 -->
+              <div class="card border-0 shadow-sm rounded-4 p-4" style="cursor:pointer;transition:box-shadow .2s;" onmouseover="this.style.boxShadow='0 4px 16px rgba(0,0,0,.1)'" onmouseout="this.style.boxShadow=''">
+                <div class="d-flex align-items-start gap-3">
+                  <div class="activity-type-icon" style="background:#eff6ff;color:#2563eb;border:1px solid #bfdbfe;">🚀</div>
+                  <div class="flex-grow-1">
+                    <div class="d-flex align-items-center gap-2 mb-1">
+                      <span class="badge" style="background:#eff6ff;color:#2563eb;border:1px solid #bfdbfe;font-size:.73rem;">진행공유</span>
+                      <small class="text-muted">2일 전</small>
+                    </div>
+                    <p class="fw-semibold small mb-1">Quest 2 완료! OpenCV 기반 장애물 감지 구현 성공 🎉</p>
+                    <p class="text-muted" style="font-size:.78rem;">프로젝트: AI 음성인식 자율주행 로봇</p>
+                  </div>
+                  <div class="d-flex align-items-center gap-3 text-muted flex-shrink-0" style="font-size:.78rem;">
+                    <span>👍 34</span>
+                    <span>💬 12</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- 활동 2: 질문 -->
+              <div class="card border-0 shadow-sm rounded-4 p-4" style="cursor:pointer;transition:box-shadow .2s;" onmouseover="this.style.boxShadow='0 4px 16px rgba(0,0,0,.1)'" onmouseout="this.style.boxShadow=''">
+                <div class="d-flex align-items-start gap-3">
+                  <div class="activity-type-icon" style="background:#f5f3ff;color:#7c3aed;border:1px solid #ddd6fe;">❓</div>
+                  <div class="flex-grow-1">
+                    <div class="d-flex align-items-center gap-2 mb-1">
+                      <span class="badge" style="background:#f5f3ff;color:#7c3aed;border:1px solid #ddd6fe;font-size:.73rem;">질문</span>
+                      <small class="text-muted">5일 전</small>
+                    </div>
+                    <p class="fw-semibold small mb-1">ROS2 Humble에서 SLAM 노드 실행 시 transform 오류 해결 방법</p>
+                    <p class="text-muted" style="font-size:.78rem;">프로젝트: 오픈소스 자율주행 로봇</p>
+                  </div>
+                  <div class="d-flex align-items-center gap-3 text-muted flex-shrink-0" style="font-size:.78rem;">
+                    <span>👍 18</span>
+                    <span>💬 7</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- 활동 3: 자료공유 -->
+              <div class="card border-0 shadow-sm rounded-4 p-4" style="cursor:pointer;transition:box-shadow .2s;" onmouseover="this.style.boxShadow='0 4px 16px rgba(0,0,0,.1)'" onmouseout="this.style.boxShadow=''">
+                <div class="d-flex align-items-start gap-3">
+                  <div class="activity-type-icon" style="background:#f0fdf4;color:#16a34a;border:1px solid #bbf7d0;">📚</div>
+                  <div class="flex-grow-1">
+                    <div class="d-flex align-items-center gap-2 mb-1">
+                      <span class="badge" style="background:#f0fdf4;color:#16a34a;border:1px solid #bbf7d0;font-size:.73rem;">자료공유</span>
+                      <small class="text-muted">1주 전</small>
+                    </div>
+                    <p class="fw-semibold small mb-1">라즈베리파이 카메라 모듈 v3 최적 설정 가이드 공유</p>
+                    <p class="text-muted" style="font-size:.78rem;">프로젝트: AI 음성인식 자율주행 로봇</p>
+                  </div>
+                  <div class="d-flex align-items-center gap-3 text-muted flex-shrink-0" style="font-size:.78rem;">
+                    <span>👍 56</span>
+                    <span>💬 4</span>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- ── 뱃지 & 업적 탭 ── -->
+          <div class="mp-tab-pane" id="mp-tab-achievements">
+            <div class="d-flex flex-column gap-4">
+
+              <!-- 획득한 뱃지 -->
+              <div class="card border-0 shadow-sm rounded-4 p-4">
+                <h6 class="fw-bold mb-4 d-flex align-items-center gap-2">⭐ 획득한 뱃지</h6>
+                <div class="row g-3">
+                  <div class="col-4">
+                    <div class="badge-card badge-yellow">
+                      <div class="badge-card-icon badge-yellow">🏆</div>
+                      <span class="small fw-semibold">수상자</span>
+                    </div>
+                  </div>
+                  <div class="col-4">
+                    <div class="badge-card badge-blue">
+                      <div class="badge-card-icon badge-blue">⭐</div>
+                      <span class="small fw-semibold">인기 메이커</span>
+                    </div>
+                  </div>
+                  <div class="col-4">
+                    <div class="badge-card badge-purple">
+                      <div class="badge-card-icon badge-purple">🚀</div>
+                      <span class="small fw-semibold">콘테스트 완주</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- 활동 요약 -->
+              <div class="card border-0 shadow-sm rounded-4 p-4">
+                <h6 class="fw-bold mb-4 d-flex align-items-center gap-2">✅ 활동 요약</h6>
+                <div class="row g-3 mb-4">
+                  <div class="col-6">
+                    <div class="summary-card" style="background:#eff6ff;">
+                      <div class="summary-icon bg-primary text-white">🚀</div>
+                      <div><div class="fw-bold fs-5" style="color:#1d4ed8;">5</div><div style="font-size:.75rem;color:#1d4ed8;">제출한 프로젝트</div></div>
+                    </div>
+                  </div>
+                  <div class="col-6">
+                    <div class="summary-card" style="background:#fef2f2;">
+                      <div class="summary-icon bg-danger text-white">❤️</div>
+                      <div><div class="fw-bold fs-5" style="color:#dc2626;">999</div><div style="font-size:.75rem;color:#dc2626;">받은 좋아요</div></div>
+                    </div>
+                  </div>
+                  <div class="col-6">
+                    <div class="summary-card" style="background:#f5f3ff;">
+                      <div class="summary-icon text-white" style="background:#7c3aed;">🏆</div>
+                      <div><div class="fw-bold fs-5" style="color:#6d28d9;">3</div><div style="font-size:.75rem;color:#6d28d9;">콘테스트 참가</div></div>
+                    </div>
+                  </div>
+                  <div class="col-6">
+                    <div class="summary-card" style="background:#fefce8;">
+                      <div class="summary-icon" style="background:#eab308;color:#fff;">⭐</div>
+                      <div><div class="fw-bold fs-5" style="color:#ca8a04;">2</div><div style="font-size:.75rem;color:#ca8a04;">수상 횟수</div></div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- 공개 설정 상태 -->
+                <div class="border-top pt-4">
+                  <p class="small fw-semibold text-muted mb-3 d-flex align-items-center gap-2">🔒 이 메이커의 공개 설정</p>
+                  <div class="row g-2">
+                    <div class="col-6"><div class="privacy-item privacy-on">✅ 프로젝트 공개</div></div>
+                    <div class="col-6"><div class="privacy-item privacy-on">✅ 기술 스택 공개</div></div>
+                    <div class="col-6"><div class="privacy-item privacy-on">✅ 활동 내역 공개</div></div>
+                    <div class="col-6"><div class="privacy-item privacy-on">✅ 위치 정보 공개</div></div>
+                    <div class="col-6"><div class="privacy-item privacy-off">🔒 이메일 비공개</div></div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div><!-- /col-lg-8 -->
+      </div><!-- /row -->
+    </div><!-- /container-xl -->
+
+  </main>
+  <div id="footer-placeholder"></div>
+
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc4s9bIOgUxi8T/jzmX5jFRcDBz3XBrTk4ycr3n8UPn" crossorigin="anonymous"></script>
+  <script src="assets/js/main.js"></script>
+  <script>
+    /* ── 탭 스위처 ── */
+    $(document).on('click', '.mp-tab-btn', function () {
+      var target = $(this).data('target');
+      $('.mp-tab-btn').removeClass('active');
+      $(this).addClass('active');
+      $('.mp-tab-pane').removeClass('active');
+      $(target).addClass('active');
+    });
+
+    /* ── 팔로우 ── */
+    var following = false;
+    $('#follow-btn').on('click', function () {
+      following = !following;
+      $(this).html(following ? '✓ 팔로잉' : '👥 팔로우')
+             .css({ background: following ? 'rgba(255,255,255,.2)' : '#fff',
+                    color:      following ? '#fff' : '#7c3aed',
+                    border:     following ? '2px solid rgba(255,255,255,.6)' : 'none' });
+    });
+  </script>
+</body>
+</html>

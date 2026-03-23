@@ -1,0 +1,1154 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>개인 프로젝트 만들기 — e4ds make</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/custom.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+  <style>
+    /* ── 공통 ── */
+    body { background:#f9fafb; }
+    .form-card { border:0; border-radius:1rem; box-shadow:0 1px 8px rgba(0,0,0,.08); }
+    .section-icon { width:40px;height:40px;border-radius:.5rem;display:flex;align-items:center;justify-content:center;flex-shrink:0; }
+    .upload-zone { border:2px dashed #d1d5db;border-radius:.75rem;padding:2.5rem 1rem;text-align:center;cursor:pointer;transition:border-color .2s; }
+    .upload-zone:hover { border-color:#ec4899; }
+    .chip { display:inline-flex;align-items:center;gap:.3rem;padding:.3rem .65rem;border-radius:9999px;font-size:.8rem;font-weight:500; }
+    .chip-green  { background:#d1fae5;color:#065f46; }
+    .chip-purple { background:#ede9fe;color:#5b21b6; }
+    .chip-blue   { background:#dbeafe;color:#1e40af; }
+    .chip-orange { background:#fed7aa;color:#92400e; }
+    .remove-x { background:none;border:none;padding:0;cursor:pointer;line-height:1;font-size:.75rem; }
+
+    /* ── Sticky top bar ── */
+    .page-top-bar { position:sticky;top:0;z-index:200;background:#fff;border-bottom:1px solid #e5e7eb;padding:.875rem 0; }
+
+    /* ── 커뮤니티 버튼 ── */
+    .comm-btn { width:100%;text-align:left;background:#fff;border:1px solid #e9d5ff;border-radius:.5rem;padding:.65rem .9rem;display:flex;align-items:center;gap:.6rem;font-size:.85rem;cursor:pointer;transition:background .15s; }
+    .comm-btn:hover { background:#faf5ff; }
+
+    /* ── 사이드바 sticky ── */
+    .sticky-sidebar { position:sticky;top:90px; }
+
+    /* ── 미리보기 패널 (우측 슬라이드인) ── */
+    #preview-overlay { display:none;position:fixed;inset:0;z-index:400;background:rgba(0,0,0,.4);opacity:0;transition:opacity .25s; }
+    #preview-overlay.show { opacity:1; }
+    #preview-panel {
+      position:fixed;top:0;right:0;bottom:0;width:100%;max-width:680px;z-index:401;
+      background:#fff;box-shadow:-8px 0 40px rgba(0,0,0,.18);
+      display:flex;flex-direction:column;
+      transform:translateX(100%);transition:transform .3s cubic-bezier(.4,0,.2,1);
+    }
+    #preview-panel.show { transform:translateX(0); }
+    .preview-header { border-bottom:1px solid #e5e7eb;padding:1rem 1.5rem;flex-shrink:0;background:#fff; }
+    .preview-tab-switch { background:#f3f4f6;border-radius:.5rem;padding:.25rem;display:inline-flex; }
+    .preview-tab-btn { border:none;background:none;border-radius:.375rem;padding:.35rem .8rem;font-size:.82rem;color:#6b7280;cursor:pointer;transition:all .15s; }
+    .preview-tab-btn.active { background:#fff;color:#111827;font-weight:600;box-shadow:0 1px 4px rgba(0,0,0,.1); }
+    .preview-draft-banner { background:#fffbeb;border-bottom:1px solid #fde68a;padding:.5rem 1.5rem;font-size:.78rem;color:#92400e;flex-shrink:0; }
+    .preview-body { flex:1;overflow-y:auto; }
+    .preview-footer { border-top:1px solid #e5e7eb;padding:.875rem 1.5rem;background:#f9fafb;flex-shrink:0;display:flex;align-items:center;justify-content:space-between; }
+
+    /* checklist */
+    .check-item { display:flex;align-items:center;gap:.5rem;font-size:.85rem;padding:.2rem 0; }
+    .check-dot { width:20px;height:20px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:.7rem; }
+    .check-dot.done { background:#22c55e;color:#fff; }
+    .check-dot.pending { background:#d1d5db; }
+
+    /* card preview */
+    .pv-card { border:1px solid #e5e7eb;border-radius:.75rem;overflow:hidden; }
+    .pv-card-img { height:176px;background:linear-gradient(135deg,#dbeafe,#ede9fe,#fce7f3);display:flex;align-items:center;justify-content:center;position:relative;font-size:.85rem;color:#9ca3af; }
+    .pv-card-body { padding:1rem; }
+
+    /* ── 커뮤니티 빠른 액션 패널 ── */
+    .qa-type-btn, .qa-role-btn { border:2px solid #e5e7eb; background:#fff; cursor:pointer; transition:all .15s; text-align:left; }
+    .qa-type-btn:hover, .qa-role-btn:hover { border-color:#d1d5db; background:#f9fafb; }
+    .qa-type-btn.qa-selected  { border-color:#3b82f6 !important; background:#eff6ff !important; }
+    .qa-type-btn.qa-selected .qa-icon  { color:#2563eb !important; }
+    .qa-role-btn.qa-selected  { border-color:#16a34a !important; background:#f0fdf4 !important; }
+    .qa-role-btn.qa-selected .qa-icon  { color:#16a34a !important; }
+    .qa-quest-btn { border:2px solid #e5e7eb; background:#fff; cursor:pointer; transition:all .15s; }
+    .qa-quest-btn:hover { border-color:#d1d5db; background:#f9fafb; }
+    .qa-quest-btn.qa-selected { border-color:#3b82f6 !important; background:#eff6ff !important; }
+    .cpanel-backdrop { position:fixed; inset:0; background:rgba(0,0,0,.45); z-index:2040; display:none; }
+    .cpanel-backdrop.cpanel-show { display:block; }
+    .cpanel { position:fixed; top:0; right:0; bottom:0; background:#fff; z-index:2045; display:flex; flex-direction:column; box-shadow:-4px 0 32px rgba(0,0,0,.18); transform:translateX(100%); transition:transform .3s ease; }
+    .cpanel.cpanel-show { transform:translateX(0); }
+    .cpanel-body { flex:1; overflow-y:auto; }
+  </style>
+</head>
+<body>
+
+  <div id="header-placeholder"></div>
+
+  <!-- ── Sticky Top Bar ── -->
+  <div class="page-top-bar">
+    <div class="container" style="max-width:1100px;">
+      <div class="d-flex align-items-center justify-content-between">
+        <div class="d-flex align-items-center gap-3">
+          <a href="javascript:history.back()" class="btn btn-light btn-sm">← 뒤로</a>
+          <div>
+            <div class="fw-bold">개인 프로젝트 만들기</div>
+            <div class="small text-muted">자유롭게 나만의 프로젝트를 시작하세요</div>
+          </div>
+        </div>
+        <div class="d-flex gap-2">
+          <button class="btn btn-outline-secondary btn-sm" onclick="openPreview()">👁 미리보기</button>
+          <button class="btn btn-primary btn-sm" id="btn-submit" disabled onclick="doSubmit()">💾 프로젝트 생성</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <main class="py-4">
+    <div class="container" style="max-width:1100px;">
+      <div class="row g-4">
+
+        <!-- ════ LEFT COLUMN ════ -->
+        <div class="col-lg-8">
+
+          <!-- 1. 기본 정보 -->
+          <div class="card form-card p-4 mb-4">
+            <div class="d-flex align-items-center gap-3 mb-4">
+              <div class="section-icon" style="background:#dbeafe;">📄</div>
+              <div><div class="fw-bold">기본 정보</div><div class="small text-muted">프로젝트의 핵심 정보를 입력하세요</div></div>
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label fw-semibold small">프로젝트 제목 <span class="text-danger">*</span></label>
+              <input type="text" class="form-control" id="f-title" placeholder="예: ESP32 기반 스마트 화분 시스템" oninput="syncCheck()">
+              <div class="form-text">명확하고 구체적인 제목을 작성하세요</div>
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label fw-semibold small">한줄 소개 <span class="text-danger">*</span></label>
+              <input type="text" class="form-control" id="f-subtitle" maxlength="100"
+                placeholder="예: 토양 수분, 온도, 조도를 모니터링하고 자동으로 물을 주는 IoT 화분" oninput="syncCheck()">
+              <div class="form-text"><span id="sub-len">0</span>/100자</div>
+            </div>
+
+            <div class="row g-3 mb-3">
+              <div class="col-md-6">
+                <label class="form-label fw-semibold small">카테고리 <span class="text-danger">*</span></label>
+                <select class="form-select" id="f-category" onchange="syncCheck()">
+                  <option value="">선택</option>
+                  <option>AI &amp; 머신러닝</option><option>로봇공학</option><option>IoT</option>
+                  <option>임베디드</option><option>웹/앱 개발</option><option>하드웨어</option>
+                  <option>3D 프린팅</option><option>드론</option><option>스마트홈</option><option>기타</option>
+                </select>
+              </div>
+              <div class="col-md-6">
+                <label class="form-label fw-semibold small">난이도</label>
+                <select class="form-select" id="f-difficulty" onchange="syncCheck()">
+                  <option value="">선택</option>
+                  <option value="beginner">초급 — 기본적인 전자/프로그래밍 지식</option>
+                  <option value="intermediate">중급 — 일정 수준의 경험 필요</option>
+                  <option value="advanced">고급 — 전문적인 지식과 경험 필요</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label fw-semibold small">프로젝트 설명 <span class="text-danger">*</span></label>
+              <textarea class="form-control" id="f-description" rows="6" oninput="syncCheck()"
+                placeholder="프로젝트의 목적, 주요 기능, 사용 기술, 예상 결과물 등을 자세히 설명해주세요..."></textarea>
+              <div class="form-text"><span id="desc-len">0</span>자 / 최소 100자 권장</div>
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label fw-semibold small">프로젝트 목표 &amp; 동기</label>
+              <textarea class="form-control" id="f-goal" rows="4"
+                placeholder="이 프로젝트를 시작하게 된 이유와 달성하고자 하는 목표를 작성하세요..."></textarea>
+              <div class="form-text">Quest 진행 시 활용됩니다</div>
+            </div>
+
+            <div>
+              <label class="form-label fw-semibold small">예상 소요 기간</label>
+              <select class="form-select" id="f-duration">
+                <option value="">선택</option>
+                <option>1주 이내</option><option>2-4주</option><option>1-2개월</option>
+                <option>3-6개월</option><option>6개월 이상</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- 2. 기술 스택 -->
+          <div class="card form-card p-4 mb-4">
+            <div class="d-flex align-items-center gap-3 mb-4">
+              <div class="section-icon" style="background:#ede9fe;">🔧</div>
+              <div><div class="fw-bold">기술 스택</div><div class="small text-muted">사용할 하드웨어와 소프트웨어를 추가하세요</div></div>
+            </div>
+
+            <div class="mb-4">
+              <label class="form-label fw-semibold small">🔌 하드웨어 / 부품</label>
+              <div class="input-group mb-2">
+                <input type="text" class="form-control" id="hw-input" placeholder="예: ESP32, DHT22 센서, 릴레이 모듈">
+                <button class="btn btn-outline-secondary" type="button" onclick="addChip('hw')">추가</button>
+              </div>
+              <div id="hw-tags" class="d-flex flex-wrap gap-2"></div>
+            </div>
+
+            <div>
+              <label class="form-label fw-semibold small">💻 소프트웨어 / 라이브러리</label>
+              <div class="input-group mb-2">
+                <input type="text" class="form-control" id="sw-input" placeholder="예: Arduino IDE, Python, MQTT, OpenCV">
+                <button class="btn btn-outline-secondary" type="button" onclick="addChip('sw')">추가</button>
+              </div>
+              <div id="sw-tags" class="d-flex flex-wrap gap-2"></div>
+            </div>
+          </div>
+
+          <!-- 3. 대표 이미지 -->
+          <div class="card form-card p-4 mb-4">
+            <div class="d-flex align-items-center gap-3 mb-4">
+              <div class="section-icon" style="background:#fce7f3;">🖼️</div>
+              <div><div class="fw-bold">대표 이미지</div><div class="small text-muted">프로젝트를 대표하는 이미지를 업로드하세요</div></div>
+            </div>
+            <div class="upload-zone" onclick="document.getElementById('cover-file').click()">
+              <div id="upload-placeholder">
+                <div style="font-size:2.5rem;" class="mb-2">📁</div>
+                <div class="fw-semibold small mb-1">이미지 업로드</div>
+                <div class="text-muted" style="font-size:.78rem;">JPG, PNG 파일 (최대 5MB)</div>
+                <button class="btn btn-outline-secondary btn-sm mt-3" type="button">파일 선택</button>
+              </div>
+              <input type="file" id="cover-file" accept="image/*" class="d-none">
+            </div>
+          </div>
+
+          <!-- 4. 태그 -->
+          <div class="card form-card p-4 mb-4">
+            <div class="d-flex align-items-center gap-3 mb-4">
+              <div class="section-icon" style="background:#d1fae5;">🏷️</div>
+              <div><div class="fw-bold">태그</div><div class="small text-muted">프로젝트 검색을 위한 태그를 추가하세요</div></div>
+            </div>
+            <div class="input-group mb-3">
+              <input type="text" class="form-control" id="tag-input" placeholder="태그 입력 후 추가 버튼 클릭">
+              <button class="btn btn-outline-secondary" type="button" onclick="addChip('tag')">추가</button>
+            </div>
+            <div id="tag-list" class="d-flex flex-wrap gap-2 mb-3"></div>
+            <div class="bg-light rounded p-2">
+              <span class="small text-muted"><strong>추천 태그:</strong> Arduino, ESP32, Raspberry Pi, 센서, AI, 딥러닝, IoT, 자동화</span>
+            </div>
+          </div>
+
+          <!-- 5. 관련 링크 -->
+          <div class="card form-card p-4 mb-4">
+            <div class="d-flex align-items-center gap-3 mb-4">
+              <div class="section-icon" style="background:#fed7aa;">🔗</div>
+              <div><div class="fw-bold">관련 링크</div><div class="small text-muted">GitHub, 블로그 등 관련 링크를 추가하세요</div></div>
+            </div>
+            <div class="d-flex gap-2 mb-3">
+              <select class="form-select" id="link-type" style="width:auto;flex-shrink:0;">
+                <option>GitHub</option><option>YouTube</option><option>Website</option><option>Blog</option><option>기타</option>
+              </select>
+              <input type="url" class="form-control" id="link-url" placeholder="https://...">
+              <button class="btn btn-outline-secondary" type="button" onclick="addLink()" style="white-space:nowrap;">추가</button>
+            </div>
+            <div id="link-list" class="d-flex flex-column gap-2"></div>
+          </div>
+
+          <!-- 6. 팀 구성 -->
+          <div class="card form-card p-4 mb-4">
+            <div class="d-flex align-items-center gap-3 mb-4">
+              <div class="section-icon" style="background:#e0e7ff;">👥</div>
+              <div><div class="fw-bold">팀 구성</div><div class="small text-muted">혼자 진행하거나 팀으로 진행할 수 있습니다</div></div>
+            </div>
+            <label class="d-flex align-items-center gap-3 p-3 border rounded-3 cursor-pointer" style="cursor:pointer;">
+              <input type="checkbox" id="f-team" class="form-check-input m-0" onchange="toggleTeamName()">
+              <div>
+                <div class="fw-semibold small">팀 프로젝트로 진행</div>
+                <div class="text-muted" style="font-size:.78rem;">여러 명이 함께 참여하는 프로젝트입니다</div>
+              </div>
+            </label>
+            <div id="team-name-wrap" class="d-none mt-3">
+              <label class="form-label fw-semibold small">팀 이름</label>
+              <input type="text" class="form-control" id="f-teamname" placeholder="예: 메이커즈 팀, AI 로봇팀">
+            </div>
+          </div>
+
+          <!-- 하단 액션 -->
+          <div class="card form-card p-4 mb-4" style="background:linear-gradient(135deg,#eff6ff,#faf5ff);border:2px solid #bfdbfe;">
+            <div class="text-center">
+              <div class="fw-bold fs-6 mb-3">✨ 프로젝트를 생성할 준비가 되었나요?</div>
+              <div id="bottom-warn" class="alert alert-warning text-start small d-none">
+                <strong>⚠️ 필수 정보를 모두 입력해주세요</strong>
+                <ul id="bottom-warn-list" class="mb-0 mt-1"></ul>
+              </div>
+              <div class="d-flex gap-3 justify-content-center mt-3">
+                <a href="javascript:history.back()" class="btn btn-outline-secondary px-5 py-2">← 취소</a>
+                <button class="btn btn-primary px-5 py-2 fw-bold" id="btn-submit2" disabled onclick="doSubmit()"
+                  style="background:linear-gradient(135deg,#2563eb,#7c3aed);border:none;">
+                  💾 프로젝트 생성하기
+                </button>
+              </div>
+              <p class="small text-muted mt-3">프로젝트를 생성한 후에도 언제든지 수정할 수 있습니다</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- ════ RIGHT SIDEBAR ════ -->
+        <div class="col-lg-4">
+          <div class="sticky-sidebar">
+
+            <!-- 프로젝트 타입 안내 -->
+            <div class="card form-card p-4 mb-3" style="background:linear-gradient(135deg,#eff6ff,#dbeafe);border:1px solid #bfdbfe;">
+              <div class="d-flex align-items-center gap-2 mb-3">
+                <div style="background:#2563eb;border-radius:.5rem;width:40px;height:40px;display:flex;align-items:center;justify-content:center;">✨</div>
+                <div>
+                  <div style="background:#2563eb;color:#fff;border-radius:9999px;font-size:.72rem;padding:.15rem .55rem;display:inline-block;font-weight:600;" class="mb-1">개인 프로젝트</div>
+                  <div class="fw-bold small">자유로운 프로젝트</div>
+                </div>
+              </div>
+              <p class="small text-muted mb-2">개인 프로젝트는 자유롭게 시작하고 진행할 수 있습니다.</p>
+              <ul class="list-unstyled small mb-0">
+                <li class="d-flex gap-2 mb-1"><span style="color:#2563eb;">✔</span> 나만의 속도로 진행</li>
+                <li class="d-flex gap-2 mb-1"><span style="color:#2563eb;">✔</span> 언제든 수정 가능</li>
+                <li class="d-flex gap-2"><span style="color:#2563eb;">✔</span> 포트폴리오로 활용</li>
+              </ul>
+            </div>
+
+            <!-- Quest 시스템 -->
+            <div class="card form-card p-4 mb-3">
+              <div class="fw-bold small mb-2">Quest 시스템</div>
+              <p class="small text-muted mb-3">개인 프로젝트도 Quest 단계를 통해 체계적으로 진행할 수 있습니다.</p>
+              <div class="d-flex flex-column gap-2">
+                <div class="d-flex gap-2"><div style="width:24px;height:24px;border-radius:50%;background:#dbeafe;color:#1d4ed8;font-size:.75rem;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;">1</div><div><div class="fw-semibold" style="font-size:.82rem;">프로젝트 계획</div><div class="text-muted" style="font-size:.75rem;">아이디어와 목표 정리</div></div></div>
+                <div class="d-flex gap-2"><div style="width:24px;height:24px;border-radius:50%;background:#ede9fe;color:#7c3aed;font-size:.75rem;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;">2</div><div><div class="fw-semibold" style="font-size:.82rem;">제작 &amp; 개발</div><div class="text-muted" style="font-size:.75rem;">실제 구현 진행</div></div></div>
+                <div class="d-flex gap-2"><div style="width:24px;height:24px;border-radius:50%;background:#d1fae5;color:#065f46;font-size:.75rem;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;">3</div><div><div class="fw-semibold" style="font-size:.82rem;">완성 &amp; 공유</div><div class="text-muted" style="font-size:.75rem;">결과 정리 및 공개</div></div></div>
+              </div>
+            </div>
+
+            <!-- 필수 정보 체크리스트 -->
+            <div class="card form-card p-4 mb-3" style="background:linear-gradient(135deg,#f0fdf4,#d1fae5);border:1px solid #a7f3d0;">
+              <div class="fw-bold small mb-3 d-flex align-items-center gap-2">🎯 필수 정보 체크리스트</div>
+              <div id="sidebar-checklist"></div>
+            </div>
+
+            <!-- 작성 팁 -->
+            <div class="card form-card p-4 mb-3 bg-light">
+              <div class="fw-bold small mb-2">💡 작성 팁</div>
+              <ul class="list-unstyled small text-muted mb-0">
+                <li class="mb-1">• 명확한 제목으로 프로젝트 목적을 전달하세요</li>
+                <li class="mb-1">• 한줄 소개는 누구나 이해할 수 있게 작성하세요</li>
+                <li class="mb-1">• 사용한 기술 부품을 구체적으로 작성하세요</li>
+                <li class="mb-1">• 프로젝트 목표를 작성하면 Quest 진행이 수월합니다</li>
+                <li>• 코드는 GitHub 링크로 공유하세요</li>
+              </ul>
+            </div>
+
+            <!-- 커뮤니티 도움받기 -->
+            <div class="card form-card p-4" style="background:linear-gradient(135deg,#faf5ff,#fce7f3);border:1px solid #e9d5ff;">
+              <div class="d-flex align-items-center gap-2 mb-2">
+                <span>💬</span><div class="fw-bold small">커뮤니티 도움받기</div>
+              </div>
+              <p class="small text-muted mb-3">프로젝트를 진행하며 막히는 부분이 있나요? 커뮤니티에서 도움을 받아보세요!</p>
+              <div class="d-flex flex-column gap-2">
+                <button class="comm-btn" onclick="openQuickAction('question')">
+                  <div style="width:32px;height:32px;background:#dbeafe;border-radius:.5rem;display:flex;align-items:center;justify-content:center;flex-shrink:0;">❓</div>
+                  <div><div class="fw-semibold" style="font-size:.83rem;">질문하기</div><div class="text-muted" style="font-size:.75rem;">막히는 부분을 물어보세요</div></div>
+                </button>
+                <button class="comm-btn" onclick="openQuickAction('progress')">
+                  <div style="width:32px;height:32px;background:#ede9fe;border-radius:.5rem;display:flex;align-items:center;justify-content:center;flex-shrink:0;">🚀</div>
+                  <div><div class="fw-semibold" style="font-size:.83rem;">진행공유</div><div class="text-muted" style="font-size:.75rem;">진행 과정을 기록하세요</div></div>
+                </button>
+                <button class="comm-btn" onclick="openQuickAction('teammate')">
+                  <div style="width:32px;height:32px;background:#d1fae5;border-radius:.5rem;display:flex;align-items:center;justify-content:center;flex-shrink:0;">👤</div>
+                  <div><div class="fw-semibold" style="font-size:.83rem;">팀원 찾기</div><div class="text-muted" style="font-size:.75rem;">함께할 팀원을 모집하세요</div></div>
+                </button>
+                <button class="comm-btn" onclick="openQuickAction('resource')">
+                  <div style="width:32px;height:32px;background:#fed7aa;border-radius:.5rem;display:flex;align-items:center;justify-content:center;flex-shrink:0;">📁</div>
+                  <div><div class="fw-semibold" style="font-size:.83rem;">자료 공유</div><div class="text-muted" style="font-size:.75rem;">유용한 자료를 찾아보세요</div></div>
+                </button>
+              </div>
+              <p class="small text-muted mt-3 mb-0">✅ 현재 프로젝트와 자동으로 연결됩니다</p>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- ══════════════════════════════════════════
+       미리보기 패널 (우측 슬라이드인)
+  ══════════════════════════════════════════ -->
+  <div id="preview-overlay" onclick="closePreview()"></div>
+  <div id="preview-panel">
+
+    <!-- 패널 헤더 -->
+    <div class="preview-header d-flex align-items-center justify-content-between">
+      <div class="d-flex align-items-center gap-2">
+        <div style="width:32px;height:32px;background:#dbeafe;border-radius:.5rem;display:flex;align-items:center;justify-content:center;">👁</div>
+        <div>
+          <div class="fw-bold" style="font-size:.95rem;">미리보기</div>
+          <div style="font-size:.72rem;color:#9ca3af;">작성 중인 프로젝트가 어떻게 보일지 확인하세요</div>
+        </div>
+      </div>
+      <div class="d-flex align-items-center gap-2">
+        <div class="preview-tab-switch">
+          <button class="preview-tab-btn active" id="tab-cardview" onclick="switchPreviewTab('card')">카드뷰</button>
+          <button class="preview-tab-btn" id="tab-detailview" onclick="switchPreviewTab('detail')">상세뷰</button>
+        </div>
+        <button onclick="closePreview()" style="width:32px;height:32px;border-radius:50%;border:none;background:none;font-size:1.1rem;cursor:pointer;color:#6b7280;">✕</button>
+      </div>
+    </div>
+
+    <!-- 초안 배너 -->
+    <div class="preview-draft-banner">
+      ⚠️ <strong>초안 미리보기</strong> — 실제 게시 전 화면입니다. 작성한 내용이 실시간으로 반영됩니다.
+    </div>
+
+    <!-- 패널 본문 -->
+    <div class="preview-body" id="preview-body">
+      <!-- JS로 채움 -->
+    </div>
+
+    <!-- 패널 푸터 -->
+    <div class="preview-footer">
+      <span class="small text-muted" id="preview-filled-count">0 / 6개 항목 입력됨</span>
+      <button class="btn btn-outline-secondary btn-sm" onclick="closePreview()">계속 작성하기</button>
+    </div>
+  </div>
+
+  <!-- ══ Community Quick Action Panel ══ -->
+  <div class="cpanel-backdrop" id="quickActionBackdrop" onclick="hideQuickAction()"></div>
+  <div class="cpanel" id="quickActionOffcanvas" style="width:580px;max-width:95vw;">
+    <div class="border-bottom px-4 py-3 bg-white d-flex align-items-center justify-content-between flex-shrink-0">
+      <div>
+        <h5 class="fw-bold mb-0" id="qa-title">질문하기</h5>
+        <small class="text-muted" id="qa-subtitle">커뮤니티에 질문을 등록합니다</small>
+      </div>
+      <button type="button" class="btn-close ms-auto" onclick="hideQuickAction()"></button>
+    </div>
+    <div class="cpanel-body" id="qa-body" style="padding-bottom:1rem;">
+      <!-- dynamic content -->
+    </div>
+    <div class="border-top p-3 bg-white d-flex gap-2 flex-shrink-0">
+      <button class="btn btn-outline-secondary flex-fill" onclick="hideQuickAction()">취소</button>
+      <button class="btn btn-outline-secondary flex-fill" id="qa-draft-btn">임시 저장</button>
+      <button class="btn btn-primary flex-fill" id="qa-submit-btn">등록</button>
+    </div>
+  </div>
+
+  <div id="footer-placeholder"></div>
+
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc4s9bIOgUxi8T/jzmX5jFRcDBz3XBrTk4ycr3n8UPn" crossorigin="anonymous"></script>
+  <script src="assets/js/main.js"></script>
+  <script>
+  /* ══════════════════════════════════════════════════════════
+     STATE
+  ══════════════════════════════════════════════════════════ */
+  var hwItems  = [], swItems  = [], tagItems  = [], links = [];
+  var coverDataUrl = '';
+  var curPreviewTab = 'card';
+
+  /* ══════════════════════════════════════════════════════════
+     HELPERS
+  ══════════════════════════════════════════════════════════ */
+  function esc(s) { return $('<span>').text(s).html(); }
+
+  function getFormData() {
+    return {
+      title    : $.trim($('#f-title').val()),
+      subtitle : $.trim($('#f-subtitle').val()),
+      category : $('#f-category').val(),
+      difficulty: $('#f-difficulty').val(),
+      description: $.trim($('#f-description').val()),
+      goal     : $.trim($('#f-goal').val()),
+      duration : $('#f-duration').val(),
+      hw       : hwItems.slice(),
+      sw       : swItems.slice(),
+      tags     : tagItems.slice(),
+      links    : links.slice(),
+      team     : $('#f-team').is(':checked'),
+      teamName : $.trim($('#f-teamname').val()),
+      cover    : coverDataUrl
+    };
+  }
+
+  /* ══════════════════════════════════════════════════════════
+     VALIDITY & CHECKLIST
+  ══════════════════════════════════════════════════════════ */
+  function syncCheck() {
+    var d = getFormData();
+    $('#sub-len').text(d.subtitle.length);
+    $('#desc-len').text(d.description.length);
+
+    var checks = [
+      { label:'프로젝트 제목',           done: !!d.title },
+      { label:'한줄 소개',               done: !!d.subtitle },
+      { label:'카테고리',                done: !!d.category },
+      { label:'프로젝트 설명 (100자 이상)', done: d.description.length >= 100 },
+    ];
+
+    // 사이드바 체크리스트
+    var html = '';
+    checks.forEach(function(c) {
+      html += '<div class="check-item ' + (c.done ? 'text-success' : 'text-muted') + '">'
+        + '<div class="check-dot ' + (c.done ? 'done' : 'pending') + '">' + (c.done ? '✓' : '') + '</div>'
+        + '<span>' + esc(c.label) + '</span>'
+        + (!c.done ? '<span class="ms-auto" style="font-size:.72rem;color:#9ca3af;">미입력</span>' : '')
+        + '</div>';
+    });
+    $('#sidebar-checklist').html(html);
+
+    var valid = d.title && d.subtitle && d.category && d.description;
+    $('#btn-submit, #btn-submit2').prop('disabled', !valid);
+
+    // 하단 경고
+    if (!valid) {
+      var list = '';
+      if (!d.title)       list += '<li>프로젝트 제목</li>';
+      if (!d.subtitle)    list += '<li>한줄 소개</li>';
+      if (!d.category)    list += '<li>카테고리</li>';
+      if (!d.description) list += '<li>프로젝트 설명</li>';
+      $('#bottom-warn-list').html(list);
+      $('#bottom-warn').removeClass('d-none');
+    } else {
+      $('#bottom-warn').addClass('d-none');
+    }
+
+    // 미리보기가 열려 있으면 갱신
+    if ($('#preview-panel').hasClass('show')) {
+      renderPreview(d);
+    }
+  }
+
+  /* ══════════════════════════════════════════════════════════
+     CHIPS (hw / sw / tag)
+  ══════════════════════════════════════════════════════════ */
+  function addChip(type) {
+    var inputId = type === 'hw' ? '#hw-input' : (type === 'sw' ? '#sw-input' : '#tag-input');
+    var containerId = type === 'hw' ? '#hw-tags' : (type === 'sw' ? '#sw-tags' : '#tag-list');
+    var arr = type === 'hw' ? hwItems : (type === 'sw' ? swItems : tagItems);
+    var colorClass = type === 'hw' ? 'chip-purple' : (type === 'sw' ? 'chip-blue' : 'chip-green');
+    var prefix = type === 'tag' ? '#' : '';
+
+    var val = $.trim($(inputId).val());
+    if (!val || arr.indexOf(val) !== -1) return;
+
+    arr.push(val);
+    var html = '<span class="chip ' + colorClass + '" data-type="' + type + '" data-val="' + esc(val) + '">'
+      + esc(prefix + val)
+      + ' <button class="remove-x" onclick="removeChip(this)">✕</button>'
+      + '</span>';
+    $(containerId).append(html);
+    $(inputId).val('').focus();
+    syncCheck();
+  }
+
+  function removeChip(btn) {
+    var $chip = $(btn).closest('.chip');
+    var type  = $chip.data('type');
+    var val   = $chip.data('val');
+    var arr   = type === 'hw' ? hwItems : (type === 'sw' ? swItems : tagItems);
+    var idx   = arr.indexOf(val);
+    if (idx !== -1) arr.splice(idx, 1);
+    $chip.remove();
+    syncCheck();
+  }
+
+  // Enter 키 지원
+  $('#hw-input').on('keydown', function(e)  { if (e.key==='Enter'){e.preventDefault();addChip('hw');} });
+  $('#sw-input').on('keydown', function(e)  { if (e.key==='Enter'){e.preventDefault();addChip('sw');} });
+  $('#tag-input').on('keydown', function(e) { if (e.key==='Enter'){e.preventDefault();addChip('tag');} });
+
+  /* ══════════════════════════════════════════════════════════
+     LINKS
+  ══════════════════════════════════════════════════════════ */
+  function addLink() {
+    var url  = $.trim($('#link-url').val());
+    var type = $('#link-type').val();
+    if (!url) return;
+    links.push({ type: type, url: url });
+    var html = '<div class="d-flex align-items-center justify-content-between p-2 bg-light rounded link-entry">'
+      + '<div class="d-flex align-items-center gap-2 small" style="min-width:0;">'
+      + '<span class="chip chip-orange" style="border-radius:.25rem;">' + esc(type) + '</span>'
+      + '<span class="text-truncate text-primary">' + esc(url) + '</span>'
+      + '</div>'
+      + '<button class="btn btn-sm text-danger" onclick="removeLink(this)">✕</button>'
+      + '</div>';
+    $('#link-list').append(html);
+    $('#link-url').val('').focus();
+    syncCheck();
+  }
+
+  function removeLink(btn) {
+    var idx = $(btn).closest('.link-entry').index();
+    links.splice(idx, 1);
+    $(btn).closest('.link-entry').remove();
+    syncCheck();
+  }
+
+  /* ══════════════════════════════════════════════════════════
+     FILE UPLOAD
+  ══════════════════════════════════════════════════════════ */
+  $('#cover-file').on('change', function() {
+    var file = this.files[0];
+    if (!file) return;
+    var reader = new FileReader();
+    reader.onload = function(e) {
+      coverDataUrl = e.target.result;
+      $('#upload-placeholder').html(
+        '<img src="' + e.target.result + '" class="img-fluid rounded mb-2" style="max-height:200px;">'
+        + '<br><button class="btn btn-sm btn-outline-secondary mt-1" type="button" onclick="removeCover(event)">✕ 제거</button>'
+      );
+    };
+    reader.readAsDataURL(file);
+  });
+
+  function removeCover(e) {
+    e.stopPropagation();
+    coverDataUrl = '';
+    $('#cover-file').val('');
+    $('#upload-placeholder').html(
+      '<div style="font-size:2.5rem;" class="mb-2">📁</div>'
+      + '<div class="fw-semibold small mb-1">이미지 업로드</div>'
+      + '<div class="text-muted" style="font-size:.78rem;">JPG, PNG 파일 (최대 5MB)</div>'
+      + '<button class="btn btn-outline-secondary btn-sm mt-3" type="button">파일 선택</button>'
+    );
+  }
+
+  /* ══════════════════════════════════════════════════════════
+     TEAM TOGGLE
+  ══════════════════════════════════════════════════════════ */
+  function toggleTeamName() {
+    if ($('#f-team').is(':checked')) {
+      $('#team-name-wrap').removeClass('d-none');
+    } else {
+      $('#team-name-wrap').addClass('d-none');
+    }
+  }
+
+  /* ══════════════════════════════════════════════════════════
+     SUBMIT
+  ══════════════════════════════════════════════════════════ */
+  function doSubmit() {
+    alert('개인 프로젝트가 생성되었습니다!\n마이메이크 페이지로 이동합니다.');
+    window.location.href = 'my-make.html';
+  }
+
+  /* ══════════════════════════════════════════════════════════
+     미리보기 패널
+  ══════════════════════════════════════════════════════════ */
+  function openPreview() {
+    var d = getFormData();
+    renderPreview(d);
+
+    var overlay = document.getElementById('preview-overlay');
+    var panel   = document.getElementById('preview-panel');
+    overlay.style.display = 'block';
+    panel.style.display   = 'flex';
+
+    requestAnimationFrame(function() {
+      requestAnimationFrame(function() {
+        overlay.classList.add('show');
+        panel.classList.add('show');
+      });
+    });
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closePreview() {
+    var overlay = document.getElementById('preview-overlay');
+    var panel   = document.getElementById('preview-panel');
+    overlay.classList.remove('show');
+    panel.classList.remove('show');
+    document.body.style.overflow = '';
+    setTimeout(function() {
+      overlay.style.display = 'none';
+      panel.style.display   = 'none';
+    }, 320);
+  }
+
+  function switchPreviewTab(tab) {
+    curPreviewTab = tab;
+    $('#tab-cardview').toggleClass('active', tab === 'card');
+    $('#tab-detailview').toggleClass('active', tab === 'detail');
+    renderPreview(getFormData());
+  }
+
+  function renderPreview(d) {
+    var isEmpty = !d.title && !d.subtitle && !d.description;
+    var diffLabel = { beginner:'초급', intermediate:'중급', advanced:'고급' };
+    var diffColor = { beginner:'background:#dcfce7;color:#166534;', intermediate:'background:#fef3c7;color:#92400e;', advanced:'background:#fee2e2;color:#991b1b;' };
+
+    // 완성도 카운트
+    var filled = [d.title, d.category, d.description.length >= 100, d.hw.length > 0, d.sw.length > 0, d.tags.length > 0].filter(Boolean).length;
+    $('#preview-filled-count').text(filled + ' / 6개 항목 입력됨');
+
+    if (isEmpty) {
+      $('#preview-body').html(
+        '<div style="display:flex;flex-direction:column;align-items:center;justify-content:center;padding:4rem 2rem;text-align:center;height:100%;">'
+        + '<div style="width:64px;height:64px;border-radius:50%;background:#f3f4f6;display:flex;align-items:center;justify-content:center;font-size:2rem;margin:0 auto 1rem;">📄</div>'
+        + '<div class="fw-semibold text-muted mb-2">아직 작성된 내용이 없습니다</div>'
+        + '<div class="small text-muted">왼쪽 폼에 프로젝트 정보를 입력하면<br>여기서 실시간으로 미리볼 수 있습니다</div>'
+        + '</div>'
+      );
+      return;
+    }
+
+    if (curPreviewTab === 'card') {
+      renderCardView(d, diffLabel, diffColor, filled);
+    } else {
+      renderDetailView(d, diffLabel, diffColor);
+    }
+  }
+
+  function renderCardView(d, diffLabel, diffColor, filled) {
+    var checkItems = [
+      { label:'프로젝트 제목',            done: !!d.title },
+      { label:'한줄 소개',                done: !!d.subtitle },
+      { label:'카테고리',                 done: !!d.category },
+      { label:'프로젝트 설명 (100자 이상)', done: d.description.length >= 100 },
+      { label:'난이도',                   done: !!d.difficulty },
+      { label:'기술 스택 (하드웨어)',       done: d.hw.length > 0 },
+      { label:'기술 스택 (소프트웨어)',     done: d.sw.length > 0 },
+      { label:'태그',                     done: d.tags.length > 0 },
+      { label:'관련 링크',                done: d.links.length > 0 },
+    ];
+
+    var tagHtml = '';
+    d.tags.slice(0, 4).forEach(function(t) { tagHtml += '<span class="badge bg-light text-muted border me-1" style="font-size:.72rem;">#' + esc(t) + '</span>'; });
+    if (d.tags.length > 4) tagHtml += '<span class="small text-muted">+' + (d.tags.length-4) + '</span>';
+
+    var summaryHtml = '<div class="row g-2 mb-4">';
+    var summaryItems = [
+      { label:'카테고리', val: d.category||'미입력', filled:!!d.category, bg:'#eff6ff', bc:'#bfdbfe', tc:'#1d4ed8' },
+      { label:'난이도',   val: diffLabel[d.difficulty]||'미입력', filled:!!d.difficulty, bg:'#f0fdf4', bc:'#a7f3d0', tc:'#166534' },
+      { label:'예상 기간',val: d.duration||'미입력', filled:!!d.duration, bg:'#faf5ff', bc:'#ddd6fe', tc:'#7c3aed' },
+      { label:'팀 구성',  val: d.team ? (d.teamName||'팀 프로젝트') : '개인', filled:true, bg:'#eef2ff', bc:'#c7d2fe', tc:'#4338ca' },
+    ];
+    summaryItems.forEach(function(s) {
+      summaryHtml += '<div class="col-6"><div style="background:' + (s.filled?s.bg:'#f9fafb') + ';border:1px solid ' + (s.filled?s.bc:'#e5e7eb') + ';border-radius:.5rem;padding:.65rem;">'
+        + '<div class="text-muted" style="font-size:.72rem;">' + esc(s.label) + '</div>'
+        + '<div class="fw-semibold" style="font-size:.85rem;color:' + (s.filled?s.tc:'#9ca3af') + ';">' + esc(s.val) + '</div>'
+        + '</div></div>';
+    });
+    summaryHtml += '</div>';
+
+    var hwHtml = '', swHtml = '';
+    if (d.hw.length > 0) { hwHtml = '<div class="d-flex flex-wrap gap-1 align-items-center"><span class="small text-muted me-1">🔌 HW:</span>'; d.hw.forEach(function(h){ hwHtml += '<span class="chip chip-purple" style="font-size:.75rem;">' + esc(h) + '</span>'; }); hwHtml += '</div>'; }
+    if (d.sw.length > 0) { swHtml = '<div class="d-flex flex-wrap gap-1 align-items-center mt-2"><span class="small text-muted me-1">💻 SW:</span>'; d.sw.forEach(function(s){ swHtml += '<span class="chip chip-blue" style="font-size:.75rem;">' + esc(s) + '</span>'; }); swHtml += '</div>'; }
+
+    var checkHtml = '';
+    checkItems.forEach(function(c) {
+      checkHtml += '<div class="check-item ' + (c.done?'text-success':'text-muted') + '">'
+        + '<div class="check-dot ' + (c.done?'done':'pending') + '">' + (c.done?'✓':'') + '</div>'
+        + '<span style="font-size:.83rem;">' + esc(c.label) + '</span>'
+        + (!c.done ? '<span class="ms-auto" style="font-size:.72rem;color:#9ca3af;">미입력</span>' : '')
+        + '</div>';
+    });
+
+    var html = '<div style="padding:1.5rem;">'
+      // project card
+      + '<p class="text-muted small fw-semibold mb-2" style="text-transform:uppercase;letter-spacing:.05em;">프로젝트 목록에서 보이는 카드</p>'
+      + '<div class="pv-card mb-4">'
+      +   '<div class="pv-card-img">'
+      +     (d.cover ? '<img src="' + d.cover + '" style="width:100%;height:100%;object-fit:cover;">' : '<span>📷 대표 이미지 없음</span>')
+      +     '<div style="position:absolute;top:.75rem;left:.75rem;display:flex;gap:.4rem;">'
+      +       '<span class="badge bg-primary" style="font-size:.72rem;">개인 프로젝트</span>'
+      +       '<span class="badge bg-warning text-dark" style="font-size:.72rem;">초안</span>'
+      +     '</div>'
+      +     (d.difficulty ? '<span style="position:absolute;top:.75rem;right:.75rem;border-radius:9999px;padding:.2rem .55rem;font-size:.72rem;' + (diffColor[d.difficulty]||'') + '">' + (diffLabel[d.difficulty]||'') + '</span>' : '')
+      +   '</div>'
+      +   '<div class="pv-card-body">'
+      +     (d.category ? '<p class="small fw-semibold mb-1" style="color:#2563eb;">' + esc(d.category) + '</p>' : '')
+      +     '<h5 class="fw-bold mb-1" style="font-size:.95rem;">' + (d.title||'<span class="text-muted">프로젝트 제목을 입력하세요</span>') + '</h5>'
+      +     '<p class="small text-muted mb-2">' + (d.subtitle||'<em>한줄 소개를 입력하세요</em>') + '</p>'
+      +     (tagHtml ? '<div class="mb-2">' + tagHtml + '</div>' : '')
+      +     '<div class="d-flex align-items-center justify-content-between pt-2 border-top">'
+      +       '<div class="d-flex align-items-center gap-1"><div style="width:24px;height:24px;border-radius:50%;background:#2563eb;color:#fff;display:flex;align-items:center;justify-content:center;font-size:.7rem;font-weight:700;">나</div><span class="small text-muted">' + esc(d.team && d.teamName ? d.teamName : '나') + '</span></div>'
+      +       '<div class="d-flex gap-3 small text-muted"><span>❤️ 0</span><span>👁 0</span><span>💬 0</span></div>'
+      +     '</div>'
+      +   '</div>'
+      + '</div>'
+
+      // summary
+      + '<p class="text-muted small fw-semibold mb-2" style="text-transform:uppercase;letter-spacing:.05em;">입력 정보 요약</p>'
+      + summaryHtml
+
+      // tech stack
+      + ((d.hw.length > 0 || d.sw.length > 0) ?
+          '<p class="text-muted small fw-semibold mb-2" style="text-transform:uppercase;letter-spacing:.05em;">기술 스택</p><div class="mb-4">' + hwHtml + swHtml + '</div>'
+          : '')
+
+      // completion checklist
+      + '<p class="text-muted small fw-semibold mb-2" style="text-transform:uppercase;letter-spacing:.05em;">완성도 체크</p>'
+      + '<div>' + checkHtml + '</div>'
+      + '</div>';
+
+    $('#preview-body').html(html);
+  }
+
+  function renderDetailView(d, diffLabel, diffColor) {
+    var today = '2026년 3월 22일 (오늘)';
+    var tagHtml = '';
+    d.tags.forEach(function(t) { tagHtml += '<span class="badge bg-light text-muted border me-1 mb-1" style="font-size:.78rem;">#' + esc(t) + '</span>'; });
+
+    var hwHtml = '', swHtml = '';
+    d.hw.forEach(function(h){ hwHtml += '<span class="chip chip-purple me-1 mb-1">' + esc(h) + '</span>'; });
+    d.sw.forEach(function(s){ swHtml += '<span class="chip chip-blue me-1 mb-1">' + esc(s) + '</span>'; });
+
+    var linksHtml = '';
+    d.links.forEach(function(l) {
+      linksHtml += '<div class="d-flex align-items-center gap-2 p-2 bg-light rounded mb-2">'
+        + '<span class="chip chip-orange" style="border-radius:.25rem;">' + esc(l.type) + '</span>'
+        + '<span class="small text-primary text-truncate">' + esc(l.url) + '</span>'
+        + '</div>';
+    });
+
+    var html =
+      // hero
+      '<div class="bg-white border-bottom">'
+      +   '<div style="height:208px;background:linear-gradient(135deg,#dbeafe,#ede9fe,#fce7f3);display:flex;align-items:center;justify-content:center;position:relative;">'
+      +     (d.cover ? '<img src="' + d.cover + '" style="width:100%;height:100%;object-fit:cover;">' : '<span style="color:#9ca3af;font-size:.9rem;">📷 대표 이미지 없음</span>')
+      +     '<div style="position:absolute;top:1rem;left:1rem;display:flex;gap:.4rem;">'
+      +       '<span class="badge bg-primary" style="font-size:.72rem;">개인 프로젝트</span>'
+      +       '<span class="badge bg-warning text-dark" style="font-size:.72rem;">초안</span>'
+      +     '</div>'
+      +   '</div>'
+      +   '<div style="padding:1.25rem 1.5rem;">'
+      +     '<div class="d-flex align-items-center gap-2 mb-2 flex-wrap">'
+      +       (d.category ? '<span class="fw-semibold small" style="color:#2563eb;">' + esc(d.category) + '</span>' : '')
+      +       (d.difficulty ? '<span style="border-radius:9999px;padding:.15rem .5rem;font-size:.72rem;' + (diffColor[d.difficulty]||'background:#f3f4f6;color:#6b7280;') + '">' + (diffLabel[d.difficulty]||'') + '</span>' : '')
+      +       (d.duration ? '<span class="small text-muted">⏱ ' + esc(d.duration) + '</span>' : '')
+      +     '</div>'
+      +     '<h1 class="fw-bold mb-1" style="font-size:1.35rem;">' + (d.title||'<span style="color:#d1d5db;">프로젝트 제목</span>') + '</h1>'
+      +     '<p class="text-muted mb-3">' + (d.subtitle||'<em style="color:#d1d5db;">한줄 소개</em>') + '</p>'
+      +     '<div class="d-flex align-items-center gap-2 mb-3 pb-3 border-bottom">'
+      +       '<div style="width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,#3b82f6,#7c3aed);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;">나</div>'
+      +       '<div>'
+      +         '<div class="fw-semibold small">' + esc(d.team && d.teamName ? d.teamName : '나 (작성자)') + '</div>'
+      +         '<div class="small text-muted">📅 ' + today + (d.team ? ' · 👥 팀 프로젝트' : '') + '</div>'
+      +       '</div>'
+      +       '<div class="ms-auto d-flex gap-1">'
+      +         '<button class="btn btn-sm btn-outline-secondary" style="font-size:.75rem;">❤️ 0</button>'
+      +         '<button class="btn btn-sm btn-outline-secondary" style="font-size:.75rem;">🔖</button>'
+      +         '<button class="btn btn-sm btn-outline-secondary" style="font-size:.75rem;">📤</button>'
+      +       '</div>'
+      +     '</div>'
+      +     (tagHtml ? '<div class="mb-1">' + tagHtml + '</div>' : '')
+      +   '</div>'
+      + '</div>'
+
+      // 설명
+      + '<div style="padding:1.25rem 1.5rem;border-bottom:1px solid #e5e7eb;background:#fff;">'
+      +   '<h2 class="fw-bold mb-3" style="font-size:1rem;">📄 프로젝트 소개</h2>'
+      +   (d.description
+          ? '<p style="font-size:.875rem;color:#374151;line-height:1.7;white-space:pre-wrap;">' + esc(d.description) + '</p>'
+            + (d.goal ? '<div style="background:#eff6ff;border:1px solid #bfdbfe;border-radius:.5rem;padding:.875rem;margin-top:.875rem;"><div class="fw-semibold small mb-1" style="color:#1d4ed8;">✨ 프로젝트 목표</div><p style="font-size:.82rem;color:#1e3a8a;margin:0;white-space:pre-wrap;">' + esc(d.goal) + '</p></div>' : '')
+          : '<p class="small text-muted fst-italic">프로젝트 설명이 입력되면 여기에 표시됩니다</p>')
+      + '</div>'
+
+      // 기술 스택
+      + ((d.hw.length > 0 || d.sw.length > 0) ?
+          '<div style="padding:1.25rem 1.5rem;border-bottom:1px solid #e5e7eb;background:#fff;">'
+          + '<h2 class="fw-bold mb-3" style="font-size:1rem;">🔧 기술 스택</h2>'
+          + '<div class="row g-3">'
+          + (hwHtml ? '<div class="col-6"><div class="small fw-semibold text-muted mb-2">🔌 하드웨어</div>' + hwHtml + '</div>' : '')
+          + (swHtml ? '<div class="col-6"><div class="small fw-semibold text-muted mb-2">💻 소프트웨어</div>' + swHtml + '</div>' : '')
+          + '</div></div>'
+          : '')
+
+      // 링크
+      + (d.links.length > 0 ?
+          '<div style="padding:1.25rem 1.5rem;border-bottom:1px solid #e5e7eb;background:#fff;">'
+          + '<h2 class="fw-bold mb-3" style="font-size:1rem;">🔗 관련 링크</h2>'
+          + linksHtml
+          + '</div>'
+          : '')
+
+      // quest placeholder
+      + '<div style="padding:1.25rem 1.5rem;border-bottom:1px solid #e5e7eb;background:#fff;">'
+      +   '<h2 class="fw-bold mb-3" style="font-size:1rem;">✨ Quest 진행 현황</h2>'
+      +   ['Quest 1: 프로젝트 기획 및 설계','Quest 2: 프로토타입 제작','Quest 3: 최종 완성'].map(function(q,i){
+            return '<div class="d-flex align-items-center gap-2 p-2 bg-light rounded border mb-2">'
+              + '<div style="width:32px;height:32px;border-radius:50%;background:#e5e7eb;color:#9ca3af;display:flex;align-items:center;justify-content:center;font-size:.8rem;font-weight:700;flex-shrink:0;">' + (i+1) + '</div>'
+              + '<span class="small text-muted">' + esc(q) + '</span>'
+              + '<span class="ms-auto badge bg-light text-muted border" style="font-size:.72rem;">시작 전</span>'
+              + '</div>';
+          }).join('')
+      +   '<p class="small text-muted text-center mt-2">프로젝트 생성 후 Quest가 자동으로 시작됩니다</p>'
+      + '</div>'
+
+      // stats
+      + '<div style="padding:1.25rem 1.5rem;background:#fff;">'
+      +   '<div class="row g-2 text-center">'
+      +   ['👁 0\n조회수','❤️ 0\n좋아요','💬 0\n댓글'].map(function(s){
+            var p = s.split('\n');
+            return '<div class="col-4"><div style="background:#f9fafb;border-radius:.5rem;padding:.75rem;">'
+              + '<div style="font-size:1rem;">' + esc(p[0]) + '</div>'
+              + '<div class="small text-muted">' + esc(p[1]) + '</div>'
+              + '</div></div>';
+          }).join('')
+      +   '</div>'
+      + '</div>';
+
+    $('#preview-body').html(html);
+  }
+
+  /* ══════════════════════════════════════════════════════════
+     커뮤니티 빠른 액션 패널 (my-make.html 동일 구조)
+  ══════════════════════════════════════════════════════════ */
+
+  function projectSelectHtml(accentColor, iconCls, checkMsg) {
+    var title = $.trim($('#f-title').val()) || '(제목 미입력)';
+    return '<div class="rounded-3 p-4" style="background:linear-gradient(135deg,#eff6ff,#f5f3ff);border:1px solid #bfdbfe;">'
+      +'<div class="d-flex gap-3 align-items-start mb-3">'
+      +'<div class="rounded-2 d-flex align-items-center justify-content-center text-white flex-shrink-0 fs-6" style="width:40px;height:40px;background:'+accentColor+';"><i class="'+iconCls+'"></i></div>'
+      +'<div><h6 class="fw-bold mb-1">연결된 프로젝트</h6><p class="text-muted small mb-0">현재 작성 중인 프로젝트와 자동으로 연결됩니다</p></div>'
+      +'</div>'
+      +'<div class="form-control bg-white rounded-3 p-3" style="border:2px solid #bfdbfe;font-weight:600;">'+ title +'</div>'
+      +'<div class="bg-white rounded-3 p-3 mt-2">'
+      +'<div class="pt-2"><p class="small text-muted mb-0 d-flex align-items-center gap-1">'
+      +'<i class="bi bi-check-lg text-success"></i> '+checkMsg+'</p></div>'
+      +'</div></div>';
+  }
+
+  function qaTypeGrid(items) {
+    return '<div class="row g-2">'
+      + items.map(function(t){
+          return '<div class="col-6"><button class="btn qa-type-btn rounded-3 w-100 p-3 text-start" data-val="'+t.v+'">'
+            +'<i class="'+t.icon+' d-block mb-1 fs-5 text-secondary qa-icon"></i>'
+            +'<span class="fw-semibold small" style="color:#111;">'+t.l+'</span>'
+            +'</button></div>';
+        }).join('')
+      +'</div>';
+  }
+
+  function qaRoleGrid(items) {
+    return '<div class="row g-2">'
+      + items.map(function(t){
+          return '<div class="col-6"><button class="btn qa-role-btn rounded-3 w-100 p-3 text-start" data-val="'+t.v+'">'
+            +'<i class="'+t.icon+' d-block mb-1 fs-5 text-secondary qa-icon"></i>'
+            +'<span class="fw-semibold small" style="color:#111;">'+t.l+'</span>'
+            +'</button></div>';
+        }).join('')
+      +'</div>';
+  }
+
+  function qaAttachBtns(items) {
+    var cols = 12 / items.length;
+    return '<div class="row g-2 mb-3">'
+      + items.map(function(b){
+          return '<div class="col-'+cols+'"><button class="btn w-100 p-3 text-center rounded-3" style="border:2px dashed #d1d5db;">'
+            +'<i class="'+b.icon+' d-block fs-4 text-muted mb-1"></i>'
+            +'<p class="small fw-medium mb-0" style="color:#374151;">'+b.l+'</p>'
+            +(b.sub ? '<p class="mb-0" style="font-size:.72rem;color:#9ca3af;">'+b.sub+'</p>' : '')
+            +'</button></div>';
+        }).join('')
+      +'</div>';
+  }
+
+  function qaGuideBox(color, title, body) {
+    var c = { blue:{bg:'#eff6ff',bd:'#bfdbfe',ic:'text-primary',tc:'#1e40af'}, green:{bg:'#f0fdf4',bd:'#bbf7d0',ic:'text-success',tc:'#166534'}, orange:{bg:'#fff7ed',bd:'#fed7aa',ic:'',tc:'#9a3412'} }[color] || {bg:'#eff6ff',bd:'#bfdbfe',ic:'text-primary',tc:'#1e40af'};
+    return '<div class="rounded-3 p-3" style="background:'+c.bg+';border:1px solid '+c.bd+';">'
+      +'<div class="d-flex gap-2 align-items-start">'
+      +'<i class="bi bi-exclamation-circle-fill '+c.ic+' flex-shrink-0 mt-1" style="color:'+(color==='orange'?'#ea580c':'')+';"></i>'
+      +'<div><p class="small fw-bold mb-1" style="color:'+c.tc+';">'+title+'</p>'
+      +'<p class="mb-0" style="font-size:.75rem;color:'+c.tc+';">'+body+'</p>'
+      +'</div></div></div>';
+  }
+
+  function qaField(label, required, field) {
+    return '<div><label class="fw-bold small d-block mb-2">'+label
+      +(required ? ' <span class="text-danger">*</span>' : ' <span class="text-muted fw-normal">(선택)</span>')
+      +'</label>'+field+'</div>';
+  }
+
+  var qaConfigs = {
+    question: {
+      title:'질문하기', subtitle:'커뮤니티에 질문을 등록합니다', submitLabel:'질문 등록', submitBg:'#2563eb',
+      body: function(){
+        return '<div class="p-5 d-flex flex-column" style="gap:1.5rem;">'
+          + projectSelectHtml('#2563eb','bi-stars','커뮤니티 Q&A에 등록되며, 프로젝트 상세에서도 확인할 수 있습니다')
+          + qaField('질문 제목', true,
+              '<input type="text" class="form-control" placeholder="예: ESP32에서 MQTT 연결이 계속 끊기는 문제">'
+              +'<p class="text-muted small mt-1 mb-0">문제를 명확하게 요약하세요</p>')
+          + qaField('질문 유형', true, qaTypeGrid([
+              {v:'technical',     l:'기술 문제',   icon:'bi-code-slash'},
+              {v:'implementation',l:'구현 방법',   icon:'bi-bullseye'},
+              {v:'design',        l:'설계 고민',   icon:'bi-lightbulb'},
+              {v:'submission',    l:'제출 관련',   icon:'bi-file-text'},
+              {v:'feedback',      l:'피드백 요청', icon:'bi-chat-dots'},
+            ]))
+          + '<div class="d-flex flex-column" style="gap:1rem;">'
+          + qaGuideBox('blue','좋은 질문을 위한 가이드','구체적인 상황과 시도한 내용을 포함하면 더 빠르고 정확한 답변을 받을 수 있습니다')
+          + qaField('1. 지금 어떤 작업을 하고 있나요?', true, '<textarea class="form-control" rows="3" placeholder="예: Quest 2에서 ESP32와 MQTT 브로커를 연결하는 작업을 하고 있습니다."></textarea>')
+          + qaField('2. 어떤 문제가 있나요?', true, '<textarea class="form-control" rows="4" placeholder="예: Wi-Fi 연결은 정상인데 MQTT 연결이 5분마다 자동으로 끊깁니다."></textarea>')
+          + qaField('3. 무엇을 시도해 보았나요?', false, '<textarea class="form-control" rows="3" placeholder="예: Keep-alive 시간을 60초로 늘려봤고, QoS 레벨도 0, 1, 2 모두 시도했습니다."></textarea>')
+          + qaField('4. 어떤 도움을 받고 싶나요?', true, '<textarea class="form-control" rows="3" placeholder="예: 연결이 끊기는 원인을 찾고 싶습니다."></textarea>')
+          + '</div>'
+          + qaField('첨부 자료', false,
+              qaAttachBtns([{icon:'bi-image',l:'이미지 첨부',sub:'스크린샷, 회로도'},{icon:'bi-code-slash',l:'코드 스니펫',sub:'문제 코드 붙여넣기'}])
+              +'<div class="d-flex flex-column gap-2">'
+              +'<input type="url" class="form-control form-control-sm" placeholder="GitHub 링크">'
+              +'<input type="url" class="form-control form-control-sm" placeholder="참고 링크">'
+              +'</div>')
+          +'</div>';
+      }
+    },
+    progress: {
+      title:'진행 공유하기', subtitle:'커뮤니티에 진행 상황을 공유합니다', submitLabel:'진행 공유', submitBg:'#2563eb',
+      body: function(){
+        return '<div class="p-5 d-flex flex-column" style="gap:1.5rem;">'
+          + projectSelectHtml('#2563eb','bi-rocket-takeoff','커뮤니티에 공유되며, 프로젝트 타임라인에도 표시됩니다')
+          + qaField('진행 상황 제목', true,
+              '<input type="text" class="form-control" placeholder="예: ESP32 센서 연결 완료, MQTT 통신 구현 중">'
+              +'<p class="text-muted small mt-1 mb-0">이번 단계의 진행 상황을 한 줄로 요약하세요</p>')
+          + '<div class="d-flex flex-column" style="gap:1rem;">'
+          + qaGuideBox('blue','진행 공유 가이드','구체적인 작업 내용과 결과물을 공유하면 다른 메이커들에게 도움이 됩니다')
+          + qaField('1. 이번 단계에서 어떤 작업을 했나요?', true, '<textarea class="form-control" rows="4" placeholder="예: Quest 2의 프로토타입 제작 단계에서 ESP32에 센서를 연결하고 데이터 전송 작업을 진행했습니다."></textarea>')
+          + qaField('2. 현재까지 완료한 내용은 무엇인가요?', true, '<textarea class="form-control" rows="5" placeholder="예:&#10;- 센서 하드웨어 연결 완료&#10;- Wi-Fi 연결 및 MQTT 클라이언트 설정 완료&#10;- 데이터 전송 성공"></textarea>')
+          + qaField('3. 막힌 점 또는 고민이 있나요?', false, '<textarea class="form-control" rows="3" placeholder="예: 배터리로 동작시킬 때 전력 소모가 큽니다. Deep Sleep 모드 적용을 고민 중입니다."></textarea>')
+          + qaField('4. 다음에 할 일은 무엇인가요?', true, '<textarea class="form-control" rows="4" placeholder="예:&#10;- Deep Sleep 모드 구현으로 전력 최적화&#10;- 센서 값 필터링 알고리즘 추가&#10;- 웹 대시보드에서 데이터 시각화"></textarea>')
+          + '</div>'
+          + qaField('이미지 / 영상 / 링크 첨부', false,
+              qaAttachBtns([{icon:'bi-image',l:'이미지',sub:'사진 첨부'},{icon:'bi-camera-video',l:'영상',sub:'동작 영상'},{icon:'bi-link-45deg',l:'링크',sub:'외부 링크'}])
+              +'<div class="d-flex flex-column gap-2">'
+              +'<input type="url" class="form-control form-control-sm" placeholder="GitHub 커밋 링크">'
+              +'<input type="url" class="form-control form-control-sm" placeholder="YouTube 데모 영상">'
+              +'</div>')
+          +'</div>';
+      }
+    },
+    teammate: {
+      title:'팀원 찾기', subtitle:'커뮤니티에 팀원을 모집합니다', submitLabel:'팀원 모집', submitBg:'#16a34a',
+      body: function(){
+        return '<div class="p-5 d-flex flex-column" style="gap:1.5rem;">'
+          + projectSelectHtml('#16a34a','bi-people-fill','커뮤니티에 공개되며, 관심 있는 메이커들이 연락할 수 있습니다')
+          + qaField('모집 제목', true,
+              '<input type="text" class="form-control" placeholder="예: AI 로봇 프로젝트 함께할 하드웨어 엔지니어 구합니다">'
+              +'<p class="text-muted small mt-1 mb-0">모집 목적을 명확하게 요약하세요</p>')
+          + qaField('필요한 역할 유형', true, qaRoleGrid([
+              {v:'developer', l:'개발자',   icon:'bi-code-slash'},
+              {v:'hardware',  l:'하드웨어', icon:'bi-cpu'},
+              {v:'designer',  l:'디자이너', icon:'bi-palette'},
+              {v:'researcher',l:'연구자',   icon:'bi-search'},
+              {v:'marketer',  l:'마케터',   icon:'bi-megaphone'},
+              {v:'etc',       l:'기타',     icon:'bi-person-plus'},
+            ]))
+          + '<div class="d-flex flex-column" style="gap:1rem;">'
+          + qaGuideBox('green','팀원 모집 가이드','프로젝트 정보와 협업 방식을 구체적으로 작성하면 더 좋은 팀원을 만날 수 있습니다')
+          + qaField('1. 프로젝트 간단 소개', true, '<textarea class="form-control" rows="4" placeholder="예: AI 음성인식으로 동작하는 자율주행 로봇을 만들고 있습니다. 라즈베리파이와 OpenCV를 활용합니다."></textarea>')
+          + qaField('2. 현재 진행 단계', false, '<textarea class="form-control" rows="3" placeholder="예: Quest 2 프로토타입 단계입니다. 소프트웨어 70% 완성, 하드웨어 설계 필요."></textarea>')
+          + qaField('3. 필요한 역할과 요구 사항', true, '<textarea class="form-control" rows="5" placeholder="예:&#10;- 하드웨어 엔지니어 1명: 모터 제어 및 센서 통합 경험&#10;- 기계 설계 전공자 1명: 3D CAD 모델링 가능자&#10;- 주 1회 이상 온라인 미팅 가능하신 분"></textarea>')
+          + qaField('4. 협업 방식', true, '<textarea class="form-control" rows="4" placeholder="예:&#10;- 온라인 협업 (Slack + GitHub)&#10;- 주 1회 화상 회의&#10;- 월 1회 오프라인 미팅"></textarea>')
+          + qaField('5. 연락 방법', true, '<textarea class="form-control" rows="4" placeholder="예:&#10;- 이메일: maker@example.com&#10;- 카카오톡 오픈채팅: https://open.kakao.com/...&#10;관심 있으신 분은 간단한 자기소개와 함께 연락 주세요!"></textarea>')
+          + '</div>'
+          + qaField('참고 링크', false,
+              '<div class="d-flex flex-column gap-2">'
+              +'<input type="url" class="form-control form-control-sm" placeholder="GitHub 저장소 (참고용)">'
+              +'<input type="url" class="form-control form-control-sm" placeholder="프로젝트 상세 페이지">'
+              +'</div>')
+          +'</div>';
+      }
+    },
+    resource: {
+      title:'자료 공유하기', subtitle:'커뮤니티에 유용한 자료를 공유합니다', submitLabel:'자료 공유', submitBg:'#ea580c',
+      body: function(){
+        var questHtml = [
+          {v:1,l:'Quest 1: 기획/설계'},{v:2,l:'Quest 2: 프로토타입'},{v:3,l:'Quest 3: 최종 완성'}
+        ].map(function(q){
+          return '<button class="btn qa-quest-btn d-flex align-items-center gap-3 w-100 p-3 rounded-3 text-start mb-2" data-val="'+q.v+'">'
+            +'<div class="quest-check rounded-2 border d-flex align-items-center justify-content-center flex-shrink-0" style="width:20px;height:20px;border-color:#9ca3af;">'
+            +'<i class="bi bi-check quest-check-icon d-none text-white" style="font-size:.7rem;"></i>'
+            +'</div>'
+            +'<span class="fw-semibold small quest-label">'+q.l+'</span>'
+            +'</button>';
+        }).join('');
+        return '<div class="p-5 d-flex flex-column" style="gap:1.5rem;">'
+          + projectSelectHtml('#ea580c','bi-share-fill','커뮤니티 자료실에 등록되며, 다른 메이커들에게 도움이 됩니다')
+          + qaField('자료 제목', true,
+              '<input type="text" class="form-control" placeholder="예: ESP32 MQTT 안정적 연결을 위한 코드 라이브러리">'
+              +'<p class="text-muted small mt-1 mb-0">자료의 내용을 명확하게 표현하세요</p>')
+          + qaField('자료 유형', true, qaTypeGrid([
+              {v:'code',    l:'코드 라이브러리', icon:'bi-code-slash'},
+              {v:'tutorial',l:'튜토리얼',        icon:'bi-book'},
+              {v:'design',  l:'설계 파일',       icon:'bi-file-earmark-text'},
+              {v:'video',   l:'영상 자료',        icon:'bi-camera-video'},
+              {v:'data',    l:'데이터셋',         icon:'bi-database'},
+              {v:'etc',     l:'기타',            icon:'bi-share'},
+            ]))
+          + '<div class="d-flex flex-column" style="gap:1rem;">'
+          + qaGuideBox('orange','자료 공유 가이드','구체적인 사용 방법과 도움이 되는 이유를 작성하면 더 많은 메이커들에게 도움이 됩니다')
+          + qaField('1. 자료 설명', true, '<textarea class="form-control" rows="4" placeholder="예: MQTT 연결 문제를 해결한 안정적인 라이브러리입니다. 자동 재연결, Keep-alive 최적화 기능이 포함되어 있습니다."></textarea>')
+          + qaField('2. 왜 이 자료가 도움이 되나요?', true, '<textarea class="form-control" rows="5" placeholder="예:&#10;- MQTT 연결 안정성 99% 이상 유지&#10;- 네트워크 불안정 환경에서도 자동 복구&#10;- 간단한 API로 5분 안에 적용 가능"></textarea>')
+          + qaField('3. 어떤 상황/단계에 유용한가요?', false, '<textarea class="form-control" rows="4" placeholder="예:&#10;- IoT 프로젝트에서 ESP32 사용하시는 분&#10;- MQTT 연결 불안정 문제를 겪고 계신 분"></textarea>')
+          + '</div>'
+          + '<div>'
+          + '<label class="fw-bold small d-block mb-2">4. 유용한 Quest 단계 <span class="text-danger">*</span></label>'
+          + questHtml
+          + '<p class="text-muted small mt-1 mb-0">복수 선택 가능합니다</p></div>'
+          + qaField('파일 또는 링크 첨부', true,
+              qaAttachBtns([{icon:'bi-file-earmark',l:'파일 첨부',sub:'코드, 문서 등'},{icon:'bi-image',l:'이미지',sub:'설명 이미지'}])
+              +'<div class="d-flex flex-column gap-2">'
+              +'<input type="url" class="form-control form-control-sm" placeholder="GitHub 저장소 링크 *">'
+              +'<input type="url" class="form-control form-control-sm" placeholder="다운로드 링크 또는 참고 문서">'
+              +'<input type="url" class="form-control form-control-sm" placeholder="데모 영상 링크 (선택)">'
+              +'</div>')
+          + qaField('라이센스 정보', false,
+              '<select class="form-select form-select-sm">'
+              +'<option value="">라이센스를 선택하세요</option>'
+              +'<option>MIT License</option><option>Apache 2.0</option><option>GPL 3.0</option>'
+              +'<option>Creative Commons</option><option>개인 저작물 (출처 표기 필수)</option><option>기타</option>'
+              +'</select>'
+              +'<p class="text-muted small mt-1 mb-0">라이센스를 명시하면 다른 메이커들이 안심하고 사용할 수 있습니다</p>')
+          +'</div>';
+      }
+    }
+  };
+
+  window.openQuickAction = function(type) {
+    var cfg = qaConfigs[type];
+    $('#qa-title').text(cfg.title);
+    $('#qa-subtitle').text(cfg.subtitle);
+    $('#qa-body').html(cfg.body());
+    $('#qa-submit-btn').text(cfg.submitLabel).css({'background':cfg.submitBg||'#2563eb','color':'#fff','border':'none'});
+    document.getElementById('quickActionOffcanvas').classList.add('cpanel-show');
+    document.getElementById('quickActionBackdrop').classList.add('cpanel-show');
+    document.body.style.overflow = 'hidden';
+  };
+
+  window.hideQuickAction = function() {
+    document.getElementById('quickActionOffcanvas').classList.remove('cpanel-show');
+    document.getElementById('quickActionBackdrop').classList.remove('cpanel-show');
+    document.body.style.overflow = '';
+  };
+
+  // Type buttons (single-select per group)
+  $(document).on('click', '.qa-type-btn', function(){
+    $(this).closest('.row').find('.qa-type-btn').removeClass('qa-selected').find('.qa-icon').addClass('text-secondary').removeClass('text-primary');
+    $(this).addClass('qa-selected').find('.qa-icon').removeClass('text-secondary').addClass('text-primary');
+  });
+  // Role buttons (multi-select)
+  $(document).on('click', '.qa-role-btn', function(){
+    $(this).toggleClass('qa-selected');
+    $(this).find('.qa-icon').toggleClass('text-secondary', !$(this).hasClass('qa-selected')).toggleClass('text-success', $(this).hasClass('qa-selected'));
+  });
+  // Quest stage buttons (multi-select)
+  $(document).on('click', '.qa-quest-btn', function(){
+    $(this).toggleClass('qa-selected');
+    var sel = $(this).hasClass('qa-selected');
+    $(this).find('.quest-check').css({'background':sel?'#2563eb':'','border-color':sel?'#2563eb':'#9ca3af'});
+    $(this).find('.quest-check-icon').toggleClass('d-none', !sel);
+    $(this).find('.quest-label').css('color', sel ? '#1e40af' : '#111');
+  });
+
+  // Submit / draft
+  $('#qa-submit-btn').on('click', function(){ hideQuickAction(); });
+  $('#qa-draft-btn').on('click', function(){ alert('임시 저장되었습니다.'); });
+
+  /* ══════════════════════════════════════════════════════════
+     INIT
+  ══════════════════════════════════════════════════════════ */
+  $(function() {
+    Auth.requirePage();   // 로그인 필수 페이지
+    syncCheck();
+  });
+  </script>
+</body>
+</html>

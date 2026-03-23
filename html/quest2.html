@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quest 2 — 프로토타입 제작 — e4ds make</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/custom.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <style>
+    .cpanel-backdrop{position:fixed;inset:0;background:rgba(0,0,0,.45);z-index:2040;display:none;}
+    .cpanel-backdrop.cpanel-show{display:block;}
+    .cpanel{position:fixed;top:0;right:0;bottom:0;width:min(520px,100vw);background:#fff;z-index:2045;display:flex;flex-direction:column;box-shadow:-4px 0 32px rgba(0,0,0,.18);transform:translateX(100%);transition:transform .3s ease;}
+    .cpanel.cpanel-show{transform:translateX(0);}
+    .cpanel-body{flex:1;overflow-y:auto;}
+    .qa-type-btn{border:2px solid #e5e7eb;border-radius:.75rem;padding:.75rem;cursor:pointer;transition:all .2s;background:#fff;}
+    .qa-type-btn:hover,.qa-type-btn.selected{border-color:#2563eb;background:#eff6ff;}
+    .qa-role-btn{border:1px solid #e5e7eb;border-radius:.5rem;padding:.4rem .75rem;cursor:pointer;transition:all .2s;background:#fff;font-size:.85rem;}
+    .qa-role-btn:hover,.qa-role-btn.selected{border-color:#2563eb;background:#eff6ff;}
+  </style>
+</head>
+<body class="bg-light">
+  <div id="header-placeholder"></div>
+  <main>
+    <div class="bg-white border-bottom">
+      <div class="container-xl py-3">
+        <nav aria-label="breadcrumb"><ol class="breadcrumb mb-0 small">
+          <li class="breadcrumb-item"><a href="index.html" class="text-decoration-none">홈</a></li>
+          <li class="breadcrumb-item"><a href="my-make.html" class="text-decoration-none">마이메이크</a></li>
+          <li class="breadcrumb-item"><a href="project-detail.html" class="text-decoration-none">AI 음성인식 자율주행 로봇</a></li>
+          <li class="breadcrumb-item active">Quest 2 작성</li>
+        </ol></nav>
+      </div>
+    </div>
+
+    <!-- Hero -->
+    <section class="py-4 text-white" style="background:linear-gradient(135deg,#2563eb,#7c3aed);">
+      <div class="container-xl">
+        <div class="d-flex align-items-center gap-4 mb-3">
+          <div class="rounded-circle bg-white bg-opacity-25 d-flex align-items-center justify-content-center flex-shrink-0" style="width:64px;height:64px;font-size:1.8rem;">🔧</div>
+          <div>
+            <span class="badge bg-white bg-opacity-25 text-white mb-1">🏆 Quest 2 에디터</span>
+            <h4 class="fw-bold mb-0">프로토타입 제작 단계</h4>
+          </div>
+        </div>
+        <p class="text-white-75 mb-0"><strong>AI 음성인식 자율주행 로봇</strong> 프로젝트의 Quest 2를 작성합니다. 실제 하드웨어/소프트웨어 프로토타입 제작 과정과 결과를 기록하세요.</p>
+      </div>
+    </section>
+
+    <div class="container-xl py-4">
+      <div class="row g-4">
+        <!-- Main Form -->
+        <div class="col-lg-8">
+          <a href="project-detail.html" class="small text-muted text-decoration-none d-inline-block mb-4">← 프로젝트로 돌아가기</a>
+
+          <!-- Quest 2 안내 -->
+          <div class="card mb-4" style="background:linear-gradient(135deg,#fdf4ff,#fdf2f8);border-color:#e9d5ff;">
+            <div class="card-body">
+              <div class="d-flex gap-4">
+                <div class="rounded-circle d-flex align-items-center justify-content-center flex-shrink-0 text-white" style="width:48px;height:48px;font-size:1.2rem;background:#9333ea;">✨</div>
+                <div>
+                  <h6 class="fw-bold mb-2">Quest 2: 프로토타입 제작</h6>
+                  <ul class="list-unstyled small text-muted mb-2 d-flex flex-column gap-1">
+                    <li>✅ <strong>실제 제작 과정을 상세히 기록하세요</strong> — 사용한 부품, 코드, 회로도 등</li>
+                    <li>✅ <strong>겪은 문제와 해결 방법을 공유하세요</strong> — 다른 메이커에게 도움이 됩니다</li>
+                    <li>✅ <strong>프로토타입 사진/영상을 첨부하세요</strong> — 동작하는 모습을 보여주세요</li>
+                  </ul>
+                  <div class="small text-muted">📅 마감: 2026년 4월 15일 &nbsp;·&nbsp; 🏆 150점</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 제작 내용 카드 -->
+          <div class="card mb-4">
+            <div class="card-body">
+              <div class="d-flex align-items-center gap-3 mb-4 pb-3 border-bottom">
+                <div class="rounded-circle bg-primary bg-opacity-10 d-flex align-items-center justify-content-center" style="width:40px;height:40px;font-size:1.1rem;">💻</div>
+                <div><h6 class="fw-bold mb-0">프로토타입 제작 내용</h6><small class="text-muted">제작 과정과 결과를 상세히 작성하세요</small></div>
+              </div>
+
+              <div class="mb-3">
+                <label class="form-label fw-bold small">Quest 2 세부 제목 <span class="text-muted fw-normal">(선택)</span></label>
+                <input type="text" class="form-control" id="q2-title" placeholder="예: 라즈베리파이 기반 자율주행 프로토타입 구현">
+                <small class="text-muted">이번 단계의 주요 작업을 설명하는 제목</small>
+              </div>
+
+              <div class="mb-3">
+                <label class="form-label fw-bold small">Quest 2 목표 <span class="text-muted fw-normal">(선택)</span></label>
+                <textarea class="form-control" id="q2-goal" rows="3" placeholder="이 단계에서 달성하고자 하는 목표를 작성하세요"></textarea>
+              </div>
+
+              <div class="mb-3">
+                <label class="form-label fw-bold small">프로토타입 제작 상세 내용 <span class="text-danger">*</span></label>
+                <textarea class="form-control font-monospace" id="q2-content" rows="14" placeholder="프로토타입 제작 과정을 상세히 작성하세요:
+
+• 사용한 하드웨어/소프트웨어 스택
+• 회로 설계 및 부품 연결 방법
+• 주요 코드 설명 (알고리즘, 로직)
+• 제작 과정에서 겪은 문제와 해결 방법
+• 프로토타입의 현재 동작 상태
+• 테스트 결과 및 개선 필요 사항"></textarea>
+                <small class="text-muted">최소 100자 이상 · 현재: <span id="content-count">0</span>자</small>
+              </div>
+
+              <div class="mb-3">
+                <label class="form-label fw-bold small">진행 노트 <span class="text-muted fw-normal">(선택)</span></label>
+                <textarea class="form-control" id="q2-notes" rows="3" placeholder="다음 단계를 위한 메모나 개선 계획을 작성하세요"></textarea>
+              </div>
+
+              <!-- 이미지 -->
+              <div>
+                <label class="form-label fw-bold small">프로토타입 이미지/영상 <span class="text-danger">*</span></label>
+                <div class="border rounded-3 p-5 text-center bg-light" style="border-style:dashed!important;cursor:pointer;" onclick="$('#media-upload').click()">
+                  <div class="fs-3 mb-2">🖼️</div>
+                  <div class="small text-muted mb-1">클릭하여 이미지/영상 업로드</div>
+                  <div class="text-muted" style="font-size:.75rem;">PNG, JPG, MP4 (최대 10MB) · 여러 파일 업로드 가능</div>
+                  <input type="file" id="media-upload" class="d-none" accept="image/*,video/*" multiple>
+                </div>
+                <small class="text-muted d-block mt-1">💡 프로토타입이 동작하는 사진이나 영상을 꼭 첨부해주세요</small>
+                <div id="media-preview" class="d-flex flex-wrap gap-2 mt-2"></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 기술 자료 링크 -->
+          <div class="card mb-4">
+            <div class="card-body">
+              <div class="d-flex align-items-center gap-3 mb-4 pb-3 border-bottom">
+                <div class="rounded-circle bg-success bg-opacity-10 d-flex align-items-center justify-content-center" style="width:40px;height:40px;font-size:1.1rem;">🔗</div>
+                <div><h6 class="fw-bold mb-0">기술 자료 및 링크</h6><small class="text-muted">관련 링크와 자료를 업데이트하세요</small></div>
+              </div>
+              <div class="mb-3">
+                <label class="form-label small fw-semibold">GitHub 저장소 (선택)</label>
+                <input type="url" class="form-control" id="q2-github" placeholder="https://github.com/username/project">
+              </div>
+              <div class="mb-3">
+                <label class="form-label small fw-semibold">데모 영상 링크 (선택)</label>
+                <input type="url" class="form-control" id="q2-demo" placeholder="https://youtube.com/...">
+              </div>
+              <div class="mb-3">
+                <label class="form-label small fw-semibold">참고 링크 (선택)</label>
+                <input type="url" class="form-control" id="q2-ref" placeholder="관련 자료, 블로그, 논문 등">
+              </div>
+              <div>
+                <label class="form-label small fw-semibold">추가 문서 (선택)</label>
+                <div class="border rounded-3 p-4 text-center bg-light" style="border-style:dashed!important;cursor:pointer;" onclick="$('#doc-upload').click()">
+                  <div>📎 회로도, 코드 파일, BOM 등을 업로드</div>
+                  <small class="text-muted">PDF, DOC, ZIP, CODE (최대 20MB)</small>
+                  <input type="file" id="doc-upload" class="d-none" multiple>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 진행 상태 -->
+          <div class="card mb-4">
+            <div class="card-body">
+              <h6 class="fw-bold mb-3">Quest 2 진행 상태</h6>
+              <div class="d-flex gap-3" id="status-btns">
+                <button class="btn btn-outline-secondary flex-fill py-3" data-status="pending" onclick="setStatus(this)"><div style="font-size:1.1rem;">⏳</div>시작 전</button>
+                <button class="btn btn-warning flex-fill py-3 active" data-status="in-progress" onclick="setStatus(this)"><div style="font-size:1.1rem;">⚡</div>진행중</button>
+                <button class="btn btn-outline-success flex-fill py-3" data-status="completed" onclick="setStatus(this)"><div style="font-size:1.1rem;">✅</div>제출완료</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Actions -->
+          <div class="d-flex gap-3 mb-3">
+            <a href="project-detail.html" class="btn btn-outline-secondary flex-fill py-3">저장하지 않고 나가기</a>
+            <button class="btn btn-primary flex-fill py-3 fw-semibold" id="submit-btn" disabled onclick="submitQuest2()">✅ Quest 2 제출하기</button>
+          </div>
+
+          <!-- Validation -->
+          <div class="alert alert-warning d-flex gap-2 d-none" id="val-msg">
+            <span>⚠️</span>
+            <div>
+              <div class="fw-semibold small">필수 항목을 입력해 주세요:</div>
+              <ul class="small mb-0 mt-1" id="val-list"></ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sidebar -->
+        <div class="col-lg-4">
+          <div class="sticky-top" style="top:80px;">
+
+            <!-- 프로젝트 정보 -->
+            <div class="card mb-3" style="background:linear-gradient(135deg,#eff6ff,#f5f3ff);border-color:#bfdbfe;">
+              <div class="card-body">
+                <h6 class="fw-bold mb-3">💻 프로젝트 정보</h6>
+                <div class="small d-flex flex-column gap-2">
+                  <div><span class="text-muted">프로젝트</span><br><span class="fw-semibold">AI 음성인식 자율주행 로봇</span></div>
+                  <div><span class="text-muted">콘테스트</span><br><span class="fw-semibold">AI 로봇 챌린지 2026</span></div>
+                  <div><span class="text-muted">최종 마감</span><br><span class="fw-semibold">📅 2026년 4월 30일</span></div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Quest 진행 -->
+            <div class="card mb-3">
+              <div class="card-body">
+                <h6 class="fw-bold mb-3">🎯 Quest 진행 상황</h6>
+                <div class="d-flex flex-column gap-3">
+                  <div class="d-flex gap-3">
+                    <div class="rounded-circle bg-success bg-opacity-10 text-success d-flex align-items-center justify-content-center fw-bold flex-shrink-0" style="width:32px;height:32px;">✓</div>
+                    <div class="flex-grow-1">
+                      <div class="small fw-semibold">Quest 1</div>
+                      <div class="text-muted" style="font-size:.75rem;">프로젝트 기획 및 설계</div>
+                      <span class="badge bg-success">완료</span>
+                    </div>
+                  </div>
+                  <div class="d-flex gap-3">
+                    <div class="rounded-circle bg-warning bg-opacity-10 text-warning d-flex align-items-center justify-content-center fw-bold flex-shrink-0" style="width:32px;height:32px;">2</div>
+                    <div class="flex-grow-1">
+                      <div class="small fw-semibold text-primary">Quest 2</div>
+                      <div class="text-muted" style="font-size:.75rem;">프로토타입 제작</div>
+                      <span class="badge bg-warning text-dark">진행중</span>
+                    </div>
+                  </div>
+                  <div class="d-flex gap-3">
+                    <div class="rounded-circle bg-light text-muted d-flex align-items-center justify-content-center fw-bold flex-shrink-0" style="width:32px;height:32px;">3</div>
+                    <div class="flex-grow-1">
+                      <div class="small text-muted">Quest 3</div>
+                      <div class="text-muted" style="font-size:.75rem;">최종 프로젝트 완성</div>
+                      <span class="badge bg-light text-muted border">대기중</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Tips -->
+            <div class="card mb-3 border-primary" style="background:#eff6ff;">
+              <div class="card-body">
+                <h6 class="fw-bold mb-2">✨ 작성 팁</h6>
+                <ul class="list-unstyled small text-muted mb-0 d-flex flex-column gap-1">
+                  <li>• 코드는 ```언어 형식으로 작성</li>
+                  <li>• 회로 연결은 핀 번호 명시</li>
+                  <li>• 문제 해결 과정도 기록</li>
+                  <li>• 사진은 고해상도로 업로드</li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- 커뮤니티 -->
+            <div class="card" style="background:linear-gradient(135deg,#f5f3ff,#fdf2f8);border-color:#d8b4fe;">
+              <div class="card-body">
+                <h6 class="fw-bold mb-1">👥 커뮤니티 도움받기</h6>
+                <p class="small text-muted mb-3">막히는 부분이 있거나 도움이 필요하신가요?</p>
+                <div class="d-flex flex-column gap-2">
+                  <button onclick="openQuickAction('question')" class="btn btn-white border fw-semibold btn-sm text-start">❓ 질문하기</button>
+                  <button onclick="openQuickAction('progress')" class="btn btn-outline-secondary btn-sm text-start">🚀 진행 공유</button>
+                  <button onclick="openQuickAction('teammate')" class="btn btn-outline-secondary btn-sm text-start">👥 팀원 찾기</button>
+                  <button onclick="openQuickAction('resource')" class="btn btn-outline-secondary btn-sm text-start">📁 자료 공유</button>
+                </div>
+                <small class="text-muted mt-2 d-block">✅ 현재 프로젝트와 자동으로 연결됩니다</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+  <div id="footer-placeholder"></div>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc4s9bIOgUxi8T/jzmX5jFRcDBz3XBrTk4ycr3n8UPn" crossorigin="anonymous"></script>
+  <script src="assets/js/main.js"></script>
+
+  <!-- 커뮤니티 빠른 액션 패널 -->
+  <div id="quickActionBackdrop" class="cpanel-backdrop" onclick="hideQuickAction()"></div>
+  <div id="quickActionOffcanvas" class="cpanel" style="width:min(520px,100vw);">
+    <div class="p-4 border-bottom d-flex justify-content-between align-items-start flex-shrink-0">
+      <div>
+        <h5 class="fw-bold mb-1" id="qa-title"></h5>
+        <p class="text-muted small mb-0" id="qa-subtitle"></p>
+      </div>
+      <button onclick="hideQuickAction()" class="btn-close ms-3 mt-1"></button>
+    </div>
+    <div class="cpanel-body p-4" id="qa-body"></div>
+    <div class="p-4 border-top flex-shrink-0 d-flex gap-2">
+      <button onclick="hideQuickAction()" class="btn btn-outline-secondary flex-fill">취소</button>
+      <button id="qa-submit-btn" class="btn flex-fill fw-semibold text-white" style="background:#2563eb;border:none;" onclick="submitQuickAction()">등록하기</button>
+    </div>
+  </div>
+
+  <script>
+    $(function(){ Auth.requirePage(); });
+
+    $('#q2-content').on('input', function(){
+      var len = $(this).val().length;
+      $('#content-count').text(len);
+      checkValidity();
+    });
+
+    function checkValidity(){
+      var valid = $('#q2-content').val().length >= 100;
+      $('#submit-btn').prop('disabled', !valid);
+    }
+
+    window.setStatus = function(btn){
+      $('#status-btns .btn').removeClass('btn-warning btn-success active').addClass('btn-outline-secondary');
+      var s = $(btn).data('status');
+      if(s === 'in-progress') $(btn).removeClass('btn-outline-secondary').addClass('btn-warning active');
+      else if(s === 'completed') $(btn).removeClass('btn-outline-secondary').addClass('btn-success active');
+      else $(btn).removeClass('btn-outline-secondary').addClass('btn-secondary active');
+    };
+
+    window.submitQuest2 = function(){
+      var content = $('#q2-content').val().trim();
+      var errors = [];
+      if(content.length < 100) errors.push('프로토타입 제작 상세 내용 (최소 100자)');
+      if(errors.length){
+        var $v = $('#val-msg'); $v.removeClass('d-none');
+        $('#val-list').empty();
+        errors.forEach(function(e){ $('#val-list').append('<li>'+e+'</li>'); });
+      } else {
+        if(confirm('Quest 2를 제출하시겠습니까? 제출 후 Quest 3가 활성화됩니다.')) {
+          window.location.href = 'quest3.html';
+        }
+      }
+    };
+
+    $('#media-upload').on('change', function(){
+      var files = Array.from(this.files).slice(0,5);
+      $('#media-preview').empty();
+      files.forEach(function(f){
+        if(f.type.startsWith('image/')){
+          var r = new FileReader();
+          r.onload = function(e){ $('#media-preview').append('<img src="'+e.target.result+'" class="rounded" style="height:80px;width:80px;object-fit:cover;">'); };
+          r.readAsDataURL(f);
+        } else {
+          $('#media-preview').append('<div class="badge bg-secondary px-3 py-2">🎬 '+f.name+'</div>');
+        }
+      });
+    });
+
+    /* ── 커뮤니티 빠른 액션 패널 ─────────────────────────── */
+    function projectSelectHtml(accentColor, iconCls) {
+      return '<div class="rounded-3 p-4 mb-3" style="background:linear-gradient(135deg,#eff6ff,#f5f3ff);border:1px solid #bfdbfe;">'
+        +'<div class="d-flex gap-3 align-items-start">'
+        +'<div class="rounded-2 d-flex align-items-center justify-content-center text-white flex-shrink-0 fs-6" style="width:40px;height:40px;background:'+accentColor+';"><i class="'+iconCls+'"></i></div>'
+        +'<div><h6 class="fw-bold mb-1">연결된 프로젝트</h6><p class="text-muted small mb-0">현재 Quest 프로젝트와 자동으로 연결됩니다</p></div>'
+        +'</div></div>';
+    }
+    function qaField(label, type, id, placeholder, required, hint) {
+      var req = required ? '<span class="text-danger ms-1">*</span>' : '';
+      var inp = type === 'textarea'
+        ? '<textarea class="form-control" id="'+id+'" rows="4" placeholder="'+placeholder+'"></textarea>'
+        : '<input type="'+type+'" class="form-control" id="'+id+'" placeholder="'+placeholder+'">';
+      return '<div class="mb-3"><label class="form-label fw-semibold small">'+label+req+'</label>'+inp+(hint?'<small class="text-muted">'+hint+'</small>':'')+'</div>';
+    }
+    function qaTypeGrid(types, selected) {
+      var html = '<div class="row g-2 mb-3">';
+      types.forEach(function(t){
+        var sel = t.value === selected ? ' selected' : '';
+        html += '<div class="col-6"><div class="qa-type-btn text-center'+sel+'" onclick="selectQaType(this,\''+t.value+'\')">'
+          +'<div class="fs-4 mb-1">'+t.icon+'</div>'
+          +'<div class="fw-semibold small">'+t.label+'</div>'
+          +'<div class="text-muted" style="font-size:.75rem;">'+t.desc+'</div></div></div>';
+      });
+      return html + '</div>';
+    }
+    function qaRoleGrid(roles) {
+      return '<div class="d-flex flex-wrap gap-2 mb-3">'+roles.map(function(r){ return '<span class="qa-role-btn" onclick="toggleRole(this)">'+r+'</span>'; }).join('')+'</div>';
+    }
+    function qaAttachBtns() {
+      return '<div class="d-flex gap-2 flex-wrap"><button class="btn btn-outline-secondary btn-sm"><i class="bi bi-image me-1"></i>이미지</button>'
+        +'<button class="btn btn-outline-secondary btn-sm"><i class="bi bi-link-45deg me-1"></i>링크</button>'
+        +'<button class="btn btn-outline-secondary btn-sm"><i class="bi bi-file-earmark me-1"></i>파일</button></div>';
+    }
+    function qaGuideBox(color, items) {
+      return '<div class="rounded-3 p-3 mb-3" style="background:'+color+';border:1px solid #e9d5ff;">'
+        +'<div class="small fw-semibold mb-2">✨ 작성 가이드</div>'
+        +'<ul class="list-unstyled small text-muted mb-0">'+items.map(function(i){ return '<li>'+i+'</li>'; }).join('')+'</ul></div>';
+    }
+    window.selectQaType = function(el, val) {
+      $(el).closest('.row').find('.qa-type-btn').removeClass('selected');
+      $(el).addClass('selected');
+    };
+    window.toggleRole = function(el) { $(el).toggleClass('selected'); };
+
+    var qaConfigs = {
+      question: {
+        title: '❓ 질문하기',
+        subtitle: '프로젝트 진행 중 막히는 부분을 커뮤니티에 질문하세요',
+        submitLabel: '질문 등록하기', submitBg: '#2563eb',
+        body: function() {
+          return projectSelectHtml('#2563eb','bi bi-question-circle')
+            + qaGuideBox('#faf5ff', ['• 상황을 구체적으로 설명하면 빠른 답변을 받을 수 있어요','• 시도한 방법과 에러 메시지를 포함해주세요','• 관련 코드나 사진을 첨부하면 더 좋아요'])
+            + qaField('제목','text','qa-q-title','예: 라즈베리파이 GPIO 핀 연결 문제',true)
+            + '<div class="mb-3"><label class="form-label fw-semibold small">질문 유형 <span class="text-danger">*</span></label>'
+            + qaTypeGrid([{value:'hw',icon:'🔧',label:'하드웨어',desc:'회로·부품'},{value:'sw',icon:'💻',label:'소프트웨어',desc:'코드·알고리즘'},{value:'design',icon:'🎨',label:'설계',desc:'아이디어·설계'},{value:'other',icon:'💬',label:'기타',desc:'기타 질문'}], 'hw') + '</div>'
+            + qaField('질문 내용','textarea','qa-q-content','현재 상황과 문제를 자세히 설명해주세요...',true)
+            + '<div class="mb-3"><label class="form-label fw-semibold small">첨부 자료</label>' + qaAttachBtns() + '</div>';
+        }
+      },
+      progress: {
+        title: '🚀 진행 공유',
+        subtitle: '프로토타입 제작 진행 상황을 커뮤니티와 공유하세요',
+        submitLabel: '공유하기', submitBg: '#10b981',
+        body: function() {
+          return projectSelectHtml('#10b981','bi bi-rocket')
+            + qaGuideBox('#f0fdf4', ['• 진행 과정의 사진이나 영상을 첨부해주세요','• 어떤 부분을 구현했는지 구체적으로 작성해주세요','• 다음 단계 계획도 공유해보세요'])
+            + qaField('제목','text','qa-p-title','예: Quest 2 프로토타입 제작 중!',true)
+            + qaField('진행 내용','textarea','qa-p-content','어떤 진행이 있었는지 공유해주세요...',true)
+            + '<div class="mb-3"><label class="form-label fw-semibold small">첨부 자료</label>' + qaAttachBtns() + '</div>';
+        }
+      },
+      teammate: {
+        title: '👥 팀원 찾기',
+        subtitle: '함께 프로젝트를 진행할 팀원을 모집하세요',
+        submitLabel: '모집 공고 올리기', submitBg: '#8b5cf6',
+        body: function() {
+          return projectSelectHtml('#8b5cf6','bi bi-people')
+            + qaGuideBox('#faf5ff', ['• 필요한 역할을 구체적으로 명시해주세요','• 프로젝트 진행 방식과 일정을 공유해주세요','• 연락 방법을 명확히 적어주세요'])
+            + qaField('모집 제목','text','qa-t-title','예: AI 로봇 프로젝트 팀원 모집',true)
+            + '<div class="mb-3"><label class="form-label fw-semibold small">필요한 역할</label>'
+            + qaRoleGrid(['하드웨어 엔지니어','소프트웨어 개발자','AI/ML 엔지니어','디자이너','기획자','기타']) + '</div>'
+            + qaField('모집 내용','textarea','qa-t-content','어떤 팀원을 찾고 있는지 자세히 설명해주세요...',true);
+        }
+      },
+      resource: {
+        title: '📁 자료 공유',
+        subtitle: '프로젝트에 도움이 되는 자료를 커뮤니티와 공유하세요',
+        submitLabel: '자료 공유하기', submitBg: '#f59e0b',
+        body: function() {
+          return projectSelectHtml('#f59e0b','bi bi-folder')
+            + qaGuideBox('#fffbeb', ['• 자료의 출처를 명확히 표기해주세요','• 어떤 상황에서 도움이 되는 자료인지 설명해주세요','• 직접 만든 자료라면 CC 라이선스를 명시해주세요'])
+            + qaField('자료 제목','text','qa-r-title','예: 라즈베리파이 GPIO 핀맵 정리',true)
+            + qaField('자료 설명','textarea','qa-r-content','어떤 자료인지 설명해주세요...',true)
+            + qaField('링크 (선택)','url','qa-r-link','https://...',false)
+            + '<div class="mb-3"><label class="form-label fw-semibold small">파일 첨부</label>' + qaAttachBtns() + '</div>';
+        }
+      }
+    };
+
+    window.openQuickAction = function(type) {
+      Auth.requireLogin(function(){
+        var cfg = qaConfigs[type];
+        $('#qa-title').text(cfg.title);
+        $('#qa-subtitle').text(cfg.subtitle);
+        $('#qa-body').html(cfg.body());
+        $('#qa-submit-btn').text(cfg.submitLabel).css({'background':cfg.submitBg||'#2563eb','color':'#fff','border':'none'});
+        document.getElementById('quickActionOffcanvas').classList.add('cpanel-show');
+        document.getElementById('quickActionBackdrop').classList.add('cpanel-show');
+        document.body.style.overflow = 'hidden';
+      });
+    };
+    window.hideQuickAction = function() {
+      document.getElementById('quickActionOffcanvas').classList.remove('cpanel-show');
+      document.getElementById('quickActionBackdrop').classList.remove('cpanel-show');
+      document.body.style.overflow = '';
+    };
+    window.submitQuickAction = function() {
+      alert('등록되었습니다!');
+      hideQuickAction();
+    };
+  </script>
+</body>
+</html>

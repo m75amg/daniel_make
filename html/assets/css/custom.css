@@ -1,0 +1,55 @@
+/* ============================================================
+   Make 2.0 — Custom styles (Bootstrap override + utilities)
+   ============================================================ */
+
+/* ── Variables ─────────────────────────────────────────────── */
+:root {
+  --e4ds-orange : #f97316;
+  --e4ds-dark   : #1a1a1a;
+  --e4ds-blue   : #2563eb;
+  --header-h    : 100px; /* topbar(36) + main(64) */
+}
+
+/* ── Base ───────────────────────────────────────────────────── */
+body {
+  font-family: 'Noto Sans KR', 'Apple SD Gothic Neo', sans-serif;
+  color: #1a1a1a;
+}
+
+/* ── Header ─────────────────────────────────────────────────── */
+#platform-header {
+  top: 0;
+  z-index: 1030;
+}
+
+.header-toplink:hover {
+  color: #111 !important;
+}
+
+#platform-header .navbar-brand .text-warning {
+  color: var(--e4ds-orange) !important;
+}
+
+/* Active nav link underline */
+#platform-header .nav-link.active {
+  color: var(--e4ds-blue) !important;
+  font-weight: 600;
+}
+
+/* Dropdown hover open on desktop */
+@media (min-width: 992px) {
+  #platform-header .dropdown:hover > .dropdown-menu {
+    display: block;
+    margin-top: 0;
+  }
+}
+
+/* ── Footer ─────────────────────────────────────────────────── */
+.footer-link:hover {
+  color: #fff !important;
+}
+
+/* ── Utilities ──────────────────────────────────────────────── */
+.gap-2 { gap: 0.5rem !important; }
+.gap-3 { gap: 0.75rem !important; }
+.gap-4 { gap: 1rem !important; }

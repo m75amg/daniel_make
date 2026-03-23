@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>콘테스트 — e4ds make</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/custom.css">
+  <style>
+    .contest-card { cursor:pointer; transition: transform .2s, box-shadow .2s; }
+    .contest-card:hover { transform:translateY(-4px); box-shadow:0 .75rem 1.5rem rgba(0,0,0,.12)!important; }
+    .contest-thumb { height:180px; object-fit:cover; }
+    .tab-underline { border:none; border-bottom:2px solid transparent; background:transparent; padding:.75rem .5rem; font-weight:600; }
+    .tab-underline.active { border-color:#2563eb; color:#2563eb; }
+  </style>
+</head>
+<body class="bg-light">
+
+  <div id="header-placeholder"></div>
+
+  <main>
+    <!-- Breadcrumb -->
+    <div class="bg-white border-bottom">
+      <div class="container-xl py-3">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb mb-0 small">
+            <li class="breadcrumb-item"><a href="index.html" class="text-decoration-none">홈</a></li>
+            <li class="breadcrumb-item active">콘테스트</li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+
+    <!-- Hero -->
+    <section style="background:linear-gradient(135deg,#2563eb 0%,#7c3aed 60%,#ec4899 100%)" class="text-white py-5">
+      <div class="container-xl py-3 text-center">
+        <span class="badge bg-white bg-opacity-25 rounded-pill px-3 py-2 mb-4 fs-6">🏆 Make 2.0 콘테스트</span>
+        <h1 class="fw-bold display-5 mb-3">창의력을 발휘할 기회</h1>
+        <p class="fs-5 text-white-50 mb-5">다양한 주제의 공모전에 참가하고 여러분의 아이디어를 현실로 만드세요</p>
+        <div class="row g-3 justify-content-center max-w-xl mx-auto">
+          <div class="col-6 col-md-3"><div class="bg-white bg-opacity-25 rounded-3 p-3"><div class="fw-bold fs-3">24</div><small>진행중인 대회</small></div></div>
+          <div class="col-6 col-md-3"><div class="bg-white bg-opacity-25 rounded-3 p-3"><div class="fw-bold fs-3">1,234</div><small>참가자</small></div></div>
+          <div class="col-6 col-md-3"><div class="bg-white bg-opacity-25 rounded-3 p-3"><div class="fw-bold fs-3">5,670</div><small>제출된 프로젝트</small></div></div>
+          <div class="col-6 col-md-3"><div class="bg-white bg-opacity-25 rounded-3 p-3"><div class="fw-bold fs-3">2.3억</div><small>총 상금</small></div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tabs -->
+    <div class="bg-white border-bottom sticky-top shadow-sm" style="top:100px;z-index:100">
+      <div class="container-xl">
+        <div class="d-flex gap-3">
+          <button class="tab-underline active" data-tab="active">📈 진행중 <span class="badge bg-success-subtle text-success ms-1" id="cnt-active">4</span></button>
+          <button class="tab-underline" data-tab="upcoming">📅 예정 <span class="badge bg-primary-subtle text-primary ms-1" id="cnt-upcoming">2</span></button>
+          <button class="tab-underline" data-tab="ended">🎯 종료 <span class="badge bg-secondary-subtle text-secondary ms-1" id="cnt-ended">2</span></button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Grid -->
+    <div class="container-xl py-5">
+      <div class="mb-4">
+        <h4 class="fw-bold mb-1" id="tab-title">진행중인 콘테스트</h4>
+        <p class="text-muted small" id="tab-count"></p>
+      </div>
+      <div class="row g-4" id="contest-grid"></div>
+      <div class="text-center mt-5" id="contest-load-more-wrap">
+        <button class="btn btn-outline-primary btn-lg px-5" id="contest-load-more">더 많은 콘테스트 보기</button>
+        <p class="text-muted small mt-2" id="contest-load-count"></p>
+      </div>
+    </div>
+  </main>
+
+  <div id="footer-placeholder"></div>
+
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc4s9bIOgUxi8T/jzmX5jFRcDBz3XBrTk4ycr3n8UPn" crossorigin="anonymous"></script>
+  <script src="assets/js/main.js"></script>
+  <script>
+  var contests = [
+    { id:'ai-robot-2026', title:'AI 로봇공학 챌린지 2026', desc:'인공지능과 로봇공학을 결합한 혁신적인 프로젝트를 만들어보세요', prize:'총 상금 1,000만원', participants:234, daysLeft:15, deadline:'2026년 3월 31일', difficulty:'중급', category:'AI/로봇', status:'active', img:'https://images.unsplash.com/photo-1581092333203-42374bcf7d89?w=600' },
+    { id:'iot-smart-home', title:'스마트홈 IoT 콘테스트', desc:'일상을 더 편리하게 만드는 스마트홈 IoT 솔루션 개발', prize:'총 상금 800만원', participants:189, daysLeft:22, deadline:'2026년 4월 7일', difficulty:'초급', category:'IoT', status:'active', img:'https://images.unsplash.com/photo-1753039495488-434a2fe53e41?w=600' },
+    { id:'renewable-energy', title:'지속가능 에너지 챌린지', desc:'재생에너지를 활용한 창의적인 프로젝트로 미래를 만드세요', prize:'총 상금 1,200만원', participants:156, daysLeft:30, deadline:'2026년 4월 15일', difficulty:'고급', category:'에너지', status:'active', img:'https://images.unsplash.com/photo-1628206554160-63e8c921e398?w=600' },
+    { id:'3d-printing-innovation', title:'3D 프린팅 혁신 대회', desc:'3D 프린팅 기술로 세상을 바꿀 혁신적인 제품 설계', prize:'총 상금 600만원', participants:98, daysLeft:8, deadline:'2026년 3월 23일', difficulty:'중급', category:'3D프린팅', status:'active', img:'https://images.unsplash.com/photo-1703221561813-cdaa308cf9e7?w=600' },
+    { id:'wearable-tech-future', title:'웨어러블 기술의 미래', desc:'차세대 웨어러블 디바이스 아이디어 공모전', prize:'총 상금 500만원', participants:45, daysLeft:45, deadline:'2026년 4월 30일', difficulty:'초급', category:'웨어러블', status:'upcoming', img:'https://images.unsplash.com/photo-1758525747606-bd5d801ca87b?w=600' },
+    { id:'drone-innovation', title:'드론 혁신 챌린지', desc:'드론 기술을 활용한 실용적이고 창의적인 솔루션', prize:'총 상금 900만원', participants:67, daysLeft:60, deadline:'2026년 5월 15일', difficulty:'중급', category:'드론', status:'upcoming', img:'https://images.unsplash.com/photo-1473968512647-3e447244af8f?w=600' },
+    { id:'arduino-beginner-2025', title:'아두이노 입문자 대회 2025', desc:'아두이노로 만드는 첫 프로젝트 경진대회', prize:'총 상금 300만원', participants:342, daysLeft:0, deadline:'2025년 12월 31일', difficulty:'초급', category:'아두이노', status:'ended', img:'https://images.unsplash.com/photo-1553408226-42ecf81a214c?w=600' },
+    { id:'ai-vision-2025', title:'AI 비전 프로젝트 2025', desc:'컴퓨터 비전을 활용한 실생활 문제 해결', prize:'총 상금 700만원', participants:278, daysLeft:0, deadline:'2026년 1월 15일', difficulty:'고급', category:'AI', status:'ended', img:'https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=600' }
+  ];
+
+  var PAGE=6, visible=6, currentTab='active';
+
+  function diffBadge(d){ var m={'초급':'success','중급':'warning','고급':'danger'}; return '<span class="badge bg-'+( m[d]||'secondary')+'-subtle text-'+(m[d]||'secondary')+'">'+d+'</span>'; }
+  function statusBadge(s){ var m={active:'success',upcoming:'primary',ended:'secondary'}; var l={active:'진행중',upcoming:'예정',ended:'종료'}; return '<span class="badge bg-'+m[s]+'">'+l[s]+'</span>'; }
+
+  function renderContest(c){
+    var href = c.status==='ended' ? 'contest-result.html?id='+c.id : 'contest-detail.html?id='+c.id;
+    var btnCls = c.status==='ended' ? 'btn-warning' : 'btn-primary';
+    var btnTxt = c.status==='ended' ? '🏆 수상자 결과 보기' : '자세히 보기';
+    var daysHtml = c.status==='active' ? '<span class="badge bg-danger position-absolute bottom-0 end-0 m-2">D-'+c.daysLeft+'</span>' : '';
+    return '<div class="col-md-6 col-lg-4">'
+      +'<div class="card h-100 border-0 shadow-sm contest-card" onclick="window.location=\''+href+'\'">'
+      +'<div class="position-relative overflow-hidden" style="height:180px">'
+      +'<img src="'+c.img+'" alt="" class="w-100 h-100 object-fit-cover">'
+      +'<div class="position-absolute top-0 start-0 m-2">'+statusBadge(c.status)+'</div>'
+      +'<div class="position-absolute top-0 end-0 m-2">'+diffBadge(c.difficulty)+'</div>'
+      +daysHtml+'</div>'
+      +'<div class="card-body">'
+      +'<span class="badge bg-light text-dark mb-1">'+c.category+'</span>'
+      +'<h6 class="fw-bold mt-1 mb-1">'+c.title+'</h6>'
+      +'<p class="text-muted small mb-3" style="display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden">'+c.desc+'</p>'
+      +'<div class="small text-muted mb-1">🎁 <span class="fw-semibold text-warning-emphasis">'+c.prize+'</span></div>'
+      +'<div class="small text-muted mb-1">👥 '+c.participants+'명 참가중</div>'
+      +'<div class="small text-muted">📅 마감: '+c.deadline+'</div>'
+      +'</div>'
+      +'<div class="card-footer bg-transparent border-top-0 px-3 pb-3">'
+      +'<a href="'+href+'" class="btn '+btnCls+' btn-sm w-100" onclick="event.stopPropagation()">'+btnTxt+'</a>'
+      +'</div></div></div>';
+  }
+
+  function getList(){ return contests.filter(function(c){ return c.status===currentTab; }); }
+
+  function render(){
+    var list = getList();
+    var shown = list.slice(0, visible);
+    var html = shown.map(renderContest).join('');
+    if(!html) html='<div class="col-12 text-center py-5 text-muted"><p>해당하는 콘테스트가 없습니다.</p></div>';
+    $('#contest-grid').html(html);
+    $('#tab-count').text(list.length+'개의 콘테스트');
+    if(visible>=list.length){ $('#contest-load-more-wrap').hide(); }
+    else { $('#contest-load-more-wrap').show(); $('#contest-load-count').text(visible+'개 / 총 '+list.length+'개'); }
+  }
+
+  $(function(){
+    var titles={active:'진행중인 콘테스트',upcoming:'곧 시작될 콘테스트',ended:'종료된 콘테스트'};
+    render();
+    $('.tab-underline').on('click', function(){
+      $('.tab-underline').removeClass('active');
+      $(this).addClass('active');
+      currentTab = $(this).data('tab');
+      visible = PAGE;
+      $('#tab-title').text(titles[currentTab]);
+      render();
+    });
+    $('#contest-load-more').on('click', function(){ visible+=PAGE; render(); });
+  });
+  </script>
+</body>
+</html>
