@@ -1,0 +1,499 @@
+/* ══════════════════════════════════════════════════════
+   INDEX PAGE STYLES - NESTED SCSS
+   ══════════════════════════════════════════════════════ */
+
+// ── Modal Overlay ────────────────────────────────────
+#modal-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 1040;
+  background: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  transition: opacity 0.2s;
+
+  &.show {
+    opacity: 1 !important;
+  }
+}
+
+// ── Project Creation Modal ──────────────────────────
+#projectCreationModal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 1050;
+  overflow-y: auto;
+  opacity: 0;
+  transition: opacity 0.2s;
+
+  &.show {
+    opacity: 1 !important;
+  }
+
+  // Modal center wrapper
+  .modal-center-wrapper {
+    min-height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+  }
+
+  // Modal content box
+  .modal-content-box {
+    background: #fff;
+    border-radius: 1rem;
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.3);
+    width: 100%;
+    max-width: 800px;
+    overflow: hidden;
+  }
+
+  // Modal header with gradient
+  .modal-gradient-header-wrapper {
+    position: relative;
+
+    .header-text-center {
+      text-align: center;
+      padding-bottom: 0.5rem;
+
+      .project-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.4rem;
+        background: rgba(255, 255, 255, 0.2);
+        border-radius: 9999px;
+        padding: 0.3rem 0.9rem;
+        font-size: 0.85rem;
+        font-weight: 600;
+        margin-bottom: 0.75rem;
+      }
+
+      .modal-title {
+        font-size: 1.6rem;
+        margin-bottom: 0.25rem;
+      }
+
+      .modal-subtitle {
+        opacity: 0.85;
+        font-size: 0.95rem;
+      }
+    }
+
+    .modal-close-btn {
+      position: absolute;
+      top: 0.75rem;
+      right: 0.75rem;
+      background: rgba(255, 255, 255, 0.2);
+      border: none;
+      border-radius: 0.5rem;
+      color: #fff;
+      width: 36px;
+      height: 36px;
+      font-size: 1.1rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+
+  // Modal body
+  .modal-body-wrapper {
+    padding: 2rem;
+
+    .modal-row {
+      margin-bottom: 1rem;
+
+      // Decorative circles
+      .decorative-circle {
+        position: absolute;
+        top: 0;
+        right: 0;
+        border-radius: 50%;
+        transform: translate(40%, -40%);
+        opacity: 0.5;
+
+        &.blue {
+          width: 8rem;
+          height: 8rem;
+          background: #bfdbfe;
+        }
+
+        &.purple {
+          width: 8rem;
+          height: 8rem;
+          background: #ddd6fe;
+        }
+      }
+
+      .modal-col {
+        height: 100%;
+
+        a {
+          display: block;
+          height: 100%;
+          text-decoration: none;
+        }
+      }
+    }
+
+    // Project icon
+    .project-icon {
+      width: 64px;
+      height: 64px;
+      border-radius: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.75rem;
+      margin-bottom: 1rem;
+
+      &.personal {
+        background: linear-gradient(135deg, #3b82f6, #2563eb);
+      }
+
+      &.contest {
+        background: linear-gradient(135deg, #7c3aed, #db2777);
+      }
+    }
+
+    // Project type card content
+    .project-title {
+      font-size: 1.25rem;
+      color: #111827;
+      margin-bottom: 0.25rem;
+    }
+
+    .project-description {
+      color: #6b7280;
+      font-size: 0.95rem;
+      margin-bottom: 0.75rem;
+    }
+
+    // Checklist items
+    .checklist-items {
+      color: #374151;
+      margin-bottom: 1rem;
+
+      li {
+        margin-bottom: 0.5rem;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+
+        span {
+          font-size: 0.85rem;
+
+          &.personal-check {
+            color: #2563eb;
+          }
+
+          &.contest-check {
+            color: #7c3aed;
+          }
+        }
+      }
+    }
+
+    // Recommendation box
+    .recommendation-box {
+      border-radius: 0.5rem;
+      padding: 0.75rem;
+      margin-bottom: 1rem;
+
+      &.personal {
+        background: #eff6ff;
+
+        .rec-label {
+          font-size: 0.78rem;
+          color: #1e3a8a;
+          margin-bottom: 0.2rem;
+        }
+
+        .rec-text {
+          font-size: 0.78rem;
+          color: #1d4ed8;
+        }
+      }
+
+      &.contest {
+        background: #faf5ff;
+
+        .rec-label {
+          font-size: 0.78rem;
+          color: #3b0764;
+          margin-bottom: 0.2rem;
+        }
+
+        .rec-text {
+          font-size: 0.78rem;
+          color: #7c3aed;
+        }
+      }
+    }
+
+    // Action button
+    .project-action-btn {
+      background: #2563eb;
+      color: #fff;
+      border-radius: 0.5rem;
+      padding: 0.65rem 1rem;
+      text-align: center;
+      font-weight: 600;
+      font-size: 0.9rem;
+
+      &.contest {
+        background: linear-gradient(135deg, #7c3aed, #db2777);
+      }
+    }
+
+    // Info box
+    .modal-info-box {
+      background: #f0fdf4;
+      border: 1px solid #bbf7d0;
+      border-radius: 0.75rem;
+      padding: 1rem 1.25rem;
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+
+      .info-icon {
+        width: 36px;
+        height: 36px;
+        background: #dcfce7;
+        border-radius: 0.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+      }
+
+      .info-content {
+        .info-title {
+          color: #111827;
+          margin-bottom: 0.25rem;
+        }
+
+        .info-text {
+          color: #4b5563;
+          line-height: 1.6;
+        }
+      }
+    }
+
+    // Later button
+    .later-btn {
+      background: none;
+      border: none;
+      color: #6b7280;
+      font-size: 0.9rem;
+      cursor: pointer;
+      text-decoration: underline;
+      margin-top: 1.25rem;
+    }
+  }
+}
+
+// ── Stat Numbers ────────────────────────────────────
+.stat-number-purple {
+  color: #7c3aed;
+}
+
+.stat-number-orange {
+  color: #ea580c;
+}
+
+// ── Featured Card Avatars ───────────────────────────
+.avatar-purple {
+  background: #ddd6fe !important;
+  color: #7c3aed !important;
+  width: 28px !important;
+  height: 28px !important;
+  border-radius: 50% !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  font-size: 0.7rem !important;
+  font-weight: 700 !important;
+}
+
+// ── Featured Project Badge ──────────────────────────
+.featured-badge {
+  background: #ede9fe;
+  color: #7c3aed;
+  font-size: 0.75rem;
+}
+
+// ── Featured Project Title ──────────────────────────
+.featured-title {
+  color: #1e1b4b;
+}
+
+// ── Project Cards in Showcase ───────────────────────
+.project-card-avatar {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.7rem;
+  font-weight: 700;
+
+  &.embedded {
+    background: #ddd6fe;
+    color: #7c3aed;
+  }
+
+  &.iot {
+    background: #fce7f3;
+    color: #db2777;
+  }
+
+  &.ai {
+    background: #d1fae5;
+    color: #065f46;
+  }
+
+  &.robotics {
+    background: #e0e7ff;
+    color: #4338ca;
+  }
+
+  &.biotech {
+    background: #fef9c3;
+    color: #854d0e;
+  }
+
+  &.security {
+    background: #fce7f3;
+    color: #be185d;
+  }
+}
+
+// ── Project Category Badges ────────────────────────
+.project-badge {
+  font-size: 0.72rem;
+
+  &.embedded {
+    background: #dbeafe;
+    color: #1d4ed8;
+  }
+
+  &.iot {
+    background: #dcfce7;
+    color: #166534;
+  }
+
+  &.ai {
+    background: #fef3c7;
+    color: #92400e;
+  }
+
+  &.robotics {
+    background: #fce7f3;
+    color: #be185d;
+  }
+
+  &.medical {
+    background: #dbeafe;
+    color: #1d4ed8;
+  }
+
+  &.security {
+    background: #fee2e2;
+    color: #991b1b;
+  }
+}
+
+// ── Challenge Progress Bar ──────────────────────────
+.progress-bar-purple {
+  width: 48%;
+  background: #7c3aed;
+  height: 6px;
+}
+
+.challenge-btn-submit {
+  background: #7c3aed;
+  color: #fff;
+}
+
+// ── Event Tags ──────────────────────────────────────
+.event-tag {
+  font-size: 0.72rem;
+  border: 1px solid #e5e7eb;
+  border-radius: 9999px;
+  padding: 0.15rem 0.55rem;
+  color: #6b7280;
+}
+
+.event-type-badge {
+  opacity: 0.85;
+}
+
+// ── Popularity Badge ────────────────────────────────
+.popularity-badge {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  background: linear-gradient(135deg, #fbbf24, #f97316);
+  color: #fff;
+  border-radius: 9999px;
+  padding: 0.2rem 0.6rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+}
+
+// ── Community Card Avatars ──────────────────────────
+.community-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.72rem;
+  font-weight: 700;
+  flex-shrink: 0;
+
+  &.question {
+    background: #ede9fe;
+    color: #7c3aed;
+  }
+
+  &.progress {
+    background: #dcfce7;
+    color: #166534;
+  }
+
+  &.teammate {
+    background: #fef3c7;
+    color: #92400e;
+  }
+
+  &.resource {
+    background: #dbeafe;
+    color: #1d4ed8;
+  }
+
+  &.teammate-variant {
+    background: #dcfce7;
+    color: #166534;
+  }
+
+  &.resource-variant {
+    background: #fef9c3;
+    color: #854d0e;
+  }
+}
+
+// ── List Item Checkmarks ────────────────────────────
+.checkmark-personal {
+  color: #2563eb;
+}
+
+.checkmark-contest {
+  color: #7c3aed;
+}

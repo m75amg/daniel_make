@@ -1,0 +1,243 @@
+:root {
+    --color-0: #000000;
+    --color-10: #151515;
+    --color-20: #242424;
+    --color-30: #323232;
+    --color-40: #434343;
+    --color-50: #6b7280;
+    --color-60: #818181;
+    --color-70: #c0c0c0;
+    --color-80: #d9d9d9;
+    --color-90: #ededed;
+    --color-95: #f5f5f5;
+    --color-100: #ffffff;
+}
+
+
+:root {
+  /* 공통 */
+  --btn-radius: 12px;
+  --btn-padding-y: 12px;
+  --btn-padding-x: 25px;
+  --btn-border-width: 1px;
+  --btn-transition: all 0.2s ease;
+
+  /* blue */
+  --color-blue: #5b6cff;
+  --color-blue-hover: #243afe;
+
+  /* purple */
+  --color-purple: #924eff;
+  --color-purple-hover: #731bff;
+  --color-purple-light: rgba(146, 78, 255, 0.2);
+
+  /* turquoise */
+  --color-green: #16bc9c;
+  --color-green-hover: #019276;
+
+  /* yellow */
+  --color-yellow: #ffb84d;
+  --color-yellow-hover: #f49403;
+
+  /* red */
+  --color-red: #fe5a5a;
+  --color-red-hover: #f21f1f;
+
+  /* 공통 텍스트 */
+  --text-white: #ffffff;
+  --warm-grey-20: #dfcdcd;
+}
+
+/* 기본 버튼 */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--btn-padding-y) var(--btn-padding-x);
+  border-radius: var(--btn-radius);
+  border: var(--btn-border-width) solid transparent;
+  font-weight: 500;
+  text-decoration: none;
+  cursor: pointer;
+  transition: var(--btn-transition);
+}
+
+/* 1) 기본(배경 없음) */
+.btn--ghost {
+  background-color: transparent;
+}
+
+/* 2) 색이 채워진 버튼 */
+.btn--fill {
+  color: var(--text-white);
+}
+.btn--fill:hover {
+  color: var(--text-white) !important;
+}
+
+/* 3) 아웃라인 버튼 */
+.btn--outline {
+  background-color: transparent;
+}
+
+.btn--outline:hover {
+  color: var(--text-white) !important;
+}
+
+/* =========================
+   BLUE
+========================= */
+.btn--blue.btn--ghost {
+  color: var(--color-blue);
+}
+
+.btn--blue.btn--ghost:hover {
+  color: var(--text-white);
+}
+
+.btn--blue.btn--fill {
+  background-color: var(--color-blue);
+  border-color: var(--color-blue);
+}
+
+.btn--blue.btn--fill:hover {
+  background-color: var(--color-blue-hover);
+  color: var(--text-white);
+}
+
+.btn--blue.btn--outline {
+  color: var(--color-blue);
+  border-color: var(--color-blue);
+}
+
+.btn--blue.btn--outline:hover {
+  background-color: var(--color-blue) !important;
+  border-color: var(--color-blue) !important;
+  color: var(--color-100);
+}
+
+/* =========================
+   PURPLE
+========================= */
+.btn--purple.btn--ghost {
+  color: var(--color-purple);
+}
+
+.btn--purple.btn--ghost:hover {
+  color: var(--text-white);
+}
+
+.btn--purple.btn--fill {
+  background-color: var(--color-purple);
+  border-color: var(--color-purple);
+}
+
+.btn--purple.btn--fill:hover {
+  background-color: var(--color-purple-hover);
+  border-color: var(--color-purple-hover);
+}
+
+.btn--purple.btn--outline {
+  color: var(--color-purple);
+  border-color: var(--color-purple);
+}
+
+.btn--purple.btn--outline:hover {
+  background-color: var(--color-purple);
+  border-color: var(--color-purple);
+}
+
+/* =========================
+   GREEN
+========================= */
+.btn--green.btn--ghost {
+  color: var(--color-green);
+}
+
+.btn--green.btn--ghost:hover {
+  color: var(--color-green-hover);
+}
+
+.btn--green.btn--fill {
+  background-color: var(--color-green);
+  border-color: var(--color-green);
+}
+
+.btn--green.btn--fill:hover {
+  background-color: var(--color-green-hover);
+  border-color: var(--color-green-hover);
+}
+
+.btn--green.btn--outline {
+  color: var(--color-green);
+  border-color: var(--color-green);
+}
+
+.btn--green.btn--outline:hover {
+  background-color: var(--color-green);
+  border-color: var(--color-green);
+}
+
+/* =========================
+   YELLOW
+========================= */
+.btn--yellow.btn--ghost {
+  color: var(--color-yellow);
+}
+
+.btn--yellow.btn--ghost:hover {
+  color: var(--color-yellow-hover);
+}
+
+.btn--yellow.btn--fill {
+  background-color: var(--color-yellow);
+  border-color: var(--color-yellow);
+  color: #ffffff;
+}
+
+.btn--yellow.btn--fill:hover {
+  background-color: var(--color-yellow-hover);
+  border-color: var(--color-yellow-hover);
+}
+
+.btn--yellow.btn--outline {
+  color: var(--color-yellow);
+  border-color: var(--color-yellow);
+}
+
+.btn--yellow.btn--outline:hover {
+  background-color: var(--color-yellow);
+  border-color: var(--color-yellow);
+  color: #ffffff;
+}
+
+/* =========================
+   RED
+========================= */
+.btn--red.btn--ghost {
+  color: var(--color-red);
+}
+
+.btn--red.btn--ghost:hover {
+  color: var(--color-red-hover);
+}
+
+.btn--red.btn--fill {
+  background-color: var(--color-red);
+  border-color: var(--color-red);
+}
+
+.btn--red.btn--fill:hover {
+  background-color: var(--color-red-hover);
+  border-color: var(--color-red-hover);
+}
+
+.btn--red.btn--outline {
+  color: var(--color-red);
+  border-color: var(--color-red);
+}
+
+.btn--red.btn--outline:hover {
+  background-color: var(--color-red);
+  border-color: var(--color-red);
+}

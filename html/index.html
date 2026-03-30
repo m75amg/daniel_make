@@ -9,122 +9,9 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/custom.css">
-  <style>
-    /* ── Hero ────────────────────────────────────────────── */
-    .hero-section {
-      background: linear-gradient(135deg, #eff6ff 0%, #ffffff 50%, #faf5ff 100%);
-      padding: 5rem 0;
-    }
-    .hero-badge {
-      display: inline-flex; align-items: center; gap: .375rem;
-      background: #dbeafe; color: #1d4ed8;
-      font-size: .8rem; font-weight: 600;
-      padding: .3rem .75rem; border-radius: 9999px;
-    }
-    .hero-title { font-size: 2.5rem; font-weight: 800; line-height: 1.2; color: #111827; }
-    .hero-subtitle { color: #6b7280; font-size: 1.1rem; line-height: 1.7; }
-    .btn-create-project {
-      background: linear-gradient(135deg, #2563eb, #7c3aed);
-      border: none; color: #fff; font-weight: 700;
-      padding: .7rem 1.5rem; border-radius: .5rem;
-    }
-    .btn-create-project:hover { opacity: .9; color: #fff; }
-
-    .stat-item { text-align: center; }
-    .stat-number { font-size: 1.4rem; font-weight: 800; }
-    .stat-label  { font-size: .78rem; color: #9ca3af; }
-
-    /* Featured card in hero */
-    .featured-hero-card {
-      background: linear-gradient(135deg, #ede9fe, #fce7f3);
-      border-radius: 1rem; padding: 1.5rem;
-    }
-    .featured-hero-card .project-thumb {
-      width: 100%; height: 140px; object-fit: cover;
-      border-radius: .75rem; margin-bottom: 1rem;
-    }
-    .author-avatar {
-      width: 28px; height: 28px; border-radius: 50%;
-      display: flex; align-items: center; justify-content: center;
-      font-size: .7rem; font-weight: 700; flex-shrink: 0;
-    }
-
-    /* ── Project Creation Modal ───────────────────────────── */
-    .modal-gradient-header {
-      background: linear-gradient(135deg, #2563eb 0%, #7c3aed 50%, #ec4899 100%);
-      color: #fff; padding: 1.5rem; border-radius: .5rem .5rem 0 0;
-    }
-    .project-type-card {
-      border: 2px solid transparent; border-radius: .75rem;
-      padding: 1.25rem; cursor: pointer; transition: all .2s;
-    }
-    .project-type-card:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,.12); }
-    .project-type-card.personal  { background: linear-gradient(135deg, #eff6ff, #dbeafe); border-color: #bfdbfe; }
-    .project-type-card.contest   { background: linear-gradient(135deg, #faf5ff, #ede9fe); border-color: #ddd6fe; }
-    .modal-info-box {
-      background: #f0fdf4; border: 1px solid #bbf7d0;
-      border-radius: .5rem; padding: .875rem 1rem;
-      font-size: .82rem; color: #166534;
-    }
-
-    /* ── Projects Showcase ───────────────────────────────── */
-    .project-card { border: 0; border-radius: 1rem; overflow: hidden; box-shadow: 0 1px 8px rgba(0,0,0,.08); transition: box-shadow .2s; }
-    .project-card:hover { box-shadow: 0 6px 24px rgba(0,0,0,.14); }
-    .project-card .card-img-top { height: 160px; object-fit: cover; }
-    .project-card .card-body { padding: 1rem; }
-    .project-card .author-avatar { background: #e0e7ff; color: #4338ca; }
-
-    /* ── Active Challenges ───────────────────────────────── */
-    .challenge-card { border: 0; border-radius: 1rem; overflow: hidden; box-shadow: 0 1px 8px rgba(0,0,0,.08); }
-    .challenge-card .ch-header { padding: 1.25rem; color: #fff; }
-    .ch-gradient-1 { background: linear-gradient(135deg, #7c3aed, #ec4899); }
-    .ch-gradient-2 { background: linear-gradient(135deg, #ea580c, #dc2626); }
-    .d-badge {
-      display: inline-block; background: rgba(255,255,255,.25);
-      border-radius: 9999px; padding: .2rem .65rem; font-size: .78rem; font-weight: 700;
-    }
-    .difficulty-badge {
-      font-size: .7rem; font-weight: 600; padding: .2rem .55rem; border-radius: 9999px;
-    }
-    .difficulty-advanced  { background: #fef3c7; color: #92400e; }
-    .difficulty-beginner  { background: #dcfce7; color: #166534; }
-    .ch-tag { background: rgba(255,255,255,.2); font-size: .72rem; border-radius: 9999px; padding: .15rem .5rem; color: #fff; }
-
-    /* ── Community Hub ───────────────────────────────────── */
-    .community-filter-btn {
-      border-radius: 9999px; padding: .3rem .9rem; font-size: .82rem;
-      border: 1px solid #e5e7eb; background: #fff; color: #6b7280; cursor: pointer;
-    }
-    .community-filter-btn.active { background: #2563eb; border-color: #2563eb; color: #fff; }
-    .community-card { border: 1px solid #f3f4f6; border-radius: .75rem; padding: 1rem; background: #fff; transition: box-shadow .2s; }
-    .community-card:hover { box-shadow: 0 4px 12px rgba(0,0,0,.1); }
-    .type-badge { font-size: .7rem; font-weight: 600; padding: .2rem .5rem; border-radius: .25rem; }
-    .type-badge.question  { background: #ede9fe; color: #7c3aed; }
-    .type-badge.progress  { background: #dcfce7; color: #166534; }
-    .type-badge.teammate  { background: #fef3c7; color: #92400e; }
-    .type-badge.resource  { background: #dbeafe; color: #1d4ed8; }
-    .comment-avatar-sm { width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: .72rem; font-weight: 700; flex-shrink: 0; }
-    .project-link-box { background: #f9fafb; border-radius: .5rem; padding: .5rem .75rem; font-size: .78rem; color: #6b7280; margin-top: .5rem; }
-
-    /* ── Events ──────────────────────────────────────────── */
-    .event-card { border: 0; border-radius: 1rem; overflow: hidden; box-shadow: 0 1px 8px rgba(0,0,0,.08); }
-    .event-card .ev-header { padding: 1.25rem; }
-    .ev-gradient-1 { background: linear-gradient(135deg, #0ea5e9, #2563eb); color: #fff; }
-    .ev-gradient-2 { background: linear-gradient(135deg, #7c3aed, #ec4899); color: #fff; }
-    .ev-gradient-3 { background: linear-gradient(135deg, #059669, #0891b2); color: #fff; }
-    .ev-status { font-size: .72rem; font-weight: 600; padding: .2rem .55rem; border-radius: 9999px; }
-    .ev-status.open    { background: #dcfce7; color: #166534; }
-    .ev-status.closing { background: #fef3c7; color: #92400e; }
-    .ev-tag { font-size: .72rem; border: 1px solid #e5e7eb; border-radius: 9999px; padding: .15rem .55rem; color: #6b7280; }
-
-    /* section titles */
-    .section-title { font-size: 1.5rem; font-weight: 800; color: #111827; }
-    .section-sub   { color: #6b7280; font-size: .9rem; }
-
-    /* ── 프로젝트 시작 모달 transition ── */
-    #modal-overlay.show       { opacity: 1 !important; }
-    #projectCreationModal.show { opacity: 1 !important; }
-  </style>
+  <link rel="stylesheet" href="assets/css/output.css">
+  <link rel="stylesheet" href="assets/css/make2026-styles.css">
+  <script src="https://kit.fontawesome.com/38e89eef65.js" crossorigin="anonymous"></script>
 </head>
 <body class="bg-light">
 
@@ -141,61 +28,70 @@
 
           <!-- Left: text + CTA -->
           <div class="col-lg-7">
-            <div class="hero-badge mb-3">
-              <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
-              Maker's Zone
-            </div>
 
             <h1 class="hero-title mb-3">
-              나만의 엔지니어링 프로젝트를<br>만들고 공유하세요
+              나만의 엔지니어링 프로젝트를 만들고 공유하세요
             </h1>
             <p class="hero-subtitle mb-4">
-              엔지니어와 메이커를 위한 프로젝트 플랫폼.<br>
+              엔지니어와 메이커를 위한 프로젝트 플랫폼.
               콘테스트에 참여하고, 커뮤니티와 함께 성장하세요.
             </p>
 
             <div class="d-flex flex-wrap gap-3 mb-5">
-              <button class="btn btn-create-project" onclick="openProjectModal()">
-                🚀 프로젝트 시작하기
+              <button class="btn btn--fill btn--blue" onclick="openProjectModal()">
+                프로젝트 시작하기
               </button>
-              <a href="projects.html" class="btn btn-outline-secondary fw-semibold px-4">프로젝트 둘러보기</a>
-              <a href="contests.html" class="btn btn-outline-secondary fw-semibold px-4">콘테스트 보기</a>
+              <a href="projects.html" class="btn btn--outline btn--blue">프로젝트 둘러보기</a>
+              <a href="contests.html" class="btn btn--fill btn--purple">콘테스트 보기</a>
             </div>
 
             <!-- Stats -->
-            <div class="d-flex gap-4">
+            <div class="d-flex gap-4 index-stats">
               <div class="stat-item">
-                <div class="stat-number text-primary">2,341</div>
-                <div class="stat-label">프로젝트</div>
+                <i class="fa-solid fa-diagram-project stat-icon"></i>
+                <div>
+                  <div class="stat-number">2,341</div>
+                  <div class="stat-label">진행 프로젝트</div>
+                </div>
               </div>
               <div class="stat-item">
-                <div class="stat-number" style="color:#7c3aed;">5,678</div>
-                <div class="stat-label">메이커</div>
+                <i class="fa-solid fa-users stat-icon"></i>
+                <div>
+                  <div class="stat-number">5,678</div>
+                  <div class="stat-label">활동 메이커</div>
+                </div>
               </div>
               <div class="stat-item">
-                <div class="stat-number" style="color:#ea580c;">12</div>
-                <div class="stat-label">진행 중인 콘테스트</div>
+                <i class="fa-solid fa-trophy stat-icon"></i>
+                <div>
+                  <div class="stat-number">12</div>
+                  <div class="stat-label">진행 콘테스트</div>
+                </div>
               </div>
             </div>
           </div>
 
           <!-- Right: Featured Project Card -->
-          <div class="col-lg-5 d-none d-lg-block">
-            <div class="featured-hero-card">
-              <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=600" alt="Featured project" class="project-thumb">
-              <div class="d-flex align-items-center gap-2 mb-1">
-                <span class="badge" style="background:#ede9fe;color:#7c3aed;font-size:.75rem;">로보틱스</span>
-                <span class="badge bg-success-subtle text-success" style="font-size:.75rem;">진행 중</span>
-              </div>
-              <div class="fw-bold mb-1" style="color:#1e1b4b;">자율주행 배달 로봇</div>
-              <div class="small text-muted mb-2">ROS2 기반 실내 자율주행 로봇. LiDAR + 카메라 센서 퓨전으로 장애물을 회피합니다.</div>
-              <div class="d-flex align-items-center gap-2">
-                <div class="author-avatar" style="background:#ddd6fe;color:#7c3aed;width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.7rem;font-weight:700;">김</div>
-                <span class="small text-muted">김메이커</span>
-                <span class="ms-auto small text-muted">❤️ 514</span>
+          <div class="col-lg-5 hero-right">
+              <div class="frame">
+                <div class="frame__bg"></div>
+
+                <div class="card position-relative">
+                  <div class="card__thumb">
+                    <img src="your-image.jpg" alt="자율주행 배송 로봇 프로젝트" />
+                  </div>
+
+                  <div class="card__body">
+                    <div class="card__category">AI &amp; 로봇공학</div>
+                    <h3 class="card__title"><a href="project-detail.html" class="stretched-link text-dark text-decoration-none">자율주행 배송 로봇 프로젝트</a></h3>
+                    <p class="card__desc">
+                      실내외 자율주행이 가능한 배송 로봇을 제작했습니다. 실내외 자율주행이 가능한
+                      배송 로봇을 제작했습니다.
+                    </p>
+                  </div>
+                </div>
               </div>
             </div>
-          </div>
 
         </div>
       </div>
@@ -204,134 +100,74 @@
     <!-- ══════════════════════════════════════════════════════
          MODAL OVERLAY — 배경 dim
          ══════════════════════════════════════════════════════ -->
-    <div id="modal-overlay" style="
-      display:none; position:fixed; inset:0; z-index:1040;
-      background:rgba(0,0,0,.5);
-      opacity:0; transition:opacity .2s;
-    "></div>
+    <div id="modal-overlay"></div>
 
     <!-- ══════════════════════════════════════════════════════
          MODAL — Project Creation
          ══════════════════════════════════════════════════════ -->
-    <div id="projectCreationModal" style="
-      display:none; position:fixed; inset:0; z-index:1050;
-      overflow-y:auto; opacity:0; transition:opacity .2s;
-    ">
+    <div id="projectCreationModal">
       <!-- 중앙 정렬 wrapper -->
-      <div style="
-        min-height:100%; display:flex;
-        align-items:center; justify-content:center; padding:1rem;
-      ">
-        <div style="
-          background:#fff; border-radius:1rem;
-          box-shadow:0 25px 60px rgba(0,0,0,.3);
-          width:100%; max-width:800px;
-          overflow:hidden;
-        " onclick="event.stopPropagation()">
+      <div class="modal-center-wrapper">
+        <div class="modal-content-box" onclick="event.stopPropagation()">
 
           <!-- Gradient Header -->
-          <div class="modal-gradient-header" style="position:relative;">
-            <div style="text-align:center; padding-bottom:.5rem;">
-              <div style="
-                display:inline-flex; align-items:center; gap:.4rem;
-                background:rgba(255,255,255,.2); border-radius:9999px;
-                padding:.3rem .9rem; font-size:.85rem; font-weight:600;
-                margin-bottom:.75rem;
-              ">✨ 새 프로젝트 시작</div>
-              <div class="fw-bold" style="font-size:1.6rem; margin-bottom:.25rem;">어떤 프로젝트를 시작할까요?</div>
-              <div style="opacity:.85; font-size:.95rem;">프로젝트 타입을 선택하고 메이킹을 시작하세요</div>
+          <div class="modal-gradient-header modal-gradient-header-wrapper">
+            <div class="header-text-center">
+              <div class="project-badge">✨ 새 프로젝트 시작</div>
+              <div class="fw-bold modal-title">어떤 프로젝트를 시작할까요?</div>
+              <div class="modal-subtitle">프로젝트 타입을 선택하고 메이킹을 시작하세요</div>
             </div>
-            <button onclick="closeProjectModal()" style="
-              position:absolute; top:.75rem; right:.75rem;
-              background:rgba(255,255,255,.2); border:none; border-radius:.5rem;
-              color:#fff; width:36px; height:36px; font-size:1.1rem;
-              cursor:pointer; display:flex; align-items:center; justify-content:center;
-            ">✕</button>
+            <button onclick="closeProjectModal()" class="modal-close-btn">✕</button>
           </div>
 
           <!-- Body -->
-          <div style="padding:2rem;">
-            <div class="row g-4 mb-4">
+          <div class="modal-body-wrapper">
+            <div class="row g-4 mb-4 modal-row">
 
               <!-- 개인 프로젝트 -->
-              <div class="col-md-6">
-                <a href="create-personal-project.html" class="text-decoration-none" style="display:block; height:100%;">
-                  <div class="project-type-card personal h-100" style="position:relative; overflow:hidden;">
-                    <div style="
-                      position:absolute; top:0; right:0;
-                      width:8rem; height:8rem; background:#bfdbfe;
-                      border-radius:50%; transform:translate(40%,-40%);
-                      opacity:.5;
-                    "></div>
-                    <div style="position:relative;">
-                      <div style="
-                        width:64px; height:64px; border-radius:1rem;
-                        background:linear-gradient(135deg,#3b82f6,#2563eb);
-                        display:flex; align-items:center; justify-content:center;
-                        font-size:1.75rem; margin-bottom:1rem;
-                      ">👤</div>
-                      <div class="fw-bold" style="font-size:1.25rem; color:#111827; margin-bottom:.25rem;">개인 프로젝트</div>
-                      <div class="text-muted small mb-3">자유롭게 나만의 프로젝트를 시작하세요</div>
-                      <ul class="list-unstyled small mb-4" style="color:#374151;">
-                        <li class="mb-2 d-flex align-items-center gap-2"><span style="color:#2563eb;">✔</span> 자유로운 주제 선택</li>
-                        <li class="mb-2 d-flex align-items-center gap-2"><span style="color:#2563eb;">✔</span> 나만의 속도로 진행</li>
-                        <li class="mb-2 d-flex align-items-center gap-2"><span style="color:#2563eb;">✔</span> 언제든지 수정 가능</li>
-                        <li class="d-flex align-items-center gap-2"><span style="color:#2563eb;">✔</span> 포트폴리오로 활용</li>
-                      </ul>
-                      <div style="background:#eff6ff; border-radius:.5rem; padding:.75rem; margin-bottom:1rem;">
-                        <div class="fw-semibold" style="font-size:.78rem; color:#1e3a8a; margin-bottom:.2rem;">추천 대상</div>
-                        <div style="font-size:.78rem; color:#1d4ed8;">자유롭게 아이디어를 실험하고 싶은 메이커</div>
-                      </div>
-                      <div style="
-                        background:#2563eb; color:#fff; border-radius:.5rem;
-                        padding:.65rem 1rem; text-align:center; font-weight:600; font-size:.9rem;
-                      ">개인 프로젝트 시작하기 →</div>
+              <div class="col-md-6 modal-col">
+                <a href="create-personal-project.html" class="text-decoration-none">
+                  <div class="project-type-card personal h-100">
+                    <div class="decorative-circle blue" style="position:relative;"></div>
+                    <div class="project-icon personal">👤</div>
+                    <div class="project-title fw-bold">개인 프로젝트</div>
+                    <div class="project-description text-muted small">자유롭게 나만의 프로젝트를 시작하세요</div>
+                    <ul class="list-unstyled small mb-4 checklist-items">
+                      <li><span class="checkmark-personal">✔</span> 자유로운 주제 선택</li>
+                      <li><span class="checkmark-personal">✔</span> 나만의 속도로 진행</li>
+                      <li><span class="checkmark-personal">✔</span> 언제든지 수정 가능</li>
+                      <li><span class="checkmark-personal">✔</span> 포트폴리오로 활용</li>
+                    </ul>
+                    <div class="recommendation-box personal">
+                      <div class="fw-semibold rec-label">추천 대상</div>
+                      <div class="rec-text">자유롭게 아이디어를 실험하고 싶은 메이커</div>
                     </div>
+                    <div class="project-action-btn">개인 프로젝트 시작하기 →</div>
                   </div>
                 </a>
               </div>
 
               <!-- 콘테스트 프로젝트 -->
-              <div class="col-md-6">
-                <a href="contests.html" class="text-decoration-none" style="display:block; height:100%;">
-                  <div class="project-type-card contest h-100" style="position:relative; overflow:hidden;">
-                    <!-- 인기 뱃지 -->
-                    <div style="
-                      position:absolute; top:.75rem; right:.75rem;
-                      background:linear-gradient(135deg,#fbbf24,#f97316);
-                      color:#fff; border-radius:9999px;
-                      padding:.2rem .6rem; font-size:.72rem; font-weight:700;
-                    ">🏅 인기</div>
-                    <div style="
-                      position:absolute; top:0; right:0;
-                      width:8rem; height:8rem; background:#ddd6fe;
-                      border-radius:50%; transform:translate(40%,-40%);
-                      opacity:.5;
-                    "></div>
-                    <div style="position:relative;">
-                      <div style="
-                        width:64px; height:64px; border-radius:1rem;
-                        background:linear-gradient(135deg,#7c3aed,#db2777);
-                        display:flex; align-items:center; justify-content:center;
-                        font-size:1.75rem; margin-bottom:1rem;
-                      ">🏆</div>
-                      <div class="fw-bold" style="font-size:1.25rem; color:#111827; margin-bottom:.25rem;">콘테스트 프로젝트</div>
-                      <div class="text-muted small mb-3">콘테스트에 참가하며 프로젝트를 완성하세요</div>
-                      <ul class="list-unstyled small mb-4" style="color:#374151;">
-                        <li class="mb-2 d-flex align-items-center gap-2"><span style="color:#7c3aed;">✔</span> Quest 단계별 가이드</li>
-                        <li class="mb-2 d-flex align-items-center gap-2"><span style="color:#7c3aed;">✔</span> 상금 및 경품 획득 기회</li>
-                        <li class="mb-2 d-flex align-items-center gap-2"><span style="color:#7c3aed;">✔</span> 구조화된 프로젝트 관리</li>
-                        <li class="d-flex align-items-center gap-2"><span style="color:#7c3aed;">✔</span> 커뮤니티 피드백</li>
-                      </ul>
-                      <div style="background:#faf5ff; border-radius:.5rem; padding:.75rem; margin-bottom:1rem;">
-                        <div class="fw-semibold" style="font-size:.78rem; color:#3b0764; margin-bottom:.2rem;">추천 대상</div>
-                        <div style="font-size:.78rem; color:#7c3aed;">목표를 갖고 체계적으로 프로젝트를 완성하고 싶은 메이커</div>
-                      </div>
-                      <div style="
-                        background:linear-gradient(135deg,#7c3aed,#db2777); color:#fff; border-radius:.5rem;
-                        padding:.65rem 1rem; text-align:center; font-weight:600; font-size:.9rem;
-                      ">콘테스트 둘러보기 →</div>
+              <div class="col-md-6 modal-col">
+                <a href="contests.html" class="text-decoration-none">
+                  <div class="project-type-card contest h-100">
+                    <!-- 인기 배지 -->
+                    <div class="popularity-badge">🌟 인기</div>
+                    <div class="decorative-circle purple"  style="position:relative;"></div>
+                    <div class="project-icon contest">🏆</div>
+                    <div class="project-title fw-bold">콘테스트 프로젝트</div>
+                    <div class="project-description text-muted small">콘테스트에 참가하며 프로젝트를 완성하세요</div>
+                    <ul class="list-unstyled small mb-4 checklist-items">
+                      <li><span class="checkmark-contest">✔</span> Quest 단계별 가이드</li>
+                      <li><span class="checkmark-contest">✔</span> 상금 및 경품 획득 기회</li>
+                      <li><span class="checkmark-contest">✔</span> 구조화된 프로젝트 관리</li>
+                      <li><span class="checkmark-contest">✔</span> 커뮤니티 피드백</li>
+                    </ul>
+                    <div class="recommendation-box contest">
+                      <div class="fw-semibold rec-label">추천 대상</div>
+                      <div class="rec-text">목표를 갖고 체계적으로 프로젝트를 완성하고 싶은 메이커</div>
                     </div>
+                    <div class="project-action-btn contest">콘테스트 둘러보기 →</div>
                   </div>
                 </a>
               </div>
@@ -339,18 +175,11 @@
             </div>
 
             <!-- Info box -->
-            <div style="
-              background:#f0fdf4; border:1px solid #bbf7d0;
-              border-radius:.75rem; padding:1rem 1.25rem;
-              display:flex; align-items:flex-start; gap:.75rem;
-            ">
-              <div style="
-                width:36px; height:36px; background:#dcfce7; border-radius:.5rem;
-                display:flex; align-items:center; justify-content:center; flex-shrink:0;
-              ">🎯</div>
-              <div>
-                <div class="fw-semibold small mb-1" style="color:#111827;">프로젝트는 통합 관리됩니다</div>
-                <div class="small" style="color:#4b5563; line-height:1.6;">
+            <div class="modal-info-box">
+              <div class="info-icon">🎯</div>
+              <div class="info-content">
+                <div class="fw-semibold small mb-1 info-title">프로젝트는 통합 관리됩니다</div>
+                <div class="small info-text">
                   개인 프로젝트든 콘테스트 프로젝트든, 모두 "내 프로젝트"에서 함께 관리되며
                   동일한 Quest 시스템과 커뮤니티 기능을 사용할 수 있습니다.
                 </div>
@@ -359,10 +188,7 @@
 
             <!-- 나중에 하기 -->
             <div style="text-align:center; margin-top:1.25rem;">
-              <button onclick="closeProjectModal()" style="
-                background:none; border:none; color:#6b7280;
-                font-size:.9rem; cursor:pointer; text-decoration:underline;
-              ">나중에 하기</button>
+              <button onclick="closeProjectModal()" class="later-btn">나중에 하기</button>
             </div>
           </div>
 
@@ -380,25 +206,29 @@
             <h2 class="section-title mb-1">인기 프로젝트</h2>
             <p class="section-sub mb-0">메이커들의 창의적인 프로젝트를 만나보세요</p>
           </div>
-          <a href="projects.html" class="btn btn-outline-secondary btn-sm">전체 보기</a>
+          <a href="projects.html" class="btn btn-outline-all btn-sm">전체 보기 <i class="fa-regular fa-arrow-right"></i></a>
         </div>
 
-        <div class="row g-4">
+        <div class="row g-4 project-card-row">
 
           <!-- Card 1 -->
           <div class="col-sm-6 col-lg-4">
             <div class="card project-card h-100">
-              <img src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=600" class="card-img-top" alt="AI 로봇">
+              <div class="project-card-img-wrap">
+                <img src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=600" class="card-img-top" alt="AI 로봇">
+                <span class="project-card-img-badge">인기</span>
+                <span class="project-card-img-badge project-card-img-badge--right">콘테스트</span>
+              </div>
               <div class="card-body">
                 <div class="d-flex align-items-center gap-2 mb-2">
-                  <span class="badge" style="background:#dbeafe;color:#1d4ed8;font-size:.72rem;">임베디드</span>
+                  <span class="badge project-badge">임베디드</span>
                 </div>
-                <h5 class="fw-bold fs-6 mb-1">AI 음성인식 자율주행 로봇</h5>
-                <p class="small text-muted mb-3">라즈베리파이와 OpenCV로 실내 자율주행이 가능한 배송 로봇</p>
+                <h5><a href="project-detail.html" class="stretched-link text-dark text-decoration-none">AI 음성인식 자율주행 로봇</a></h5>
+                <p class="small text-muted mb-3 project-desc">라즈베리파이와 OpenCV로 실내 자율주행이 가능한 배송 로봇</p>
                 <div class="d-flex align-items-center gap-2">
-                  <div class="author-avatar" style="background:#ddd6fe;color:#7c3aed;width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.7rem;font-weight:700;">김</div>
+                  <div class="project-card-avatar">김</div>
                   <span class="small text-muted">김메이커</span>
-                  <span class="ms-auto small text-muted">❤️ 567 · 👁 8.9k</span>
+                  <span class="ms-auto small text-muted"><i class="fa-solid fa-heart"></i> 567 <span class="meta-dot">·</span><i class="fa-regular fa-eye"></i> 8.9k</span>
                 </div>
               </div>
             </div>
@@ -407,17 +237,20 @@
           <!-- Card 2 -->
           <div class="col-sm-6 col-lg-4">
             <div class="card project-card h-100">
-              <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=600" class="card-img-top" alt="IoT">
+              <div class="project-card-img-wrap">
+                <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=600" class="card-img-top" alt="IoT">
+                <span class="project-card-img-badge">IoT</span>
+              </div>
               <div class="card-body">
                 <div class="d-flex align-items-center gap-2 mb-2">
-                  <span class="badge" style="background:#dcfce7;color:#166534;font-size:.72rem;">IoT</span>
+                  <span class="badge project-badge">IoT</span>
                 </div>
-                <h5 class="fw-bold fs-6 mb-1">스마트 홈 IoT 컨트롤러</h5>
+                <h5><a href="project-detail.html" class="stretched-link text-dark text-decoration-none">스마트 홈 IoT 컨트롤러</a></h5>
                 <p class="small text-muted mb-3">ESP32 기반 홈 자동화 시스템. MQTT 프로토콜로 다양한 센서와 액추에이터를 제어합니다.</p>
                 <div class="d-flex align-items-center gap-2">
-                  <div class="author-avatar" style="background:#fce7f3;color:#db2777;width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.7rem;font-weight:700;">이</div>
+                  <div class="project-card-avatar">이</div>
                   <span class="small text-muted">이엔지니어</span>
-                  <span class="ms-auto small text-muted">❤️ 348 · 👁 1.2k</span>
+                  <span class="ms-auto small text-muted"><i class="fa-solid fa-heart"></i> 348 <span class="meta-dot">·</span>👁 1.2k</span>
                 </div>
               </div>
             </div>
@@ -426,17 +259,20 @@
           <!-- Card 3 -->
           <div class="col-sm-6 col-lg-4">
             <div class="card project-card h-100">
-              <img src="https://images.unsplash.com/photo-1581092333203-42374bcf7d89?w=600" class="card-img-top" alt="Edge AI">
+              <div class="project-card-img-wrap">
+                <img src="https://images.unsplash.com/photo-1581092333203-42374bcf7d89?w=600" class="card-img-top" alt="Edge AI">
+                <span class="project-card-img-badge">AI/ML</span>
+              </div>
               <div class="card-body">
                 <div class="d-flex align-items-center gap-2 mb-2">
-                  <span class="badge" style="background:#fef3c7;color:#92400e;font-size:.72rem;">AI/ML</span>
+                  <span class="badge project-badge">AI/ML</span>
                 </div>
-                <h5 class="fw-bold fs-6 mb-1">Edge AI 비전 검사 시스템</h5>
+                <h5><a href="project-detail.html" class="stretched-link text-dark text-decoration-none">Edge AI 비전 검사 시스템</a></h5>
                 <p class="small text-muted mb-3">NVIDIA Jetson Nano로 실시간 불량품 검출. YOLOv8 모델을 경량화하여 엣지에서 추론합니다.</p>
                 <div class="d-flex align-items-center gap-2">
-                  <div class="author-avatar" style="background:#d1fae5;color:#065f46;width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.7rem;font-weight:700;">박</div>
+                  <div class="project-card-avatar">박</div>
                   <span class="small text-muted">박AI</span>
-                  <span class="ms-auto small text-muted">❤️ 212 · 👁 980</span>
+                  <span class="ms-auto small text-muted"><i class="fa-solid fa-heart"></i> 212 <span class="meta-dot">·</span>👁 980</span>
                 </div>
               </div>
             </div>
@@ -445,17 +281,20 @@
           <!-- Card 4 -->
           <div class="col-sm-6 col-lg-4">
             <div class="card project-card h-100">
-              <img src="https://images.unsplash.com/photo-1553408226-42ecf81a214c?w=600" class="card-img-top" alt="드론">
+              <div class="project-card-img-wrap">
+                <img src="https://images.unsplash.com/photo-1553408226-42ecf81a214c?w=600" class="card-img-top" alt="드론">
+                <span class="project-card-img-badge">로보틱스</span>
+              </div>
               <div class="card-body">
                 <div class="d-flex align-items-center gap-2 mb-2">
-                  <span class="badge" style="background:#fce7f3;color:#be185d;font-size:.72rem;">로보틱스</span>
+                  <span class="badge project-badge">로보틱스</span>
                 </div>
-                <h5 class="fw-bold fs-6 mb-1">자율비행 드론 제어 시스템</h5>
+                <h5><a href="project-detail.html" class="stretched-link text-dark text-decoration-none">자율비행 드론 제어 시스템</a></h5>
                 <p class="small text-muted mb-3">PX4 기반 드론 자율비행. 실시간 장애물 회피 및 미션 플래닝 기능을 구현했습니다.</p>
                 <div class="d-flex align-items-center gap-2">
-                  <div class="author-avatar" style="background:#e0e7ff;color:#4338ca;width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.7rem;font-weight:700;">최</div>
+                  <div class="project-card-avatar">최</div>
                   <span class="small text-muted">최드론</span>
-                  <span class="ms-auto small text-muted">❤️ 431 · 👁 3.4k</span>
+                  <span class="ms-auto small text-muted"><i class="fa-solid fa-heart"></i> 431 <span class="meta-dot">·</span>👁 3.4k</span>
                 </div>
               </div>
             </div>
@@ -464,17 +303,20 @@
           <!-- Card 5 -->
           <div class="col-sm-6 col-lg-4">
             <div class="card project-card h-100">
-              <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600" class="card-img-top" alt="의료">
+              <div class="project-card-img-wrap">
+                <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600" class="card-img-top" alt="의료">
+                <span class="project-card-img-badge">의료기기</span>
+              </div>
               <div class="card-body">
                 <div class="d-flex align-items-center gap-2 mb-2">
-                  <span class="badge" style="background:#dbeafe;color:#1d4ed8;font-size:.72rem;">의료기기</span>
+                  <span class="badge project-badge">의료기기</span>
                 </div>
-                <h5 class="fw-bold fs-6 mb-1">웨어러블 심박 모니터링</h5>
+                <h5><a href="project-detail.html" class="stretched-link text-dark text-decoration-none">웨어러블 심박 모니터링</a></h5>
                 <p class="small text-muted mb-3">STM32 기반 실시간 ECG 측정 및 이상 징후 알림. BLE로 스마트폰과 연동합니다.</p>
                 <div class="d-flex align-items-center gap-2">
-                  <div class="author-avatar" style="background:#fef9c3;color:#854d0e;width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.7rem;font-weight:700;">정</div>
+                  <div class="project-card-avatar biotech">정</div>
                   <span class="small text-muted">정바이오</span>
-                  <span class="ms-auto small text-muted">❤️ 289 · 👁 2.1k</span>
+                  <span class="ms-auto small text-muted"><i class="fa-solid fa-heart"></i> 289 <span class="meta-dot">·</span>👁 2.1k</span>
                 </div>
               </div>
             </div>
@@ -483,17 +325,20 @@
           <!-- Card 6 -->
           <div class="col-sm-6 col-lg-4">
             <div class="card project-card h-100">
-              <img src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=600" class="card-img-top" alt="보안">
+              <div class="project-card-img-wrap">
+                <img src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=600" class="card-img-top" alt="보안">
+                <span class="project-card-img-badge">보안</span>
+              </div>
               <div class="card-body">
                 <div class="d-flex align-items-center gap-2 mb-2">
-                  <span class="badge" style="background:#fee2e2;color:#991b1b;font-size:.72rem;">보안</span>
+                  <span class="badge project-badge">보안</span>
                 </div>
-                <h5 class="fw-bold fs-6 mb-1">임베디드 보안 취약점 분석기</h5>
+                <h5><a href="project-detail.html" class="stretched-link text-dark text-decoration-none">임베디드 보안 취약점 분석기</a></h5>
                 <p class="small text-muted mb-3">JTAG/SWD 인터페이스로 펌웨어를 추출하고 바이너리 취약점을 자동 분석합니다.</p>
                 <div class="d-flex align-items-center gap-2">
-                  <div class="author-avatar" style="background:#fce7f3;color:#be185d;width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.7rem;font-weight:700;">강</div>
+                  <div class="project-card-avatar">강</div>
                   <span class="small text-muted">강보안</span>
-                  <span class="ms-auto small text-muted">❤️ 156 · 👁 1.8k</span>
+                  <span class="ms-auto small text-muted"><i class="fa-solid fa-heart"></i> 156 <span class="meta-dot">·</span>👁 1.8k</span>
                 </div>
               </div>
             </div>
@@ -511,9 +356,9 @@
         <div class="d-flex align-items-start justify-content-between mb-4">
           <div>
             <h2 class="section-title mb-1">진행 중인 콘테스트</h2>
-            <p class="section-sub mb-0">도전하고 수상하세요</p>
+            <p class="section-sub mb-0">프로젝트로 참가하고 상금 기회를 얻으세요</p>
           </div>
-          <a href="contests.html" class="btn btn-outline-secondary btn-sm">전체 보기</a>
+          <a href="contests.html" class="btn btn-outline-all btn-sm">전체 보기 <i class="fa-regular fa-arrow-right"></i></a>
         </div>
 
         <div class="row g-4">
@@ -521,29 +366,28 @@
           <!-- Challenge 1 -->
           <div class="col-md-6">
             <div class="card challenge-card h-100">
-              <div class="ch-header ch-gradient-1">
+              <div class="ch-header">
                 <div class="d-flex justify-content-between align-items-start mb-2">
                   <span class="d-badge">D-51</span>
-                  <span class="difficulty-badge difficulty-advanced">고급</span>
                 </div>
-                <h5 class="fw-bold mb-1 text-white">AI 로봇 챌린지 2026</h5>
-                <p class="mb-2" style="opacity:.9;font-size:.85rem;">인공지능 기반 자율주행 로봇을 설계하고 구현하세요</p>
+                <h5>AI 로봇 챌린지 2026</h5>
+                <p class="mb-2 text-muted">인공지능 기반 자율주행 로봇을 설계하고 구현하세요</p>
                 <div class="d-flex flex-wrap gap-1">
                   <span class="ch-tag">AI</span>
                   <span class="ch-tag">로보틱스</span>
                   <span class="ch-tag">자율주행</span>
                 </div>
               </div>
-              <div class="card-body p-3">
+              <div class="card-body">
                 <div class="d-flex justify-content-between small text-muted mb-2">
                   <span>참가팀 <strong class="text-dark">48</strong></span>
                   <span>총 상금 <strong class="text-primary">₩5,000,000</strong></span>
                 </div>
-                <div class="mb-2">
+                <div class="mb-3">
                   <div class="d-flex justify-content-between small mb-1"><span>참가 현황</span><span>48/100</span></div>
-                  <div class="progress" style="height:6px;"><div class="progress-bar" style="width:48%;background:#7c3aed;"></div></div>
+                  <div class="progress" style="height:6px;"><div class="progress-bar-purple"></div></div>
                 </div>
-                <a href="contest-detail.html" class="btn btn-sm w-100" style="background:#7c3aed;color:#fff;">참가 신청</a>
+                <a href="contest-detail.html" class="btn btn-sm w-100 challenge-btn-submit">참가 신청</a>
               </div>
             </div>
           </div>
@@ -551,29 +395,28 @@
           <!-- Challenge 2 -->
           <div class="col-md-6">
             <div class="card challenge-card h-100">
-              <div class="ch-header ch-gradient-2">
+              <div class="ch-header">
                 <div class="d-flex justify-content-between align-items-start mb-2">
                   <span class="d-badge">D-50</span>
-                  <span class="difficulty-badge difficulty-beginner">초급</span>
                 </div>
-                <h5 class="fw-bold mb-1 text-white">IoT 혁신 아이디어 공모전</h5>
-                <p class="mb-2" style="opacity:.9;font-size:.85rem;">일상을 바꾸는 IoT 서비스 아이디어 및 프로토타입</p>
+                <h5>IoT 혁신 아이디어 공모전</h5>
+                <p class="mb-2 text-muted">일상을 바꾸는 IoT 서비스 아이디어 및 프로토타입</p>
                 <div class="d-flex flex-wrap gap-1">
                   <span class="ch-tag">IoT</span>
                   <span class="ch-tag">스마트홈</span>
                   <span class="ch-tag">프로토타입</span>
                 </div>
               </div>
-              <div class="card-body p-3">
+              <div class="card-body">
                 <div class="d-flex justify-content-between small text-muted mb-2">
                   <span>참가팀 <strong class="text-dark">256</strong></span>
                   <span>총 상금 <strong class="text-primary">₩10,000,000</strong></span>
                 </div>
-                <div class="mb-2">
+                <div class="mb-3">
                   <div class="d-flex justify-content-between small mb-1"><span>참가 현황</span><span>256/300</span></div>
-                  <div class="progress" style="height:6px;"><div class="progress-bar bg-danger" style="width:85%;"></div></div>
+                  <div class="progress" style="height:6px;"><div class="progress-bar-purple" style="width:85%;"></div></div>
                 </div>
-                <a href="contest-detail.html" class="btn btn-sm w-100 btn-danger">참가 신청</a>
+                <a href="contest-detail.html" class="btn btn-sm w-100 challenge-btn-submit">참가 신청</a>
               </div>
             </div>
           </div>
@@ -590,18 +433,18 @@
         <div class="d-flex align-items-start justify-content-between mb-3">
           <div>
             <h2 class="section-title mb-1">커뮤니티</h2>
-            <p class="section-sub mb-0">메이커들과 함께 소통하세요</p>
+            <p class="section-sub mb-0">프로젝트를 진행하며 질문하고, 공유하고, 협업하는 활동을 확인하세요</p>
           </div>
-          <a href="community.html" class="btn btn-outline-secondary btn-sm">전체 보기</a>
+          <a href="community.html" class="btn btn-outline-all btn-sm">전체 보기 <i class="fa-regular fa-arrow-right"></i></a>
         </div>
 
         <!-- Filter Tabs -->
         <div class="d-flex flex-wrap gap-2 mb-4" id="communityFilters">
-          <button class="community-filter-btn active" data-filter="all">전체</button>
-          <button class="community-filter-btn" data-filter="question">질문</button>
-          <button class="community-filter-btn" data-filter="progress">진행공유</button>
-          <button class="community-filter-btn" data-filter="teammate">팀원찾기</button>
-          <button class="community-filter-btn" data-filter="resource">자료공유</button>
+          <button class="community-filter-btn active" data-filter="all"><i class="bi bi-lightning-charge-fill"></i> 전체 활동 <span class="filter-count">8</span></button>
+          <button class="community-filter-btn" data-filter="question"><i class="bi bi-question-circle"></i> 질문 <span class="filter-count">2</span></button>
+          <button class="community-filter-btn" data-filter="progress"><i class="fa-regular fa-lightbulb-gear"></i> 진행공유 <span class="filter-count">2</span></button>
+          <button class="community-filter-btn" data-filter="teammate"><i class="fa-regular fa-ranking-star"></i> 팀원찾기 <span class="filter-count">2</span></button>
+          <button class="community-filter-btn" data-filter="resource"><i class="bi bi-folder2-open"></i> 자료공유 <span class="filter-count">2</span></button>
         </div>
 
         <div class="row g-3" id="communityCards">
@@ -610,17 +453,25 @@
           <div class="col-md-6 community-card-wrap" data-type="question">
             <div class="community-card">
               <div class="d-flex gap-3">
-                <div class="comment-avatar-sm" style="background:#ede9fe;color:#7c3aed;">김</div>
+                <div class="community-avatar question">김</div>
                 <div class="flex-grow-1 min-w-0">
-                  <div class="d-flex align-items-center gap-2 mb-1 flex-wrap">
-                    <span class="type-badge question">질문</span>
-                    <strong class="small">김메이커</strong>
-                    <small class="text-muted">2시간 전</small>
+                  <div class="d-flex align-items-center gap-2 mb-2 flex-wrap">
+                    <span class="type-badge question"><i class="bi bi-question-circle"></i> 질문</span>
+                    <span class="status-badge solving"><i class="bi bi-clock"></i> 해결중</span>
                   </div>
-                  <div class="fw-semibold small mb-1">ROS2에서 SLAM 알고리즘 선택 기준이 뭔가요?</div>
-                  <div class="small text-muted mb-2">Cartographer vs SLAM Toolbox 중 실내 환경에서 어떤 게 더 나은지 경험 공유 부탁드립니다.</div>
-                  <div class="project-link-box">🔗 자율주행 배달 로봇 프로젝트</div>
-                  <div class="small text-muted mt-2">💬 12 · ❤️ 8</div>
+                  <div class="community-card-title mb-2"><a href="community-detail.html" class="stretched-link text-dark text-decoration-none">ESP32에서 MQTT 연결이 계속 끊기는데 해결 방법 있나요?</a></div>
+                  <div class="community-project-box">
+                    <div class="community-project-name">IoT 스마트 화분 시스템</div>
+                    <div class="community-project-meta"><i class="fa-regular fa-lightbulb-gear"></i> Quest 2 <span class="meta-dot">·</span><i class="fa-regular fa-ranking-star"></i> IoT 혁신 챌린지 2026</div>
+                  </div>
+                  <div class="d-flex align-items-center justify-content-between mt-2">
+                    <div class="d-flex align-items-center gap-2">
+                      <span class="community-author-name">김메이커</span>
+                      <span class="community-stat"><i class="fa-regular fa-comment"></i> 8</span>
+                      <span class="community-stat"><i class="fa-regular fa-eye"></i> 145</span>
+                    </div>
+                    <small class="text-muted">15분 전</small>
+                  </div>
                 </div>
               </div>
             </div>
@@ -630,97 +481,141 @@
           <div class="col-md-6 community-card-wrap" data-type="progress">
             <div class="community-card">
               <div class="d-flex gap-3">
-                <div class="comment-avatar-sm" style="background:#dcfce7;color:#166534;">이</div>
+                <div class="community-avatar progress">이</div>
                 <div class="flex-grow-1 min-w-0">
-                  <div class="d-flex align-items-center gap-2 mb-1 flex-wrap">
-                    <span class="type-badge progress">진행공유</span>
-                    <strong class="small">이엔지니어</strong>
-                    <small class="text-muted">4시간 전</small>
+                  <div class="d-flex align-items-center gap-2 mb-2 flex-wrap">
+                    <span class="type-badge progress"><i class="fa-regular fa-lightbulb-gear"></i> 진행공유</span>
+                    <span class="status-badge done"><i class="bi bi-check-circle"></i> 완료팀</span>
                   </div>
-                  <div class="fw-semibold small mb-1">Quest 2 완료! YOLOv8 Jetson Nano 포팅 성공 🎉</div>
-                  <div class="small text-muted mb-2">TensorRT로 최적화하니 FPS가 12에서 34로 향상됐습니다. 과정을 공유합니다.</div>
-                  <div class="project-link-box">🔗 Edge AI 비전 검사 시스템</div>
-                  <div class="small text-muted mt-2">💬 24 · ❤️ 56</div>
+                  <div class="community-card-title mb-2"><a href="community-detail.html" class="stretched-link text-dark text-decoration-none">Quest 2 완료! 음성 인식 모듈 통합 성공 🎉</a></div>
+                  <div class="community-project-box">
+                    <div class="community-project-name"><i class="bi bi-at"></i> AI 스마트 미러</div>
+                    <div class="community-project-meta"><i class="fa-regular fa-lightbulb-gear"></i> Quest 2/3 <span class="meta-dot">·</span><i class="fa-regular fa-ranking-star"></i> AI 로봇 챌린지 2026</div>
+                  </div>
+                  <div class="d-flex align-items-center justify-content-between mt-2">
+                    <div class="d-flex align-items-center gap-2">
+                      <span class="community-author-name">이개발</span>
+                      <span class="community-stat"><i class="fa-regular fa-comment"></i> 18</span>
+                      <span class="community-stat"><i class="fa-regular fa-eye"></i> 56</span>
+                    </div>
+                    <small class="text-muted">30분 전</small>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
 
           <!-- Card 3 -->
-          <div class="col-md-6 community-card-wrap" data-type="teammate">
+          <div class="col-md-6 community-card-wrap" data-type="question">
             <div class="community-card">
               <div class="d-flex gap-3">
-                <div class="comment-avatar-sm" style="background:#fef3c7;color:#92400e;">박</div>
+                <div class="community-avatar question">박</div>
                 <div class="flex-grow-1 min-w-0">
-                  <div class="d-flex align-items-center gap-2 mb-1 flex-wrap">
-                    <span class="type-badge teammate">팀원찾기</span>
-                    <strong class="small">박임베디드</strong>
-                    <small class="text-muted">6시간 전</small>
+                  <div class="d-flex align-items-center gap-2 mb-2 flex-wrap">
+                    <span class="type-badge question"><i class="bi bi-question-circle"></i> 질문</span>
+                    <span class="status-badge done"><i class="bi bi-check-circle"></i> 해결됨</span>
                   </div>
-                  <div class="fw-semibold small mb-1">AI 로봇 챌린지 팀원 모집 (펌웨어 개발자)</div>
-                  <div class="small text-muted mb-2">STM32 경험자 1명 모집합니다. 모터 드라이버 제어 담당이며 주 2회 온라인 미팅 예정입니다.</div>
-                  <div class="project-link-box">🔗 AI 로봇 챌린지 2026</div>
-                  <div class="small text-muted mt-2">💬 5 · ❤️ 3</div>
+                  <div class="community-card-title mb-2"><a href="community-detail.html" class="stretched-link text-dark text-decoration-none">TensorFlow Lite 모델을 라즈베리파이에 배포하는 방법</a></div>
+                  <div class="community-project-box">
+                    <div class="community-project-name"><i class="bi bi-at"></i> 얼굴 인식 출입 시스템</div>
+                    <div class="community-project-meta"><i class="fa-regular fa-lightbulb-gear"></i> Quest 3 <span class="meta-dot">·</span><i class="fa-regular fa-ranking-star"></i> AI 로봇 챌린지 2026</div>
+                  </div>
+                  <div class="d-flex align-items-center justify-content-between mt-2">
+                    <div class="d-flex align-items-center gap-2">
+                      <span class="community-author-name">박엔지니어</span>
+                      <span class="community-stat"><i class="fa-regular fa-comment"></i> 12</span>
+                      <span class="community-stat"><i class="fa-regular fa-eye"></i> 156</span>
+                    </div>
+                    <small class="text-muted">1시간 전</small>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
 
           <!-- Card 4 -->
-          <div class="col-md-6 community-card-wrap" data-type="resource">
+          <div class="col-md-6 community-card-wrap" data-type="teammate">
             <div class="community-card">
               <div class="d-flex gap-3">
-                <div class="comment-avatar-sm" style="background:#dbeafe;color:#1d4ed8;">최</div>
+                <div class="community-avatar teammate">최</div>
                 <div class="flex-grow-1 min-w-0">
-                  <div class="d-flex align-items-center gap-2 mb-1 flex-wrap">
-                    <span class="type-badge resource">자료공유</span>
-                    <strong class="small">최드론</strong>
-                    <small class="text-muted">1일 전</small>
+                  <div class="d-flex align-items-center gap-2 mb-2 flex-wrap">
+                    <span class="type-badge teammate"><i class="fa-regular fa-ranking-star"></i> 팀원찾기</span>
+                    <span class="status-badge deadline"><i class="bi bi-clock"></i> D-15</span>
                   </div>
-                  <div class="fw-semibold small mb-1">PX4 드론 제어 완전 가이드 (한글판)</div>
-                  <div class="small text-muted mb-2">PX4 펌웨어 빌드부터 QGroundControl 연동까지 전 과정을 정리했습니다. 초보자도 따라할 수 있어요.</div>
-                  <div class="project-link-box">🔗 자율비행 드론 제어 시스템</div>
-                  <div class="small text-muted mt-2">💬 31 · ❤️ 89</div>
+                  <div class="community-card-title mb-2"><a href="community-detail.html" class="stretched-link text-dark text-decoration-none">드론 자율비행 프로젝트 - 하드웨어 엔지니어 구합니다</a></div>
+                  <div class="community-project-box">
+                    <div class="community-project-name"><i class="bi bi-at"></i> AI 기반 농업용 드론</div>
+                    <div class="community-project-meta"><i class="fa-regular fa-lightbulb-gear"></i> Quest 2 <span class="meta-dot">·</span><i class="fa-regular fa-ranking-star"></i> 스마트 농업 테크 콘테스트 2026</div>
+                  </div>
+                  <div class="d-flex flex-wrap gap-1 mt-2 mb-2">
+                    <span class="community-tag">하드웨어</span>
+                    <span class="community-tag">회로 설계</span>
+                    <span class="community-tag">드론</span>
+                  </div>
+                  <div class="d-flex align-items-center justify-content-between">
+                    <div class="d-flex align-items-center gap-2">
+                      <span class="community-author-name">최메이커</span>
+                      <span class="community-stat"><i class="fa-regular fa-comment"></i> 5</span>
+                      <span class="community-stat"><i class="fa-regular fa-eye"></i> 72</span>
+                    </div>
+                    <small class="text-muted">2시간 전</small>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
 
           <!-- Card 5 -->
-          <div class="col-md-6 community-card-wrap" data-type="question">
+          <div class="col-md-6 community-card-wrap" data-type="progress">
             <div class="community-card">
               <div class="d-flex gap-3">
-                <div class="comment-avatar-sm" style="background:#fce7f3;color:#be185d;">정</div>
+                <div class="community-avatar progress">정</div>
                 <div class="flex-grow-1 min-w-0">
-                  <div class="d-flex align-items-center gap-2 mb-1 flex-wrap">
-                    <span class="type-badge question">질문</span>
-                    <strong class="small">정바이오</strong>
-                    <small class="text-muted">1일 전</small>
+                  <div class="d-flex align-items-center gap-2 mb-2 flex-wrap">
+                    <span class="type-badge progress"><i class="fa-regular fa-lightbulb-gear"></i> 진행공유</span>
                   </div>
-                  <div class="fw-semibold small mb-1">BLE ECG 데이터 실시간 전송 시 레이턴시 문제</div>
-                  <div class="small text-muted mb-2">Nordic nRF52840으로 250Hz 샘플링 ECG를 BLE로 전송하는데 간헐적으로 패킷이 유실됩니다.</div>
-                  <div class="project-link-box">🔗 웨어러블 심박 모니터링</div>
-                  <div class="small text-muted mt-2">💬 7 · ❤️ 4</div>
+                  <div class="community-card-title mb-2"><a href="community-detail.html" class="stretched-link text-dark text-decoration-none">자율주행 알고리즘 1차 테스트 결과 공유</a></div>
+                  <div class="community-project-box">
+                    <div class="community-project-name"><i class="bi bi-at"></i> 실내 배달 로봇</div>
+                    <div class="community-project-meta"><i class="fa-regular fa-lightbulb-gear"></i> Quest 2/3 <span class="meta-dot">·</span><i class="fa-regular fa-ranking-star"></i> 스마트 로봇 콘테스트</div>
+                  </div>
+                  <div class="d-flex align-items-center justify-content-between mt-2">
+                    <div class="d-flex align-items-center gap-2">
+                      <span class="community-author-name">정개발</span>
+                      <span class="community-stat"><i class="fa-regular fa-comment"></i> 8</span>
+                      <span class="community-stat"><i class="fa-regular fa-eye"></i> 28</span>
+                    </div>
+                    <small class="text-muted">3시간 전</small>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
 
           <!-- Card 6 -->
-          <div class="col-md-6 community-card-wrap" data-type="progress">
+          <div class="col-md-6 community-card-wrap" data-type="resource">
             <div class="community-card">
               <div class="d-flex gap-3">
-                <div class="comment-avatar-sm" style="background:#e0e7ff;color:#4338ca;">강</div>
+                <div class="community-avatar resource">강</div>
                 <div class="flex-grow-1 min-w-0">
-                  <div class="d-flex align-items-center gap-2 mb-1 flex-wrap">
-                    <span class="type-badge progress">진행공유</span>
-                    <strong class="small">강보안</strong>
-                    <small class="text-muted">2일 전</small>
+                  <div class="d-flex align-items-center gap-2 mb-2 flex-wrap">
+                    <span class="type-badge resource"><i class="bi bi-folder2-open"></i> 자료공유</span>
+                    <span class="status-badge recommend"><i class="bi bi-star-fill"></i> 추천</span>
                   </div>
-                  <div class="fw-semibold small mb-1">JTAG 디버거로 펌웨어 추출 성공 — 과정 공유</div>
-                  <div class="small text-muted mb-2">OpenOCD와 J-Link를 이용해 암호화되지 않은 STM32 플래시를 덤프하는 방법을 정리했습니다.</div>
-                  <div class="project-link-box">🔗 임베디드 보안 취약점 분석기</div>
-                  <div class="small text-muted mt-2">💬 18 · ❤️ 42</div>
+                  <div class="community-card-title mb-2"><a href="community-detail.html" class="stretched-link text-dark text-decoration-none">ESP32 개발 완벽 가이드 - 공식 문서부터 실전 예제까지</a></div>
+                  <div class="community-project-box">
+                    <div class="community-project-name"><i class="bi bi-at"></i> IoT 스마트 화분 시스템</div>
+                    <div class="community-project-meta"><i class="fa-regular fa-lightbulb-gear"></i> Quest 2</div>
+                  </div>
+                  <div class="d-flex align-items-center justify-content-between mt-2">
+                    <div class="d-flex align-items-center gap-2">
+                      <span class="community-author-name">강메이커</span>
+                      <span class="community-stat"><i class="fa-regular fa-comment"></i> 89</span>
+                      <span class="community-stat"><i class="fa-regular fa-eye"></i> 67</span>
+                    </div>
+                    <small class="text-muted">4시간 전</small>
+                  </div>
                 </div>
               </div>
             </div>
@@ -730,17 +625,29 @@
           <div class="col-md-6 community-card-wrap d-none" data-type="teammate">
             <div class="community-card">
               <div class="d-flex gap-3">
-                <div class="comment-avatar-sm" style="background:#dcfce7;color:#166534;">한</div>
+                <div class="community-avatar teammate">한</div>
                 <div class="flex-grow-1 min-w-0">
-                  <div class="d-flex align-items-center gap-2 mb-1 flex-wrap">
-                    <span class="type-badge teammate">팀원찾기</span>
-                    <strong class="small">한IoT</strong>
+                  <div class="d-flex align-items-center gap-2 mb-2 flex-wrap">
+                    <span class="type-badge teammate"><i class="fa-regular fa-ranking-star"></i> 팀원찾기</span>
+                    <span class="status-badge deadline"><i class="bi bi-clock"></i> D-7</span>
+                  </div>
+                  <div class="community-card-title mb-2"><a href="community-detail.html" class="stretched-link text-dark text-decoration-none">IoT 공모전 앱 개발자 모집</a></div>
+                  <div class="community-project-box">
+                    <div class="community-project-name"><i class="bi bi-at"></i> IoT 혁신 아이디어 공모전</div>
+                    <div class="community-project-meta"><i class="fa-regular fa-lightbulb-gear"></i> Quest 1 <span class="meta-dot">·</span><i class="fa-regular fa-ranking-star"></i> IoT 혁신 챌린지 2026</div>
+                  </div>
+                  <div class="d-flex flex-wrap gap-1 mt-2 mb-2">
+                    <span class="community-tag">React Native</span>
+                    <span class="community-tag">앱개발</span>
+                  </div>
+                  <div class="d-flex align-items-center justify-content-between">
+                    <div class="d-flex align-items-center gap-2">
+                      <span class="community-author-name">한IoT</span>
+                      <span class="community-stat"><i class="fa-regular fa-comment"></i> 1</span>
+                      <span class="community-stat"><i class="fa-regular fa-eye"></i> 34</span>
+                    </div>
                     <small class="text-muted">2일 전</small>
                   </div>
-                  <div class="fw-semibold small mb-1">IoT 공모전 앱 개발자 모집</div>
-                  <div class="small text-muted mb-2">React Native 개발 가능한 분 모집합니다. 하드웨어 팀은 구성완료, 앱 담당자 1명 필요합니다.</div>
-                  <div class="project-link-box">🔗 IoT 혁신 아이디어 공모전</div>
-                  <div class="small text-muted mt-2">💬 9 · ❤️ 6</div>
                 </div>
               </div>
             </div>
@@ -750,17 +657,25 @@
           <div class="col-md-6 community-card-wrap d-none" data-type="resource">
             <div class="community-card">
               <div class="d-flex gap-3">
-                <div class="comment-avatar-sm" style="background:#fef9c3;color:#854d0e;">오</div>
+                <div class="community-avatar resource">오</div>
                 <div class="flex-grow-1 min-w-0">
-                  <div class="d-flex align-items-center gap-2 mb-1 flex-wrap">
-                    <span class="type-badge resource">자료공유</span>
-                    <strong class="small">오RTOS</strong>
+                  <div class="d-flex align-items-center gap-2 mb-2 flex-wrap">
+                    <span class="type-badge resource"><i class="bi bi-folder2-open"></i> 자료공유</span>
+                    <span class="status-badge recommend"><i class="bi bi-star-fill"></i> 추천</span>
+                  </div>
+                  <div class="community-card-title mb-2"><a href="community-detail.html" class="stretched-link text-dark text-decoration-none">FreeRTOS 태스크 스케줄링 실전 패턴 모음</a></div>
+                  <div class="community-project-box">
+                    <div class="community-project-name"><i class="bi bi-at"></i> 임베디드 시스템 실습</div>
+                    <div class="community-project-meta"><i class="fa-regular fa-lightbulb-gear"></i> Quest 2</div>
+                  </div>
+                  <div class="d-flex align-items-center justify-content-between mt-2">
+                    <div class="d-flex align-items-center gap-2">
+                      <span class="community-author-name">오RTOS</span>
+                      <span class="community-stat"><i class="fa-regular fa-comment"></i> 22</span>
+                      <span class="community-stat"><i class="fa-regular fa-eye"></i> 67</span>
+                    </div>
                     <small class="text-muted">3일 전</small>
                   </div>
-                  <div class="fw-semibold small mb-1">FreeRTOS 태스크 스케줄링 실전 패턴 모음</div>
-                  <div class="small text-muted mb-2">실무에서 자주 쓰는 FreeRTOS 패턴 10가지를 코드와 함께 정리했습니다. 데드락 방지 방법 포함.</div>
-                  <div class="project-link-box">🔗 임베디드 시스템 실습</div>
-                  <div class="small text-muted mt-2">💬 22 · ❤️ 67</div>
                 </div>
               </div>
             </div>
@@ -773,14 +688,14 @@
     <!-- ══════════════════════════════════════════════════════
          SECTION 5 — EVENTS
          ══════════════════════════════════════════════════════ -->
-    <section class="py-5 bg-light">
+    <section class="py-5 bg-white">
       <div class="container-xl">
         <div class="d-flex align-items-start justify-content-between mb-4">
           <div>
             <h2 class="section-title mb-1">이벤트 &amp; 웨비나</h2>
             <p class="section-sub mb-0">최신 기술 트렌드를 만나보세요</p>
           </div>
-          <a href="events.html" class="btn btn-outline-secondary btn-sm">전체 보기</a>
+          <a href="events.html" class="btn btn-outline-all btn-sm">전체 보기 <i class="fa-regular fa-arrow-right"></i></a>
         </div>
 
         <div class="row g-4">
@@ -788,23 +703,20 @@
           <!-- Event 1 -->
           <div class="col-md-6 col-lg-4">
             <div class="card event-card h-100">
-              <div class="ev-header ev-gradient-1">
-                <div class="d-flex justify-content-between align-items-center mb-2">
-                  <span class="ev-status open">모집중</span>
-                  <span class="small" style="opacity:.85;">웨비나</span>
-                </div>
-                <h5 class="fw-bold mb-1 small">RISC-V 오픈소스 생태계와 임베디드 미래</h5>
+              <div class="ev-header">
+                  <img src="https://images.unsplash.com/photo-1553408226-42ecf81a214c?w=600" class="card-img-top" alt="IoT 보안 취약점 분석 세미나">
+                  <span class="ev-status">웨비나</span>
+                <h5>IoT 보안 취약점 분석 세미나  IoT 보안 취약점 분석 세미나 oT 보안 취약점 분석 세미나  IoT 보안 취약점 분석 세미나</h5>
               </div>
-              <div class="card-body p-3">
+              <div class="card-body">
                 <div class="small text-muted mb-1">📅 2026.04.10 (목) 14:00–16:00</div>
                 <div class="small text-muted mb-1">📍 온라인 (Zoom)</div>
-                <div class="small text-muted mb-3">👥 참가자 <strong class="text-dark">128</strong> / 200</div>
-                <div class="d-flex flex-wrap gap-1 mb-3">
+                <div class="d-flex flex-wrap gap-1 ev-tags">
                   <span class="ev-tag">RISC-V</span>
                   <span class="ev-tag">임베디드</span>
                   <span class="ev-tag">오픈소스</span>
                 </div>
-                <a href="events.html" class="btn btn-sm w-100" style="background:#2563eb;color:#fff;">참가 신청</a>
+                <a href="events.html" class="btn w-100 btn--blue btn--outline bg-white">참가 신청</a>
               </div>
             </div>
           </div>
@@ -812,23 +724,20 @@
           <!-- Event 2 -->
           <div class="col-md-6 col-lg-4">
             <div class="card event-card h-100">
-              <div class="ev-header ev-gradient-2">
-                <div class="d-flex justify-content-between align-items-center mb-2">
-                  <span class="ev-status closing">마감임박</span>
-                  <span class="small" style="opacity:.85;">오프라인</span>
-                </div>
-                <h5 class="fw-bold mb-1 small">엣지 AI 최적화 실전 워크샵</h5>
+              <div class="ev-header">
+                  <img src="https://images.unsplash.com/photo-1553408226-42ecf81a214c?w=600" class="card-img-top" alt="IoT 보안 취약점 분석 세미나">
+                  <span class="ev-status off">오프라인</span>
+                <h5>IoT 보안 취약점 분석 세미나</h5>
               </div>
-              <div class="card-body p-3">
+              <div class="card-body">
                 <div class="small text-muted mb-1">📅 2026.04.05 (토) 10:00–18:00</div>
                 <div class="small text-muted mb-1">📍 서울 강남 e4ds 교육센터</div>
-                <div class="small text-muted mb-3">👥 참가자 <strong class="text-dark">47</strong> / 50</div>
-                <div class="d-flex flex-wrap gap-1 mb-3">
+                <div class="d-flex flex-wrap gap-1 ev-tags">
                   <span class="ev-tag">Edge AI</span>
                   <span class="ev-tag">TensorRT</span>
                   <span class="ev-tag">최적화</span>
                 </div>
-                <a href="events.html" class="btn btn-sm w-100 btn-danger">참가 신청</a>
+                <a href="events.html" class="btn w-100 btn--blue btn--outline bg-white">참가 신청</a>
               </div>
             </div>
           </div>
@@ -836,23 +745,20 @@
           <!-- Event 3 -->
           <div class="col-md-6 col-lg-4">
             <div class="card event-card h-100">
-              <div class="ev-header ev-gradient-3">
-                <div class="d-flex justify-content-between align-items-center mb-2">
-                  <span class="ev-status open">모집중</span>
-                  <span class="small" style="opacity:.85;">온라인</span>
-                </div>
-                <h5 class="fw-bold mb-1 small">IoT 보안 취약점 분석 세미나</h5>
+              <div class="ev-header">
+                  <img src="https://images.unsplash.com/photo-1553408226-42ecf81a214c?w=600" class="card-img-top" alt="IoT 보안 취약점 분석 세미나">
+                  <span class="ev-status on">온라인</span>
+                <h5>IoT 보안 취약점 분석 세미나</h5>
               </div>
-              <div class="card-body p-3">
+              <div class="card-body">
                 <div class="small text-muted mb-1">📅 2026.04.18 (금) 15:00–17:00</div>
                 <div class="small text-muted mb-1">📍 온라인 (YouTube Live)</div>
-                <div class="small text-muted mb-3">👥 참가자 <strong class="text-dark">312</strong> / 1000</div>
-                <div class="d-flex flex-wrap gap-1 mb-3">
+                <div class="d-flex flex-wrap gap-1 ev-tags">
                   <span class="ev-tag">IoT</span>
                   <span class="ev-tag">보안</span>
                   <span class="ev-tag">취약점</span>
                 </div>
-                <a href="events.html" class="btn btn-sm w-100" style="background:#059669;color:#fff;">참가 신청</a>
+                <a href="events.html" class="btn w-100 btn--blue btn--outline bg-white">참가 신청</a>
               </div>
             </div>
           </div>
@@ -865,7 +771,7 @@
          CTA Banner
          ══════════════════════════════════════════════════════ -->
     <section class="py-5" style="background: linear-gradient(135deg, #1e3a8a 0%, #7c3aed 100%);">
-      <div class="container-xl text-center text-white py-3">
+      <div class="container-xl text-center py-3">
         <h2 class="fw-bold mb-3">지금 바로 메이커로 시작하세요</h2>
         <p class="mb-4 fs-5" style="opacity:.85;">프로젝트를 등록하고, 콘테스트에 참가하고, 동료 메이커와 함께 성장하세요.</p>
         <button class="btn btn-warning fw-bold btn-lg px-5" onclick="openProjectModal()">
