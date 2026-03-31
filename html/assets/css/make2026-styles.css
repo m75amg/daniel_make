@@ -4,8 +4,27 @@
 
 /* ── Hero ────────────────────────────────────────────── */
 .hero-section {
-  background: linear-gradient(135deg, #dce9fa 0%, #ffffff 50%, #edf9fd 100%);
+  position: relative;
+  overflow: hidden;
   padding: 2.3rem 0;
+  background-color: #f3f8ff;
+  background-image:
+    radial-gradient(ellipse 750px 500px at 0%   55%, rgba(91,  108, 255, 0.18) 0%, transparent 65%),
+    radial-gradient(ellipse 520px 380px at 100% 10%, rgba(146,  78, 255, 0.06) 0%, transparent 65%),
+    radial-gradient(ellipse 460px 560px at 90%  95%, rgba( 22, 188, 156, 0.14) 0%, transparent 65%),
+    radial-gradient(ellipse 380px 280px at 50%  -5%, rgba( 56, 182, 255, 0.09) 0%, transparent 60%);
+}
+.hero-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 0;
+}
+.hero-section > * {
+  position: relative;
+  z-index: 1;
 }
 
 .hero-badge {
@@ -74,7 +93,7 @@ justify-content: space-evenly;
 
   .stat-icon {
     font-size: 1.4rem;
-    color: var(--color-green);
+    color: var(--color-blue);
     margin-right: 0.5rem;
   }
 
@@ -93,6 +112,7 @@ justify-content: space-evenly;
 .hero-right{
   display: flex;
   justify-content: flex-end;
+  overflow: hidden;
 
   .frame {
   position: relative;
@@ -476,6 +496,7 @@ justify-content: space-evenly;
 }
 
 .community-card {
+  position: relative;
   border: 1px solid #C2DFEE;
   box-shadow: 0 1px 3px 0 rgba(0, 0, 0, .1), 0 1px 2px 0 rgba(0, 0, 0, .06);
   border-radius: 0.75rem;
@@ -1202,4 +1223,170 @@ justify-content: space-evenly;
 
 .checkmark-contest {
   color: #7c3aed;
+}
+
+
+/* ── CTA Section ─────────────────────────────────────── */
+.cta-section {
+  position: relative;
+  overflow: hidden;
+}
+.cta-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(30,58,138,0.50) 0%, rgba(124,58,237,0.50) 100%),
+              url('../img/bg_index_project.jpg') center/cover no-repeat;
+  transform: scale(1);
+  transition: transform 0.5s ease;
+  z-index: 0;
+}
+.cta-section:hover::before {
+  transform: scale(1.05);
+}
+.cta-section > * {
+  position: relative;
+  z-index: 1;
+}
+
+
+/* ══════════════════════════════════════════════════════
+   CONTESTS PAGE
+   ══════════════════════════════════════════════════════ */
+
+/* ── Contest Card ───────────────────────────────────── */
+.contest-card {
+  cursor: pointer;
+  transition: transform .2s, box-shadow .2s;
+}
+.contest-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 .75rem 1.5rem rgba(0,0,0,.12) !important;
+}
+.contest-thumb {
+  height: 180px;
+  object-fit: cover;
+}
+
+/* ── Tab Nav ────────────────────────────────────────── */
+.tab-underline {
+  border: none;
+  border-bottom: 2px solid transparent;
+  background: transparent;
+  padding: .75rem .5rem;
+  font-weight: 600;
+}
+.tab-underline.active {
+  border-color: #2563eb;
+  color: #2563eb;
+}
+.contest-tabs-sticky {
+  top: 100px;
+  z-index: 100;
+}
+
+/* ── Hero Banner ────────────────────────────────────── */
+.contest-hero {
+  background: linear-gradient(130deg, #1e0a5a 0%, #4c1d95 25%, #7c3aed 52%, #924eff 74%, #b083ff 100%);
+  padding: 2rem 0 1.8rem;
+  position: relative;
+  overflow: hidden;
+}
+.contest-hero::before {
+  content: "";
+  position: absolute;
+  right: -60px;
+  bottom: -120px;
+  width: 420px;
+  height: 420px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.08);
+  pointer-events: none;
+}
+.contest-hero::after {
+  content: "";
+  position: absolute;
+  right: 14%;
+  top: -70px;
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.05);
+  pointer-events: none;
+}
+.contest-hero-deco {
+  position: absolute;
+  left: 3%;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.04);
+  pointer-events: none;
+}
+.contest-hero-inner {
+  position: relative;
+  z-index: 1;
+}
+.contest-hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: rgba(255,255,255,0.14);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255,255,255,0.28);
+  border-radius: 9999px;
+  padding: 0.28rem 1rem;
+  font-size: 0.93rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  margin-bottom: 0.9rem;
+}
+.contest-hero-title {
+  font-size: 2.4rem;
+  letter-spacing: -0.025em;
+  line-height: 1.2;
+}
+.contest-hero-subtitle {
+  font-size: 1.05rem;
+  opacity: 0.82;
+  max-width: 460px;
+  margin-inline: auto;
+}
+
+/* ── Glass Stat Cards ───────────────────────────────── */
+.glass-stat {
+  background: rgba(255,255,255,0.10);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255,255,255,0.22);
+  border-radius: 14px;
+  padding: 0.9rem 0.3rem;
+  text-align: center;
+  box-shadow:
+    0 8px 32px rgba(0,0,0,0.10),
+    inset 0 1px 0 rgba(255,255,255,0.30),
+    inset 0 -1px 0 rgba(0,0,0,0.06);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.glass-stat:hover {
+  transform: translateY(-3px);
+  box-shadow:
+    0 14px 40px rgba(0,0,0,0.15),
+    inset 0 1px 0 rgba(255,255,255,0.35),
+    inset 0 -1px 0 rgba(0,0,0,0.06);
+}
+.glass-stat .stat-num {
+  font-size: 1.75rem;
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+}
+.glass-stat .stat-label {
+  font-size: 0.78rem;
+  font-weight: 500;
+  opacity: 0.78;
+  margin-top: 0.3rem;
 }
