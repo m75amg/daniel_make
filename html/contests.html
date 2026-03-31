@@ -213,6 +213,35 @@
     </div>
   </main>
 
+  <!-- 콘테스트 카드 템플릿 -->
+  <template id="contest-card-tpl">
+    <div class="col-md-6 col-lg-4">
+      <div class="card h-100 border-0 shadow-sm contest-card">
+        <div class="position-relative overflow-hidden" style="height:180px">
+          <img class="tpl-img w-100 h-100 object-fit-cover" src="" alt="">
+          <div class="position-absolute top-0 start-0 m-2">
+            <span class="tpl-status-badge badge"></span>
+          </div>
+          <div class="position-absolute top-0 end-0 m-2">
+            <span class="tpl-diff-badge badge"></span>
+          </div>
+          <span class="tpl-days-badge badge bg-danger position-absolute bottom-0 end-0 m-2"></span>
+        </div>
+        <div class="card-body">
+          <span class="tpl-category badge bg-light text-dark mb-1"></span>
+          <h6 class="tpl-title fw-bold mt-1 mb-1"></h6>
+          <p class="tpl-desc text-muted small mb-3" style="display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden"></p>
+          <div class="small text-muted mb-1">🎁 <span class="tpl-prize fw-semibold text-warning-emphasis"></span></div>
+          <div class="small text-muted mb-1">👥 <span class="tpl-participants"></span>명 참가중</div>
+          <div class="small text-muted">📅 마감: <span class="tpl-deadline"></span></div>
+        </div>
+        <div class="card-footer bg-transparent border-top-0 px-3 pb-3">
+          <a class="tpl-btn btn btn-sm w-100" href=""></a>
+        </div>
+      </div>
+    </div>
+  </template>
+
   <!-- ===== PLATFORM FOOTER ===== -->
 <footer id="platform-footer">
 
@@ -291,8 +320,9 @@
 
   var PAGE=6, visible=6, currentTab='active';
 
-  function diffBadge(d){ var m={'초급':'success','중급':'warning','고급':'danger'}; return '<span class="badge bg-'+( m[d]||'secondary')+'-subtle text-'+(m[d]||'secondary')+'">'+d+'</span>'; }
-  function statusBadge(s){ var m={active:'success',upcoming:'primary',ended:'secondary'}; var l={active:'진행중',upcoming:'예정',ended:'종료'}; return '<span class="badge bg-'+m[s]+'">'+l[s]+'</span>'; }
+  var STATUS_COLOR = { active:'success', upcoming:'primary', ended:'secondary' };
+  var STATUS_LABEL = { active:'진행중', upcoming:'예정', ended:'종료' };
+  var DIFF_COLOR   = { '초급':'success', '중급':'warning', '고급':'danger' };
 
   function renderContest(c){
     var href = c.status==='ended' ? 'contest-result.html?id='+c.id : 'contest-detail.html?id='+c.id;
@@ -301,7 +331,7 @@
     var daysHtml = c.status==='active' ? '<span class="badge bg-danger position-absolute bottom-0 end-0 m-2">D-'+c.daysLeft+'</span>' : '';
     return '<div class="col-md-6 col-lg-4">'
       +'<div class="card h-100 border-0 shadow-sm contest-card" onclick="window.location=\''+href+'\'">'
-      +'<div class="position-relative overflow-hidden contest-thumb">'
+      +'<div class="position-relative overflow-hidden" style="height:180px">'
       +'<img src="'+c.img+'" alt="" class="w-100 h-100 object-fit-cover">'
       +'<div class="position-absolute top-0 start-0 m-2">'+statusBadge(c.status)+'</div>'
       +'<div class="position-absolute top-0 end-0 m-2">'+diffBadge(c.difficulty)+'</div>'
@@ -309,7 +339,7 @@
       +'<div class="card-body">'
       +'<span class="badge bg-light text-dark mb-1">'+c.category+'</span>'
       +'<h6 class="fw-bold mt-1 mb-1">'+c.title+'</h6>'
-      +'<p class="text-muted small mb-3 two-line-clamp">'+c.desc+'</p>'
+      +'<p class="text-muted small mb-3" style="display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden">'+c.desc+'</p>'
       +'<div class="small text-muted mb-1">🎁 <span class="fw-semibold text-warning-emphasis">'+c.prize+'</span></div>'
       +'<div class="small text-muted mb-1">👥 '+c.participants+'명 참가중</div>'
       +'<div class="small text-muted">📅 마감: '+c.deadline+'</div>'
@@ -322,11 +352,15 @@
   function getList(){ return contests.filter(function(c){ return c.status===currentTab; }); }
 
   function render(){
-    var list = getList();
+    var list  = getList();
     var shown = list.slice(0, visible);
-    var html = shown.map(renderContest).join('');
-    if(!html) html='<div class="col-12 text-center py-5 text-muted"><p>해당하는 콘테스트가 없습니다.</p></div>';
-    $('#contest-grid').html(html);
+    var grid  = document.getElementById('contest-grid');
+    grid.innerHTML = '';
+    if (shown.length === 0) {
+      grid.innerHTML = '<div class="col-12 text-center py-5 text-muted"><p>해당하는 콘테스트가 없습니다.</p></div>';
+    } else {
+      shown.forEach(function(c){ grid.appendChild(renderContest(c)); });
+    }
     $('#tab-count').text(list.length+'개의 콘테스트');
     if(visible>=list.length){ $('#contest-load-more-wrap').hide(); }
     else { $('#contest-load-more-wrap').show(); $('#contest-load-count').text(visible+'개 / 총 '+list.length+'개'); }
