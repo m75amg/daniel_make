@@ -7,20 +7,6 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/custom.css">
-  <style>
-    .hero-section { background:linear-gradient(135deg,#2563eb 0%,#7c3aed 60%,#db2777 100%); }
-    .hero-img-wrap { border-radius:1rem; overflow:hidden; border:4px solid rgba(255,255,255,.2); box-shadow:0 25px 50px rgba(0,0,0,.3); }
-    .step-circle { width:48px; height:48px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-weight:700; font-size:1rem; flex-shrink:0; }
-    .timeline-circle { width:40px; height:40px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-weight:700; flex-shrink:0; }
-    .quest-circle { width:56px; height:56px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-weight:700; font-size:1.2rem; flex-shrink:0; }
-    .prize-row { border-radius:.75rem; padding:1.5rem; }
-    .faq-item { border-bottom:1px solid #e5e7eb; padding-bottom:1.5rem; }
-    .faq-item:last-child { border-bottom:none; }
-    /* Tab override */
-    .cd-tabs .nav-link { color:#6b7280; font-weight:500; padding:.75rem 1.25rem; border:none; border-bottom:2px solid transparent; background:transparent; border-radius:0; }
-    .cd-tabs .nav-link.active { color:#2563eb; border-bottom-color:#2563eb; font-weight:600; }
-    .cd-tabs .nav-link:hover:not(.active) { color:#374151; }
-  </style>
 </head>
 <body class="bg-light">
 
@@ -30,7 +16,7 @@
   <!-- Top Bar -->
   <div class="border-bottom border-light">
     <div class="container-xl">
-      <div class="d-flex align-items-center justify-content-between" style="height:36px;">
+      <div class="d-flex align-items-center justify-content-between topbar-inner">
         <small class="text-muted" id="header-date"></small>
         <div class="d-flex align-items-center gap-3">
           <a href="login.html"   class="text-secondary text-decoration-none small header-toplink auth-loggedout-only">로그인</a>
@@ -44,12 +30,12 @@
 
   <!-- Main Nav -->
   <div class="container-xl">
-    <nav class="navbar navbar-expand-lg px-0" style="min-height:64px;">
+    <nav class="navbar navbar-expand-lg px-0">
 
       <!-- Logo -->
       <a class="navbar-brand fw-bold fs-5 me-4" href="index.html">
         <span class="text-dark">e</span><span class="text-warning">4</span><span class="text-dark">ds</span>
-        <span class="fw-normal text-secondary ms-1" style="font-size:1.1rem;">make</span>
+        <span class="fw-normal text-secondary ms-1 brand-text">make</span>
       </a>
 
       <!-- Mobile toggler -->
@@ -100,7 +86,7 @@
           <li class="nav-item dropdown" id="makers-zone-dropdown">
             <a class="nav-link dropdown-toggle fw-medium text-dark" href="#"
                data-bs-toggle="dropdown">Maker's Zone</a>
-            <ul class="dropdown-menu shadow-sm border-0" style="min-width:160px;">
+            <ul class="dropdown-menu shadow-sm border-0">
               <li><a class="dropdown-item" href="projects.html">프로젝트</a></li>
               <li><a class="dropdown-item" href="contests.html">콘테스트</a></li>
               <li><a class="dropdown-item" href="community.html">커뮤니티</a></li>
@@ -161,23 +147,23 @@
     </div>
 
     <!-- Hero -->
-    <section class="hero-section text-white py-5">
+    <section class="hero-section contest-detail-hero text-white py-5">
       <div class="container-xl py-4">
         <div class="row align-items-center gy-5">
           <!-- Left -->
           <div class="col-lg-6">
             <div class="d-flex flex-wrap gap-2 mb-4">
-              <span class="badge px-3 py-2" style="background:rgba(255,255,255,.2);backdrop-filter:blur(4px);">⚡ 진행중</span>
+              <span class="badge px-3 py-2 badge-glass-blur">⚡ 진행중</span>
               <span class="badge bg-warning text-dark px-3 py-2 fw-bold">마감 D-45</span>
               <span class="badge bg-success px-3 py-2">📈 234명 참가중</span>
             </div>
-            <h1 class="fw-bold mb-3" style="font-size:3rem;line-height:1.1;">AI 로봇 챌린지 2026</h1>
-            <p class="fs-5 mb-5" style="color:rgba(219,234,254,.9);line-height:1.7;">
+            <h1 class="fw-bold mb-3 contest-hero-title">AI 로봇 챌린지 2026</h1>
+            <p class="fs-5 mb-5 contest-hero-desc">
               인공지능과 로봇공학을 결합한 혁신적인 프로젝트를 만들고 플랫폼에 영구 등록하세요.
               실내 자율주행, 물체 인식, 음성 제어 등 다양한 AI 기술을 활용한 로봇을 제작하고 커뮤니티와 공유합니다.
             </p>
             <div class="d-flex flex-wrap gap-3 mb-5">
-              <a href="#" onclick="Auth.requireLogin(function(){ window.location.href='create-contest-project.html'; }); return false;" class="btn btn-lg fw-bold shadow-lg px-5" style="background:#fff;color:#2563eb;">
+              <a href="#" onclick="Auth.requireLogin(function(){ window.location.href='create-contest-project.html'; }); return false;" class="btn btn-lg fw-bold shadow-lg px-5 btn-white-blue">
                 🚀 참가하고 프로젝트 시작하기
               </a>
               <button class="btn btn-lg btn-outline-light fw-semibold px-5" onclick="showProjectsTab()">
@@ -185,28 +171,28 @@
               </button>
             </div>
             <!-- Quick Stats -->
-            <div class="d-flex flex-wrap gap-4 pt-4" style="border-top:1px solid rgba(255,255,255,.2);">
+            <div class="d-flex flex-wrap gap-4 pt-4 border-top-white-20">
               <div>
                 <div class="fw-bold fs-3">₩3,500만</div>
-                <div class="small" style="color:rgba(219,234,254,.8);">총 상금</div>
+                <div class="small text-rgba-blue-80">총 상금</div>
               </div>
-              <div style="width:1px;background:rgba(255,255,255,.2);"></div>
+              <div class="divider-white"></div>
               <div>
                 <div class="fw-bold fs-3">89개</div>
-                <div class="small" style="color:rgba(219,234,254,.8);">제출 프로젝트</div>
+                <div class="small text-rgba-blue-80">제출 프로젝트</div>
               </div>
-              <div style="width:1px;background:rgba(255,255,255,.2);"></div>
+              <div class="divider-white"></div>
               <div>
                 <div class="fw-bold fs-3">2026.04.25</div>
-                <div class="small" style="color:rgba(219,234,254,.8);">최종 마감일</div>
+                <div class="small text-rgba-blue-80">최종 마감일</div>
               </div>
             </div>
           </div>
           <!-- Right -->
           <div class="col-lg-6 text-center">
-            <div class="hero-img-wrap">
-              <img src="https://images.unsplash.com/photo-1581092333203-42374bcf7d89?w=800" class="img-fluid w-100" style="height:380px;object-fit:cover;" alt="AI 로봇 챌린지">
-              <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.4),transparent);pointer-events:none;"></div>
+            <div class="hero-img-wrap contest-detail-hero-img-wrap">
+              <img src="https://images.unsplash.com/photo-1581092333203-42374bcf7d89?w=800" class="img-fluid w-100 hero-img-380" alt="AI 로봇 챌린지">
+              <div class="hero-img-gradient-overlay"></div>
             </div>
           </div>
         </div>
@@ -231,13 +217,13 @@
         <div class="tab-pane fade show active" id="tab-overview">
 
           <!-- 콘테스트 참가 = 프로젝트 생성 -->
-          <div class="card border-0 shadow-sm mb-4 rounded-4" style="background:linear-gradient(135deg,#eff6ff,#f5f3ff);border:1px solid #bfdbfe!important;">
+          <div class="card border-0 shadow-sm mb-4 rounded-4 card-gradient-blue-violet-border-imp">
             <div class="card-body p-5">
               <div class="d-flex align-items-center gap-3 mb-4">
                 <div class="step-circle bg-primary text-white">💡</div>
                 <h2 class="fw-bold fs-4 mb-0">콘테스트 참가 = 프로젝트 생성</h2>
               </div>
-              <p class="text-secondary mb-5" style="line-height:1.8;font-size:1.05rem;">
+              <p class="text-secondary mb-5 lh-180 fs-105">
                 이 콘테스트는 단순한 공모전이 아닙니다. <strong class="text-dark">참가 신청과 동시에 하나의 프로젝트가 생성되며</strong>,
                 3개의 Quest를 완료하면서 점진적으로 프로젝트를 완성해 나갑니다.
                 완성된 프로젝트는 <strong class="text-dark">콘테스트 종료 후에도 플랫폼에 영구 보관</strong>되어 여러분의 포트폴리오가 됩니다.
@@ -259,7 +245,7 @@
                 </div>
                 <div class="col-md-4">
                   <div class="bg-white rounded-3 p-4 h-100 shadow-sm">
-                    <div class="step-circle mb-3" style="background:#ede9fe;color:#7c3aed;">🏆</div>
+                    <div class="step-circle mb-3 step-circle-violet">🏆</div>
                     <h5 class="fw-bold mb-2">3. 영구 자산화</h5>
                     <p class="text-muted small mb-0">완성된 프로젝트는 플랫폼의 영구 자산으로 남아 포트폴리오가 됩니다</p>
                   </div>
@@ -272,7 +258,7 @@
           <div class="card border-0 shadow-sm mb-4 rounded-4">
             <div class="card-body p-5">
               <h2 class="fw-bold fs-4 mb-4">콘테스트 소개</h2>
-              <div class="text-secondary" style="line-height:1.9;">
+              <div class="text-secondary lh-190">
                 <p>AI 로봇 챌린지 2026은 인공지능과 로봇공학의 융합을 통해 미래 기술을 선도할 메이커들을 위한 대회입니다.</p>
                 <p>참가자들은 라즈베리파이, Arduino, ESP32 등의 플랫폼과 다양한 AI 라이브러리를 활용하여 실내 자율주행, 물체 인식, 음성 제어 등의 기능을 가진 로봇을 제작합니다.</p>
                 <p class="mb-0">이 콘테스트의 핵심은 <strong class="text-dark">프로젝트 중심의 학습과 성장</strong>입니다. 3개의 Quest를 통해 기획부터 설계, 프로토타입 제작, 최종 완성까지 전체 개발 프로세스를 경험하며, 하나의 완성된 프로젝트를 만들어 갑니다.</p>
@@ -287,7 +273,7 @@
               <div class="row g-4">
                 <div class="col-md-6">
                   <h5 class="fw-bold d-flex align-items-center gap-2 mb-3"><span class="text-success">✅</span> 필수 요구사항</h5>
-                  <ul class="list-unstyled text-secondary" style="line-height:2;">
+                  <ul class="list-unstyled text-secondary lh-200">
                     <li class="d-flex gap-2"><span class="text-primary mt-1">•</span><span>로봇공학 또는 프로그래밍 기초 지식</span></li>
                     <li class="d-flex gap-2"><span class="text-primary mt-1">•</span><span>라즈베리파이, Arduino 등 개발 보드 보유</span></li>
                     <li class="d-flex gap-2"><span class="text-primary mt-1">•</span><span>Make 2.0 플랫폼 계정 (프로젝트 생성용)</span></li>
@@ -295,10 +281,10 @@
                 </div>
                 <div class="col-md-6">
                   <h5 class="fw-bold d-flex align-items-center gap-2 mb-3"><span class="text-warning">✨</span> 권장 사항</h5>
-                  <ul class="list-unstyled text-secondary" style="line-height:2;">
-                    <li class="d-flex gap-2"><span style="color:#7c3aed;" class="mt-1">•</span><span>Python 또는 C++ 프로그래밍 경험</span></li>
-                    <li class="d-flex gap-2"><span style="color:#7c3aed;" class="mt-1">•</span><span>OpenCV, TensorFlow 등 AI 라이브러리 경험</span></li>
-                    <li class="d-flex gap-2"><span style="color:#7c3aed;" class="mt-1">•</span><span>3D 프린터 또는 레이저 커터 사용 가능</span></li>
+                  <ul class="list-unstyled text-secondary lh-200">
+                    <li class="d-flex gap-2"><span class="text-purple mt-1">•</span><span>Python 또는 C++ 프로그래밍 경험</span></li>
+                    <li class="d-flex gap-2"><span class="text-purple mt-1">•</span><span>OpenCV, TensorFlow 등 AI 라이브러리 경험</span></li>
+                    <li class="d-flex gap-2"><span class="text-purple mt-1">•</span><span>3D 프린터 또는 레이저 커터 사용 가능</span></li>
                   </ul>
                 </div>
               </div>
@@ -354,11 +340,11 @@
         <div class="tab-pane fade" id="tab-quests">
 
           <!-- Info Box -->
-          <div class="rounded-4 p-4 mb-5 d-flex gap-4" style="background:#eff6ff;border:1px solid #bfdbfe;">
+          <div class="rounded-4 p-4 mb-5 d-flex gap-4 card-bg-blue-border1">
             <div class="step-circle bg-primary text-white flex-shrink-0">💡</div>
             <div>
               <h5 class="fw-bold mb-2">Quest는 프로젝트를 완성하는 단계별 여정입니다</h5>
-              <p class="text-secondary mb-0" style="line-height:1.8;">
+              <p class="text-secondary mb-0 lh-180">
                 각 Quest는 독립된 제출물이 아닌, <strong>하나의 프로젝트를 발전시키는 과정</strong>입니다.
                 Quest 1에서 시작한 프로젝트가 Quest 2, 3를 거치며 점점 완성되어 갑니다.
                 모든 Quest를 완료하면 플랫폼에 등록된 완성된 프로젝트 하나가 탄생합니다.
@@ -367,8 +353,8 @@
           </div>
 
           <!-- Quest 1 (완료) -->
-          <div class="card border-0 shadow-sm mb-4 rounded-4 overflow-hidden" style="border:1px solid #bbf7d0!important;">
-            <div class="p-5" style="background:#dcfce7;border-bottom:1px solid #bbf7d0;">
+          <div class="card border-0 shadow-sm mb-4 rounded-4 overflow-hidden quest-card-done">
+            <div class="p-5 quest-card-done-header">
               <div class="d-flex align-items-start justify-content-between gap-3">
                 <div class="d-flex align-items-start gap-4 flex-grow-1">
                   <div class="quest-circle bg-success text-white">✓</div>
@@ -437,11 +423,11 @@
           </div>
 
           <!-- Quest 3 (시작 전) -->
-          <div class="card border-0 shadow-sm mb-4 rounded-4 overflow-hidden" style="opacity:.8;">
-            <div class="p-5 border-bottom" style="background:#f3f4f6;">
+          <div class="card border-0 shadow-sm mb-4 rounded-4 overflow-hidden opacity-80">
+            <div class="p-5 border-bottom bg-gray-100">
               <div class="d-flex align-items-start justify-content-between gap-3">
                 <div class="d-flex align-items-start gap-4 flex-grow-1">
-                  <div class="quest-circle text-white fw-bold" style="background:#9ca3af;">3</div>
+                  <div class="quest-circle text-white fw-bold bg-gray-400">3</div>
                   <div class="flex-grow-1">
                     <h3 class="fw-bold fs-4 mb-1">Quest 3: 최종 프로젝트 완성</h3>
                     <p class="text-secondary mb-3">AI 기능을 통합하고 최종 테스트를 완료하여 프로젝트를 완성하세요</p>
@@ -453,7 +439,7 @@
                   </div>
                 </div>
                 <div class="text-end flex-shrink-0">
-                  <span class="badge px-3 py-2 mb-2 d-block text-white" style="background:#9ca3af;">⏳ 시작 전</span>
+                  <span class="badge px-3 py-2 mb-2 d-block text-white bg-gray-400">⏳ 시작 전</span>
                   <div class="fw-bold fs-3 text-dark">200점</div>
                 </div>
               </div>
@@ -467,7 +453,7 @@
                 <li class="d-flex align-items-start gap-3"><span class="text-muted mt-1">☐</span><span class="text-secondary">완성된 프로젝트 문서화</span></li>
                 <li class="d-flex align-items-start gap-3"><span class="text-muted mt-1">☐</span><span class="text-secondary">시연 영상 제작</span></li>
               </ul>
-              <button class="btn w-100 text-white" style="background:#9ca3af;" disabled>⏳ 아직 시작 전입니다</button>
+              <button class="btn w-100 text-white bg-gray-400" disabled>⏳ 아직 시작 전입니다</button>
             </div>
           </div>
         </div>
@@ -476,18 +462,18 @@
         <div class="tab-pane fade" id="tab-projects">
           <div class="row g-4">
             <div class="col-md-6 col-lg-4">
-              <a href="project-detail.html" class="card border-0 shadow-sm text-decoration-none text-dark h-100 rounded-4 overflow-hidden" style="transition:all .2s;">
-                <div style="position:relative;">
-                  <img src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=600" class="card-img-top" style="height:180px;object-fit:cover;" alt="">
-                  <div style="position:absolute;top:.75rem;left:.75rem;display:flex;gap:.5rem;">
-                    <span class="badge" style="background:#7c3aed;">🏆 콘테스트</span>
+              <a href="project-detail.html" class="card border-0 shadow-sm text-decoration-none text-dark h-100 rounded-4 overflow-hidden transition-all-02">
+                <div class="position-relative">
+                  <img src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=600" class="card-img-top thumb-180h" alt="">
+                  <div class="img-badge-topleft">
+                    <span class="badge bg-purple">🏆 콘테스트</span>
                     <span class="badge bg-success">완성</span>
                   </div>
                 </div>
                 <div class="card-body p-4">
                   <h6 class="fw-bold mb-2">AI 음성인식 자율주행 로봇 1</h6>
                   <div class="d-flex align-items-center gap-2 mb-3">
-                    <div style="width:24px;height:24px;border-radius:50%;background:#dbeafe;display:flex;align-items:center;justify-content:center;font-size:.7rem;font-weight:700;color:#2563eb;">김</div>
+                    <div class="badge-blue-circle">김</div>
                     <span class="text-muted small">김메이커</span>
                   </div>
                   <div class="d-flex gap-3 text-muted small">
@@ -498,17 +484,17 @@
             </div>
             <div class="col-md-6 col-lg-4">
               <a href="project-detail.html" class="card border-0 shadow-sm text-decoration-none text-dark h-100 rounded-4 overflow-hidden">
-                <div style="position:relative;">
-                  <img src="https://images.unsplash.com/photo-1581092333203-42374bcf7d89?w=600" class="card-img-top" style="height:180px;object-fit:cover;" alt="">
-                  <div style="position:absolute;top:.75rem;left:.75rem;display:flex;gap:.5rem;">
-                    <span class="badge" style="background:#7c3aed;">🏆 콘테스트</span>
+                <div class="position-relative">
+                  <img src="https://images.unsplash.com/photo-1581092333203-42374bcf7d89?w=600" class="card-img-top thumb-180h" alt="">
+                  <div class="img-badge-topleft">
+                    <span class="badge bg-purple">🏆 콘테스트</span>
                     <span class="badge bg-success">완성</span>
                   </div>
                 </div>
                 <div class="card-body p-4">
                   <h6 class="fw-bold mb-2">AI 음성인식 자율주행 로봇 2</h6>
                   <div class="d-flex align-items-center gap-2 mb-3">
-                    <div style="width:24px;height:24px;border-radius:50%;background:#dbeafe;display:flex;align-items:center;justify-content:center;font-size:.7rem;font-weight:700;color:#2563eb;">김</div>
+                    <div class="badge-blue-circle">김</div>
                     <span class="text-muted small">김메이커</span>
                   </div>
                   <div class="d-flex gap-3 text-muted small">
@@ -519,17 +505,17 @@
             </div>
             <div class="col-md-6 col-lg-4">
               <a href="project-detail.html" class="card border-0 shadow-sm text-decoration-none text-dark h-100 rounded-4 overflow-hidden">
-                <div style="position:relative;">
-                  <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600" class="card-img-top" style="height:180px;object-fit:cover;" alt="">
-                  <div style="position:absolute;top:.75rem;left:.75rem;display:flex;gap:.5rem;">
-                    <span class="badge" style="background:#7c3aed;">🏆 콘테스트</span>
+                <div class="position-relative">
+                  <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600" class="card-img-top thumb-180h" alt="">
+                  <div class="img-badge-topleft">
+                    <span class="badge bg-purple">🏆 콘테스트</span>
                     <span class="badge bg-success">완성</span>
                   </div>
                 </div>
                 <div class="card-body p-4">
                   <h6 class="fw-bold mb-2">AI 음성인식 자율주행 로봇 3</h6>
                   <div class="d-flex align-items-center gap-2 mb-3">
-                    <div style="width:24px;height:24px;border-radius:50%;background:#dbeafe;display:flex;align-items:center;justify-content:center;font-size:.7rem;font-weight:700;color:#2563eb;">김</div>
+                    <div class="badge-blue-circle">김</div>
                     <span class="text-muted small">김메이커</span>
                   </div>
                   <div class="d-flex gap-3 text-muted small">
@@ -540,17 +526,17 @@
             </div>
             <div class="col-md-6 col-lg-4">
               <a href="project-detail.html" class="card border-0 shadow-sm text-decoration-none text-dark h-100 rounded-4 overflow-hidden">
-                <div style="position:relative;">
-                  <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=600" class="card-img-top" style="height:180px;object-fit:cover;" alt="">
-                  <div style="position:absolute;top:.75rem;left:.75rem;display:flex;gap:.5rem;">
-                    <span class="badge" style="background:#7c3aed;">🏆 콘테스트</span>
+                <div class="position-relative">
+                  <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=600" class="card-img-top thumb-180h" alt="">
+                  <div class="img-badge-topleft">
+                    <span class="badge bg-purple">🏆 콘테스트</span>
                     <span class="badge bg-success">완성</span>
                   </div>
                 </div>
                 <div class="card-body p-4">
                   <h6 class="fw-bold mb-2">AI 음성인식 자율주행 로봇 4</h6>
                   <div class="d-flex align-items-center gap-2 mb-3">
-                    <div style="width:24px;height:24px;border-radius:50%;background:#dbeafe;display:flex;align-items:center;justify-content:center;font-size:.7rem;font-weight:700;color:#2563eb;">김</div>
+                    <div class="badge-blue-circle">김</div>
                     <span class="text-muted small">김메이커</span>
                   </div>
                   <div class="d-flex gap-3 text-muted small">
@@ -561,17 +547,17 @@
             </div>
             <div class="col-md-6 col-lg-4">
               <a href="project-detail.html" class="card border-0 shadow-sm text-decoration-none text-dark h-100 rounded-4 overflow-hidden">
-                <div style="position:relative;">
-                  <img src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=600" class="card-img-top" style="height:180px;object-fit:cover;" alt="">
-                  <div style="position:absolute;top:.75rem;left:.75rem;display:flex;gap:.5rem;">
-                    <span class="badge" style="background:#7c3aed;">🏆 콘테스트</span>
+                <div class="position-relative">
+                  <img src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=600" class="card-img-top thumb-180h" alt="">
+                  <div class="img-badge-topleft">
+                    <span class="badge bg-purple">🏆 콘테스트</span>
                     <span class="badge bg-success">완성</span>
                   </div>
                 </div>
                 <div class="card-body p-4">
                   <h6 class="fw-bold mb-2">AI 음성인식 자율주행 로봇 5</h6>
                   <div class="d-flex align-items-center gap-2 mb-3">
-                    <div style="width:24px;height:24px;border-radius:50%;background:#dbeafe;display:flex;align-items:center;justify-content:center;font-size:.7rem;font-weight:700;color:#2563eb;">김</div>
+                    <div class="badge-blue-circle">김</div>
                     <span class="text-muted small">김메이커</span>
                   </div>
                   <div class="d-flex gap-3 text-muted small">
@@ -582,17 +568,17 @@
             </div>
             <div class="col-md-6 col-lg-4">
               <a href="project-detail.html" class="card border-0 shadow-sm text-decoration-none text-dark h-100 rounded-4 overflow-hidden">
-                <div style="position:relative;">
-                  <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600" class="card-img-top" style="height:180px;object-fit:cover;" alt="">
-                  <div style="position:absolute;top:.75rem;left:.75rem;display:flex;gap:.5rem;">
-                    <span class="badge" style="background:#7c3aed;">🏆 콘테스트</span>
+                <div class="position-relative">
+                  <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600" class="card-img-top thumb-180h" alt="">
+                  <div class="img-badge-topleft">
+                    <span class="badge bg-purple">🏆 콘테스트</span>
                     <span class="badge bg-success">완성</span>
                   </div>
                 </div>
                 <div class="card-body p-4">
                   <h6 class="fw-bold mb-2">AI 음성인식 자율주행 로봇 6</h6>
                   <div class="d-flex align-items-center gap-2 mb-3">
-                    <div style="width:24px;height:24px;border-radius:50%;background:#dbeafe;display:flex;align-items:center;justify-content:center;font-size:.7rem;font-weight:700;color:#2563eb;">김</div>
+                    <div class="badge-blue-circle">김</div>
                     <span class="text-muted small">김메이커</span>
                   </div>
                   <div class="d-flex gap-3 text-muted small">
@@ -611,24 +597,24 @@
               <h2 class="fw-bold fs-4 mb-5">시상 내역</h2>
               <div class="d-flex flex-column gap-3">
                 <!-- 대상 -->
-                <div class="d-flex align-items-center gap-4 p-4 rounded-3" style="background:linear-gradient(to right,#fffbeb,#fff7ed);border:2px solid #fbbf24;">
-                  <div style="width:64px;height:64px;border-radius:50%;background:#eab308;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:1.8rem;">🏆</div>
+                <div class="d-flex align-items-center gap-4 p-4 rounded-3 prize-row-gold">
+                  <div class="prize-icon prize-icon-gold">🏆</div>
                   <div class="flex-grow-1">
                     <h3 class="fw-bold fs-5 mb-1">대상 (1팀)</h3>
                     <p class="text-secondary mb-0">₩15,000,000 + 후원사 특별상</p>
                   </div>
                 </div>
                 <!-- 최우수상 -->
-                <div class="d-flex align-items-center gap-4 p-4 rounded-3 bg-light" style="border:1px solid #e5e7eb;">
-                  <div style="width:64px;height:64px;border-radius:50%;background:#9ca3af;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:1.8rem;">🥇</div>
+                <div class="d-flex align-items-center gap-4 p-4 rounded-3 bg-light border">
+                  <div class="prize-icon prize-icon-silver">🥇</div>
                   <div class="flex-grow-1">
                     <h3 class="fw-bold fs-5 mb-1">최우수상 (2팀)</h3>
                     <p class="text-secondary mb-0">₩8,000,000</p>
                   </div>
                 </div>
                 <!-- 우수상 -->
-                <div class="d-flex align-items-center gap-4 p-4 rounded-3 bg-light" style="border:1px solid #e5e7eb;">
-                  <div style="width:64px;height:64px;border-radius:50%;background:#f97316;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:1.8rem;">⭐</div>
+                <div class="d-flex align-items-center gap-4 p-4 rounded-3 bg-light border">
+                  <div class="prize-icon prize-icon-bronze">⭐</div>
                   <div class="flex-grow-1">
                     <h3 class="fw-bold fs-5 mb-1">우수상 (3팀)</h3>
                     <p class="text-secondary mb-0">₩4,000,000</p>
@@ -649,7 +635,7 @@
                   <h5 class="fw-bold d-flex align-items-center gap-2 mb-2">
                     <span class="text-primary fs-5">❓</span> Quest와 프로젝트는 어떤 관계인가요?
                   </h5>
-                  <p class="text-secondary mb-0 ps-4" style="line-height:1.8;">
+                  <p class="text-secondary mb-0 ps-4 lh-180">
                     참가 신청 시 하나의 프로젝트가 생성됩니다. Quest 1, 2, 3은 이 프로젝트를 완성하는 단계별 과정이며, 각 Quest 제출은 동일한 프로젝트에 누적 기록됩니다. 최종적으로 하나의 완성된 프로젝트가 만들어집니다.
                   </p>
                 </div>
@@ -657,9 +643,9 @@
                   <h5 class="fw-bold d-flex align-items-center gap-2 mb-2">
                     <span class="text-primary fs-5">❓</span> Quest 제출 기간은 어떻게 구성되나요?
                   </h5>
-                  <div class="text-secondary ps-4" style="line-height:1.8;">
+                  <div class="text-secondary ps-4 lh-180">
                     <p class="mb-2">각 Quest는 3단계 제출 기간을 가집니다:</p>
-                    <ul class="mb-0" style="padding-left:1.2rem;">
+                    <ul class="mb-0 ps-faq">
                       <li><strong>정상 제출 기간:</strong> 시작일 ~ 정상 마감일. 이 기간 안에 제출하면 정상 점수를 받습니다.</li>
                       <li><strong>지각 제출 기간:</strong> 정상 마감일 ~ 최종 제출 종료일. 제출은 가능하지만 감점이 적용됩니다 (Quest별로 15~30% 감점).</li>
                       <li><strong>제출 종료:</strong> 최종 제출 종료일 이후에는 제출 자체가 불가능합니다.</li>
@@ -670,7 +656,7 @@
                   <h5 class="fw-bold d-flex align-items-center gap-2 mb-2">
                     <span class="text-primary fs-5">❓</span> 콘테스트가 끝나면 프로젝트는 어떻게 되나요?
                   </h5>
-                  <p class="text-secondary mb-0 ps-4" style="line-height:1.8;">
+                  <p class="text-secondary mb-0 ps-4 lh-180">
                     완성된 프로젝트는 콘테스트 종료 후에도 플랫폼에 영구히 보관됩니다. 프로젝트 리스트에서 계속 공개되며, 여러분의 포트폴리오로 활용할 수 있습니다.
                   </p>
                 </div>
@@ -678,7 +664,7 @@
                   <h5 class="fw-bold d-flex align-items-center gap-2 mb-2">
                     <span class="text-primary fs-5">❓</span> 모든 Quest를 완료해야 하나요?
                   </h5>
-                  <p class="text-secondary mb-0 ps-4" style="line-height:1.8;">
+                  <p class="text-secondary mb-0 ps-4 lh-180">
                     최종 심사 대상이 되려면 Quest 1, 2, 3를 모두 완료하여 프로젝트를 완성해야 합니다. 부분 완성된 프로젝트는 심사 대상에서 제외됩니다.
                   </p>
                 </div>
@@ -686,7 +672,7 @@
                   <h5 class="fw-bold d-flex align-items-center gap-2 mb-2">
                     <span class="text-primary fs-5">❓</span> 팀으로 참가할 수 있나요?
                   </h5>
-                  <p class="text-secondary mb-0 ps-4" style="line-height:1.8;">
+                  <p class="text-secondary mb-0 ps-4 lh-180">
                     네, 1~4인 팀으로 참가 가능합니다. 팀 대표가 프로젝트를 생성하고 팀원을 초대할 수 있습니다.
                   </p>
                 </div>
@@ -749,7 +735,7 @@
       <div class="small text-muted lh-lg">
         <p class="mb-1">(주)디지털데일리 | 등록번호 : 경기 아51470 | 등록: 2008.10.20 | 발행: 2026.05.19 | 표: 김제호</p>
         <p class="mb-1">주소 : 경기도 성남시 분당구 대왕판교로 660번길 8 | 전화 : 02-883-9797 | 팩스 : 02-6280-9957</p>
-        <p class="mb-1 text-secondary" style="opacity:.6;">
+        <p class="mb-1 text-secondary footer-copyright">
           본 콘텐츠의 저작권은 (주)디지털데일리에 있으며 무단 전재 및 재배포를 금지합니다.
         </p>
         <p class="mt-3 mb-0">Copyright &copy; 2026 e4ds News. All Rights Reserved</p>

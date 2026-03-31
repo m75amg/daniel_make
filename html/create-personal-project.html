@@ -8,75 +8,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/custom.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
-  <style>
-    /* ── 공통 ── */
-    body { background:#f9fafb; }
-    .form-card { border:0; border-radius:1rem; box-shadow:0 1px 8px rgba(0,0,0,.08); }
-    .section-icon { width:40px;height:40px;border-radius:.5rem;display:flex;align-items:center;justify-content:center;flex-shrink:0; }
-    .upload-zone { border:2px dashed #d1d5db;border-radius:.75rem;padding:2.5rem 1rem;text-align:center;cursor:pointer;transition:border-color .2s; }
-    .upload-zone:hover { border-color:#ec4899; }
-    .chip { display:inline-flex;align-items:center;gap:.3rem;padding:.3rem .65rem;border-radius:9999px;font-size:.8rem;font-weight:500; }
-    .chip-green  { background:#d1fae5;color:#065f46; }
-    .chip-purple { background:#ede9fe;color:#5b21b6; }
-    .chip-blue   { background:#dbeafe;color:#1e40af; }
-    .chip-orange { background:#fed7aa;color:#92400e; }
-    .remove-x { background:none;border:none;padding:0;cursor:pointer;line-height:1;font-size:.75rem; }
-
-    /* ── Sticky top bar ── */
-    .page-top-bar { position:sticky;top:0;z-index:200;background:#fff;border-bottom:1px solid #e5e7eb;padding:.875rem 0; }
-
-    /* ── 커뮤니티 버튼 ── */
-    .comm-btn { width:100%;text-align:left;background:#fff;border:1px solid #e9d5ff;border-radius:.5rem;padding:.65rem .9rem;display:flex;align-items:center;gap:.6rem;font-size:.85rem;cursor:pointer;transition:background .15s; }
-    .comm-btn:hover { background:#faf5ff; }
-
-    /* ── 사이드바 sticky ── */
-    .sticky-sidebar { position:sticky;top:90px; }
-
-    /* ── 미리보기 패널 (우측 슬라이드인) ── */
-    #preview-overlay { display:none;position:fixed;inset:0;z-index:400;background:rgba(0,0,0,.4);opacity:0;transition:opacity .25s; }
-    #preview-overlay.show { opacity:1; }
-    #preview-panel {
-      position:fixed;top:0;right:0;bottom:0;width:100%;max-width:680px;z-index:401;
-      background:#fff;box-shadow:-8px 0 40px rgba(0,0,0,.18);
-      display:flex;flex-direction:column;
-      transform:translateX(100%);transition:transform .3s cubic-bezier(.4,0,.2,1);
-    }
-    #preview-panel.show { transform:translateX(0); }
-    .preview-header { border-bottom:1px solid #e5e7eb;padding:1rem 1.5rem;flex-shrink:0;background:#fff; }
-    .preview-tab-switch { background:#f3f4f6;border-radius:.5rem;padding:.25rem;display:inline-flex; }
-    .preview-tab-btn { border:none;background:none;border-radius:.375rem;padding:.35rem .8rem;font-size:.82rem;color:#6b7280;cursor:pointer;transition:all .15s; }
-    .preview-tab-btn.active { background:#fff;color:#111827;font-weight:600;box-shadow:0 1px 4px rgba(0,0,0,.1); }
-    .preview-draft-banner { background:#fffbeb;border-bottom:1px solid #fde68a;padding:.5rem 1.5rem;font-size:.78rem;color:#92400e;flex-shrink:0; }
-    .preview-body { flex:1;overflow-y:auto; }
-    .preview-footer { border-top:1px solid #e5e7eb;padding:.875rem 1.5rem;background:#f9fafb;flex-shrink:0;display:flex;align-items:center;justify-content:space-between; }
-
-    /* checklist */
-    .check-item { display:flex;align-items:center;gap:.5rem;font-size:.85rem;padding:.2rem 0; }
-    .check-dot { width:20px;height:20px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:.7rem; }
-    .check-dot.done { background:#22c55e;color:#fff; }
-    .check-dot.pending { background:#d1d5db; }
-
-    /* card preview */
-    .pv-card { border:1px solid #e5e7eb;border-radius:.75rem;overflow:hidden; }
-    .pv-card-img { height:176px;background:linear-gradient(135deg,#dbeafe,#ede9fe,#fce7f3);display:flex;align-items:center;justify-content:center;position:relative;font-size:.85rem;color:#9ca3af; }
-    .pv-card-body { padding:1rem; }
-
-    /* ── 커뮤니티 빠른 액션 패널 ── */
-    .qa-type-btn, .qa-role-btn { border:2px solid #e5e7eb; background:#fff; cursor:pointer; transition:all .15s; text-align:left; }
-    .qa-type-btn:hover, .qa-role-btn:hover { border-color:#d1d5db; background:#f9fafb; }
-    .qa-type-btn.qa-selected  { border-color:#3b82f6 !important; background:#eff6ff !important; }
-    .qa-type-btn.qa-selected .qa-icon  { color:#2563eb !important; }
-    .qa-role-btn.qa-selected  { border-color:#16a34a !important; background:#f0fdf4 !important; }
-    .qa-role-btn.qa-selected .qa-icon  { color:#16a34a !important; }
-    .qa-quest-btn { border:2px solid #e5e7eb; background:#fff; cursor:pointer; transition:all .15s; }
-    .qa-quest-btn:hover { border-color:#d1d5db; background:#f9fafb; }
-    .qa-quest-btn.qa-selected { border-color:#3b82f6 !important; background:#eff6ff !important; }
-    .cpanel-backdrop { position:fixed; inset:0; background:rgba(0,0,0,.45); z-index:2040; display:none; }
-    .cpanel-backdrop.cpanel-show { display:block; }
-    .cpanel { position:fixed; top:0; right:0; bottom:0; background:#fff; z-index:2045; display:flex; flex-direction:column; box-shadow:-4px 0 32px rgba(0,0,0,.18); transform:translateX(100%); transition:transform .3s ease; }
-    .cpanel.cpanel-show { transform:translateX(0); }
-    .cpanel-body { flex:1; overflow-y:auto; }
-  </style>
+  <link rel="stylesheet" href="assets/css/make2026-styles.css">
 </head>
 <body>
 
@@ -86,7 +18,7 @@
   <!-- Top Bar -->
   <div class="border-bottom border-light">
     <div class="container-xl">
-      <div class="d-flex align-items-center justify-content-between" style="height:36px;">
+      <div class="d-flex align-items-center justify-content-between topbar-inner">
         <small class="text-muted" id="header-date"></small>
         <div class="d-flex align-items-center gap-3">
           <a href="login.html"   class="text-secondary text-decoration-none small header-toplink auth-loggedout-only">로그인</a>
@@ -100,12 +32,12 @@
 
   <!-- Main Nav -->
   <div class="container-xl">
-    <nav class="navbar navbar-expand-lg px-0" style="min-height:64px;">
+    <nav class="navbar navbar-expand-lg px-0">
 
       <!-- Logo -->
       <a class="navbar-brand fw-bold fs-5 me-4" href="index.html">
         <span class="text-dark">e</span><span class="text-warning">4</span><span class="text-dark">ds</span>
-        <span class="fw-normal text-secondary ms-1" style="font-size:1.1rem;">make</span>
+        <span class="fw-normal text-secondary ms-1 brand-text">make</span>
       </a>
 
       <!-- Mobile toggler -->
@@ -156,7 +88,7 @@
           <li class="nav-item dropdown" id="makers-zone-dropdown">
             <a class="nav-link dropdown-toggle fw-medium text-dark" href="#"
                data-bs-toggle="dropdown">Maker's Zone</a>
-            <ul class="dropdown-menu shadow-sm border-0" style="min-width:160px;">
+            <ul class="dropdown-menu shadow-sm border-0">
               <li><a class="dropdown-item" href="projects.html">프로젝트</a></li>
               <li><a class="dropdown-item" href="contests.html">콘테스트</a></li>
               <li><a class="dropdown-item" href="community.html">커뮤니티</a></li>
@@ -204,7 +136,7 @@
 
   <!-- ── Sticky Top Bar ── -->
   <div class="page-top-bar">
-    <div class="container" style="max-width:1100px;">
+    <div class="container container-1100">
       <div class="d-flex align-items-center justify-content-between">
         <div class="d-flex align-items-center gap-3">
           <a href="javascript:history.back()" class="btn btn-light btn-sm">← 뒤로</a>
@@ -222,7 +154,7 @@
   </div>
 
   <main class="py-4">
-    <div class="container" style="max-width:1100px;">
+    <div class="container container-1100">
       <div class="row g-4">
 
         <!-- ════ LEFT COLUMN ════ -->
@@ -231,7 +163,7 @@
           <!-- 1. 기본 정보 -->
           <div class="card form-card p-4 mb-4">
             <div class="d-flex align-items-center gap-3 mb-4">
-              <div class="section-icon" style="background:#dbeafe;">📄</div>
+              <div class="section-icon section-icon-blue">📄</div>
               <div><div class="fw-bold">기본 정보</div><div class="small text-muted">프로젝트의 핵심 정보를 입력하세요</div></div>
             </div>
 
@@ -296,7 +228,7 @@
           <!-- 2. 기술 스택 -->
           <div class="card form-card p-4 mb-4">
             <div class="d-flex align-items-center gap-3 mb-4">
-              <div class="section-icon" style="background:#ede9fe;">🔧</div>
+              <div class="section-icon section-icon-violet">🔧</div>
               <div><div class="fw-bold">기술 스택</div><div class="small text-muted">사용할 하드웨어와 소프트웨어를 추가하세요</div></div>
             </div>
 
@@ -322,14 +254,14 @@
           <!-- 3. 대표 이미지 -->
           <div class="card form-card p-4 mb-4">
             <div class="d-flex align-items-center gap-3 mb-4">
-              <div class="section-icon" style="background:#fce7f3;">🖼️</div>
+              <div class="section-icon section-icon-pink">🖼️</div>
               <div><div class="fw-bold">대표 이미지</div><div class="small text-muted">프로젝트를 대표하는 이미지를 업로드하세요</div></div>
             </div>
             <div class="upload-zone" onclick="document.getElementById('cover-file').click()">
               <div id="upload-placeholder">
-                <div style="font-size:2.5rem;" class="mb-2">📁</div>
+                <div class="fs-250 mb-2">📁</div>
                 <div class="fw-semibold small mb-1">이미지 업로드</div>
-                <div class="text-muted" style="font-size:.78rem;">JPG, PNG 파일 (최대 5MB)</div>
+                <div class="text-muted fs-78">JPG, PNG 파일 (최대 5MB)</div>
                 <button class="btn btn-outline-secondary btn-sm mt-3" type="button">파일 선택</button>
               </div>
               <input type="file" id="cover-file" accept="image/*" class="d-none">
@@ -339,7 +271,7 @@
           <!-- 4. 태그 -->
           <div class="card form-card p-4 mb-4">
             <div class="d-flex align-items-center gap-3 mb-4">
-              <div class="section-icon" style="background:#d1fae5;">🏷️</div>
+              <div class="section-icon section-icon-green">🏷️</div>
               <div><div class="fw-bold">태그</div><div class="small text-muted">프로젝트 검색을 위한 태그를 추가하세요</div></div>
             </div>
             <div class="input-group mb-3">
@@ -355,15 +287,15 @@
           <!-- 5. 관련 링크 -->
           <div class="card form-card p-4 mb-4">
             <div class="d-flex align-items-center gap-3 mb-4">
-              <div class="section-icon" style="background:#fed7aa;">🔗</div>
+              <div class="section-icon section-icon-orange">🔗</div>
               <div><div class="fw-bold">관련 링크</div><div class="small text-muted">GitHub, 블로그 등 관련 링크를 추가하세요</div></div>
             </div>
             <div class="d-flex gap-2 mb-3">
-              <select class="form-select" id="link-type" style="width:auto;flex-shrink:0;">
+              <select class="form-select w-auto-shrink-0" id="link-type">
                 <option>GitHub</option><option>YouTube</option><option>Website</option><option>Blog</option><option>기타</option>
               </select>
               <input type="url" class="form-control" id="link-url" placeholder="https://...">
-              <button class="btn btn-outline-secondary" type="button" onclick="addLink()" style="white-space:nowrap;">추가</button>
+              <button class="btn btn-outline-secondary text-nowrap" type="button" onclick="addLink()">추가</button>
             </div>
             <div id="link-list" class="d-flex flex-column gap-2"></div>
           </div>
@@ -371,14 +303,14 @@
           <!-- 6. 팀 구성 -->
           <div class="card form-card p-4 mb-4">
             <div class="d-flex align-items-center gap-3 mb-4">
-              <div class="section-icon" style="background:#e0e7ff;">👥</div>
+              <div class="section-icon section-icon-indigo">👥</div>
               <div><div class="fw-bold">팀 구성</div><div class="small text-muted">혼자 진행하거나 팀으로 진행할 수 있습니다</div></div>
             </div>
-            <label class="d-flex align-items-center gap-3 p-3 border rounded-3 cursor-pointer" style="cursor:pointer;">
+            <label class="d-flex align-items-center gap-3 p-3 border rounded-3 cursor-pointer">
               <input type="checkbox" id="f-team" class="form-check-input m-0" onchange="toggleTeamName()">
               <div>
                 <div class="fw-semibold small">팀 프로젝트로 진행</div>
-                <div class="text-muted" style="font-size:.78rem;">여러 명이 함께 참여하는 프로젝트입니다</div>
+                <div class="text-muted fs-78">여러 명이 함께 참여하는 프로젝트입니다</div>
               </div>
             </label>
             <div id="team-name-wrap" class="d-none mt-3">
@@ -388,7 +320,7 @@
           </div>
 
           <!-- 하단 액션 -->
-          <div class="card form-card p-4 mb-4" style="background:linear-gradient(135deg,#eff6ff,#faf5ff);border:2px solid #bfdbfe;">
+          <div class="card form-card p-4 mb-4 card-gradient-blue-violet-border2">
             <div class="text-center">
               <div class="fw-bold fs-6 mb-3">✨ 프로젝트를 생성할 준비가 되었나요?</div>
               <div id="bottom-warn" class="alert alert-warning text-start small d-none">
@@ -397,8 +329,7 @@
               </div>
               <div class="d-flex gap-3 justify-content-center mt-3">
                 <a href="javascript:history.back()" class="btn btn-outline-secondary px-5 py-2">← 취소</a>
-                <button class="btn btn-primary px-5 py-2 fw-bold" id="btn-submit2" disabled onclick="doSubmit()"
-                  style="background:linear-gradient(135deg,#2563eb,#7c3aed);border:none;">
+                <button class="btn btn-primary px-5 py-2 fw-bold btn-gradient-blue-violet" id="btn-submit2" disabled onclick="doSubmit()">
                   💾 프로젝트 생성하기
                 </button>
               </div>
@@ -412,19 +343,19 @@
           <div class="sticky-sidebar">
 
             <!-- 프로젝트 타입 안내 -->
-            <div class="card form-card p-4 mb-3" style="background:linear-gradient(135deg,#eff6ff,#dbeafe);border:1px solid #bfdbfe;">
+            <div class="card form-card p-4 mb-3 card-gradient-blue-dblue-border1">
               <div class="d-flex align-items-center gap-2 mb-3">
-                <div style="background:#2563eb;border-radius:.5rem;width:40px;height:40px;display:flex;align-items:center;justify-content:center;">✨</div>
+                <div class="sidebar-type-icon sidebar-type-icon-blue">✨</div>
                 <div>
-                  <div style="background:#2563eb;color:#fff;border-radius:9999px;font-size:.72rem;padding:.15rem .55rem;display:inline-block;font-weight:600;" class="mb-1">개인 프로젝트</div>
+                  <div class="sidebar-type-badge sidebar-type-badge-blue mb-1">개인 프로젝트</div>
                   <div class="fw-bold small">자유로운 프로젝트</div>
                 </div>
               </div>
               <p class="small text-muted mb-2">개인 프로젝트는 자유롭게 시작하고 진행할 수 있습니다.</p>
               <ul class="list-unstyled small mb-0">
-                <li class="d-flex gap-2 mb-1"><span style="color:#2563eb;">✔</span> 나만의 속도로 진행</li>
-                <li class="d-flex gap-2 mb-1"><span style="color:#2563eb;">✔</span> 언제든 수정 가능</li>
-                <li class="d-flex gap-2"><span style="color:#2563eb;">✔</span> 포트폴리오로 활용</li>
+                <li class="d-flex gap-2 mb-1"><span class="text-blue">✔</span> 나만의 속도로 진행</li>
+                <li class="d-flex gap-2 mb-1"><span class="text-blue">✔</span> 언제든 수정 가능</li>
+                <li class="d-flex gap-2"><span class="text-blue">✔</span> 포트폴리오로 활용</li>
               </ul>
             </div>
 
@@ -433,14 +364,14 @@
               <div class="fw-bold small mb-2">Quest 시스템</div>
               <p class="small text-muted mb-3">개인 프로젝트도 Quest 단계를 통해 체계적으로 진행할 수 있습니다.</p>
               <div class="d-flex flex-column gap-2">
-                <div class="d-flex gap-2"><div style="width:24px;height:24px;border-radius:50%;background:#dbeafe;color:#1d4ed8;font-size:.75rem;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;">1</div><div><div class="fw-semibold" style="font-size:.82rem;">프로젝트 계획</div><div class="text-muted" style="font-size:.75rem;">아이디어와 목표 정리</div></div></div>
-                <div class="d-flex gap-2"><div style="width:24px;height:24px;border-radius:50%;background:#ede9fe;color:#7c3aed;font-size:.75rem;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;">2</div><div><div class="fw-semibold" style="font-size:.82rem;">제작 &amp; 개발</div><div class="text-muted" style="font-size:.75rem;">실제 구현 진행</div></div></div>
-                <div class="d-flex gap-2"><div style="width:24px;height:24px;border-radius:50%;background:#d1fae5;color:#065f46;font-size:.75rem;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;">3</div><div><div class="fw-semibold" style="font-size:.82rem;">완성 &amp; 공유</div><div class="text-muted" style="font-size:.75rem;">결과 정리 및 공개</div></div></div>
+                <div class="d-flex gap-2"><div class="quest-step-num quest-step-blue">1</div><div><div class="fw-semibold fs-82">프로젝트 계획</div><div class="text-muted fs-xs">아이디어와 목표 정리</div></div></div>
+                <div class="d-flex gap-2"><div class="quest-step-num quest-step-violet">2</div><div><div class="fw-semibold fs-82">제작 &amp; 개발</div><div class="text-muted fs-xs">실제 구현 진행</div></div></div>
+                <div class="d-flex gap-2"><div class="quest-step-num quest-step-green">3</div><div><div class="fw-semibold fs-82">완성 &amp; 공유</div><div class="text-muted fs-xs">결과 정리 및 공개</div></div></div>
               </div>
             </div>
 
             <!-- 필수 정보 체크리스트 -->
-            <div class="card form-card p-4 mb-3" style="background:linear-gradient(135deg,#f0fdf4,#d1fae5);border:1px solid #a7f3d0;">
+            <div class="card form-card p-4 mb-3 card-gradient-green-border1">
               <div class="fw-bold small mb-3 d-flex align-items-center gap-2">🎯 필수 정보 체크리스트</div>
               <div id="sidebar-checklist"></div>
             </div>
@@ -458,27 +389,27 @@
             </div>
 
             <!-- 커뮤니티 도움받기 -->
-            <div class="card form-card p-4" style="background:linear-gradient(135deg,#faf5ff,#fce7f3);border:1px solid #e9d5ff;">
+            <div class="card form-card p-4 card-gradient-violet-pink-border1">
               <div class="d-flex align-items-center gap-2 mb-2">
                 <span>💬</span><div class="fw-bold small">커뮤니티 도움받기</div>
               </div>
               <p class="small text-muted mb-3">프로젝트를 진행하며 막히는 부분이 있나요? 커뮤니티에서 도움을 받아보세요!</p>
               <div class="d-flex flex-column gap-2">
                 <button class="comm-btn" onclick="openQuickAction('question')">
-                  <div style="width:32px;height:32px;background:#dbeafe;border-radius:.5rem;display:flex;align-items:center;justify-content:center;flex-shrink:0;">❓</div>
-                  <div><div class="fw-semibold" style="font-size:.83rem;">질문하기</div><div class="text-muted" style="font-size:.75rem;">막히는 부분을 물어보세요</div></div>
+                  <div class="comm-icon comm-icon-blue">❓</div>
+                  <div><div class="fw-semibold fs-83">질문하기</div><div class="text-muted fs-xs">막히는 부분을 물어보세요</div></div>
                 </button>
                 <button class="comm-btn" onclick="openQuickAction('progress')">
-                  <div style="width:32px;height:32px;background:#ede9fe;border-radius:.5rem;display:flex;align-items:center;justify-content:center;flex-shrink:0;">🚀</div>
-                  <div><div class="fw-semibold" style="font-size:.83rem;">진행공유</div><div class="text-muted" style="font-size:.75rem;">진행 과정을 기록하세요</div></div>
+                  <div class="comm-icon comm-icon-violet">🚀</div>
+                  <div><div class="fw-semibold fs-83">진행공유</div><div class="text-muted fs-xs">진행 과정을 기록하세요</div></div>
                 </button>
                 <button class="comm-btn" onclick="openQuickAction('teammate')">
-                  <div style="width:32px;height:32px;background:#d1fae5;border-radius:.5rem;display:flex;align-items:center;justify-content:center;flex-shrink:0;">👤</div>
-                  <div><div class="fw-semibold" style="font-size:.83rem;">팀원 찾기</div><div class="text-muted" style="font-size:.75rem;">함께할 팀원을 모집하세요</div></div>
+                  <div class="comm-icon comm-icon-green">👤</div>
+                  <div><div class="fw-semibold fs-83">팀원 찾기</div><div class="text-muted fs-xs">함께할 팀원을 모집하세요</div></div>
                 </button>
                 <button class="comm-btn" onclick="openQuickAction('resource')">
-                  <div style="width:32px;height:32px;background:#fed7aa;border-radius:.5rem;display:flex;align-items:center;justify-content:center;flex-shrink:0;">📁</div>
-                  <div><div class="fw-semibold" style="font-size:.83rem;">자료 공유</div><div class="text-muted" style="font-size:.75rem;">유용한 자료를 찾아보세요</div></div>
+                  <div class="comm-icon comm-icon-orange">📁</div>
+                  <div><div class="fw-semibold fs-83">자료 공유</div><div class="text-muted fs-xs">유용한 자료를 찾아보세요</div></div>
                 </button>
               </div>
               <p class="small text-muted mt-3 mb-0">✅ 현재 프로젝트와 자동으로 연결됩니다</p>
@@ -499,10 +430,10 @@
     <!-- 패널 헤더 -->
     <div class="preview-header d-flex align-items-center justify-content-between">
       <div class="d-flex align-items-center gap-2">
-        <div style="width:32px;height:32px;background:#dbeafe;border-radius:.5rem;display:flex;align-items:center;justify-content:center;">👁</div>
+        <div class="comm-icon comm-icon-blue">👁</div>
         <div>
-          <div class="fw-bold" style="font-size:.95rem;">미리보기</div>
-          <div style="font-size:.72rem;color:#9ca3af;">작성 중인 프로젝트가 어떻게 보일지 확인하세요</div>
+          <div class="fw-bold fs-95">미리보기</div>
+          <div class="fs-72 text-muted-light">작성 중인 프로젝트가 어떻게 보일지 확인하세요</div>
         </div>
       </div>
       <div class="d-flex align-items-center gap-2">
@@ -510,7 +441,7 @@
           <button class="preview-tab-btn active" id="tab-cardview" onclick="switchPreviewTab('card')">카드뷰</button>
           <button class="preview-tab-btn" id="tab-detailview" onclick="switchPreviewTab('detail')">상세뷰</button>
         </div>
-        <button onclick="closePreview()" style="width:32px;height:32px;border-radius:50%;border:none;background:none;font-size:1.1rem;cursor:pointer;color:#6b7280;">✕</button>
+        <button onclick="closePreview()" class="preview-close-btn">✕</button>
       </div>
     </div>
 
@@ -533,7 +464,7 @@
 
   <!-- ══ Community Quick Action Panel ══ -->
   <div class="cpanel-backdrop" id="quickActionBackdrop" onclick="hideQuickAction()"></div>
-  <div class="cpanel" id="quickActionOffcanvas" style="width:580px;max-width:95vw;">
+  <div class="cpanel content-w" id="quickActionOffcanvas">
     <div class="border-bottom px-4 py-3 bg-white d-flex align-items-center justify-content-between flex-shrink-0">
       <div>
         <h5 class="fw-bold mb-0" id="qa-title">질문하기</h5>
@@ -541,7 +472,7 @@
       </div>
       <button type="button" class="btn-close ms-auto" onclick="hideQuickAction()"></button>
     </div>
-    <div class="cpanel-body" id="qa-body" style="padding-bottom:1rem;">
+    <div class="cpanel-body pb-3" id="qa-body">
       <!-- dynamic content -->
     </div>
     <div class="border-top p-3 bg-white d-flex gap-2 flex-shrink-0">
@@ -601,7 +532,7 @@
       <div class="small text-muted lh-lg">
         <p class="mb-1">(주)디지털데일리 | 등록번호 : 경기 아51470 | 등록: 2008.10.20 | 발행: 2026.05.19 | 표: 김제호</p>
         <p class="mb-1">주소 : 경기도 성남시 분당구 대왕판교로 660번길 8 | 전화 : 02-883-9797 | 팩스 : 02-6280-9957</p>
-        <p class="mb-1 text-secondary" style="opacity:.6;">
+        <p class="mb-1 text-secondary opacity-50">
           본 콘텐츠의 저작권은 (주)디지털데일리에 있으며 무단 전재 및 재배포를 금지합니다.
         </p>
         <p class="mt-3 mb-0">Copyright &copy; 2026 e4ds News. All Rights Reserved</p>

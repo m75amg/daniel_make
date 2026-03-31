@@ -10,18 +10,7 @@
         crossorigin="anonymous">
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/custom.css">
-  <style>
-    .form-section { background:#fff; border-radius:1rem; padding:2rem; box-shadow:0 1px 4px rgba(0,0,0,.06); margin-bottom:1.5rem; }
-    .img-hover-wrap { position:relative; overflow:hidden; border-radius:.75rem; cursor:pointer; }
-    .img-hover-wrap .img-overlay { position:absolute; inset:0; background:rgba(0,0,0,.45); display:flex; align-items:center; justify-content:center; opacity:0; transition:opacity .2s; }
-    .img-hover-wrap:hover .img-overlay { opacity:1; }
-    .tag-item { display:inline-flex; align-items:center; gap:.35rem; background:#dbeafe; color:#1d4ed8; border-radius:2rem; padding:.25rem .75rem; font-size:.8rem; font-weight:500; }
-    .tag-item .tag-remove { cursor:pointer; background:none; border:none; padding:0; line-height:1; color:#1d4ed8; opacity:.7; }
-    .tag-item .tag-remove:hover { opacity:1; }
-    .upload-zone { border:2px dashed #dee2e6; border-radius:.75rem; cursor:pointer; transition:border-color .2s; background:#f8f9fa; }
-    .upload-zone:hover { border-color:#2563eb; }
-    .sticky-top-bar { position:sticky; top:0; z-index:200; background:#fff; border-bottom:1px solid #e5e7eb; }
-  </style>
+  <link rel="stylesheet" href="assets/css/make2026-styles.css">
 </head>
 <body class="bg-light">
 
@@ -31,7 +20,7 @@
   <!-- Top Bar -->
   <div class="border-bottom border-light">
     <div class="container-xl">
-      <div class="d-flex align-items-center justify-content-between" style="height:36px;">
+      <div class="d-flex align-items-center justify-content-between topbar-inner">
         <small class="text-muted" id="header-date"></small>
         <div class="d-flex align-items-center gap-3">
           <a href="login.html"   class="text-secondary text-decoration-none small header-toplink auth-loggedout-only">로그인</a>
@@ -45,12 +34,12 @@
 
   <!-- Main Nav -->
   <div class="container-xl">
-    <nav class="navbar navbar-expand-lg px-0" style="min-height:64px;">
+    <nav class="navbar navbar-expand-lg px-0">
 
       <!-- Logo -->
       <a class="navbar-brand fw-bold fs-5 me-4" href="index.html">
         <span class="text-dark">e</span><span class="text-warning">4</span><span class="text-dark">ds</span>
-        <span class="fw-normal text-secondary ms-1" style="font-size:1.1rem;">make</span>
+        <span class="fw-normal text-secondary ms-1 brand-text">make</span>
       </a>
 
       <!-- Mobile toggler -->
@@ -101,7 +90,7 @@
           <li class="nav-item dropdown" id="makers-zone-dropdown">
             <a class="nav-link dropdown-toggle fw-medium text-dark" href="#"
                data-bs-toggle="dropdown">Maker's Zone</a>
-            <ul class="dropdown-menu shadow-sm border-0" style="min-width:160px;">
+            <ul class="dropdown-menu shadow-sm border-0">
               <li><a class="dropdown-item" href="projects.html">프로젝트</a></li>
               <li><a class="dropdown-item" href="contests.html">콘테스트</a></li>
               <li><a class="dropdown-item" href="community.html">커뮤니티</a></li>
@@ -180,29 +169,28 @@
         </div>
 
         <!-- Contest notice (shown for contest projects) -->
-        <div class="alert alert-secondary d-flex gap-2 align-items-start mt-3 mb-0 rounded-3 py-2 d-none" id="contest-notice"
-             style="background:#f5f3ff;border-color:#ddd6fe;">
-          <span class="text-purple mt-1" style="color:#7c3aed;">ℹ️</span>
-          <p class="mb-0 small" style="color:#5b21b6;">
+        <div class="alert alert-secondary d-flex gap-2 align-items-start mt-3 mb-0 rounded-3 py-2 d-none contest-notice-box" id="contest-notice">
+          <span class="text-purple mt-1">ℹ️</span>
+          <p class="mb-0 small text-violet-800">
             <strong id="contest-notice-name">AI 로봇 챌린지 2026</strong>에 참가중인 프로젝트입니다.
-            Quest 진행 상태는 <a href="contest-detail.html" class="text-decoration-none fw-bold" style="color:#7c3aed;">콘테스트 페이지</a>에서 확인하세요.
+            Quest 진행 상태는 <a href="contest-detail.html" class="text-decoration-none fw-bold text-purple">콘테스트 페이지</a>에서 확인하세요.
           </p>
         </div>
       </div>
     </div>
 
     <!-- Form Body -->
-    <div class="container-xl py-4" style="max-width:900px;">
+    <div class="container-xl py-4 container-900">
 
       <!-- ① 대표 이미지 -->
       <div class="form-section">
         <h5 class="fw-bold mb-3">대표 이미지</h5>
-        <div class="img-hover-wrap" id="imgWrap" style="max-height:320px;">
+        <div class="img-hover-wrap img-hover-wrap-320" id="imgWrap">
           <img id="mainImgPreview"
                src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=1200"
                alt="대표 이미지"
                class="w-100 object-fit-cover rounded-3"
-               style="height:280px;object-fit:cover;">
+               class="main-img-preview-280"
           <div class="img-overlay">
             <button class="btn btn-light fw-bold px-4" id="changeImgBtn">
               📷 이미지 변경
@@ -266,7 +254,7 @@
         <h5 class="fw-bold mb-3">태그</h5>
 
         <!-- Current tags -->
-        <div class="d-flex flex-wrap gap-2 p-3 bg-light rounded-3 border mb-3 min-vh-0" id="tagArea" style="min-height:48px;">
+        <div class="d-flex flex-wrap gap-2 p-3 bg-light rounded-3 border mb-3 min-vh-0" id="tagArea" class="min-h-48">
           <!-- rendered by JS -->
         </div>
 
@@ -287,15 +275,15 @@
         <div class="row g-3 mb-3" id="galleryGrid">
           <div class="col-4 col-md-3 position-relative gallery-item">
             <img src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=300"
-                 class="w-100 rounded-3 object-fit-cover" style="height:90px;object-fit:cover;" alt="">
+                 class="w-100 rounded-3 object-fit-cover thumb-90h" alt="">
             <button class="btn btn-danger btn-sm position-absolute top-0 end-0 m-1 p-1 lh-1 gallery-del" title="삭제"
-                    style="font-size:.7rem;border-radius:.4rem;">✕</button>
+                    class="btn-del-gallery">✕</button>
           </div>
           <div class="col-4 col-md-3 position-relative gallery-item">
             <img src="https://images.unsplash.com/photo-1581092333203-42374bcf7d89?w=300"
-                 class="w-100 rounded-3 object-fit-cover" style="height:90px;object-fit:cover;" alt="">
+                 class="w-100 rounded-3 object-fit-cover thumb-90h" alt="">
             <button class="btn btn-danger btn-sm position-absolute top-0 end-0 m-1 p-1 lh-1 gallery-del" title="삭제"
-                    style="font-size:.7rem;border-radius:.4rem;">✕</button>
+                    class="btn-del-gallery">✕</button>
           </div>
         </div>
 
@@ -304,7 +292,7 @@
           <input type="file" class="d-none" id="contentInput" accept="image/*,video/*,.pdf" multiple>
           <div class="fs-2 mb-2">🖼️</div>
           <p class="fw-medium text-muted small mb-1">클릭하여 이미지, 동영상, 코드 등을 추가하세요</p>
-          <p class="text-muted mb-0" style="font-size:.75rem;">PNG, JPG, MP4, PDF (최대 20MB)</p>
+          <p class="text-muted mb-0 fs-xs">PNG, JPG, MP4, PDF (최대 20MB)</p>
         </div>
       </div>
 
@@ -432,7 +420,7 @@
       <div class="small text-muted lh-lg">
         <p class="mb-1">(주)디지털데일리 | 등록번호 : 경기 아51470 | 등록: 2008.10.20 | 발행: 2026.05.19 | 표: 김제호</p>
         <p class="mb-1">주소 : 경기도 성남시 분당구 대왕판교로 660번길 8 | 전화 : 02-883-9797 | 팩스 : 02-6280-9957</p>
-        <p class="mb-1 text-secondary" style="opacity:.6;">
+        <p class="mb-1 text-secondary footer-copyright">
           본 콘텐츠의 저작권은 (주)디지털데일리에 있으며 무단 전재 및 재배포를 금지합니다.
         </p>
         <p class="mt-3 mb-0">Copyright &copy; 2026 e4ds News. All Rights Reserved</p>
@@ -577,7 +565,7 @@
         var reader = new FileReader();
         reader.onload = function(e) {
           var col = $('<div class="col-4 col-md-3 position-relative gallery-item">'
-            + '<img src="' + e.target.result + '" class="w-100 rounded-3" style="height:90px;object-fit:cover;" alt="">'
+            + '<img src="' + e.target.result + '" class="w-100 rounded-3 thumb-90h" alt="">'
             + '<button class="btn btn-danger btn-sm position-absolute top-0 end-0 m-1 p-1 lh-1 gallery-del" style="font-size:.7rem;border-radius:.4rem;">✕</button>'
             + '</div>');
           $('#galleryGrid').append(col);

@@ -24,7 +24,7 @@
   <!-- Top Bar -->
   <div class="border-bottom border-light">
     <div class="container-xl">
-      <div class="d-flex align-items-center justify-content-between" style="height:36px;">
+      <div class="d-flex align-items-center justify-content-between topbar-inner">
         <small class="text-muted" id="header-date"></small>
         <div class="d-flex align-items-center gap-3">
           <a href="login.html"   class="text-secondary text-decoration-none small header-toplink auth-loggedout-only">로그인</a>
@@ -38,12 +38,12 @@
 
   <!-- Main Nav -->
   <div class="container-xl">
-    <nav class="navbar navbar-expand-lg px-0" style="min-height:64px;">
+    <nav class="navbar navbar-expand-lg px-0">
 
       <!-- Logo -->
       <a class="navbar-brand fw-bold fs-5 me-4" href="index.html">
         <span class="text-dark">e</span><span class="text-warning">4</span><span class="text-dark">ds</span>
-        <span class="fw-normal text-secondary ms-1" style="font-size:1.1rem;">make</span>
+        <span class="fw-normal text-secondary ms-1 brand-text">make</span>
       </a>
 
       <!-- Mobile toggler -->
@@ -94,7 +94,7 @@
           <li class="nav-item dropdown" id="makers-zone-dropdown">
             <a class="nav-link dropdown-toggle fw-medium text-dark" href="#"
                data-bs-toggle="dropdown">Maker's Zone</a>
-            <ul class="dropdown-menu shadow-sm border-0" style="min-width:160px;">
+            <ul class="dropdown-menu shadow-sm border-0">
               <li><a class="dropdown-item" href="projects.html">프로젝트</a></li>
               <li><a class="dropdown-item" href="contests.html">콘테스트</a></li>
               <li><a class="dropdown-item" href="community.html">커뮤니티</a></li>
@@ -251,7 +251,7 @@
               <div class="col-md-6 modal-col">
                 <a href="create-personal-project.html" class="text-decoration-none">
                   <div class="project-type-card personal h-100">
-                    <div class="decorative-circle blue" style="position:relative;"></div>
+                    <div class="decorative-circle blue position-relative"></div>
                     <div class="project-icon personal">👤</div>
                     <div class="project-title fw-bold">개인 프로젝트</div>
                     <div class="project-description text-muted small">자유롭게 나만의 프로젝트를 시작하세요</div>
@@ -276,7 +276,7 @@
                   <div class="project-type-card contest h-100">
                     <!-- 인기 배지 -->
                     <div class="popularity-badge">🌟 인기</div>
-                    <div class="decorative-circle purple" style="position:relative;"></div>
+                    <div class="decorative-circle purple position-relative"></div>
                     <div class="project-icon contest">🏆</div>
                     <div class="project-title fw-bold">콘테스트 프로젝트</div>
                     <div class="project-description text-muted small">콘테스트에 참가하며 프로젝트를 완성하세요</div>
@@ -310,7 +310,7 @@
             </div>
 
             <!-- 나중에 하기 -->
-            <div style="text-align:center; margin-top:1.25rem;">
+            <div class="text-center mt-4">
               <button onclick="closeProjectModal()" class="later-btn">나중에 하기</button>
             </div>
           </div>
@@ -340,7 +340,7 @@
               <div class="project-card-img-wrap">
                 <img src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=600" class="card-img-top"
                   alt="AI 로봇">
-                <span class="project-card-img-badge">인기</span>
+                <span class="project-card-img-badge red">인기</span>
                 <span class="project-card-img-badge project-card-img-badge--right">콘테스트</span>
               </div>
               <div class="card-body">
@@ -366,7 +366,6 @@
               <div class="project-card-img-wrap">
                 <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=600" class="card-img-top"
                   alt="IoT">
-                <span class="project-card-img-badge">IoT</span>
               </div>
               <div class="card-body">
                 <div class="d-flex align-items-center gap-2 mb-2">
@@ -391,7 +390,6 @@
               <div class="project-card-img-wrap">
                 <img src="https://images.unsplash.com/photo-1581092333203-42374bcf7d89?w=600" class="card-img-top"
                   alt="Edge AI">
-                <span class="project-card-img-badge">AI/ML</span>
               </div>
               <div class="card-body">
                 <div class="d-flex align-items-center gap-2 mb-2">
@@ -416,7 +414,6 @@
               <div class="project-card-img-wrap">
                 <img src="https://images.unsplash.com/photo-1553408226-42ecf81a214c?w=600" class="card-img-top"
                   alt="드론">
-                <span class="project-card-img-badge">로보틱스</span>
               </div>
               <div class="card-body">
                 <div class="d-flex align-items-center gap-2 mb-2">
@@ -441,7 +438,6 @@
               <div class="project-card-img-wrap">
                 <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600" class="card-img-top"
                   alt="의료">
-                <span class="project-card-img-badge">의료기기</span>
               </div>
               <div class="card-body">
                 <div class="d-flex align-items-center gap-2 mb-2">
@@ -466,7 +462,6 @@
               <div class="project-card-img-wrap">
                 <img src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=600" class="card-img-top"
                   alt="보안">
-                <span class="project-card-img-badge">보안</span>
               </div>
               <div class="card-body">
                 <div class="d-flex align-items-center gap-2 mb-2">
@@ -526,7 +521,7 @@
                 </div>
                 <div class="mb-3">
                   <div class="d-flex justify-content-between small mb-1"><span>참가 현황</span><span>48/100</span></div>
-                  <div class="progress" style="height:6px;">
+                  <div class="progress progress-h-6">
                     <div class="progress-bar-purple"></div>
                   </div>
                 </div>
@@ -557,8 +552,8 @@
                 </div>
                 <div class="mb-3">
                   <div class="d-flex justify-content-between small mb-1"><span>참가 현황</span><span>256/300</span></div>
-                  <div class="progress" style="height:6px;">
-                    <div class="progress-bar-purple" style="width:85%;"></div>
+                  <div class="progress progress-h-6">
+                    <div class="progress-bar-purple" class="w-85"></div>
                   </div>
                 </div>
                 <a href="contest-detail.html" class="btn btn-sm w-100 challenge-btn-submit">참가 신청</a>
@@ -638,8 +633,8 @@
                 <div class="community-avatar progress">이</div>
                 <div class="flex-grow-1 min-w-0">
                   <div class="d-flex align-items-center gap-2 mb-2 flex-wrap">
-                    <span class="type-badge progress"><i class="fa-regular fa-lightbulb-gear"></i> 진행공유</span>
-                    <span class="status-badge done"><i class="bi bi-check-circle"></i> 완료팀</span>
+                    <span class="type-badge progress"> 진행공유</span>
+                    <span class="status-badge done"> 완료팀</span>
                   </div>
                   <div class="community-card-title mb-2"><a href="community-detail.html"
                       class="stretched-link text-dark text-decoration-none">Quest 2 완료! 음성 인식 모듈 통합 성공 🎉</a></div>
@@ -699,7 +694,7 @@
                 <div class="community-avatar teammate">최</div>
                 <div class="flex-grow-1 min-w-0">
                   <div class="d-flex align-items-center gap-2 mb-2 flex-wrap">
-                    <span class="type-badge teammate"><i class="fa-regular fa-ranking-star"></i> 팀원찾기</span>
+                    <span class="type-badge teammate"> 팀원찾기</span>
                     <span class="status-badge deadline"><i class="bi bi-clock"></i> D-15</span>
                   </div>
                   <div class="community-card-title mb-2"><a href="community-detail.html"
@@ -734,7 +729,7 @@
                 <div class="community-avatar progress">정</div>
                 <div class="flex-grow-1 min-w-0">
                   <div class="d-flex align-items-center gap-2 mb-2 flex-wrap">
-                    <span class="type-badge progress"><i class="fa-regular fa-lightbulb-gear"></i> 진행공유</span>
+                    <span class="type-badge progress"> 진행공유</span>
                   </div>
                   <div class="community-card-title mb-2"><a href="community-detail.html"
                       class="stretched-link text-dark text-decoration-none">자율주행 알고리즘 1차 테스트 결과 공유</a></div>
@@ -749,8 +744,6 @@
                       <span class="community-stat"><i class="fa-regular fa-comment"></i> 8</span>
                       <span class="community-stat"><i class="fa-regular fa-eye"></i> 28</span>
                     </div>
-                    <small class="text-muted">3시간 전</small>
-                  </div>
                 </div>
               </div>
             </div>
@@ -943,8 +936,8 @@
     <section class="py-5 cta-section">
       <div class="container-xl text-center py-3">
         <h2 class="fw-bold mb-3 text-white">지금 바로 메이커로 시작하세요</h2>
-        <p class="mb-4 fs-5 text-white" style="opacity:.85;">프로젝트를 등록하고, 콘테스트에 참가하고, 동료 메이커와 함께 성장하세요.</p>
-        <button class="btn fw-bold btn-lg px-5" style="background:#fff; color:#1e3a8a;" onclick="openProjectModal()">
+        <p class="mb-4 fs-5 text-white" class="opacity-85">프로젝트를 등록하고, 콘테스트에 참가하고, 동료 메이커와 함께 성장하세요.</p>
+        <button class="btn fw-bold btn-lg px-5" class="btn-white-navy" onclick="openProjectModal()">
           🚀 프로젝트 시작하기
         </button>
       </div>
@@ -1002,7 +995,7 @@
       <div class="small text-muted lh-lg">
         <p class="mb-1">(주)디지털데일리 | 등록번호 : 경기 아51470 | 등록: 2008.10.20 | 발행: 2026.05.19 | 표: 김제호</p>
         <p class="mb-1">주소 : 경기도 성남시 분당구 대왕판교로 660번길 8 | 전화 : 02-883-9797 | 팩스 : 02-6280-9957</p>
-        <p class="mb-1 text-secondary" style="opacity:.6;">
+        <p class="mb-1 text-secondary footer-copyright">
           본 콘텐츠의 저작권은 (주)디지털데일리에 있으며 무단 전재 및 재배포를 금지합니다.
         </p>
         <p class="mt-3 mb-0">Copyright &copy; 2026 e4ds News. All Rights Reserved</p>

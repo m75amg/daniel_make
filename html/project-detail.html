@@ -7,73 +7,6 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/custom.css">
-  <style>
-    /* Hero image 16:9 */
-    .hero-img-wrap { position:relative; aspect-ratio:16/9; border-radius:.75rem; overflow:hidden; }
-    .hero-img-wrap img { width:100%; height:100%; object-fit:cover; }
-    .demo-btn-overlay { position:absolute; top:1rem; right:1rem; }
-
-    /* Feature card */
-    .feature-card { background:#fff; border:1px solid #e5e7eb; border-radius:.75rem; padding:1rem; display:flex; gap:.75rem; }
-    .feature-icon { width:40px; height:40px; border-radius:.5rem; background:#dbeafe; display:flex; align-items:center; justify-content:center; flex-shrink:0; font-size:1.1rem; }
-
-    /* Tabs */
-    .detail-tabs .nav-link { color:#6c757d; padding:.5rem 1.25rem; border:0; background:transparent; }
-    .detail-tabs .nav-link.active { color:#2563eb; font-weight:600; border-bottom:2px solid #2563eb; }
-
-    /* Quest card */
-    .quest-card-completed { border:1px solid #86efac; }
-    .quest-card-pending { border:1px solid #d1d5db; }
-    .quest-header-completed { background:#f0fdf4; border-bottom:1px solid #bbf7d0; }
-    .quest-header-pending { background:#f9fafb; }
-    .quest-avatar-done { background:#22c55e; color:#fff; }
-    .quest-avatar-pending { background:#9ca3af; color:#fff; }
-
-    /* Gallery */
-    .gallery-item { position:relative; aspect-ratio:16/9; border-radius:.5rem; overflow:hidden; cursor:pointer; }
-    .gallery-item img { width:100%; height:100%; object-fit:cover; transition:transform .5s; }
-    .gallery-item:hover img { transform:scale(1.1); }
-    .gallery-overlay { position:absolute; inset:0; background:linear-gradient(to top, rgba(0,0,0,.7) 0%, transparent 50%); opacity:0; transition:opacity .3s; display:flex; align-items:flex-end; padding:.75rem; }
-    .gallery-item:hover .gallery-overlay { opacity:1; }
-
-    /* Resource card */
-    .resource-card { border:2px solid #e5e7eb; border-radius:.75rem; padding:1.5rem; transition:all .2s; cursor:pointer; }
-    .resource-card:hover { border-color:#93c5fd; box-shadow:0 4px 16px rgba(0,0,0,.1); }
-    .resource-icon { width:56px; height:56px; border-radius:.75rem; background:linear-gradient(135deg,#3b82f6,#8b5cf6); display:flex; align-items:center; justify-content:center; flex-shrink:0; font-size:1.6rem; }
-
-    /* Related project card */
-    .rel-card { border:2px solid #e5e7eb; border-radius:.75rem; overflow:hidden; transition:all .3s; cursor:pointer; }
-    .rel-card:hover { border-color:#93c5fd; box-shadow:0 8px 24px rgba(0,0,0,.12); }
-    .rel-card img { width:100%; height:100%; object-fit:cover; transition:transform .5s; }
-    .rel-card:hover img { transform:scale(1.1); }
-
-    /* Code block */
-    .code-block { background:#111827; color:#f3f4f6; border-radius:.75rem; padding:1.5rem; font-family:'Courier New',monospace; font-size:.85rem; overflow-x:auto; }
-
-    /* Stats number */
-    .stat-num { font-size:1.5rem; font-weight:700; line-height:1; }
-    .stat-label { font-size:.75rem; color:#6b7280; }
-
-    /* Author link badge */
-    .author-link-badge { display:inline-flex; align-items:center; gap:.25rem; font-size:.75rem; color:#2563eb; background:#eff6ff; border:1px solid #bfdbfe; border-radius:9999px; padding:.2rem .6rem; text-decoration:none; font-weight:500; }
-    .author-link-badge:hover { background:#dbeafe; color:#1d4ed8; }
-
-    /* Tab show/hide */
-    .tab-pane { display:none; }
-    .tab-pane.active { display:block; }
-
-    /* Comment avatar */
-    .comment-av { width:40px; height:40px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:.9rem; font-weight:700; flex-shrink:0; }
-    .sticky-sidebar { position:sticky; top:90px; }
-
-    /* Contest Banner */
-    .contest-banner { background:linear-gradient(90deg,#7c3aed,#db2777); color:#fff; }
-    .banner-progress { background:rgba(255,255,255,.25); border-radius:9999px; height:8px; margin-top:.75rem; }
-    .banner-progress-bar { background:#fff; border-radius:9999px; height:8px; transition:width .5s; }
-
-    /* Completed info bar */
-    .completed-bar { background:linear-gradient(90deg,#eff6ff,#f5f3ff); border:1px solid #bfdbfe; border-radius:.75rem; padding:1rem 1.25rem; }
-  </style>
 </head>
 <body class="bg-light">
 
@@ -83,7 +16,7 @@
   <!-- Top Bar -->
   <div class="border-bottom border-light">
     <div class="container-xl">
-      <div class="d-flex align-items-center justify-content-between" style="height:36px;">
+      <div class="d-flex align-items-center justify-content-between topbar-inner">
         <small class="text-muted" id="header-date"></small>
         <div class="d-flex align-items-center gap-3">
           <a href="login.html"   class="text-secondary text-decoration-none small header-toplink auth-loggedout-only">로그인</a>
@@ -97,12 +30,12 @@
 
   <!-- Main Nav -->
   <div class="container-xl">
-    <nav class="navbar navbar-expand-lg px-0" style="min-height:64px;">
+    <nav class="navbar navbar-expand-lg px-0">
 
       <!-- Logo -->
       <a class="navbar-brand fw-bold fs-5 me-4" href="index.html">
         <span class="text-dark">e</span><span class="text-warning">4</span><span class="text-dark">ds</span>
-        <span class="fw-normal text-secondary ms-1" style="font-size:1.1rem;">make</span>
+        <span class="fw-normal text-secondary ms-1 brand-text">make</span>
       </a>
 
       <!-- Mobile toggler -->
@@ -153,7 +86,7 @@
           <li class="nav-item dropdown" id="makers-zone-dropdown">
             <a class="nav-link dropdown-toggle fw-medium text-dark" href="#"
                data-bs-toggle="dropdown">Maker's Zone</a>
-            <ul class="dropdown-menu shadow-sm border-0" style="min-width:160px;">
+            <ul class="dropdown-menu shadow-sm border-0">
               <li><a class="dropdown-item" href="projects.html">프로젝트</a></li>
               <li><a class="dropdown-item" href="contests.html">콘테스트</a></li>
               <li><a class="dropdown-item" href="community.html">커뮤니티</a></li>
@@ -218,19 +151,19 @@
       <div class="container-xl py-4">
         <div class="d-flex align-items-center justify-content-between flex-wrap gap-3">
           <div class="d-flex align-items-center gap-3">
-            <div class="rounded-circle bg-white bg-opacity-25 d-flex align-items-center justify-content-center flex-shrink-0" style="width:48px;height:48px;font-size:1.4rem;">🏆</div>
+            <div class="rounded-circle bg-white bg-opacity-25 d-flex align-items-center justify-content-center flex-shrink-0 banner-icon-48">🏆</div>
             <div>
               <div class="d-flex align-items-center gap-2 mb-1">
                 <h6 class="fw-bold mb-0">콘테스트 프로젝트</h6>
-                <span class="badge" style="background:#22c55e;">✓ 완성</span>
+                <span class="badge badge-green-500">✓ 완성</span>
               </div>
-              <p class="small mb-0" style="color:rgba(255,255,255,.8);">AI 로봇 챌린지 2026 &nbsp;·&nbsp; Quest 3/3 완료</p>
+              <p class="small mb-0 text-white-80">AI 로봇 챌린지 2026 &nbsp;·&nbsp; Quest 3/3 완료</p>
             </div>
           </div>
           <a href="contest-detail.html" class="btn btn-outline-light btn-sm">콘테스트 페이지 →</a>
         </div>
         <div class="banner-progress mt-3">
-          <div class="banner-progress-bar" style="width:100%;"></div>
+          <div class="banner-progress-bar banner-progress-bar-full"></div>
         </div>
       </div>
     </div>
@@ -244,28 +177,28 @@
           <div class="col-lg-8">
             <!-- Badges -->
             <div class="d-flex flex-wrap gap-2 mb-3">
-              <span class="badge fs-6 px-3 py-2" style="background:#7c3aed;">🏆 콘테스트 프로젝트</span>
+              <span class="badge fs-6 px-3 py-2 bg-purple">🏆 콘테스트 프로젝트</span>
               <span class="badge fs-6 px-3 py-2 bg-success">✓ 완료</span>
-              <span class="badge fs-6 px-3 py-2" style="background:linear-gradient(90deg,#eab308,#f97316);">🏆 최우수상</span>
+              <span class="badge fs-6 px-3 py-2 badge-grad-amber-orange">🏆 최우수상</span>
               <span class="badge fs-6 px-3 py-2 bg-light text-dark border">로봇공학</span>
             </div>
 
             <!-- Title -->
-            <h1 class="fw-bold mb-2" style="font-size:2rem;">AI 음성인식 자율주행 로봇</h1>
+            <h1 class="fw-bold mb-2 fs-2rem">AI 음성인식 자율주행 로봇</h1>
             <p class="text-muted fs-5 mb-4">라즈베리파이와 OpenCV로 실내 자율주행이 가능한 배송 로봇</p>
 
             <!-- Completed Info Bar -->
             <div class="completed-bar d-flex flex-wrap gap-4 mb-4">
               <div class="d-flex align-items-center gap-2">
-                <span style="color:#2563eb;">👥</span>
+                <span class="text-blue">👥</span>
                 <span class="small fw-semibold">팀: AI 로봇팀</span>
               </div>
               <div class="d-flex align-items-center gap-2">
-                <span style="color:#16a34a;">📅</span>
+                <span class="text-green-600">📅</span>
                 <span class="small fw-semibold">완료: 2026년 3월 13일</span>
               </div>
               <div class="d-flex align-items-center gap-2">
-                <span style="color:#9333ea;">🏆</span>
+                <span class="text-purple-700">🏆</span>
                 <span class="small fw-semibold">AI 로봇 챌린지 2026</span>
               </div>
             </div>
@@ -274,7 +207,7 @@
             <div class="d-flex align-items-center justify-content-between py-3 border-top border-bottom mb-4">
               <div class="d-flex align-items-center gap-3">
                 <a href="maker-profile.html" class="text-decoration-none">
-                  <div class="rounded-circle bg-primary text-white d-flex align-items-center justify-content-center fw-bold" style="width:48px;height:48px;font-size:1.1rem;">김</div>
+                  <div class="rounded-circle bg-primary text-white d-flex align-items-center justify-content-center fw-bold author-avatar-48">김</div>
                 </a>
                 <div>
                   <div class="d-flex align-items-center gap-2 mb-1">
@@ -311,7 +244,7 @@
             </div>
 
             <!-- Features Grid -->
-            <div class="card border-0 shadow-sm p-4 mb-4" style="background:linear-gradient(135deg,#f9fafb,#eff6ff);">
+            <div class="card border-0 shadow-sm p-4 mb-4 card-gradient-gray-blue">
               <h5 class="fw-bold mb-3">✨ 주요 기능</h5>
               <div class="row g-3">
                 <div class="col-md-6">
@@ -319,7 +252,7 @@
                     <div class="feature-icon">🎯</div>
                     <div>
                       <div class="fw-semibold small mb-1">실시간 장애물 감지 및 회피</div>
-                      <div class="text-muted" style="font-size:.8rem;">초음파 센서와 AI 비전을 결합한 360도 장애물 감지</div>
+                      <div class="text-muted fs-80">초음파 센서와 AI 비전을 결합한 360도 장애물 감지</div>
                     </div>
                   </div>
                 </div>
@@ -328,7 +261,7 @@
                     <div class="feature-icon">⚡</div>
                     <div>
                       <div class="fw-semibold small mb-1">A* 경로 최적화</div>
-                      <div class="text-muted" style="font-size:.8rem;">목적지까지 최단 경로를 실시간으로 계산</div>
+                      <div class="text-muted fs-80">목적지까지 최단 경로를 실시간으로 계산</div>
                     </div>
                   </div>
                 </div>
@@ -337,7 +270,7 @@
                     <div class="feature-icon">🎙️</div>
                     <div>
                       <div class="fw-semibold small mb-1">음성 명령 제어</div>
-                      <div class="text-muted" style="font-size:.8rem;">한국어 음성으로 목적지 설정 및 로봇 제어</div>
+                      <div class="text-muted fs-80">한국어 음성으로 목적지 설정 및 로봇 제어</div>
                     </div>
                   </div>
                 </div>
@@ -346,7 +279,7 @@
                     <div class="feature-icon">📊</div>
                     <div>
                       <div class="fw-semibold small mb-1">웹 모니터링</div>
-                      <div class="text-muted" style="font-size:.8rem;">실시간 영상 스트리밍 및 상태 모니터링</div>
+                      <div class="text-muted fs-80">실시간 영상 스트리밍 및 상태 모니터링</div>
                     </div>
                   </div>
                 </div>
@@ -357,12 +290,12 @@
             <div class="card border-0 shadow-sm p-4">
               <h5 class="fw-bold mb-3">💻 사용 기술</h5>
               <div class="d-flex flex-wrap gap-2">
-                <span class="badge px-3 py-2" style="background:#f3e8ff;color:#6b21a8;border:1px solid #d8b4fe;">AI</span>
-                <span class="badge px-3 py-2" style="background:#f3e8ff;color:#6b21a8;border:1px solid #d8b4fe;">라즈베리파이</span>
-                <span class="badge px-3 py-2" style="background:#f3e8ff;color:#6b21a8;border:1px solid #d8b4fe;">OpenCV</span>
-                <span class="badge px-3 py-2" style="background:#f3e8ff;color:#6b21a8;border:1px solid #d8b4fe;">자율주행</span>
-                <span class="badge px-3 py-2" style="background:#f3e8ff;color:#6b21a8;border:1px solid #d8b4fe;">Python</span>
-                <span class="badge px-3 py-2" style="background:#f3e8ff;color:#6b21a8;border:1px solid #d8b4fe;">ROS</span>
+                <span class="badge px-3 py-2 badge-purple">AI</span>
+                <span class="badge px-3 py-2 badge-purple">라즈베리파이</span>
+                <span class="badge px-3 py-2 badge-purple">OpenCV</span>
+                <span class="badge px-3 py-2 badge-purple">자율주행</span>
+                <span class="badge px-3 py-2 badge-purple">Python</span>
+                <span class="badge px-3 py-2 badge-purple">ROS</span>
               </div>
             </div>
           </div>
@@ -428,17 +361,17 @@
         <!-- Tab: Quest 진행 기록 -->
         <div class="tab-pane active" id="tab-quest">
           <!-- Overview banner -->
-          <div class="rounded-4 p-5 mb-4" style="background:linear-gradient(135deg,#f5f3ff,#fdf2f8);border:1px solid #d8b4fe;">
+          <div class="rounded-4 p-5 mb-4 card-gradient-violet-pink-d8b4fe">
             <div class="d-flex gap-4">
-              <div class="rounded-circle bg-purple text-white d-flex align-items-center justify-content-center flex-shrink-0" style="width:48px;height:48px;background:#9333ea;font-size:1.4rem;">🚀</div>
+              <div class="rounded-circle text-white d-flex align-items-center justify-content-center flex-shrink-0 quest-hero-icon">🚀</div>
               <div class="flex-grow-1">
                 <h5 class="fw-bold mb-2">콘테스트 프로젝트 진행 상황</h5>
                 <p class="text-muted small mb-3">이 프로젝트는 <strong>AI 로봇 챌린지 2026</strong>을 통해 단계적으로 완성되었습니다. 각 Quest를 통해 프로젝트가 발전하는 과정을 확인하세요.</p>
                 <div class="d-flex align-items-center gap-3">
-                  <div class="flex-grow-1 bg-white rounded-pill" style="height:12px;">
-                    <div style="width:100%;height:12px;border-radius:9999px;background:linear-gradient(90deg,#9333ea,#ec4899);"></div>
+                  <div class="flex-grow-1 bg-white rounded-pill quest-progress-track">
+                    <div class="quest-progress-bar-full"></div>
                   </div>
-                  <span class="fw-bold text-purple" style="color:#7c3aed;">3/3 완료</span>
+                  <span class="fw-bold text-purple text-purple">3/3 완료</span>
                 </div>
               </div>
             </div>
@@ -448,7 +381,7 @@
           <div class="card quest-card-completed mb-4 overflow-hidden">
             <div class="quest-header-completed p-4">
               <div class="d-flex align-items-center gap-3">
-                <div class="rounded-circle quest-avatar-done d-flex align-items-center justify-content-center fw-bold flex-shrink-0" style="width:48px;height:48px;font-size:1.2rem;">✓</div>
+                <div class="rounded-circle quest-avatar-done d-flex align-items-center justify-content-center fw-bold flex-shrink-0 icon-circle-md">✓</div>
                 <div class="flex-grow-1">
                   <h5 class="fw-bold mb-1">Quest 1: 프로젝트 기획 및 설계</h5>
                   <small class="text-muted">📅 2026년 3월 5일에 완료</small>
@@ -457,7 +390,7 @@
               </div>
             </div>
             <div class="card-body p-4">
-              <p class="text-muted" style="white-space:pre-line;">실내 환경에서 자율주행이 가능한 배송 로봇을 개발하기로 결정했습니다.
+              <p class="text-muted text-pre-line">실내 환경에서 자율주행이 가능한 배송 로봇을 개발하기로 결정했습니다.
 
 주요 설계 목표:
 - 실시간 장애물 감지 및 회피
@@ -471,8 +404,8 @@
 - 센서: 초음파 센서, Pi Camera v2
 - 통신: Wi-Fi, MQTT 프로토콜</p>
               <div class="row g-3 mt-2">
-                <div class="col-6"><div style="aspect-ratio:16/9;border-radius:.5rem;overflow:hidden;"><img src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=800" class="w-100 h-100" style="object-fit:cover;" alt="Q1 이미지1"></div></div>
-                <div class="col-6"><div style="aspect-ratio:16/9;border-radius:.5rem;overflow:hidden;"><img src="https://images.unsplash.com/photo-1581092162384-8987c1d64718?w=800" class="w-100 h-100" style="object-fit:cover;" alt="Q1 이미지2"></div></div>
+                <div class="col-6"><div class="ratio-16-9-card"><img src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=800" class="w-100 h-100 object-fit-cover" alt="Q1 이미지1"></div></div>
+                <div class="col-6"><div class="ratio-16-9-card"><img src="https://images.unsplash.com/photo-1581092162384-8987c1d64718?w=800" class="w-100 h-100 object-fit-cover" alt="Q1 이미지2"></div></div>
               </div>
             </div>
           </div>
@@ -481,7 +414,7 @@
           <div class="card quest-card-completed mb-4 overflow-hidden">
             <div class="quest-header-completed p-4">
               <div class="d-flex align-items-center gap-3">
-                <div class="rounded-circle quest-avatar-done d-flex align-items-center justify-content-center fw-bold flex-shrink-0" style="width:48px;height:48px;font-size:1.2rem;">✓</div>
+                <div class="rounded-circle quest-avatar-done d-flex align-items-center justify-content-center fw-bold flex-shrink-0 icon-circle-md">✓</div>
                 <div class="flex-grow-1">
                   <h5 class="fw-bold mb-1">Quest 2: 프로토타입 제작</h5>
                   <small class="text-muted">📅 2026년 3월 10일에 완료</small>
@@ -490,7 +423,7 @@
               </div>
             </div>
             <div class="card-body p-4">
-              <p class="text-muted" style="white-space:pre-line;">하드웨어 조립을 완료하고 기본 동작을 검증했습니다.
+              <p class="text-muted text-pre-line">하드웨어 조립을 완료하고 기본 동작을 검증했습니다.
 
 조립 과정:
 1. 로봇 섀시 조립 및 모터 장착
@@ -504,9 +437,9 @@
 - 카메라 영상 실시간 스트리밍
 - 웹 인터페이스 초기 버전 구현</p>
               <div class="row g-3 mt-2">
-                <div class="col-4"><div style="aspect-ratio:16/9;border-radius:.5rem;overflow:hidden;"><img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=800" class="w-100 h-100" style="object-fit:cover;" alt="Q2 이미지1"></div></div>
-                <div class="col-4"><div style="aspect-ratio:16/9;border-radius:.5rem;overflow:hidden;"><img src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=800" class="w-100 h-100" style="object-fit:cover;" alt="Q2 이미지2"></div></div>
-                <div class="col-4"><div style="aspect-ratio:16/9;border-radius:.5rem;overflow:hidden;"><img src="https://images.unsplash.com/photo-1581092160607-ee67e4e89ed6?w=800" class="w-100 h-100" style="object-fit:cover;" alt="Q2 이미지3"></div></div>
+                <div class="col-4"><div class="ratio-16-9-card"><img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=800" class="w-100 h-100 object-fit-cover" alt="Q2 이미지1"></div></div>
+                <div class="col-4"><div class="ratio-16-9-card"><img src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=800" class="w-100 h-100 object-fit-cover" alt="Q2 이미지2"></div></div>
+                <div class="col-4"><div class="ratio-16-9-card"><img src="https://images.unsplash.com/photo-1581092160607-ee67e4e89ed6?w=800" class="w-100 h-100 object-fit-cover" alt="Q2 이미지3"></div></div>
               </div>
             </div>
           </div>
@@ -515,7 +448,7 @@
           <div class="card quest-card-completed mb-4 overflow-hidden">
             <div class="quest-header-completed p-4">
               <div class="d-flex align-items-center gap-3">
-                <div class="rounded-circle quest-avatar-done d-flex align-items-center justify-content-center fw-bold flex-shrink-0" style="width:48px;height:48px;font-size:1.2rem;">✓</div>
+                <div class="rounded-circle quest-avatar-done d-flex align-items-center justify-content-center fw-bold flex-shrink-0 icon-circle-md">✓</div>
                 <div class="flex-grow-1">
                   <h5 class="fw-bold mb-1">Quest 3: 최종 프로젝트 완성</h5>
                   <small class="text-muted">📅 2026년 3월 13일에 완료</small>
@@ -524,7 +457,7 @@
               </div>
             </div>
             <div class="card-body p-4">
-              <p class="text-muted" style="white-space:pre-line;">최종 시스템 통합 및 최적화를 완료했습니다.
+              <p class="text-muted text-pre-line">최종 시스템 통합 및 최적화를 완료했습니다.
 
 AI 비전 시스템:
 - YOLOv5 기반 실시간 객체 인식
@@ -541,17 +474,17 @@ AI 비전 시스템:
 - 평균 성공률 92%
 - 장애물 회피 정확도 95%</p>
               <div class="row g-3 mt-2">
-                <div class="col-6"><div style="aspect-ratio:16/9;border-radius:.5rem;overflow:hidden;"><img src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800" class="w-100 h-100" style="object-fit:cover;" alt="Q3 이미지1"></div></div>
-                <div class="col-6"><div style="aspect-ratio:16/9;border-radius:.5rem;overflow:hidden;"><img src="https://images.unsplash.com/photo-1563206767-5b18f218e8de?w=800" class="w-100 h-100" style="object-fit:cover;" alt="Q3 이미지2"></div></div>
-                <div class="col-6"><div style="aspect-ratio:16/9;border-radius:.5rem;overflow:hidden;"><img src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=800" class="w-100 h-100" style="object-fit:cover;" alt="Q3 이미지3"></div></div>
-                <div class="col-6"><div style="aspect-ratio:16/9;border-radius:.5rem;overflow:hidden;"><img src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=800" class="w-100 h-100" style="object-fit:cover;" alt="Q3 이미지4"></div></div>
+                <div class="col-6"><div class="ratio-16-9-card"><img src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800" class="w-100 h-100 object-fit-cover" alt="Q3 이미지1"></div></div>
+                <div class="col-6"><div class="ratio-16-9-card"><img src="https://images.unsplash.com/photo-1563206767-5b18f218e8de?w=800" class="w-100 h-100 object-fit-cover" alt="Q3 이미지2"></div></div>
+                <div class="col-6"><div class="ratio-16-9-card"><img src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=800" class="w-100 h-100 object-fit-cover" alt="Q3 이미지3"></div></div>
+                <div class="col-6"><div class="ratio-16-9-card"><img src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=800" class="w-100 h-100 object-fit-cover" alt="Q3 이미지4"></div></div>
               </div>
             </div>
           </div>
 
           <!-- All Quests Complete Card -->
-          <div class="card border-warning p-5 text-center" style="background:linear-gradient(135deg,#fffbeb,#fff7ed);">
-            <div class="rounded-circle bg-warning d-flex align-items-center justify-content-center mx-auto mb-3" style="width:64px;height:64px;font-size:2rem;">✨</div>
+          <div class="card border-warning p-5 text-center card-gradient-amber-light">
+            <div class="rounded-circle bg-warning d-flex align-items-center justify-content-center mx-auto mb-3 icon-circle-64-2rem">✨</div>
             <h4 class="fw-bold mb-2">🎉 모든 Quest 완료!</h4>
             <p class="text-muted mb-4">축하합니다! 콘테스트의 모든 단계를 완료하여 프로젝트가 완성되었습니다.<br>이제 이 프로젝트는 플랫폼의 영구 자산으로 등록되어 다른 메이커들과 공유됩니다.</p>
             <a href="contest-detail.html" class="btn btn-primary">🏆 콘테스트 페이지로 이동</a>
@@ -611,7 +544,7 @@ AI 비전 시스템:
                     <div>
                       <h5 class="fw-bold mb-1">기술 문서</h5>
                       <p class="small text-muted mb-3">상세한 제작 가이드 (PDF)</p>
-                      <span class="text-primary small fw-semibold" style="cursor:pointer;">다운로드 ↓</span>
+                      <span class="text-primary small fw-semibold cursor-pointer">다운로드 ↓</span>
                     </div>
                   </div>
                 </div>
@@ -623,7 +556,7 @@ AI 비전 시스템:
                     <div>
                       <h5 class="fw-bold mb-1">회로도</h5>
                       <p class="small text-muted mb-3">Fritzing 회로도 파일</p>
-                      <span class="text-primary small fw-semibold" style="cursor:pointer;">다운로드 ↓</span>
+                      <span class="text-primary small fw-semibold cursor-pointer">다운로드 ↓</span>
                     </div>
                   </div>
                 </div>
@@ -631,7 +564,7 @@ AI 비전 시스템:
             </div>
 
             <!-- Open Source Notice -->
-            <div class="mt-5 p-4 rounded-3" style="background:linear-gradient(90deg,#f0fdf4,#eff6ff);border:1px solid #86efac;">
+            <div class="mt-5 p-4 rounded-3 card-gradient-green-blue-86efac">
               <div class="d-flex gap-3">
                 <span class="fs-4 flex-shrink-0 mt-1">✨</span>
                 <div>
@@ -679,16 +612,16 @@ AI 비전 시스템:
                 <h5 class="fw-bold mb-3">1. 하드웨어 조립</h5>
                 <p class="text-muted mb-4">로봇 섀시에 라즈베리파이, 모터 드라이버, 배터리를 장착하고 배선을 정리했습니다.</p>
                 <div class="row g-3">
-                  <div class="col-6"><div class="bg-light rounded-3" style="aspect-ratio:16/9;"><img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=800" class="w-100 h-100 rounded-3" style="object-fit:cover;" alt="하드웨어 조립1"></div></div>
-                  <div class="col-6"><div class="bg-light rounded-3" style="aspect-ratio:16/9;"><img src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=800" class="w-100 h-100 rounded-3" style="object-fit:cover;" alt="하드웨어 조립2"></div></div>
+                  <div class="col-6"><div class="bg-light rounded-3 ratio-16-9-plain"><img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=800" class="w-100 h-100 rounded-3 object-fit-cover" alt="하드웨어 조립1"></div></div>
+                  <div class="col-6"><div class="bg-light rounded-3 ratio-16-9-plain"><img src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=800" class="w-100 h-100 rounded-3 object-fit-cover" alt="하드웨어 조립2"></div></div>
                 </div>
               </div>
               <div>
                 <h5 class="fw-bold mb-3">2. 센서 통합</h5>
                 <p class="text-muted mb-4">초음파 센서와 카메라 모듈을 연결하고 테스트했습니다.</p>
                 <div class="row g-3">
-                  <div class="col-6"><div class="bg-light rounded-3" style="aspect-ratio:16/9;"><img src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=800" class="w-100 h-100 rounded-3" style="object-fit:cover;" alt="센서 통합1"></div></div>
-                  <div class="col-6"><div class="bg-light rounded-3" style="aspect-ratio:16/9;"><img src="https://images.unsplash.com/photo-1581092162384-8987c1d64718?w=800" class="w-100 h-100 rounded-3" style="object-fit:cover;" alt="센서 통합2"></div></div>
+                  <div class="col-6"><div class="bg-light rounded-3 ratio-16-9-plain"><img src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=800" class="w-100 h-100 rounded-3 object-fit-cover" alt="센서 통합1"></div></div>
+                  <div class="col-6"><div class="bg-light rounded-3 ratio-16-9-plain"><img src="https://images.unsplash.com/photo-1581092162384-8987c1d64718?w=800" class="w-100 h-100 rounded-3 object-fit-cover" alt="센서 통합2"></div></div>
                 </div>
               </div>
               <div>
@@ -724,7 +657,7 @@ def plan_path(obstacles, target):
               </div>
               <div>
                 <h5 class="fw-bold mb-3">회로도</h5>
-                <div class="bg-light rounded-3 d-flex align-items-center justify-content-center text-muted" style="aspect-ratio:16/9;">회로도 이미지</div>
+                <div class="bg-light rounded-3 d-flex align-items-center justify-content-center text-muted ratio-16-9-plain">회로도 이미지</div>
               </div>
             </div>
           </div>
@@ -808,10 +741,10 @@ def plan_path(obstacles, target):
           <div class="col-md-4">
             <a href="project-detail.html" class="text-decoration-none">
               <div class="rel-card h-100">
-                <div style="position:relative;aspect-ratio:16/9;overflow:hidden;">
+                <div class="ratio-16-9-relative">
                   <img src="https://images.unsplash.com/photo-1753039495488-434a2fe53e41?w=400" alt="ESP32 기반 스마트 화분">
-                  <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.6) 0%,transparent 60%);"></div>
-                  <div style="position:absolute;bottom:.75rem;left:.75rem;">
+                  <div class="img-overlay-bottom"></div>
+                  <div class="img-badge-bottomleft">
                     <span class="badge bg-white text-dark">IoT</span>
                   </div>
                 </div>
@@ -819,7 +752,7 @@ def plan_path(obstacles, target):
                   <h6 class="fw-bold mb-2 text-dark">ESP32 기반 스마트 화분</h6>
                   <div class="d-flex justify-content-between align-items-center small text-muted">
                     <div class="d-flex align-items-center gap-2">
-                      <span class="rounded-circle bg-primary-subtle text-primary d-flex align-items-center justify-content-center fw-bold" style="width:24px;height:24px;font-size:.7rem;">이</span>
+                      <span class="rounded-circle bg-primary-subtle text-primary d-flex align-items-center justify-content-center fw-bold icon-box-24">이</span>
                       <span>이개발</span>
                     </div>
                     <span>❤️ 289</span>
@@ -831,10 +764,10 @@ def plan_path(obstacles, target):
           <div class="col-md-4">
             <a href="project-detail.html" class="text-decoration-none">
               <div class="rel-card h-100">
-                <div style="position:relative;aspect-ratio:16/9;overflow:hidden;">
+                <div class="ratio-16-9-relative">
                   <img src="https://images.unsplash.com/photo-1703221561813-cdaa308cf9e7?w=400" alt="3D 프린터 자동 레벨링">
-                  <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.6) 0%,transparent 60%);"></div>
-                  <div style="position:absolute;bottom:.75rem;left:.75rem;">
+                  <div class="img-overlay-bottom"></div>
+                  <div class="img-badge-bottomleft">
                     <span class="badge bg-white text-dark">3D프린팅</span>
                   </div>
                 </div>
@@ -842,7 +775,7 @@ def plan_path(obstacles, target):
                   <h6 class="fw-bold mb-2 text-dark">3D 프린터 자동 레벨링 시스템</h6>
                   <div class="d-flex justify-content-between align-items-center small text-muted">
                     <div class="d-flex align-items-center gap-2">
-                      <span class="rounded-circle bg-primary-subtle text-primary d-flex align-items-center justify-content-center fw-bold" style="width:24px;height:24px;font-size:.7rem;">박</span>
+                      <span class="rounded-circle bg-primary-subtle text-primary d-flex align-items-center justify-content-center fw-bold icon-box-24">박</span>
                       <span>박엔지니어</span>
                     </div>
                     <span>❤️ 267</span>
@@ -854,10 +787,10 @@ def plan_path(obstacles, target):
           <div class="col-md-4">
             <a href="project-detail.html" class="text-decoration-none">
               <div class="rel-card h-100">
-                <div style="position:relative;aspect-ratio:16/9;overflow:hidden;">
+                <div class="ratio-16-9-relative">
                   <img src="https://images.unsplash.com/photo-1558346490-a72e53ae2d4f?w=400" alt="AI 음성인식 스마트 미러">
-                  <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.6) 0%,transparent 60%);"></div>
-                  <div style="position:absolute;bottom:.75rem;left:.75rem;">
+                  <div class="img-overlay-bottom"></div>
+                  <div class="img-badge-bottomleft">
                     <span class="badge bg-white text-dark">AI</span>
                   </div>
                 </div>
@@ -865,7 +798,7 @@ def plan_path(obstacles, target):
                   <h6 class="fw-bold mb-2 text-dark">AI 음성인식 스마트 미러</h6>
                   <div class="d-flex justify-content-between align-items-center small text-muted">
                     <div class="d-flex align-items-center gap-2">
-                      <span class="rounded-circle bg-primary-subtle text-primary d-flex align-items-center justify-content-center fw-bold" style="width:24px;height:24px;font-size:.7rem;">최</span>
+                      <span class="rounded-circle bg-primary-subtle text-primary d-flex align-items-center justify-content-center fw-bold icon-box-24">최</span>
                       <span>최개발</span>
                     </div>
                     <span>❤️ 345</span>
@@ -930,7 +863,7 @@ def plan_path(obstacles, target):
       <div class="small text-muted lh-lg">
         <p class="mb-1">(주)디지털데일리 | 등록번호 : 경기 아51470 | 등록: 2008.10.20 | 발행: 2026.05.19 | 표: 김제호</p>
         <p class="mb-1">주소 : 경기도 성남시 분당구 대왕판교로 660번길 8 | 전화 : 02-883-9797 | 팩스 : 02-6280-9957</p>
-        <p class="mb-1 text-secondary" style="opacity:.6;">
+        <p class="mb-1 text-secondary footer-copyright">
           본 콘텐츠의 저작권은 (주)디지털데일리에 있으며 무단 전재 및 재배포를 금지합니다.
         </p>
         <p class="mt-3 mb-0">Copyright &copy; 2026 e4ds News. All Rights Reserved</p>

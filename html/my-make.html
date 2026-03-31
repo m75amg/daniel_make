@@ -8,68 +8,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/custom.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
-  <style>
-    .hero-gradient { background: linear-gradient(135deg, #2563eb 0%, #7c3aed 60%, #db2777 100%); }
-    .avatar-xl { width:96px; height:96px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:2.4rem; font-weight:700; border:4px solid #fff; box-shadow:0 4px 24px rgba(0,0,0,.25); flex-shrink:0; }
-    .summary-card { cursor:pointer; transition:box-shadow .2s, transform .15s; border:1px solid #e5e7eb; }
-    .summary-card:hover { box-shadow:0 4px 20px rgba(0,0,0,.10); transform:translateY(-2px); }
-    .project-card { cursor:pointer; transition:box-shadow .3s; overflow:hidden; }
-    .project-card:hover { box-shadow:0 8px 30px rgba(0,0,0,.12); }
-    .project-card img { transition:transform .5s; }
-    .project-card:hover img { transform:scale(1.08); }
-    .filter-tab { padding:.4rem .85rem; border-radius:.6rem; font-size:.85rem; font-weight:600; border:1px solid #e5e7eb; background:#fff; color:#6b7280; transition:all .15s; cursor:pointer; }
-    .filter-tab:hover { background:#f3f4f6; }
-    .filter-tab.active { background:#2563eb; color:#fff; border-color:#2563eb; }
-    .filter-tab.active-purple { background:#7c3aed; color:#fff; border-color:#7c3aed; }
-    .activity-card-link { border-left:4px solid transparent; transition:box-shadow .2s; cursor:pointer; }
-    .activity-card-link:hover { box-shadow:0 4px 16px rgba(0,0,0,.08); }
-    .activity-card-link.has-new { border-left-color:#7c3aed; }
-    .like-tab-btn, .save-tab-btn { padding:.4rem 1rem; border-radius:.75rem; font-size:.85rem; font-weight:600; border:1px solid #e5e7eb; background:#fff; color:#6b7280; cursor:pointer; display:flex; align-items:center; gap:.4rem; }
-    .like-tab-btn.active, .save-tab-btn.active { background:#111827; color:#fff; border-color:#111827; }
-    .reaction-card { background:#eff6ff; border:1px solid #bfdbfe; border-radius:.75rem; padding:.85rem; }
-    .following-maker { border:1px solid #e5e7eb; border-radius:.75rem; overflow:hidden; }
-    .following-maker.has-update { border-color:#bfdbfe; background:#f0f7ff; }
-    .app-status-card { border-radius:.75rem; }
-    .sticky-sidebar { position:sticky; top:110px; }
-    .section-divider { border-top:1px solid #e5e7eb; padding-top:2rem; margin-top:2rem; }
-    .quest-btn-primary { background:linear-gradient(90deg, #7c3aed, #db2777); border:none; color:#fff; padding:.45rem 1rem; border-radius:.5rem; font-size:.85rem; font-weight:600; width:100%; display:flex; align-items:center; justify-content:center; gap:.4rem; transition:opacity .15s; }
-    .quest-btn-primary:hover { opacity:.88; color:#fff; }
-    .quick-action-card { background:linear-gradient(135deg,#f5f3ff,#fdf2f8); border:1px solid #e9d5ff; }
-    .quick-btn { display:flex; align-items:center; gap:.6rem; width:100%; padding:.55rem .85rem; border-radius:.5rem; font-size:.85rem; font-weight:600; border:1px solid #e5e7eb; background:#fff; color:#111827; text-align:left; transition:background .15s; cursor:pointer; }
-    .quick-btn:hover { background:#f9fafb; }
-    .week-stat { display:flex; justify-content:space-between; align-items:center; padding:.5rem 0; border-bottom:1px solid #f3f4f6; font-size:.9rem; }
-    .week-stat:last-child { border-bottom:none; }
-    /* ── Quick Action type / role buttons ── */
-    .qa-type-btn, .qa-role-btn { border:2px solid #e5e7eb; background:#fff; cursor:pointer; transition:all .15s; text-align:left; }
-    .qa-type-btn:hover, .qa-role-btn:hover { border-color:#d1d5db; background:#f9fafb; }
-    .qa-type-btn.qa-selected  { border-color:#3b82f6 !important; background:#eff6ff !important; }
-    .qa-type-btn.qa-selected .qa-icon  { color:#2563eb !important; }
-    .qa-role-btn.qa-selected  { border-color:#16a34a !important; background:#f0fdf4 !important; }
-    .qa-role-btn.qa-selected .qa-icon  { color:#16a34a !important; }
-    .qa-quest-btn { border:2px solid #e5e7eb; background:#fff; cursor:pointer; transition:all .15s; }
-    .qa-quest-btn:hover { border-color:#d1d5db; background:#f9fafb; }
-    .qa-quest-btn.qa-selected { border-color:#3b82f6 !important; background:#eff6ff !important; }
-    /* ── Custom Sliding Panels ── */
-    .cpanel-backdrop { position:fixed; inset:0; background:rgba(0,0,0,.45); z-index:2040; display:none; }
-    .cpanel-backdrop.cpanel-show { display:block; }
-    .cpanel { position:fixed; top:0; right:0; bottom:0; background:#fff; z-index:2045; display:flex; flex-direction:column; box-shadow:-4px 0 32px rgba(0,0,0,.18); transform:translateX(100%); transition:transform .3s ease; }
-    .cpanel.cpanel-show { transform:translateX(0); }
-    .cpanel-body { flex:1; overflow-y:auto; }
-    /* ── 새 프로젝트 모달 (index.html 동일) ── */
-    .modal-gradient-header {
-      background: linear-gradient(135deg, #2563eb 0%, #7c3aed 50%, #ec4899 100%);
-      color: #fff; padding: 1.5rem; border-radius: .5rem .5rem 0 0;
-    }
-    .project-type-card {
-      border: 2px solid transparent; border-radius: .75rem;
-      padding: 1.25rem; cursor: pointer; transition: all .2s;
-    }
-    .project-type-card:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,.12); }
-    .project-type-card.personal { background: linear-gradient(135deg, #eff6ff, #dbeafe); border-color: #bfdbfe; }
-    .project-type-card.contest  { background: linear-gradient(135deg, #faf5ff, #ede9fe); border-color: #ddd6fe; }
-    #np-modal-overlay.show       { opacity: 1 !important; }
-    #npProjectCreationModal.show  { opacity: 1 !important; }
-  </style>
+  <link rel="stylesheet" href="assets/css/make2026-styles.css">
 </head>
 <body class="bg-light">
 
@@ -79,7 +18,7 @@
   <!-- Top Bar -->
   <div class="border-bottom border-light">
     <div class="container-xl">
-      <div class="d-flex align-items-center justify-content-between" style="height:36px;">
+      <div class="d-flex align-items-center justify-content-between topbar-inner">
         <small class="text-muted" id="header-date"></small>
         <div class="d-flex align-items-center gap-3">
           <a href="login.html"   class="text-secondary text-decoration-none small header-toplink auth-loggedout-only">로그인</a>
@@ -93,12 +32,12 @@
 
   <!-- Main Nav -->
   <div class="container-xl">
-    <nav class="navbar navbar-expand-lg px-0" style="min-height:64px;">
+    <nav class="navbar navbar-expand-lg px-0">
 
       <!-- Logo -->
       <a class="navbar-brand fw-bold fs-5 me-4" href="index.html">
         <span class="text-dark">e</span><span class="text-warning">4</span><span class="text-dark">ds</span>
-        <span class="fw-normal text-secondary ms-1" style="font-size:1.1rem;">make</span>
+        <span class="fw-normal text-secondary ms-1 brand-text">make</span>
       </a>
 
       <!-- Mobile toggler -->
@@ -149,7 +88,7 @@
           <li class="nav-item dropdown" id="makers-zone-dropdown">
             <a class="nav-link dropdown-toggle fw-medium text-dark" href="#"
                data-bs-toggle="dropdown">Maker's Zone</a>
-            <ul class="dropdown-menu shadow-sm border-0" style="min-width:160px;">
+            <ul class="dropdown-menu shadow-sm border-0">
               <li><a class="dropdown-item" href="projects.html">프로젝트</a></li>
               <li><a class="dropdown-item" href="contests.html">콘테스트</a></li>
               <li><a class="dropdown-item" href="community.html">커뮤니티</a></li>
@@ -204,7 +143,7 @@
             <div class="avatar-xl bg-white text-primary">김</div>
             <div>
               <h1 class="fw-bold fs-2 mb-1">김메이커</h1>
-              <p class="text-white opacity-75 mb-2" style="font-size:1.05rem;">로봇공학과 AI를 좋아하는 메이커입니다</p>
+              <p class="text-white opacity-75 mb-2 fs-105">로봇공학과 AI를 좋아하는 메이커입니다</p>
               <div class="d-flex flex-wrap gap-3 small">
                 <span>📄 프로젝트 12개</span>
                 <span>👥 팔로워 1,234명</span>
@@ -226,9 +165,9 @@
         <div class="row g-3">
           <!-- 진행 중 프로젝트 -->
           <div class="col-6 col-md-3">
-            <div class="summary-card rounded-3 p-3 h-100" id="card-inprogress">
+            <div class="my-make-summary-card rounded-3 p-3 h-100" id="card-inprogress">
               <div class="d-flex align-items-center gap-2 mb-2">
-                <div class="rounded-2 d-flex align-items-center justify-content-center" style="width:36px;height:36px;background:#eff6ff;">🚀</div>
+                <div class="rounded-2 d-flex align-items-center justify-content-center icon-box-36-blue">🚀</div>
                 <div class="fw-bold fs-4 text-primary" id="sc-inprogress-count">2</div>
               </div>
               <div class="small fw-semibold text-dark mb-1">진행 중 프로젝트</div>
@@ -237,22 +176,22 @@
           </div>
           <!-- 미완료 Quest -->
           <div class="col-6 col-md-3">
-            <div class="summary-card rounded-3 p-3 h-100" id="card-quest">
+            <div class="my-make-summary-card rounded-3 p-3 h-100" id="card-quest">
               <div class="d-flex align-items-center gap-2 mb-2">
-                <div class="rounded-2 d-flex align-items-center justify-content-center" style="width:36px;height:36px;background:#f5f3ff;">🎯</div>
-                <div class="fw-bold fs-4 text-purple" style="color:#7c3aed;" id="sc-quest-count">3</div>
+                <div class="rounded-2 d-flex align-items-center justify-content-center icon-box-36-violet">🎯</div>
+                <div class="fw-bold fs-4 text-purple text-purple" id="sc-quest-count">3</div>
               </div>
               <div class="small fw-semibold text-dark mb-1">미완료 Quest</div>
-              <div class="small text-muted"><span style="color:#7c3aed;" class="fw-medium">오픈소스 자율…</span> Quest 3 대기</div>
+              <div class="small text-muted"><span class="text-purple fw-medium">오픈소스 자율…</span> Quest 3 대기</div>
             </div>
           </div>
           <!-- 새 답변 -->
           <div class="col-6 col-md-3">
-            <div class="summary-card rounded-3 p-3 h-100" id="card-answers">
+            <div class="my-make-summary-card rounded-3 p-3 h-100" id="card-answers">
               <div class="d-flex align-items-center gap-2 mb-2">
-                <div class="rounded-2 d-flex align-items-center justify-content-center" style="width:36px;height:36px;background:#f0fdf4;">💬</div>
+                <div class="rounded-2 d-flex align-items-center justify-content-center icon-box-36-green">💬</div>
                 <div class="fw-bold fs-4 text-success">8</div>
-                <span class="badge bg-danger" style="font-size:.7rem;">2</span>
+                <span class="badge bg-danger fs-70">2</span>
               </div>
               <div class="small fw-semibold text-dark mb-1">새 답변</div>
               <div class="small text-muted"><span class="text-success fw-medium">박엔지니어</span> 등 2명이 답변함</div>
@@ -260,14 +199,14 @@
           </div>
           <!-- 새 참여 요청 -->
           <div class="col-6 col-md-3">
-            <div class="summary-card rounded-3 p-3 h-100" id="card-applicants">
+            <div class="my-make-summary-card rounded-3 p-3 h-100" id="card-applicants">
               <div class="d-flex align-items-center gap-2 mb-2">
-                <div class="rounded-2 d-flex align-items-center justify-content-center" style="width:36px;height:36px;background:#fff7ed;">👤</div>
+                <div class="rounded-2 d-flex align-items-center justify-content-center icon-box-36-orange">👤</div>
                 <div class="fw-bold fs-4 text-warning-emphasis">5</div>
-                <span class="badge bg-danger" style="font-size:.7rem;">5</span>
+                <span class="badge bg-danger fs-70">5</span>
               </div>
               <div class="small fw-semibold text-dark mb-1">새 참여 요청</div>
-              <div class="small text-muted"><span class="fw-medium" style="color:#f97316;">김엔지니어</span> 님 외 4명 검토 필요</div>
+              <div class="small text-muted"><span class="fw-medium text-e4ds-orange">김엔지니어</span> 님 외 4명 검토 필요</div>
             </div>
           </div>
         </div>
@@ -320,7 +259,7 @@
               <button class="filter-tab" data-ctab="resource">자료공유 <span class="opacity-75">(1)</span></button>
               <button class="filter-tab position-relative" data-ctab="applied">
                 팀원 신청 <span class="opacity-75">(2)</span>
-                <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" style="font-size:.65rem;">2</span>
+                <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger fs-65">2</span>
               </button>
             </div>
 
@@ -346,8 +285,8 @@
             <div id="liked-content">
               <div class="row g-3">
                 <div class="col-sm-6">
-                  <div class="card border-0 shadow-sm" style="cursor:pointer;" onclick="window.location='project-detail.html'">
-                    <img src="https://images.unsplash.com/photo-1581092333203-42374bcf7d89?w=400" class="card-img-top" style="height:100px;object-fit:cover;" alt="">
+                  <div class="card border-0 shadow-sm cursor-pointer" onclick="window.location='project-detail.html'">
+                    <img src="https://images.unsplash.com/photo-1581092333203-42374bcf7d89?w=400" class="card-img-top thumb-100h" alt="">
                     <div class="card-body p-3">
                       <p class="fw-bold small mb-1">오픈소스 자율주행 로봇</p>
                       <div class="d-flex justify-content-between align-items-center">
@@ -358,8 +297,8 @@
                   </div>
                 </div>
                 <div class="col-sm-6">
-                  <div class="card border-0 shadow-sm" style="cursor:pointer;" onclick="window.location='project-detail.html'">
-                    <img src="https://images.unsplash.com/photo-1758525747606-bd5d801ca87b?w=400" class="card-img-top" style="height:100px;object-fit:cover;" alt="">
+                  <div class="card border-0 shadow-sm cursor-pointer" onclick="window.location='project-detail.html'">
+                    <img src="https://images.unsplash.com/photo-1758525747606-bd5d801ca87b?w=400" class="card-img-top thumb-100h" alt="">
                     <div class="card-body p-3">
                       <p class="fw-bold small mb-1">AI 음성인식 스마트 미러</p>
                       <div class="d-flex justify-content-between align-items-center">
@@ -395,16 +334,16 @@
               <p class="text-muted small mb-3">막히는 부분이 있거나 공유하고 싶은 내용이 있으신가요?</p>
               <div class="d-flex flex-column gap-2">
                 <button class="quick-btn" onclick="openQuickAction('question')">
-                  <span style="color:#7c3aed;">💬</span> <span class="fw-bold">질문하기</span>
+                  <span class="text-purple">💬</span> <span class="fw-bold">질문하기</span>
                 </button>
                 <button class="quick-btn" onclick="openQuickAction('progress')">
-                  <span style="color:#2563eb;">🚀</span> <span>진행 상황 공유</span>
+                  <span class="text-blue">🚀</span> <span>진행 상황 공유</span>
                 </button>
                 <button class="quick-btn" onclick="openQuickAction('teammate')">
-                  <span style="color:#16a34a;">👤</span> <span>팀원 모집</span>
+                  <span class="text-green-600">👤</span> <span>팀원 모집</span>
                 </button>
                 <button class="quick-btn" onclick="openQuickAction('resource')">
-                  <span style="color:#ea580c;">📎</span> <span>자료 공유</span>
+                  <span class="text-orange-500">📎</span> <span>자료 공유</span>
                 </button>
               </div>
               <p class="text-muted small mt-3 mb-0">✅ 내 프로젝트를 선택하면 자동으로 연결됩니다</p>
@@ -419,52 +358,52 @@
               <div id="reaction-list">
                 <div class="reaction-card mb-2" id="react-1">
                   <div class="d-flex gap-2 mb-2">
-                    <div class="rounded-2 d-flex align-items-center justify-content-center flex-shrink-0" style="width:32px;height:32px;background:#dbeafe;">💬</div>
+                    <div class="rounded-2 d-flex align-items-center justify-content-center flex-shrink-0 icon-box-32-blue">💬</div>
                     <div class="flex-grow-1 min-w-0">
                       <p class="fw-semibold small mb-0">내 질문에 새 답변이 달렸습니다</p>
-                      <p class="small text-primary mb-1" style="font-size:.78rem;">ESP32에서 MQTT 연결이 계속 끊기는데...</p>
-                      <p class="small text-muted mb-0" style="font-size:.75rem;">IoT 스마트 화분 시스템 · Quest 2</p>
-                      <div class="d-flex justify-content-between mt-1" style="font-size:.75rem;">
+                      <p class="small text-primary mb-1 fs-78">ESP32에서 MQTT 연결이 계속 끊기는데...</p>
+                      <p class="small text-muted mb-0 fs-xs">IoT 스마트 화분 시스템 · Quest 2</p>
+                      <div class="d-flex justify-content-between mt-1 fs-xs">
                         <span class="text-muted">박엔지니어 · 10분 전</span>
                         <div class="w-2 h-2 rounded-circle bg-primary d-inline-block ms-1"></div>
                       </div>
                     </div>
                   </div>
                   <div class="d-flex gap-2 pt-2 border-top">
-                    <a href="community-detail.html?id=1" class="flex-grow-1 btn btn-link btn-sm text-primary p-0 text-start" style="font-size:.8rem;">💬 답변 보러가기</a>
-                    <button class="btn btn-primary btn-sm py-0 px-2" style="font-size:.75rem;" onclick="markReactionRead('react-1')">✓ 확인</button>
+                    <a href="community-detail.html?id=1" class="flex-grow-1 btn btn-link btn-sm text-primary p-0 text-start fs-80">💬 답변 보러가기</a>
+                    <button class="btn btn-primary btn-sm py-0 px-2 fs-xs" onclick="markReactionRead('react-1')">✓ 확인</button>
                   </div>
                 </div>
                 <div class="reaction-card" id="react-2">
                   <div class="d-flex gap-2 mb-2">
-                    <div class="rounded-2 d-flex align-items-center justify-content-center flex-shrink-0" style="width:32px;height:32px;background:#ede9fe;">💬</div>
+                    <div class="rounded-2 d-flex align-items-center justify-content-center flex-shrink-0 icon-box-32-violet">💬</div>
                     <div class="flex-grow-1 min-w-0">
                       <p class="fw-semibold small mb-0">내 진행공유에 새 댓글이 달렸습니다</p>
-                      <p class="small text-primary mb-1" style="font-size:.78rem;">Quest 2 완료! 음성 인식 모듈 통합 성공</p>
-                      <p class="small text-muted mb-0" style="font-size:.75rem;">AI 스마트 미러 · Quest 2</p>
-                      <div class="d-flex justify-content-between mt-1" style="font-size:.75rem;">
+                      <p class="small text-primary mb-1 fs-78">Quest 2 완료! 음성 인식 모듈 통합 성공</p>
+                      <p class="small text-muted mb-0 fs-xs">AI 스마트 미러 · Quest 2</p>
+                      <div class="d-flex justify-content-between mt-1 fs-xs">
                         <span class="text-muted">이메이커 · 1시간 전</span>
                         <div class="w-2 h-2 rounded-circle bg-primary d-inline-block ms-1"></div>
                       </div>
                     </div>
                   </div>
                   <div class="d-flex gap-2 pt-2 border-top">
-                    <a href="community-detail.html?id=4" class="flex-grow-1 btn btn-link btn-sm text-primary p-0 text-start" style="font-size:.8rem;">💬 답변 보러가기</a>
-                    <button class="btn btn-primary btn-sm py-0 px-2" style="font-size:.75rem;" onclick="markReactionRead('react-2')">✓ 확인</button>
+                    <a href="community-detail.html?id=4" class="flex-grow-1 btn btn-link btn-sm text-primary p-0 text-start fs-80">💬 답변 보러가기</a>
+                    <button class="btn btn-primary btn-sm py-0 px-2 fs-xs" onclick="markReactionRead('react-2')">✓ 확인</button>
                   </div>
                 </div>
               </div>
               <div id="reactions-empty" class="text-center py-4 d-none">
-                <div class="rounded-circle bg-success-subtle d-flex align-items-center justify-content-center mx-auto mb-2" style="width:48px;height:48px;">✅</div>
+                <div class="rounded-circle bg-success-subtle d-flex align-items-center justify-content-center mx-auto mb-2 icon-box-48-none">✅</div>
                 <p class="fw-semibold small mb-1">모두 확인했습니다!</p>
-                <p class="text-muted" style="font-size:.78rem;">새로운 반응이 오면 여기에 표시됩니다</p>
+                <p class="text-muted fs-78">새로운 반응이 오면 여기에 표시됩니다</p>
               </div>
             </div>
 
             <!-- 팔로잉 업데이트 -->
             <div class="card border-0 shadow-sm rounded-4 p-4" id="following-section">
               <div class="d-flex align-items-center justify-content-between mb-3">
-                <h6 class="fw-bold mb-0">📡 팔로잉 업데이트 <span class="badge bg-danger" style="font-size:.68rem;">2</span></h6>
+                <h6 class="fw-bold mb-0">📡 팔로잉 업데이트 <span class="badge bg-danger fs-68">2</span></h6>
                 <button class="btn btn-link btn-sm text-primary p-0 small" id="mark-all-updates">모두 확인</button>
               </div>
               <div class="d-flex flex-column gap-2" id="following-list">
@@ -472,31 +411,31 @@
                 <!-- 이개발 -->
                 <div class="following-maker has-update">
                   <div class="d-flex align-items-center gap-2 p-3 pb-2">
-                    <div class="rounded-circle d-flex align-items-center justify-content-center text-white fw-bold flex-shrink-0" style="width:36px;height:36px;background:linear-gradient(135deg,#3b82f6,#7c3aed);font-size:.9rem;">이</div>
+                    <div class="rounded-circle d-flex align-items-center justify-content-center text-white fw-bold flex-shrink-0 icon-box-36-grad-blue-purple">이</div>
                     <div class="flex-grow-1 min-w-0">
                       <div class="d-flex align-items-center gap-1">
                         <a href="maker-profile.html" class="fw-semibold small text-dark text-decoration-none">이개발</a>
-                        <span class="badge bg-danger rounded-pill" style="font-size:.65rem;">2</span>
+                        <span class="badge bg-danger rounded-pill fs-65">2</span>
                       </div>
                       <small class="text-muted">AI/ML 전문가</small>
                     </div>
                     <div class="d-flex align-items-center gap-1">
-                      <a href="maker-profile.html" class="btn btn-link btn-sm p-0 text-primary" style="font-size:.75rem;">🔗</a>
-                      <button class="btn btn-link btn-sm p-0 text-muted unfollow-btn" data-name="이개발" style="font-size:.78rem;">언팔</button>
+                      <a href="maker-profile.html" class="btn btn-link btn-sm p-0 text-primary fs-xs">🔗</a>
+                      <button class="btn btn-link btn-sm p-0 text-muted unfollow-btn" data-name="이개발" class="fs-78">언팔</button>
                     </div>
                   </div>
                   <div class="px-3 pb-3 d-flex flex-column gap-1">
-                    <div class="d-flex gap-2 p-2 rounded-2 bg-white border" style="border-color:#bfdbfe!important;cursor:pointer;">
-                      <div class="rounded-2 d-flex align-items-center justify-content-center flex-shrink-0" style="width:24px;height:24px;background:#eff6ff;font-size:.75rem;">🚀</div>
+                    <div class="d-flex gap-2 p-2 rounded-2 bg-white border border-blue-100-cursor">
+                      <div class="rounded-2 d-flex align-items-center justify-content-center flex-shrink-0 icon-box-24-blue">🚀</div>
                       <div class="min-w-0">
-                        <p class="small mb-0 fw-medium"><span class="d-inline-block rounded-circle bg-danger me-1" style="width:7px;height:7px;"></span>YOLOv8 실시간 객체 감지 Quest 완료</p>
+                        <p class="small mb-0 fw-medium"><span class="d-inline-block rounded-circle bg-danger me-1 icon-dot-sm"></span>YOLOv8 실시간 객체 감지 Quest 완료</p>
                         <small class="text-muted">오픈소스 비전 시스템 · 30분 전</small>
                       </div>
                     </div>
-                    <div class="d-flex gap-2 p-2 rounded-2 bg-white border" style="border-color:#bfdbfe!important;cursor:pointer;">
-                      <div class="rounded-2 d-flex align-items-center justify-content-center flex-shrink-0" style="width:24px;height:24px;background:#ede9fe;font-size:.75rem;">💬</div>
+                    <div class="d-flex gap-2 p-2 rounded-2 bg-white border border-blue-100-cursor">
+                      <div class="rounded-2 d-flex align-items-center justify-content-center flex-shrink-0 icon-box-24-violet">💬</div>
                       <div class="min-w-0">
-                        <p class="small mb-0 fw-medium"><span class="d-inline-block rounded-circle bg-danger me-1" style="width:7px;height:7px;"></span>TensorFlow Lite 모델 경량화 질문</p>
+                        <p class="small mb-0 fw-medium"><span class="d-inline-block rounded-circle bg-danger me-1 icon-dot-sm"></span>TensorFlow Lite 모델 경량화 질문</p>
                         <small class="text-muted">ML 최적화 · 2시간 전</small>
                       </div>
                     </div>
@@ -506,24 +445,24 @@
                 <!-- 박엔지니어 -->
                 <div class="following-maker has-update">
                   <div class="d-flex align-items-center gap-2 p-3 pb-2">
-                    <div class="rounded-circle d-flex align-items-center justify-content-center text-dark fw-bold flex-shrink-0" style="width:36px;height:36px;background:linear-gradient(135deg,#fbbf24,#f59e0b);font-size:.9rem;">박</div>
+                    <div class="rounded-circle d-flex align-items-center justify-content-center text-dark fw-bold flex-shrink-0 icon-box-36-grad-amber">박</div>
                     <div class="flex-grow-1 min-w-0">
                       <div class="d-flex align-items-center gap-1">
                         <a href="maker-profile.html" class="fw-semibold small text-dark text-decoration-none">박엔지니어</a>
-                        <span class="badge bg-danger rounded-pill" style="font-size:.65rem;">1</span>
+                        <span class="badge bg-danger rounded-pill fs-65">1</span>
                       </div>
                       <small class="text-muted">임베디드 전문가</small>
                     </div>
                     <div class="d-flex align-items-center gap-1">
-                      <a href="maker-profile.html" class="btn btn-link btn-sm p-0 text-primary" style="font-size:.75rem;">🔗</a>
-                      <button class="btn btn-link btn-sm p-0 text-muted unfollow-btn" data-name="박엔지니어" style="font-size:.78rem;">언팔</button>
+                      <a href="maker-profile.html" class="btn btn-link btn-sm p-0 text-primary fs-xs">🔗</a>
+                      <button class="btn btn-link btn-sm p-0 text-muted unfollow-btn" data-name="박엔지니어" class="fs-78">언팔</button>
                     </div>
                   </div>
                   <div class="px-3 pb-3 d-flex flex-column gap-1">
-                    <div class="d-flex gap-2 p-2 rounded-2 bg-white border" style="border-color:#bfdbfe!important;cursor:pointer;">
-                      <div class="rounded-2 d-flex align-items-center justify-content-center flex-shrink-0" style="width:24px;height:24px;background:#fef3c7;font-size:.75rem;">🏆</div>
+                    <div class="d-flex gap-2 p-2 rounded-2 bg-white border border-blue-100-cursor">
+                      <div class="rounded-2 d-flex align-items-center justify-content-center flex-shrink-0 icon-box-24-amber">🏆</div>
                       <div class="min-w-0">
-                        <p class="small mb-0 fw-medium"><span class="d-inline-block rounded-circle bg-danger me-1" style="width:7px;height:7px;"></span>STM32 모터 제어 프로젝트 수상</p>
+                        <p class="small mb-0 fw-medium"><span class="d-inline-block rounded-circle bg-danger me-1 icon-dot-sm"></span>STM32 모터 제어 프로젝트 수상</p>
                         <small class="text-muted">임베디드 챌린지 · 1일 전</small>
                       </div>
                     </div>
@@ -552,7 +491,7 @@
 
   <!-- ══ Profile Edit Panel ══ -->
   <div class="cpanel-backdrop" id="profileEditBackdrop" onclick="hideProfileEdit()"></div>
-  <div class="cpanel" id="profileEditOffcanvas" style="width:480px;max-width:95vw;">
+  <div class="cpanel" id="profileEditOffcanvas" class="cpanel-480">
     <div class="border-bottom flex-column align-items-start pb-0 pt-3 px-4 d-flex flex-column">
       <div class="d-flex align-items-center justify-content-between w-100 mb-3">
         <div>
@@ -563,10 +502,10 @@
       </div>
       <!-- Section Tabs -->
       <div class="d-flex gap-1 w-100 bg-light rounded-3 p-1 mb-0">
-        <button class="flex-fill btn btn-sm rounded-2 fw-medium profile-sec-tab active" data-sec="basic" style="font-size:.8rem;">👤 기본 정보</button>
-        <button class="flex-fill btn btn-sm rounded-2 fw-medium profile-sec-tab" data-sec="skills" style="font-size:.8rem;">💡 기술</button>
-        <button class="flex-fill btn btn-sm rounded-2 fw-medium profile-sec-tab" data-sec="links" style="font-size:.8rem;">🔗 링크</button>
-        <button class="flex-fill btn btn-sm rounded-2 fw-medium profile-sec-tab" data-sec="settings" style="font-size:.8rem;">⚙️ 공개</button>
+        <button class="flex-fill btn btn-sm rounded-2 fw-medium profile-sec-tab active" data-sec="basic" class="fs-80">👤 기본 정보</button>
+        <button class="flex-fill btn btn-sm rounded-2 fw-medium profile-sec-tab" data-sec="skills" class="fs-80">💡 기술</button>
+        <button class="flex-fill btn btn-sm rounded-2 fw-medium profile-sec-tab" data-sec="links" class="fs-80">🔗 링크</button>
+        <button class="flex-fill btn btn-sm rounded-2 fw-medium profile-sec-tab" data-sec="settings" class="fs-80">⚙️ 공개</button>
       </div>
     </div>
 
@@ -576,8 +515,8 @@
       <div id="sec-basic">
         <div class="text-center mb-4">
           <div class="position-relative d-inline-block">
-            <div class="rounded-circle bg-primary text-white d-flex align-items-center justify-content-center fw-bold mx-auto" style="width:80px;height:80px;font-size:2rem;">김</div>
-            <button class="btn btn-primary rounded-circle p-1 position-absolute" style="bottom:-4px;right:-4px;width:28px;height:28px;font-size:.7rem;" title="사진 변경">📷</button>
+            <div class="rounded-circle bg-primary text-white d-flex align-items-center justify-content-center fw-bold mx-auto icon-circle-80">김</div>
+            <button class="btn btn-primary rounded-circle p-1 position-absolute icon-circle-28-btn" title="사진 변경">📷</button>
           </div>
           <p class="small text-muted mt-2 mb-0">프로필 사진 변경 · JPG, PNG 최대 5MB</p>
         </div>
@@ -645,7 +584,7 @@
         <div class="mb-4">
           <label class="form-label fw-semibold small">💻 기술 스택</label>
           <p class="text-muted small mb-2">사용할 수 있는 기술, 도구, 언어를 추가하세요</p>
-          <div class="d-flex flex-wrap gap-2 p-3 bg-light rounded-3 border mb-2" id="skill-area" style="min-height:48px;"></div>
+          <div class="d-flex flex-wrap gap-2 p-3 bg-light rounded-3 border mb-2" id="skill-area" class="min-h-48"></div>
           <div class="input-group input-group-sm mb-2">
             <input type="text" class="form-control" id="skill-input" placeholder="기술 입력 후 Enter">
             <button class="btn btn-primary" id="skill-add-btn">+ 추가</button>
@@ -656,10 +595,10 @@
         <div>
           <label class="form-label fw-semibold small">🏷 관심 분야</label>
           <p class="text-muted small mb-2">콘테스트 &amp; 프로젝트 추천에 활용됩니다</p>
-          <div class="d-flex flex-wrap gap-2 p-3 bg-light rounded-3 border mb-2" id="interest-area" style="min-height:48px;"></div>
+          <div class="d-flex flex-wrap gap-2 p-3 bg-light rounded-3 border mb-2" id="interest-area" class="min-h-48"></div>
           <div class="input-group input-group-sm mb-2">
             <input type="text" class="form-control" id="interest-input" placeholder="관심 분야 입력 후 Enter">
-            <button class="btn btn-purple btn-sm" id="interest-add-btn" style="background:#7c3aed;color:#fff;border:none;">+ 추가</button>
+            <button class="btn btn-purple btn-sm" id="interest-add-btn" class="bg-gradient-blue-purple text-white border-0">+ 추가</button>
           </div>
           <div class="small text-muted mb-1">추천 관심사</div>
           <div class="d-flex flex-wrap gap-1" id="interest-suggestions"></div>
@@ -686,7 +625,7 @@
         <div class="d-flex flex-column gap-2" id="privacy-toggles">
           <!-- rendered by JS -->
         </div>
-        <div class="border border-danger rounded-3 p-3 mt-4" style="background:#fff5f5;">
+        <div class="border border-danger rounded-3 p-3 mt-4 bg-red-light">
           <h6 class="text-danger fw-semibold small mb-1">⚠️ 위험 영역</h6>
           <p class="text-danger small mb-2">아래 작업은 되돌릴 수 없습니다. 신중하게 진행하세요.</p>
           <button class="btn btn-outline-danger btn-sm w-100">🗑 계정 비활성화</button>
@@ -703,7 +642,7 @@
 
   <!-- ══ Community Quick Action Panel ══ -->
   <div class="cpanel-backdrop" id="quickActionBackdrop" onclick="hideQuickAction()"></div>
-  <div class="cpanel" id="quickActionOffcanvas" style="width:580px;max-width:95vw;">
+  <div class="cpanel" id="quickActionOffcanvas" class="content-w">
     <div class="border-bottom px-4 py-3 bg-white d-flex align-items-center justify-content-between flex-shrink-0">
       <div>
         <h5 class="fw-bold mb-0" id="qa-title">질문하기</h5>
@@ -711,7 +650,7 @@
       </div>
       <button type="button" class="btn-close ms-auto" onclick="hideQuickAction()"></button>
     </div>
-    <div class="cpanel-body" id="qa-body" style="padding-bottom:1rem;">
+    <div class="cpanel-body" id="qa-body" class="pb-content">
       <!-- dynamic content -->
     </div>
     <div class="border-top p-3 bg-white d-flex gap-2 flex-shrink-0">
@@ -771,7 +710,7 @@
       <div class="small text-muted lh-lg">
         <p class="mb-1">(주)디지털데일리 | 등록번호 : 경기 아51470 | 등록: 2008.10.20 | 발행: 2026.05.19 | 표: 김제호</p>
         <p class="mb-1">주소 : 경기도 성남시 분당구 대왕판교로 660번길 8 | 전화 : 02-883-9797 | 팩스 : 02-6280-9957</p>
-        <p class="mb-1 text-secondary" style="opacity:.6;">
+        <p class="mb-1 text-secondary footer-copyright">
           본 콘텐츠의 저작권은 (주)디지털데일리에 있으며 무단 전재 및 재배포를 금지합니다.
         </p>
         <p class="mt-3 mb-0">Copyright &copy; 2026 e4ds News. All Rights Reserved</p>
@@ -833,14 +772,14 @@
 
     var html = list.map(function(p) {
       var typeBadge = p.type === 'contest'
-        ? '<span class="badge text-white me-1" style="background:#7c3aed;">🏆 콘테스트</span>'
+        ? '<span class="badge text-white me-1 bg-purple">🏆 콘테스트</span>'
         : '<span class="badge bg-primary-subtle text-primary me-1">개인</span>';
       var statusBadge = p.status === 'completed'
         ? '<span class="badge bg-success">✅ 완료</span>'
         : '<span class="badge bg-warning text-dark">⏳ 진행중</span>';
 
       var contestHtml = p.contestName
-        ? '<div class="d-flex align-items-center gap-2 p-2 rounded-2 mb-2" style="background:#f5f3ff;border:1px solid #ede9fe;"><span style="color:#7c3aed;">🏆</span><a href="contest-detail.html" class="small fw-semibold text-decoration-none" style="color:#7c3aed;" onclick="event.stopPropagation()">'+p.contestName+'</a></div>'
+        ? '<div class="d-flex align-items-center gap-2 p-2 rounded-2 mb-2" style="background:#f5f3ff;border:1px solid #ede9fe;"><span class="text-purple">🏆</span><a href="contest-detail.html" class="small fw-semibold text-decoration-none text-purple" onclick="event.stopPropagation()">'+p.contestName+'</a></div>'
         : '';
 
       var completedMsg = (p.questProgress === p.totalQuests && p.status === 'completed')
@@ -852,9 +791,9 @@
         : '<a href="project-detail.html?id='+p.id+'" class="btn btn-primary btn-sm w-100" onclick="event.stopPropagation()">👁 프로젝트 보기</a>';
 
       return '<div class="col-md-6">'
-        +'<div class="card border-0 shadow-sm project-card" onclick="window.location=\'project-detail.html?id='+p.id+'\'">'
+        +'<div class="card border-0 shadow-sm my-make-project-card" onclick="window.location=\'project-detail.html?id='+p.id+'\'">'
         +'<div class="position-relative overflow-hidden" style="height:180px;">'
-        +'<img src="'+p.img+'" alt="" class="w-100 h-100" style="object-fit:cover;">'
+        +'<img src="'+p.img+'" alt="" class="w-100 h-100 object-fit-cover">'
         +'<div class="position-absolute top-0 start-0 m-2">'+typeBadge+statusBadge+'</div>'
         +'<div class="position-absolute bottom-0 start-0 end-0" style="background:linear-gradient(transparent,rgba(0,0,0,.55));height:60px;"></div>'
         +'</div>'
@@ -892,12 +831,12 @@
 
     var html = list.map(function(a) {
       var t = typeInfo[a.type];
-      var newBadge = a.hasNew ? '<span class="badge bg-danger ms-1" style="font-size:.7rem;">'+a.newCount+'개 새 알림</span>' : '';
+      var newBadge = a.hasNew ? '<span class="badge bg-danger ms-1 fs-70">'+a.newCount+'개 새 알림</span>' : '';
       var borderClass = a.hasNew ? 'has-new' : '';
-      return '<div class="card border-0 shadow-sm rounded-3 mb-2 activity-card-link '+borderClass+'" onclick="window.location=\'community-detail.html?id='+a.id+'\'" style="cursor:pointer;">'
+      return '<div class="card border-0 shadow-sm rounded-3 mb-2 activity-card-link '+borderClass+'" onclick="window.location=\'community-detail.html?id='+a.id+'\'" class="cursor-pointer">'
         +'<div class="card-body p-3">'
         +'<div class="d-flex gap-3 align-items-start">'
-        +'<div class="rounded-2 d-flex align-items-center justify-content-center flex-shrink-0 bg-'+t.color+'-subtle text-'+t.color+'" style="width:40px;height:40px;font-size:1.1rem;">'+t.icon+'</div>'
+        +'<div class="rounded-2 d-flex align-items-center justify-content-center flex-shrink-0 bg-'+t.color+'-subtle text-'+t.color+' icon-box-40">'+t.icon+'</div>'
         +'<div class="flex-grow-1 min-w-0">'
         +'<div class="d-flex flex-wrap align-items-center gap-1 mb-1">'
         +'<span class="badge bg-'+t.color+'-subtle text-'+t.color+' small">'+t.label+'</span>'+newBadge
@@ -1076,11 +1015,11 @@
 
   function renderSkillTags() {
     $('#skill-area').html(skillTags.length
-      ? skillTags.map(function(t){ return '<span class="badge bg-primary-subtle text-primary d-inline-flex align-items-center gap-1 py-1 px-2 rounded-pill" style="font-size:.8rem;">'+$('<span>').text(t).html()+'<button type="button" class="btn-close btn-close-sm skill-rm" data-tag="'+$('<span>').text(t).html()+'" style="font-size:.6rem;"></button></span>'; }).join('')
+      ? skillTags.map(function(t){ return '<span class="badge bg-primary-subtle text-primary d-inline-flex align-items-center gap-1 py-1 px-2 rounded-pill fs-80">'+$('<span>').text(t).html()+'<button type="button" class="btn-close btn-close-sm skill-rm" data-tag="'+$('<span>').text(t).html()+'" style="font-size:.6rem;"></button></span>'; }).join('')
       : '<span class="text-muted small">아직 추가된 기술이 없습니다</span>'
     );
     $('#skill-suggestions').html(skillSugg.filter(function(s){ return !skillTags.includes(s); }).slice(0,12).map(function(s){
-      return '<button class="btn btn-sm border border-dashed text-muted rounded-pill skill-sugg-btn" style="font-size:.75rem;" data-tag="'+s+'">+ '+s+'</button>';
+      return '<button class="btn btn-sm border border-dashed text-muted rounded-pill skill-sugg-btn fs-xs" data-tag="'+s+'">+ '+s+'</button>';
     }).join(''));
   }
   function renderInterestTags() {
@@ -1089,7 +1028,7 @@
       : '<span class="text-muted small">아직 추가된 관심사가 없습니다</span>'
     );
     $('#interest-suggestions').html(interestSugg.filter(function(i){ return !interestTags.includes(i); }).map(function(i){
-      return '<button class="btn btn-sm border border-dashed text-muted rounded-pill interest-sugg-btn" style="font-size:.75rem;" data-tag="'+i+'">+ '+i+'</button>';
+      return '<button class="btn btn-sm border border-dashed text-muted rounded-pill interest-sugg-btn fs-xs" data-tag="'+i+'">+ '+i+'</button>';
     }).join(''));
   }
   function renderPrivacyToggles() {
@@ -1101,8 +1040,8 @@
       var knobTx     = on ? '22px' : '2px';
       return '<div class="d-flex align-items-center justify-content-between p-3 rounded-3 border mb-1" style="background:' + bgColor + ';border-color:' + bdColor + ';">'
         + '<div><p class="small fw-semibold mb-0' + (p.important ? ' text-primary' : '') + '">' + p.label
-        + (p.important ? ' <span class="badge bg-primary-subtle text-primary ms-1" style="font-size:.65rem;">필수</span>' : '') + '</p>'
-        + '<p class="text-muted mb-0" style="font-size:.75rem;">' + p.desc + '</p></div>'
+        + (p.important ? ' <span class="badge bg-primary-subtle text-primary ms-1 fs-65">필수</span>' : '') + '</p>'
+        + '<p class="text-muted mb-0 fs-xs">' + p.desc + '</p></div>'
         + '<button class="ms-3 rounded-pill flex-shrink-0 border-0 privacy-toggle" data-key="' + p.key + '" style="width:44px;height:24px;background:' + btnBg + ';transition:background .2s;">'
         + '<span style="display:block;width:18px;height:18px;background:#fff;border-radius:50%;transition:transform .2s;transform:translateX(' + knobTx + ');box-shadow:0 1px 3px rgba(0,0,0,.2);"></span>'
         + '</button></div>';
@@ -1209,7 +1148,7 @@
       + items.map(function(b){
           return '<div class="col-'+cols+'"><button class="btn w-100 p-3 text-center rounded-3" style="border:2px dashed #d1d5db;">'
             +'<i class="'+b.icon+' d-block fs-4 text-muted mb-1"></i>'
-            +'<p class="small fw-medium mb-0" style="color:#374151;">'+b.l+'</p>'
+            +'<p class="small fw-medium mb-0 text-muted-dark">'+b.l+'</p>'
             +(b.sub ? '<p class="mb-0" style="font-size:.72rem;color:#9ca3af;">'+b.sub+'</p>' : '')
             +'</button></div>';
         }).join('')
@@ -1329,7 +1268,7 @@
         ].map(function(q){
           return '<button class="btn qa-quest-btn d-flex align-items-center gap-3 w-100 p-3 rounded-3 text-start mb-2" data-val="'+q.v+'">'
             +'<div class="quest-check rounded-2 border d-flex align-items-center justify-content-center flex-shrink-0" style="width:20px;height:20px;border-color:#9ca3af;">'
-            +'<i class="bi bi-check quest-check-icon d-none text-white" style="font-size:.7rem;"></i>'
+            +'<i class="bi bi-check quest-check-icon d-none text-white fs-70"></i>'
             +'</div>'
             +'<span class="fw-semibold small quest-label">'+q.l+'</span>'
             +'</button>';
@@ -1434,83 +1373,46 @@
   <!-- ══════════════════════════════════════════════════════
        새 프로젝트 모달 — index.html 동일 디자인
        ══════════════════════════════════════════════════════ -->
-  <div id="np-modal-overlay" style="
-    display:none; position:fixed; inset:0; z-index:1040;
-    background:rgba(0,0,0,.5); opacity:0; transition:opacity .2s;
-  "></div>
+  <div id="np-modal-overlay" class="np-modal-overlay"></div>
 
-  <div id="npProjectCreationModal" style="
-    display:none; position:fixed; inset:0; z-index:1050;
-    overflow-y:auto; opacity:0; transition:opacity .2s;
-  ">
-    <div style="
-      min-height:100%; display:flex;
-      align-items:center; justify-content:center; padding:1rem;
-    ">
-      <div style="
-        background:#fff; border-radius:1rem;
-        box-shadow:0 25px 60px rgba(0,0,0,.3);
-        width:100%; max-width:800px;
-        overflow:hidden;
-      " onclick="event.stopPropagation()">
+  <div id="npProjectCreationModal" class="np-modal-dialog">
+    <div class="np-modal-centering">
+      <div class="np-modal-content" onclick="event.stopPropagation()">
 
         <!-- Gradient Header -->
-        <div class="modal-gradient-header" style="position:relative;">
-          <div style="text-align:center; padding-bottom:.5rem;">
-            <div style="
-              display:inline-flex; align-items:center; gap:.4rem;
-              background:rgba(255,255,255,.2); border-radius:9999px;
-              padding:.3rem .9rem; font-size:.85rem; font-weight:600;
-              margin-bottom:.75rem;
-            ">✨ 새 프로젝트 시작</div>
-            <div class="fw-bold" style="font-size:1.6rem; margin-bottom:.25rem;">어떤 프로젝트를 시작할까요?</div>
-            <div style="opacity:.85; font-size:.95rem;">프로젝트 타입을 선택하고 메이킹을 시작하세요</div>
+        <div class="modal-gradient-header position-relative">
+          <div class="np-modal-header-body">
+            <div class="np-modal-badge">✨ 새 프로젝트 시작</div>
+            <div class="fw-bold np-modal-title">어떤 프로젝트를 시작할까요?</div>
+            <div class="np-modal-subtitle">프로젝트 타입을 선택하고 메이킹을 시작하세요</div>
           </div>
-          <button onclick="closeNewProjectModal()" style="
-            position:absolute; top:.75rem; right:.75rem;
-            background:rgba(255,255,255,.2); border:none; border-radius:.5rem;
-            color:#fff; width:36px; height:36px; font-size:1.1rem;
-            cursor:pointer; display:flex; align-items:center; justify-content:center;
-          ">✕</button>
+          <button onclick="closeNewProjectModal()" class="np-modal-close-btn">✕</button>
         </div>
 
         <!-- Body -->
-        <div style="padding:2rem;">
+        <div class="np-modal-body">
           <div class="row g-4 mb-4">
 
             <!-- 개인 프로젝트 -->
             <div class="col-md-6">
-              <a href="create-personal-project.html" class="text-decoration-none" style="display:block; height:100%;">
-                <div class="project-type-card personal h-100" style="position:relative; overflow:hidden;">
-                  <div style="
-                    position:absolute; top:0; right:0;
-                    width:8rem; height:8rem; background:#bfdbfe;
-                    border-radius:50%; transform:translate(40%,-40%);
-                    opacity:.5;
-                  "></div>
-                  <div style="position:relative;">
-                    <div style="
-                      width:64px; height:64px; border-radius:1rem;
-                      background:linear-gradient(135deg,#3b82f6,#2563eb);
-                      display:flex; align-items:center; justify-content:center;
-                      font-size:1.75rem; margin-bottom:1rem;
-                    ">👤</div>
-                    <div class="fw-bold" style="font-size:1.25rem; color:#111827; margin-bottom:.25rem;">개인 프로젝트</div>
+              <a href="create-personal-project.html" class="text-decoration-none d-block h-100">
+                <div class="project-type-card personal h-100 relative-overflow">
+                  <div class="np-type-deco-circle np-type-deco-blue"></div>
+                  <div class="position-relative">
+                    <div class="np-type-icon-box np-type-icon-blue">👤</div>
+                    <div class="fw-bold np-type-card-title">개인 프로젝트</div>
                     <div class="text-muted small mb-3">자유롭게 나만의 프로젝트를 시작하세요</div>
-                    <ul class="list-unstyled small mb-4" style="color:#374151;">
-                      <li class="mb-2 d-flex align-items-center gap-2"><span style="color:#2563eb;">✔</span> 자유로운 주제 선택</li>
-                      <li class="mb-2 d-flex align-items-center gap-2"><span style="color:#2563eb;">✔</span> 나만의 속도로 진행</li>
-                      <li class="mb-2 d-flex align-items-center gap-2"><span style="color:#2563eb;">✔</span> 언제든지 수정 가능</li>
-                      <li class="d-flex align-items-center gap-2"><span style="color:#2563eb;">✔</span> 포트폴리오로 활용</li>
+                    <ul class="list-unstyled small mb-4 text-muted-dark">
+                      <li class="mb-2 d-flex align-items-center gap-2"><span class="text-blue">✔</span> 자유로운 주제 선택</li>
+                      <li class="mb-2 d-flex align-items-center gap-2"><span class="text-blue">✔</span> 나만의 속도로 진행</li>
+                      <li class="mb-2 d-flex align-items-center gap-2"><span class="text-blue">✔</span> 언제든지 수정 가능</li>
+                      <li class="d-flex align-items-center gap-2"><span class="text-blue">✔</span> 포트폴리오로 활용</li>
                     </ul>
-                    <div style="background:#eff6ff; border-radius:.5rem; padding:.75rem; margin-bottom:1rem;">
-                      <div class="fw-semibold" style="font-size:.78rem; color:#1e3a8a; margin-bottom:.2rem;">추천 대상</div>
-                      <div style="font-size:.78rem; color:#1d4ed8;">자유롭게 아이디어를 실험하고 싶은 메이커</div>
+                    <div class="np-type-recommend-box np-type-recommend-blue">
+                      <div class="fw-semibold np-type-recommend-label np-type-recommend-label-blue">추천 대상</div>
+                      <div class="np-type-recommend-text np-type-recommend-text-blue">자유롭게 아이디어를 실험하고 싶은 메이커</div>
                     </div>
-                    <div style="
-                      background:#2563eb; color:#fff; border-radius:.5rem;
-                      padding:.65rem 1rem; text-align:center; font-weight:600; font-size:.9rem;
-                    ">개인 프로젝트 시작하기 →</div>
+                    <div class="np-type-cta-btn np-type-cta-blue">개인 프로젝트 시작하기 →</div>
                   </div>
                 </div>
               </a>
@@ -1518,44 +1420,26 @@
 
             <!-- 콘테스트 프로젝트 -->
             <div class="col-md-6">
-              <a href="create-contest-project.html" class="text-decoration-none" style="display:block; height:100%;">
-                <div class="project-type-card contest h-100" style="position:relative; overflow:hidden;">
+              <a href="create-contest-project.html" class="text-decoration-none d-block h-100">
+                <div class="project-type-card contest h-100 relative-overflow">
                   <!-- 인기 뱃지 -->
-                  <div style="
-                    position:absolute; top:.75rem; right:.75rem;
-                    background:linear-gradient(135deg,#fbbf24,#f97316);
-                    color:#fff; border-radius:9999px;
-                    padding:.2rem .6rem; font-size:.72rem; font-weight:700;
-                  ">🏅 인기</div>
-                  <div style="
-                    position:absolute; top:0; right:0;
-                    width:8rem; height:8rem; background:#ddd6fe;
-                    border-radius:50%; transform:translate(40%,-40%);
-                    opacity:.5;
-                  "></div>
-                  <div style="position:relative;">
-                    <div style="
-                      width:64px; height:64px; border-radius:1rem;
-                      background:linear-gradient(135deg,#7c3aed,#db2777);
-                      display:flex; align-items:center; justify-content:center;
-                      font-size:1.75rem; margin-bottom:1rem;
-                    ">🏆</div>
-                    <div class="fw-bold" style="font-size:1.25rem; color:#111827; margin-bottom:.25rem;">콘테스트 프로젝트</div>
+                  <div class="np-type-popular-badge">🏅 인기</div>
+                  <div class="np-type-deco-circle np-type-deco-purple"></div>
+                  <div class="position-relative">
+                    <div class="np-type-icon-box np-type-icon-purple">🏆</div>
+                    <div class="fw-bold np-type-card-title">콘테스트 프로젝트</div>
                     <div class="text-muted small mb-3">콘테스트에 참가하며 프로젝트를 완성하세요</div>
-                    <ul class="list-unstyled small mb-4" style="color:#374151;">
-                      <li class="mb-2 d-flex align-items-center gap-2"><span style="color:#7c3aed;">✔</span> Quest 단계별 가이드</li>
-                      <li class="mb-2 d-flex align-items-center gap-2"><span style="color:#7c3aed;">✔</span> 상금 및 경품 획득 기회</li>
-                      <li class="mb-2 d-flex align-items-center gap-2"><span style="color:#7c3aed;">✔</span> 구조화된 프로젝트 관리</li>
-                      <li class="d-flex align-items-center gap-2"><span style="color:#7c3aed;">✔</span> 커뮤니티 피드백</li>
+                    <ul class="list-unstyled small mb-4 text-muted-dark">
+                      <li class="mb-2 d-flex align-items-center gap-2"><span class="text-purple">✔</span> Quest 단계별 가이드</li>
+                      <li class="mb-2 d-flex align-items-center gap-2"><span class="text-purple">✔</span> 상금 및 경품 획득 기회</li>
+                      <li class="mb-2 d-flex align-items-center gap-2"><span class="text-purple">✔</span> 구조화된 프로젝트 관리</li>
+                      <li class="d-flex align-items-center gap-2"><span class="text-purple">✔</span> 커뮤니티 피드백</li>
                     </ul>
-                    <div style="background:#faf5ff; border-radius:.5rem; padding:.75rem; margin-bottom:1rem;">
-                      <div class="fw-semibold" style="font-size:.78rem; color:#3b0764; margin-bottom:.2rem;">추천 대상</div>
-                      <div style="font-size:.78rem; color:#7c3aed;">목표를 갖고 체계적으로 프로젝트를 완성하고 싶은 메이커</div>
+                    <div class="np-type-recommend-box np-type-recommend-purple">
+                      <div class="fw-semibold np-type-recommend-label np-type-recommend-label-purple">추천 대상</div>
+                      <div class="np-type-recommend-text np-type-recommend-text-purple">목표를 갖고 체계적으로 프로젝트를 완성하고 싶은 메이커</div>
                     </div>
-                    <div style="
-                      background:linear-gradient(135deg,#7c3aed,#db2777); color:#fff; border-radius:.5rem;
-                      padding:.65rem 1rem; text-align:center; font-weight:600; font-size:.9rem;
-                    ">콘테스트 프로젝트 시작하기 →</div>
+                    <div class="np-type-cta-btn np-type-cta-purple">콘테스트 프로젝트 시작하기 →</div>
                   </div>
                 </div>
               </a>
@@ -1564,18 +1448,11 @@
           </div>
 
           <!-- Info box -->
-          <div style="
-            background:#f0fdf4; border:1px solid #bbf7d0;
-            border-radius:.75rem; padding:1rem 1.25rem;
-            display:flex; align-items:flex-start; gap:.75rem;
-          ">
-            <div style="
-              width:36px; height:36px; background:#dcfce7; border-radius:.5rem;
-              display:flex; align-items:center; justify-content:center; flex-shrink:0;
-            ">🎯</div>
+          <div class="np-info-box">
+            <div class="np-info-icon">🎯</div>
             <div>
-              <div class="fw-semibold small mb-1" style="color:#111827;">프로젝트는 통합 관리됩니다</div>
-              <div class="small" style="color:#4b5563; line-height:1.6;">
+              <div class="fw-semibold small mb-1 text-muted-dark">프로젝트는 통합 관리됩니다</div>
+              <div class="small lh-160 text-body-secondary">
                 개인 프로젝트든 콘테스트 프로젝트든, 모두 "내 프로젝트"에서 함께 관리되며
                 동일한 Quest 시스템과 커뮤니티 기능을 사용할 수 있습니다.
               </div>
@@ -1583,11 +1460,8 @@
           </div>
 
           <!-- 나중에 하기 -->
-          <div style="text-align:center; margin-top:1.25rem;">
-            <button onclick="closeNewProjectModal()" style="
-              background:none; border:none; color:#6b7280;
-              font-size:.9rem; cursor:pointer; text-decoration:underline;
-            ">나중에 하기</button>
+          <div class="text-center mt-4">
+            <button onclick="closeNewProjectModal()" class="np-later-btn">나중에 하기</button>
           </div>
         </div>
 

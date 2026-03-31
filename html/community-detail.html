@@ -7,18 +7,6 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/custom.css">
-  <style>
-    .avatar-circle { width:40px; height:40px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-weight:700; font-size:.95rem; flex-shrink:0; }
-    .avatar-circle-lg { width:56px; height:56px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-weight:700; font-size:1.2rem; flex-shrink:0; }
-    .detail-img { width:100%; border-radius:.5rem; object-fit:cover; max-height:400px; }
-    .answer-card { border-left:4px solid #e2e8f0; padding-left:1rem; }
-    .answer-card.helpful { border-left-color:#16a34a; }
-    .resource-item { border:1px solid #e5e7eb; border-radius:.5rem; padding:1rem; transition:box-shadow .2s; }
-    .resource-item:hover { box-shadow:0 2px 8px rgba(0,0,0,.08); }
-    .action-btn { transition:all .15s; }
-    .action-btn.liked { color:#ef4444; border-color:#ef4444; background:#fff5f5; }
-    .action-btn.saved { color:#2563eb; border-color:#2563eb; background:#eff6ff; }
-  </style>
 </head>
 <body class="bg-light">
 
@@ -28,7 +16,7 @@
   <!-- Top Bar -->
   <div class="border-bottom border-light">
     <div class="container-xl">
-      <div class="d-flex align-items-center justify-content-between" style="height:36px;">
+      <div class="d-flex align-items-center justify-content-between topbar-inner">
         <small class="text-muted" id="header-date"></small>
         <div class="d-flex align-items-center gap-3">
           <a href="login.html"   class="text-secondary text-decoration-none small header-toplink auth-loggedout-only">로그인</a>
@@ -42,12 +30,12 @@
 
   <!-- Main Nav -->
   <div class="container-xl">
-    <nav class="navbar navbar-expand-lg px-0" style="min-height:64px;">
+    <nav class="navbar navbar-expand-lg px-0">
 
       <!-- Logo -->
       <a class="navbar-brand fw-bold fs-5 me-4" href="index.html">
         <span class="text-dark">e</span><span class="text-warning">4</span><span class="text-dark">ds</span>
-        <span class="fw-normal text-secondary ms-1" style="font-size:1.1rem;">make</span>
+        <span class="fw-normal text-secondary ms-1 brand-text">make</span>
       </a>
 
       <!-- Mobile toggler -->
@@ -98,7 +86,7 @@
           <li class="nav-item dropdown" id="makers-zone-dropdown">
             <a class="nav-link dropdown-toggle fw-medium text-dark" href="#"
                data-bs-toggle="dropdown">Maker's Zone</a>
-            <ul class="dropdown-menu shadow-sm border-0" style="min-width:160px;">
+            <ul class="dropdown-menu shadow-sm border-0">
               <li><a class="dropdown-item" href="projects.html">프로젝트</a></li>
               <li><a class="dropdown-item" href="contests.html">콘테스트</a></li>
               <li><a class="dropdown-item" href="community.html">커뮤니티</a></li>
@@ -187,14 +175,14 @@
 
         <!-- Sidebar -->
         <div class="col-lg-4">
-          <div class="sticky-top" id="sidebar-sticky" style="top:110px;">
+          <div class="sticky-top sticky-top-110" id="sidebar-sticky">
 
             <!-- 작성자 카드 -->
             <div class="card mb-3 border-0 shadow-sm" id="author-card">
               <div class="card-body">
                 <h6 class="fw-bold mb-3">작성자</h6>
                 <div class="d-flex align-items-center gap-3 mb-3">
-                  <div class="avatar-circle-lg text-white" id="sidebar-avatar" style="background:#2563eb;">?</div>
+                  <div class="avatar-circle-lg text-white" id="sidebar-avatar" class="bg-primary">?</div>
                   <div>
                     <div class="fw-bold" id="sidebar-author-name">-</div>
                     <small class="text-muted" id="sidebar-author-stats">-</small>
@@ -205,9 +193,9 @@
             </div>
 
             <!-- 연결 프로젝트 -->
-            <div class="card mb-3 border-0 shadow-sm" id="project-card" style="display:none!important;">
+            <div class="card mb-3 border-0 shadow-sm" id="project-card" class="d-none">
               <div class="card-body p-0">
-                <img id="proj-img" src="" alt="" class="w-100 rounded-top-3" style="height:120px;object-fit:cover;">
+                <img id="proj-img" src="" alt="" class="w-100 rounded-top-3 community-detail-img">
                 <div class="p-3">
                   <div class="fw-bold small mb-1" id="proj-name">-</div>
                   <span class="badge bg-primary-subtle text-primary" id="proj-quest">-</span>
@@ -317,7 +305,7 @@
       <div class="small text-muted lh-lg">
         <p class="mb-1">(주)디지털데일리 | 등록번호 : 경기 아51470 | 등록: 2008.10.20 | 발행: 2026.05.19 | 표: 김제호</p>
         <p class="mb-1">주소 : 경기도 성남시 분당구 대왕판교로 660번길 8 | 전화 : 02-883-9797 | 팩스 : 02-6280-9957</p>
-        <p class="mb-1 text-secondary" style="opacity:.6;">
+        <p class="mb-1 text-secondary footer-copyright">
           본 콘텐츠의 저작권은 (주)디지털데일리에 있으며 무단 전재 및 재배포를 금지합니다.
         </p>
         <p class="mt-3 mb-0">Copyright &copy; 2026 e4ds News. All Rights Reserved</p>
@@ -340,7 +328,7 @@
       problem:'Wi-Fi 연결은 정상인데 MQTT 브로커로의 연결이 5-10분마다 자동으로 끊깁니다. 연결이 끊길 때 Error code -2가 계속 발생하며, 재연결 시도는 성공하지만 다시 끊기는 현상이 반복됩니다.',
       attempts:'1. Keep-alive 시간을 기본 15초에서 60초로 늘려봤습니다\n2. QoS 레벨을 0, 1, 2로 각각 시도해봤습니다\n3. WiFi 재연결 코드를 추가했습니다\n4. MQTT 브로커 로그를 확인했지만 특별한 오류가 없었습니다\n5. 다른 MQTT 클라이언트(PC)로 테스트했을 때는 문제가 없었습니다',
       helpNeeded:'연결이 끊기는 근본적인 원인을 찾고 싶습니다. ESP32 설정이나 코드에서 놓친 부분이 있는지 확인 부탁드립니다. 특히 전력 관리나 WiFi 설정 관련해서 조언해주시면 감사하겠습니다.',
-      content:'<p>Quest 2 진행 중인데 ESP32에서 MQTT 브로커 연결이 계속 끊깁니다.</p><p><strong>현재 상황:</strong><br>• MQTT 브로커: Mosquitto (로컬)<br>• 연결은 되지만 30초~2분 사이에 랜덤하게 끊김</p><pre style="background:#1e293b;color:#e2e8f0;padding:1rem;border-radius:.5rem;font-size:.8rem;overflow-x:auto;"><code>void reconnect() {\n  while (!client.connected()) {\n    if (client.connect("ESP32Client")) {\n      client.subscribe("home/sensor");\n    } else { delay(5000); }\n  }\n}</code></pre>',
+      content:'<p>Quest 2 진행 중인데 ESP32에서 MQTT 브로커 연결이 계속 끊깁니다.</p><p><strong>현재 상황:</strong><br>• MQTT 브로커: Mosquitto (로컬)<br>• 연결은 되지만 30초~2분 사이에 랜덤하게 끊김</p><pre class="code-block"><code>void reconnect() {\n  while (!client.connected()) {\n    if (client.connect("ESP32Client")) {\n      client.subscribe("home/sensor");\n    } else { delay(5000); }\n  }\n}</code></pre>',
       author:'이개발', initial:'이', authorProjects:12, authorContributions:34, date:'2시간 전',
       tags:['ESP32','MQTT','IoT','네트워크'], status:'open', statusLabel:'답변 대기', statusColor:'warning',
       questNumber:2, questTitle:'Quest 2: 센서 데이터 수집 및 전송',
@@ -576,7 +564,7 @@
           '<div class="avatar-circle text-white" style="background:' + avatarBg(a.initial) + ';">' + a.initial + '</div>' +
           '<div>' +
             '<div class="fw-semibold text-dark">' + a.author + '</div>' +
-            '<div style="font-size:.75rem;">프로젝트 ' + a.authorProjects + ' · 기여 ' + a.authorContributions + '</div>' +
+            '<div class="fs-xs">프로젝트 ' + a.authorProjects + ' · 기여 ' + a.authorContributions + '</div>' +
           '</div>' +
         '</div>' +
         '<span style="opacity:.35;">|</span>' +
@@ -586,7 +574,7 @@
       '</div>' +
       (a.project ?
         '<div class="rounded-3 p-3 mb-4" style="background:linear-gradient(to right,#eff6ff,#eef2ff);border:1px solid #bfdbfe;">' +
-          '<div class="d-flex align-items-center gap-2 mb-2"><span style="color:#2563eb;">🎯</span><span class="fw-semibold small">진행 중인 Quest</span></div>' +
+          '<div class="d-flex align-items-center gap-2 mb-2"><span class="text-blue">🎯</span><span class="fw-semibold small">진행 중인 Quest</span></div>' +
           '<a href="project-detail.html?id=' + a.project.id + '" class="fw-bold text-primary text-decoration-none d-block mb-1">' + a.project.name + '</a>' +
           (a.questTitle ? '<div class="small text-dark mb-2">' + a.questTitle + '</div>' : '') +
           (a.contest ? '<span class="badge border text-secondary small">' + a.contest.name + '</span>' : '') +
@@ -658,7 +646,7 @@
             '<div class="rounded-3 d-flex align-items-center justify-content-center" style="width:40px;height:40px;background:#f3f4f6;flex-shrink:0;"><span style="color:#6b7280;font-size:1.1rem;">📄</span></div>' +
             '<div><h5 class="fw-bold mb-0">추가 정보 및 코드</h5><div class="text-muted small">Additional details</div></div>' +
           '</div>' +
-          '<div style="line-height:1.8;">' + a.content + '</div>' +
+          '<div class="lh-180">' + a.content + '</div>' +
         '</div>' +
       '</div>';
     }
@@ -680,7 +668,7 @@
         a.attachments.forEach(function(file) {
           extra += '<div class="d-flex align-items-center gap-3 p-3 rounded-3" style="background:#f9fafb;border:1px solid #e5e7eb;">' +
             '<span style="color:#2563eb;font-size:1.1rem;">💻</span>' +
-            '<div class="flex-grow-1"><div class="fw-semibold small">' + file.name + '</div><div class="text-muted" style="font-size:.75rem;">' + file.size + '</div></div>' +
+            '<div class="flex-grow-1"><div class="fw-semibold small">' + file.name + '</div><div class="text-muted fs-xs">' + file.size + '</div></div>' +
             '<button class="btn btn-outline-secondary btn-sm">⬇️ 다운로드</button>' +
           '</div>';
         });
@@ -772,10 +760,10 @@
           '<h6 class="fw-bold mb-3">빠른 액션</h6>' +
           '<div class="d-flex flex-column gap-2 mb-3">' +
             '<div class="d-flex align-items-center gap-2 small">' +
-              (a.status === 'open' ? '<span style="color:#ea580c;">⏰</span> <span>해결중</span>' : '<span style="color:#16a34a;">✅</span> <span>해결됨</span>') +
+              (a.status === 'open' ? '<span class="text-orange-500">⏰</span> <span>해결중</span>' : '<span class="text-green-600">✅</span> <span>해결됨</span>') +
             '</div>' +
-            '<div class="d-flex align-items-center gap-2 small"><span style="color:#2563eb;">💬</span> <span>' + stats.answers + '개 답변</span></div>' +
-            '<div class="d-flex align-items-center gap-2 small"><span style="color:#2563eb;">👍</span> <span>' + stats.likes + '명 도움됨</span></div>' +
+            '<div class="d-flex align-items-center gap-2 small"><span class="text-blue">💬</span> <span>' + stats.answers + '개 답변</span></div>' +
+            '<div class="d-flex align-items-center gap-2 small"><span class="text-blue">👍</span> <span>' + stats.likes + '명 도움됨</span></div>' +
           '</div>' +
           '<button class="btn btn-primary w-100 mb-2" id="q-save-btn">🔖 저장하기</button>' +
           '<button class="btn btn-outline-secondary w-100" id="q-share-btn">🔗 공유하기</button>' +
@@ -820,8 +808,8 @@
             '<div class="fw-bold small mb-1">연결된 프로젝트</div>' +
             '<a href="project-detail.html?id=' + a.project.id + '" class="fw-bold text-primary text-decoration-none d-block mb-2">' + a.project.name + '</a>' +
             (a.questNumber ? '<div class="text-muted small mb-1">🚀 Quest ' + a.questNumber + ' 진행중</div>' : '') +
-            (a.questTitle ? '<div class="text-muted small mb-2" style="font-size:.75rem;">' + a.questTitle + '</div>' : '') +
-            (a.contest ? '<div class="border-bottom pb-2 mb-2"><div class="text-muted" style="font-size:.75rem;">참여 콘테스트</div><a href="#" class="text-primary text-decoration-none small fw-semibold">' + a.contest.name + '</a></div>' : '') +
+            (a.questTitle ? '<div class="text-muted small mb-2 fs-xs">' + a.questTitle + '</div>' : '') +
+            (a.contest ? '<div class="border-bottom pb-2 mb-2"><div class="text-muted fs-xs">참여 콘테스트</div><a href="#" class="text-primary text-decoration-none small fw-semibold">' + a.contest.name + '</a></div>' : '') +
             '<a href="project-detail.html?id=' + a.project.id + '" class="btn btn-primary btn-sm w-100">프로젝트 보기</a>' +
           '</div>' +
         '</div>';
@@ -886,18 +874,18 @@
           '<div class="avatar-circle text-white" style="background:' + avatarBg(a.initial) + ';">' + a.initial + '</div>' +
           '<div>' +
             '<div class="fw-semibold text-dark">' + a.author + '</div>' +
-            '<div style="font-size:.75rem;">프로젝트 ' + a.authorProjects + ' · 기여 ' + a.authorContributions + '</div>' +
+            '<div class="fs-xs">프로젝트 ' + a.authorProjects + ' · 기여 ' + a.authorContributions + '</div>' +
           '</div>' +
         '</div>' +
         '<span style="opacity:.35;">|</span>' +
         '<span>📅 ' + a.date + '</span>' +
         '<span>👁 ' + stats.views + ' 조회</span>' +
-        '<span class="fw-semibold" style="color:#7c3aed;">❤️ ' + stats.likes + ' 좋아요</span>' +
+        '<span class="fw-semibold text-purple">❤️ ' + stats.likes + ' 좋아요</span>' +
       '</div>' +
       (a.project ?
         '<div class="rounded-3 p-3 mb-4" style="background:linear-gradient(to right,#f5f3ff,#fdf4ff);border:1px solid #ddd6fe;">' +
-          '<div class="d-flex align-items-center gap-2 mb-2"><span style="color:#7c3aed;">🎯</span><span class="fw-semibold small">진행 중인 프로젝트</span></div>' +
-          '<a href="project-detail.html?id=' + a.project.id + '" class="fw-bold text-decoration-none d-block mb-1" style="color:#7c3aed;">' + a.project.name + '</a>' +
+          '<div class="d-flex align-items-center gap-2 mb-2"><span class="text-purple">🎯</span><span class="fw-semibold small">진행 중인 프로젝트</span></div>' +
+          '<a href="project-detail.html?id=' + a.project.id + '" class="fw-bold text-decoration-none d-block mb-1 text-purple">' + a.project.name + '</a>' +
           (a.questTitle ? '<div class="small text-dark mb-2">' + a.questTitle + '</div>' : '') +
           (a.contest ? '<span class="badge border text-secondary small">' + a.contest.name + '</span>' : '') +
         '</div>' : '') +
@@ -1056,11 +1044,11 @@
         '<div class="card-body p-4">' +
           '<h6 class="fw-bold mb-3">빠른 반응</h6>' +
           '<div class="d-flex flex-column gap-2 mb-3">' +
-            '<div class="d-flex align-items-center gap-2 small"><span style="color:#7c3aed;">❤️</span> <span>' + stats.likes + '개 좋아요</span></div>' +
-            '<div class="d-flex align-items-center gap-2 small"><span style="color:#7c3aed;">💬</span> <span>' + stats.comments + '개 댓글</span></div>' +
-            '<div class="d-flex align-items-center gap-2 small"><span style="color:#7c3aed;">👁</span> <span>' + stats.views + ' 조회</span></div>' +
+            '<div class="d-flex align-items-center gap-2 small"><span class="text-purple">❤️</span> <span>' + stats.likes + '개 좋아요</span></div>' +
+            '<div class="d-flex align-items-center gap-2 small"><span class="text-purple">💬</span> <span>' + stats.comments + '개 댓글</span></div>' +
+            '<div class="d-flex align-items-center gap-2 small"><span class="text-purple">👁</span> <span>' + stats.views + ' 조회</span></div>' +
           '</div>' +
-          '<button class="btn w-100 mb-2 text-white" style="background:#7c3aed;" id="ps-like-btn">❤️ 좋아요</button>' +
+          '<button class="btn w-100 mb-2 text-white bg-purple" id="ps-like-btn">❤️ 좋아요</button>' +
           '<button class="btn btn-outline-secondary w-100" id="ps-save-btn">🔖 저장하기</button>' +
         '</div>' +
       '</div>';
@@ -1077,10 +1065,10 @@
           '</div>' +
           '<div class="card-body p-3">' +
             '<div class="fw-bold small mb-1">연결된 프로젝트</div>' +
-            '<a href="project-detail.html?id=' + a.project.id + '" class="fw-bold text-decoration-none d-block mb-2" style="color:#7c3aed;">' + a.project.name + '</a>' +
-            '<div class="text-muted small mb-2 d-flex align-items-center gap-2"><span style="color:#7c3aed;">🚀</span><span>' + (a.project.quest||a.project.status||'') + '</span></div>' +
-            (a.contest ? '<div class="border-bottom pb-2 mb-2"><div class="text-muted" style="font-size:.75rem;">참여 콘테스트</div><a href="#" class="text-primary text-decoration-none small fw-semibold">' + a.contest.name + '</a></div>' : '') +
-            '<a href="project-detail.html?id=' + a.project.id + '" class="btn btn-sm w-100 text-white" style="background:#7c3aed;">프로젝트 보기</a>' +
+            '<a href="project-detail.html?id=' + a.project.id + '" class="fw-bold text-decoration-none d-block mb-2 text-purple">' + a.project.name + '</a>' +
+            '<div class="text-muted small mb-2 d-flex align-items-center gap-2"><span class="text-purple">🚀</span><span>' + (a.project.quest||a.project.status||'') + '</span></div>' +
+            (a.contest ? '<div class="border-bottom pb-2 mb-2"><div class="text-muted fs-xs">참여 콘테스트</div><a href="#" class="text-primary text-decoration-none small fw-semibold">' + a.contest.name + '</a></div>' : '') +
+            '<a href="project-detail.html?id=' + a.project.id + '" class="btn btn-sm w-100 text-white bg-purple">프로젝트 보기</a>' +
           '</div>' +
         '</div>';
     }
@@ -1090,7 +1078,7 @@
         '<div class="card-body p-4">' +
           '<h6 class="fw-bold mb-3">진행 상황</h6>' +
           '<div class="d-flex flex-column gap-2">' +
-            (a.questNumber ? '<div class="d-flex justify-content-between small"><span class="text-muted">Quest 진행도</span><span class="fw-semibold" style="color:#7c3aed;">' + a.questNumber + '/' + a.questTotal + '</span></div>' : '') +
+            (a.questNumber ? '<div class="d-flex justify-content-between small"><span class="text-muted">Quest 진행도</span><span class="fw-semibold text-purple">' + a.questNumber + '/' + a.questTotal + '</span></div>' : '') +
             '<div class="d-flex justify-content-between small"><span class="text-muted">상태</span>' +
               (a.status === 'completed'
                 ? '<span class="badge bg-success-subtle text-success">완료</span>'
@@ -1105,7 +1093,7 @@
           '<h6 class="fw-bold mb-3">통계</h6>' +
           '<div class="d-flex flex-column gap-2">' +
             '<div class="d-flex justify-content-between small"><span class="text-muted">👁 조회수</span><span class="fw-semibold">' + stats.views + '</span></div>' +
-            '<div class="d-flex justify-content-between small"><span class="text-muted">❤️ 좋아요</span><span class="fw-semibold" style="color:#7c3aed;">' + stats.likes + '</span></div>' +
+            '<div class="d-flex justify-content-between small"><span class="text-muted">❤️ 좋아요</span><span class="fw-semibold text-purple">' + stats.likes + '</span></div>' +
             '<div class="d-flex justify-content-between small"><span class="text-muted">💬 댓글</span><span class="fw-semibold">' + stats.comments + '</span></div>' +
             '<div class="d-flex justify-content-between small"><span class="text-muted">🔖 저장</span><span class="fw-semibold">' + (stats.bookmarks||0) + '</span></div>' +
           '</div>' +
@@ -1159,7 +1147,7 @@
           '<div class="avatar-circle text-white" style="background:' + avatarBg(a.initial) + ';">' + a.initial + '</div>' +
           '<div>' +
             '<div class="fw-semibold text-dark">' + a.author + '</div>' +
-            '<div style="font-size:.75rem;">프로젝트 ' + a.authorProjects + ' · 기여 ' + a.authorContributions + '</div>' +
+            '<div class="fs-xs">프로젝트 ' + a.authorProjects + ' · 기여 ' + a.authorContributions + '</div>' +
           '</div>' +
         '</div>' +
         '<span style="opacity:.35;">|</span>' +
@@ -1168,7 +1156,7 @@
         '<span class="fw-semibold text-success">👥 ' + stats.applicants + '명 지원</span>' +
       '</div>' +
       '<div class="rounded-3 p-3 mb-4" style="background:linear-gradient(to right,#f0fdf4,#eff6ff);border:1px solid #bbf7d0;">' +
-        '<div class="d-flex align-items-center gap-2 mb-2"><span style="color:#16a34a;">🎯</span><span class="fw-semibold small">협업할 프로젝트</span></div>' +
+        '<div class="d-flex align-items-center gap-2 mb-2"><span class="text-green-600">🎯</span><span class="fw-semibold small">협업할 프로젝트</span></div>' +
         (a.project ? '<a href="project-detail.html?id=' + a.project.id + '" class="fw-bold text-success text-decoration-none d-block mb-1">' + a.project.name + '</a>' : '') +
         (a.questTitle ? '<div class="small text-dark mb-2">' + a.questTitle + '</div>' : '') +
         (a.contest ? '<span class="badge border text-secondary small">' + a.contest.name + '</span>' : '') +
@@ -1212,7 +1200,7 @@
           '<div class="rounded-3 d-flex align-items-center justify-content-center" style="width:40px;height:40px;background:#dbeafe;flex-shrink:0;"><span style="color:#2563eb;font-size:1.1rem;">💡</span></div>' +
           '<div><h5 class="fw-bold mb-0">프로젝트 소개</h5><div class="text-muted small">What we\'re building</div></div>' +
         '</div>' +
-        '<p class="text-dark mb-0" style="line-height:1.8;">' + (a.projectIntro || '') + '</p>' +
+        '<p class="text-dark mb-0 lh-180">' + (a.projectIntro || '') + '</p>' +
       '</div>' +
     '</div>';
 
@@ -1223,7 +1211,7 @@
           '<div class="rounded-3 d-flex align-items-center justify-content-center" style="width:40px;height:40px;background:#ede9fe;flex-shrink:0;"><span style="color:#7c3aed;font-size:1.1rem;">🎯</span></div>' +
           '<div><h5 class="fw-bold mb-0">현재 진행 단계</h5><div class="text-muted small">Current progress</div></div>' +
         '</div>' +
-        '<p class="text-dark mb-0" style="line-height:1.8;">' + (a.currentStage || '') + '</p>' +
+        '<p class="text-dark mb-0 lh-180">' + (a.currentStage || '') + '</p>' +
       '</div>' +
     '</div>';
 
@@ -1297,7 +1285,7 @@
             '</div>' +
             '<p class="small text-dark mb-2">' + ap.message + '</p>' +
             '<div class="d-flex flex-wrap gap-1 mb-2">' + ap.skills.map(function(s){ return '<span class="badge" style="background:#f0fdf4;color:#16a34a;border:1px solid #bbf7d0;">' + s + '</span>'; }).join('') + '</div>' +
-            '<div class="d-flex align-items-center gap-2 small"><span style="color:#2563eb;">🔗</span><a href="#" class="text-primary text-decoration-none">' + ap.portfolio + '</a></div>' +
+            '<div class="d-flex align-items-center gap-2 small"><span class="text-blue">🔗</span><a href="#" class="text-primary text-decoration-none">' + ap.portfolio + '</a></div>' +
           '</div>' +
         '</div>' +
       '</div>';
@@ -1350,7 +1338,7 @@
         '<div class="d-flex align-items-center gap-3 py-2 px-3 rounded-3" style="background:#f0fdf4;border:1px solid #bbf7d0;">' +
           '<span style="color:#16a34a;font-size:1.2rem;">✅</span>' +
           '<div><div class="fw-semibold small text-success">참여 신청이 완료되었습니다!</div>' +
-          '<div class="text-muted" style="font-size:.75rem;">모집자가 검토 후 수락/거절 알림을 드립니다.</div></div>' +
+          '<div class="text-muted fs-xs">모집자가 검토 후 수락/거절 알림을 드립니다.</div></div>' +
         '</div>'
       );
     });
@@ -1365,9 +1353,9 @@
         '<div class="card-body p-4">' +
           '<h6 class="fw-bold mb-3">빠른 참여</h6>' +
           '<div class="d-flex flex-column gap-2 mb-3">' +
-            '<div class="d-flex align-items-center gap-2 small"><span style="color:#16a34a;">✅</span> <span>모집중</span></div>' +
-            '<div class="d-flex align-items-center gap-2 small"><span style="color:#ea580c;">📅</span> <span>' + (a.deadline||'') + ' 마감</span></div>' +
-            '<div class="d-flex align-items-center gap-2 small"><span style="color:#16a34a;">👥</span> <span>' + stats.applicants + '명 지원</span></div>' +
+            '<div class="d-flex align-items-center gap-2 small"><span class="text-green-600">✅</span> <span>모집중</span></div>' +
+            '<div class="d-flex align-items-center gap-2 small"><span class="text-orange-500">📅</span> <span>' + (a.deadline||'') + ' 마감</span></div>' +
+            '<div class="d-flex align-items-center gap-2 small"><span class="text-green-600">👥</span> <span>' + stats.applicants + '명 지원</span></div>' +
           '</div>' +
           '<button class="btn btn-success w-100 mb-2" id="sidebar-apply-btn">🤝 참여 신청하기</button>' +
           '<button class="btn btn-outline-secondary w-100">🔖 나중에 보기</button>' +
@@ -1388,7 +1376,7 @@
             '<div class="fw-bold small mb-1">연결된 프로젝트</div>' +
             '<a href="project-detail.html?id=' + a.project.id + '" class="fw-bold text-success text-decoration-none d-block mb-2">' + a.project.name + '</a>' +
             '<div class="text-muted small mb-2">🚀 ' + (a.project.status||a.project.quest||'') + '</div>' +
-            (a.contest ? '<div class="border-bottom pb-2 mb-2"><div class="text-muted" style="font-size:.75rem;">참여 콘테스트</div><a href="#" class="text-primary text-decoration-none small fw-semibold">' + a.contest.name + '</a></div>' : '') +
+            (a.contest ? '<div class="border-bottom pb-2 mb-2"><div class="text-muted fs-xs">참여 콘테스트</div><a href="#" class="text-primary text-decoration-none small fw-semibold">' + a.contest.name + '</a></div>' : '') +
             '<a href="project-detail.html?id=' + a.project.id + '" class="btn btn-success btn-sm w-100">프로젝트 보기</a>' +
           '</div>' +
         '</div>';
@@ -1459,7 +1447,7 @@
           '<div class="avatar-circle text-white" style="background:' + avatarBg(a.initial) + ';">' + a.initial + '</div>' +
           '<div>' +
             '<div class="fw-semibold text-dark">' + a.author + '</div>' +
-            '<div style="font-size:.75rem;">프로젝트 ' + a.authorProjects + ' · 기여 ' + a.authorContributions + '</div>' +
+            '<div class="fs-xs">프로젝트 ' + a.authorProjects + ' · 기여 ' + a.authorContributions + '</div>' +
           '</div>' +
         '</div>' +
         '<span style="opacity:.35;">|</span>' +
@@ -1558,7 +1546,7 @@
               '<div class="fw-bold mb-1">' + r.title + '</div>' +
               '<div class="text-muted small mb-2">' + r.description + '</div>' +
               '<div class="d-flex flex-wrap gap-1">' +
-                (r.tags||[]).map(function(t){ return '<span class="badge border text-secondary" style="font-size:.7rem;">' + t + '</span>'; }).join('') +
+                (r.tags||[]).map(function(t){ return '<span class="badge border text-secondary fs-70">' + t + '</span>'; }).join('') +
                 (r.stars ? '<span class="text-muted small">⭐ ' + r.stars + '</span>' : '') +
                 (r.duration ? '<span class="text-muted small">⏱ ' + r.duration + '</span>' : '') +
                 (r.size ? '<span class="text-muted small">⬇️ ' + r.size + '</span>' : '') +
@@ -1686,7 +1674,7 @@
             '<div class="fw-bold small mb-1">연결된 프로젝트</div>' +
             '<a href="project-detail.html?id=' + a.project.id + '" class="fw-bold text-decoration-none d-block mb-2" style="color:#d97706;">' + a.project.name + '</a>' +
             '<div class="text-muted small mb-2 d-flex align-items-center gap-2"><span style="color:#d97706;">🚀</span><span>' + (a.project.status||a.project.quest||'') + '</span></div>' +
-            (a.contest ? '<div class="border-bottom pb-2 mb-2"><div class="text-muted" style="font-size:.75rem;">참여 콘테스트</div><a href="#" class="text-primary text-decoration-none small fw-semibold">' + a.contest.name + '</a></div>' : '') +
+            (a.contest ? '<div class="border-bottom pb-2 mb-2"><div class="text-muted fs-xs">참여 콘테스트</div><a href="#" class="text-primary text-decoration-none small fw-semibold">' + a.contest.name + '</a></div>' : '') +
             '<a href="project-detail.html?id=' + a.project.id + '" class="btn btn-sm w-100 text-white" style="background:#d97706;">프로젝트 보기</a>' +
           '</div>' +
         '</div>';
