@@ -202,147 +202,159 @@
               📷 이미지 변경
             </button>
           </div>
+        </div>
+        <input type="file" class="d-none" id="imgInput" accept="image/*">
+        <p class="text-muted small mt-2 mb-0">권장 크기: 1920×1080px (16:9 비율) · PNG, JPG (최대 5MB)</p>
       </div>
-      <input type="file" class="d-none" id="imgInput" accept="image/*">
-      <p class="text-muted small mt-2 mb-0">권장 크기: 1920×1080px (16:9 비율) · PNG, JPG (최대 5MB)</p>
-    </div>
 
-    <!-- ② 기본 정보 -->
-    <div class="form-section">
-      <h5 class="fw-bold mb-4">기본 정보</h5>
+      <!-- ② 기본 정보 -->
+      <div class="form-section">
+        <h5 class="fw-bold mb-4">기본 정보</h5>
 
-      <div class="mb-4">
-        <label for="editTitle" class="form-label fw-bold">프로젝트 제목 <span class="text-danger">*</span></label>
-        <input type="text" class="form-control form-control-lg" id="editTitle" value="AI 음성인식 자율주행 로봇" required
-          maxlength="60">
-        <div class="d-flex justify-content-end mt-1">
-          <small class="text-muted"><span id="titleLen">18</span>/60</small>
+        <div class="mb-4">
+          <label for="editTitle" class="form-label fw-bold">프로젝트 제목 <span class="text-danger">*</span></label>
+          <input type="text" class="form-control form-control-lg" id="editTitle" value="AI 음성인식 자율주행 로봇" required
+            maxlength="60">
+          <div class="d-flex justify-content-end mt-1">
+            <small class="text-muted"><span id="titleLen">18</span>/60</small>
+          </div>
+        </div>
+
+        <div class="mb-4">
+          <label for="editSubtitle" class="form-label fw-bold">한 줄 소개</label>
+          <input type="text" class="form-control" id="editSubtitle" value="라즈베리파이와 OpenCV로 실내 자율주행이 가능한 배송 로봇"
+            placeholder="프로젝트를 한 줄로 요약해주세요" maxlength="100">
+          <div class="d-flex justify-content-end mt-1">
+            <small class="text-muted"><span id="subtitleLen">28</span>/100</small>
+          </div>
+        </div>
+
+        <div class="mb-4">
+          <label for="editCategory" class="form-label fw-bold">카테고리 <span class="text-danger">*</span></label>
+          <select class="form-select" id="editCategory" required>
+            <option>로봇공학</option>
+            <option>IoT</option>
+            <option>AI/머신러닝</option>
+            <option>3D프린팅</option>
+            <option>웨어러블</option>
+            <option>드론</option>
+            <option>에너지</option>
+            <option>기타</option>
+          </select>
+        </div>
+
+        <div>
+          <label for="editDesc" class="form-label fw-bold">프로젝트 설명 <span class="text-danger">*</span></label>
+          <textarea class="form-control" id="editDesc" rows="7" required minlength="50"
+            placeholder="프로젝트에 대해 자세히 설명해주세요">실내 환경에서 자율주행이 가능한 배송 로봇 프로젝트입니다. 라즈베리파이 4B를 메인 컴퓨터로 사용하고, OpenCV와 YOLOv5를 활용한 실시간 객체 감지와 경로 계획 알고리즘을 구현했습니다.</textarea>
+          <div class="d-flex justify-content-between mt-1">
+            <small class="text-muted">최소 50자 이상 작성해주세요</small>
+            <small id="descCount" class="text-success"><span id="descLen">0</span>자</small>
+          </div>
         </div>
       </div>
 
-      <div class="mb-4">
-        <label for="editSubtitle" class="form-label fw-bold">한 줄 소개</label>
-        <input type="text" class="form-control" id="editSubtitle" value="라즈베리파이와 OpenCV로 실내 자율주행이 가능한 배송 로봇"
-          placeholder="프로젝트를 한 줄로 요약해주세요" maxlength="100">
-        <div class="d-flex justify-content-end mt-1">
-          <small class="text-muted"><span id="subtitleLen">28</span>/100</small>
+      <!-- ③ 태그 -->
+      <div class="form-section">
+        <h5 class="fw-bold mb-3">태그</h5>
+
+        <!-- Current tags -->
+        <div class="d-flex flex-wrap gap-2 p-3 bg-light rounded-3 border mb-3 min-vh-0 min-h-48" id="tagArea">
+          <span class="tag-item">AI<button class="tag-remove" data-tag="AI" title="삭제">✕</button></span>
+          <span class="tag-item">라즈베리파이<button class="tag-remove" data-tag="라즈베리파이" title="삭제">✕</button></span>
+          <span class="tag-item">OpenCV<button class="tag-remove" data-tag="OpenCV" title="삭제">✕</button></span>
+          <span class="tag-item">자율주행<button class="tag-remove" data-tag="자율주행" title="삭제">✕</button></span>
+          <span class="tag-item">Python<button class="tag-remove" data-tag="Python" title="삭제">✕</button></span>
+          <span class="tag-item">ROS<button class="tag-remove" data-tag="ROS" title="삭제">✕</button></span>
+        </div>
+        <small class="text-muted d-none" id="tag-empty-state">태그를 추가해주세요</small>
+        <template id="project-tag-template">
+          <span class="tag-item"><span data-role="tag-text"></span><button type="button" class="tag-remove"
+              data-role="tag-remove" title="삭제">✕</button></span>
+        </template>
+
+        <!-- Add tag input -->
+        <div class="input-group">
+          <input type="text" class="form-control" id="tagInput" placeholder="태그를 입력하고 Enter 또는 추가 버튼을 누르세요">
+          <button class="btn btn-outline-primary" id="tagAddBtn">+ 추가</button>
+        </div>
+        <small class="text-muted mt-1 d-block">프로젝트와 관련된 기술, 도구, 주제 등을 태그로 추가하세요 (최대 10개)</small>
+      </div>
+
+      <!-- ④ 프로젝트 내용 (갤러리/첨부) -->
+      <div class="form-section">
+        <h5 class="fw-bold mb-3">프로젝트 콘텐츠</h5>
+
+        <!-- Existing gallery -->
+        <div class="row g-3 mb-3" id="galleryGrid">
+          <div class="col-4 col-md-3 position-relative gallery-item">
+            <img src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=300"
+              class="w-100 rounded-3 object-fit-cover thumb-90h" alt="프로젝트 갤러리 이미지 1">
+            <button type="button" class="btn btn-danger btn-sm position-absolute top-0 end-0 m-1 p-1 lh-1 gallery-del"
+              title="삭제">✕</button>
+          </div>
+          <div class="col-4 col-md-3 position-relative gallery-item">
+            <img src="https://images.unsplash.com/photo-1581092333203-42374bcf7d89?w=300"
+              class="w-100 rounded-3 object-fit-cover thumb-90h" alt="프로젝트 갤러리 이미지 2">
+            <button type="button" class="btn btn-danger btn-sm position-absolute top-0 end-0 m-1 p-1 lh-1 gallery-del"
+              title="삭제">✕</button>
+          </div>
+        </div>
+        <template id="project-gallery-item-template">
+          <div class="col-4 col-md-3 position-relative gallery-item">
+            <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw=="
+              class="w-100 rounded-3 object-fit-cover thumb-90h" alt="업로드된 프로젝트 갤러리 이미지">
+            <button type="button" class="btn btn-danger btn-sm position-absolute top-0 end-0 m-1 p-1 lh-1 gallery-del"
+              title="삭제">✕</button>
+          </div>
+        </template>
+
+        <!-- Upload new -->
+        <div class="upload-zone p-4 text-center" id="contentUploadZone">
+          <input type="file" class="d-none" id="contentInput" accept="image/*,video/*,.pdf" multiple>
+          <div class="fs-2 mb-2">🖼️</div>
+          <p class="fw-medium text-muted small mb-1">클릭하여 이미지, 동영상, 코드 등을 추가하세요</p>
+          <p class="text-muted mb-0 fs-xs">PNG, JPG, MP4, PDF (최대 20MB)</p>
         </div>
       </div>
 
-      <div class="mb-4">
-        <label for="editCategory" class="form-label fw-bold">카테고리 <span class="text-danger">*</span></label>
-        <select class="form-select" id="editCategory" required>
-          <option>로봇공학</option>
-          <option>IoT</option>
-          <option>AI/머신러닝</option>
-          <option>3D프린팅</option>
-          <option>웨어러블</option>
-          <option>드론</option>
-          <option>에너지</option>
-          <option>기타</option>
-        </select>
-      </div>
-
-      <div>
-        <label for="editDesc" class="form-label fw-bold">프로젝트 설명 <span class="text-danger">*</span></label>
-        <textarea class="form-control" id="editDesc" rows="7" required minlength="50"
-          placeholder="프로젝트에 대해 자세히 설명해주세요">실내 환경에서 자율주행이 가능한 배송 로봇 프로젝트입니다. 라즈베리파이 4B를 메인 컴퓨터로 사용하고, OpenCV와 YOLOv5를 활용한 실시간 객체 감지와 경로 계획 알고리즘을 구현했습니다.</textarea>
-        <div class="d-flex justify-content-between mt-1">
-          <small class="text-muted">최소 50자 이상 작성해주세요</small>
-          <small id="descCount" class="text-success"><span id="descLen">0</span>자</small>
+      <!-- ⑤ 링크 & 자료 -->
+      <div class="form-section">
+        <h5 class="fw-bold mb-4">링크 및 자료</h5>
+        <div class="mb-3">
+          <label class="form-label fw-bold">
+            <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="currentColor"
+              class="me-1">
+              <path
+                d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" />
+            </svg>
+            GitHub 저장소
+          </label>
+          <input type="url" class="form-control" id="editGithub" value="https://github.com/kimmaker/autonomous-robot"
+            placeholder="https://github.com/...">
         </div>
-      </div>
-    </div>
-
-    <!-- ③ 태그 -->
-    <div class="form-section">
-      <h5 class="fw-bold mb-3">태그</h5>
-
-      <!-- Current tags -->
-      <div class="d-flex flex-wrap gap-2 p-3 bg-light rounded-3 border mb-3 min-vh-0 min-h-48" id="tagArea">
-        <!-- NOTE: 태그는 JS renderTags()로 동적 생성 → _analysis/js-dynamic.md 참고 -->
-        <span class="tag-item">AI<button class="tag-remove" data-tag="AI" title="삭제">✕</button></span>
-        <span class="tag-item">라즈베리파이<button class="tag-remove" data-tag="라즈베리파이" title="삭제">✕</button></span>
-        <span class="tag-item">OpenCV<button class="tag-remove" data-tag="OpenCV" title="삭제">✕</button></span>
-        <span class="tag-item">자율주행<button class="tag-remove" data-tag="자율주행" title="삭제">✕</button></span>
-        <span class="tag-item">Python<button class="tag-remove" data-tag="Python" title="삭제">✕</button></span>
-        <span class="tag-item">ROS<button class="tag-remove" data-tag="ROS" title="삭제">✕</button></span>
-      </div>
-
-      <!-- Add tag input -->
-      <div class="input-group">
-        <input type="text" class="form-control" id="tagInput" placeholder="태그를 입력하고 Enter 또는 추가 버튼을 누르세요">
-        <button class="btn btn-outline-primary" id="tagAddBtn">+ 추가</button>
-      </div>
-      <small class="text-muted mt-1 d-block">프로젝트와 관련된 기술, 도구, 주제 등을 태그로 추가하세요 (최대 10개)</small>
-    </div>
-
-    <!-- ④ 프로젝트 내용 (갤러리/첨부) -->
-    <div class="form-section">
-      <h5 class="fw-bold mb-3">프로젝트 콘텐츠</h5>
-
-      <!-- Existing gallery -->
-      <div class="row g-3 mb-3" id="galleryGrid">
-        <div class="col-4 col-md-3 position-relative gallery-item">
-          <img src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=300"
-            class="w-100 rounded-3 object-fit-cover thumb-90h" alt="프로젝트 갤러리 이미지 1">
-          <button class="btn btn-danger btn-sm position-absolute top-0 end-0 m-1 p-1 lh-1 gallery-del" title="삭제"
-            class="btn-del-gallery">✕</button>
+        <div class="mb-3">
+          <label class="form-label fw-bold">▶ 데모 영상 링크</label>
+          <input type="url" class="form-control" id="editDemo" placeholder="https://youtube.com/...">
         </div>
-        <div class="col-4 col-md-3 position-relative gallery-item">
-          <img src="https://images.unsplash.com/photo-1581092333203-42374bcf7d89?w=300"
-            class="w-100 rounded-3 object-fit-cover thumb-90h" alt="프로젝트 갤러리 이미지 2">
-          <button class="btn btn-danger btn-sm position-absolute top-0 end-0 m-1 p-1 lh-1 gallery-del" title="삭제"
-            class="btn-del-gallery">✕</button>
+        <div>
+          <label class="form-label fw-bold">🔗 참고 링크</label>
+          <input type="url" class="form-control" id="editRef" placeholder="관련 자료, 블로그, 논문 등">
         </div>
       </div>
 
-      <!-- Upload new -->
-      <div class="upload-zone p-4 text-center" id="contentUploadZone">
-        <input type="file" class="d-none" id="contentInput" accept="image/*,video/*,.pdf" multiple>
-        <div class="fs-2 mb-2">🖼️</div>
-        <p class="fw-medium text-muted small mb-1">클릭하여 이미지, 동영상, 코드 등을 추가하세요</p>
-        <p class="text-muted mb-0 fs-xs">PNG, JPG, MP4, PDF (최대 20MB)</p>
-      </div>
-    </div>
-
-    <!-- ⑤ 링크 & 자료 -->
-    <div class="form-section">
-      <h5 class="fw-bold mb-4">링크 및 자료</h5>
-      <div class="mb-3">
-        <label class="form-label fw-bold">
-          <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="currentColor"
-            class="me-1">
-            <path
-              d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" />
-          </svg>
-          GitHub 저장소
-        </label>
-        <input type="url" class="form-control" id="editGithub" value="https://github.com/kimmaker/autonomous-robot"
-          placeholder="https://github.com/...">
-      </div>
-      <div class="mb-3">
-        <label class="form-label fw-bold">▶ 데모 영상 링크</label>
-        <input type="url" class="form-control" id="editDemo" placeholder="https://youtube.com/...">
-      </div>
-      <div>
-        <label class="form-label fw-bold">🔗 참고 링크</label>
-        <input type="url" class="form-control" id="editRef" placeholder="관련 자료, 블로그, 논문 등">
-      </div>
-    </div>
-
-    <!-- ⑥ Bottom Actions -->
-    <div class="d-flex align-items-center justify-content-between pt-2 pb-4">
-      <button class="btn btn-outline-danger" id="deleteBtn">
-        🗑️ 프로젝트 삭제
-      </button>
-      <div class="d-flex gap-2">
-        <a href="project-detail.html" class="btn btn-outline-secondary px-4">취소</a>
-        <button class="btn btn-primary fw-bold px-5" id="saveBtnBottom">
-          💾 변경사항 저장
+      <!-- ⑥ Bottom Actions -->
+      <div class="d-flex align-items-center justify-content-between pt-2 pb-4">
+        <button class="btn btn-outline-danger" id="deleteBtn">
+          🗑️ 프로젝트 삭제
         </button>
+        <div class="d-flex gap-2">
+          <a href="project-detail.html" class="btn btn-outline-secondary px-4">취소</a>
+          <button class="btn btn-primary fw-bold px-5" id="saveBtnBottom">
+            💾 변경사항 저장
+          </button>
+        </div>
       </div>
-    </div>
 
     </div>
   </main>
@@ -486,11 +498,22 @@
 
     /* ── Tag rendering ── */
     function renderTags() {
-      var html = tags.map(function (t) {
-        return '<span class="tag-item">' + $('<div>').text(t).html()
-          + '<button class="tag-remove" data-tag="' + $('<div>').text(t).html() + '" title="삭제">✕</button></span>';
-      }).join('');
-      $('#tagArea').html(html || '<span class="text-muted small">태그를 추가해주세요</span>');
+      var $tagArea = $('#tagArea');
+      $tagArea.empty();
+
+      if (!tags.length) {
+        $('#tag-empty-state').removeClass('d-none');
+        return;
+      }
+
+      $('#tag-empty-state').addClass('d-none');
+
+      tags.forEach(function (tag) {
+        var $tagItem = $(document.getElementById('project-tag-template').content.firstElementChild.cloneNode(true));
+        $tagItem.find('[data-role="tag-text"]').text(tag);
+        $tagItem.find('[data-role="tag-remove"]').attr('data-tag', tag);
+        $tagArea.append($tagItem);
+      });
     }
 
     function addTag(val) {
@@ -576,11 +599,9 @@
           if (!file.type.startsWith('image/')) return;
           var reader = new FileReader();
           reader.onload = function (e) {
-            var col = $('<div class="col-4 col-md-3 position-relative gallery-item">'
-              + '<img src="' + e.target.result + '" class="w-100 rounded-3 thumb-90h" alt="">'
-              + '<button class="btn btn-danger btn-sm position-absolute top-0 end-0 m-1 p-1 lh-1 gallery-del" style="font-size:.7rem;border-radius:.4rem;">✕</button>'
-              + '</div>');
-            $('#galleryGrid').append(col);
+            var $galleryItem = $(document.getElementById('project-gallery-item-template').content.firstElementChild.cloneNode(true));
+            $galleryItem.find('img').attr('src', e.target.result);
+            $('#galleryGrid').append($galleryItem);
             markDirty();
           };
           reader.readAsDataURL(file);

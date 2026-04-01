@@ -106,8 +106,8 @@
 - [x] projects.html
 - [x] project-create.html
 - [x] project-edit.html
-- [ ] project-detail.html
-- [ ] project-completed.html
+- [x] project-detail.html
+- [x] project-completed.html
 - [ ] (파일 목록 확인 후 추가)
 
 ---
@@ -239,6 +239,11 @@ Ref: posts.user_id > users.id
 - [x] signup.html
 - [x] contact.html
 - [x] support.html
+- [x] projects.html
+- [x] project-create.html
+- [x] project-edit.html
+- [x] project-detail.html
+- [x] project-completed.html
 - [ ] (파일 목록 확인 후 추가)
 
 ---
