@@ -103,6 +103,11 @@
 - [x] signup.html
 - [x] contact.html
 - [x] support.html
+- [x] projects.html
+- [x] project-create.html
+- [x] project-edit.html
+- [ ] project-detail.html
+- [ ] project-completed.html
 - [ ] (파일 목록 확인 후 추가)
 
 ---
