@@ -247,6 +247,10 @@
 /* =========================
    RED
 ========================= */
+.bg-success {
+    background-color: #16BC9C !important;
+}
 .bg-success-subtle {
-    background-color: var(--bs-success-bg-subtle) !important;
+    background-color: #E7FFFA !important;
+    border: 1px solid #16BC9C !important;
 }
