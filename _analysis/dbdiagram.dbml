@@ -54,5 +54,54 @@ Table sponsorship_plans {
   updated_at datetime [not null, default: `GETDATE()`, note: '수정일']
 }
 
+Table projects {
+  id int [pk, increment, note: 'PK']
+  user_id int [note: 'FK → users']
+  title nvarchar(200) [not null, note: '프로젝트 제목']
+  summary nvarchar(255) [not null, note: '한 줄 요약']
+  description nvarchar(max) [not null, note: '프로젝트 상세 설명']
+  category nvarchar(50) [not null, note: '카테고리']
+  author_name nvarchar(50) [not null, note: '작성자 표시명']
+  project_type varchar(20) [not null, default: 'personal', note: '프로젝트 유형']
+  status varchar(20) [not null, default: 'draft', note: '프로젝트 상태']
+  contest_name nvarchar(100) [note: '연결 콘테스트명']
+  award_name nvarchar(100) [note: '수상명']
+  github_url nvarchar(255) [note: 'GitHub 링크']
+  demo_url nvarchar(255) [note: '데모 영상 링크']
+  reference_url nvarchar(255) [note: '참고 링크']
+  cover_image_path nvarchar(255) [note: '대표 이미지 경로']
+  like_count int [not null, default: 0, note: '좋아요 수']
+  view_count int [not null, default: 0, note: '조회 수']
+  comment_count int [not null, default: 0, note: '댓글 수']
+  created_at datetime [not null, default: `GETDATE()`, note: '등록일']
+  updated_at datetime [not null, default: `GETDATE()`, note: '수정일']
+}
+
+Table project_tags {
+  id int [pk, increment, note: 'PK']
+  project_id int [not null, note: 'FK → projects']
+  tag_name nvarchar(50) [not null, note: '태그명']
+  sort_order int [not null, default: 0, note: '노출 순서']
+  created_at datetime [not null, default: `GETDATE()`, note: '등록일']
+  updated_at datetime [not null, default: `GETDATE()`, note: '수정일']
+}
+
+Table project_comments {
+  id int [pk, increment, note: 'PK']
+  project_id int [not null, note: 'FK → projects']
+  user_id int [note: 'FK → users']
+  parent_comment_id int [note: '자기참조 FK, 답글용']
+  author_name nvarchar(50) [not null, note: '작성자 표시명']
+  content nvarchar(max) [not null, note: '댓글 내용']
+  like_count int [not null, default: 0, note: '댓글 좋아요 수']
+  created_at datetime [not null, default: `GETDATE()`, note: '등록일']
+  updated_at datetime [not null, default: `GETDATE()`, note: '수정일']
+}
+
 Ref: user_sessions.user_id > users.id
 Ref: inquiries.user_id > users.id
+Ref: projects.user_id > users.id
+Ref: project_tags.project_id > projects.id
+Ref: project_comments.project_id > projects.id
+Ref: project_comments.user_id > users.id
+Ref: project_comments.parent_comment_id > project_comments.id

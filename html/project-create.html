@@ -303,14 +303,36 @@
               <div class="mb-4">
                 <label class="form-label fw-bold">기술 태그 <span class="text-muted fw-normal small">(최대 10개)</span></label>
                 <div class="d-flex flex-wrap gap-2 mb-2" id="tag-container">
-                  <!-- NOTE: 태그는 JS renderTags()로 동적 생성 → _analysis/js-dynamic.md 참고 -->
-                  <span class="badge rounded-pill border tag-btn py-2 px-3 bg-light text-secondary border-secondary" data-tag="로봇공학">로봇공학</span>
-                  <span class="badge rounded-pill border tag-btn py-2 px-3 bg-light text-secondary border-secondary" data-tag="AI">AI</span>
-                  <span class="badge rounded-pill border tag-btn py-2 px-3 bg-light text-secondary border-secondary" data-tag="라즈베리파이">라즈베리파이</span>
-                  <span class="badge rounded-pill border tag-btn py-2 px-3 bg-light text-secondary border-secondary" data-tag="Arduino">Arduino</span>
-                  <span class="badge rounded-pill border tag-btn py-2 px-3 bg-light text-secondary border-secondary" data-tag="IoT">IoT</span>
-                  <span class="badge rounded-pill border tag-btn py-2 px-3 bg-light text-secondary border-secondary" data-tag="Python">Python</span>
-                  <span class="badge rounded-pill border tag-btn py-2 px-3 bg-light text-secondary border-secondary" data-tag="ESP32">ESP32</span>
+                  <span class="badge rounded-pill border tag-btn py-2 px-3 bg-light text-secondary border-secondary"
+                    data-tag="로봇공학">로봇공학</span>
+                  <span class="badge rounded-pill border tag-btn py-2 px-3 bg-light text-secondary border-secondary"
+                    data-tag="AI">AI</span>
+                  <span class="badge rounded-pill border tag-btn py-2 px-3 bg-light text-secondary border-secondary"
+                    data-tag="라즈베리파이">라즈베리파이</span>
+                  <span class="badge rounded-pill border tag-btn py-2 px-3 bg-light text-secondary border-secondary"
+                    data-tag="Arduino">Arduino</span>
+                  <span class="badge rounded-pill border tag-btn py-2 px-3 bg-light text-secondary border-secondary"
+                    data-tag="OpenCV">OpenCV</span>
+                  <span class="badge rounded-pill border tag-btn py-2 px-3 bg-light text-secondary border-secondary"
+                    data-tag="자율주행">자율주행</span>
+                  <span class="badge rounded-pill border tag-btn py-2 px-3 bg-light text-secondary border-secondary"
+                    data-tag="머신러닝">머신러닝</span>
+                  <span class="badge rounded-pill border tag-btn py-2 px-3 bg-light text-secondary border-secondary"
+                    data-tag="IoT">IoT</span>
+                  <span class="badge rounded-pill border tag-btn py-2 px-3 bg-light text-secondary border-secondary"
+                    data-tag="Python">Python</span>
+                  <span class="badge rounded-pill border tag-btn py-2 px-3 bg-light text-secondary border-secondary"
+                    data-tag="C++">C++</span>
+                  <span class="badge rounded-pill border tag-btn py-2 px-3 bg-light text-secondary border-secondary"
+                    data-tag="ROS">ROS</span>
+                  <span class="badge rounded-pill border tag-btn py-2 px-3 bg-light text-secondary border-secondary"
+                    data-tag="TensorFlow">TensorFlow</span>
+                  <span class="badge rounded-pill border tag-btn py-2 px-3 bg-light text-secondary border-secondary"
+                    data-tag="Raspberry Pi">Raspberry Pi</span>
+                  <span class="badge rounded-pill border tag-btn py-2 px-3 bg-light text-secondary border-secondary"
+                    data-tag="ESP32">ESP32</span>
+                  <span class="badge rounded-pill border tag-btn py-2 px-3 bg-light text-secondary border-secondary"
+                    data-tag="센서">센서</span>
                 </div>
                 <small class="text-muted">선택된 태그: <span id="tagCount">0</span>/10</small>
               </div>
@@ -325,7 +347,8 @@
                     <p class="mb-1 small fw-medium text-muted">클릭하여 이미지 업로드</p>
                     <p class="mb-0 text-muted fs-xs">PNG, JPG (최대 5MB)</p>
                   </div>
-                  <img id="imgPreview" src="" alt="업로드된 대표 이미지 미리보기" class="img-fluid rounded-3 d-none img-preview-200">
+                  <img id="imgPreview" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw=="
+                    alt="업로드된 대표 이미지 미리보기" class="img-fluid rounded-3 d-none img-preview-200">
                 </div>
               </div>
 
@@ -661,15 +684,18 @@
       '3d-printing-innovation': { name: '3D 프린팅 혁신 대회', deadline: '2026년 3월 23일' },
     };
 
-    /* ── Tag Rendering ── */
-    function renderTags() {
-      var html = availableTags.map(function (t) {
-        var sel = selectedTags.indexOf(t) !== -1;
-        return '<span class="badge rounded-pill border tag-btn py-2 px-3 '
-          + (sel ? 'selected' : 'bg-light text-secondary border-secondary')
-          + '" data-tag="' + t + '">' + t + (sel ? ' ✓' : '') + '</span>';
-      }).join('');
-      $('#tag-container').html(html);
+    /* ── Tag State Sync ── */
+    function syncTagButtons() {
+      $('#tag-container .tag-btn').each(function () {
+        var $button = $(this);
+        var tag = $button.data('tag');
+        var selected = selectedTags.indexOf(tag) !== -1;
+        $button
+          .toggleClass('selected', selected)
+          .toggleClass('bg-light text-secondary border-secondary', !selected)
+          .attr('aria-pressed', selected)
+          .text(tag + (selected ? ' ✓' : ''));
+      });
       $('#tagCount').text(selectedTags.length);
     }
 
@@ -710,14 +736,14 @@
         $('#hero-sub').text('Quest를 단계별로 완료하며 프로젝트를 완성하세요');
         $('#flow-step2').text('Quest 1–3 완료');
         $('#flow-step2-sub').text('단계별로 프로젝트 완성');
-        $('#submitBtn').html('🚀 프로젝트 등록하고 Quest 시작');
+        $('#submitBtn').text('🚀 프로젝트 등록하고 Quest 시작');
       } else {
         $('#hero-badge').text('프로젝트 에디터');
         $('#hero-title').text('새 프로젝트 등록하기');
         $('#hero-sub').text('아이디어를 현실로 — 프로젝트를 공유해보세요');
         $('#flow-step2').text('작업 진행');
         $('#flow-step2-sub').text('자유롭게 프로젝트 완성');
-        $('#submitBtn').html('🚀 프로젝트 등록하기');
+        $('#submitBtn').text('🚀 프로젝트 등록하기');
       }
     }
 
@@ -740,7 +766,7 @@
 
     /* ── DOM Ready ── */
     $(function () {
-      renderTags();
+      syncTagButtons();
       bindCharCount('projTitle', 'titleLen', 60);
       bindCharCount('projSummary', 'summaryLen', 100);
 
@@ -761,7 +787,7 @@
           if (selectedTags.length >= 10) { alert('태그는 최대 10개까지 선택 가능합니다.'); return; }
           selectedTags.push(tag);
         }
-        renderTags();
+        syncTagButtons();
       });
 
       /* Type radio */
@@ -794,8 +820,11 @@
       $('#submitBtn').on('click', function () {
         var errors = validate();
         if (errors.length > 0) {
-          var items = errors.map(function (e) { return '<li>' + e + '</li>'; }).join('');
-          $('#warn-list').html(items);
+          var $warnList = $('#warn-list');
+          $warnList.empty();
+          errors.forEach(function (error) {
+            $('<li>').text(error).appendTo($warnList);
+          });
           $('#validation-warn').show();
           $('html, body').animate({ scrollTop: $('#validation-warn').offset().top - 120 }, 300);
           return;

@@ -1,139 +1,145 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>프로젝트 상세 — e4ds make</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <meta name="description" content="e4ds make 메이커 프로젝트 상세 페이지에서 기능, 기술 스택, 진행 기록, 댓글을 확인하세요.">
+  <meta property="og:title" content="프로젝트 상세 — e4ds make">
+  <meta property="og:description" content="e4ds make 메이커 프로젝트 상세 페이지에서 기능, 기술 스택, 진행 기록, 댓글을 확인하세요.">
+  <meta property="og:image" content="assets/img/og-default.png">
+  <meta property="og:url" content="project-detail.html">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/custom.css">
   <link rel="stylesheet" href="assets/css/output.css">
   <link rel="stylesheet" href="assets/css/make2026-styles.css">
   <script src="https://kit.fontawesome.com/38e89eef65.js" crossorigin="anonymous"></script>
 </head>
+
 <body class="bg-light">
 
   <!-- ===== PLATFORM HEADER ===== -->
-<header id="platform-header" class="bg-white border-bottom sticky-top shadow-sm">
+  <header id="platform-header" class="bg-white border-bottom sticky-top shadow-sm">
 
-  <!-- Top Bar -->
-  <div class="border-bottom border-light">
-    <div class="container-xl">
-      <div class="d-flex align-items-center justify-content-between topbar-inner">
-        <small class="text-muted" id="header-date"></small>
-        <div class="d-flex align-items-center gap-3">
-          <a href="login.html"   class="text-secondary text-decoration-none small header-toplink auth-loggedout-only">로그인</a>
-          <a href="signup.html"  class="text-secondary text-decoration-none small header-toplink auth-loggedout-only">회원가입</a>
-          <a href="support.html" class="text-secondary text-decoration-none small header-toplink">고객센터</a>
-          <a href="#"            class="text-secondary text-decoration-none small header-toplink">홈사이트</a>
+    <!-- Top Bar -->
+    <div class="border-bottom border-light">
+      <div class="container-xl">
+        <div class="d-flex align-items-center justify-content-between topbar-inner">
+          <small class="text-muted" id="header-date"></small>
+          <div class="d-flex align-items-center gap-3">
+            <a href="login.html"
+              class="text-secondary text-decoration-none small header-toplink auth-loggedout-only">로그인</a>
+            <a href="signup.html"
+              class="text-secondary text-decoration-none small header-toplink auth-loggedout-only">회원가입</a>
+            <a href="support.html" class="text-secondary text-decoration-none small header-toplink">고객센터</a>
+            <a href="#" class="text-secondary text-decoration-none small header-toplink">홈사이트</a>
+          </div>
         </div>
       </div>
     </div>
-  </div>
 
-  <!-- Main Nav -->
-  <div class="container-xl">
-    <nav class="navbar navbar-expand-lg px-0">
+    <!-- Main Nav -->
+    <div class="container-xl">
+      <nav class="navbar navbar-expand-lg px-0">
 
-      <!-- Logo -->
-      <a class="navbar-brand fw-bold fs-5 me-4" href="index.html">
-        <span class="text-dark">e</span><span class="text-warning">4</span><span class="text-dark">ds</span>
-        <span class="fw-normal text-secondary ms-1 brand-text">make</span>
-      </a>
+        <!-- Logo -->
+        <a class="navbar-brand fw-bold fs-5 me-4" href="index.html">
+          <span class="text-dark">e</span><span class="text-warning">4</span><span class="text-dark">ds</span>
+          <span class="fw-normal text-secondary ms-1 brand-text">make</span>
+        </a>
 
-      <!-- Mobile toggler -->
-      <button class="navbar-toggler ms-auto" type="button"
-              data-bs-toggle="collapse" data-bs-target="#mainNavCollapse"
-              aria-controls="mainNavCollapse" aria-expanded="false" aria-label="메뉴 열기">
-        <span class="navbar-toggler-icon"></span>
-      </button>
+        <!-- Mobile toggler -->
+        <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavCollapse"
+          aria-controls="mainNavCollapse" aria-expanded="false" aria-label="메뉴 열기">
+          <span class="navbar-toggler-icon"></span>
+        </button>
 
-      <div class="collapse navbar-collapse" id="mainNavCollapse">
+        <div class="collapse navbar-collapse" id="mainNavCollapse">
 
-        <!-- Center Links -->
-        <ul class="navbar-nav me-auto gap-lg-1">
+          <!-- Center Links -->
+          <ul class="navbar-nav me-auto gap-lg-1">
 
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle fw-medium text-dark" href="#"
-               data-bs-toggle="dropdown">News</a>
-            <ul class="dropdown-menu shadow-sm border-0">
-              <li><a class="dropdown-item" href="#">최신 뉴스</a></li>
-              <li><a class="dropdown-item" href="notices.html">공지사항</a></li>
-            </ul>
-          </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle fw-medium text-dark" href="#" data-bs-toggle="dropdown">News</a>
+              <ul class="dropdown-menu shadow-sm border-0">
+                <li><a class="dropdown-item" href="#">최신 뉴스</a></li>
+                <li><a class="dropdown-item" href="notices.html">공지사항</a></li>
+              </ul>
+            </li>
 
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle fw-medium text-dark" href="#"
-               data-bs-toggle="dropdown">Technologies</a>
-            <ul class="dropdown-menu shadow-sm border-0">
-              <li><a class="dropdown-item" href="#">임베디드</a></li>
-              <li><a class="dropdown-item" href="#">IoT</a></li>
-              <li><a class="dropdown-item" href="#">AI/ML</a></li>
-            </ul>
-          </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle fw-medium text-dark" href="#"
+                data-bs-toggle="dropdown">Technologies</a>
+              <ul class="dropdown-menu shadow-sm border-0">
+                <li><a class="dropdown-item" href="#">임베디드</a></li>
+                <li><a class="dropdown-item" href="#">IoT</a></li>
+                <li><a class="dropdown-item" href="#">AI/ML</a></li>
+              </ul>
+            </li>
 
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle fw-medium text-dark" href="#"
-               data-bs-toggle="dropdown">Industries</a>
-            <ul class="dropdown-menu shadow-sm border-0">
-              <li><a class="dropdown-item" href="#">자동차</a></li>
-              <li><a class="dropdown-item" href="#">의료</a></li>
-              <li><a class="dropdown-item" href="#">산업자동화</a></li>
-            </ul>
-          </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle fw-medium text-dark" href="#" data-bs-toggle="dropdown">Industries</a>
+              <ul class="dropdown-menu shadow-sm border-0">
+                <li><a class="dropdown-item" href="#">자동차</a></li>
+                <li><a class="dropdown-item" href="#">의료</a></li>
+                <li><a class="dropdown-item" href="#">산업자동화</a></li>
+              </ul>
+            </li>
 
-          <li class="nav-item">
-            <a class="nav-link fw-medium text-dark" href="events.html">EEWebinar</a>
-          </li>
+            <li class="nav-item">
+              <a class="nav-link fw-medium text-dark" href="events.html">EEWebinar</a>
+            </li>
 
-          <li class="nav-item dropdown" id="makers-zone-dropdown">
-            <a class="nav-link dropdown-toggle fw-medium text-dark" href="#"
-               data-bs-toggle="dropdown">Maker's Zone</a>
-            <ul class="dropdown-menu shadow-sm border-0">
-              <li><a class="dropdown-item" href="projects.html">프로젝트</a></li>
-              <li><a class="dropdown-item" href="contests.html">콘테스트</a></li>
-              <li><a class="dropdown-item" href="community.html">커뮤니티</a></li>
-              <li><a class="dropdown-item" href="my-make.html">마이메이크</a></li>
-            </ul>
-          </li>
-        </ul>
+            <li class="nav-item dropdown" id="makers-zone-dropdown">
+              <a class="nav-link dropdown-toggle fw-medium text-dark" href="#" data-bs-toggle="dropdown">Maker's
+                Zone</a>
+              <ul class="dropdown-menu shadow-sm border-0">
+                <li><a class="dropdown-item" href="projects.html">프로젝트</a></li>
+                <li><a class="dropdown-item" href="contests.html">콘테스트</a></li>
+                <li><a class="dropdown-item" href="community.html">커뮤니티</a></li>
+                <li><a class="dropdown-item" href="my-make.html">마이메이크</a></li>
+              </ul>
+            </li>
+          </ul>
 
-        <!-- Right Actions -->
-        <div class="d-flex align-items-center gap-2 ms-lg-2">
-          <button class="btn btn-light btn-sm p-2 rounded-3" id="header-search-btn" title="검색">
-            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
-                 fill="none" stroke="currentColor" stroke-width="2"
-                 stroke-linecap="round" stroke-linejoin="round">
-              <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
-            </svg>
-          </button>
-          <button class="btn btn-light btn-sm p-2 rounded-3" id="header-user-btn" title="프로필">
-            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
-                 fill="none" stroke="currentColor" stroke-width="2"
-                 stroke-linecap="round" stroke-linejoin="round">
-              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
-              <circle cx="12" cy="7" r="4"/>
-            </svg>
-          </button>
-        </div>
+          <!-- Right Actions -->
+          <div class="d-flex align-items-center gap-2 ms-lg-2">
+            <button class="btn btn-light btn-sm p-2 rounded-3" id="header-search-btn" title="검색">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="11" cy="11" r="8" />
+                <line x1="21" y1="21" x2="16.65" y2="16.65" />
+              </svg>
+            </button>
+            <button class="btn btn-light btn-sm p-2 rounded-3" id="header-user-btn" title="프로필">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+                <circle cx="12" cy="7" r="4" />
+              </svg>
+            </button>
+          </div>
 
-      </div><!-- /collapse -->
-    </nav>
-  </div>
-
-  <!-- Search Bar (hidden by default) -->
-  <div id="header-search-bar" class="border-top bg-light d-none">
-    <div class="container-xl py-2">
-      <form class="d-flex gap-2" id="header-search-form">
-        <input type="search" class="form-control form-control-sm"
-               placeholder="검색어를 입력하세요..." id="header-search-input">
-        <button type="submit" class="btn btn-primary btn-sm px-3">검색</button>
-        <button type="button" class="btn btn-light btn-sm" id="header-search-close">닫기</button>
-      </form>
+        </div><!-- /collapse -->
+      </nav>
     </div>
-  </div>
 
-</header>
+    <!-- Search Bar (hidden by default) -->
+    <div id="header-search-bar" class="border-top bg-light d-none">
+      <div class="container-xl py-2">
+        <form class="d-flex gap-2" id="header-search-form">
+          <input type="search" class="form-control form-control-sm" placeholder="검색어를 입력하세요..."
+            id="header-search-input">
+          <button type="submit" class="btn btn-primary btn-sm px-3">검색</button>
+          <button type="button" class="btn btn-light btn-sm" id="header-search-close">닫기</button>
+        </form>
+      </div>
+    </div>
+
+  </header>
 
   <main>
     <!-- Breadcrumb -->
@@ -154,7 +160,9 @@
       <div class="container-xl py-4">
         <div class="d-flex align-items-center justify-content-between flex-wrap gap-3">
           <div class="d-flex align-items-center gap-3">
-            <div class="rounded-circle bg-white bg-opacity-25 d-flex align-items-center justify-content-center flex-shrink-0 banner-icon-48">🏆</div>
+            <div
+              class="rounded-circle bg-white bg-opacity-25 d-flex align-items-center justify-content-center flex-shrink-0 banner-icon-48">
+              🏆</div>
             <div>
               <div class="d-flex align-items-center gap-2 mb-1">
                 <h6 class="fw-bold mb-0">콘테스트 프로젝트</h6>
@@ -210,7 +218,9 @@
             <div class="d-flex align-items-center justify-content-between py-3 border-top border-bottom mb-4">
               <div class="d-flex align-items-center gap-3">
                 <a href="maker-profile.html" class="text-decoration-none">
-                  <div class="rounded-circle bg-primary text-white d-flex align-items-center justify-content-center fw-bold author-avatar-48">김</div>
+                  <div
+                    class="rounded-circle bg-primary text-white d-flex align-items-center justify-content-center fw-bold author-avatar-48">
+                    김</div>
                 </a>
                 <div>
                   <div class="d-flex align-items-center gap-2 mb-1">
@@ -240,7 +250,8 @@
             <div class="hero-img-wrap shadow-sm mb-4">
               <img src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=1200" alt="AI 음성인식 자율주행 로봇">
               <div class="demo-btn-overlay">
-                <button class="btn btn-danger btn-sm shadow-lg" onclick="window.open('https://youtube.com/watch?v=demo','_blank')">
+                <button class="btn btn-danger btn-sm shadow-lg"
+                  onclick="window.open('https://youtube.com/watch?v=demo','_blank')">
                   ▶ 데모 영상 보기
                 </button>
               </div>
@@ -320,10 +331,12 @@
               <div class="card border-0 shadow-sm rounded-4 p-4 mb-3">
                 <h6 class="fw-bold mb-3">프로젝트 링크</h6>
                 <div class="d-grid gap-2">
-                  <a href="https://github.com/example/project" target="_blank" class="btn btn-outline-secondary text-start btn-sm">
+                  <a href="https://github.com/example/project" target="_blank"
+                    class="btn btn-outline-secondary text-start btn-sm">
                     <span class="me-2">🐙</span>GitHub 저장소
                   </a>
-                  <a href="https://youtube.com/watch?v=demo" target="_blank" class="btn btn-outline-secondary text-start btn-sm">
+                  <a href="https://youtube.com/watch?v=demo" target="_blank"
+                    class="btn btn-outline-secondary text-start btn-sm">
                     <span class="me-2">▶</span>시연 영상
                   </a>
                   <button class="btn btn-outline-secondary text-start btn-sm" onclick="alert('문서 다운로드 준비 중입니다.')">
@@ -350,13 +363,16 @@
     <!-- Content Tabs -->
     <div class="container-xl py-5">
       <ul class="nav border-bottom mb-5 detail-tabs flex-nowrap overflow-auto" id="detailTabs">
-        <li class="nav-item"><button class="detail-tab-btn nav-link active" data-target="#tab-quest">⚡ Quest 진행 기록</button></li>
+        <li class="nav-item"><button class="detail-tab-btn nav-link active" data-target="#tab-quest">⚡ Quest 진행
+            기록</button></li>
         <li class="nav-item"><button class="detail-tab-btn nav-link" data-target="#tab-gallery">🖼️ 갤러리</button></li>
         <li class="nav-item"><button class="detail-tab-btn nav-link" data-target="#tab-resources">📚 자료실</button></li>
         <li class="nav-item"><button class="detail-tab-btn nav-link" data-target="#tab-story">📖 프로젝트 스토리</button></li>
         <li class="nav-item"><button class="detail-tab-btn nav-link" data-target="#tab-build">🔧 제작 과정</button></li>
-        <li class="nav-item"><button class="detail-tab-btn nav-link" data-target="#tab-code">💻 코드 &amp; 회로</button></li>
-        <li class="nav-item"><button class="detail-tab-btn nav-link" id="tab-btn-comments" data-target="#tab-comments">💬 댓글 <span class="badge bg-primary ms-1">142</span></button></li>
+        <li class="nav-item"><button class="detail-tab-btn nav-link" data-target="#tab-code">💻 코드 &amp; 회로</button>
+        </li>
+        <li class="nav-item"><button class="detail-tab-btn nav-link" id="tab-btn-comments"
+            data-target="#tab-comments">💬 댓글 <span class="badge bg-primary ms-1">142</span></button></li>
       </ul>
 
       <div class="tab-content">
@@ -366,10 +382,13 @@
           <!-- Overview banner -->
           <div class="rounded-4 p-5 mb-4 card-gradient-violet-pink-d8b4fe">
             <div class="d-flex gap-4">
-              <div class="rounded-circle text-white d-flex align-items-center justify-content-center flex-shrink-0 quest-hero-icon">🚀</div>
+              <div
+                class="rounded-circle text-white d-flex align-items-center justify-content-center flex-shrink-0 quest-hero-icon">
+                🚀</div>
               <div class="flex-grow-1">
                 <h5 class="fw-bold mb-2">콘테스트 프로젝트 진행 상황</h5>
-                <p class="text-muted small mb-3">이 프로젝트는 <strong>AI 로봇 챌린지 2026</strong>을 통해 단계적으로 완성되었습니다. 각 Quest를 통해 프로젝트가 발전하는 과정을 확인하세요.</p>
+                <p class="text-muted small mb-3">이 프로젝트는 <strong>AI 로봇 챌린지 2026</strong>을 통해 단계적으로 완성되었습니다. 각 Quest를 통해
+                  프로젝트가 발전하는 과정을 확인하세요.</p>
                 <div class="d-flex align-items-center gap-3">
                   <div class="flex-grow-1 bg-white rounded-pill quest-progress-track">
                     <div class="quest-progress-bar-full"></div>
@@ -384,7 +403,9 @@
           <div class="card quest-card-completed mb-4 overflow-hidden">
             <div class="quest-header-completed p-4">
               <div class="d-flex align-items-center gap-3">
-                <div class="rounded-circle quest-avatar-done d-flex align-items-center justify-content-center fw-bold flex-shrink-0 icon-circle-md">✓</div>
+                <div
+                  class="rounded-circle quest-avatar-done d-flex align-items-center justify-content-center fw-bold flex-shrink-0 icon-circle-md">
+                  ✓</div>
                 <div class="flex-grow-1">
                   <h5 class="fw-bold mb-1">Quest 1: 프로젝트 기획 및 설계</h5>
                   <small class="text-muted">📅 2026년 3월 5일에 완료</small>
@@ -395,20 +416,28 @@
             <div class="card-body p-4">
               <p class="text-muted text-pre-line">실내 환경에서 자율주행이 가능한 배송 로봇을 개발하기로 결정했습니다.
 
-주요 설계 목표:
-- 실시간 장애물 감지 및 회피
-- 음성 명령을 통한 목적지 설정
-- 안정적인 경로 탐색 알고리즘
-- 웹 기반 모니터링 시스템
+                주요 설계 목표:
+                - 실시간 장애물 감지 및 회피
+                - 음성 명령을 통한 목적지 설정
+                - 안정적인 경로 탐색 알고리즘
+                - 웹 기반 모니터링 시스템
 
-기술 스택 선정:
-- 메인 컨트롤러: 라즈베리파이 4 (4GB RAM)
-- 비전 처리: OpenCV + TensorFlow Lite
-- 센서: 초음파 센서, Pi Camera v2
-- 통신: Wi-Fi, MQTT 프로토콜</p>
+                기술 스택 선정:
+                - 메인 컨트롤러: 라즈베리파이 4 (4GB RAM)
+                - 비전 처리: OpenCV + TensorFlow Lite
+                - 센서: 초음파 센서, Pi Camera v2
+                - 통신: Wi-Fi, MQTT 프로토콜</p>
               <div class="row g-3 mt-2">
-                <div class="col-6"><div class="ratio-16-9-card"><img src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=800" class="w-100 h-100 object-fit-cover" alt="Q1 이미지1"></div></div>
-                <div class="col-6"><div class="ratio-16-9-card"><img src="https://images.unsplash.com/photo-1581092162384-8987c1d64718?w=800" class="w-100 h-100 object-fit-cover" alt="Q1 이미지2"></div></div>
+                <div class="col-6">
+                  <div class="ratio-16-9-card"><img
+                      src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=800"
+                      class="w-100 h-100 object-fit-cover" alt="Q1 이미지1"></div>
+                </div>
+                <div class="col-6">
+                  <div class="ratio-16-9-card"><img
+                      src="https://images.unsplash.com/photo-1581092162384-8987c1d64718?w=800"
+                      class="w-100 h-100 object-fit-cover" alt="Q1 이미지2"></div>
+                </div>
               </div>
             </div>
           </div>
@@ -417,7 +446,9 @@
           <div class="card quest-card-completed mb-4 overflow-hidden">
             <div class="quest-header-completed p-4">
               <div class="d-flex align-items-center gap-3">
-                <div class="rounded-circle quest-avatar-done d-flex align-items-center justify-content-center fw-bold flex-shrink-0 icon-circle-md">✓</div>
+                <div
+                  class="rounded-circle quest-avatar-done d-flex align-items-center justify-content-center fw-bold flex-shrink-0 icon-circle-md">
+                  ✓</div>
                 <div class="flex-grow-1">
                   <h5 class="fw-bold mb-1">Quest 2: 프로토타입 제작</h5>
                   <small class="text-muted">📅 2026년 3월 10일에 완료</small>
@@ -428,21 +459,33 @@
             <div class="card-body p-4">
               <p class="text-muted text-pre-line">하드웨어 조립을 완료하고 기본 동작을 검증했습니다.
 
-조립 과정:
-1. 로봇 섀시 조립 및 모터 장착
-2. 라즈베리파이 및 센서 모듈 연결
-3. 배터리 및 전원 관리 시스템 구성
-4. 배선 정리 및 케이블 관리
+                조립 과정:
+                1. 로봇 섀시 조립 및 모터 장착
+                2. 라즈베리파이 및 센서 모듈 연결
+                3. 배터리 및 전원 관리 시스템 구성
+                4. 배선 정리 및 케이블 관리
 
-소프트웨어 프로토타입:
-- 기본 모터 제어 프로그램 작성
-- 초음파 센서 데이터 수집 및 처리
-- 카메라 영상 실시간 스트리밍
-- 웹 인터페이스 초기 버전 구현</p>
+                소프트웨어 프로토타입:
+                - 기본 모터 제어 프로그램 작성
+                - 초음파 센서 데이터 수집 및 처리
+                - 카메라 영상 실시간 스트리밍
+                - 웹 인터페이스 초기 버전 구현</p>
               <div class="row g-3 mt-2">
-                <div class="col-4"><div class="ratio-16-9-card"><img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=800" class="w-100 h-100 object-fit-cover" alt="Q2 이미지1"></div></div>
-                <div class="col-4"><div class="ratio-16-9-card"><img src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=800" class="w-100 h-100 object-fit-cover" alt="Q2 이미지2"></div></div>
-                <div class="col-4"><div class="ratio-16-9-card"><img src="https://images.unsplash.com/photo-1581092160607-ee67e4e89ed6?w=800" class="w-100 h-100 object-fit-cover" alt="Q2 이미지3"></div></div>
+                <div class="col-4">
+                  <div class="ratio-16-9-card"><img
+                      src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=800"
+                      class="w-100 h-100 object-fit-cover" alt="Q2 이미지1"></div>
+                </div>
+                <div class="col-4">
+                  <div class="ratio-16-9-card"><img
+                      src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=800"
+                      class="w-100 h-100 object-fit-cover" alt="Q2 이미지2"></div>
+                </div>
+                <div class="col-4">
+                  <div class="ratio-16-9-card"><img
+                      src="https://images.unsplash.com/photo-1581092160607-ee67e4e89ed6?w=800"
+                      class="w-100 h-100 object-fit-cover" alt="Q2 이미지3"></div>
+                </div>
               </div>
             </div>
           </div>
@@ -451,7 +494,9 @@
           <div class="card quest-card-completed mb-4 overflow-hidden">
             <div class="quest-header-completed p-4">
               <div class="d-flex align-items-center gap-3">
-                <div class="rounded-circle quest-avatar-done d-flex align-items-center justify-content-center fw-bold flex-shrink-0 icon-circle-md">✓</div>
+                <div
+                  class="rounded-circle quest-avatar-done d-flex align-items-center justify-content-center fw-bold flex-shrink-0 icon-circle-md">
+                  ✓</div>
                 <div class="flex-grow-1">
                   <h5 class="fw-bold mb-1">Quest 3: 최종 프로젝트 완성</h5>
                   <small class="text-muted">📅 2026년 3월 13일에 완료</small>
@@ -462,34 +507,53 @@
             <div class="card-body p-4">
               <p class="text-muted text-pre-line">최종 시스템 통합 및 최적화를 완료했습니다.
 
-AI 비전 시스템:
-- YOLOv5 기반 실시간 객체 인식
-- 장애물 분류 및 거리 측정
-- 동적 환경 대응 알고리즘
+                AI 비전 시스템:
+                - YOLOv5 기반 실시간 객체 인식
+                - 장애물 분류 및 거리 측정
+                - 동적 환경 대응 알고리즘
 
-자율주행 알고리즘:
-- A* 경로 탐색 알고리즘 구현
-- 동적 장애물 회피 로직
-- PID 제어를 통한 정밀한 모터 제어
+                자율주행 알고리즘:
+                - A* 경로 탐색 알고리즘 구현
+                - 동적 장애물 회피 로직
+                - PID 제어를 통한 정밀한 모터 제어
 
-최종 테스트:
-- 실내 환경 10회 주행 테스트
-- 평균 성공률 92%
-- 장애물 회피 정확도 95%</p>
+                최종 테스트:
+                - 실내 환경 10회 주행 테스트
+                - 평균 성공률 92%
+                - 장애물 회피 정확도 95%</p>
               <div class="row g-3 mt-2">
-                <div class="col-6"><div class="ratio-16-9-card"><img src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800" class="w-100 h-100 object-fit-cover" alt="Q3 이미지1"></div></div>
-                <div class="col-6"><div class="ratio-16-9-card"><img src="https://images.unsplash.com/photo-1563206767-5b18f218e8de?w=800" class="w-100 h-100 object-fit-cover" alt="Q3 이미지2"></div></div>
-                <div class="col-6"><div class="ratio-16-9-card"><img src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=800" class="w-100 h-100 object-fit-cover" alt="Q3 이미지3"></div></div>
-                <div class="col-6"><div class="ratio-16-9-card"><img src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=800" class="w-100 h-100 object-fit-cover" alt="Q3 이미지4"></div></div>
+                <div class="col-6">
+                  <div class="ratio-16-9-card"><img
+                      src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800"
+                      class="w-100 h-100 object-fit-cover" alt="Q3 이미지1"></div>
+                </div>
+                <div class="col-6">
+                  <div class="ratio-16-9-card"><img
+                      src="https://images.unsplash.com/photo-1563206767-5b18f218e8de?w=800"
+                      class="w-100 h-100 object-fit-cover" alt="Q3 이미지2"></div>
+                </div>
+                <div class="col-6">
+                  <div class="ratio-16-9-card"><img
+                      src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=800"
+                      class="w-100 h-100 object-fit-cover" alt="Q3 이미지3"></div>
+                </div>
+                <div class="col-6">
+                  <div class="ratio-16-9-card"><img
+                      src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=800"
+                      class="w-100 h-100 object-fit-cover" alt="Q3 이미지4"></div>
+                </div>
               </div>
             </div>
           </div>
 
           <!-- All Quests Complete Card -->
           <div class="card border-warning p-5 text-center card-gradient-amber-light">
-            <div class="rounded-circle bg-warning d-flex align-items-center justify-content-center mx-auto mb-3 icon-circle-64-2rem">✨</div>
+            <div
+              class="rounded-circle bg-warning d-flex align-items-center justify-content-center mx-auto mb-3 icon-circle-64-2rem">
+              ✨</div>
             <h4 class="fw-bold mb-2">🎉 모든 Quest 완료!</h4>
-            <p class="text-muted mb-4">축하합니다! 콘테스트의 모든 단계를 완료하여 프로젝트가 완성되었습니다.<br>이제 이 프로젝트는 플랫폼의 영구 자산으로 등록되어 다른 메이커들과 공유됩니다.</p>
+            <p class="text-muted mb-4">축하합니다! 콘테스트의 모든 단계를 완료하여 프로젝트가 완성되었습니다.<br>이제 이 프로젝트는 플랫폼의 영구 자산으로 등록되어 다른 메이커들과
+              공유됩니다.</p>
             <a href="contest-detail.html" class="btn btn-primary">🏆 콘테스트 페이지로 이동</a>
           </div>
         </div>
@@ -500,12 +564,42 @@ AI 비전 시스템:
             <h4 class="fw-bold mb-2">🖼️ 프로젝트 갤러리</h4>
             <p class="text-muted mb-4">프로젝트 제작 과정과 최종 결과물을 담은 이미지 갤러리입니다.</p>
             <div class="row g-3" id="gallery-grid">
-              <div class="col-4"><div class="gallery-item"><img src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800" alt="완성된 로봇 전면"><div class="gallery-overlay"><span class="text-white small fw-semibold">완성된 로봇 전면</span></div></div></div>
-              <div class="col-4"><div class="gallery-item"><img src="https://images.unsplash.com/photo-1563206767-5b18f218e8de?w=800" alt="로봇 측면 디테일"><div class="gallery-overlay"><span class="text-white small fw-semibold">로봇 측면 디테일</span></div></div></div>
-              <div class="col-4"><div class="gallery-item"><img src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=800" alt="센서 모듈 구성"><div class="gallery-overlay"><span class="text-white small fw-semibold">센서 모듈 구성</span></div></div></div>
-              <div class="col-4"><div class="gallery-item"><img src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=800" alt="내부 회로 구성"><div class="gallery-overlay"><span class="text-white small fw-semibold">내부 회로 구성</span></div></div></div>
-              <div class="col-4"><div class="gallery-item"><img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=800" alt="실제 주행 테스트"><div class="gallery-overlay"><span class="text-white small fw-semibold">실제 주행 테스트</span></div></div></div>
-              <div class="col-4"><div class="gallery-item"><img src="https://images.unsplash.com/photo-1581092160607-ee67e4e89ed6?w=800" alt="장애물 회피 시연"><div class="gallery-overlay"><span class="text-white small fw-semibold">장애물 회피 시연</span></div></div></div>
+              <div class="col-4">
+                <div class="gallery-item"><img src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800"
+                    alt="완성된 로봇 전면">
+                  <div class="gallery-overlay"><span class="text-white small fw-semibold">완성된 로봇 전면</span></div>
+                </div>
+              </div>
+              <div class="col-4">
+                <div class="gallery-item"><img src="https://images.unsplash.com/photo-1563206767-5b18f218e8de?w=800"
+                    alt="로봇 측면 디테일">
+                  <div class="gallery-overlay"><span class="text-white small fw-semibold">로봇 측면 디테일</span></div>
+                </div>
+              </div>
+              <div class="col-4">
+                <div class="gallery-item"><img src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=800"
+                    alt="센서 모듈 구성">
+                  <div class="gallery-overlay"><span class="text-white small fw-semibold">센서 모듈 구성</span></div>
+                </div>
+              </div>
+              <div class="col-4">
+                <div class="gallery-item"><img src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=800"
+                    alt="내부 회로 구성">
+                  <div class="gallery-overlay"><span class="text-white small fw-semibold">내부 회로 구성</span></div>
+                </div>
+              </div>
+              <div class="col-4">
+                <div class="gallery-item"><img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=800"
+                    alt="실제 주행 테스트">
+                  <div class="gallery-overlay"><span class="text-white small fw-semibold">실제 주행 테스트</span></div>
+                </div>
+              </div>
+              <div class="col-4">
+                <div class="gallery-item"><img src="https://images.unsplash.com/photo-1581092160607-ee67e4e89ed6?w=800"
+                    alt="장애물 회피 시연">
+                  <div class="gallery-overlay"><span class="text-white small fw-semibold">장애물 회피 시연</span></div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -523,7 +617,8 @@ AI 비전 시스템:
                     <div>
                       <h5 class="fw-bold mb-1">GitHub 저장소</h5>
                       <p class="small text-muted mb-3">전체 소스코드 및 회로도</p>
-                      <a href="https://github.com/example/robot" target="_blank" class="text-primary small fw-semibold text-decoration-none">다운로드 ↓</a>
+                      <a href="https://github.com/example/robot" target="_blank"
+                        class="text-primary small fw-semibold text-decoration-none">다운로드 ↓</a>
                     </div>
                   </div>
                 </div>
@@ -535,7 +630,8 @@ AI 비전 시스템:
                     <div>
                       <h5 class="fw-bold mb-1">데모 영상</h5>
                       <p class="small text-muted mb-3">실제 동작 시연 영상</p>
-                      <a href="https://youtube.com/demo" target="_blank" class="text-primary small fw-semibold text-decoration-none">다운로드 ↓</a>
+                      <a href="https://youtube.com/demo" target="_blank"
+                        class="text-primary small fw-semibold text-decoration-none">다운로드 ↓</a>
                     </div>
                   </div>
                 </div>
@@ -572,7 +668,8 @@ AI 비전 시스템:
                 <span class="fs-4 flex-shrink-0 mt-1">✨</span>
                 <div>
                   <h6 class="fw-bold mb-2">오픈소스 프로젝트</h6>
-                  <p class="small text-muted mb-3">이 프로젝트는 MIT 라이선스로 공개되어 있어 누구나 자유롭게 사용, 수정, 배포할 수 있습니다. 커뮤니티의 기여를 환영합니다!</p>
+                  <p class="small text-muted mb-3">이 프로젝트는 MIT 라이선스로 공개되어 있어 누구나 자유롭게 사용, 수정, 배포할 수 있습니다. 커뮤니티의 기여를
+                    환영합니다!</p>
                   <a href="https://github.com/example/robot" target="_blank" class="btn btn-success btn-sm">🐙 기여하기</a>
                 </div>
               </div>
@@ -584,12 +681,14 @@ AI 비전 시스템:
         <div class="tab-pane" id="tab-story">
           <div class="card border-0 shadow-sm p-5">
             <h4 class="fw-bold mb-4">프로젝트 소개</h4>
-            <p class="text-muted mb-4">이 프로젝트는 라즈베리파이 4를 메인 컨트롤러로 사용하는 자율주행 로봇입니다. OpenCV 라이브러리를 활용하여 실시간 영상 처리를 통한 장애물 인식과 경로 계획을 수행합니다.</p>
+            <p class="text-muted mb-4">이 프로젝트는 라즈베리파이 4를 메인 컨트롤러로 사용하는 자율주행 로봇입니다. OpenCV 라이브러리를 활용하여 실시간 영상 처리를 통한 장애물
+              인식과 경로 계획을 수행합니다.</p>
 
             <h5 class="fw-bold mb-3">주요 기능</h5>
             <ul class="list-unstyled mb-4 d-flex flex-column gap-2">
               <li class="d-flex gap-2"><span class="text-success fw-bold">✓</span><span>실시간 장애물 감지 및 회피</span></li>
-              <li class="d-flex gap-2"><span class="text-success fw-bold">✓</span><span>A* 알고리즘을 활용한 최적 경로 탐색</span></li>
+              <li class="d-flex gap-2"><span class="text-success fw-bold">✓</span><span>A* 알고리즘을 활용한 최적 경로 탐색</span>
+              </li>
               <li class="d-flex gap-2"><span class="text-success fw-bold">✓</span><span>음성 명령을 통한 목적지 설정</span></li>
               <li class="d-flex gap-2"><span class="text-success fw-bold">✓</span><span>웹 인터페이스를 통한 원격 모니터링</span></li>
             </ul>
@@ -615,16 +714,32 @@ AI 비전 시스템:
                 <h5 class="fw-bold mb-3">1. 하드웨어 조립</h5>
                 <p class="text-muted mb-4">로봇 섀시에 라즈베리파이, 모터 드라이버, 배터리를 장착하고 배선을 정리했습니다.</p>
                 <div class="row g-3">
-                  <div class="col-6"><div class="bg-light rounded-3 ratio-16-9-plain"><img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=800" class="w-100 h-100 rounded-3 object-fit-cover" alt="하드웨어 조립1"></div></div>
-                  <div class="col-6"><div class="bg-light rounded-3 ratio-16-9-plain"><img src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=800" class="w-100 h-100 rounded-3 object-fit-cover" alt="하드웨어 조립2"></div></div>
+                  <div class="col-6">
+                    <div class="bg-light rounded-3 ratio-16-9-plain"><img
+                        src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=800"
+                        class="w-100 h-100 rounded-3 object-fit-cover" alt="하드웨어 조립1"></div>
+                  </div>
+                  <div class="col-6">
+                    <div class="bg-light rounded-3 ratio-16-9-plain"><img
+                        src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=800"
+                        class="w-100 h-100 rounded-3 object-fit-cover" alt="하드웨어 조립2"></div>
+                  </div>
                 </div>
               </div>
               <div>
                 <h5 class="fw-bold mb-3">2. 센서 통합</h5>
                 <p class="text-muted mb-4">초음파 센서와 카메라 모듈을 연결하고 테스트했습니다.</p>
                 <div class="row g-3">
-                  <div class="col-6"><div class="bg-light rounded-3 ratio-16-9-plain"><img src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=800" class="w-100 h-100 rounded-3 object-fit-cover" alt="센서 통합1"></div></div>
-                  <div class="col-6"><div class="bg-light rounded-3 ratio-16-9-plain"><img src="https://images.unsplash.com/photo-1581092162384-8987c1d64718?w=800" class="w-100 h-100 rounded-3 object-fit-cover" alt="센서 통합2"></div></div>
+                  <div class="col-6">
+                    <div class="bg-light rounded-3 ratio-16-9-plain"><img
+                        src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=800"
+                        class="w-100 h-100 rounded-3 object-fit-cover" alt="센서 통합1"></div>
+                  </div>
+                  <div class="col-6">
+                    <div class="bg-light rounded-3 ratio-16-9-plain"><img
+                        src="https://images.unsplash.com/photo-1581092162384-8987c1d64718?w=800"
+                        class="w-100 h-100 rounded-3 object-fit-cover" alt="센서 통합2"></div>
+                  </div>
                 </div>
               </div>
               <div>
@@ -643,7 +758,7 @@ AI 비전 시스템:
               <div>
                 <h5 class="fw-bold mb-3">주요 코드 스니펫</h5>
                 <div class="code-block">
-<pre>import cv2
+                  <pre>import cv2
 import numpy as np
 
 def detect_obstacles(frame):
@@ -660,7 +775,9 @@ def plan_path(obstacles, target):
               </div>
               <div>
                 <h5 class="fw-bold mb-3">회로도</h5>
-                <div class="bg-light rounded-3 d-flex align-items-center justify-content-center text-muted ratio-16-9-plain">회로도 이미지</div>
+                <div
+                  class="bg-light rounded-3 d-flex align-items-center justify-content-center text-muted ratio-16-9-plain">
+                  회로도 이미지</div>
               </div>
             </div>
           </div>
@@ -669,7 +786,7 @@ def plan_path(obstacles, target):
         <!-- Tab: 댓글 -->
         <div class="tab-pane" id="tab-comments">
           <div class="card border-0 shadow-sm p-5">
-            <h4 class="fw-bold mb-5">댓글 142개</h4>
+            <h4 class="fw-bold mb-5" id="comment-title">댓글 142개</h4>
 
             <!-- Comment input -->
             <div class="mb-5 pt-4 border-top">
@@ -680,8 +797,8 @@ def plan_path(obstacles, target):
             </div>
 
             <!-- Sample Comments -->
-            <div class="d-flex flex-column gap-4" id="comment-list">
-              <div class="d-flex gap-3 pb-4 border-bottom">
+            <div class="d-flex flex-column gap-4" id="comment-list" data-base-count="139">
+              <div class="d-flex gap-3 pb-4 border-bottom comment-item">
                 <div class="comment-av bg-primary-subtle text-primary">댓</div>
                 <div class="flex-grow-1">
                   <div class="d-flex align-items-center gap-2 mb-2">
@@ -695,7 +812,7 @@ def plan_path(obstacles, target):
                   </div>
                 </div>
               </div>
-              <div class="d-flex gap-3 pb-4 border-bottom">
+              <div class="d-flex gap-3 pb-4 border-bottom comment-item">
                 <div class="comment-av bg-success-subtle text-success">댓</div>
                 <div class="flex-grow-1">
                   <div class="d-flex align-items-center gap-2 mb-2">
@@ -709,7 +826,7 @@ def plan_path(obstacles, target):
                   </div>
                 </div>
               </div>
-              <div class="d-flex gap-3 pb-4 border-bottom">
+              <div class="d-flex gap-3 pb-4 border-bottom comment-item">
                 <div class="comment-av bg-warning-subtle text-warning">댓</div>
                 <div class="flex-grow-1">
                   <div class="d-flex align-items-center gap-2 mb-2">
@@ -724,6 +841,22 @@ def plan_path(obstacles, target):
                 </div>
               </div>
             </div>
+            <template id="comment-item-template">
+              <div class="d-flex gap-3 pb-4 border-bottom comment-item">
+                <div class="comment-av bg-secondary-subtle text-secondary">나</div>
+                <div class="flex-grow-1">
+                  <div class="d-flex align-items-center gap-2 mb-2">
+                    <span class="fw-bold" data-role="comment-author">나</span>
+                    <small class="text-muted" data-role="comment-time">방금 전</small>
+                  </div>
+                  <p class="text-muted small mb-2" data-role="comment-content"></p>
+                  <div class="d-flex gap-3 small">
+                    <button class="btn btn-link btn-sm text-muted p-0">👍 좋아요 0</button>
+                    <button class="btn btn-link btn-sm text-muted p-0">답글</button>
+                  </div>
+                </div>
+              </div>
+            </template>
           </div>
         </div>
 
@@ -755,7 +888,8 @@ def plan_path(obstacles, target):
                   <h6 class="fw-bold mb-2 text-dark">ESP32 기반 스마트 화분</h6>
                   <div class="d-flex justify-content-between align-items-center small text-muted">
                     <div class="d-flex align-items-center gap-2">
-                      <span class="rounded-circle bg-primary-subtle text-primary d-flex align-items-center justify-content-center fw-bold icon-box-24">이</span>
+                      <span
+                        class="rounded-circle bg-primary-subtle text-primary d-flex align-items-center justify-content-center fw-bold icon-box-24">이</span>
                       <span>이개발</span>
                     </div>
                     <span>❤️ 289</span>
@@ -778,7 +912,8 @@ def plan_path(obstacles, target):
                   <h6 class="fw-bold mb-2 text-dark">3D 프린터 자동 레벨링 시스템</h6>
                   <div class="d-flex justify-content-between align-items-center small text-muted">
                     <div class="d-flex align-items-center gap-2">
-                      <span class="rounded-circle bg-primary-subtle text-primary d-flex align-items-center justify-content-center fw-bold icon-box-24">박</span>
+                      <span
+                        class="rounded-circle bg-primary-subtle text-primary d-flex align-items-center justify-content-center fw-bold icon-box-24">박</span>
                       <span>박엔지니어</span>
                     </div>
                     <span>❤️ 267</span>
@@ -801,7 +936,8 @@ def plan_path(obstacles, target):
                   <h6 class="fw-bold mb-2 text-dark">AI 음성인식 스마트 미러</h6>
                   <div class="d-flex justify-content-between align-items-center small text-muted">
                     <div class="d-flex align-items-center gap-2">
-                      <span class="rounded-circle bg-primary-subtle text-primary d-flex align-items-center justify-content-center fw-bold icon-box-24">최</span>
+                      <span
+                        class="rounded-circle bg-primary-subtle text-primary d-flex align-items-center justify-content-center fw-bold icon-box-24">최</span>
                       <span>최개발</span>
                     </div>
                     <span>❤️ 345</span>
@@ -817,68 +953,71 @@ def plan_path(obstacles, target):
   </main>
 
   <!-- ===== PLATFORM FOOTER ===== -->
-<footer id="platform-footer">
+  <footer id="platform-footer">
 
-  <!-- Sponsor Logos -->
-  <div class="bg-light border-top border-bottom py-4">
-    <div class="container-xl">
-      <p class="text-center text-muted small mb-3">Sponsored Company</p>
-      <div class="d-flex flex-wrap align-items-center justify-content-center gap-4">
-        <span class="fw-medium text-secondary small">CREAFORM</span>
-        <span class="fw-medium text-secondary small">Infineon</span>
-        <span class="fw-bold text-dark small">KETI</span>
-        <span class="fw-medium text-secondary small">KEYSIGHT</span>
-        <span class="fw-medium text-secondary small">Microchip</span>
-        <span class="fw-medium text-primary small">mouser.com</span>
-        <span class="fw-medium text-secondary small">NATIONAL INSTRUMENTS</span>
-        <span class="fw-bold text-white bg-danger px-2 py-1 rounded small">ROHM</span>
-        <span class="fw-medium text-secondary small">ST</span>
-        <span class="fw-medium text-dark small">Tektronix</span>
-      </div>
-    </div>
-  </div>
-
-  <!-- Company Info -->
-  <div class="bg-black text-secondary py-5">
-    <div class="container-xl">
-
-      <!-- Links Row -->
-      <div class="d-flex flex-column flex-lg-row align-items-start align-items-lg-center
-                  justify-content-between gap-3 mb-4">
-        <div class="d-flex flex-wrap align-items-center gap-2 small">
-          <a href="support.html"  class="footer-link text-secondary text-decoration-none">e4ds 소개</a>
-          <span class="text-muted">|</span>
-          <a href="notices.html"  class="footer-link text-secondary text-decoration-none">개인정보처리방침</a>
-          <span class="text-muted">|</span>
-          <a href="faq.html"      class="footer-link text-secondary text-decoration-none">이용약관</a>
-          <span class="text-muted">|</span>
-          <a href="contact.html"  class="footer-link text-secondary text-decoration-none">청소년보호정책</a>
-          <span class="text-muted">|</span>
-          <a href="careers.html"  class="footer-link text-secondary text-decoration-none">가족사이트</a>
-          <span class="text-muted">|</span>
-          <a href="#"             class="footer-link text-secondary text-decoration-none">저작권</a>
-          <span class="text-muted">|</span>
-          <a href="#"             class="footer-link text-secondary text-decoration-none">e4ds인터내셔널</a>
+    <!-- Sponsor Logos -->
+    <div class="bg-light border-top border-bottom py-4">
+      <div class="container-xl">
+        <p class="text-center text-muted small mb-3">Sponsored Company</p>
+        <div class="d-flex flex-wrap align-items-center justify-content-center gap-4">
+          <span class="fw-medium text-secondary small">CREAFORM</span>
+          <span class="fw-medium text-secondary small">Infineon</span>
+          <span class="fw-bold text-dark small">KETI</span>
+          <span class="fw-medium text-secondary small">KEYSIGHT</span>
+          <span class="fw-medium text-secondary small">Microchip</span>
+          <span class="fw-medium text-primary small">mouser.com</span>
+          <span class="fw-medium text-secondary small">NATIONAL INSTRUMENTS</span>
+          <span class="fw-bold text-white bg-danger px-2 py-1 rounded small">ROHM</span>
+          <span class="fw-medium text-secondary small">ST</span>
+          <span class="fw-medium text-dark small">Tektronix</span>
         </div>
       </div>
-
-      <!-- Company Details -->
-      <div class="small text-muted lh-lg">
-        <p class="mb-1">(주)디지털데일리 | 등록번호 : 경기 아51470 | 등록: 2008.10.20 | 발행: 2026.05.19 | 표: 김제호</p>
-        <p class="mb-1">주소 : 경기도 성남시 분당구 대왕판교로 660번길 8 | 전화 : 02-883-9797 | 팩스 : 02-6280-9957</p>
-        <p class="mb-1 text-secondary footer-copyright">
-          본 콘텐츠의 저작권은 (주)디지털데일리에 있으며 무단 전재 및 재배포를 금지합니다.
-        </p>
-        <p class="mt-3 mb-0">Copyright &copy; 2026 e4ds News. All Rights Reserved</p>
-      </div>
-
     </div>
-  </div>
 
-</footer>
+    <!-- Company Info -->
+    <div class="bg-black text-secondary py-5">
+      <div class="container-xl">
 
-  <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+        <!-- Links Row -->
+        <div class="d-flex flex-column flex-lg-row align-items-start align-items-lg-center
+                  justify-content-between gap-3 mb-4">
+          <div class="d-flex flex-wrap align-items-center gap-2 small">
+            <a href="support.html" class="footer-link text-secondary text-decoration-none">e4ds 소개</a>
+            <span class="text-muted">|</span>
+            <a href="notices.html" class="footer-link text-secondary text-decoration-none">개인정보처리방침</a>
+            <span class="text-muted">|</span>
+            <a href="faq.html" class="footer-link text-secondary text-decoration-none">이용약관</a>
+            <span class="text-muted">|</span>
+            <a href="contact.html" class="footer-link text-secondary text-decoration-none">청소년보호정책</a>
+            <span class="text-muted">|</span>
+            <a href="careers.html" class="footer-link text-secondary text-decoration-none">가족사이트</a>
+            <span class="text-muted">|</span>
+            <a href="#" class="footer-link text-secondary text-decoration-none">저작권</a>
+            <span class="text-muted">|</span>
+            <a href="#" class="footer-link text-secondary text-decoration-none">e4ds인터내셔널</a>
+          </div>
+        </div>
+
+        <!-- Company Details -->
+        <div class="small text-muted lh-lg">
+          <p class="mb-1">(주)디지털데일리 | 등록번호 : 경기 아51470 | 등록: 2008.10.20 | 발행: 2026.05.19 | 표: 김제호</p>
+          <p class="mb-1">주소 : 경기도 성남시 분당구 대왕판교로 660번길 8 | 전화 : 02-883-9797 | 팩스 : 02-6280-9957</p>
+          <p class="mb-1 text-secondary footer-copyright">
+            본 콘텐츠의 저작권은 (주)디지털데일리에 있으며 무단 전재 및 재배포를 금지합니다.
+          </p>
+          <p class="mt-3 mb-0">Copyright &copy; 2026 e4ds News. All Rights Reserved</p>
+        </div>
+
+      </div>
+    </div>
+
+  </footer>
+
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+    integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
   <script src="assets/js/main.js"></script>
   <script>
     /* ── 탭 스위처 ─────────────────────────────────────── */
@@ -923,24 +1062,28 @@ def plan_path(obstacles, target):
       }
     });
 
+    function updateCommentCount() {
+      var $commentList = $('#comment-list');
+      var total = Number($commentList.data('baseCount')) + $commentList.find('.comment-item').length;
+      $('#comment-title').text('댓글 ' + total + '개');
+      $('#tab-btn-comments .badge').text(total);
+    }
+
     // Comment submit
     $('#btn-comment-submit').on('click', function () {
       var val = $.trim($('#comment-input').val());
       if (!val) return;
       Auth.requireLogin(function () {
-        var html = '<div class="d-flex gap-3 pb-4 border-bottom">'
-          + '<div class="comment-av bg-secondary-subtle text-secondary">나</div>'
-          + '<div class="flex-grow-1">'
-          + '<div class="d-flex align-items-center gap-2 mb-2"><span class="fw-bold">나</span><small class="text-muted">방금 전</small></div>'
-          + '<p class="text-muted small mb-2">' + $('<span>').text(val).html() + '</p>'
-          + '<div class="d-flex gap-3 small"><button class="btn btn-link btn-sm text-muted p-0">👍 좋아요 0</button><button class="btn btn-link btn-sm text-muted p-0">답글</button></div>'
-          + '</div></div>';
-        $('#comment-list').append(html);
+        var $comment = $(document.getElementById('comment-item-template').content.firstElementChild.cloneNode(true));
+        $comment.find('[data-role="comment-content"]').text(val);
+        $('#comment-list').append($comment);
         $('#comment-input').val('');
-        var cnt = $('#comment-list .d-flex.gap-3').length;
-        $('#tab-btn-comments').html('💬 댓글 <span class="badge bg-primary ms-1">' + (142 + cnt - 3) + '</span>');
+        updateCommentCount();
       });
     });
+
+    updateCommentCount();
   </script>
 </body>
+
 </html>

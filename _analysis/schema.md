@@ -135,3 +135,111 @@ CREATE TABLE sponsorship_plans (
   CONSTRAINT PK_sponsorship_plans PRIMARY KEY (id),
   CONSTRAINT UQ_sponsorship_plans_slug UNIQUE (slug)
 );
+
+### 테이블명: projects
+- 설명: 프로젝트 목록, 상세, 완료 페이지에 노출되는 프로젝트 기본 정보
+- 근거 파일: projects.html, project-create.html, project-edit.html, project-detail.html, project-completed.html
+
+| 컬럼명 | 타입 | NOT NULL | DEFAULT | 설명 |
+|--------|------|----------|---------|------|
+| id | INT IDENTITY(1,1) | Y | — | PK |
+| user_id | INT | N | — | FK → users |
+| title | NVARCHAR(200) | Y | — | 프로젝트 제목 |
+| summary | NVARCHAR(255) | Y | — | 한 줄 요약 |
+| description | NVARCHAR(MAX) | Y | — | 프로젝트 상세 설명 |
+| category | NVARCHAR(50) | Y | — | 카테고리 |
+| author_name | NVARCHAR(50) | Y | — | 작성자 표시명 |
+| project_type | VARCHAR(20) | Y | 'personal' | personal, contest |
+| status | VARCHAR(20) | Y | 'draft' | draft, in_progress, completed |
+| contest_name | NVARCHAR(100) | N | — | 연결 콘테스트명 |
+| award_name | NVARCHAR(100) | N | — | 수상명 |
+| github_url | NVARCHAR(255) | N | — | GitHub 링크 |
+| demo_url | NVARCHAR(255) | N | — | 데모 영상 링크 |
+| reference_url | NVARCHAR(255) | N | — | 참고 링크 |
+| cover_image_path | NVARCHAR(255) | N | — | 대표 이미지 경로 |
+| like_count | INT | Y | 0 | 좋아요 수 |
+| view_count | INT | Y | 0 | 조회 수 |
+| comment_count | INT | Y | 0 | 댓글 수 |
+| created_at | DATETIME | Y | GETDATE() | 등록일 |
+| updated_at | DATETIME | Y | GETDATE() | 수정일 |
+
+CREATE TABLE projects (
+  id               INT            IDENTITY(1,1) NOT NULL,
+  user_id          INT            NULL,
+  title            NVARCHAR(200)  NOT NULL,
+  summary          NVARCHAR(255)  NOT NULL,
+  description      NVARCHAR(MAX)  NOT NULL,
+  category         NVARCHAR(50)   NOT NULL,
+  author_name      NVARCHAR(50)   NOT NULL,
+  project_type     VARCHAR(20)    NOT NULL DEFAULT 'personal',
+  status           VARCHAR(20)    NOT NULL DEFAULT 'draft',
+  contest_name     NVARCHAR(100)  NULL,
+  award_name       NVARCHAR(100)  NULL,
+  github_url       NVARCHAR(255)  NULL,
+  demo_url         NVARCHAR(255)  NULL,
+  reference_url    NVARCHAR(255)  NULL,
+  cover_image_path NVARCHAR(255)  NULL,
+  like_count       INT            NOT NULL DEFAULT 0,
+  view_count       INT            NOT NULL DEFAULT 0,
+  comment_count    INT            NOT NULL DEFAULT 0,
+  created_at       DATETIME       NOT NULL DEFAULT GETDATE(),
+  updated_at       DATETIME       NOT NULL DEFAULT GETDATE(),
+  CONSTRAINT PK_projects PRIMARY KEY (id),
+  CONSTRAINT FK_projects_user_id FOREIGN KEY (user_id) REFERENCES users (id)
+);
+
+### 테이블명: project_tags
+- 설명: 프로젝트별 기술 태그 연결
+- 근거 파일: project-create.html, project-edit.html, project-detail.html
+
+| 컬럼명 | 타입 | NOT NULL | DEFAULT | 설명 |
+|--------|------|----------|---------|------|
+| id | INT IDENTITY(1,1) | Y | — | PK |
+| project_id | INT | Y | — | FK → projects |
+| tag_name | NVARCHAR(50) | Y | — | 태그명 |
+| sort_order | INT | Y | 0 | 노출 순서 |
+| created_at | DATETIME | Y | GETDATE() | 등록일 |
+| updated_at | DATETIME | Y | GETDATE() | 수정일 |
+
+CREATE TABLE project_tags (
+  id         INT           IDENTITY(1,1) NOT NULL,
+  project_id INT           NOT NULL,
+  tag_name   NVARCHAR(50)  NOT NULL,
+  sort_order INT           NOT NULL DEFAULT 0,
+  created_at DATETIME      NOT NULL DEFAULT GETDATE(),
+  updated_at DATETIME      NOT NULL DEFAULT GETDATE(),
+  CONSTRAINT PK_project_tags PRIMARY KEY (id),
+  CONSTRAINT FK_project_tags_project_id FOREIGN KEY (project_id) REFERENCES projects (id)
+);
+
+### 테이블명: project_comments
+- 설명: 프로젝트 상세 페이지 댓글 및 답글 데이터
+- 근거 파일: project-detail.html
+
+| 컬럼명 | 타입 | NOT NULL | DEFAULT | 설명 |
+|--------|------|----------|---------|------|
+| id | INT IDENTITY(1,1) | Y | — | PK |
+| project_id | INT | Y | — | FK → projects |
+| user_id | INT | N | — | FK → users |
+| parent_comment_id | INT | N | — | 자기참조 FK, 답글용 |
+| author_name | NVARCHAR(50) | Y | — | 작성자 표시명 |
+| content | NVARCHAR(MAX) | Y | — | 댓글 내용 |
+| like_count | INT | Y | 0 | 댓글 좋아요 수 |
+| created_at | DATETIME | Y | GETDATE() | 등록일 |
+| updated_at | DATETIME | Y | GETDATE() | 수정일 |
+
+CREATE TABLE project_comments (
+  id                INT            IDENTITY(1,1) NOT NULL,
+  project_id        INT            NOT NULL,
+  user_id           INT            NULL,
+  parent_comment_id INT            NULL,
+  author_name       NVARCHAR(50)   NOT NULL,
+  content           NVARCHAR(MAX)  NOT NULL,
+  like_count        INT            NOT NULL DEFAULT 0,
+  created_at        DATETIME       NOT NULL DEFAULT GETDATE(),
+  updated_at        DATETIME       NOT NULL DEFAULT GETDATE(),
+  CONSTRAINT PK_project_comments PRIMARY KEY (id),
+  CONSTRAINT FK_project_comments_project_id FOREIGN KEY (project_id) REFERENCES projects (id),
+  CONSTRAINT FK_project_comments_user_id FOREIGN KEY (user_id) REFERENCES users (id),
+  CONSTRAINT FK_project_comments_parent_id FOREIGN KEY (parent_comment_id) REFERENCES project_comments (id)
+);
