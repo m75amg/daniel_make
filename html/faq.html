@@ -4,6 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>자주 묻는 질문 — e4ds make</title>
+  <meta name="description" content="e4ds make 플랫폼 이용 중 궁금한 점을 빠르게 해결하세요. 계정, 프로젝트, 콘테스트, 커뮤니티, 결제 관련 FAQ를 확인하세요.">
+  <meta property="og:title" content="자주 묻는 질문 — e4ds make">
+  <meta property="og:description" content="e4ds make 플랫폼 이용 중 궁금한 점을 빠르게 해결하세요. 계정, 프로젝트, 콘테스트, 커뮤니티, 결제 관련 FAQ를 확인하세요.">
+  <meta property="og:image" content="assets/img/og-default.png">
+  <meta property="og:url" content="faq.html">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/custom.css">
@@ -169,8 +174,102 @@
         </div>
         <div class="col-lg-9">
           <div class="accordion" id="faqAccordion">
-            <!-- rendered by JS -->
+
+            <!-- 계정/회원 -->
+            <div class="accordion-item border-0 mb-2 rounded-3 shadow-sm overflow-hidden faq-item" data-cat="account">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed fw-medium bg-white" type="button" data-bs-toggle="collapse" data-bs-target="#faq-0">
+                  회원가입은 어떻게 하나요?
+                </button>
+              </h2>
+              <div id="faq-0" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                <div class="accordion-body text-muted small">우측 상단의 회원가입 버튼을 클릭하거나 signup.html 페이지를 방문하세요. 이메일 또는 Google 계정으로 가입하실 수 있습니다.</div>
+              </div>
+            </div>
+
+            <div class="accordion-item border-0 mb-2 rounded-3 shadow-sm overflow-hidden faq-item" data-cat="account">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed fw-medium bg-white" type="button" data-bs-toggle="collapse" data-bs-target="#faq-1">
+                  비밀번호를 잊어버렸어요.
+                </button>
+              </h2>
+              <div id="faq-1" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                <div class="accordion-body text-muted small">로그인 페이지에서 "비밀번호를 잊으셨나요?" 링크를 클릭하면 등록된 이메일로 재설정 링크를 보내드립니다.</div>
+              </div>
+            </div>
+
+            <!-- 프로젝트 -->
+            <div class="accordion-item border-0 mb-2 rounded-3 shadow-sm overflow-hidden faq-item" data-cat="project">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed fw-medium bg-white" type="button" data-bs-toggle="collapse" data-bs-target="#faq-2">
+                  프로젝트를 등록하려면 어떻게 하나요?
+                </button>
+              </h2>
+              <div id="faq-2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                <div class="accordion-body text-muted small">로그인 후 마이메이크 페이지에서 "+ 새 프로젝트" 버튼을 클릭하거나 콘테스트 페이지에서 직접 참가 신청할 수 있습니다.</div>
+              </div>
+            </div>
+
+            <div class="accordion-item border-0 mb-2 rounded-3 shadow-sm overflow-hidden faq-item" data-cat="project">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed fw-medium bg-white" type="button" data-bs-toggle="collapse" data-bs-target="#faq-3">
+                  프로젝트 삭제는 가능한가요?
+                </button>
+              </h2>
+              <div id="faq-3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                <div class="accordion-body text-muted small">마이메이크 &gt; 내 프로젝트에서 해당 프로젝트의 편집 메뉴를 통해 삭제하실 수 있습니다. 단, 콘테스트 제출 프로젝트는 대회 기간 중 삭제가 제한될 수 있습니다.</div>
+              </div>
+            </div>
+
+            <!-- 콘테스트 -->
+            <div class="accordion-item border-0 mb-2 rounded-3 shadow-sm overflow-hidden faq-item" data-cat="contest">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed fw-medium bg-white" type="button" data-bs-toggle="collapse" data-bs-target="#faq-4">
+                  콘테스트 참가 자격이 있나요?
+                </button>
+              </h2>
+              <div id="faq-4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                <div class="accordion-body text-muted small">대부분의 콘테스트는 국내 거주자라면 누구나 참가 가능합니다. 일부 대회는 학생 또는 팀 인원 제한이 있을 수 있으니 각 콘테스트 상세 페이지를 확인해주세요.</div>
+              </div>
+            </div>
+
+            <div class="accordion-item border-0 mb-2 rounded-3 shadow-sm overflow-hidden faq-item" data-cat="contest">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed fw-medium bg-white" type="button" data-bs-toggle="collapse" data-bs-target="#faq-5">
+                  상금은 어떻게 지급되나요?
+                </button>
+              </h2>
+              <div id="faq-5" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                <div class="accordion-body text-muted small">수상자 발표 후 2~3주 내로 등록된 계좌로 지급됩니다. 10만원 이상 상금은 기타소득세(22%)가 원천징수될 수 있습니다.</div>
+              </div>
+            </div>
+
+            <!-- 커뮤니티 -->
+            <div class="accordion-item border-0 mb-2 rounded-3 shadow-sm overflow-hidden faq-item" data-cat="community">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed fw-medium bg-white" type="button" data-bs-toggle="collapse" data-bs-target="#faq-6">
+                  커뮤니티에서 금지된 행위가 있나요?
+                </button>
+              </h2>
+              <div id="faq-6" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                <div class="accordion-body text-muted small">광고성 게시물, 욕설/비방, 저작권 침해 콘텐츠, 타인의 개인정보 노출 등은 금지됩니다. 위반 시 게시물 삭제 및 계정 제재를 받을 수 있습니다.</div>
+              </div>
+            </div>
+
+            <!-- 결제/후원 -->
+            <div class="accordion-item border-0 mb-2 rounded-3 shadow-sm overflow-hidden faq-item" data-cat="payment">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed fw-medium bg-white" type="button" data-bs-toggle="collapse" data-bs-target="#faq-7">
+                  후원 취소/환불이 가능한가요?
+                </button>
+              </h2>
+              <div id="faq-7" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                <div class="accordion-body text-muted small">정기 후원의 경우 다음 결제일 3일 전까지 취소 가능합니다. 이미 결제된 금액에 대한 환불은 원칙적으로 불가합니다.</div>
+              </div>
+            </div>
+
           </div>
+          <p id="faq-no-results" class="text-muted text-center py-4 d-none">해당하는 FAQ가 없습니다.</p>
           <div class="card border-0 shadow-sm rounded-4 p-4 mt-4 text-center">
             <h6 class="fw-bold mb-2">원하는 답변을 찾지 못하셨나요?</h6>
             <p class="text-muted small mb-3">1:1 문의를 남겨주시면 빠르게 도움드리겠습니다.</p>
@@ -242,51 +341,42 @@
 </footer>
 
   <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc4s9bIOgUxi8T/jzmX5jFRcDBz3XBrTk4ycr3n8UPn" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
   <script src="assets/js/main.js"></script>
   <script>
-  var faqs = [
-    { cat:'account', q:'회원가입은 어떻게 하나요?', a:'우측 상단의 회원가입 버튼을 클릭하거나 signup.html 페이지를 방문하세요. 이메일 또는 Google 계정으로 가입하실 수 있습니다.' },
-    { cat:'account', q:'비밀번호를 잊어버렸어요.', a:'로그인 페이지에서 "비밀번호를 잊으셨나요?" 링크를 클릭하면 등록된 이메일로 재설정 링크를 보내드립니다.' },
-    { cat:'project', q:'프로젝트를 등록하려면 어떻게 하나요?', a:'로그인 후 마이메이크 페이지에서 "+ 새 프로젝트" 버튼을 클릭하거나 콘테스트 페이지에서 직접 참가 신청할 수 있습니다.' },
-    { cat:'project', q:'프로젝트 삭제는 가능한가요?', a:'마이메이크 > 내 프로젝트에서 해당 프로젝트의 편집 메뉴를 통해 삭제하실 수 있습니다. 단, 콘테스트 제출 프로젝트는 대회 기간 중 삭제가 제한될 수 있습니다.' },
-    { cat:'contest', q:'콘테스트 참가 자격이 있나요?', a:'대부분의 콘테스트는 국내 거주자라면 누구나 참가 가능합니다. 일부 대회는 학생 또는 팀 인원 제한이 있을 수 있으니 각 콘테스트 상세 페이지를 확인해주세요.' },
-    { cat:'contest', q:'상금은 어떻게 지급되나요?', a:'수상자 발표 후 2~3주 내로 등록된 계좌로 지급됩니다. 10만원 이상 상금은 기타소득세(22%)가 원천징수될 수 있습니다.' },
-    { cat:'community', q:'커뮤니티에서 금지된 행위가 있나요?', a:'광고성 게시물, 욕설/비방, 저작권 침해 콘텐츠, 타인의 개인정보 노출 등은 금지됩니다. 위반 시 게시물 삭제 및 계정 제재를 받을 수 있습니다.' },
-    { cat:'payment', q:'후원 취소/환불이 가능한가요?', a:'정기 후원의 경우 다음 결제일 3일 전까지 취소 가능합니다. 이미 결제된 금액에 대한 환불은 원칙적으로 불가합니다.' },
-  ];
-  var currentCat = 'all';
-  function renderFaqs(){
-    var list = currentCat==='all' ? faqs : faqs.filter(function(f){ return f.cat===currentCat; });
-    var html = list.map(function(f, i){
-      return '<div class="accordion-item border-0 mb-2 rounded-3 shadow-sm overflow-hidden">'
-        +'<h2 class="accordion-header"><button class="accordion-button collapsed fw-medium bg-white" type="button" data-bs-toggle="collapse" data-bs-target="#faq-'+i+'">'
-        +f.q+'</button></h2>'
-        +'<div id="faq-'+i+'" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">'
-        +'<div class="accordion-body text-muted small">'+f.a+'</div>'
-        +'</div></div>';
-    }).join('');
-    $('#faqAccordion').html(html || '<p class="text-muted text-center py-4">해당하는 FAQ가 없습니다.</p>');
-  }
   $(function(){
-    renderFaqs();
+    var currentCat = 'all';
+
+    function filterFaqs(cat, searchQ) {
+      var any = false;
+      $('.faq-item').each(function(){
+        var itemCat = $(this).data('cat');
+        var qText = $(this).find('.accordion-button').text().toLowerCase();
+        var aText = $(this).find('.accordion-body').text().toLowerCase();
+        var catMatch = (cat === 'all' || itemCat === cat);
+        var searchMatch = (!searchQ || qText.indexOf(searchQ) >= 0 || aText.indexOf(searchQ) >= 0);
+        if (catMatch && searchMatch) {
+          $(this).removeClass('d-none');
+          any = true;
+        } else {
+          $(this).addClass('d-none');
+        }
+      });
+      $('#faq-no-results').toggleClass('d-none', any);
+    }
+
     $('#faq-category-nav button').on('click', function(){
       $('#faq-category-nav button').removeClass('active');
       $(this).addClass('active');
-      currentCat=$(this).data('cat');
-      renderFaqs();
+      currentCat = $(this).data('cat');
+      filterFaqs(currentCat, $('#faq-search').val().toLowerCase());
     });
+
     $('#faq-search').on('input', function(){
-      var q=$(this).val().toLowerCase();
-      currentCat='all';
+      var q = $(this).val().toLowerCase();
+      currentCat = 'all';
       $('#faq-category-nav button').removeClass('active').first().addClass('active');
-      var list=faqs.filter(function(f){ return f.q.toLowerCase().includes(q)||f.a.toLowerCase().includes(q); });
-      var html=list.map(function(f,i){
-        return '<div class="accordion-item border-0 mb-2 rounded-3 shadow-sm overflow-hidden">'
-          +'<h2 class="accordion-header"><button class="accordion-button collapsed fw-medium bg-white" type="button" data-bs-toggle="collapse" data-bs-target="#fs-'+i+'">'+f.q+'</button></h2>'
-          +'<div id="fs-'+i+'" class="accordion-collapse collapse"><div class="accordion-body text-muted small">'+f.a+'</div></div></div>';
-      }).join('');
-      $('#faqAccordion').html(html||'<p class="text-muted text-center py-4">검색 결과가 없습니다.</p>');
+      filterFaqs('all', q);
     });
   });
   </script>

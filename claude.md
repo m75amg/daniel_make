@@ -23,58 +23,82 @@
 
 ---
 
-## 작업 1 — JavaScript 마크업 추출 및 SEO 최적화
+## 작업 1 — React 잔존 코드 제거 및 정적 HTML 정리
 
-### 목표
-JavaScript 코드 내에 포함된 HTML 마크업(문자열 템플릿, innerHTML, document.write 등)을
-정적 HTML로 추출하여 검색엔진이 크롤링 가능한 구조로 변환한다.
+### 배경
+- HTML 파일은 Figma → React + TailwindCSS 로 1차 생성된 후
+  Bootstrap 버전으로 변환된 문서들임
+- 변환 과정에서 React 코드 패턴이 잔존하고 있으며
+  이를 순수 정적 HTML + Bootstrap 구조로 바로잡는 작업
 
-### 탐지 대상 패턴
-아래 패턴이 발견되면 추출 및 변환 대상으로 처리한다:
+### 탐지 및 제거 대상 — React 잔존 패턴
 
-1. **템플릿 리터럴** — `` ` `` 백틱 안의 HTML 문자열
+1. **JSX 스타일 마크업 문자열** — JS 안에 HTML이 섞인 형태
    ```js
+   // 템플릿 리터럴
    element.innerHTML = `<div class="card">...</div>`
+   // 문자열 연결
+   html += '<li class="nav-item">' + title + '</li>'
    ```
-2. **문자열 연결** — `+` 로 이어붙인 HTML 문자열
-   ```js
-   html += '<li><a href="' + url + '">' + title + '</a></li>'
+
+2. **React 이벤트 핸들러 잔존**
+   ```html
+   <!-- 제거 대상 -->
+   <button onClick={handleClick}>
+   <input onChange={handleChange}>
    ```
-3. **document.write** — 페이지 로드 시 마크업 출력
+   → 표준 HTML 이벤트 속성으로 교체하거나 제거
+
+3. **className → class 미변환 잔존**
+   ```html
+   <!-- 제거 대상 -->
+   <div className="container">
+   ```
+   → `class=""` 로 교체
+
+4. **TailwindCSS 클래스 잔존** — Bootstrap 변환 누락분
+   ```html
+   <!-- 제거 대상 예시 -->
+   <div class="flex items-center justify-between px-4 py-2">
+   ```
+   → 동일한 역할의 Bootstrap 클래스로 교체
+   (예: `d-flex align-items-center justify-content-between px-3 py-2`)
+
+5. **self-closing 태그 JSX 형식 잔존**
+   ```html
+   <!-- 제거 대상 -->
+   <img src="..." />  →  <img src="...">
+   <br />  →  <br>
+   <input ... />  →  <input ...>
+   ```
+
+6. **JS 내 document.write / 동적 렌더링 마크업**
    ```js
    document.write('<section>...</section>')
    ```
-4. **JS 템플릿 엔진** — Mustache, Handlebars, EJS 등 템플릿 문법
-   ```js
-   {{#each items}}<li>{{title}}</li>{{/each}}
-   ```
+   → 정적 HTML로 추출 후 JS 구문 제거
 
 ### 처리 규칙
-1. JS에서 마크업 추출 → 해당 위치에 정적 HTML로 삽입
-2. 동적으로 반복 생성되는 구조(리스트, 카드 등)는 대표 샘플 1개를 정적으로 작성하고 주석으로 표시
-   ```html
-   <!-- TODO: 동적 렌더링 → 서버사이드 또는 SSG로 전환 필요 -->
-   ```
-3. SEO 필수 태그 누락 시 추가
-   - `<title>` — 페이지별 고유 타이틀
-   - `<meta name="description">` — 140자 이내 요약
-   - `<meta property="og:*">` — OG 태그 (title, description, image, url)
-   - heading 계층 구조 (`<h1>` 1개, `<h2>` ~ 순차적)
-   - 이미지 `alt` 속성 누락 시 추가
-   - `<a>` 태그 의미 없는 텍스트("click here", "더보기" 단독) → 구체적 텍스트로 교체 권고
-4. JS로만 렌더링되어 정적 변환이 불가한 경우 별도 목록(`_analysis/js-dynamic.md`)에 기록
+1. 위 패턴 탐지 → 정적 HTML + Bootstrap 클래스로 변환
+2. TailwindCSS 클래스를 Bootstrap으로 교체할 때
+   - 1:1 대응 클래스가 있으면 교체
+   - 대응 클래스가 없으면 인라인 스타일 또는 커스텀 클래스로 대체하고 주석 표시
+     ```html
+     <!-- TODO: Tailwind 'truncate' 대응 Bootstrap 클래스 없음 → 커스텀 CSS 필요 -->
+     ```
+3. 동적으로 반복 생성되는 구조는 대표 샘플 1개를 정적으로 작성
+4. 정적 변환 불가한 JS 로직은 `_analysis/js-dynamic.md` 에 기록
 
-### SEO 체크 항목 (파일당)
-- [ ] `<title>` 고유 여부
-- [ ] `<meta description>` 존재 여부
-- [ ] OG 태그 존재 여부
-- [ ] `<h1>` 1개 사용 여부
-- [ ] heading 계층 순서 준수 여부
-- [ ] 이미지 `alt` 속성 여부
-- [ ] JS 마크업 → 정적 변환 완료 여부
+### SEO 보완 (변환 완료 후 파일당 체크)
+- [ ] `<title>` 페이지별 고유 여부
+- [ ] `<meta name="description">` 존재 여부
+- [ ] OG 태그 (`og:title`, `og:description`, `og:image`, `og:url`) 존재 여부
+- [ ] `<h1>` 1개 사용 여부 및 heading 계층 순서 준수
+- [ ] 이미지 `alt` 속성 누락 여부
 
 ### 진행 체크리스트
-- [ ] index.html
+- [x] index.html
+- [x] faq.html
 - [ ] (파일 목록 확인 후 추가)
 
 ---
@@ -260,10 +284,10 @@ _history/
 
 | 항목 | 상태 | 마지막 업데이트 |
 |------|------|----------------|
-| `/assets/css/make2026-styles.css` 생성 | ✅ 디자이너 완료 | — |
-| `_history/work1-YYYY-MM-DD.md` | ☐ | — |
+| `/css/unified.css` 생성 | ✅ 디자이너 완료 | — |
+| `_history/work1-2026-04-01.md` | ✅ | 2026-04-01 |
 | `_history/work2-YYYY-MM-DD.md` | ☐ | — |
-| `_analysis/js-dynamic.md` | ☐ | — |
+| `_analysis/js-dynamic.md` | ✅ | 2026-04-01 |
 | `_analysis/entities.md` | ☐ | — |
 | `_analysis/schema.md` | ☐ | — |
 | `_analysis/erd.md` | ☐ | — |
