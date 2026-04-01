@@ -209,44 +209,203 @@
         <h4 class="fw-bold mb-1" id="tab-title">진행중인 콘테스트</h4>
         <p class="text-muted small" id="tab-count"></p>
       </div>
-      <div class="row g-4" id="contest-grid"></div>
-      <div class="text-center mt-5" id="contest-load-more-wrap">
+
+      <div class="row g-4" id="contest-grid">
+
+        <!-- 진행중 ======================== -->
+
+        <!-- AI 로봇공학 챌린지 2026 -->
+        <div class="col-md-6 col-lg-4 contest-item" data-status="active">
+          <div class="card h-100 border-0 shadow-sm contest-card">
+            <div class="position-relative overflow-hidden" style="height:180px">
+              <img src="https://images.unsplash.com/photo-1581092333203-42374bcf7d89?w=600" alt="AI 로봇공학 챌린지 2026" class="w-100 h-100 object-fit-cover">
+              <div class="position-absolute top-0 start-0 m-2"><span class="badge bg-success">진행중</span></div>
+              <div class="position-absolute top-0 end-0 m-2"><span class="badge bg-warning">중급</span></div>
+              <span class="badge bg-danger position-absolute bottom-0 end-0 m-2">D-15</span>
+            </div>
+            <div class="card-body">
+              <span class="badge bg-light text-dark mb-1">AI/로봇</span>
+              <h6 class="fw-bold mt-1 mb-1">AI 로봇공학 챌린지 2026</h6>
+              <p class="text-muted small mb-3" style="display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;line-clamp:2">인공지능과 로봇공학을 결합한 혁신적인 프로젝트를 만들어보세요</p>
+              <div class="small text-muted mb-1">🎁 <span class="fw-semibold text-warning-emphasis">총 상금 1,000만원</span></div>
+              <div class="small text-muted mb-1">👥 234명 참가중</div>
+              <div class="small text-muted">📅 마감: 2026년 3월 31일</div>
+            </div>
+            <div class="card-footer bg-transparent border-top-0 px-3 pb-3">
+              <a href="contest-detail.html?id=ai-robot-2026" class="btn btn-primary btn-sm w-100">자세히 보기</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 스마트홈 IoT 콘테스트 -->
+        <div class="col-md-6 col-lg-4 contest-item" data-status="active">
+          <div class="card h-100 border-0 shadow-sm contest-card">
+            <div class="position-relative overflow-hidden" style="height:180px">
+              <img src="https://images.unsplash.com/photo-1753039495488-434a2fe53e41?w=600" alt="스마트홈 IoT 콘테스트" class="w-100 h-100 object-fit-cover">
+              <div class="position-absolute top-0 start-0 m-2"><span class="badge bg-success">진행중</span></div>
+              <div class="position-absolute top-0 end-0 m-2"><span class="badge bg-success">초급</span></div>
+              <span class="badge bg-danger position-absolute bottom-0 end-0 m-2">D-22</span>
+            </div>
+            <div class="card-body">
+              <span class="badge bg-light text-dark mb-1">IoT</span>
+              <h6 class="fw-bold mt-1 mb-1">스마트홈 IoT 콘테스트</h6>
+              <p class="text-muted small mb-3" style="display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;line-clamp:2">일상을 더 편리하게 만드는 스마트홈 IoT 솔루션 개발</p>
+              <div class="small text-muted mb-1">🎁 <span class="fw-semibold text-warning-emphasis">총 상금 800만원</span></div>
+              <div class="small text-muted mb-1">👥 189명 참가중</div>
+              <div class="small text-muted">📅 마감: 2026년 4월 7일</div>
+            </div>
+            <div class="card-footer bg-transparent border-top-0 px-3 pb-3">
+              <a href="contest-detail.html?id=iot-smart-home" class="btn btn-primary btn-sm w-100">자세히 보기</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 지속가능 에너지 챌린지 -->
+        <div class="col-md-6 col-lg-4 contest-item" data-status="active">
+          <div class="card h-100 border-0 shadow-sm contest-card">
+            <div class="position-relative overflow-hidden" style="height:180px">
+              <img src="https://images.unsplash.com/photo-1628206554160-63e8c921e398?w=600" alt="지속가능 에너지 챌린지" class="w-100 h-100 object-fit-cover">
+              <div class="position-absolute top-0 start-0 m-2"><span class="badge bg-success">진행중</span></div>
+              <div class="position-absolute top-0 end-0 m-2"><span class="badge bg-danger">고급</span></div>
+              <span class="badge bg-danger position-absolute bottom-0 end-0 m-2">D-30</span>
+            </div>
+            <div class="card-body">
+              <span class="badge bg-light text-dark mb-1">에너지</span>
+              <h6 class="fw-bold mt-1 mb-1">지속가능 에너지 챌린지</h6>
+              <p class="text-muted small mb-3" style="display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;line-clamp:2">재생에너지를 활용한 창의적인 프로젝트로 미래를 만드세요</p>
+              <div class="small text-muted mb-1">🎁 <span class="fw-semibold text-warning-emphasis">총 상금 1,200만원</span></div>
+              <div class="small text-muted mb-1">👥 156명 참가중</div>
+              <div class="small text-muted">📅 마감: 2026년 4월 15일</div>
+            </div>
+            <div class="card-footer bg-transparent border-top-0 px-3 pb-3">
+              <a href="contest-detail.html?id=renewable-energy" class="btn btn-primary btn-sm w-100">자세히 보기</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3D 프린팅 혁신 대회 -->
+        <div class="col-md-6 col-lg-4 contest-item" data-status="active">
+          <div class="card h-100 border-0 shadow-sm contest-card">
+            <div class="position-relative overflow-hidden" style="height:180px">
+              <img src="https://images.unsplash.com/photo-1703221561813-cdaa308cf9e7?w=600" alt="3D 프린팅 혁신 대회" class="w-100 h-100 object-fit-cover">
+              <div class="position-absolute top-0 start-0 m-2"><span class="badge bg-success">진행중</span></div>
+              <div class="position-absolute top-0 end-0 m-2"><span class="badge bg-warning">중급</span></div>
+              <span class="badge bg-danger position-absolute bottom-0 end-0 m-2">D-8</span>
+            </div>
+            <div class="card-body">
+              <span class="badge bg-light text-dark mb-1">3D프린팅</span>
+              <h6 class="fw-bold mt-1 mb-1">3D 프린팅 혁신 대회</h6>
+              <p class="text-muted small mb-3" style="display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;line-clamp:2">3D 프린팅 기술로 세상을 바꿀 혁신적인 제품 설계</p>
+              <div class="small text-muted mb-1">🎁 <span class="fw-semibold text-warning-emphasis">총 상금 600만원</span></div>
+              <div class="small text-muted mb-1">👥 98명 참가중</div>
+              <div class="small text-muted">📅 마감: 2026년 3월 23일</div>
+            </div>
+            <div class="card-footer bg-transparent border-top-0 px-3 pb-3">
+              <a href="contest-detail.html?id=3d-printing-innovation" class="btn btn-primary btn-sm w-100">자세히 보기</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 예정 ======================== -->
+
+        <!-- 웨어러블 기술의 미래 -->
+        <div class="col-md-6 col-lg-4 contest-item d-none" data-status="upcoming">
+          <div class="card h-100 border-0 shadow-sm contest-card">
+            <div class="position-relative overflow-hidden" style="height:180px">
+              <img src="https://images.unsplash.com/photo-1758525747606-bd5d801ca87b?w=600" alt="웨어러블 기술의 미래" class="w-100 h-100 object-fit-cover">
+              <div class="position-absolute top-0 start-0 m-2"><span class="badge bg-primary">예정</span></div>
+              <div class="position-absolute top-0 end-0 m-2"><span class="badge bg-success">초급</span></div>
+            </div>
+            <div class="card-body">
+              <span class="badge bg-light text-dark mb-1">웨어러블</span>
+              <h6 class="fw-bold mt-1 mb-1">웨어러블 기술의 미래</h6>
+              <p class="text-muted small mb-3" style="display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;line-clamp:2">차세대 웨어러블 디바이스 아이디어 공모전</p>
+              <div class="small text-muted mb-1">🎁 <span class="fw-semibold text-warning-emphasis">총 상금 500만원</span></div>
+              <div class="small text-muted mb-1">👥 45명 참가중</div>
+              <div class="small text-muted">📅 마감: 2026년 4월 30일</div>
+            </div>
+            <div class="card-footer bg-transparent border-top-0 px-3 pb-3">
+              <a href="contest-detail.html?id=wearable-tech-future" class="btn btn-primary btn-sm w-100">자세히 보기</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 드론 혁신 챌린지 -->
+        <div class="col-md-6 col-lg-4 contest-item d-none" data-status="upcoming">
+          <div class="card h-100 border-0 shadow-sm contest-card">
+            <div class="position-relative overflow-hidden" style="height:180px">
+              <img src="https://images.unsplash.com/photo-1473968512647-3e447244af8f?w=600" alt="드론 혁신 챌린지" class="w-100 h-100 object-fit-cover">
+              <div class="position-absolute top-0 start-0 m-2"><span class="badge bg-primary">예정</span></div>
+              <div class="position-absolute top-0 end-0 m-2"><span class="badge bg-warning">중급</span></div>
+            </div>
+            <div class="card-body">
+              <span class="badge bg-light text-dark mb-1">드론</span>
+              <h6 class="fw-bold mt-1 mb-1">드론 혁신 챌린지</h6>
+              <p class="text-muted small mb-3" style="display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;line-clamp:2">드론 기술을 활용한 실용적이고 창의적인 솔루션</p>
+              <div class="small text-muted mb-1">🎁 <span class="fw-semibold text-warning-emphasis">총 상금 900만원</span></div>
+              <div class="small text-muted mb-1">👥 67명 참가중</div>
+              <div class="small text-muted">📅 마감: 2026년 5월 15일</div>
+            </div>
+            <div class="card-footer bg-transparent border-top-0 px-3 pb-3">
+              <a href="contest-detail.html?id=drone-innovation" class="btn btn-primary btn-sm w-100">자세히 보기</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 종료 ======================== -->
+
+        <!-- 아두이노 입문자 대회 2025 -->
+        <div class="col-md-6 col-lg-4 contest-item d-none" data-status="ended">
+          <div class="card h-100 border-0 shadow-sm contest-card">
+            <div class="position-relative overflow-hidden" style="height:180px">
+              <img src="https://images.unsplash.com/photo-1553408226-42ecf81a214c?w=600" alt="아두이노 입문자 대회 2025" class="w-100 h-100 object-fit-cover">
+              <div class="position-absolute top-0 start-0 m-2"><span class="badge bg-secondary">종료</span></div>
+              <div class="position-absolute top-0 end-0 m-2"><span class="badge bg-success">초급</span></div>
+            </div>
+            <div class="card-body">
+              <span class="badge bg-light text-dark mb-1">아두이노</span>
+              <h6 class="fw-bold mt-1 mb-1">아두이노 입문자 대회 2025</h6>
+              <p class="text-muted small mb-3" style="display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;line-clamp:2">아두이노로 만드는 첫 프로젝트 경진대회</p>
+              <div class="small text-muted mb-1">🎁 <span class="fw-semibold text-warning-emphasis">총 상금 300만원</span></div>
+              <div class="small text-muted mb-1">👥 342명 참가중</div>
+              <div class="small text-muted">📅 마감: 2025년 12월 31일</div>
+            </div>
+            <div class="card-footer bg-transparent border-top-0 px-3 pb-3">
+              <a href="contest-result.html?id=arduino-beginner-2025" class="btn btn-warning btn-sm w-100">🏆 수상자 결과 보기</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- AI 비전 프로젝트 2025 -->
+        <div class="col-md-6 col-lg-4 contest-item d-none" data-status="ended">
+          <div class="card h-100 border-0 shadow-sm contest-card">
+            <div class="position-relative overflow-hidden" style="height:180px">
+              <img src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=600" alt="AI 비전 프로젝트 2025" class="w-100 h-100 object-fit-cover">
+              <div class="position-absolute top-0 start-0 m-2"><span class="badge bg-secondary">종료</span></div>
+              <div class="position-absolute top-0 end-0 m-2"><span class="badge bg-danger">고급</span></div>
+            </div>
+            <div class="card-body">
+              <span class="badge bg-light text-dark mb-1">AI</span>
+              <h6 class="fw-bold mt-1 mb-1">AI 비전 프로젝트 2025</h6>
+              <p class="text-muted small mb-3" style="display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;line-clamp:2">컴퓨터 비전을 활용한 실생활 문제 해결</p>
+              <div class="small text-muted mb-1">🎁 <span class="fw-semibold text-warning-emphasis">총 상금 700만원</span></div>
+              <div class="small text-muted mb-1">👥 278명 참가중</div>
+              <div class="small text-muted">📅 마감: 2026년 1월 15일</div>
+            </div>
+            <div class="card-footer bg-transparent border-top-0 px-3 pb-3">
+              <a href="contest-result.html?id=ai-vision-2025" class="btn btn-warning btn-sm w-100">🏆 수상자 결과 보기</a>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- /contest-grid -->
+
+      <div class="text-center mt-5" id="contest-load-more-wrap" style="display:none">
         <button class="btn btn-outline-primary btn-lg px-5" id="contest-load-more">더 많은 콘테스트 보기</button>
         <p class="text-muted small mt-2" id="contest-load-count"></p>
       </div>
     </div>
   </main>
-
-  <!-- 콘테스트 카드 템플릿 -->
-  <template id="contest-card-tpl">
-    <div class="col-md-6 col-lg-4">
-      <div class="card h-100 border-0 shadow-sm contest-card">
-        <div class="position-relative overflow-hidden" style="height:180px">
-          <img class="tpl-img w-100 h-100 object-fit-cover" src="" alt="">
-          <div class="position-absolute top-0 start-0 m-2">
-            <span class="tpl-status-badge badge"></span>
-          </div>
-          <div class="position-absolute top-0 end-0 m-2">
-            <span class="tpl-diff-badge badge"></span>
-          </div>
-          <span class="tpl-days-badge badge bg-danger position-absolute bottom-0 end-0 m-2"></span>
-        </div>
-        <div class="card-body">
-          <span class="tpl-category badge bg-light text-dark mb-1"></span>
-          <h6 class="tpl-title fw-bold mt-1 mb-1"></h6>
-          <p class="tpl-desc text-muted small mb-3"
-            style="display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;line-clamp:2">
-          </p>
-          <div class="small text-muted mb-1">🎁 <span class="tpl-prize fw-semibold text-warning-emphasis"></span></div>
-          <div class="small text-muted mb-1">👥 <span class="tpl-participants"></span>명 참가중</div>
-          <div class="small text-muted">📅 마감: <span class="tpl-deadline"></span></div>
-        </div>
-        <div class="card-footer bg-transparent border-top-0 px-3 pb-3">
-          <a class="tpl-btn btn btn-sm w-100" href=""></a>
-        </div>
-      </div>
-    </div>
-  </template>
 
   <!-- ===== PLATFORM FOOTER ===== -->
   <footer id="platform-footer">
@@ -316,105 +475,52 @@
     crossorigin="anonymous"></script>
   <script src="assets/js/main.js"></script>
   <script>
-    var contests = [
-      { id: 'ai-robot-2026', title: 'AI 로봇공학 챌린지 2026', desc: '인공지능과 로봇공학을 결합한 혁신적인 프로젝트를 만들어보세요', prize: '총 상금 1,000만원', participants: 234, daysLeft: 15, deadline: '2026년 3월 31일', difficulty: '중급', category: 'AI/로봇', status: 'active', img: 'https://images.unsplash.com/photo-1581092333203-42374bcf7d89?w=600' },
-      { id: 'iot-smart-home', title: '스마트홈 IoT 콘테스트', desc: '일상을 더 편리하게 만드는 스마트홈 IoT 솔루션 개발', prize: '총 상금 800만원', participants: 189, daysLeft: 22, deadline: '2026년 4월 7일', difficulty: '초급', category: 'IoT', status: 'active', img: 'https://images.unsplash.com/photo-1753039495488-434a2fe53e41?w=600' },
-      { id: 'renewable-energy', title: '지속가능 에너지 챌린지', desc: '재생에너지를 활용한 창의적인 프로젝트로 미래를 만드세요', prize: '총 상금 1,200만원', participants: 156, daysLeft: 30, deadline: '2026년 4월 15일', difficulty: '고급', category: '에너지', status: 'active', img: 'https://images.unsplash.com/photo-1628206554160-63e8c921e398?w=600' },
-      { id: '3d-printing-innovation', title: '3D 프린팅 혁신 대회', desc: '3D 프린팅 기술로 세상을 바꿀 혁신적인 제품 설계', prize: '총 상금 600만원', participants: 98, daysLeft: 8, deadline: '2026년 3월 23일', difficulty: '중급', category: '3D프린팅', status: 'active', img: 'https://images.unsplash.com/photo-1703221561813-cdaa308cf9e7?w=600' },
-      { id: 'wearable-tech-future', title: '웨어러블 기술의 미래', desc: '차세대 웨어러블 디바이스 아이디어 공모전', prize: '총 상금 500만원', participants: 45, daysLeft: 45, deadline: '2026년 4월 30일', difficulty: '초급', category: '웨어러블', status: 'upcoming', img: 'https://images.unsplash.com/photo-1758525747606-bd5d801ca87b?w=600' },
-      { id: 'drone-innovation', title: '드론 혁신 챌린지', desc: '드론 기술을 활용한 실용적이고 창의적인 솔루션', prize: '총 상금 900만원', participants: 67, daysLeft: 60, deadline: '2026년 5월 15일', difficulty: '중급', category: '드론', status: 'upcoming', img: 'https://images.unsplash.com/photo-1473968512647-3e447244af8f?w=600' },
-      { id: 'arduino-beginner-2025', title: '아두이노 입문자 대회 2025', desc: '아두이노로 만드는 첫 프로젝트 경진대회', prize: '총 상금 300만원', participants: 342, daysLeft: 0, deadline: '2025년 12월 31일', difficulty: '초급', category: '아두이노', status: 'ended', img: 'https://images.unsplash.com/photo-1553408226-42ecf81a214c?w=600' },
-      { id: 'ai-vision-2025', title: 'AI 비전 프로젝트 2025', desc: '컴퓨터 비전을 활용한 실생활 문제 해결', prize: '총 상금 700만원', participants: 278, daysLeft: 0, deadline: '2026년 1월 15일', difficulty: '고급', category: 'AI', status: 'ended', img: 'https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=600' }
-    ];
-
     var PAGE = 6, visible = 6, currentTab = 'active';
+    var TITLES = { active: '진행중인 콘테스트', upcoming: '곧 시작될 콘테스트', ended: '종료된 콘테스트' };
 
-    var STATUS_COLOR = { active: 'success', upcoming: 'primary', ended: 'secondary' };
-    var STATUS_LABEL = { active: '진행중', upcoming: '예정', ended: '종료' };
-    var DIFF_COLOR = { '초급': 'success', '중급': 'warning', '고급': 'danger' };
-
-    function renderContest(c) {
-      var tpl = document.getElementById('contest-card-tpl');
-      var clone = tpl.content.cloneNode(true);
-      var href = c.status === 'ended' ? 'contest-result.html?id=' + c.id : 'contest-detail.html?id=' + c.id;
-
-      // 카드 클릭
-      var card = clone.querySelector('.contest-card');
-      card.style.cursor = 'pointer';
-      card.addEventListener('click', function () { window.location = href; });
-
-      // 이미지
-      clone.querySelector('.tpl-img').src = c.img;
-
-      // 상태 배지
-      var statusBadge = clone.querySelector('.tpl-status-badge');
-      statusBadge.textContent = STATUS_LABEL[c.status];
-      statusBadge.classList.add('bg-' + STATUS_COLOR[c.status]);
-
-      // 난이도 배지
-      var diffBadge = clone.querySelector('.tpl-diff-badge');
-      diffBadge.textContent = c.difficulty;
-      diffBadge.classList.add('bg-' + DIFF_COLOR[c.difficulty]);
-
-      // D-day 배지 (진행중만 표시)
-      var daysBadge = clone.querySelector('.tpl-days-badge');
-      if (c.status === 'active') {
-        daysBadge.textContent = 'D-' + c.daysLeft;
-      } else {
-        daysBadge.remove();
-      }
-
-      // 카드 본문
-      clone.querySelector('.tpl-category').textContent = c.category;
-      clone.querySelector('.tpl-title').textContent = c.title;
-      clone.querySelector('.tpl-desc').textContent = c.desc;
-      clone.querySelector('.tpl-prize').textContent = c.prize;
-      clone.querySelector('.tpl-participants').textContent = c.participants;
-      clone.querySelector('.tpl-deadline').textContent = c.deadline;
-
-      // 버튼
-      var btn = clone.querySelector('.tpl-btn');
-      btn.href = href;
-      btn.classList.add(c.status === 'ended' ? 'btn-warning' : 'btn-primary');
-      btn.textContent = c.status === 'ended' ? '🏆 수상자 결과 보기' : '자세히 보기';
-      btn.addEventListener('click', function (e) { e.stopPropagation(); });
-
-      return clone;
+    function getItems(status) {
+      return Array.from(document.querySelectorAll('.contest-item[data-status="' + status + '"]'));
     }
 
-    function getList() { return contests.filter(function (c) { return c.status === currentTab; }); }
+    function applyTab(tab) {
+      // 전체 숨김
+      document.querySelectorAll('.contest-item').forEach(function (el) {
+        el.classList.add('d-none');
+      });
 
-    function render() {
-      var list = getList();
-      var shown = list.slice(0, visible);
-      var grid = document.getElementById('contest-grid');
-      grid.innerHTML = '';
-      if (shown.length === 0) {
-        grid.innerHTML = '<div class="col-12 text-center py-5 text-muted"><p>해당하는 콘테스트가 없습니다.</p></div>';
-      } else {
-        shown.forEach(function (c) { grid.appendChild(renderContest(c)); });
-      }
-      $('#tab-count').text(list.length + '개의 콘테스트');
-      if (visible >= list.length) {
+      // 현재 탭 카드 표시 (visible 개수만큼)
+      var items = getItems(tab);
+      var shown = Math.min(visible, items.length);
+      items.forEach(function (el, i) {
+        if (i < shown) el.classList.remove('d-none');
+      });
+
+      // 카운트 / 더보기
+      $('#tab-count').text(items.length + '개의 콘테스트');
+      if (shown >= items.length) {
         $('#contest-load-more-wrap').hide();
       } else {
         $('#contest-load-more-wrap').show();
-        $('#contest-load-count').text(visible + '개 / 총 ' + list.length + '개');
+        $('#contest-load-count').text(shown + '개 / 총 ' + items.length + '개');
       }
     }
 
     $(function () {
-      var titles = { active: '진행중인 콘테스트', upcoming: '곧 시작될 콘테스트', ended: '종료된 콘테스트' };
-      render();
+      applyTab(currentTab);
+
       $('.tab-underline').on('click', function () {
         $('.tab-underline').removeClass('active');
         $(this).addClass('active');
         currentTab = $(this).data('tab');
         visible = PAGE;
-        $('#tab-title').text(titles[currentTab]);
-        render();
+        $('#tab-title').text(TITLES[currentTab]);
+        applyTab(currentTab);
       });
-      $('#contest-load-more').on('click', function () { visible += PAGE; render(); });
+
+      $('#contest-load-more').on('click', function () {
+        visible += PAGE;
+        applyTab(currentTab);
+      });
     });
   </script>
 </body>
