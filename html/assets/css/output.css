@@ -241,3 +241,12 @@
   background-color: var(--color-red);
   border-color: var(--color-red);
 }
+
+
+
+/* =========================
+   RED
+========================= */
+.bg-success-subtle {
+    background-color: var(--bs-success-bg-subtle) !important;
+}
