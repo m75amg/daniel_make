@@ -1,139 +1,140 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>콘테스트 — e4ds make</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/custom.css">
   <link rel="stylesheet" href="assets/css/output.css">
   <link rel="stylesheet" href="assets/css/make2026-styles.css">
   <script src="https://kit.fontawesome.com/38e89eef65.js" crossorigin="anonymous"></script>
 </head>
+
 <body class="bg-light">
 
   <!-- ===== PLATFORM HEADER ===== -->
-<header id="platform-header" class="bg-white border-bottom sticky-top shadow-sm">
+  <header id="platform-header" class="bg-white border-bottom sticky-top shadow-sm">
 
-  <!-- Top Bar -->
-  <div class="border-bottom border-light">
-    <div class="container-xl">
-      <div class="d-flex align-items-center justify-content-between topbar-inner">
-        <small class="text-muted" id="header-date"></small>
-        <div class="d-flex align-items-center gap-3">
-          <a href="login.html"   class="text-secondary text-decoration-none small header-toplink auth-loggedout-only">로그인</a>
-          <a href="signup.html"  class="text-secondary text-decoration-none small header-toplink auth-loggedout-only">회원가입</a>
-          <a href="support.html" class="text-secondary text-decoration-none small header-toplink">고객센터</a>
-          <a href="#"            class="text-secondary text-decoration-none small header-toplink">홈사이트</a>
+    <!-- Top Bar -->
+    <div class="border-bottom border-light">
+      <div class="container-xl">
+        <div class="d-flex align-items-center justify-content-between topbar-inner">
+          <small class="text-muted" id="header-date"></small>
+          <div class="d-flex align-items-center gap-3">
+            <a href="login.html"
+              class="text-secondary text-decoration-none small header-toplink auth-loggedout-only">로그인</a>
+            <a href="signup.html"
+              class="text-secondary text-decoration-none small header-toplink auth-loggedout-only">회원가입</a>
+            <a href="support.html" class="text-secondary text-decoration-none small header-toplink">고객센터</a>
+            <a href="#" class="text-secondary text-decoration-none small header-toplink">홈사이트</a>
+          </div>
         </div>
       </div>
     </div>
-  </div>
 
-  <!-- Main Nav -->
-  <div class="container-xl">
-    <nav class="navbar navbar-expand-lg px-0">
+    <!-- Main Nav -->
+    <div class="container-xl">
+      <nav class="navbar navbar-expand-lg px-0">
 
-      <!-- Logo -->
-      <a class="navbar-brand fw-bold fs-5 me-4" href="index.html">
-        <span class="text-dark">e</span><span class="text-warning">4</span><span class="text-dark">ds</span>
-        <span class="fw-normal text-secondary ms-1 brand-text">make</span>
-      </a>
+        <!-- Logo -->
+        <a class="navbar-brand fw-bold fs-5 me-4" href="index.html">
+          <span class="text-dark">e</span><span class="text-warning">4</span><span class="text-dark">ds</span>
+          <span class="fw-normal text-secondary ms-1 brand-text">make</span>
+        </a>
 
-      <!-- Mobile toggler -->
-      <button class="navbar-toggler ms-auto" type="button"
-              data-bs-toggle="collapse" data-bs-target="#mainNavCollapse"
-              aria-controls="mainNavCollapse" aria-expanded="false" aria-label="메뉴 열기">
-        <span class="navbar-toggler-icon"></span>
-      </button>
+        <!-- Mobile toggler -->
+        <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavCollapse"
+          aria-controls="mainNavCollapse" aria-expanded="false" aria-label="메뉴 열기">
+          <span class="navbar-toggler-icon"></span>
+        </button>
 
-      <div class="collapse navbar-collapse" id="mainNavCollapse">
+        <div class="collapse navbar-collapse" id="mainNavCollapse">
 
-        <!-- Center Links -->
-        <ul class="navbar-nav me-auto gap-lg-1">
+          <!-- Center Links -->
+          <ul class="navbar-nav me-auto gap-lg-1">
 
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle fw-medium text-dark" href="#"
-               data-bs-toggle="dropdown">News</a>
-            <ul class="dropdown-menu shadow-sm border-0">
-              <li><a class="dropdown-item" href="#">최신 뉴스</a></li>
-              <li><a class="dropdown-item" href="notices.html">공지사항</a></li>
-            </ul>
-          </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle fw-medium text-dark" href="#" data-bs-toggle="dropdown">News</a>
+              <ul class="dropdown-menu shadow-sm border-0">
+                <li><a class="dropdown-item" href="#">최신 뉴스</a></li>
+                <li><a class="dropdown-item" href="notices.html">공지사항</a></li>
+              </ul>
+            </li>
 
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle fw-medium text-dark" href="#"
-               data-bs-toggle="dropdown">Technologies</a>
-            <ul class="dropdown-menu shadow-sm border-0">
-              <li><a class="dropdown-item" href="#">임베디드</a></li>
-              <li><a class="dropdown-item" href="#">IoT</a></li>
-              <li><a class="dropdown-item" href="#">AI/ML</a></li>
-            </ul>
-          </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle fw-medium text-dark" href="#"
+                data-bs-toggle="dropdown">Technologies</a>
+              <ul class="dropdown-menu shadow-sm border-0">
+                <li><a class="dropdown-item" href="#">임베디드</a></li>
+                <li><a class="dropdown-item" href="#">IoT</a></li>
+                <li><a class="dropdown-item" href="#">AI/ML</a></li>
+              </ul>
+            </li>
 
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle fw-medium text-dark" href="#"
-               data-bs-toggle="dropdown">Industries</a>
-            <ul class="dropdown-menu shadow-sm border-0">
-              <li><a class="dropdown-item" href="#">자동차</a></li>
-              <li><a class="dropdown-item" href="#">의료</a></li>
-              <li><a class="dropdown-item" href="#">산업자동화</a></li>
-            </ul>
-          </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle fw-medium text-dark" href="#" data-bs-toggle="dropdown">Industries</a>
+              <ul class="dropdown-menu shadow-sm border-0">
+                <li><a class="dropdown-item" href="#">자동차</a></li>
+                <li><a class="dropdown-item" href="#">의료</a></li>
+                <li><a class="dropdown-item" href="#">산업자동화</a></li>
+              </ul>
+            </li>
 
-          <li class="nav-item">
-            <a class="nav-link fw-medium text-dark" href="events.html">EEWebinar</a>
-          </li>
+            <li class="nav-item">
+              <a class="nav-link fw-medium text-dark" href="events.html">EEWebinar</a>
+            </li>
 
-          <li class="nav-item dropdown" id="makers-zone-dropdown">
-            <a class="nav-link dropdown-toggle fw-medium text-dark" href="#"
-               data-bs-toggle="dropdown">Maker's Zone</a>
-            <ul class="dropdown-menu shadow-sm border-0">
-              <li><a class="dropdown-item" href="projects.html">프로젝트</a></li>
-              <li><a class="dropdown-item" href="contests.html">콘테스트</a></li>
-              <li><a class="dropdown-item" href="community.html">커뮤니티</a></li>
-              <li><a class="dropdown-item" href="my-make.html">마이메이크</a></li>
-            </ul>
-          </li>
-        </ul>
+            <li class="nav-item dropdown" id="makers-zone-dropdown">
+              <a class="nav-link dropdown-toggle fw-medium text-dark" href="#" data-bs-toggle="dropdown">Maker's
+                Zone</a>
+              <ul class="dropdown-menu shadow-sm border-0">
+                <li><a class="dropdown-item" href="projects.html">프로젝트</a></li>
+                <li><a class="dropdown-item" href="contests.html">콘테스트</a></li>
+                <li><a class="dropdown-item" href="community.html">커뮤니티</a></li>
+                <li><a class="dropdown-item" href="my-make.html">마이메이크</a></li>
+              </ul>
+            </li>
+          </ul>
 
-        <!-- Right Actions -->
-        <div class="d-flex align-items-center gap-2 ms-lg-2">
-          <button class="btn btn-light btn-sm p-2 rounded-3" id="header-search-btn" title="검색">
-            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
-                 fill="none" stroke="currentColor" stroke-width="2"
-                 stroke-linecap="round" stroke-linejoin="round">
-              <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
-            </svg>
-          </button>
-          <button class="btn btn-light btn-sm p-2 rounded-3" id="header-user-btn" title="프로필">
-            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
-                 fill="none" stroke="currentColor" stroke-width="2"
-                 stroke-linecap="round" stroke-linejoin="round">
-              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
-              <circle cx="12" cy="7" r="4"/>
-            </svg>
-          </button>
-        </div>
+          <!-- Right Actions -->
+          <div class="d-flex align-items-center gap-2 ms-lg-2">
+            <button class="btn btn-light btn-sm p-2 rounded-3" id="header-search-btn" title="검색">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="11" cy="11" r="8" />
+                <line x1="21" y1="21" x2="16.65" y2="16.65" />
+              </svg>
+            </button>
+            <button class="btn btn-light btn-sm p-2 rounded-3" id="header-user-btn" title="프로필">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+                <circle cx="12" cy="7" r="4" />
+              </svg>
+            </button>
+          </div>
 
-      </div><!-- /collapse -->
-    </nav>
-  </div>
-
-  <!-- Search Bar (hidden by default) -->
-  <div id="header-search-bar" class="border-top bg-light d-none">
-    <div class="container-xl py-2">
-      <form class="d-flex gap-2" id="header-search-form">
-        <input type="search" class="form-control form-control-sm"
-               placeholder="검색어를 입력하세요..." id="header-search-input">
-        <button type="submit" class="btn btn-primary btn-sm px-3">검색</button>
-        <button type="button" class="btn btn-light btn-sm" id="header-search-close">닫기</button>
-      </form>
+        </div><!-- /collapse -->
+      </nav>
     </div>
-  </div>
 
-</header>
+    <!-- Search Bar (hidden by default) -->
+    <div id="header-search-bar" class="border-top bg-light d-none">
+      <div class="container-xl py-2">
+        <form class="d-flex gap-2" id="header-search-form">
+          <input type="search" class="form-control form-control-sm" placeholder="검색어를 입력하세요..."
+            id="header-search-input">
+          <button type="submit" class="btn btn-primary btn-sm px-3">검색</button>
+          <button type="button" class="btn btn-light btn-sm" id="header-search-close">닫기</button>
+        </form>
+      </div>
+    </div>
+
+  </header>
 
   <main>
     <!-- Breadcrumb -->
@@ -192,9 +193,12 @@
     <div class="bg-white border-bottom sticky-top shadow-sm contest-tabs-sticky">
       <div class="container-xl">
         <div class="d-flex justify-content-center gap-5">
-          <button class="tab-underline active" data-tab="active">진행중<span class="badge bg-success-subtle text-success ms-1" id="cnt-active">4</span></button>
-          <button class="tab-underline" data-tab="upcoming">예정<span class="badge bg-primary-subtle text-primary ms-1" id="cnt-upcoming">2</span></button>
-          <button class="tab-underline" data-tab="ended">종료<span class="badge bg-secondary-subtle text-secondary ms-1" id="cnt-ended">2</span></button>
+          <button class="tab-underline active" data-tab="active">진행중<span
+              class="badge bg-success-subtle text-success ms-1" id="cnt-active">4</span></button>
+          <button class="tab-underline" data-tab="upcoming">예정<span class="badge bg-primary-subtle text-primary ms-1"
+              id="cnt-upcoming">2</span></button>
+          <button class="tab-underline" data-tab="ended">종료<span class="badge bg-secondary-subtle text-secondary ms-1"
+              id="cnt-ended">2</span></button>
         </div>
       </div>
     </div>
@@ -230,7 +234,9 @@
         <div class="card-body">
           <span class="tpl-category badge bg-light text-dark mb-1"></span>
           <h6 class="tpl-title fw-bold mt-1 mb-1"></h6>
-          <p class="tpl-desc text-muted small mb-3" style="display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden"></p>
+          <p class="tpl-desc text-muted small mb-3"
+            style="display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;line-clamp:2">
+          </p>
           <div class="small text-muted mb-1">🎁 <span class="tpl-prize fw-semibold text-warning-emphasis"></span></div>
           <div class="small text-muted mb-1">👥 <span class="tpl-participants"></span>명 참가중</div>
           <div class="small text-muted">📅 마감: <span class="tpl-deadline"></span></div>
@@ -243,142 +249,174 @@
   </template>
 
   <!-- ===== PLATFORM FOOTER ===== -->
-<footer id="platform-footer">
+  <footer id="platform-footer">
 
-  <!-- Sponsor Logos -->
-  <div class="bg-light border-top border-bottom py-4">
-    <div class="container-xl">
-      <p class="text-center text-muted small mb-3">Sponsored Company</p>
-      <div class="d-flex flex-wrap align-items-center justify-content-center gap-4">
-        <span class="fw-medium text-secondary small">CREAFORM</span>
-        <span class="fw-medium text-secondary small">Infineon</span>
-        <span class="fw-bold text-dark small">KETI</span>
-        <span class="fw-medium text-secondary small">KEYSIGHT</span>
-        <span class="fw-medium text-secondary small">Microchip</span>
-        <span class="fw-medium text-primary small">mouser.com</span>
-        <span class="fw-medium text-secondary small">NATIONAL INSTRUMENTS</span>
-        <span class="fw-bold text-white bg-danger px-2 py-1 rounded small">ROHM</span>
-        <span class="fw-medium text-secondary small">ST</span>
-        <span class="fw-medium text-dark small">Tektronix</span>
-      </div>
-    </div>
-  </div>
-
-  <!-- Company Info -->
-  <div class="bg-black text-secondary py-5">
-    <div class="container-xl">
-
-      <!-- Links Row -->
-      <div class="d-flex flex-column flex-lg-row align-items-start align-items-lg-center
-                  justify-content-between gap-3 mb-4">
-        <div class="d-flex flex-wrap align-items-center gap-2 small">
-          <a href="support.html"  class="footer-link text-secondary text-decoration-none">e4ds 소개</a>
-          <span class="text-muted">|</span>
-          <a href="notices.html"  class="footer-link text-secondary text-decoration-none">개인정보처리방침</a>
-          <span class="text-muted">|</span>
-          <a href="faq.html"      class="footer-link text-secondary text-decoration-none">이용약관</a>
-          <span class="text-muted">|</span>
-          <a href="contact.html"  class="footer-link text-secondary text-decoration-none">청소년보호정책</a>
-          <span class="text-muted">|</span>
-          <a href="careers.html"  class="footer-link text-secondary text-decoration-none">가족사이트</a>
-          <span class="text-muted">|</span>
-          <a href="#"             class="footer-link text-secondary text-decoration-none">저작권</a>
-          <span class="text-muted">|</span>
-          <a href="#"             class="footer-link text-secondary text-decoration-none">e4ds인터내셔널</a>
+    <!-- Sponsor Logos -->
+    <div class="bg-light border-top border-bottom py-4">
+      <div class="container-xl">
+        <p class="text-center text-muted small mb-3">Sponsored Company</p>
+        <div class="d-flex flex-wrap align-items-center justify-content-center gap-4">
+          <span class="fw-medium text-secondary small">CREAFORM</span>
+          <span class="fw-medium text-secondary small">Infineon</span>
+          <span class="fw-bold text-dark small">KETI</span>
+          <span class="fw-medium text-secondary small">KEYSIGHT</span>
+          <span class="fw-medium text-secondary small">Microchip</span>
+          <span class="fw-medium text-primary small">mouser.com</span>
+          <span class="fw-medium text-secondary small">NATIONAL INSTRUMENTS</span>
+          <span class="fw-bold text-white bg-danger px-2 py-1 rounded small">ROHM</span>
+          <span class="fw-medium text-secondary small">ST</span>
+          <span class="fw-medium text-dark small">Tektronix</span>
         </div>
       </div>
-
-      <!-- Company Details -->
-      <div class="small text-muted lh-lg">
-        <p class="mb-1">(주)디지털데일리 | 등록번호 : 경기 아51470 | 등록: 2008.10.20 | 발행: 2026.05.19 | 표: 김제호</p>
-        <p class="mb-1">주소 : 경기도 성남시 분당구 대왕판교로 660번길 8 | 전화 : 02-883-9797 | 팩스 : 02-6280-9957</p>
-        <p class="mb-1 text-secondary footer-copyright">
-          본 콘텐츠의 저작권은 (주)디지털데일리에 있으며 무단 전재 및 재배포를 금지합니다.
-        </p>
-        <p class="mt-3 mb-0">Copyright &copy; 2026 e4ds News. All Rights Reserved</p>
-      </div>
-
     </div>
-  </div>
 
-</footer>
+    <!-- Company Info -->
+    <div class="bg-black text-secondary py-5">
+      <div class="container-xl">
 
-  <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc4s9bIOgUxi8T/jzmX5jFRcDBz3XBrTk4ycr3n8UPn" crossorigin="anonymous"></script>
+        <!-- Links Row -->
+        <div class="d-flex flex-column flex-lg-row align-items-start align-items-lg-center
+                  justify-content-between gap-3 mb-4">
+          <div class="d-flex flex-wrap align-items-center gap-2 small">
+            <a href="support.html" class="footer-link text-secondary text-decoration-none">e4ds 소개</a>
+            <span class="text-muted">|</span>
+            <a href="notices.html" class="footer-link text-secondary text-decoration-none">개인정보처리방침</a>
+            <span class="text-muted">|</span>
+            <a href="faq.html" class="footer-link text-secondary text-decoration-none">이용약관</a>
+            <span class="text-muted">|</span>
+            <a href="contact.html" class="footer-link text-secondary text-decoration-none">청소년보호정책</a>
+            <span class="text-muted">|</span>
+            <a href="careers.html" class="footer-link text-secondary text-decoration-none">가족사이트</a>
+            <span class="text-muted">|</span>
+            <a href="#" class="footer-link text-secondary text-decoration-none">저작권</a>
+            <span class="text-muted">|</span>
+            <a href="#" class="footer-link text-secondary text-decoration-none">e4ds인터내셔널</a>
+          </div>
+        </div>
+
+        <!-- Company Details -->
+        <div class="small text-muted lh-lg">
+          <p class="mb-1">(주)디지털데일리 | 등록번호 : 경기 아51470 | 등록: 2008.10.20 | 발행: 2026.05.19 | 표: 김제호</p>
+          <p class="mb-1">주소 : 경기도 성남시 분당구 대왕판교로 660번길 8 | 전화 : 02-883-9797 | 팩스 : 02-6280-9957</p>
+          <p class="mb-1 text-secondary footer-copyright">
+            본 콘텐츠의 저작권은 (주)디지털데일리에 있으며 무단 전재 및 재배포를 금지합니다.
+          </p>
+          <p class="mt-3 mb-0">Copyright &copy; 2026 e4ds News. All Rights Reserved</p>
+        </div>
+
+      </div>
+    </div>
+
+  </footer>
+
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+    integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
   <script src="assets/js/main.js"></script>
   <script>
-  var contests = [
-    { id:'ai-robot-2026', title:'AI 로봇공학 챌린지 2026', desc:'인공지능과 로봇공학을 결합한 혁신적인 프로젝트를 만들어보세요', prize:'총 상금 1,000만원', participants:234, daysLeft:15, deadline:'2026년 3월 31일', difficulty:'중급', category:'AI/로봇', status:'active', img:'https://images.unsplash.com/photo-1581092333203-42374bcf7d89?w=600' },
-    { id:'iot-smart-home', title:'스마트홈 IoT 콘테스트', desc:'일상을 더 편리하게 만드는 스마트홈 IoT 솔루션 개발', prize:'총 상금 800만원', participants:189, daysLeft:22, deadline:'2026년 4월 7일', difficulty:'초급', category:'IoT', status:'active', img:'https://images.unsplash.com/photo-1753039495488-434a2fe53e41?w=600' },
-    { id:'renewable-energy', title:'지속가능 에너지 챌린지', desc:'재생에너지를 활용한 창의적인 프로젝트로 미래를 만드세요', prize:'총 상금 1,200만원', participants:156, daysLeft:30, deadline:'2026년 4월 15일', difficulty:'고급', category:'에너지', status:'active', img:'https://images.unsplash.com/photo-1628206554160-63e8c921e398?w=600' },
-    { id:'3d-printing-innovation', title:'3D 프린팅 혁신 대회', desc:'3D 프린팅 기술로 세상을 바꿀 혁신적인 제품 설계', prize:'총 상금 600만원', participants:98, daysLeft:8, deadline:'2026년 3월 23일', difficulty:'중급', category:'3D프린팅', status:'active', img:'https://images.unsplash.com/photo-1703221561813-cdaa308cf9e7?w=600' },
-    { id:'wearable-tech-future', title:'웨어러블 기술의 미래', desc:'차세대 웨어러블 디바이스 아이디어 공모전', prize:'총 상금 500만원', participants:45, daysLeft:45, deadline:'2026년 4월 30일', difficulty:'초급', category:'웨어러블', status:'upcoming', img:'https://images.unsplash.com/photo-1758525747606-bd5d801ca87b?w=600' },
-    { id:'drone-innovation', title:'드론 혁신 챌린지', desc:'드론 기술을 활용한 실용적이고 창의적인 솔루션', prize:'총 상금 900만원', participants:67, daysLeft:60, deadline:'2026년 5월 15일', difficulty:'중급', category:'드론', status:'upcoming', img:'https://images.unsplash.com/photo-1473968512647-3e447244af8f?w=600' },
-    { id:'arduino-beginner-2025', title:'아두이노 입문자 대회 2025', desc:'아두이노로 만드는 첫 프로젝트 경진대회', prize:'총 상금 300만원', participants:342, daysLeft:0, deadline:'2025년 12월 31일', difficulty:'초급', category:'아두이노', status:'ended', img:'https://images.unsplash.com/photo-1553408226-42ecf81a214c?w=600' },
-    { id:'ai-vision-2025', title:'AI 비전 프로젝트 2025', desc:'컴퓨터 비전을 활용한 실생활 문제 해결', prize:'총 상금 700만원', participants:278, daysLeft:0, deadline:'2026년 1월 15일', difficulty:'고급', category:'AI', status:'ended', img:'https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=600' }
-  ];
+    var contests = [
+      { id: 'ai-robot-2026', title: 'AI 로봇공학 챌린지 2026', desc: '인공지능과 로봇공학을 결합한 혁신적인 프로젝트를 만들어보세요', prize: '총 상금 1,000만원', participants: 234, daysLeft: 15, deadline: '2026년 3월 31일', difficulty: '중급', category: 'AI/로봇', status: 'active', img: 'https://images.unsplash.com/photo-1581092333203-42374bcf7d89?w=600' },
+      { id: 'iot-smart-home', title: '스마트홈 IoT 콘테스트', desc: '일상을 더 편리하게 만드는 스마트홈 IoT 솔루션 개발', prize: '총 상금 800만원', participants: 189, daysLeft: 22, deadline: '2026년 4월 7일', difficulty: '초급', category: 'IoT', status: 'active', img: 'https://images.unsplash.com/photo-1753039495488-434a2fe53e41?w=600' },
+      { id: 'renewable-energy', title: '지속가능 에너지 챌린지', desc: '재생에너지를 활용한 창의적인 프로젝트로 미래를 만드세요', prize: '총 상금 1,200만원', participants: 156, daysLeft: 30, deadline: '2026년 4월 15일', difficulty: '고급', category: '에너지', status: 'active', img: 'https://images.unsplash.com/photo-1628206554160-63e8c921e398?w=600' },
+      { id: '3d-printing-innovation', title: '3D 프린팅 혁신 대회', desc: '3D 프린팅 기술로 세상을 바꿀 혁신적인 제품 설계', prize: '총 상금 600만원', participants: 98, daysLeft: 8, deadline: '2026년 3월 23일', difficulty: '중급', category: '3D프린팅', status: 'active', img: 'https://images.unsplash.com/photo-1703221561813-cdaa308cf9e7?w=600' },
+      { id: 'wearable-tech-future', title: '웨어러블 기술의 미래', desc: '차세대 웨어러블 디바이스 아이디어 공모전', prize: '총 상금 500만원', participants: 45, daysLeft: 45, deadline: '2026년 4월 30일', difficulty: '초급', category: '웨어러블', status: 'upcoming', img: 'https://images.unsplash.com/photo-1758525747606-bd5d801ca87b?w=600' },
+      { id: 'drone-innovation', title: '드론 혁신 챌린지', desc: '드론 기술을 활용한 실용적이고 창의적인 솔루션', prize: '총 상금 900만원', participants: 67, daysLeft: 60, deadline: '2026년 5월 15일', difficulty: '중급', category: '드론', status: 'upcoming', img: 'https://images.unsplash.com/photo-1473968512647-3e447244af8f?w=600' },
+      { id: 'arduino-beginner-2025', title: '아두이노 입문자 대회 2025', desc: '아두이노로 만드는 첫 프로젝트 경진대회', prize: '총 상금 300만원', participants: 342, daysLeft: 0, deadline: '2025년 12월 31일', difficulty: '초급', category: '아두이노', status: 'ended', img: 'https://images.unsplash.com/photo-1553408226-42ecf81a214c?w=600' },
+      { id: 'ai-vision-2025', title: 'AI 비전 프로젝트 2025', desc: '컴퓨터 비전을 활용한 실생활 문제 해결', prize: '총 상금 700만원', participants: 278, daysLeft: 0, deadline: '2026년 1월 15일', difficulty: '고급', category: 'AI', status: 'ended', img: 'https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=600' }
+    ];
 
-  var PAGE=6, visible=6, currentTab='active';
+    var PAGE = 6, visible = 6, currentTab = 'active';
 
-  var STATUS_COLOR = { active:'success', upcoming:'primary', ended:'secondary' };
-  var STATUS_LABEL = { active:'진행중', upcoming:'예정', ended:'종료' };
-  var DIFF_COLOR   = { '초급':'success', '중급':'warning', '고급':'danger' };
+    var STATUS_COLOR = { active: 'success', upcoming: 'primary', ended: 'secondary' };
+    var STATUS_LABEL = { active: '진행중', upcoming: '예정', ended: '종료' };
+    var DIFF_COLOR = { '초급': 'success', '중급': 'warning', '고급': 'danger' };
 
-  function renderContest(c){
-    var href = c.status==='ended' ? 'contest-result.html?id='+c.id : 'contest-detail.html?id='+c.id;
-    var btnCls = c.status==='ended' ? 'btn-warning' : 'btn-primary';
-    var btnTxt = c.status==='ended' ? '🏆 수상자 결과 보기' : '자세히 보기';
-    var daysHtml = c.status==='active' ? '<span class="badge bg-danger position-absolute bottom-0 end-0 m-2">D-'+c.daysLeft+'</span>' : '';
-    return '<div class="col-md-6 col-lg-4">'
-      +'<div class="card h-100 border-0 shadow-sm contest-card" onclick="window.location=\''+href+'\'">'
-      +'<div class="position-relative overflow-hidden" style="height:180px">'
-      +'<img src="'+c.img+'" alt="" class="w-100 h-100 object-fit-cover">'
-      +'<div class="position-absolute top-0 start-0 m-2">'+statusBadge(c.status)+'</div>'
-      +'<div class="position-absolute top-0 end-0 m-2">'+diffBadge(c.difficulty)+'</div>'
-      +daysHtml+'</div>'
-      +'<div class="card-body">'
-      +'<span class="badge bg-light text-dark mb-1">'+c.category+'</span>'
-      +'<h6 class="fw-bold mt-1 mb-1">'+c.title+'</h6>'
-      +'<p class="text-muted small mb-3" style="display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden">'+c.desc+'</p>'
-      +'<div class="small text-muted mb-1">🎁 <span class="fw-semibold text-warning-emphasis">'+c.prize+'</span></div>'
-      +'<div class="small text-muted mb-1">👥 '+c.participants+'명 참가중</div>'
-      +'<div class="small text-muted">📅 마감: '+c.deadline+'</div>'
-      +'</div>'
-      +'<div class="card-footer bg-transparent border-top-0 px-3 pb-3">'
-      +'<a href="'+href+'" class="btn '+btnCls+' btn-sm w-100" onclick="event.stopPropagation()">'+btnTxt+'</a>'
-      +'</div></div></div>';
-  }
+    function renderContest(c) {
+      var tpl = document.getElementById('contest-card-tpl');
+      var clone = tpl.content.cloneNode(true);
+      var href = c.status === 'ended' ? 'contest-result.html?id=' + c.id : 'contest-detail.html?id=' + c.id;
 
-  function getList(){ return contests.filter(function(c){ return c.status===currentTab; }); }
+      // 카드 클릭
+      var card = clone.querySelector('.contest-card');
+      card.style.cursor = 'pointer';
+      card.addEventListener('click', function () { window.location = href; });
 
-  function render(){
-    var list  = getList();
-    var shown = list.slice(0, visible);
-    var grid  = document.getElementById('contest-grid');
-    grid.innerHTML = '';
-    if (shown.length === 0) {
-      grid.innerHTML = '<div class="col-12 text-center py-5 text-muted"><p>해당하는 콘테스트가 없습니다.</p></div>';
-    } else {
-      shown.forEach(function(c){ grid.appendChild(renderContest(c)); });
+      // 이미지
+      clone.querySelector('.tpl-img').src = c.img;
+
+      // 상태 배지
+      var statusBadge = clone.querySelector('.tpl-status-badge');
+      statusBadge.textContent = STATUS_LABEL[c.status];
+      statusBadge.classList.add('bg-' + STATUS_COLOR[c.status]);
+
+      // 난이도 배지
+      var diffBadge = clone.querySelector('.tpl-diff-badge');
+      diffBadge.textContent = c.difficulty;
+      diffBadge.classList.add('bg-' + DIFF_COLOR[c.difficulty]);
+
+      // D-day 배지 (진행중만 표시)
+      var daysBadge = clone.querySelector('.tpl-days-badge');
+      if (c.status === 'active') {
+        daysBadge.textContent = 'D-' + c.daysLeft;
+      } else {
+        daysBadge.remove();
+      }
+
+      // 카드 본문
+      clone.querySelector('.tpl-category').textContent = c.category;
+      clone.querySelector('.tpl-title').textContent = c.title;
+      clone.querySelector('.tpl-desc').textContent = c.desc;
+      clone.querySelector('.tpl-prize').textContent = c.prize;
+      clone.querySelector('.tpl-participants').textContent = c.participants;
+      clone.querySelector('.tpl-deadline').textContent = c.deadline;
+
+      // 버튼
+      var btn = clone.querySelector('.tpl-btn');
+      btn.href = href;
+      btn.classList.add(c.status === 'ended' ? 'btn-warning' : 'btn-primary');
+      btn.textContent = c.status === 'ended' ? '🏆 수상자 결과 보기' : '자세히 보기';
+      btn.addEventListener('click', function (e) { e.stopPropagation(); });
+
+      return clone;
     }
-    $('#tab-count').text(list.length+'개의 콘테스트');
-    if(visible>=list.length){ $('#contest-load-more-wrap').hide(); }
-    else { $('#contest-load-more-wrap').show(); $('#contest-load-count').text(visible+'개 / 총 '+list.length+'개'); }
-  }
 
-  $(function(){
-    var titles={active:'진행중인 콘테스트',upcoming:'곧 시작될 콘테스트',ended:'종료된 콘테스트'};
-    render();
-    $('.tab-underline').on('click', function(){
-      $('.tab-underline').removeClass('active');
-      $(this).addClass('active');
-      currentTab = $(this).data('tab');
-      visible = PAGE;
-      $('#tab-title').text(titles[currentTab]);
+    function getList() { return contests.filter(function (c) { return c.status === currentTab; }); }
+
+    function render() {
+      var list = getList();
+      var shown = list.slice(0, visible);
+      var grid = document.getElementById('contest-grid');
+      grid.innerHTML = '';
+      if (shown.length === 0) {
+        grid.innerHTML = '<div class="col-12 text-center py-5 text-muted"><p>해당하는 콘테스트가 없습니다.</p></div>';
+      } else {
+        shown.forEach(function (c) { grid.appendChild(renderContest(c)); });
+      }
+      $('#tab-count').text(list.length + '개의 콘테스트');
+      if (visible >= list.length) {
+        $('#contest-load-more-wrap').hide();
+      } else {
+        $('#contest-load-more-wrap').show();
+        $('#contest-load-count').text(visible + '개 / 총 ' + list.length + '개');
+      }
+    }
+
+    $(function () {
+      var titles = { active: '진행중인 콘테스트', upcoming: '곧 시작될 콘테스트', ended: '종료된 콘테스트' };
       render();
+      $('.tab-underline').on('click', function () {
+        $('.tab-underline').removeClass('active');
+        $(this).addClass('active');
+        currentTab = $(this).data('tab');
+        visible = PAGE;
+        $('#tab-title').text(titles[currentTab]);
+        render();
+      });
+      $('#contest-load-more').on('click', function () { visible += PAGE; render(); });
     });
-    $('#contest-load-more').on('click', function(){ visible+=PAGE; render(); });
-  });
   </script>
 </body>
+
 </html>
