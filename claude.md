@@ -99,6 +99,10 @@
 ### 진행 체크리스트
 - [x] index.html
 - [x] faq.html
+- [x] login.html
+- [x] signup.html
+- [x] contact.html
+- [x] support.html
 - [ ] (파일 목록 확인 후 추가)
 
 ---
@@ -226,6 +230,10 @@ Ref: posts.user_id > users.id
 
 ### 진행 체크리스트
 - [ ] index.html
+- [x] login.html
+- [x] signup.html
+- [x] contact.html
+- [x] support.html
 - [ ] (파일 목록 확인 후 추가)
 
 ---
@@ -286,12 +294,12 @@ _history/
 |------|------|----------------|
 | `/css/unified.css` 생성 | ✅ 디자이너 완료 | — |
 | `_history/work1-2026-04-01.md` | ✅ | 2026-04-01 |
-| `_history/work2-YYYY-MM-DD.md` | ☐ | — |
+| `_history/work2-2026-04-01.md` | ✅ | 2026-04-01 |
 | `_analysis/js-dynamic.md` | ✅ | 2026-04-01 |
-| `_analysis/entities.md` | ☐ | — |
-| `_analysis/schema.md` | ☐ | — |
-| `_analysis/erd.md` | ☐ | — |
-| `_analysis/dbdiagram.dbml` | ☐ | — |
+| `_analysis/entities.md` | ✅ | 2026-04-01 |
+| `_analysis/schema.md` | ✅ | 2026-04-01 |
+| `_analysis/erd.md` | ✅ | 2026-04-01 |
+| `_analysis/dbdiagram.dbml` | ✅ | 2026-04-01 |
 
 ---
 

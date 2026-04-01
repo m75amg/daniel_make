@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>마이메이크 — e4ds make</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/custom.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
@@ -12,135 +14,135 @@
   <link rel="stylesheet" href="assets/css/output.css">
   <script src="https://kit.fontawesome.com/38e89eef65.js" crossorigin="anonymous"></script>
 </head>
+
 <body class="bg-light">
 
   <!-- ===== PLATFORM HEADER ===== -->
-<header id="platform-header" class="bg-white border-bottom sticky-top shadow-sm">
+  <header id="platform-header" class="bg-white border-bottom sticky-top shadow-sm">
 
-  <!-- Top Bar -->
-  <div class="border-bottom border-light">
-    <div class="container-xl">
-      <div class="d-flex align-items-center justify-content-between topbar-inner">
-        <small class="text-muted" id="header-date"></small>
-        <div class="d-flex align-items-center gap-3">
-          <a href="login.html"   class="text-secondary text-decoration-none small header-toplink auth-loggedout-only">로그인</a>
-          <a href="signup.html"  class="text-secondary text-decoration-none small header-toplink auth-loggedout-only">회원가입</a>
-          <a href="support.html" class="text-secondary text-decoration-none small header-toplink">고객센터</a>
-          <a href="#"            class="text-secondary text-decoration-none small header-toplink">홈사이트</a>
+    <!-- Top Bar -->
+    <div class="border-bottom border-light">
+      <div class="container-xl">
+        <div class="d-flex align-items-center justify-content-between topbar-inner">
+          <small class="text-muted" id="header-date"></small>
+          <div class="d-flex align-items-center gap-3">
+            <a href="login.html"
+              class="text-secondary text-decoration-none small header-toplink auth-loggedout-only">로그인</a>
+            <a href="signup.html"
+              class="text-secondary text-decoration-none small header-toplink auth-loggedout-only">회원가입</a>
+            <a href="support.html" class="text-secondary text-decoration-none small header-toplink">고객센터</a>
+            <a href="#" class="text-secondary text-decoration-none small header-toplink">홈사이트</a>
+          </div>
         </div>
       </div>
     </div>
-  </div>
 
-  <!-- Main Nav -->
-  <div class="container-xl">
-    <nav class="navbar navbar-expand-lg px-0">
+    <!-- Main Nav -->
+    <div class="container-xl">
+      <nav class="navbar navbar-expand-lg px-0">
 
-      <!-- Logo -->
-      <a class="navbar-brand fw-bold fs-5 me-4" href="index.html">
-        <span class="text-dark">e</span><span class="text-warning">4</span><span class="text-dark">ds</span>
-        <span class="fw-normal text-secondary ms-1 brand-text">make</span>
-      </a>
+        <!-- Logo -->
+        <a class="navbar-brand fw-bold fs-5 me-4" href="index.html">
+          <span class="text-dark">e</span><span class="text-warning">4</span><span class="text-dark">ds</span>
+          <span class="fw-normal text-secondary ms-1 brand-text">make</span>
+        </a>
 
-      <!-- Mobile toggler -->
-      <button class="navbar-toggler ms-auto" type="button"
-              data-bs-toggle="collapse" data-bs-target="#mainNavCollapse"
-              aria-controls="mainNavCollapse" aria-expanded="false" aria-label="메뉴 열기">
-        <span class="navbar-toggler-icon"></span>
-      </button>
+        <!-- Mobile toggler -->
+        <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavCollapse"
+          aria-controls="mainNavCollapse" aria-expanded="false" aria-label="메뉴 열기">
+          <span class="navbar-toggler-icon"></span>
+        </button>
 
-      <div class="collapse navbar-collapse" id="mainNavCollapse">
+        <div class="collapse navbar-collapse" id="mainNavCollapse">
 
-        <!-- Center Links -->
-        <ul class="navbar-nav me-auto gap-lg-1">
+          <!-- Center Links -->
+          <ul class="navbar-nav me-auto gap-lg-1">
 
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle fw-medium text-dark" href="#"
-               data-bs-toggle="dropdown">News</a>
-            <ul class="dropdown-menu shadow-sm border-0">
-              <li><a class="dropdown-item" href="#">최신 뉴스</a></li>
-              <li><a class="dropdown-item" href="notices.html">공지사항</a></li>
-            </ul>
-          </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle fw-medium text-dark" href="#" data-bs-toggle="dropdown">News</a>
+              <ul class="dropdown-menu shadow-sm border-0">
+                <li><a class="dropdown-item" href="#">최신 뉴스</a></li>
+                <li><a class="dropdown-item" href="notices.html">공지사항</a></li>
+              </ul>
+            </li>
 
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle fw-medium text-dark" href="#"
-               data-bs-toggle="dropdown">Technologies</a>
-            <ul class="dropdown-menu shadow-sm border-0">
-              <li><a class="dropdown-item" href="#">임베디드</a></li>
-              <li><a class="dropdown-item" href="#">IoT</a></li>
-              <li><a class="dropdown-item" href="#">AI/ML</a></li>
-            </ul>
-          </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle fw-medium text-dark" href="#"
+                data-bs-toggle="dropdown">Technologies</a>
+              <ul class="dropdown-menu shadow-sm border-0">
+                <li><a class="dropdown-item" href="#">임베디드</a></li>
+                <li><a class="dropdown-item" href="#">IoT</a></li>
+                <li><a class="dropdown-item" href="#">AI/ML</a></li>
+              </ul>
+            </li>
 
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle fw-medium text-dark" href="#"
-               data-bs-toggle="dropdown">Industries</a>
-            <ul class="dropdown-menu shadow-sm border-0">
-              <li><a class="dropdown-item" href="#">자동차</a></li>
-              <li><a class="dropdown-item" href="#">의료</a></li>
-              <li><a class="dropdown-item" href="#">산업자동화</a></li>
-            </ul>
-          </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle fw-medium text-dark" href="#" data-bs-toggle="dropdown">Industries</a>
+              <ul class="dropdown-menu shadow-sm border-0">
+                <li><a class="dropdown-item" href="#">자동차</a></li>
+                <li><a class="dropdown-item" href="#">의료</a></li>
+                <li><a class="dropdown-item" href="#">산업자동화</a></li>
+              </ul>
+            </li>
 
-          <li class="nav-item">
-            <a class="nav-link fw-medium text-dark" href="events.html">EEWebinar</a>
-          </li>
+            <li class="nav-item">
+              <a class="nav-link fw-medium text-dark" href="events.html">EEWebinar</a>
+            </li>
 
-          <li class="nav-item dropdown" id="makers-zone-dropdown">
-            <a class="nav-link dropdown-toggle fw-medium text-dark" href="#"
-               data-bs-toggle="dropdown">Maker's Zone</a>
-            <ul class="dropdown-menu shadow-sm border-0">
-              <li><a class="dropdown-item" href="projects.html">프로젝트</a></li>
-              <li><a class="dropdown-item" href="contests.html">콘테스트</a></li>
-              <li><a class="dropdown-item" href="community.html">커뮤니티</a></li>
-              <li><a class="dropdown-item" href="my-make.html">마이메이크</a></li>
-            </ul>
-          </li>
-        </ul>
+            <li class="nav-item dropdown" id="makers-zone-dropdown">
+              <a class="nav-link dropdown-toggle fw-medium text-dark" href="#" data-bs-toggle="dropdown">Maker's
+                Zone</a>
+              <ul class="dropdown-menu shadow-sm border-0">
+                <li><a class="dropdown-item" href="projects.html">프로젝트</a></li>
+                <li><a class="dropdown-item" href="contests.html">콘테스트</a></li>
+                <li><a class="dropdown-item" href="community.html">커뮤니티</a></li>
+                <li><a class="dropdown-item" href="my-make.html">마이메이크</a></li>
+              </ul>
+            </li>
+          </ul>
 
-        <!-- Right Actions -->
-        <div class="d-flex align-items-center gap-2 ms-lg-2">
-          <button class="btn btn-light btn-sm p-2 rounded-3" id="header-search-btn" title="검색">
-            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
-                 fill="none" stroke="currentColor" stroke-width="2"
-                 stroke-linecap="round" stroke-linejoin="round">
-              <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
-            </svg>
-          </button>
-          <button class="btn btn-light btn-sm p-2 rounded-3" id="header-user-btn" title="프로필">
-            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
-                 fill="none" stroke="currentColor" stroke-width="2"
-                 stroke-linecap="round" stroke-linejoin="round">
-              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
-              <circle cx="12" cy="7" r="4"/>
-            </svg>
-          </button>
-        </div>
+          <!-- Right Actions -->
+          <div class="d-flex align-items-center gap-2 ms-lg-2">
+            <button class="btn btn-light btn-sm p-2 rounded-3" id="header-search-btn" title="검색">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="11" cy="11" r="8" />
+                <line x1="21" y1="21" x2="16.65" y2="16.65" />
+              </svg>
+            </button>
+            <button class="btn btn-light btn-sm p-2 rounded-3" id="header-user-btn" title="프로필">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+                <circle cx="12" cy="7" r="4" />
+              </svg>
+            </button>
+          </div>
 
-      </div><!-- /collapse -->
-    </nav>
-  </div>
-
-  <!-- Search Bar (hidden by default) -->
-  <div id="header-search-bar" class="border-top bg-light d-none">
-    <div class="container-xl py-2">
-      <form class="d-flex gap-2" id="header-search-form">
-        <input type="search" class="form-control form-control-sm"
-               placeholder="검색어를 입력하세요..." id="header-search-input">
-        <button type="submit" class="btn btn-primary btn-sm px-3">검색</button>
-        <button type="button" class="btn btn-light btn-sm" id="header-search-close">닫기</button>
-      </form>
+        </div><!-- /collapse -->
+      </nav>
     </div>
-  </div>
 
-</header>
+    <!-- Search Bar (hidden by default) -->
+    <div id="header-search-bar" class="border-top bg-light d-none">
+      <div class="container-xl py-2">
+        <form class="d-flex gap-2" id="header-search-form">
+          <input type="search" class="form-control form-control-sm" placeholder="검색어를 입력하세요..."
+            id="header-search-input">
+          <button type="submit" class="btn btn-primary btn-sm px-3">검색</button>
+          <button type="button" class="btn btn-light btn-sm" id="header-search-close">닫기</button>
+        </form>
+      </div>
+    </div>
+
+  </header>
 
   <main>
     <!-- ── Hero ── -->
     <section class="hero-gradient text-white py-5">
       <div class="container-xl">
-        <div class="d-flex flex-column flex-md-row align-items-start align-items-md-center justify-content-between gap-4">
+        <div
+          class="d-flex flex-column flex-md-row align-items-start align-items-md-center justify-content-between gap-4">
           <div class="d-flex align-items-center gap-4">
             <div class="avatar-xl bg-white text-primary">김</div>
             <div>
@@ -149,7 +151,8 @@
               <div class="d-flex flex-wrap gap-3 small">
                 <span>📄 프로젝트 12개</span>
                 <span>👥 팔로워 1,234명</span>
-                <button class="btn btn-link text-white p-0 small text-decoration-none" id="hero-following-btn">👤 팔로잉 2명</button>
+                <button class="btn btn-link text-white p-0 small text-decoration-none" id="hero-following-btn">👤 팔로잉
+                  2명</button>
                 <span>❤️ 총 좋아요 5,678</span>
               </div>
             </div>
@@ -254,14 +257,16 @@
 
             <!-- Community Filter Tabs -->
             <div class="d-flex flex-wrap gap-2 mb-4" id="comm-tabs">
-              <button class="filter-tab active-purple active" data-ctab="all">전체 <span class="opacity-75">(4)</span></button>
+              <button class="filter-tab active-purple active" data-ctab="all">전체 <span
+                  class="opacity-75">(4)</span></button>
               <button class="filter-tab" data-ctab="question">질문 <span class="opacity-75">(1)</span></button>
               <button class="filter-tab" data-ctab="progress">진행공유 <span class="opacity-75">(1)</span></button>
               <button class="filter-tab" data-ctab="teammate">팀원찾기 <span class="opacity-75">(1)</span></button>
               <button class="filter-tab" data-ctab="resource">자료공유 <span class="opacity-75">(1)</span></button>
               <button class="filter-tab position-relative" data-ctab="applied">
                 팀원 신청 <span class="opacity-75">(2)</span>
-                <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger fs-65">2</span>
+                <span
+                  class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger fs-65">2</span>
               </button>
             </div>
 
@@ -280,15 +285,18 @@
             </div>
 
             <div class="d-flex gap-2 mb-4">
-              <button class="like-tab-btn active" id="tab-liked-btn">❤️ 좋아요 <span class="badge bg-danger ms-1">2</span></button>
-              <button class="save-tab-btn" id="tab-saved-btn">🔖 저장 <span class="badge bg-warning text-dark ms-1">0</span></button>
+              <button class="like-tab-btn active" id="tab-liked-btn">❤️ 좋아요 <span
+                  class="badge bg-danger ms-1">2</span></button>
+              <button class="save-tab-btn" id="tab-saved-btn">🔖 저장 <span
+                  class="badge bg-warning text-dark ms-1">0</span></button>
             </div>
 
             <div id="liked-content">
               <div class="row g-3">
                 <div class="col-sm-6">
                   <div class="card border-0 shadow-sm cursor-pointer" onclick="window.location='project-detail.html'">
-                    <img src="https://images.unsplash.com/photo-1581092333203-42374bcf7d89?w=400" class="card-img-top thumb-100h" alt="">
+                    <img src="https://images.unsplash.com/photo-1581092333203-42374bcf7d89?w=400"
+                      class="card-img-top thumb-100h" alt="">
                     <div class="card-body p-3">
                       <p class="fw-bold small mb-1">오픈소스 자율주행 로봇</p>
                       <div class="d-flex justify-content-between align-items-center">
@@ -300,7 +308,8 @@
                 </div>
                 <div class="col-sm-6">
                   <div class="card border-0 shadow-sm cursor-pointer" onclick="window.location='project-detail.html'">
-                    <img src="https://images.unsplash.com/photo-1758525747606-bd5d801ca87b?w=400" class="card-img-top thumb-100h" alt="">
+                    <img src="https://images.unsplash.com/photo-1758525747606-bd5d801ca87b?w=400"
+                      class="card-img-top thumb-100h" alt="">
                     <div class="card-body p-3">
                       <p class="fw-bold small mb-1">AI 음성인식 스마트 미러</p>
                       <div class="d-flex justify-content-between align-items-center">
@@ -354,13 +363,16 @@
             <!-- 새 반응 알림 -->
             <div class="card border-0 shadow-sm rounded-4 p-4" id="reactions-section">
               <div class="d-flex align-items-center justify-content-between mb-3">
-                <h6 class="fw-bold mb-0">새 반응 <span class="badge bg-danger-subtle text-danger ms-1" id="reaction-badge">2개</span></h6>
+                <h6 class="fw-bold mb-0">새 반응 <span class="badge bg-danger-subtle text-danger ms-1"
+                    id="reaction-badge">2개</span></h6>
                 <button class="btn btn-link btn-sm text-primary p-0 small" id="mark-all-reactions">모두 확인</button>
               </div>
               <div id="reaction-list">
                 <div class="reaction-card mb-2" id="react-1">
                   <div class="d-flex gap-2 mb-2">
-                    <div class="rounded-2 d-flex align-items-center justify-content-center flex-shrink-0 icon-box-32-blue">💬</div>
+                    <div
+                      class="rounded-2 d-flex align-items-center justify-content-center flex-shrink-0 icon-box-32-blue">
+                      💬</div>
                     <div class="flex-grow-1 min-w-0">
                       <p class="fw-semibold small mb-0">내 질문에 새 답변이 달렸습니다</p>
                       <p class="small text-primary mb-1 fs-78">ESP32에서 MQTT 연결이 계속 끊기는데...</p>
@@ -372,13 +384,17 @@
                     </div>
                   </div>
                   <div class="d-flex gap-2 pt-2 border-top">
-                    <a href="community-detail.html?id=1" class="flex-grow-1 btn btn-link btn-sm text-primary p-0 text-start fs-80">💬 답변 보러가기</a>
-                    <button class="btn btn-primary btn-sm py-0 px-2 fs-xs" onclick="markReactionRead('react-1')">✓ 확인</button>
+                    <a href="community-detail.html?id=1"
+                      class="flex-grow-1 btn btn-link btn-sm text-primary p-0 text-start fs-80">💬 답변 보러가기</a>
+                    <button class="btn btn-primary btn-sm py-0 px-2 fs-xs" onclick="markReactionRead('react-1')">✓
+                      확인</button>
                   </div>
                 </div>
                 <div class="reaction-card" id="react-2">
                   <div class="d-flex gap-2 mb-2">
-                    <div class="rounded-2 d-flex align-items-center justify-content-center flex-shrink-0 icon-box-32-violet">💬</div>
+                    <div
+                      class="rounded-2 d-flex align-items-center justify-content-center flex-shrink-0 icon-box-32-violet">
+                      💬</div>
                     <div class="flex-grow-1 min-w-0">
                       <p class="fw-semibold small mb-0">내 진행공유에 새 댓글이 달렸습니다</p>
                       <p class="small text-primary mb-1 fs-78">Quest 2 완료! 음성 인식 모듈 통합 성공</p>
@@ -390,13 +406,17 @@
                     </div>
                   </div>
                   <div class="d-flex gap-2 pt-2 border-top">
-                    <a href="community-detail.html?id=4" class="flex-grow-1 btn btn-link btn-sm text-primary p-0 text-start fs-80">💬 답변 보러가기</a>
-                    <button class="btn btn-primary btn-sm py-0 px-2 fs-xs" onclick="markReactionRead('react-2')">✓ 확인</button>
+                    <a href="community-detail.html?id=4"
+                      class="flex-grow-1 btn btn-link btn-sm text-primary p-0 text-start fs-80">💬 답변 보러가기</a>
+                    <button class="btn btn-primary btn-sm py-0 px-2 fs-xs" onclick="markReactionRead('react-2')">✓
+                      확인</button>
                   </div>
                 </div>
               </div>
               <div id="reactions-empty" class="text-center py-4 d-none">
-                <div class="rounded-circle bg-success-subtle d-flex align-items-center justify-content-center mx-auto mb-2 icon-box-48-none">✅</div>
+                <div
+                  class="rounded-circle bg-success-subtle d-flex align-items-center justify-content-center mx-auto mb-2 icon-box-48-none">
+                  ✅</div>
                 <p class="fw-semibold small mb-1">모두 확인했습니다!</p>
                 <p class="text-muted fs-78">새로운 반응이 오면 여기에 표시됩니다</p>
               </div>
@@ -413,7 +433,9 @@
                 <!-- 이개발 -->
                 <div class="following-maker has-update">
                   <div class="d-flex align-items-center gap-2 p-3 pb-2">
-                    <div class="rounded-circle d-flex align-items-center justify-content-center text-white fw-bold flex-shrink-0 icon-box-36-grad-blue-purple">이</div>
+                    <div
+                      class="rounded-circle d-flex align-items-center justify-content-center text-white fw-bold flex-shrink-0 icon-box-36-grad-blue-purple">
+                      이</div>
                     <div class="flex-grow-1 min-w-0">
                       <div class="d-flex align-items-center gap-1">
                         <a href="maker-profile.html" class="fw-semibold small text-dark text-decoration-none">이개발</a>
@@ -423,21 +445,29 @@
                     </div>
                     <div class="d-flex align-items-center gap-1">
                       <a href="maker-profile.html" class="btn btn-link btn-sm p-0 text-primary fs-xs">🔗</a>
-                      <button class="btn btn-link btn-sm p-0 text-muted unfollow-btn" data-name="이개발" class="fs-78">언팔</button>
+                      <button class="btn btn-link btn-sm p-0 text-muted unfollow-btn fs-78" data-name="이개발">언팔</button>
                     </div>
                   </div>
                   <div class="px-3 pb-3 d-flex flex-column gap-1">
                     <div class="d-flex gap-2 p-2 rounded-2 bg-white border border-blue-100-cursor">
-                      <div class="rounded-2 d-flex align-items-center justify-content-center flex-shrink-0 icon-box-24-blue">🚀</div>
+                      <div
+                        class="rounded-2 d-flex align-items-center justify-content-center flex-shrink-0 icon-box-24-blue">
+                        🚀</div>
                       <div class="min-w-0">
-                        <p class="small mb-0 fw-medium"><span class="d-inline-block rounded-circle bg-danger me-1 icon-dot-sm"></span>YOLOv8 실시간 객체 감지 Quest 완료</p>
+                        <p class="small mb-0 fw-medium"><span
+                            class="d-inline-block rounded-circle bg-danger me-1 icon-dot-sm"></span>YOLOv8 실시간 객체 감지
+                          Quest 완료</p>
                         <small class="text-muted">오픈소스 비전 시스템 · 30분 전</small>
                       </div>
                     </div>
                     <div class="d-flex gap-2 p-2 rounded-2 bg-white border border-blue-100-cursor">
-                      <div class="rounded-2 d-flex align-items-center justify-content-center flex-shrink-0 icon-box-24-violet">💬</div>
+                      <div
+                        class="rounded-2 d-flex align-items-center justify-content-center flex-shrink-0 icon-box-24-violet">
+                        💬</div>
                       <div class="min-w-0">
-                        <p class="small mb-0 fw-medium"><span class="d-inline-block rounded-circle bg-danger me-1 icon-dot-sm"></span>TensorFlow Lite 모델 경량화 질문</p>
+                        <p class="small mb-0 fw-medium"><span
+                            class="d-inline-block rounded-circle bg-danger me-1 icon-dot-sm"></span>TensorFlow Lite 모델
+                          경량화 질문</p>
                         <small class="text-muted">ML 최적화 · 2시간 전</small>
                       </div>
                     </div>
@@ -447,7 +477,9 @@
                 <!-- 박엔지니어 -->
                 <div class="following-maker has-update">
                   <div class="d-flex align-items-center gap-2 p-3 pb-2">
-                    <div class="rounded-circle d-flex align-items-center justify-content-center text-dark fw-bold flex-shrink-0 icon-box-36-grad-amber">박</div>
+                    <div
+                      class="rounded-circle d-flex align-items-center justify-content-center text-dark fw-bold flex-shrink-0 icon-box-36-grad-amber">
+                      박</div>
                     <div class="flex-grow-1 min-w-0">
                       <div class="d-flex align-items-center gap-1">
                         <a href="maker-profile.html" class="fw-semibold small text-dark text-decoration-none">박엔지니어</a>
@@ -457,14 +489,19 @@
                     </div>
                     <div class="d-flex align-items-center gap-1">
                       <a href="maker-profile.html" class="btn btn-link btn-sm p-0 text-primary fs-xs">🔗</a>
-                      <button class="btn btn-link btn-sm p-0 text-muted unfollow-btn" data-name="박엔지니어" class="fs-78">언팔</button>
+                      <button class="btn btn-link btn-sm p-0 text-muted unfollow-btn fs-78"
+                        data-name="박엔지니어">언팔</button>
                     </div>
                   </div>
                   <div class="px-3 pb-3 d-flex flex-column gap-1">
                     <div class="d-flex gap-2 p-2 rounded-2 bg-white border border-blue-100-cursor">
-                      <div class="rounded-2 d-flex align-items-center justify-content-center flex-shrink-0 icon-box-24-amber">🏆</div>
+                      <div
+                        class="rounded-2 d-flex align-items-center justify-content-center flex-shrink-0 icon-box-24-amber">
+                        🏆</div>
                       <div class="min-w-0">
-                        <p class="small mb-0 fw-medium"><span class="d-inline-block rounded-circle bg-danger me-1 icon-dot-sm"></span>STM32 모터 제어 프로젝트 수상</p>
+                        <p class="small mb-0 fw-medium"><span
+                            class="d-inline-block rounded-circle bg-danger me-1 icon-dot-sm"></span>STM32 모터 제어 프로젝트 수상
+                        </p>
                         <small class="text-muted">임베디드 챌린지 · 1일 전</small>
                       </div>
                     </div>
@@ -478,10 +515,14 @@
             <!-- 이번 주 활동 -->
             <div class="card border-0 shadow-sm rounded-4 p-4">
               <h6 class="fw-bold mb-3">이번 주 활동</h6>
-              <div class="week-stat"><span class="small text-secondary">🚀 진행 중 프로젝트</span><span class="fw-semibold text-primary small">2개</span></div>
-              <div class="week-stat"><span class="small text-secondary">💬 작성한 질문</span><span class="fw-semibold small">3개</span></div>
-              <div class="week-stat"><span class="small text-secondary">💬 받은 답변</span><span class="fw-semibold text-success small">8개</span></div>
-              <div class="week-stat"><span class="small text-secondary">👤 받은 참여 요청</span><span class="fw-semibold text-warning-emphasis small">5개</span></div>
+              <div class="week-stat"><span class="small text-secondary">🚀 진행 중 프로젝트</span><span
+                  class="fw-semibold text-primary small">2개</span></div>
+              <div class="week-stat"><span class="small text-secondary">💬 작성한 질문</span><span
+                  class="fw-semibold small">3개</span></div>
+              <div class="week-stat"><span class="small text-secondary">💬 받은 답변</span><span
+                  class="fw-semibold text-success small">8개</span></div>
+              <div class="week-stat"><span class="small text-secondary">👤 받은 참여 요청</span><span
+                  class="fw-semibold text-warning-emphasis small">5개</span></div>
             </div>
 
           </div>
@@ -493,7 +534,7 @@
 
   <!-- ══ Profile Edit Panel ══ -->
   <div class="cpanel-backdrop" id="profileEditBackdrop" onclick="hideProfileEdit()"></div>
-  <div class="cpanel" id="profileEditOffcanvas" class="cpanel-480">
+  <div class="cpanel cpanel-480" id="profileEditOffcanvas">
     <div class="border-bottom flex-column align-items-start pb-0 pt-3 px-4 d-flex flex-column">
       <div class="d-flex align-items-center justify-content-between w-100 mb-3">
         <div>
@@ -504,10 +545,12 @@
       </div>
       <!-- Section Tabs -->
       <div class="d-flex gap-1 w-100 bg-light rounded-3 p-1 mb-0">
-        <button class="flex-fill btn btn-sm rounded-2 fw-medium profile-sec-tab active" data-sec="basic" class="fs-80">👤 기본 정보</button>
-        <button class="flex-fill btn btn-sm rounded-2 fw-medium profile-sec-tab" data-sec="skills" class="fs-80">💡 기술</button>
-        <button class="flex-fill btn btn-sm rounded-2 fw-medium profile-sec-tab" data-sec="links" class="fs-80">🔗 링크</button>
-        <button class="flex-fill btn btn-sm rounded-2 fw-medium profile-sec-tab" data-sec="settings" class="fs-80">⚙️ 공개</button>
+        <button class="flex-fill btn btn-sm rounded-2 fw-medium profile-sec-tab active fs-80" data-sec="basic">👤 기본
+          정보</button>
+        <button class="flex-fill btn btn-sm rounded-2 fw-medium profile-sec-tab fs-80" data-sec="skills">💡 기술</button>
+        <button class="flex-fill btn btn-sm rounded-2 fw-medium profile-sec-tab fs-80" data-sec="links">🔗 링크</button>
+        <button class="flex-fill btn btn-sm rounded-2 fw-medium profile-sec-tab fs-80" data-sec="settings">⚙️
+          공개</button>
       </div>
     </div>
 
@@ -517,8 +560,11 @@
       <div id="sec-basic">
         <div class="text-center mb-4">
           <div class="position-relative d-inline-block">
-            <div class="rounded-circle bg-primary text-white d-flex align-items-center justify-content-center fw-bold mx-auto icon-circle-80">김</div>
-            <button class="btn btn-primary rounded-circle p-1 position-absolute icon-circle-28-btn" title="사진 변경">📷</button>
+            <div
+              class="rounded-circle bg-primary text-white d-flex align-items-center justify-content-center fw-bold mx-auto icon-circle-80">
+              김</div>
+            <button class="btn btn-primary rounded-circle p-1 position-absolute icon-circle-28-btn"
+              title="사진 변경">📷</button>
           </div>
           <p class="small text-muted mt-2 mb-0">프로필 사진 변경 · JPG, PNG 최대 5MB</p>
         </div>
@@ -537,12 +583,14 @@
         </div>
         <div class="mb-3">
           <label class="form-label fw-semibold small">한 줄 소개</label>
-          <input type="text" class="form-control form-control-sm" id="p-tagline" value="로봇공학과 AI를 좋아하는 메이커입니다" maxlength="80">
+          <input type="text" class="form-control form-control-sm" id="p-tagline" value="로봇공학과 AI를 좋아하는 메이커입니다"
+            maxlength="80">
           <div class="text-end small text-muted mt-1" id="tagline-count">27/80</div>
         </div>
         <div class="mb-3">
           <label class="form-label fw-semibold small">상세 소개</label>
-          <textarea class="form-control form-control-sm" rows="4" id="p-bio" maxlength="500">ESP32, Arduino, Raspberry Pi를 활용한 IoT 프로젝트와 로봇 제작을 즐깁니다. 오픈소스 커뮤니티에 기여하고 지식을 나누는 것을 좋아합니다.</textarea>
+          <textarea class="form-control form-control-sm" rows="4" id="p-bio"
+            maxlength="500">ESP32, Arduino, Raspberry Pi를 활용한 IoT 프로젝트와 로봇 제작을 즐깁니다. 오픈소스 커뮤니티에 기여하고 지식을 나누는 것을 좋아합니다.</textarea>
           <div class="text-end small text-muted mt-1" id="bio-count">91/500</div>
         </div>
         <div class="row g-3 mb-3">
@@ -586,7 +634,7 @@
         <div class="mb-4">
           <label class="form-label fw-semibold small">💻 기술 스택</label>
           <p class="text-muted small mb-2">사용할 수 있는 기술, 도구, 언어를 추가하세요</p>
-          <div class="d-flex flex-wrap gap-2 p-3 bg-light rounded-3 border mb-2" id="skill-area" class="min-h-48"></div>
+          <div class="d-flex flex-wrap gap-2 p-3 bg-light rounded-3 border mb-2 min-h-48" id="skill-area"></div>
           <div class="input-group input-group-sm mb-2">
             <input type="text" class="form-control" id="skill-input" placeholder="기술 입력 후 Enter">
             <button class="btn btn-primary" id="skill-add-btn">+ 추가</button>
@@ -597,10 +645,11 @@
         <div>
           <label class="form-label fw-semibold small">🏷 관심 분야</label>
           <p class="text-muted small mb-2">콘테스트 &amp; 프로젝트 추천에 활용됩니다</p>
-          <div class="d-flex flex-wrap gap-2 p-3 bg-light rounded-3 border mb-2" id="interest-area" class="min-h-48"></div>
+          <div class="d-flex flex-wrap gap-2 p-3 bg-light rounded-3 border mb-2 min-h-48" id="interest-area"></div>
           <div class="input-group input-group-sm mb-2">
             <input type="text" class="form-control" id="interest-input" placeholder="관심 분야 입력 후 Enter">
-            <button class="btn btn-purple btn-sm" id="interest-add-btn" class="bg-gradient-blue-purple text-white border-0">+ 추가</button>
+            <button class="btn btn-purple btn-sm bg-gradient-blue-purple text-white border-0" id="interest-add-btn">+
+              추가</button>
           </div>
           <div class="small text-muted mb-1">추천 관심사</div>
           <div class="d-flex flex-wrap gap-1" id="interest-suggestions"></div>
@@ -611,12 +660,21 @@
       <div id="sec-links" class="d-none">
         <p class="text-muted small mb-3">외부 프로필과 포트폴리오 링크를 연결하세요</p>
         <div class="d-flex flex-column gap-3">
-          <div><label class="form-label fw-semibold small">🐙 GitHub</label><input type="url" class="form-control form-control-sm" value="https://github.com/kimmaker92" placeholder="https://github.com/username"></div>
-          <div><label class="form-label fw-semibold small">💼 LinkedIn</label><input type="url" class="form-control form-control-sm" value="https://linkedin.com/in/kimmaker92" placeholder="https://linkedin.com/in/username"></div>
-          <div><label class="form-label fw-semibold small">🌐 개인 웹사이트 / 포트폴리오</label><input type="url" class="form-control form-control-sm" value="https://kimmaker.dev" placeholder="https://myportfolio.com"></div>
-          <div><label class="form-label fw-semibold small">🐦 Twitter / X</label><input type="url" class="form-control form-control-sm" placeholder="https://twitter.com/username"></div>
-          <div><label class="form-label fw-semibold small">📷 Instagram</label><input type="url" class="form-control form-control-sm" placeholder="https://instagram.com/username"></div>
-          <div><label class="form-label fw-semibold small">▶️ YouTube</label><input type="url" class="form-control form-control-sm" placeholder="https://youtube.com/@channel"></div>
+          <div><label class="form-label fw-semibold small">🐙 GitHub</label><input type="url"
+              class="form-control form-control-sm" value="https://github.com/kimmaker92"
+              placeholder="https://github.com/username"></div>
+          <div><label class="form-label fw-semibold small">💼 LinkedIn</label><input type="url"
+              class="form-control form-control-sm" value="https://linkedin.com/in/kimmaker92"
+              placeholder="https://linkedin.com/in/username"></div>
+          <div><label class="form-label fw-semibold small">🌐 개인 웹사이트 / 포트폴리오</label><input type="url"
+              class="form-control form-control-sm" value="https://kimmaker.dev" placeholder="https://myportfolio.com">
+          </div>
+          <div><label class="form-label fw-semibold small">🐦 Twitter / X</label><input type="url"
+              class="form-control form-control-sm" placeholder="https://twitter.com/username"></div>
+          <div><label class="form-label fw-semibold small">📷 Instagram</label><input type="url"
+              class="form-control form-control-sm" placeholder="https://instagram.com/username"></div>
+          <div><label class="form-label fw-semibold small">▶️ YouTube</label><input type="url"
+              class="form-control form-control-sm" placeholder="https://youtube.com/@channel"></div>
         </div>
       </div>
 
@@ -644,7 +702,7 @@
 
   <!-- ══ Community Quick Action Panel ══ -->
   <div class="cpanel-backdrop" id="quickActionBackdrop" onclick="hideQuickAction()"></div>
-  <div class="cpanel" id="quickActionOffcanvas" class="content-w">
+  <div class="cpanel content-w" id="quickActionOffcanvas">
     <div class="border-bottom px-4 py-3 bg-white d-flex align-items-center justify-content-between flex-shrink-0">
       <div>
         <h5 class="fw-bold mb-0" id="qa-title">질문하기</h5>
@@ -652,7 +710,7 @@
       </div>
       <button type="button" class="btn-close ms-auto" onclick="hideQuickAction()"></button>
     </div>
-    <div class="cpanel-body" id="qa-body" class="pb-content">
+    <div class="cpanel-body pb-content" id="qa-body">
       <!-- dynamic content -->
     </div>
     <div class="border-top p-3 bg-white d-flex gap-2 flex-shrink-0">
@@ -663,713 +721,716 @@
   </div>
 
   <!-- ===== PLATFORM FOOTER ===== -->
-<footer id="platform-footer">
+  <footer id="platform-footer">
 
-  <!-- Sponsor Logos -->
-  <div class="bg-light border-top border-bottom py-4">
-    <div class="container-xl">
-      <p class="text-center text-muted small mb-3">Sponsored Company</p>
-      <div class="d-flex flex-wrap align-items-center justify-content-center gap-4">
-        <span class="fw-medium text-secondary small">CREAFORM</span>
-        <span class="fw-medium text-secondary small">Infineon</span>
-        <span class="fw-bold text-dark small">KETI</span>
-        <span class="fw-medium text-secondary small">KEYSIGHT</span>
-        <span class="fw-medium text-secondary small">Microchip</span>
-        <span class="fw-medium text-primary small">mouser.com</span>
-        <span class="fw-medium text-secondary small">NATIONAL INSTRUMENTS</span>
-        <span class="fw-bold text-white bg-danger px-2 py-1 rounded small">ROHM</span>
-        <span class="fw-medium text-secondary small">ST</span>
-        <span class="fw-medium text-dark small">Tektronix</span>
-      </div>
-    </div>
-  </div>
-
-  <!-- Company Info -->
-  <div class="bg-black text-secondary py-5">
-    <div class="container-xl">
-
-      <!-- Links Row -->
-      <div class="d-flex flex-column flex-lg-row align-items-start align-items-lg-center
-                  justify-content-between gap-3 mb-4">
-        <div class="d-flex flex-wrap align-items-center gap-2 small">
-          <a href="support.html"  class="footer-link text-secondary text-decoration-none">e4ds 소개</a>
-          <span class="text-muted">|</span>
-          <a href="notices.html"  class="footer-link text-secondary text-decoration-none">개인정보처리방침</a>
-          <span class="text-muted">|</span>
-          <a href="faq.html"      class="footer-link text-secondary text-decoration-none">이용약관</a>
-          <span class="text-muted">|</span>
-          <a href="contact.html"  class="footer-link text-secondary text-decoration-none">청소년보호정책</a>
-          <span class="text-muted">|</span>
-          <a href="careers.html"  class="footer-link text-secondary text-decoration-none">가족사이트</a>
-          <span class="text-muted">|</span>
-          <a href="#"             class="footer-link text-secondary text-decoration-none">저작권</a>
-          <span class="text-muted">|</span>
-          <a href="#"             class="footer-link text-secondary text-decoration-none">e4ds인터내셔널</a>
+    <!-- Sponsor Logos -->
+    <div class="bg-light border-top border-bottom py-4">
+      <div class="container-xl">
+        <p class="text-center text-muted small mb-3">Sponsored Company</p>
+        <div class="d-flex flex-wrap align-items-center justify-content-center gap-4">
+          <span class="fw-medium text-secondary small">CREAFORM</span>
+          <span class="fw-medium text-secondary small">Infineon</span>
+          <span class="fw-bold text-dark small">KETI</span>
+          <span class="fw-medium text-secondary small">KEYSIGHT</span>
+          <span class="fw-medium text-secondary small">Microchip</span>
+          <span class="fw-medium text-primary small">mouser.com</span>
+          <span class="fw-medium text-secondary small">NATIONAL INSTRUMENTS</span>
+          <span class="fw-bold text-white bg-danger px-2 py-1 rounded small">ROHM</span>
+          <span class="fw-medium text-secondary small">ST</span>
+          <span class="fw-medium text-dark small">Tektronix</span>
         </div>
       </div>
-
-      <!-- Company Details -->
-      <div class="small text-muted lh-lg">
-        <p class="mb-1">(주)디지털데일리 | 등록번호 : 경기 아51470 | 등록: 2008.10.20 | 발행: 2026.05.19 | 표: 김제호</p>
-        <p class="mb-1">주소 : 경기도 성남시 분당구 대왕판교로 660번길 8 | 전화 : 02-883-9797 | 팩스 : 02-6280-9957</p>
-        <p class="mb-1 text-secondary footer-copyright">
-          본 콘텐츠의 저작권은 (주)디지털데일리에 있으며 무단 전재 및 재배포를 금지합니다.
-        </p>
-        <p class="mt-3 mb-0">Copyright &copy; 2026 e4ds News. All Rights Reserved</p>
-      </div>
-
     </div>
-  </div>
 
-</footer>
+    <!-- Company Info -->
+    <div class="bg-black text-secondary py-5">
+      <div class="container-xl">
 
-  <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+        <!-- Links Row -->
+        <div class="d-flex flex-column flex-lg-row align-items-start align-items-lg-center
+                  justify-content-between gap-3 mb-4">
+          <div class="d-flex flex-wrap align-items-center gap-2 small">
+            <a href="support.html" class="footer-link text-secondary text-decoration-none">e4ds 소개</a>
+            <span class="text-muted">|</span>
+            <a href="notices.html" class="footer-link text-secondary text-decoration-none">개인정보처리방침</a>
+            <span class="text-muted">|</span>
+            <a href="faq.html" class="footer-link text-secondary text-decoration-none">이용약관</a>
+            <span class="text-muted">|</span>
+            <a href="contact.html" class="footer-link text-secondary text-decoration-none">청소년보호정책</a>
+            <span class="text-muted">|</span>
+            <a href="careers.html" class="footer-link text-secondary text-decoration-none">가족사이트</a>
+            <span class="text-muted">|</span>
+            <a href="#" class="footer-link text-secondary text-decoration-none">저작권</a>
+            <span class="text-muted">|</span>
+            <a href="#" class="footer-link text-secondary text-decoration-none">e4ds인터내셔널</a>
+          </div>
+        </div>
+
+        <!-- Company Details -->
+        <div class="small text-muted lh-lg">
+          <p class="mb-1">(주)디지털데일리 | 등록번호 : 경기 아51470 | 등록: 2008.10.20 | 발행: 2026.05.19 | 표: 김제호</p>
+          <p class="mb-1">주소 : 경기도 성남시 분당구 대왕판교로 660번길 8 | 전화 : 02-883-9797 | 팩스 : 02-6280-9957</p>
+          <p class="mb-1 text-secondary footer-copyright">
+            본 콘텐츠의 저작권은 (주)디지털데일리에 있으며 무단 전재 및 재배포를 금지합니다.
+          </p>
+          <p class="mt-3 mb-0">Copyright &copy; 2026 e4ds News. All Rights Reserved</p>
+        </div>
+
+      </div>
+    </div>
+
+  </footer>
+
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+    integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
   <script src="assets/js/main.js"></script>
   <script>
-  /* ── Data ─────────────────────────────────────────────────── */
-  var myProjects = [
-    { id:1, title:'AI 음성인식 자율주행 로봇', type:'contest', status:'completed', contestName:'AI 로봇 챌린지 2026', questProgress:3, totalQuests:3, likes:567, views:8930, comments:142, modified:'2일 전', img:'https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=600' },
-    { id:2, title:'오픈소스 자율주행 로봇',   type:'contest', status:'inprogress', contestName:'AI 로봇 챌린지 2026', questProgress:2, totalQuests:3, nextQuest:3, likes:432, views:5420,  comments:89,  modified:'5시간 전', img:'https://images.unsplash.com/photo-1581092333203-42374bcf7d89?w=600' },
-    { id:3, title:'ESP32 기반 스마트 화분',   type:'personal', status:'completed', questProgress:3, totalQuests:3, likes:289, views:3210, comments:54, modified:'1주 전', img:'https://images.unsplash.com/photo-1753039495488-434a2fe53e41?w=600' },
-    { id:4, title:'3D 프린터 자동 레벨링',    type:'personal', status:'inprogress', questProgress:1, totalQuests:3, nextQuest:2, likes:267, views:2890, comments:41, modified:'3일 전', img:'https://images.unsplash.com/photo-1703221561813-cdaa308cf9e7?w=600' },
-  ];
+    /* ── Data ─────────────────────────────────────────────────── */
+    var myProjects = [
+      { id: 1, title: 'AI 음성인식 자율주행 로봇', type: 'contest', status: 'completed', contestName: 'AI 로봇 챌린지 2026', questProgress: 3, totalQuests: 3, likes: 567, views: 8930, comments: 142, modified: '2일 전', img: 'https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=600' },
+      { id: 2, title: '오픈소스 자율주행 로봇', type: 'contest', status: 'inprogress', contestName: 'AI 로봇 챌린지 2026', questProgress: 2, totalQuests: 3, nextQuest: 3, likes: 432, views: 5420, comments: 89, modified: '5시간 전', img: 'https://images.unsplash.com/photo-1581092333203-42374bcf7d89?w=600' },
+      { id: 3, title: 'ESP32 기반 스마트 화분', type: 'personal', status: 'completed', questProgress: 3, totalQuests: 3, likes: 289, views: 3210, comments: 54, modified: '1주 전', img: 'https://images.unsplash.com/photo-1753039495488-434a2fe53e41?w=600' },
+      { id: 4, title: '3D 프린터 자동 레벨링', type: 'personal', status: 'inprogress', questProgress: 1, totalQuests: 3, nextQuest: 2, likes: 267, views: 2890, comments: 41, modified: '3일 전', img: 'https://images.unsplash.com/photo-1703221561813-cdaa308cf9e7?w=600' },
+    ];
 
-  var myCommunity = [
-    { id:'1',  type:'question',  title:'ESP32에서 MQTT 연결이 계속 끊기는데 해결 방법 있나요?',    project:'IoT 스마트 화분 시스템', status:'open',      answers:8,  views:145, likes:23, time:'2시간 전',  hasNew:true,  newCount:2 },
-    { id:'4',  type:'progress',  title:'Quest 2 완료! 음성 인식 모듈 통합 성공 🎉',               project:'AI 음성인식 스마트 미러',status:'completed', likes:56,   comments:18, time:'5시간 전', hasNew:true,  newCount:3 },
-    { id:'7',  type:'teammate',  title:'드론 자율비행 프로젝트 - 하드웨어 엔지니어 구합니다',       project:'AI 기반 농업용 드론',   status:'recruiting', deadline:'D-15', applicants:5, time:'1일 전', hasNew:true, newCount:2 },
-    { id:'10', type:'resource',  title:'ESP32 개발 완벽 가이드 - 공식 문서부터 실전 예제까지',      project:'IoT 스마트 화분 시스템',status:'recommended',likes:89, comments:24, time:'3일 전', hasNew:false },
-  ];
+    var myCommunity = [
+      { id: '1', type: 'question', title: 'ESP32에서 MQTT 연결이 계속 끊기는데 해결 방법 있나요?', project: 'IoT 스마트 화분 시스템', status: 'open', answers: 8, views: 145, likes: 23, time: '2시간 전', hasNew: true, newCount: 2 },
+      { id: '4', type: 'progress', title: 'Quest 2 완료! 음성 인식 모듈 통합 성공 🎉', project: 'AI 음성인식 스마트 미러', status: 'completed', likes: 56, comments: 18, time: '5시간 전', hasNew: true, newCount: 3 },
+      { id: '7', type: 'teammate', title: '드론 자율비행 프로젝트 - 하드웨어 엔지니어 구합니다', project: 'AI 기반 농업용 드론', status: 'recruiting', deadline: 'D-15', applicants: 5, time: '1일 전', hasNew: true, newCount: 2 },
+      { id: '10', type: 'resource', title: 'ESP32 개발 완벽 가이드 - 공식 문서부터 실전 예제까지', project: 'IoT 스마트 화분 시스템', status: 'recommended', likes: 89, comments: 24, time: '3일 전', hasNew: false },
+    ];
 
-  var myApplications = [
-    { id:'a1', postTitle:'AI 드론팀 백엔드 개발자 모집', status:'accepted', recruiter:'이개발', roles:['백엔드','Python'], project:'AI 기반 농업용 드론', contest:'AI 로봇 챌린지 2026', applied:'2일 전', isRead:false },
-    { id:'a2', postTitle:'스마트홈 IoT 프론트엔드 개발', status:'pending',  recruiter:'박엔지니어', roles:['프론트엔드','React'], project:'스마트홈 콘트롤러', applied:'1주 전', isRead:false },
-  ];
+    var myApplications = [
+      { id: 'a1', postTitle: 'AI 드론팀 백엔드 개발자 모집', status: 'accepted', recruiter: '이개발', roles: ['백엔드', 'Python'], project: 'AI 기반 농업용 드론', contest: 'AI 로봇 챌린지 2026', applied: '2일 전', isRead: false },
+      { id: 'a2', postTitle: '스마트홈 IoT 프론트엔드 개발', status: 'pending', recruiter: '박엔지니어', roles: ['프론트엔드', 'React'], project: '스마트홈 콘트롤러', applied: '1주 전', isRead: false },
+    ];
 
-  var typeInfo = {
-    question: { label:'질문',    icon:'💬', color:'primary',  statusLabel:{ open:'미해결', solved:'해결됨' } },
-    progress: { label:'진행공유', icon:'🚀', color:'success',  statusLabel:{ completed:'완료' } },
-    teammate: { label:'팀원찾기', icon:'👥', color:'warning',  statusLabel:{ recruiting:'모집중' } },
-    resource: { label:'자료공유', icon:'📎', color:'info',     statusLabel:{ recommended:'추천' } },
-  };
+    var typeInfo = {
+      question: { label: '질문', icon: '💬', color: 'primary', statusLabel: { open: '미해결', solved: '해결됨' } },
+      progress: { label: '진행공유', icon: '🚀', color: 'success', statusLabel: { completed: '완료' } },
+      teammate: { label: '팀원찾기', icon: '👥', color: 'warning', statusLabel: { recruiting: '모집중' } },
+      resource: { label: '자료공유', icon: '📎', color: 'info', statusLabel: { recommended: '추천' } },
+    };
 
-  var currentProjTab = 'all';
-  var currentCommTab = 'all';
+    var currentProjTab = 'all';
+    var currentCommTab = 'all';
 
-  /* ── Project rendering ──────────────────────────────────── */
-  function renderProjects() {
-    var list = myProjects.filter(function(p) {
-      if(currentProjTab === 'inprogress') return p.status === 'inprogress';
-      if(currentProjTab === 'completed')  return p.status === 'completed';
-      if(currentProjTab === 'personal')   return p.type === 'personal';
-      if(currentProjTab === 'contest')    return p.type === 'contest';
-      return true;
+    /* ── Project rendering ──────────────────────────────────── */
+    function renderProjects() {
+      var list = myProjects.filter(function (p) {
+        if (currentProjTab === 'inprogress') return p.status === 'inprogress';
+        if (currentProjTab === 'completed') return p.status === 'completed';
+        if (currentProjTab === 'personal') return p.type === 'personal';
+        if (currentProjTab === 'contest') return p.type === 'contest';
+        return true;
+      });
+
+      if (!list.length) {
+        $('#my-project-grid').html('<div class="col-12 text-center text-muted py-5">해당하는 프로젝트가 없습니다.</div>');
+        return;
+      }
+
+      var html = list.map(function (p) {
+        var typeBadge = p.type === 'contest'
+          ? '<span class="badge text-white me-1 bg-purple">🏆 콘테스트</span>'
+          : '<span class="badge bg-primary-subtle text-primary me-1">개인</span>';
+        var statusBadge = p.status === 'completed'
+          ? '<span class="badge bg-success">✅ 완료</span>'
+          : '<span class="badge bg-warning text-dark">⏳ 진행중</span>';
+
+        var contestHtml = p.contestName
+          ? '<div class="d-flex align-items-center gap-2 p-2 rounded-2 mb-2" style="background:#f5f3ff;border:1px solid #ede9fe;"><span class="text-purple">🏆</span><a href="contest-detail.html" class="small fw-semibold text-decoration-none text-purple" onclick="event.stopPropagation()">' + p.contestName + '</a></div>'
+          : '';
+
+        var completedMsg = (p.questProgress === p.totalQuests && p.status === 'completed')
+          ? '<div class="d-flex align-items-center gap-2 p-2 rounded-2 mb-2" style="background:linear-gradient(90deg,#eff6ff,#f5f3ff);border:1px solid #bfdbfe;"><span>✅</span><span class="small fw-semibold">모든 Quest 완료! 플랫폼에 공개됨</span></div>'
+          : '';
+
+        var actionBtn = p.status === 'inprogress' && p.nextQuest
+          ? '<a href="quest' + p.nextQuest + '.html?projectId=' + p.id + '" class="quest-btn-primary text-decoration-none" onclick="event.stopPropagation()">🚀 Quest ' + p.nextQuest + ' 이어하기</a>'
+          : '<a href="project-detail.html?id=' + p.id + '" class="btn btn-primary btn-sm w-100" onclick="event.stopPropagation()">👁 프로젝트 보기</a>';
+
+        return '<div class="col-md-6">'
+          + '<div class="card border-0 shadow-sm my-make-project-card" onclick="window.location=\'project-detail.html?id=' + p.id + '\'">'
+          + '<div class="position-relative overflow-hidden" style="height:180px;">'
+          + '<img src="' + p.img + '" alt="" class="w-100 h-100 object-fit-cover">'
+          + '<div class="position-absolute top-0 start-0 m-2">' + typeBadge + statusBadge + '</div>'
+          + '<div class="position-absolute bottom-0 start-0 end-0" style="background:linear-gradient(transparent,rgba(0,0,0,.55));height:60px;"></div>'
+          + '</div>'
+          + '<div class="card-body">'
+          + contestHtml
+          + completedMsg
+          + '<h6 class="fw-bold mb-2">' + p.title + '</h6>'
+          + '<div class="d-flex justify-content-between text-muted small mb-3">'
+          + '<span>❤️ ' + p.likes + '</span><span>👁 ' + p.views + '</span><span>💬 ' + p.comments + '</span><span class="text-muted small">' + p.modified + '</span>'
+          + '</div>'
+          + '<div class="pt-2 border-top">' + actionBtn + '</div>'
+          + '</div></div></div>';
+      }).join('');
+
+      $('#my-project-grid').html(html);
+    }
+
+    /* ── Community activity rendering ──────────────────────── */
+    function renderCommunity() {
+      if (currentCommTab === 'applied') {
+        $('#comm-activity-list').addClass('d-none');
+        $('#applied-list').removeClass('d-none');
+        renderApplied();
+        return;
+      }
+      $('#comm-activity-list').removeClass('d-none');
+      $('#applied-list').addClass('d-none');
+
+      var list = currentCommTab === 'all' ? myCommunity : myCommunity.filter(function (a) { return a.type === currentCommTab; });
+
+      if (!list.length) {
+        $('#comm-activity-list').html('<div class="text-center text-muted py-5">해당하는 활동이 없습니다.</div>');
+        return;
+      }
+
+      var html = list.map(function (a) {
+        var t = typeInfo[a.type];
+        var newBadge = a.hasNew ? '<span class="badge bg-danger ms-1 fs-70">' + a.newCount + '개 새 알림</span>' : '';
+        var borderClass = a.hasNew ? 'has-new' : '';
+        return '<div class="card border-0 shadow-sm rounded-3 mb-2 activity-card-link ' + borderClass + ' cursor-pointer" onclick="window.location=\'community-detail.html?id=' + a.id + '\'">'
+          + '<div class="card-body p-3">'
+          + '<div class="d-flex gap-3 align-items-start">'
+          + '<div class="rounded-2 d-flex align-items-center justify-content-center flex-shrink-0 bg-' + t.color + '-subtle text-' + t.color + ' icon-box-40">' + t.icon + '</div>'
+          + '<div class="flex-grow-1 min-w-0">'
+          + '<div class="d-flex flex-wrap align-items-center gap-1 mb-1">'
+          + '<span class="badge bg-' + t.color + '-subtle text-' + t.color + ' small">' + t.label + '</span>' + newBadge
+          + '</div>'
+          + '<h6 class="fw-semibold small mb-1" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">' + a.title + '</h6>'
+          + '<div class="small text-muted d-flex gap-2">'
+          + '<a href="project-detail.html" class="text-primary fw-medium text-decoration-none small" onclick="event.stopPropagation()">' + a.project + '</a>'
+          + '<span>·</span><span>' + a.time + '</span>'
+          + '</div>'
+          + '</div></div></div></div>';
+      }).join('');
+
+      $('#comm-activity-list').html(html);
+    }
+
+    function renderApplied() {
+      var html = myApplications.map(function (app) {
+        var cfg = {
+          accepted: { label: '수락됨 🎉', bg: 'bg-success-subtle', border: 'border-success', badge: 'bg-success text-white', msg: '수락되었습니다! 모집자에게 연락하여 팀 합류를 진행하세요.' },
+          pending: { label: '검토중', bg: 'bg-warning-subtle', border: 'border-warning', badge: 'bg-warning text-dark', msg: '' },
+          rejected: { label: '아쉽게도 미선정', bg: 'bg-danger-subtle', border: 'border-danger', badge: 'bg-danger text-white', msg: '이번에는 아쉽게도 선정되지 않았습니다.' },
+        }[app.status];
+        var isNew = !app.isRead && app.status !== 'pending';
+        var newBadge = isNew ? '<span class="badge bg-danger ms-1 small animate__animated animate__pulse">NEW</span>' : '';
+        var roles = app.roles.map(function (r) { return '<span class="badge bg-light text-dark border me-1">' + r + '</span>'; }).join('');
+        var contest = app.contest ? '<span class="badge bg-primary-subtle text-primary me-1">🏆 ' + app.contest + '</span>' : '';
+        var msgHtml = cfg.msg ? '<div class="mt-2 pt-2 border-top small fw-medium ' + (app.status === 'accepted' ? 'text-success' : 'text-danger') + '">' + cfg.msg + '</div>' : '';
+        return '<div class="app-status-card p-3 mb-2 border ' + cfg.border + ' ' + cfg.bg + '">'
+          + '<div class="d-flex justify-content-between align-items-center mb-2">'
+          + '<div class="d-flex align-items-center gap-1"><span class="badge ' + cfg.badge + ' small">' + cfg.label + '</span>' + newBadge + '</div>'
+          + '<small class="text-muted">' + app.applied + ' 신청</small>'
+          + '</div>'
+          + '<a href="community-detail.html" class="d-block fw-semibold small text-dark text-decoration-none mb-2">' + app.postTitle + '<br><small class="text-primary small">모집 글 보기 →</small></a>'
+          + '<div class="mb-2">' + contest + '<span class="badge bg-info-subtle text-info me-1">' + app.project + '</span></div>'
+          + '<div class="d-flex align-items-center justify-content-between pt-2 border-top">'
+          + '<div class="d-flex align-items-center gap-1">'
+          + '<div class="rounded-circle bg-white border d-flex align-items-center justify-content-center fw-bold" style="width:20px;height:20px;font-size:.7rem;">' + app.recruiter[0] + '</div>'
+          + '<small class="text-muted">' + app.recruiter + '</small>'
+          + '</div>'
+          + '<div>' + roles + '</div>'
+          + '</div>'
+          + msgHtml
+          + '</div>';
+      }).join('');
+      $('#applied-list').html(html || '<div class="text-center py-5 text-muted small">신청한 팀원 모집이 없습니다.<br><a href="community.html" class="text-primary">커뮤니티에서 팀원 찾기 →</a></div>');
+    }
+
+    /* ── Reaction read ──────────────────────────────────────── */
+    var reactionsRead = 0;
+    window.markReactionRead = function (id) {
+      $('#' + id).fadeOut(250, function () { $(this).remove(); updateReactionBadge(); });
+    };
+    function updateReactionBadge() {
+      var remaining = $('#reaction-list .reaction-card').length;
+      if (remaining === 0) {
+        $('#reaction-list').addClass('d-none');
+        $('#reactions-empty').removeClass('d-none');
+        $('#reaction-badge').addClass('d-none');
+        $('#mark-all-reactions').addClass('d-none');
+      } else {
+        $('#reaction-badge').text(remaining + '개');
+      }
+    }
+    $('#mark-all-reactions').on('click', function () {
+      $('#reaction-list .reaction-card').each(function () { $(this).remove(); });
+      updateReactionBadge();
     });
 
-    if(!list.length) {
-      $('#my-project-grid').html('<div class="col-12 text-center text-muted py-5">해당하는 프로젝트가 없습니다.</div>');
-      return;
+    /* ── Unfollow ───────────────────────────────────────────── */
+    $(document).on('click', '.unfollow-btn', function () {
+      var name = $(this).data('name');
+      if (confirm(name + '님을 언팔로우 하시겠습니까?')) {
+        $(this).closest('.following-maker').fadeOut(300, function () { $(this).remove(); });
+      }
+    });
+
+    /* ── Like remove ────────────────────────────────────────── */
+    $(document).on('click', '.like-remove-btn', function (e) {
+      e.stopPropagation();
+      $(this).closest('.col-sm-6').fadeOut(200, function () { $(this).remove(); });
+    });
+
+    /* ── Tab switches ───────────────────────────────────────── */
+    $('#proj-tabs').on('click', '.filter-tab', function () {
+      $('#proj-tabs .filter-tab').removeClass('active');
+      $(this).addClass('active');
+      currentProjTab = $(this).data('ptab');
+      renderProjects();
+    });
+
+    $('#comm-tabs').on('click', '.filter-tab', function () {
+      $('#comm-tabs .filter-tab').removeClass('active');
+      $(this).addClass('active');
+      currentCommTab = $(this).data('ctab');
+      renderCommunity();
+    });
+
+    $('#tab-liked-btn').on('click', function () {
+      $(this).addClass('active'); $('#tab-saved-btn').removeClass('active');
+      $('#liked-content').removeClass('d-none'); $('#saved-content').addClass('d-none');
+    });
+    $('#tab-saved-btn').on('click', function () {
+      $(this).addClass('active'); $('#tab-liked-btn').removeClass('active');
+      $('#saved-content').removeClass('d-none'); $('#liked-content').addClass('d-none');
+    });
+
+    /* ── Summary card clicks (scroll + filter) ──────────────── */
+    $('#card-inprogress').on('click', function () {
+      currentProjTab = 'inprogress';
+      $('#proj-tabs .filter-tab').removeClass('active');
+      $('#proj-tabs .filter-tab[data-ptab="inprogress"]').addClass('active');
+      renderProjects();
+      $('html,body').animate({ scrollTop: $('#project-section').offset().top - 120 }, 400);
+    });
+    $('#card-quest').on('click', function () {
+      currentProjTab = 'inprogress';
+      $('#proj-tabs .filter-tab').removeClass('active');
+      $('#proj-tabs .filter-tab[data-ptab="inprogress"]').addClass('active');
+      renderProjects();
+      $('html,body').animate({ scrollTop: $('#project-section').offset().top - 120 }, 400);
+    });
+    $('#card-answers').on('click', function () {
+      $('html,body').animate({ scrollTop: $('#reactions-section').offset().top - 120 }, 400);
+    });
+    $('#card-applicants').on('click', function () {
+      currentCommTab = 'teammate';
+      $('#comm-tabs .filter-tab').removeClass('active');
+      $('#comm-tabs .filter-tab[data-ctab="teammate"]').addClass('active');
+      renderCommunity();
+      $('html,body').animate({ scrollTop: $('#community-section').offset().top - 120 }, 400);
+    });
+
+    /* ── Hero following link ────────────────────────────────── */
+    $('#hero-following-btn').on('click', function () {
+      $('html,body').animate({ scrollTop: $('#following-section').offset().top - 120 }, 400);
+    });
+
+    /* ── Custom Panel helpers ───────────────────────────────── */
+    window.showProfileEdit = function () {
+      renderSkillTags();
+      renderInterestTags();
+      renderPrivacyToggles();
+      $('#sec-basic,#sec-skills,#sec-links,#sec-settings').addClass('d-none');
+      $('#sec-basic').removeClass('d-none');
+      $('.profile-sec-tab').removeClass('active bg-white shadow-sm text-primary').addClass('text-muted');
+      $('.profile-sec-tab[data-sec="basic"]').addClass('active bg-white text-primary').removeClass('text-muted');
+      document.getElementById('profileEditOffcanvas').classList.add('cpanel-show');
+      document.getElementById('profileEditBackdrop').classList.add('cpanel-show');
+      document.body.style.overflow = 'hidden';
+    };
+    window.hideProfileEdit = function () {
+      document.getElementById('profileEditOffcanvas').classList.remove('cpanel-show');
+      document.getElementById('profileEditBackdrop').classList.remove('cpanel-show');
+      document.body.style.overflow = '';
+    };
+    window.hideQuickAction = function () {
+      document.getElementById('quickActionOffcanvas').classList.remove('cpanel-show');
+      document.getElementById('quickActionBackdrop').classList.remove('cpanel-show');
+      document.body.style.overflow = '';
+    };
+
+    /* ── Profile Edit Panel ─────────────────────────────────── */
+    var skillTags = ['Arduino', 'ESP32', 'Python', 'ROS', '3D 프린팅'];
+    var interestTags = ['로봇공학', 'AI/ML', 'IoT', '자율주행'];
+    var skillSugg = ['Raspberry Pi', 'C/C++', 'JavaScript', 'React', 'OpenCV', 'MQTT', 'PCB 설계', 'Linux', 'Node.js', 'TensorFlow', 'Fusion 360', 'FPGA'];
+    var interestSugg = ['드론', '스마트홈', '웨어러블', '신재생에너지', '바이오/의료', '게임/엔터테인먼트', '농업 기술', '우주/항공', '보안'];
+    var privacyState = { profilePublic: true, showProjects: true, showSkills: true, showActivity: true, showLocation: true, showEmail: false };
+    var privacyLabels = [
+      { key: 'profilePublic', label: '프로필 공개', desc: '내 프로필을 모든 사용자에게 공개합니다', important: true },
+      { key: 'showProjects', label: '프로젝트 목록 공개', desc: '내 프로젝트를 프로필에서 볼 수 있습니다' },
+      { key: 'showSkills', label: '기술 스택 공개', desc: '기술 스택과 관심사를 공개합니다' },
+      { key: 'showActivity', label: '활동 내역 공개', desc: '커뮤니티 활동 내역을 공개합니다' },
+      { key: 'showLocation', label: '위치 정보 공개', desc: '프로필에 위치를 표시합니다' },
+      { key: 'showEmail', label: '이메일 공개', desc: '다른 사용자가 이메일을 볼 수 있습니다' },
+    ];
+
+    function renderSkillTags() {
+      $('#skill-area').html(skillTags.length
+        ? skillTags.map(function (t) { return '<span class="badge bg-primary-subtle text-primary d-inline-flex align-items-center gap-1 py-1 px-2 rounded-pill fs-80">' + $('<span>').text(t).html() + '<button type="button" class="btn-close btn-close-sm skill-rm" data-tag="' + $('<span>').text(t).html() + '" style="font-size:.6rem;"></button></span>'; }).join('')
+        : '<span class="text-muted small">아직 추가된 기술이 없습니다</span>'
+      );
+      $('#skill-suggestions').html(skillSugg.filter(function (s) { return !skillTags.includes(s); }).slice(0, 12).map(function (s) {
+        return '<button class="btn btn-sm border border-dashed text-muted rounded-pill skill-sugg-btn fs-xs" data-tag="' + s + '">+ ' + s + '</button>';
+      }).join(''));
+    }
+    function renderInterestTags() {
+      $('#interest-area').html(interestTags.length
+        ? interestTags.map(function (t) { return '<span class="badge d-inline-flex align-items-center gap-1 py-1 px-2 rounded-pill" style="background:#ede9fe;color:#7c3aed;font-size:.8rem;">' + $('<span>').text(t).html() + '<button type="button" class="btn-close btn-close-sm interest-rm" data-tag="' + $('<span>').text(t).html() + '" style="font-size:.6rem;filter:invert(1);"></button></span>'; }).join('')
+        : '<span class="text-muted small">아직 추가된 관심사가 없습니다</span>'
+      );
+      $('#interest-suggestions').html(interestSugg.filter(function (i) { return !interestTags.includes(i); }).map(function (i) {
+        return '<button class="btn btn-sm border border-dashed text-muted rounded-pill interest-sugg-btn fs-xs" data-tag="' + i + '">+ ' + i + '</button>';
+      }).join(''));
+    }
+    function renderPrivacyToggles() {
+      $('#privacy-toggles').html(privacyLabels.map(function (p) {
+        var on = privacyState[p.key];
+        var bgColor = on ? (p.important ? '#eff6ff' : '#f9fafb') : '#fff';
+        var bdColor = on ? (p.important ? '#bfdbfe' : '#e5e7eb') : '#e5e7eb';
+        var btnBg = on ? '#2563eb' : '#d1d5db';
+        var knobTx = on ? '22px' : '2px';
+        return '<div class="d-flex align-items-center justify-content-between p-3 rounded-3 border mb-1" style="background:' + bgColor + ';border-color:' + bdColor + ';">'
+          + '<div><p class="small fw-semibold mb-0' + (p.important ? ' text-primary' : '') + '">' + p.label
+          + (p.important ? ' <span class="badge bg-primary-subtle text-primary ms-1 fs-65">필수</span>' : '') + '</p>'
+          + '<p class="text-muted mb-0 fs-xs">' + p.desc + '</p></div>'
+          + '<button class="ms-3 rounded-pill flex-shrink-0 border-0 privacy-toggle" data-key="' + p.key + '" style="width:44px;height:24px;background:' + btnBg + ';transition:background .2s;">'
+          + '<span style="display:block;width:18px;height:18px;background:#fff;border-radius:50%;transition:transform .2s;transform:translateX(' + knobTx + ');box-shadow:0 1px 3px rgba(0,0,0,.2);"></span>'
+          + '</button></div>';
+      }).join(''));
     }
 
-    var html = list.map(function(p) {
-      var typeBadge = p.type === 'contest'
-        ? '<span class="badge text-white me-1 bg-purple">🏆 콘테스트</span>'
-        : '<span class="badge bg-primary-subtle text-primary me-1">개인</span>';
-      var statusBadge = p.status === 'completed'
-        ? '<span class="badge bg-success">✅ 완료</span>'
-        : '<span class="badge bg-warning text-dark">⏳ 진행중</span>';
+    // Profile section tab switch
+    $(document).on('click', '.profile-sec-tab', function () {
+      var sec = $(this).data('sec');
+      $('.profile-sec-tab').removeClass('active bg-white shadow-sm text-primary').addClass('text-muted');
+      $(this).addClass('active bg-white shadow-sm text-primary').removeClass('text-muted');
+      $('#sec-basic,#sec-skills,#sec-links,#sec-settings').addClass('d-none');
+      $('#sec-' + sec).removeClass('d-none');
+    });
 
-      var contestHtml = p.contestName
-        ? '<div class="d-flex align-items-center gap-2 p-2 rounded-2 mb-2" style="background:#f5f3ff;border:1px solid #ede9fe;"><span class="text-purple">🏆</span><a href="contest-detail.html" class="small fw-semibold text-decoration-none text-purple" onclick="event.stopPropagation()">'+p.contestName+'</a></div>'
-        : '';
+    // Char counters
+    $(document).on('input', '#p-tagline', function () { $('#tagline-count').text($(this).val().length + '/80'); });
+    $(document).on('input', '#p-bio', function () { $('#bio-count').text($(this).val().length + '/500'); });
 
-      var completedMsg = (p.questProgress === p.totalQuests && p.status === 'completed')
-        ? '<div class="d-flex align-items-center gap-2 p-2 rounded-2 mb-2" style="background:linear-gradient(90deg,#eff6ff,#f5f3ff);border:1px solid #bfdbfe;"><span>✅</span><span class="small fw-semibold">모든 Quest 완료! 플랫폼에 공개됨</span></div>'
-        : '';
+    // Skill add
+    $(document).on('click', '#skill-add-btn', function () {
+      var v = $.trim($('#skill-input').val());
+      if (v && !skillTags.includes(v)) { skillTags.push(v); renderSkillTags(); }
+      $('#skill-input').val('');
+    });
+    $(document).on('keydown', '#skill-input', function (e) { if (e.key === 'Enter') { e.preventDefault(); $('#skill-add-btn').click(); } });
+    $(document).on('click', '.skill-rm', function (e) { e.preventDefault(); skillTags = skillTags.filter(function (t) { return t !== $(e.currentTarget).data('tag'); }); renderSkillTags(); });
+    $(document).on('click', '.skill-sugg-btn', function () { var t = $(this).data('tag'); if (!skillTags.includes(t)) { skillTags.push(t); renderSkillTags(); } });
 
-      var actionBtn = p.status === 'inprogress' && p.nextQuest
-        ? '<a href="quest'+p.nextQuest+'.html?projectId='+p.id+'" class="quest-btn-primary text-decoration-none" onclick="event.stopPropagation()">🚀 Quest '+p.nextQuest+' 이어하기</a>'
-        : '<a href="project-detail.html?id='+p.id+'" class="btn btn-primary btn-sm w-100" onclick="event.stopPropagation()">👁 프로젝트 보기</a>';
+    // Interest add
+    $(document).on('click', '#interest-add-btn', function () {
+      var v = $.trim($('#interest-input').val());
+      if (v && !interestTags.includes(v)) { interestTags.push(v); renderInterestTags(); }
+      $('#interest-input').val('');
+    });
+    $(document).on('keydown', '#interest-input', function (e) { if (e.key === 'Enter') { e.preventDefault(); $('#interest-add-btn').click(); } });
+    $(document).on('click', '.interest-rm', function (e) { e.preventDefault(); interestTags = interestTags.filter(function (t) { return t !== $(e.currentTarget).data('tag'); }); renderInterestTags(); });
+    $(document).on('click', '.interest-sugg-btn', function () { var t = $(this).data('tag'); if (!interestTags.includes(t)) { interestTags.push(t); renderInterestTags(); } });
 
-      return '<div class="col-md-6">'
-        +'<div class="card border-0 shadow-sm my-make-project-card" onclick="window.location=\'project-detail.html?id='+p.id+'\'">'
-        +'<div class="position-relative overflow-hidden" style="height:180px;">'
-        +'<img src="'+p.img+'" alt="" class="w-100 h-100 object-fit-cover">'
-        +'<div class="position-absolute top-0 start-0 m-2">'+typeBadge+statusBadge+'</div>'
-        +'<div class="position-absolute bottom-0 start-0 end-0" style="background:linear-gradient(transparent,rgba(0,0,0,.55));height:60px;"></div>'
-        +'</div>'
-        +'<div class="card-body">'
-        +contestHtml
-        +completedMsg
-        +'<h6 class="fw-bold mb-2">'+p.title+'</h6>'
-        +'<div class="d-flex justify-content-between text-muted small mb-3">'
-        +'<span>❤️ '+p.likes+'</span><span>👁 '+p.views+'</span><span>💬 '+p.comments+'</span><span class="text-muted small">'+p.modified+'</span>'
-        +'</div>'
-        +'<div class="pt-2 border-top">'+actionBtn+'</div>'
-        +'</div></div></div>';
-    }).join('');
+    // Privacy toggle
+    $(document).on('click', '.privacy-toggle', function () {
+      var key = $(this).data('key');
+      privacyState[key] = !privacyState[key];
+      renderPrivacyToggles();
+    });
 
-    $('#my-project-grid').html(html);
-  }
+    // Profile save
+    $('#profile-save-btn').on('click', function () {
+      var $btn = $(this);
+      $btn.html('✅ 저장됨!').addClass('btn-success').removeClass('btn-primary');
+      setTimeout(function () {
+        hideProfileEdit();
+        $btn.html('💾 변경사항 저장').removeClass('btn-success').addClass('btn-primary');
+      }, 1200);
+    });
 
-  /* ── Community activity rendering ──────────────────────── */
-  function renderCommunity() {
-    if(currentCommTab === 'applied') {
-      $('#comm-activity-list').addClass('d-none');
-      $('#applied-list').removeClass('d-none');
-      renderApplied();
-      return;
+    /* ── Community Quick Action Panel ───────────────────────── */
+    function projectSelectHtml(accentColor, iconCls, checkMsg) {
+      return '<div class="rounded-3 p-4" style="background:linear-gradient(135deg,#eff6ff,#f5f3ff);border:1px solid #bfdbfe;">'
+        + '<div class="d-flex gap-3 align-items-start mb-3">'
+        + '<div class="rounded-2 d-flex align-items-center justify-content-center text-white flex-shrink-0 fs-6" style="width:40px;height:40px;background:' + accentColor + ';"><i class="' + iconCls + '"></i></div>'
+        + '<div><h6 class="fw-bold mb-1">연결된 프로젝트</h6><p class="text-muted small mb-0">내 프로젝트를 선택하면 자동으로 연결됩니다</p></div>'
+        + '</div>'
+        + '<select class="form-select form-select-sm mb-3" style="border:2px solid #bfdbfe;">'
+        + '<option value="">내 프로젝트 선택 (선택사항)</option>'
+        + '<option>AI 음성인식 자율주행 로봇</option>'
+        + '<option>오픈소스 자율주행 로봇</option>'
+        + '<option>ESP32 기반 스마트 화분</option>'
+        + '<option>3D 프린터 자동 레벨링</option>'
+        + '</select>'
+        + '<div class="bg-white rounded-3 p-3">'
+        + '<div class="d-flex align-items-center gap-2 pb-2"><i class="bi bi-folder2-open text-secondary"></i>'
+        + '<p class="small text-muted mb-0">프로젝트를 선택하지 않으면 커뮤니티 일반 글로 등록됩니다</p></div>'
+        + '<div class="pt-2 border-top"><p class="small text-muted mb-0 d-flex align-items-center gap-1">'
+        + '<i class="bi bi-check-lg text-success"></i> ' + checkMsg + '</p></div>'
+        + '</div></div>';
     }
-    $('#comm-activity-list').removeClass('d-none');
-    $('#applied-list').addClass('d-none');
 
-    var list = currentCommTab === 'all' ? myCommunity : myCommunity.filter(function(a){ return a.type === currentCommTab; });
-
-    if(!list.length) {
-      $('#comm-activity-list').html('<div class="text-center text-muted py-5">해당하는 활동이 없습니다.</div>');
-      return;
-    }
-
-    var html = list.map(function(a) {
-      var t = typeInfo[a.type];
-      var newBadge = a.hasNew ? '<span class="badge bg-danger ms-1 fs-70">'+a.newCount+'개 새 알림</span>' : '';
-      var borderClass = a.hasNew ? 'has-new' : '';
-      return '<div class="card border-0 shadow-sm rounded-3 mb-2 activity-card-link '+borderClass+'" onclick="window.location=\'community-detail.html?id='+a.id+'\'" class="cursor-pointer">'
-        +'<div class="card-body p-3">'
-        +'<div class="d-flex gap-3 align-items-start">'
-        +'<div class="rounded-2 d-flex align-items-center justify-content-center flex-shrink-0 bg-'+t.color+'-subtle text-'+t.color+' icon-box-40">'+t.icon+'</div>'
-        +'<div class="flex-grow-1 min-w-0">'
-        +'<div class="d-flex flex-wrap align-items-center gap-1 mb-1">'
-        +'<span class="badge bg-'+t.color+'-subtle text-'+t.color+' small">'+t.label+'</span>'+newBadge
-        +'</div>'
-        +'<h6 class="fw-semibold small mb-1" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">'+a.title+'</h6>'
-        +'<div class="small text-muted d-flex gap-2">'
-        +'<a href="project-detail.html" class="text-primary fw-medium text-decoration-none small" onclick="event.stopPropagation()">'+a.project+'</a>'
-        +'<span>·</span><span>'+a.time+'</span>'
-        +'</div>'
-        +'</div></div></div></div>';
-    }).join('');
-
-    $('#comm-activity-list').html(html);
-  }
-
-  function renderApplied() {
-    var html = myApplications.map(function(app) {
-      var cfg = {
-        accepted: { label:'수락됨 🎉',     bg:'bg-success-subtle', border:'border-success',  badge:'bg-success text-white',  msg:'수락되었습니다! 모집자에게 연락하여 팀 합류를 진행하세요.' },
-        pending:  { label:'검토중',         bg:'bg-warning-subtle', border:'border-warning',  badge:'bg-warning text-dark',   msg:'' },
-        rejected: { label:'아쉽게도 미선정', bg:'bg-danger-subtle',  border:'border-danger',   badge:'bg-danger text-white',   msg:'이번에는 아쉽게도 선정되지 않았습니다.' },
-      }[app.status];
-      var isNew = !app.isRead && app.status !== 'pending';
-      var newBadge = isNew ? '<span class="badge bg-danger ms-1 small animate__animated animate__pulse">NEW</span>' : '';
-      var roles = app.roles.map(function(r){ return '<span class="badge bg-light text-dark border me-1">'+r+'</span>'; }).join('');
-      var contest = app.contest ? '<span class="badge bg-primary-subtle text-primary me-1">🏆 '+app.contest+'</span>' : '';
-      var msgHtml = cfg.msg ? '<div class="mt-2 pt-2 border-top small fw-medium '+(app.status==='accepted'?'text-success':'text-danger')+'">'+cfg.msg+'</div>' : '';
-      return '<div class="app-status-card p-3 mb-2 border '+cfg.border+' '+cfg.bg+'">'
-        +'<div class="d-flex justify-content-between align-items-center mb-2">'
-        +'<div class="d-flex align-items-center gap-1"><span class="badge '+cfg.badge+' small">'+cfg.label+'</span>'+newBadge+'</div>'
-        +'<small class="text-muted">'+app.applied+' 신청</small>'
-        +'</div>'
-        +'<a href="community-detail.html" class="d-block fw-semibold small text-dark text-decoration-none mb-2">'+app.postTitle+'<br><small class="text-primary small">모집 글 보기 →</small></a>'
-        +'<div class="mb-2">'+contest+'<span class="badge bg-info-subtle text-info me-1">'+app.project+'</span></div>'
-        +'<div class="d-flex align-items-center justify-content-between pt-2 border-top">'
-        +'<div class="d-flex align-items-center gap-1">'
-        +'<div class="rounded-circle bg-white border d-flex align-items-center justify-content-center fw-bold" style="width:20px;height:20px;font-size:.7rem;">'+app.recruiter[0]+'</div>'
-        +'<small class="text-muted">'+app.recruiter+'</small>'
-        +'</div>'
-        +'<div>'+roles+'</div>'
-        +'</div>'
-        +msgHtml
-        +'</div>';
-    }).join('');
-    $('#applied-list').html(html || '<div class="text-center py-5 text-muted small">신청한 팀원 모집이 없습니다.<br><a href="community.html" class="text-primary">커뮤니티에서 팀원 찾기 →</a></div>');
-  }
-
-  /* ── Reaction read ──────────────────────────────────────── */
-  var reactionsRead = 0;
-  window.markReactionRead = function(id) {
-    $('#'+id).fadeOut(250, function(){ $(this).remove(); updateReactionBadge(); });
-  };
-  function updateReactionBadge() {
-    var remaining = $('#reaction-list .reaction-card').length;
-    if(remaining === 0) {
-      $('#reaction-list').addClass('d-none');
-      $('#reactions-empty').removeClass('d-none');
-      $('#reaction-badge').addClass('d-none');
-      $('#mark-all-reactions').addClass('d-none');
-    } else {
-      $('#reaction-badge').text(remaining+'개');
-    }
-  }
-  $('#mark-all-reactions').on('click', function(){
-    $('#reaction-list .reaction-card').each(function(){ $(this).remove(); });
-    updateReactionBadge();
-  });
-
-  /* ── Unfollow ───────────────────────────────────────────── */
-  $(document).on('click', '.unfollow-btn', function(){
-    var name = $(this).data('name');
-    if(confirm(name + '님을 언팔로우 하시겠습니까?')) {
-      $(this).closest('.following-maker').fadeOut(300, function(){ $(this).remove(); });
-    }
-  });
-
-  /* ── Like remove ────────────────────────────────────────── */
-  $(document).on('click', '.like-remove-btn', function(e){
-    e.stopPropagation();
-    $(this).closest('.col-sm-6').fadeOut(200, function(){ $(this).remove(); });
-  });
-
-  /* ── Tab switches ───────────────────────────────────────── */
-  $('#proj-tabs').on('click', '.filter-tab', function(){
-    $('#proj-tabs .filter-tab').removeClass('active');
-    $(this).addClass('active');
-    currentProjTab = $(this).data('ptab');
-    renderProjects();
-  });
-
-  $('#comm-tabs').on('click', '.filter-tab', function(){
-    $('#comm-tabs .filter-tab').removeClass('active');
-    $(this).addClass('active');
-    currentCommTab = $(this).data('ctab');
-    renderCommunity();
-  });
-
-  $('#tab-liked-btn').on('click', function(){
-    $(this).addClass('active'); $('#tab-saved-btn').removeClass('active');
-    $('#liked-content').removeClass('d-none'); $('#saved-content').addClass('d-none');
-  });
-  $('#tab-saved-btn').on('click', function(){
-    $(this).addClass('active'); $('#tab-liked-btn').removeClass('active');
-    $('#saved-content').removeClass('d-none'); $('#liked-content').addClass('d-none');
-  });
-
-  /* ── Summary card clicks (scroll + filter) ──────────────── */
-  $('#card-inprogress').on('click', function(){
-    currentProjTab = 'inprogress';
-    $('#proj-tabs .filter-tab').removeClass('active');
-    $('#proj-tabs .filter-tab[data-ptab="inprogress"]').addClass('active');
-    renderProjects();
-    $('html,body').animate({ scrollTop: $('#project-section').offset().top - 120 }, 400);
-  });
-  $('#card-quest').on('click', function(){
-    currentProjTab = 'inprogress';
-    $('#proj-tabs .filter-tab').removeClass('active');
-    $('#proj-tabs .filter-tab[data-ptab="inprogress"]').addClass('active');
-    renderProjects();
-    $('html,body').animate({ scrollTop: $('#project-section').offset().top - 120 }, 400);
-  });
-  $('#card-answers').on('click', function(){
-    $('html,body').animate({ scrollTop: $('#reactions-section').offset().top - 120 }, 400);
-  });
-  $('#card-applicants').on('click', function(){
-    currentCommTab = 'teammate';
-    $('#comm-tabs .filter-tab').removeClass('active');
-    $('#comm-tabs .filter-tab[data-ctab="teammate"]').addClass('active');
-    renderCommunity();
-    $('html,body').animate({ scrollTop: $('#community-section').offset().top - 120 }, 400);
-  });
-
-  /* ── Hero following link ────────────────────────────────── */
-  $('#hero-following-btn').on('click', function(){
-    $('html,body').animate({ scrollTop: $('#following-section').offset().top - 120 }, 400);
-  });
-
-  /* ── Custom Panel helpers ───────────────────────────────── */
-  window.showProfileEdit = function() {
-    renderSkillTags();
-    renderInterestTags();
-    renderPrivacyToggles();
-    $('#sec-basic,#sec-skills,#sec-links,#sec-settings').addClass('d-none');
-    $('#sec-basic').removeClass('d-none');
-    $('.profile-sec-tab').removeClass('active bg-white shadow-sm text-primary').addClass('text-muted');
-    $('.profile-sec-tab[data-sec="basic"]').addClass('active bg-white text-primary').removeClass('text-muted');
-    document.getElementById('profileEditOffcanvas').classList.add('cpanel-show');
-    document.getElementById('profileEditBackdrop').classList.add('cpanel-show');
-    document.body.style.overflow = 'hidden';
-  };
-  window.hideProfileEdit = function() {
-    document.getElementById('profileEditOffcanvas').classList.remove('cpanel-show');
-    document.getElementById('profileEditBackdrop').classList.remove('cpanel-show');
-    document.body.style.overflow = '';
-  };
-  window.hideQuickAction = function() {
-    document.getElementById('quickActionOffcanvas').classList.remove('cpanel-show');
-    document.getElementById('quickActionBackdrop').classList.remove('cpanel-show');
-    document.body.style.overflow = '';
-  };
-
-  /* ── Profile Edit Panel ─────────────────────────────────── */
-  var skillTags = ['Arduino','ESP32','Python','ROS','3D 프린팅'];
-  var interestTags = ['로봇공학','AI/ML','IoT','자율주행'];
-  var skillSugg = ['Raspberry Pi','C/C++','JavaScript','React','OpenCV','MQTT','PCB 설계','Linux','Node.js','TensorFlow','Fusion 360','FPGA'];
-  var interestSugg = ['드론','스마트홈','웨어러블','신재생에너지','바이오/의료','게임/엔터테인먼트','농업 기술','우주/항공','보안'];
-  var privacyState = { profilePublic:true, showProjects:true, showSkills:true, showActivity:true, showLocation:true, showEmail:false };
-  var privacyLabels = [
-    {key:'profilePublic', label:'프로필 공개',       desc:'내 프로필을 모든 사용자에게 공개합니다', important:true },
-    {key:'showProjects',  label:'프로젝트 목록 공개', desc:'내 프로젝트를 프로필에서 볼 수 있습니다' },
-    {key:'showSkills',    label:'기술 스택 공개',     desc:'기술 스택과 관심사를 공개합니다' },
-    {key:'showActivity',  label:'활동 내역 공개',     desc:'커뮤니티 활동 내역을 공개합니다' },
-    {key:'showLocation',  label:'위치 정보 공개',     desc:'프로필에 위치를 표시합니다' },
-    {key:'showEmail',     label:'이메일 공개',        desc:'다른 사용자가 이메일을 볼 수 있습니다' },
-  ];
-
-  function renderSkillTags() {
-    $('#skill-area').html(skillTags.length
-      ? skillTags.map(function(t){ return '<span class="badge bg-primary-subtle text-primary d-inline-flex align-items-center gap-1 py-1 px-2 rounded-pill fs-80">'+$('<span>').text(t).html()+'<button type="button" class="btn-close btn-close-sm skill-rm" data-tag="'+$('<span>').text(t).html()+'" style="font-size:.6rem;"></button></span>'; }).join('')
-      : '<span class="text-muted small">아직 추가된 기술이 없습니다</span>'
-    );
-    $('#skill-suggestions').html(skillSugg.filter(function(s){ return !skillTags.includes(s); }).slice(0,12).map(function(s){
-      return '<button class="btn btn-sm border border-dashed text-muted rounded-pill skill-sugg-btn fs-xs" data-tag="'+s+'">+ '+s+'</button>';
-    }).join(''));
-  }
-  function renderInterestTags() {
-    $('#interest-area').html(interestTags.length
-      ? interestTags.map(function(t){ return '<span class="badge d-inline-flex align-items-center gap-1 py-1 px-2 rounded-pill" style="background:#ede9fe;color:#7c3aed;font-size:.8rem;">'+$('<span>').text(t).html()+'<button type="button" class="btn-close btn-close-sm interest-rm" data-tag="'+$('<span>').text(t).html()+'" style="font-size:.6rem;filter:invert(1);"></button></span>'; }).join('')
-      : '<span class="text-muted small">아직 추가된 관심사가 없습니다</span>'
-    );
-    $('#interest-suggestions').html(interestSugg.filter(function(i){ return !interestTags.includes(i); }).map(function(i){
-      return '<button class="btn btn-sm border border-dashed text-muted rounded-pill interest-sugg-btn fs-xs" data-tag="'+i+'">+ '+i+'</button>';
-    }).join(''));
-  }
-  function renderPrivacyToggles() {
-    $('#privacy-toggles').html(privacyLabels.map(function(p){
-      var on = privacyState[p.key];
-      var bgColor    = on ? (p.important ? '#eff6ff' : '#f9fafb') : '#fff';
-      var bdColor    = on ? (p.important ? '#bfdbfe' : '#e5e7eb') : '#e5e7eb';
-      var btnBg      = on ? '#2563eb' : '#d1d5db';
-      var knobTx     = on ? '22px' : '2px';
-      return '<div class="d-flex align-items-center justify-content-between p-3 rounded-3 border mb-1" style="background:' + bgColor + ';border-color:' + bdColor + ';">'
-        + '<div><p class="small fw-semibold mb-0' + (p.important ? ' text-primary' : '') + '">' + p.label
-        + (p.important ? ' <span class="badge bg-primary-subtle text-primary ms-1 fs-65">필수</span>' : '') + '</p>'
-        + '<p class="text-muted mb-0 fs-xs">' + p.desc + '</p></div>'
-        + '<button class="ms-3 rounded-pill flex-shrink-0 border-0 privacy-toggle" data-key="' + p.key + '" style="width:44px;height:24px;background:' + btnBg + ';transition:background .2s;">'
-        + '<span style="display:block;width:18px;height:18px;background:#fff;border-radius:50%;transition:transform .2s;transform:translateX(' + knobTx + ');box-shadow:0 1px 3px rgba(0,0,0,.2);"></span>'
-        + '</button></div>';
-    }).join(''));
-  }
-
-  // Profile section tab switch
-  $(document).on('click', '.profile-sec-tab', function(){
-    var sec = $(this).data('sec');
-    $('.profile-sec-tab').removeClass('active bg-white shadow-sm text-primary').addClass('text-muted');
-    $(this).addClass('active bg-white shadow-sm text-primary').removeClass('text-muted');
-    $('#sec-basic,#sec-skills,#sec-links,#sec-settings').addClass('d-none');
-    $('#sec-'+sec).removeClass('d-none');
-  });
-
-  // Char counters
-  $(document).on('input', '#p-tagline', function(){ $('#tagline-count').text($(this).val().length+'/80'); });
-  $(document).on('input', '#p-bio',     function(){ $('#bio-count').text($(this).val().length+'/500'); });
-
-  // Skill add
-  $(document).on('click', '#skill-add-btn', function(){
-    var v = $.trim($('#skill-input').val());
-    if(v && !skillTags.includes(v)){ skillTags.push(v); renderSkillTags(); }
-    $('#skill-input').val('');
-  });
-  $(document).on('keydown', '#skill-input', function(e){ if(e.key==='Enter'){ e.preventDefault(); $('#skill-add-btn').click(); } });
-  $(document).on('click', '.skill-rm', function(e){ e.preventDefault(); skillTags = skillTags.filter(function(t){ return t !== $(e.currentTarget).data('tag'); }); renderSkillTags(); });
-  $(document).on('click', '.skill-sugg-btn', function(){ var t=$(this).data('tag'); if(!skillTags.includes(t)){ skillTags.push(t); renderSkillTags(); } });
-
-  // Interest add
-  $(document).on('click', '#interest-add-btn', function(){
-    var v = $.trim($('#interest-input').val());
-    if(v && !interestTags.includes(v)){ interestTags.push(v); renderInterestTags(); }
-    $('#interest-input').val('');
-  });
-  $(document).on('keydown', '#interest-input', function(e){ if(e.key==='Enter'){ e.preventDefault(); $('#interest-add-btn').click(); } });
-  $(document).on('click', '.interest-rm', function(e){ e.preventDefault(); interestTags = interestTags.filter(function(t){ return t !== $(e.currentTarget).data('tag'); }); renderInterestTags(); });
-  $(document).on('click', '.interest-sugg-btn', function(){ var t=$(this).data('tag'); if(!interestTags.includes(t)){ interestTags.push(t); renderInterestTags(); } });
-
-  // Privacy toggle
-  $(document).on('click', '.privacy-toggle', function(){
-    var key = $(this).data('key');
-    privacyState[key] = !privacyState[key];
-    renderPrivacyToggles();
-  });
-
-  // Profile save
-  $('#profile-save-btn').on('click', function(){
-    var $btn = $(this);
-    $btn.html('✅ 저장됨!').addClass('btn-success').removeClass('btn-primary');
-    setTimeout(function(){
-      hideProfileEdit();
-      $btn.html('💾 변경사항 저장').removeClass('btn-success').addClass('btn-primary');
-    }, 1200);
-  });
-
-  /* ── Community Quick Action Panel ───────────────────────── */
-  function projectSelectHtml(accentColor, iconCls, checkMsg) {
-    return '<div class="rounded-3 p-4" style="background:linear-gradient(135deg,#eff6ff,#f5f3ff);border:1px solid #bfdbfe;">'
-      +'<div class="d-flex gap-3 align-items-start mb-3">'
-      +'<div class="rounded-2 d-flex align-items-center justify-content-center text-white flex-shrink-0 fs-6" style="width:40px;height:40px;background:'+accentColor+';"><i class="'+iconCls+'"></i></div>'
-      +'<div><h6 class="fw-bold mb-1">연결된 프로젝트</h6><p class="text-muted small mb-0">내 프로젝트를 선택하면 자동으로 연결됩니다</p></div>'
-      +'</div>'
-      +'<select class="form-select form-select-sm mb-3" style="border:2px solid #bfdbfe;">'
-      +'<option value="">내 프로젝트 선택 (선택사항)</option>'
-      +'<option>AI 음성인식 자율주행 로봇</option>'
-      +'<option>오픈소스 자율주행 로봇</option>'
-      +'<option>ESP32 기반 스마트 화분</option>'
-      +'<option>3D 프린터 자동 레벨링</option>'
-      +'</select>'
-      +'<div class="bg-white rounded-3 p-3">'
-      +'<div class="d-flex align-items-center gap-2 pb-2"><i class="bi bi-folder2-open text-secondary"></i>'
-      +'<p class="small text-muted mb-0">프로젝트를 선택하지 않으면 커뮤니티 일반 글로 등록됩니다</p></div>'
-      +'<div class="pt-2 border-top"><p class="small text-muted mb-0 d-flex align-items-center gap-1">'
-      +'<i class="bi bi-check-lg text-success"></i> '+checkMsg+'</p></div>'
-      +'</div></div>';
-  }
-
-  function qaTypeGrid(items) {
-    return '<div class="row g-2">'
-      + items.map(function(t){
-          return '<div class="col-6"><button class="btn qa-type-btn rounded-3 w-100 p-3 text-start" data-val="'+t.v+'">'
-            +'<i class="'+t.icon+' d-block mb-1 fs-5 text-secondary qa-icon"></i>'
-            +'<span class="fw-semibold small" style="color:#111;">'+t.l+'</span>'
-            +'</button></div>';
+    function qaTypeGrid(items) {
+      return '<div class="row g-2">'
+        + items.map(function (t) {
+          return '<div class="col-6"><button class="btn qa-type-btn rounded-3 w-100 p-3 text-start" data-val="' + t.v + '">'
+            + '<i class="' + t.icon + ' d-block mb-1 fs-5 text-secondary qa-icon"></i>'
+            + '<span class="fw-semibold small" style="color:#111;">' + t.l + '</span>'
+            + '</button></div>';
         }).join('')
-      +'</div>';
-  }
+        + '</div>';
+    }
 
-  function qaRoleGrid(items) {
-    return '<div class="row g-2">'
-      + items.map(function(t){
-          return '<div class="col-6"><button class="btn qa-role-btn rounded-3 w-100 p-3 text-start" data-val="'+t.v+'">'
-            +'<i class="'+t.icon+' d-block mb-1 fs-5 text-secondary qa-icon"></i>'
-            +'<span class="fw-semibold small" style="color:#111;">'+t.l+'</span>'
-            +'</button></div>';
+    function qaRoleGrid(items) {
+      return '<div class="row g-2">'
+        + items.map(function (t) {
+          return '<div class="col-6"><button class="btn qa-role-btn rounded-3 w-100 p-3 text-start" data-val="' + t.v + '">'
+            + '<i class="' + t.icon + ' d-block mb-1 fs-5 text-secondary qa-icon"></i>'
+            + '<span class="fw-semibold small" style="color:#111;">' + t.l + '</span>'
+            + '</button></div>';
         }).join('')
-      +'</div>';
-  }
+        + '</div>';
+    }
 
-  function qaAttachBtns(items) {
-    var cols = 12 / items.length;
-    return '<div class="row g-2 mb-3">'
-      + items.map(function(b){
-          return '<div class="col-'+cols+'"><button class="btn w-100 p-3 text-center rounded-3" style="border:2px dashed #d1d5db;">'
-            +'<i class="'+b.icon+' d-block fs-4 text-muted mb-1"></i>'
-            +'<p class="small fw-medium mb-0 text-muted-dark">'+b.l+'</p>'
-            +(b.sub ? '<p class="mb-0" style="font-size:.72rem;color:#9ca3af;">'+b.sub+'</p>' : '')
-            +'</button></div>';
+    function qaAttachBtns(items) {
+      var cols = 12 / items.length;
+      return '<div class="row g-2 mb-3">'
+        + items.map(function (b) {
+          return '<div class="col-' + cols + '"><button class="btn w-100 p-3 text-center rounded-3" style="border:2px dashed #d1d5db;">'
+            + '<i class="' + b.icon + ' d-block fs-4 text-muted mb-1"></i>'
+            + '<p class="small fw-medium mb-0 text-muted-dark">' + b.l + '</p>'
+            + (b.sub ? '<p class="mb-0" style="font-size:.72rem;color:#9ca3af;">' + b.sub + '</p>' : '')
+            + '</button></div>';
         }).join('')
-      +'</div>';
-  }
+        + '</div>';
+    }
 
-  function qaGuideBox(color, title, body) {
-    var c = { blue:{bg:'#eff6ff',bd:'#bfdbfe',ic:'text-primary',tc:'#1e40af'}, green:{bg:'#f0fdf4',bd:'#bbf7d0',ic:'text-success',tc:'#166534'}, orange:{bg:'#fff7ed',bd:'#fed7aa',ic:'',tc:'#9a3412'} }[color] || {bg:'#eff6ff',bd:'#bfdbfe',ic:'text-primary',tc:'#1e40af'};
-    return '<div class="rounded-3 p-3" style="background:'+c.bg+';border:1px solid '+c.bd+';">'
-      +'<div class="d-flex gap-2 align-items-start">'
-      +'<i class="bi bi-exclamation-circle-fill '+c.ic+' flex-shrink-0 mt-1" style="color:'+(color==='orange'?'#ea580c':'')+';"></i>'
-      +'<div><p class="small fw-bold mb-1" style="color:'+c.tc+';">'+title+'</p>'
-      +'<p class="mb-0" style="font-size:.75rem;color:'+c.tc+';">'+body+'</p>'
-      +'</div></div></div>';
-  }
+    function qaGuideBox(color, title, body) {
+      var c = { blue: { bg: '#eff6ff', bd: '#bfdbfe', ic: 'text-primary', tc: '#1e40af' }, green: { bg: '#f0fdf4', bd: '#bbf7d0', ic: 'text-success', tc: '#166534' }, orange: { bg: '#fff7ed', bd: '#fed7aa', ic: '', tc: '#9a3412' } }[color] || { bg: '#eff6ff', bd: '#bfdbfe', ic: 'text-primary', tc: '#1e40af' };
+      return '<div class="rounded-3 p-3" style="background:' + c.bg + ';border:1px solid ' + c.bd + ';">'
+        + '<div class="d-flex gap-2 align-items-start">'
+        + '<i class="bi bi-exclamation-circle-fill ' + c.ic + ' flex-shrink-0 mt-1" style="color:' + (color === 'orange' ? '#ea580c' : '') + ';"></i>'
+        + '<div><p class="small fw-bold mb-1" style="color:' + c.tc + ';">' + title + '</p>'
+        + '<p class="mb-0" style="font-size:.75rem;color:' + c.tc + ';">' + body + '</p>'
+        + '</div></div></div>';
+    }
 
-  function qaField(label, required, field) {
-    return '<div><label class="fw-bold small d-block mb-2">'+label
-      +(required ? ' <span class="text-danger">*</span>' : ' <span class="text-muted fw-normal">(선택)</span>')
-      +'</label>'+field+'</div>';
-  }
+    function qaField(label, required, field) {
+      return '<div><label class="fw-bold small d-block mb-2">' + label
+        + (required ? ' <span class="text-danger">*</span>' : ' <span class="text-muted fw-normal">(선택)</span>')
+        + '</label>' + field + '</div>';
+    }
 
-  var qaConfigs = {
-    question: {
-      title:'질문하기', subtitle:'커뮤니티에 질문을 등록합니다', submitLabel:'질문 등록', submitBg:'#2563eb',
-      body: function(){
-        return '<div class="p-5 d-flex flex-column" style="gap:1.5rem;">'
-          + projectSelectHtml('#2563eb','bi-stars','커뮤니티 Q&A에 등록되며, 프로젝트 상세에서도 확인할 수 있습니다')
-          + qaField('질문 제목', true,
+    var qaConfigs = {
+      question: {
+        title: '질문하기', subtitle: '커뮤니티에 질문을 등록합니다', submitLabel: '질문 등록', submitBg: '#2563eb',
+        body: function () {
+          return '<div class="p-5 d-flex flex-column" style="gap:1.5rem;">'
+            + projectSelectHtml('#2563eb', 'bi-stars', '커뮤니티 Q&A에 등록되며, 프로젝트 상세에서도 확인할 수 있습니다')
+            + qaField('질문 제목', true,
               '<input type="text" class="form-control" placeholder="예: ESP32에서 MQTT 연결이 계속 끊기는 문제">'
-              +'<p class="text-muted small mt-1 mb-0">문제를 명확하게 요약하세요</p>')
-          + qaField('질문 유형', true, qaTypeGrid([
-              {v:'technical',     l:'기술 문제',   icon:'bi-code-slash'},
-              {v:'implementation',l:'구현 방법',   icon:'bi-bullseye'},
-              {v:'design',        l:'설계 고민',   icon:'bi-lightbulb'},
-              {v:'submission',    l:'제출 관련',   icon:'bi-file-text'},
-              {v:'feedback',      l:'피드백 요청', icon:'bi-chat-dots'},
+              + '<p class="text-muted small mt-1 mb-0">문제를 명확하게 요약하세요</p>')
+            + qaField('질문 유형', true, qaTypeGrid([
+              { v: 'technical', l: '기술 문제', icon: 'bi-code-slash' },
+              { v: 'implementation', l: '구현 방법', icon: 'bi-bullseye' },
+              { v: 'design', l: '설계 고민', icon: 'bi-lightbulb' },
+              { v: 'submission', l: '제출 관련', icon: 'bi-file-text' },
+              { v: 'feedback', l: '피드백 요청', icon: 'bi-chat-dots' },
             ]))
-          + '<div class="d-flex flex-column" style="gap:1rem;">'
-          + qaGuideBox('blue','좋은 질문을 위한 가이드','구체적인 상황과 시도한 내용을 포함하면 더 빠르고 정확한 답변을 받을 수 있습니다')
-          + qaField('1. 지금 어떤 작업을 하고 있나요?', true, '<textarea class="form-control" rows="3" placeholder="예: Quest 2에서 ESP32와 MQTT 브로커를 연결하는 작업을 하고 있습니다. AWS IoT Core를 사용 중입니다."></textarea>')
-          + qaField('2. 어떤 문제가 있나요?', true, '<textarea class="form-control" rows="4" placeholder="예: Wi-Fi 연결은 정상인데 MQTT 연결이 5분마다 자동으로 끊깁니다. Error code -2가 계속 발생합니다."></textarea>')
-          + qaField('3. 무엇을 시도해 보았나요?', false, '<textarea class="form-control" rows="3" placeholder="예: Keep-alive 시간을 60초로 늘려봤고, QoS 레벨도 0, 1, 2 모두 시도했습니다."></textarea>')
-          + qaField('4. 어떤 도움을 받고 싶나요?', true, '<textarea class="form-control" rows="3" placeholder="예: 연결이 끊기는 원인을 찾고 싶습니다. ESP32 설정에서 놓친 부분이 있는지 확인 부탁드립니다."></textarea>')
-          + '</div>'
-          + qaField('첨부 자료', false,
-              qaAttachBtns([{icon:'bi-image',l:'이미지 첨부',sub:'스크린샷, 회로도'},{icon:'bi-code-slash',l:'코드 스니펫',sub:'문제 코드 붙여넣기'}])
-              +'<div class="d-flex flex-column gap-2">'
-              +'<input type="url" class="form-control form-control-sm" placeholder="GitHub 링크">'
-              +'<input type="url" class="form-control form-control-sm" placeholder="참고 링크">'
-              +'</div>')
-          +'</div>';
-      }
-    },
-    progress: {
-      title:'진행 공유하기', subtitle:'커뮤니티에 진행 상황을 공유합니다', submitLabel:'진행 공유', submitBg:'#2563eb',
-      body: function(){
-        return '<div class="p-5 d-flex flex-column" style="gap:1.5rem;">'
-          + projectSelectHtml('#2563eb','bi-rocket-takeoff','커뮤니티에 공유되며, 프로젝트 타임라인에도 표시됩니다')
-          + qaField('진행 상황 제목', true,
+            + '<div class="d-flex flex-column" style="gap:1rem;">'
+            + qaGuideBox('blue', '좋은 질문을 위한 가이드', '구체적인 상황과 시도한 내용을 포함하면 더 빠르고 정확한 답변을 받을 수 있습니다')
+            + qaField('1. 지금 어떤 작업을 하고 있나요?', true, '<textarea class="form-control" rows="3" placeholder="예: Quest 2에서 ESP32와 MQTT 브로커를 연결하는 작업을 하고 있습니다. AWS IoT Core를 사용 중입니다."></textarea>')
+            + qaField('2. 어떤 문제가 있나요?', true, '<textarea class="form-control" rows="4" placeholder="예: Wi-Fi 연결은 정상인데 MQTT 연결이 5분마다 자동으로 끊깁니다. Error code -2가 계속 발생합니다."></textarea>')
+            + qaField('3. 무엇을 시도해 보았나요?', false, '<textarea class="form-control" rows="3" placeholder="예: Keep-alive 시간을 60초로 늘려봤고, QoS 레벨도 0, 1, 2 모두 시도했습니다."></textarea>')
+            + qaField('4. 어떤 도움을 받고 싶나요?', true, '<textarea class="form-control" rows="3" placeholder="예: 연결이 끊기는 원인을 찾고 싶습니다. ESP32 설정에서 놓친 부분이 있는지 확인 부탁드립니다."></textarea>')
+            + '</div>'
+            + qaField('첨부 자료', false,
+              qaAttachBtns([{ icon: 'bi-image', l: '이미지 첨부', sub: '스크린샷, 회로도' }, { icon: 'bi-code-slash', l: '코드 스니펫', sub: '문제 코드 붙여넣기' }])
+              + '<div class="d-flex flex-column gap-2">'
+              + '<input type="url" class="form-control form-control-sm" placeholder="GitHub 링크">'
+              + '<input type="url" class="form-control form-control-sm" placeholder="참고 링크">'
+              + '</div>')
+            + '</div>';
+        }
+      },
+      progress: {
+        title: '진행 공유하기', subtitle: '커뮤니티에 진행 상황을 공유합니다', submitLabel: '진행 공유', submitBg: '#2563eb',
+        body: function () {
+          return '<div class="p-5 d-flex flex-column" style="gap:1.5rem;">'
+            + projectSelectHtml('#2563eb', 'bi-rocket-takeoff', '커뮤니티에 공유되며, 프로젝트 타임라인에도 표시됩니다')
+            + qaField('진행 상황 제목', true,
               '<input type="text" class="form-control" placeholder="예: ESP32 센서 연결 완료, MQTT 통신 구현 중">'
-              +'<p class="text-muted small mt-1 mb-0">이번 단계의 진행 상황을 한 줄로 요약하세요</p>')
-          + '<div class="d-flex flex-column" style="gap:1rem;">'
-          + qaGuideBox('blue','진행 공유 가이드','구체적인 작업 내용과 결과물을 공유하면 다른 메이커들에게 도움이 됩니다')
-          + qaField('1. 이번 단계에서 어떤 작업을 했나요?', true, '<textarea class="form-control" rows="4" placeholder="예: Quest 2의 프로토타입 제작 단계에서 ESP32에 온습도 센서를 연결하고, MQTT로 AWS IoT Core에 데이터를 전송하는 작업을 진행했습니다."></textarea>')
-          + qaField('2. 현재까지 완료한 내용은 무엇인가요?', true, '<textarea class="form-control" rows="5" placeholder="예:&#10;- ESP32와 DHT22 센서 하드웨어 연결 완료&#10;- Wi-Fi 연결 및 MQTT 클라이언트 라이브러리 설정 완료&#10;- 5초마다 온습도 데이터를 AWS IoT Core로 전송 성공"></textarea>')
-          + qaField('3. 막힌 점 또는 고민이 있나요?', false, '<textarea class="form-control" rows="3" placeholder="예: 배터리로 동작시킬 때 전력 소모가 크고, 센서 값이 가끔 튀는 현상이 있습니다. Deep Sleep 모드 적용을 고민 중입니다."></textarea>')
-          + qaField('4. 다음에 할 일은 무엇인가요?', true, '<textarea class="form-control" rows="4" placeholder="예:&#10;- Deep Sleep 모드 구현으로 전력 최적화&#10;- 센서 값 필터링 알고리즘 추가&#10;- 웹 대시보드에서 데이터 시각화"></textarea>')
-          + '</div>'
-          + qaField('이미지 / 영상 / 링크 첨부', false,
-              qaAttachBtns([{icon:'bi-image',l:'이미지',sub:'사진 첨부'},{icon:'bi-camera-video',l:'영상',sub:'동작 영상'},{icon:'bi-link-45deg',l:'링크',sub:'외부 링크'}])
-              +'<div class="d-flex flex-column gap-2">'
-              +'<input type="url" class="form-control form-control-sm" placeholder="GitHub 커밋 링크">'
-              +'<input type="url" class="form-control form-control-sm" placeholder="YouTube 데모 영상">'
-              +'</div>')
-          +'</div>';
-      }
-    },
-    teammate: {
-      title:'팀원 찾기', subtitle:'커뮤니티에 팀원을 모집합니다', submitLabel:'팀원 모집', submitBg:'#16a34a',
-      body: function(){
-        return '<div class="p-5 d-flex flex-column" style="gap:1.5rem;">'
-          + projectSelectHtml('#16a34a','bi-people-fill','커뮤니티에 공개되며, 관심 있는 메이커들이 연락할 수 있습니다')
-          + qaField('모집 제목', true,
+              + '<p class="text-muted small mt-1 mb-0">이번 단계의 진행 상황을 한 줄로 요약하세요</p>')
+            + '<div class="d-flex flex-column" style="gap:1rem;">'
+            + qaGuideBox('blue', '진행 공유 가이드', '구체적인 작업 내용과 결과물을 공유하면 다른 메이커들에게 도움이 됩니다')
+            + qaField('1. 이번 단계에서 어떤 작업을 했나요?', true, '<textarea class="form-control" rows="4" placeholder="예: Quest 2의 프로토타입 제작 단계에서 ESP32에 온습도 센서를 연결하고, MQTT로 AWS IoT Core에 데이터를 전송하는 작업을 진행했습니다."></textarea>')
+            + qaField('2. 현재까지 완료한 내용은 무엇인가요?', true, '<textarea class="form-control" rows="5" placeholder="예:&#10;- ESP32와 DHT22 센서 하드웨어 연결 완료&#10;- Wi-Fi 연결 및 MQTT 클라이언트 라이브러리 설정 완료&#10;- 5초마다 온습도 데이터를 AWS IoT Core로 전송 성공"></textarea>')
+            + qaField('3. 막힌 점 또는 고민이 있나요?', false, '<textarea class="form-control" rows="3" placeholder="예: 배터리로 동작시킬 때 전력 소모가 크고, 센서 값이 가끔 튀는 현상이 있습니다. Deep Sleep 모드 적용을 고민 중입니다."></textarea>')
+            + qaField('4. 다음에 할 일은 무엇인가요?', true, '<textarea class="form-control" rows="4" placeholder="예:&#10;- Deep Sleep 모드 구현으로 전력 최적화&#10;- 센서 값 필터링 알고리즘 추가&#10;- 웹 대시보드에서 데이터 시각화"></textarea>')
+            + '</div>'
+            + qaField('이미지 / 영상 / 링크 첨부', false,
+              qaAttachBtns([{ icon: 'bi-image', l: '이미지', sub: '사진 첨부' }, { icon: 'bi-camera-video', l: '영상', sub: '동작 영상' }, { icon: 'bi-link-45deg', l: '링크', sub: '외부 링크' }])
+              + '<div class="d-flex flex-column gap-2">'
+              + '<input type="url" class="form-control form-control-sm" placeholder="GitHub 커밋 링크">'
+              + '<input type="url" class="form-control form-control-sm" placeholder="YouTube 데모 영상">'
+              + '</div>')
+            + '</div>';
+        }
+      },
+      teammate: {
+        title: '팀원 찾기', subtitle: '커뮤니티에 팀원을 모집합니다', submitLabel: '팀원 모집', submitBg: '#16a34a',
+        body: function () {
+          return '<div class="p-5 d-flex flex-column" style="gap:1.5rem;">'
+            + projectSelectHtml('#16a34a', 'bi-people-fill', '커뮤니티에 공개되며, 관심 있는 메이커들이 연락할 수 있습니다')
+            + qaField('모집 제목', true,
               '<input type="text" class="form-control" placeholder="예: AI 로봇 프로젝트 함께할 하드웨어 엔지니어 구합니다">'
-              +'<p class="text-muted small mt-1 mb-0">모집 목적을 명확하게 요약하세요</p>')
-          + qaField('필요한 역할 유형', true, qaRoleGrid([
-              {v:'developer', l:'개발자',   icon:'bi-code-slash'},
-              {v:'hardware',  l:'하드웨어', icon:'bi-cpu'},
-              {v:'designer',  l:'디자이너', icon:'bi-palette'},
-              {v:'researcher',l:'연구자',   icon:'bi-search'},
-              {v:'marketer',  l:'마케터',   icon:'bi-megaphone'},
-              {v:'etc',       l:'기타',     icon:'bi-person-plus'},
+              + '<p class="text-muted small mt-1 mb-0">모집 목적을 명확하게 요약하세요</p>')
+            + qaField('필요한 역할 유형', true, qaRoleGrid([
+              { v: 'developer', l: '개발자', icon: 'bi-code-slash' },
+              { v: 'hardware', l: '하드웨어', icon: 'bi-cpu' },
+              { v: 'designer', l: '디자이너', icon: 'bi-palette' },
+              { v: 'researcher', l: '연구자', icon: 'bi-search' },
+              { v: 'marketer', l: '마케터', icon: 'bi-megaphone' },
+              { v: 'etc', l: '기타', icon: 'bi-person-plus' },
             ]))
-          + '<div class="d-flex flex-column" style="gap:1rem;">'
-          + qaGuideBox('green','팀원 모집 가이드','프로젝트 정보와 협업 방식을 구체적으로 작성하면 더 좋은 팀원을 만날 수 있습니다')
-          + qaField('1. 프로젝트 간단 소개', true, '<textarea class="form-control" rows="4" placeholder="예: AI 음성인식으로 동작하는 자율주행 로봇을 만들고 있습니다. 라즈베리파이와 OpenCV를 활용하며, 최종 목표는 실내 자율주행 배송 로봇입니다."></textarea>')
-          + qaField('2. 현재 진행 단계', false, '<textarea class="form-control" rows="3" placeholder="예: Quest 2 프로토타입 단계입니다. 소프트웨어 부분은 70% 완성되었고, 하드웨어 설계와 제작이 필요한 상황입니다."></textarea>')
-          + qaField('3. 필요한 역할과 요구 사항', true, '<textarea class="form-control" rows="5" placeholder="예:&#10;- 하드웨어 엔지니어 1명: 모터 제어 및 센서 통합 경험&#10;- 기계 설계 전공자 1명: 3D CAD 모델링 가능자&#10;- 주 1회 이상 온라인 미팅 가능하신 분"></textarea>')
-          + qaField('4. 협업 방식', true, '<textarea class="form-control" rows="4" placeholder="예:&#10;- 온라인 협업 (Slack + GitHub)&#10;- 주 1회 화상 회의 (수요일 저녁 9시)&#10;- 월 1회 오프라인 미팅 (서울 강남)"></textarea>')
-          + qaField('5. 연락 방법', true, '<textarea class="form-control" rows="4" placeholder="예:&#10;- 이메일: maker@example.com&#10;- 카카오톡 오픈채팅: https://open.kakao.com/...&#10;관심 있으신 분은 간단한 자기소개와 함께 연락 주세요!"></textarea>')
-          + '</div>'
-          + qaField('참고 링크', false,
+            + '<div class="d-flex flex-column" style="gap:1rem;">'
+            + qaGuideBox('green', '팀원 모집 가이드', '프로젝트 정보와 협업 방식을 구체적으로 작성하면 더 좋은 팀원을 만날 수 있습니다')
+            + qaField('1. 프로젝트 간단 소개', true, '<textarea class="form-control" rows="4" placeholder="예: AI 음성인식으로 동작하는 자율주행 로봇을 만들고 있습니다. 라즈베리파이와 OpenCV를 활용하며, 최종 목표는 실내 자율주행 배송 로봇입니다."></textarea>')
+            + qaField('2. 현재 진행 단계', false, '<textarea class="form-control" rows="3" placeholder="예: Quest 2 프로토타입 단계입니다. 소프트웨어 부분은 70% 완성되었고, 하드웨어 설계와 제작이 필요한 상황입니다."></textarea>')
+            + qaField('3. 필요한 역할과 요구 사항', true, '<textarea class="form-control" rows="5" placeholder="예:&#10;- 하드웨어 엔지니어 1명: 모터 제어 및 센서 통합 경험&#10;- 기계 설계 전공자 1명: 3D CAD 모델링 가능자&#10;- 주 1회 이상 온라인 미팅 가능하신 분"></textarea>')
+            + qaField('4. 협업 방식', true, '<textarea class="form-control" rows="4" placeholder="예:&#10;- 온라인 협업 (Slack + GitHub)&#10;- 주 1회 화상 회의 (수요일 저녁 9시)&#10;- 월 1회 오프라인 미팅 (서울 강남)"></textarea>')
+            + qaField('5. 연락 방법', true, '<textarea class="form-control" rows="4" placeholder="예:&#10;- 이메일: maker@example.com&#10;- 카카오톡 오픈채팅: https://open.kakao.com/...&#10;관심 있으신 분은 간단한 자기소개와 함께 연락 주세요!"></textarea>')
+            + '</div>'
+            + qaField('참고 링크', false,
               '<div class="d-flex flex-column gap-2">'
-              +'<input type="url" class="form-control form-control-sm" placeholder="GitHub 저장소 (참고용)">'
-              +'<input type="url" class="form-control form-control-sm" placeholder="프로젝트 상세 페이지">'
-              +'<input type="url" class="form-control form-control-sm" placeholder="참고 자료 링크">'
-              +'</div>')
-          +'</div>';
-      }
-    },
-    resource: {
-      title:'자료 공유하기', subtitle:'커뮤니티에 유용한 자료를 공유합니다', submitLabel:'자료 공유', submitBg:'#ea580c',
-      body: function(){
-        var questHtml = [
-          {v:1,l:'Quest 1: 기획/설계'},{v:2,l:'Quest 2: 프로토타입'},{v:3,l:'Quest 3: 최종 완성'}
-        ].map(function(q){
-          return '<button class="btn qa-quest-btn d-flex align-items-center gap-3 w-100 p-3 rounded-3 text-start mb-2" data-val="'+q.v+'">'
-            +'<div class="quest-check rounded-2 border d-flex align-items-center justify-content-center flex-shrink-0" style="width:20px;height:20px;border-color:#9ca3af;">'
-            +'<i class="bi bi-check quest-check-icon d-none text-white fs-70"></i>'
-            +'</div>'
-            +'<span class="fw-semibold small quest-label">'+q.l+'</span>'
-            +'</button>';
-        }).join('');
-        return '<div class="p-5 d-flex flex-column" style="gap:1.5rem;">'
-          + projectSelectHtml('#ea580c','bi-share-fill','커뮤니티 자료실에 등록되며, 다른 메이커들에게 도움이 됩니다')
-          + qaField('자료 제목', true,
+              + '<input type="url" class="form-control form-control-sm" placeholder="GitHub 저장소 (참고용)">'
+              + '<input type="url" class="form-control form-control-sm" placeholder="프로젝트 상세 페이지">'
+              + '<input type="url" class="form-control form-control-sm" placeholder="참고 자료 링크">'
+              + '</div>')
+            + '</div>';
+        }
+      },
+      resource: {
+        title: '자료 공유하기', subtitle: '커뮤니티에 유용한 자료를 공유합니다', submitLabel: '자료 공유', submitBg: '#ea580c',
+        body: function () {
+          var questHtml = [
+            { v: 1, l: 'Quest 1: 기획/설계' }, { v: 2, l: 'Quest 2: 프로토타입' }, { v: 3, l: 'Quest 3: 최종 완성' }
+          ].map(function (q) {
+            return '<button class="btn qa-quest-btn d-flex align-items-center gap-3 w-100 p-3 rounded-3 text-start mb-2" data-val="' + q.v + '">'
+              + '<div class="quest-check rounded-2 border d-flex align-items-center justify-content-center flex-shrink-0" style="width:20px;height:20px;border-color:#9ca3af;">'
+              + '<i class="bi bi-check quest-check-icon d-none text-white fs-70"></i>'
+              + '</div>'
+              + '<span class="fw-semibold small quest-label">' + q.l + '</span>'
+              + '</button>';
+          }).join('');
+          return '<div class="p-5 d-flex flex-column" style="gap:1.5rem;">'
+            + projectSelectHtml('#ea580c', 'bi-share-fill', '커뮤니티 자료실에 등록되며, 다른 메이커들에게 도움이 됩니다')
+            + qaField('자료 제목', true,
               '<input type="text" class="form-control" placeholder="예: ESP32 MQTT 안정적 연결을 위한 코드 라이브러리">'
-              +'<p class="text-muted small mt-1 mb-0">자료의 내용을 명확하게 표현하세요</p>')
-          + qaField('자료 유형', true, qaTypeGrid([
-              {v:'code',    l:'코드 라이브러리', icon:'bi-code-slash'},
-              {v:'tutorial',l:'튜토리얼',        icon:'bi-book'},
-              {v:'design',  l:'설계 파일',       icon:'bi-file-earmark-text'},
-              {v:'video',   l:'영상 자료',        icon:'bi-camera-video'},
-              {v:'data',    l:'데이터셋',         icon:'bi-database'},
-              {v:'etc',     l:'기타',            icon:'bi-share'},
+              + '<p class="text-muted small mt-1 mb-0">자료의 내용을 명확하게 표현하세요</p>')
+            + qaField('자료 유형', true, qaTypeGrid([
+              { v: 'code', l: '코드 라이브러리', icon: 'bi-code-slash' },
+              { v: 'tutorial', l: '튜토리얼', icon: 'bi-book' },
+              { v: 'design', l: '설계 파일', icon: 'bi-file-earmark-text' },
+              { v: 'video', l: '영상 자료', icon: 'bi-camera-video' },
+              { v: 'data', l: '데이터셋', icon: 'bi-database' },
+              { v: 'etc', l: '기타', icon: 'bi-share' },
             ]))
-          + '<div class="d-flex flex-column" style="gap:1rem;">'
-          + qaGuideBox('orange','자료 공유 가이드','구체적인 사용 방법과 도움이 되는 이유를 작성하면 더 많은 메이커들에게 도움이 됩니다')
-          + qaField('1. 자료 설명', true, '<textarea class="form-control" rows="4" placeholder="예: ESP32에서 MQTT 연결이 끊기는 문제를 해결한 안정적인 라이브러리입니다. 자동 재연결, Keep-alive 최적화, 오류 처리 기능이 포함되어 있습니다."></textarea>')
-          + qaField('2. 왜 이 자료가 도움이 되나요?', true, '<textarea class="form-control" rows="5" placeholder="예:&#10;- MQTT 연결 안정성 99% 이상 유지&#10;- 네트워크 불안정 환경에서도 자동 복구&#10;- 간단한 API로 5분 안에 적용 가능"></textarea>')
-          + qaField('3. 어떤 상황/단계에 유용한가요?', false, '<textarea class="form-control" rows="4" placeholder="예:&#10;- IoT 프로젝트에서 ESP32 사용하시는 분&#10;- MQTT 연결 불안정 문제를 겪고 계신 분&#10;- 실제 배포 환경에서 안정성이 필요하신 분"></textarea>')
-          + '</div>'
-          + '<div>'
-          + '<label class="fw-bold small d-block mb-2">4. 유용한 Quest 단계 <span class="text-danger">*</span></label>'
-          + questHtml
-          + '<p class="text-muted small mt-1 mb-0">복수 선택 가능합니다</p></div>'
-          + qaField('파일 또는 링크 첨부', true,
-              qaAttachBtns([{icon:'bi-file-earmark',l:'파일 첨부',sub:'코드, 문서 등'},{icon:'bi-image',l:'이미지',sub:'설명 이미지'}])
-              +'<div class="d-flex flex-column gap-2">'
-              +'<input type="url" class="form-control form-control-sm" placeholder="GitHub 저장소 링크 *">'
-              +'<input type="url" class="form-control form-control-sm" placeholder="다운로드 링크 또는 참고 문서">'
-              +'<input type="url" class="form-control form-control-sm" placeholder="데모 영상 링크 (선택)">'
-              +'</div>')
-          + qaField('라이센스 정보', false,
+            + '<div class="d-flex flex-column" style="gap:1rem;">'
+            + qaGuideBox('orange', '자료 공유 가이드', '구체적인 사용 방법과 도움이 되는 이유를 작성하면 더 많은 메이커들에게 도움이 됩니다')
+            + qaField('1. 자료 설명', true, '<textarea class="form-control" rows="4" placeholder="예: ESP32에서 MQTT 연결이 끊기는 문제를 해결한 안정적인 라이브러리입니다. 자동 재연결, Keep-alive 최적화, 오류 처리 기능이 포함되어 있습니다."></textarea>')
+            + qaField('2. 왜 이 자료가 도움이 되나요?', true, '<textarea class="form-control" rows="5" placeholder="예:&#10;- MQTT 연결 안정성 99% 이상 유지&#10;- 네트워크 불안정 환경에서도 자동 복구&#10;- 간단한 API로 5분 안에 적용 가능"></textarea>')
+            + qaField('3. 어떤 상황/단계에 유용한가요?', false, '<textarea class="form-control" rows="4" placeholder="예:&#10;- IoT 프로젝트에서 ESP32 사용하시는 분&#10;- MQTT 연결 불안정 문제를 겪고 계신 분&#10;- 실제 배포 환경에서 안정성이 필요하신 분"></textarea>')
+            + '</div>'
+            + '<div>'
+            + '<label class="fw-bold small d-block mb-2">4. 유용한 Quest 단계 <span class="text-danger">*</span></label>'
+            + questHtml
+            + '<p class="text-muted small mt-1 mb-0">복수 선택 가능합니다</p></div>'
+            + qaField('파일 또는 링크 첨부', true,
+              qaAttachBtns([{ icon: 'bi-file-earmark', l: '파일 첨부', sub: '코드, 문서 등' }, { icon: 'bi-image', l: '이미지', sub: '설명 이미지' }])
+              + '<div class="d-flex flex-column gap-2">'
+              + '<input type="url" class="form-control form-control-sm" placeholder="GitHub 저장소 링크 *">'
+              + '<input type="url" class="form-control form-control-sm" placeholder="다운로드 링크 또는 참고 문서">'
+              + '<input type="url" class="form-control form-control-sm" placeholder="데모 영상 링크 (선택)">'
+              + '</div>')
+            + qaField('라이센스 정보', false,
               '<select class="form-select form-select-sm">'
-              +'<option value="">라이센스를 선택하세요</option>'
-              +'<option>MIT License</option><option>Apache 2.0</option><option>GPL 3.0</option>'
-              +'<option>Creative Commons</option><option>개인 저작물 (출처 표기 필수)</option><option>기타</option>'
-              +'</select>'
-              +'<p class="text-muted small mt-1 mb-0">라이센스를 명시하면 다른 메이커들이 안심하고 사용할 수 있습니다</p>')
-          +'</div>';
+              + '<option value="">라이센스를 선택하세요</option>'
+              + '<option>MIT License</option><option>Apache 2.0</option><option>GPL 3.0</option>'
+              + '<option>Creative Commons</option><option>개인 저작물 (출처 표기 필수)</option><option>기타</option>'
+              + '</select>'
+              + '<p class="text-muted small mt-1 mb-0">라이센스를 명시하면 다른 메이커들이 안심하고 사용할 수 있습니다</p>')
+            + '</div>';
+        }
       }
-    }
-  };
+    };
 
-  window.openQuickAction = function(type) {
-    var cfg = qaConfigs[type];
-    $('#qa-title').text(cfg.title);
-    $('#qa-subtitle').text(cfg.subtitle);
-    $('#qa-body').html(cfg.body());
-    $('#qa-submit-btn').text(cfg.submitLabel).css({'background':cfg.submitBg||'#2563eb','color':'#fff','border':'none'});
-    document.getElementById('quickActionOffcanvas').classList.add('cpanel-show');
-    document.getElementById('quickActionBackdrop').classList.add('cpanel-show');
-    document.body.style.overflow = 'hidden';
-  };
+    window.openQuickAction = function (type) {
+      var cfg = qaConfigs[type];
+      $('#qa-title').text(cfg.title);
+      $('#qa-subtitle').text(cfg.subtitle);
+      $('#qa-body').html(cfg.body());
+      $('#qa-submit-btn').text(cfg.submitLabel).css({ 'background': cfg.submitBg || '#2563eb', 'color': '#fff', 'border': 'none' });
+      document.getElementById('quickActionOffcanvas').classList.add('cpanel-show');
+      document.getElementById('quickActionBackdrop').classList.add('cpanel-show');
+      document.body.style.overflow = 'hidden';
+    };
 
-  // Type buttons (single-select per group)
-  $(document).on('click', '.qa-type-btn', function(){
-    $(this).closest('.row').find('.qa-type-btn').removeClass('qa-selected').find('.qa-icon').addClass('text-secondary').removeClass('text-primary');
-    $(this).addClass('qa-selected').find('.qa-icon').removeClass('text-secondary').addClass('text-primary');
-  });
-  // Role buttons (multi-select)
-  $(document).on('click', '.qa-role-btn', function(){
-    $(this).toggleClass('qa-selected');
-    $(this).find('.qa-icon').toggleClass('text-secondary', !$(this).hasClass('qa-selected')).toggleClass('text-success', $(this).hasClass('qa-selected'));
-  });
-  // Quest stage buttons (multi-select)
-  $(document).on('click', '.qa-quest-btn', function(){
-    $(this).toggleClass('qa-selected');
-    var sel = $(this).hasClass('qa-selected');
-    $(this).find('.quest-check').css({'background':sel?'#2563eb':'','border-color':sel?'#2563eb':'#9ca3af'});
-    $(this).find('.quest-check-icon').toggleClass('d-none', !sel);
-    $(this).find('.quest-label').css('color', sel ? '#1e40af' : '#111');
-  });
+    // Type buttons (single-select per group)
+    $(document).on('click', '.qa-type-btn', function () {
+      $(this).closest('.row').find('.qa-type-btn').removeClass('qa-selected').find('.qa-icon').addClass('text-secondary').removeClass('text-primary');
+      $(this).addClass('qa-selected').find('.qa-icon').removeClass('text-secondary').addClass('text-primary');
+    });
+    // Role buttons (multi-select)
+    $(document).on('click', '.qa-role-btn', function () {
+      $(this).toggleClass('qa-selected');
+      $(this).find('.qa-icon').toggleClass('text-secondary', !$(this).hasClass('qa-selected')).toggleClass('text-success', $(this).hasClass('qa-selected'));
+    });
+    // Quest stage buttons (multi-select)
+    $(document).on('click', '.qa-quest-btn', function () {
+      $(this).toggleClass('qa-selected');
+      var sel = $(this).hasClass('qa-selected');
+      $(this).find('.quest-check').css({ 'background': sel ? '#2563eb' : '', 'border-color': sel ? '#2563eb' : '#9ca3af' });
+      $(this).find('.quest-check-icon').toggleClass('d-none', !sel);
+      $(this).find('.quest-label').css('color', sel ? '#1e40af' : '#111');
+    });
 
-  // Quick action submit
-  $('#qa-submit-btn').on('click', function(){
-    hideQuickAction();
-  });
-  $('#qa-draft-btn').on('click', function(){
-    alert('임시 저장되었습니다.');
-  });
+    // Quick action submit
+    $('#qa-submit-btn').on('click', function () {
+      hideQuickAction();
+    });
+    $('#qa-draft-btn').on('click', function () {
+      alert('임시 저장되었습니다.');
+    });
 
-  /* ── Mark all following updates read ────────────────────── */
-  $('#mark-all-updates').on('click', function(){
-    $('#following-list .badge.bg-danger').remove();
-    $('#following-list .d-inline-block.rounded-circle.bg-danger').remove();
-    $('#following-list .following-maker').removeClass('has-update').css('background','').css('border-color','');
-    $('#following-list .d-flex.gap-2.p-2.rounded-2').css('border','none').css('background','#f9fafb');
-    $(this).hide();
-  });
+    /* ── Mark all following updates read ────────────────────── */
+    $('#mark-all-updates').on('click', function () {
+      $('#following-list .badge.bg-danger').remove();
+      $('#following-list .d-inline-block.rounded-circle.bg-danger').remove();
+      $('#following-list .following-maker').removeClass('has-update').css('background', '').css('border-color', '');
+      $('#following-list .d-flex.gap-2.p-2.rounded-2').css('border', 'none').css('background', '#f9fafb');
+      $(this).hide();
+    });
 
-  /* ── Init ───────────────────────────────────────────────── */
-  $(function(){
-    Auth.requirePage();   // 로그인 필수 페이지
-    renderProjects();
-    renderCommunity();
-  });
+    /* ── Init ───────────────────────────────────────────────── */
+    $(function () {
+      Auth.requirePage();   // 로그인 필수 페이지
+      renderProjects();
+      renderCommunity();
+    });
   </script>
 
   <!-- ══════════════════════════════════════════════════════
@@ -1432,14 +1493,18 @@
                     <div class="fw-bold np-type-card-title">콘테스트 프로젝트</div>
                     <div class="text-muted small mb-3">콘테스트에 참가하며 프로젝트를 완성하세요</div>
                     <ul class="list-unstyled small mb-4 text-muted-dark">
-                      <li class="mb-2 d-flex align-items-center gap-2"><span class="text-purple">✔</span> Quest 단계별 가이드</li>
-                      <li class="mb-2 d-flex align-items-center gap-2"><span class="text-purple">✔</span> 상금 및 경품 획득 기회</li>
-                      <li class="mb-2 d-flex align-items-center gap-2"><span class="text-purple">✔</span> 구조화된 프로젝트 관리</li>
+                      <li class="mb-2 d-flex align-items-center gap-2"><span class="text-purple">✔</span> Quest 단계별 가이드
+                      </li>
+                      <li class="mb-2 d-flex align-items-center gap-2"><span class="text-purple">✔</span> 상금 및 경품 획득 기회
+                      </li>
+                      <li class="mb-2 d-flex align-items-center gap-2"><span class="text-purple">✔</span> 구조화된 프로젝트 관리
+                      </li>
                       <li class="d-flex align-items-center gap-2"><span class="text-purple">✔</span> 커뮤니티 피드백</li>
                     </ul>
                     <div class="np-type-recommend-box np-type-recommend-purple">
                       <div class="fw-semibold np-type-recommend-label np-type-recommend-label-purple">추천 대상</div>
-                      <div class="np-type-recommend-text np-type-recommend-text-purple">목표를 갖고 체계적으로 프로젝트를 완성하고 싶은 메이커</div>
+                      <div class="np-type-recommend-text np-type-recommend-text-purple">목표를 갖고 체계적으로 프로젝트를 완성하고 싶은 메이커
+                      </div>
                     </div>
                     <div class="np-type-cta-btn np-type-cta-purple">콘테스트 프로젝트 시작하기 →</div>
                   </div>
@@ -1473,11 +1538,11 @@
 
   <script>
     function openNewProjectModal() {
-      var modal   = document.getElementById('npProjectCreationModal');
+      var modal = document.getElementById('npProjectCreationModal');
       var overlay = document.getElementById('np-modal-overlay');
       if (!modal || !overlay) return;
       overlay.style.display = 'block';
-      modal.style.display   = 'block';
+      modal.style.display = 'block';
       document.body.style.overflow = 'hidden';
       requestAnimationFrame(function () {
         requestAnimationFrame(function () {
@@ -1487,14 +1552,14 @@
       });
     }
     function closeNewProjectModal() {
-      var modal   = document.getElementById('npProjectCreationModal');
+      var modal = document.getElementById('npProjectCreationModal');
       var overlay = document.getElementById('np-modal-overlay');
       if (!modal || !overlay) return;
       modal.classList.remove('show');
       overlay.classList.remove('show');
       document.body.style.overflow = '';
       setTimeout(function () {
-        modal.style.display   = 'none';
+        modal.style.display = 'none';
         overlay.style.display = 'none';
       }, 220);
     }
@@ -1502,9 +1567,10 @@
       var overlay = document.getElementById('np-modal-overlay');
       if (overlay) overlay.addEventListener('click', closeNewProjectModal);
     });
-    document.addEventListener('keydown', function(e){
+    document.addEventListener('keydown', function (e) {
       if (e.key === 'Escape') closeNewProjectModal();
     });
   </script>
 </body>
+
 </html>

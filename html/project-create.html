@@ -1,142 +1,140 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>프로젝트 등록 — e4ds make</title>
-  <link rel="stylesheet"
-        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
-        crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/custom.css">
   <link rel="stylesheet" href="assets/css/make2026-styles.css">
   <link rel="stylesheet" href="assets/css/output.css">
   <script src="https://kit.fontawesome.com/38e89eef65.js" crossorigin="anonymous"></script>
 </head>
+
 <body class="bg-light">
 
   <!-- ===== PLATFORM HEADER ===== -->
-<header id="platform-header" class="bg-white border-bottom sticky-top shadow-sm">
+  <header id="platform-header" class="bg-white border-bottom sticky-top shadow-sm">
 
-  <!-- Top Bar -->
-  <div class="border-bottom border-light">
-    <div class="container-xl">
-      <div class="d-flex align-items-center justify-content-between topbar-inner">
-        <small class="text-muted" id="header-date"></small>
-        <div class="d-flex align-items-center gap-3">
-          <a href="login.html"   class="text-secondary text-decoration-none small header-toplink auth-loggedout-only">로그인</a>
-          <a href="signup.html"  class="text-secondary text-decoration-none small header-toplink auth-loggedout-only">회원가입</a>
-          <a href="support.html" class="text-secondary text-decoration-none small header-toplink">고객센터</a>
-          <a href="#"            class="text-secondary text-decoration-none small header-toplink">홈사이트</a>
+    <!-- Top Bar -->
+    <div class="border-bottom border-light">
+      <div class="container-xl">
+        <div class="d-flex align-items-center justify-content-between topbar-inner">
+          <small class="text-muted" id="header-date"></small>
+          <div class="d-flex align-items-center gap-3">
+            <a href="login.html"
+              class="text-secondary text-decoration-none small header-toplink auth-loggedout-only">로그인</a>
+            <a href="signup.html"
+              class="text-secondary text-decoration-none small header-toplink auth-loggedout-only">회원가입</a>
+            <a href="support.html" class="text-secondary text-decoration-none small header-toplink">고객센터</a>
+            <a href="#" class="text-secondary text-decoration-none small header-toplink">홈사이트</a>
+          </div>
         </div>
       </div>
     </div>
-  </div>
 
-  <!-- Main Nav -->
-  <div class="container-xl">
-    <nav class="navbar navbar-expand-lg px-0">
+    <!-- Main Nav -->
+    <div class="container-xl">
+      <nav class="navbar navbar-expand-lg px-0">
 
-      <!-- Logo -->
-      <a class="navbar-brand fw-bold fs-5 me-4" href="index.html">
-        <span class="text-dark">e</span><span class="text-warning">4</span><span class="text-dark">ds</span>
-        <span class="fw-normal text-secondary ms-1 brand-text">make</span>
-      </a>
+        <!-- Logo -->
+        <a class="navbar-brand fw-bold fs-5 me-4" href="index.html">
+          <span class="text-dark">e</span><span class="text-warning">4</span><span class="text-dark">ds</span>
+          <span class="fw-normal text-secondary ms-1 brand-text">make</span>
+        </a>
 
-      <!-- Mobile toggler -->
-      <button class="navbar-toggler ms-auto" type="button"
-              data-bs-toggle="collapse" data-bs-target="#mainNavCollapse"
-              aria-controls="mainNavCollapse" aria-expanded="false" aria-label="메뉴 열기">
-        <span class="navbar-toggler-icon"></span>
-      </button>
+        <!-- Mobile toggler -->
+        <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavCollapse"
+          aria-controls="mainNavCollapse" aria-expanded="false" aria-label="메뉴 열기">
+          <span class="navbar-toggler-icon"></span>
+        </button>
 
-      <div class="collapse navbar-collapse" id="mainNavCollapse">
+        <div class="collapse navbar-collapse" id="mainNavCollapse">
 
-        <!-- Center Links -->
-        <ul class="navbar-nav me-auto gap-lg-1">
+          <!-- Center Links -->
+          <ul class="navbar-nav me-auto gap-lg-1">
 
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle fw-medium text-dark" href="#"
-               data-bs-toggle="dropdown">News</a>
-            <ul class="dropdown-menu shadow-sm border-0">
-              <li><a class="dropdown-item" href="#">최신 뉴스</a></li>
-              <li><a class="dropdown-item" href="notices.html">공지사항</a></li>
-            </ul>
-          </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle fw-medium text-dark" href="#" data-bs-toggle="dropdown">News</a>
+              <ul class="dropdown-menu shadow-sm border-0">
+                <li><a class="dropdown-item" href="#">최신 뉴스</a></li>
+                <li><a class="dropdown-item" href="notices.html">공지사항</a></li>
+              </ul>
+            </li>
 
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle fw-medium text-dark" href="#"
-               data-bs-toggle="dropdown">Technologies</a>
-            <ul class="dropdown-menu shadow-sm border-0">
-              <li><a class="dropdown-item" href="#">임베디드</a></li>
-              <li><a class="dropdown-item" href="#">IoT</a></li>
-              <li><a class="dropdown-item" href="#">AI/ML</a></li>
-            </ul>
-          </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle fw-medium text-dark" href="#"
+                data-bs-toggle="dropdown">Technologies</a>
+              <ul class="dropdown-menu shadow-sm border-0">
+                <li><a class="dropdown-item" href="#">임베디드</a></li>
+                <li><a class="dropdown-item" href="#">IoT</a></li>
+                <li><a class="dropdown-item" href="#">AI/ML</a></li>
+              </ul>
+            </li>
 
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle fw-medium text-dark" href="#"
-               data-bs-toggle="dropdown">Industries</a>
-            <ul class="dropdown-menu shadow-sm border-0">
-              <li><a class="dropdown-item" href="#">자동차</a></li>
-              <li><a class="dropdown-item" href="#">의료</a></li>
-              <li><a class="dropdown-item" href="#">산업자동화</a></li>
-            </ul>
-          </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle fw-medium text-dark" href="#" data-bs-toggle="dropdown">Industries</a>
+              <ul class="dropdown-menu shadow-sm border-0">
+                <li><a class="dropdown-item" href="#">자동차</a></li>
+                <li><a class="dropdown-item" href="#">의료</a></li>
+                <li><a class="dropdown-item" href="#">산업자동화</a></li>
+              </ul>
+            </li>
 
-          <li class="nav-item">
-            <a class="nav-link fw-medium text-dark" href="events.html">EEWebinar</a>
-          </li>
+            <li class="nav-item">
+              <a class="nav-link fw-medium text-dark" href="events.html">EEWebinar</a>
+            </li>
 
-          <li class="nav-item dropdown" id="makers-zone-dropdown">
-            <a class="nav-link dropdown-toggle fw-medium text-dark" href="#"
-               data-bs-toggle="dropdown">Maker's Zone</a>
-            <ul class="dropdown-menu shadow-sm border-0">
-              <li><a class="dropdown-item" href="projects.html">프로젝트</a></li>
-              <li><a class="dropdown-item" href="contests.html">콘테스트</a></li>
-              <li><a class="dropdown-item" href="community.html">커뮤니티</a></li>
-              <li><a class="dropdown-item" href="my-make.html">마이메이크</a></li>
-            </ul>
-          </li>
-        </ul>
+            <li class="nav-item dropdown" id="makers-zone-dropdown">
+              <a class="nav-link dropdown-toggle fw-medium text-dark" href="#" data-bs-toggle="dropdown">Maker's
+                Zone</a>
+              <ul class="dropdown-menu shadow-sm border-0">
+                <li><a class="dropdown-item" href="projects.html">프로젝트</a></li>
+                <li><a class="dropdown-item" href="contests.html">콘테스트</a></li>
+                <li><a class="dropdown-item" href="community.html">커뮤니티</a></li>
+                <li><a class="dropdown-item" href="my-make.html">마이메이크</a></li>
+              </ul>
+            </li>
+          </ul>
 
-        <!-- Right Actions -->
-        <div class="d-flex align-items-center gap-2 ms-lg-2">
-          <button class="btn btn-light btn-sm p-2 rounded-3" id="header-search-btn" title="검색">
-            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
-                 fill="none" stroke="currentColor" stroke-width="2"
-                 stroke-linecap="round" stroke-linejoin="round">
-              <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
-            </svg>
-          </button>
-          <button class="btn btn-light btn-sm p-2 rounded-3" id="header-user-btn" title="프로필">
-            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
-                 fill="none" stroke="currentColor" stroke-width="2"
-                 stroke-linecap="round" stroke-linejoin="round">
-              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
-              <circle cx="12" cy="7" r="4"/>
-            </svg>
-          </button>
-        </div>
+          <!-- Right Actions -->
+          <div class="d-flex align-items-center gap-2 ms-lg-2">
+            <button class="btn btn-light btn-sm p-2 rounded-3" id="header-search-btn" title="검색">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="11" cy="11" r="8" />
+                <line x1="21" y1="21" x2="16.65" y2="16.65" />
+              </svg>
+            </button>
+            <button class="btn btn-light btn-sm p-2 rounded-3" id="header-user-btn" title="프로필">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+                <circle cx="12" cy="7" r="4" />
+              </svg>
+            </button>
+          </div>
 
-      </div><!-- /collapse -->
-    </nav>
-  </div>
-
-  <!-- Search Bar (hidden by default) -->
-  <div id="header-search-bar" class="border-top bg-light d-none">
-    <div class="container-xl py-2">
-      <form class="d-flex gap-2" id="header-search-form">
-        <input type="search" class="form-control form-control-sm"
-               placeholder="검색어를 입력하세요..." id="header-search-input">
-        <button type="submit" class="btn btn-primary btn-sm px-3">검색</button>
-        <button type="button" class="btn btn-light btn-sm" id="header-search-close">닫기</button>
-      </form>
+        </div><!-- /collapse -->
+      </nav>
     </div>
-  </div>
 
-</header>
+    <!-- Search Bar (hidden by default) -->
+    <div id="header-search-bar" class="border-top bg-light d-none">
+      <div class="container-xl py-2">
+        <form class="d-flex gap-2" id="header-search-form">
+          <input type="search" class="form-control form-control-sm" placeholder="검색어를 입력하세요..."
+            id="header-search-input">
+          <button type="submit" class="btn btn-primary btn-sm px-3">검색</button>
+          <button type="button" class="btn btn-light btn-sm" id="header-search-close">닫기</button>
+        </form>
+      </div>
+    </div>
+
+  </header>
 
   <main>
     <!-- Breadcrumb -->
@@ -156,7 +154,9 @@
     <section id="hero-banner" class="hero-gradient-blue-purple-h text-white py-4">
       <div class="container-xl py-2">
         <div class="d-flex align-items-center gap-4">
-          <div class="rounded-circle bg-white bg-opacity-25 d-flex align-items-center justify-content-center flex-shrink-0 hero-icon-56">🚀</div>
+          <div
+            class="rounded-circle bg-white bg-opacity-25 d-flex align-items-center justify-content-center flex-shrink-0 hero-icon-56">
+            🚀</div>
           <div>
             <span class="badge bg-white bg-opacity-25 mb-1" id="hero-badge">프로젝트 에디터</span>
             <h2 class="fw-bold mb-0" id="hero-title">새 프로젝트 등록하기</h2>
@@ -178,7 +178,8 @@
             <div class="row g-3">
               <div class="col-6">
                 <input type="radio" class="btn-check" name="projectType" id="typePersonal" value="personal" checked>
-                <label class="btn btn-outline-primary w-100 h-100 d-flex flex-column align-items-center py-3 gap-1" for="typePersonal">
+                <label class="btn btn-outline-primary w-100 h-100 d-flex flex-column align-items-center py-3 gap-1"
+                  for="typePersonal">
                   <span class="fs-2">🛠️</span>
                   <span class="fw-bold">개인 프로젝트</span>
                   <small class="text-muted fw-normal">자유롭게 제작한 개인 작품</small>
@@ -186,7 +187,9 @@
               </div>
               <div class="col-6">
                 <input type="radio" class="btn-check" name="projectType" id="typeContest" value="contest">
-                <label class="btn btn-outline-purple w-100 h-100 d-flex flex-column align-items-center py-3 gap-1 text-purple border-purple" for="typeContest">
+                <label
+                  class="btn btn-outline-purple w-100 h-100 d-flex flex-column align-items-center py-3 gap-1 text-purple border-purple"
+                  for="typeContest">
                   <span class="fs-2">🏆</span>
                   <span class="fw-bold">콘테스트 프로젝트</span>
                   <small class="text-muted fw-normal">대회에 참가하는 프로젝트</small>
@@ -223,7 +226,9 @@
           <!-- ② 기본 정보 -->
           <div class="form-section">
             <div class="d-flex align-items-center gap-3 mb-4 pb-3 border-bottom">
-              <div class="rounded-circle bg-primary-subtle text-primary d-flex align-items-center justify-content-center flex-shrink-0 icon-box-40">📖</div>
+              <div
+                class="rounded-circle bg-primary-subtle text-primary d-flex align-items-center justify-content-center flex-shrink-0 icon-box-40">
+                📖</div>
               <div>
                 <h5 class="fw-bold mb-0">프로젝트 기본 정보</h5>
                 <small class="text-muted">프로젝트의 핵심 내용을 입력하세요</small>
@@ -235,10 +240,10 @@
               <!-- Title -->
               <div class="mb-4">
                 <label for="projTitle" class="form-label fw-bold">프로젝트 제목 <span class="text-danger">*</span></label>
-                <input type="text" class="form-control form-control-lg" id="projTitle"
-                       placeholder="예: AI 음성인식 자율주행 로봇" required maxlength="60">
+                <input type="text" class="form-control form-control-lg" id="projTitle" placeholder="예: AI 음성인식 자율주행 로봇"
+                  required maxlength="60">
                 <div class="d-flex justify-content-between mt-1">
-                  <div class="invalid-feedback d-block text-danger small" id="titleFeedback" class="d-none"></div>
+                  <div class="invalid-feedback d-block text-danger small d-none" id="titleFeedback"></div>
                   <small class="text-muted ms-auto char-count"><span id="titleLen">0</span>/60</small>
                 </div>
               </div>
@@ -247,7 +252,7 @@
               <div class="mb-4">
                 <label for="projSummary" class="form-label fw-bold">한줄 요약 <span class="text-danger">*</span></label>
                 <input type="text" class="form-control" id="projSummary"
-                       placeholder="예: 라즈베리파이와 OpenCV로 실내 자율주행이 가능한 로봇" required maxlength="100">
+                  placeholder="예: 라즈베리파이와 OpenCV로 실내 자율주행이 가능한 로봇" required maxlength="100">
                 <div class="d-flex justify-content-between mt-1">
                   <small class="text-muted">프로젝트를 한 문장으로 소개 (최대 100자)</small>
                   <small class="text-muted char-count"><span id="summaryLen">0</span>/100</small>
@@ -258,7 +263,7 @@
               <div class="mb-4">
                 <label for="projDesc" class="form-label fw-bold">상세 설명 <span class="text-danger">*</span></label>
                 <textarea class="form-control" id="projDesc" rows="8" required minlength="50"
-                          placeholder="어떤 문제를 해결하나요? 어떤 기술을 사용할 예정인가요?&#10;프로젝트의 목표와 기대 효과는 무엇인가요?"></textarea>
+                  placeholder="어떤 문제를 해결하나요? 어떤 기술을 사용할 예정인가요?&#10;프로젝트의 목표와 기대 효과는 무엇인가요?"></textarea>
                 <div class="d-flex justify-content-between mt-1">
                   <small class="text-muted">최소 50자 이상</small>
                   <small class="char-count" id="descCount"><span id="descLen">0</span>자</small>
@@ -284,8 +289,7 @@
                 </div>
                 <div class="col-sm-6">
                   <label for="projTeam" class="form-label fw-bold">팀명 / 작성자명 <span class="text-danger">*</span></label>
-                  <input type="text" class="form-control" id="projTeam"
-                         placeholder="예: 김메이커 또는 로봇팀" required>
+                  <input type="text" class="form-control" id="projTeam" placeholder="예: 김메이커 또는 로봇팀" required>
                   <div class="invalid-feedback">팀명 또는 작성자명을 입력해주세요.</div>
                 </div>
               </div>
@@ -319,7 +323,9 @@
           <!-- ③ 기술 자료 및 링크 -->
           <div class="form-section">
             <div class="d-flex align-items-center gap-3 mb-4 pb-3 border-bottom">
-              <div class="rounded-circle bg-success-subtle text-success d-flex align-items-center justify-content-center flex-shrink-0 icon-box-40">🔗</div>
+              <div
+                class="rounded-circle bg-success-subtle text-success d-flex align-items-center justify-content-center flex-shrink-0 icon-box-40">
+                🔗</div>
               <div>
                 <h5 class="fw-bold mb-0">기술 자료 및 링크 <span class="text-muted fw-normal fs-6">(선택)</span></h5>
                 <small class="text-muted">프로젝트 관련 링크와 문서를 연결하세요</small>
@@ -328,7 +334,11 @@
 
             <div class="mb-3">
               <label class="form-label fw-bold">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" class="me-1"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"
+                  class="me-1">
+                  <path
+                    d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" />
+                </svg>
                 GitHub 저장소
               </label>
               <input type="url" class="form-control" id="linkGithub" placeholder="https://github.com/username/project">
@@ -375,10 +385,12 @@
           <div class="sticky-sidebar d-flex flex-column gap-3">
 
             <!-- Contest Info (shows when contest type selected) -->
-            <div class="card border-0 shadow-sm rounded-4 p-4 d-none card-gradient-violet-pink-ddd6fe-imp" id="sidebar-contest-info">
+            <div class="card border-0 shadow-sm rounded-4 p-4 d-none card-gradient-violet-pink-ddd6fe-imp"
+              id="sidebar-contest-info">
               <h6 class="fw-bold mb-3">🏆 콘테스트 정보</h6>
               <div class="small">
-                <div class="mb-2"><span class="text-muted">참가 중인 콘테스트</span><br><strong id="sb-contest-name">—</strong></div>
+                <div class="mb-2"><span class="text-muted">참가 중인 콘테스트</span><br><strong id="sb-contest-name">—</strong>
+                </div>
                 <div><span class="text-muted">📅 최종 마감</span><br><strong id="sb-contest-deadline">—</strong></div>
               </div>
             </div>
@@ -410,15 +422,22 @@
               <h6 class="fw-bold mb-3">⚡ 프로젝트 진행 흐름</h6>
               <div class="d-flex flex-column gap-3 small">
                 <div class="d-flex gap-2 align-items-start">
-                  <div class="rounded-circle bg-primary text-white d-flex align-items-center justify-content-center fw-bold flex-shrink-0 icon-box-22">1</div>
+                  <div
+                    class="rounded-circle bg-primary text-white d-flex align-items-center justify-content-center fw-bold flex-shrink-0 icon-box-22">
+                    1</div>
                   <div><strong>프로젝트 등록</strong><br><span class="text-muted">지금 이 페이지</span></div>
                 </div>
                 <div class="d-flex gap-2 align-items-start">
-                  <div class="rounded-circle bg-secondary text-white d-flex align-items-center justify-content-center fw-bold flex-shrink-0 icon-box-22">2</div>
-                  <div><strong id="flow-step2">작업 진행</strong><br><span class="text-muted" id="flow-step2-sub">단계별로 프로젝트 완성</span></div>
+                  <div
+                    class="rounded-circle bg-secondary text-white d-flex align-items-center justify-content-center fw-bold flex-shrink-0 icon-box-22">
+                    2</div>
+                  <div><strong id="flow-step2">작업 진행</strong><br><span class="text-muted" id="flow-step2-sub">단계별로 프로젝트
+                      완성</span></div>
                 </div>
                 <div class="d-flex gap-2 align-items-start">
-                  <div class="rounded-circle bg-secondary text-white d-flex align-items-center justify-content-center fw-bold flex-shrink-0 icon-box-22">3</div>
+                  <div
+                    class="rounded-circle bg-secondary text-white d-flex align-items-center justify-content-center fw-bold flex-shrink-0 icon-box-22">
+                    3</div>
                   <div><strong>프로젝트 완성</strong><br><span class="text-muted">리스트에 공개</span></div>
                 </div>
               </div>
@@ -430,19 +449,19 @@
               <p class="text-muted small mb-3">막히는 부분이 있거나 도움이 필요하신가요?</p>
               <div class="d-grid gap-2">
                 <button class="btn btn-white border btn-sm text-start d-flex align-items-center gap-2 border-violet-imp"
-                        data-bs-toggle="modal" data-bs-target="#askModal">
+                  data-bs-toggle="modal" data-bs-target="#askModal">
                   <span>💬</span><span class="fw-bold">질문하기</span>
                 </button>
                 <button class="btn btn-white border btn-sm text-start d-flex align-items-center gap-2"
-                        data-bs-toggle="modal" data-bs-target="#progressModal">
+                  data-bs-toggle="modal" data-bs-target="#progressModal">
                   <span>🚀</span><span>진행 공유</span>
                 </button>
                 <button class="btn btn-white border btn-sm text-start d-flex align-items-center gap-2"
-                        data-bs-toggle="modal" data-bs-target="#teammateModal">
+                  data-bs-toggle="modal" data-bs-target="#teammateModal">
                   <span>👥</span><span>팀원 찾기</span>
                 </button>
                 <button class="btn btn-white border btn-sm text-start d-flex align-items-center gap-2"
-                        data-bs-toggle="modal" data-bs-target="#resourceModal">
+                  data-bs-toggle="modal" data-bs-target="#resourceModal">
                   <span>📎</span><span>자료 공유</span>
                 </button>
               </div>
@@ -470,278 +489,316 @@
 
   <!-- Community Modals (재사용) -->
   <div class="modal fade" id="askModal" tabindex="-1">
-    <div class="modal-dialog modal-lg"><div class="modal-content rounded-4 border-0">
-      <div class="modal-header border-0"><h5 class="modal-title fw-bold">💬 질문하기</h5><button type="button" class="btn-close" data-bs-dismiss="modal"></button></div>
-      <div class="modal-body">
-        <div class="mb-3"><label class="form-label fw-medium">제목</label><input type="text" class="form-control" placeholder="질문 제목"></div>
-        <div class="mb-3"><label class="form-label fw-medium">내용</label><textarea class="form-control" rows="5" placeholder="질문 내용을 상세히 작성해주세요"></textarea></div>
-        <div class="mb-3"><label class="form-label fw-medium">태그</label><input type="text" class="form-control" placeholder="예: ESP32, MQTT (쉼표로 구분)"></div>
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content rounded-4 border-0">
+        <div class="modal-header border-0">
+          <h5 class="modal-title fw-bold">💬 질문하기</h5><button type="button" class="btn-close"
+            data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <div class="mb-3"><label class="form-label fw-medium">제목</label><input type="text" class="form-control"
+              placeholder="질문 제목"></div>
+          <div class="mb-3"><label class="form-label fw-medium">내용</label><textarea class="form-control" rows="5"
+              placeholder="질문 내용을 상세히 작성해주세요"></textarea></div>
+          <div class="mb-3"><label class="form-label fw-medium">태그</label><input type="text" class="form-control"
+              placeholder="예: ESP32, MQTT (쉼표로 구분)"></div>
+        </div>
+        <div class="modal-footer border-0"><button class="btn btn-secondary" data-bs-dismiss="modal">취소</button><button
+            class="btn btn-primary">등록하기</button></div>
       </div>
-      <div class="modal-footer border-0"><button class="btn btn-secondary" data-bs-dismiss="modal">취소</button><button class="btn btn-primary">등록하기</button></div>
-    </div></div>
+    </div>
   </div>
 
   <div class="modal fade" id="progressModal" tabindex="-1">
-    <div class="modal-dialog modal-lg"><div class="modal-content rounded-4 border-0">
-      <div class="modal-header border-0"><h5 class="modal-title fw-bold">🚀 진행 상황 공유</h5><button type="button" class="btn-close" data-bs-dismiss="modal"></button></div>
-      <div class="modal-body">
-        <div class="mb-3"><label class="form-label fw-medium">제목</label><input type="text" class="form-control" placeholder="진행 상황 제목"></div>
-        <div class="mb-3"><label class="form-label fw-medium">내용</label><textarea class="form-control" rows="5" placeholder="진행 상황을 공유해주세요"></textarea></div>
-        <div class="mb-3"><label class="form-label fw-medium">이미지 첨부</label><input type="file" class="form-control" accept="image/*"></div>
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content rounded-4 border-0">
+        <div class="modal-header border-0">
+          <h5 class="modal-title fw-bold">🚀 진행 상황 공유</h5><button type="button" class="btn-close"
+            data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <div class="mb-3"><label class="form-label fw-medium">제목</label><input type="text" class="form-control"
+              placeholder="진행 상황 제목"></div>
+          <div class="mb-3"><label class="form-label fw-medium">내용</label><textarea class="form-control" rows="5"
+              placeholder="진행 상황을 공유해주세요"></textarea></div>
+          <div class="mb-3"><label class="form-label fw-medium">이미지 첨부</label><input type="file" class="form-control"
+              accept="image/*"></div>
+        </div>
+        <div class="modal-footer border-0"><button class="btn btn-secondary" data-bs-dismiss="modal">취소</button><button
+            class="btn btn-primary">공유하기</button></div>
       </div>
-      <div class="modal-footer border-0"><button class="btn btn-secondary" data-bs-dismiss="modal">취소</button><button class="btn btn-primary">공유하기</button></div>
-    </div></div>
+    </div>
   </div>
 
   <div class="modal fade" id="teammateModal" tabindex="-1">
-    <div class="modal-dialog modal-lg"><div class="modal-content rounded-4 border-0">
-      <div class="modal-header border-0"><h5 class="modal-title fw-bold">👥 팀원 모집</h5><button type="button" class="btn-close" data-bs-dismiss="modal"></button></div>
-      <div class="modal-body">
-        <div class="mb-3"><label class="form-label fw-medium">모집 제목</label><input type="text" class="form-control" placeholder="팀원 모집 제목"></div>
-        <div class="mb-3"><label class="form-label fw-medium">모집 분야</label><input type="text" class="form-control" placeholder="예: 백엔드 개발자, 하드웨어 엔지니어"></div>
-        <div class="mb-3"><label class="form-label fw-medium">상세 내용</label><textarea class="form-control" rows="4" placeholder="프로젝트 소개와 모집 조건을 작성해주세요"></textarea></div>
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content rounded-4 border-0">
+        <div class="modal-header border-0">
+          <h5 class="modal-title fw-bold">👥 팀원 모집</h5><button type="button" class="btn-close"
+            data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <div class="mb-3"><label class="form-label fw-medium">모집 제목</label><input type="text" class="form-control"
+              placeholder="팀원 모집 제목"></div>
+          <div class="mb-3"><label class="form-label fw-medium">모집 분야</label><input type="text" class="form-control"
+              placeholder="예: 백엔드 개발자, 하드웨어 엔지니어"></div>
+          <div class="mb-3"><label class="form-label fw-medium">상세 내용</label><textarea class="form-control" rows="4"
+              placeholder="프로젝트 소개와 모집 조건을 작성해주세요"></textarea></div>
+        </div>
+        <div class="modal-footer border-0"><button class="btn btn-secondary" data-bs-dismiss="modal">취소</button><button
+            class="btn btn-primary">등록하기</button></div>
       </div>
-      <div class="modal-footer border-0"><button class="btn btn-secondary" data-bs-dismiss="modal">취소</button><button class="btn btn-primary">등록하기</button></div>
-    </div></div>
+    </div>
   </div>
 
   <div class="modal fade" id="resourceModal" tabindex="-1">
-    <div class="modal-dialog modal-lg"><div class="modal-content rounded-4 border-0">
-      <div class="modal-header border-0"><h5 class="modal-title fw-bold">📎 자료 공유</h5><button type="button" class="btn-close" data-bs-dismiss="modal"></button></div>
-      <div class="modal-body">
-        <div class="mb-3"><label class="form-label fw-medium">자료 제목</label><input type="text" class="form-control" placeholder="자료 제목"></div>
-        <div class="mb-3"><label class="form-label fw-medium">내용</label><textarea class="form-control" rows="4" placeholder="자료에 대한 설명을 작성해주세요"></textarea></div>
-        <div class="mb-3"><label class="form-label fw-medium">링크</label><input type="url" class="form-control" placeholder="https://..."></div>
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content rounded-4 border-0">
+        <div class="modal-header border-0">
+          <h5 class="modal-title fw-bold">📎 자료 공유</h5><button type="button" class="btn-close"
+            data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <div class="mb-3"><label class="form-label fw-medium">자료 제목</label><input type="text" class="form-control"
+              placeholder="자료 제목"></div>
+          <div class="mb-3"><label class="form-label fw-medium">내용</label><textarea class="form-control" rows="4"
+              placeholder="자료에 대한 설명을 작성해주세요"></textarea></div>
+          <div class="mb-3"><label class="form-label fw-medium">링크</label><input type="url" class="form-control"
+              placeholder="https://..."></div>
+        </div>
+        <div class="modal-footer border-0"><button class="btn btn-secondary" data-bs-dismiss="modal">취소</button><button
+            class="btn btn-primary">공유하기</button></div>
       </div>
-      <div class="modal-footer border-0"><button class="btn btn-secondary" data-bs-dismiss="modal">취소</button><button class="btn btn-primary">공유하기</button></div>
-    </div></div>
+    </div>
   </div>
 
   <!-- ===== PLATFORM FOOTER ===== -->
-<footer id="platform-footer">
+  <footer id="platform-footer">
 
-  <!-- Sponsor Logos -->
-  <div class="bg-light border-top border-bottom py-4">
-    <div class="container-xl">
-      <p class="text-center text-muted small mb-3">Sponsored Company</p>
-      <div class="d-flex flex-wrap align-items-center justify-content-center gap-4">
-        <span class="fw-medium text-secondary small">CREAFORM</span>
-        <span class="fw-medium text-secondary small">Infineon</span>
-        <span class="fw-bold text-dark small">KETI</span>
-        <span class="fw-medium text-secondary small">KEYSIGHT</span>
-        <span class="fw-medium text-secondary small">Microchip</span>
-        <span class="fw-medium text-primary small">mouser.com</span>
-        <span class="fw-medium text-secondary small">NATIONAL INSTRUMENTS</span>
-        <span class="fw-bold text-white bg-danger px-2 py-1 rounded small">ROHM</span>
-        <span class="fw-medium text-secondary small">ST</span>
-        <span class="fw-medium text-dark small">Tektronix</span>
-      </div>
-    </div>
-  </div>
-
-  <!-- Company Info -->
-  <div class="bg-black text-secondary py-5">
-    <div class="container-xl">
-
-      <!-- Links Row -->
-      <div class="d-flex flex-column flex-lg-row align-items-start align-items-lg-center
-                  justify-content-between gap-3 mb-4">
-        <div class="d-flex flex-wrap align-items-center gap-2 small">
-          <a href="support.html"  class="footer-link text-secondary text-decoration-none">e4ds 소개</a>
-          <span class="text-muted">|</span>
-          <a href="notices.html"  class="footer-link text-secondary text-decoration-none">개인정보처리방침</a>
-          <span class="text-muted">|</span>
-          <a href="faq.html"      class="footer-link text-secondary text-decoration-none">이용약관</a>
-          <span class="text-muted">|</span>
-          <a href="contact.html"  class="footer-link text-secondary text-decoration-none">청소년보호정책</a>
-          <span class="text-muted">|</span>
-          <a href="careers.html"  class="footer-link text-secondary text-decoration-none">가족사이트</a>
-          <span class="text-muted">|</span>
-          <a href="#"             class="footer-link text-secondary text-decoration-none">저작권</a>
-          <span class="text-muted">|</span>
-          <a href="#"             class="footer-link text-secondary text-decoration-none">e4ds인터내셔널</a>
+    <!-- Sponsor Logos -->
+    <div class="bg-light border-top border-bottom py-4">
+      <div class="container-xl">
+        <p class="text-center text-muted small mb-3">Sponsored Company</p>
+        <div class="d-flex flex-wrap align-items-center justify-content-center gap-4">
+          <span class="fw-medium text-secondary small">CREAFORM</span>
+          <span class="fw-medium text-secondary small">Infineon</span>
+          <span class="fw-bold text-dark small">KETI</span>
+          <span class="fw-medium text-secondary small">KEYSIGHT</span>
+          <span class="fw-medium text-secondary small">Microchip</span>
+          <span class="fw-medium text-primary small">mouser.com</span>
+          <span class="fw-medium text-secondary small">NATIONAL INSTRUMENTS</span>
+          <span class="fw-bold text-white bg-danger px-2 py-1 rounded small">ROHM</span>
+          <span class="fw-medium text-secondary small">ST</span>
+          <span class="fw-medium text-dark small">Tektronix</span>
         </div>
       </div>
-
-      <!-- Company Details -->
-      <div class="small text-muted lh-lg">
-        <p class="mb-1">(주)디지털데일리 | 등록번호 : 경기 아51470 | 등록: 2008.10.20 | 발행: 2026.05.19 | 표: 김제호</p>
-        <p class="mb-1">주소 : 경기도 성남시 분당구 대왕판교로 660번길 8 | 전화 : 02-883-9797 | 팩스 : 02-6280-9957</p>
-        <p class="mb-1 text-secondary footer-copyright">
-          본 콘텐츠의 저작권은 (주)디지털데일리에 있으며 무단 전재 및 재배포를 금지합니다.
-        </p>
-        <p class="mt-3 mb-0">Copyright &copy; 2026 e4ds News. All Rights Reserved</p>
-      </div>
-
     </div>
-  </div>
 
-</footer>
+    <!-- Company Info -->
+    <div class="bg-black text-secondary py-5">
+      <div class="container-xl">
+
+        <!-- Links Row -->
+        <div class="d-flex flex-column flex-lg-row align-items-start align-items-lg-center
+                  justify-content-between gap-3 mb-4">
+          <div class="d-flex flex-wrap align-items-center gap-2 small">
+            <a href="support.html" class="footer-link text-secondary text-decoration-none">e4ds 소개</a>
+            <span class="text-muted">|</span>
+            <a href="notices.html" class="footer-link text-secondary text-decoration-none">개인정보처리방침</a>
+            <span class="text-muted">|</span>
+            <a href="faq.html" class="footer-link text-secondary text-decoration-none">이용약관</a>
+            <span class="text-muted">|</span>
+            <a href="contact.html" class="footer-link text-secondary text-decoration-none">청소년보호정책</a>
+            <span class="text-muted">|</span>
+            <a href="careers.html" class="footer-link text-secondary text-decoration-none">가족사이트</a>
+            <span class="text-muted">|</span>
+            <a href="#" class="footer-link text-secondary text-decoration-none">저작권</a>
+            <span class="text-muted">|</span>
+            <a href="#" class="footer-link text-secondary text-decoration-none">e4ds인터내셔널</a>
+          </div>
+        </div>
+
+        <!-- Company Details -->
+        <div class="small text-muted lh-lg">
+          <p class="mb-1">(주)디지털데일리 | 등록번호 : 경기 아51470 | 등록: 2008.10.20 | 발행: 2026.05.19 | 표: 김제호</p>
+          <p class="mb-1">주소 : 경기도 성남시 분당구 대왕판교로 660번길 8 | 전화 : 02-883-9797 | 팩스 : 02-6280-9957</p>
+          <p class="mb-1 text-secondary footer-copyright">
+            본 콘텐츠의 저작권은 (주)디지털데일리에 있으며 무단 전재 및 재배포를 금지합니다.
+          </p>
+          <p class="mt-3 mb-0">Copyright &copy; 2026 e4ds News. All Rights Reserved</p>
+        </div>
+
+      </div>
+    </div>
+
+  </footer>
 
   <script src="https://code.jquery.com/jquery-3.7.1.min.js"
-          integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-          integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
   <script src="assets/js/main.js"></script>
   <script>
-  var availableTags = ['로봇공학','AI','라즈베리파이','Arduino','OpenCV','자율주행','머신러닝','IoT','Python','C++','ROS','TensorFlow','Raspberry Pi','ESP32','센서'];
-  var selectedTags = [];
-  var contestData = {
-    'ai-robot-2026'    : { name:'AI 로봇공학 챌린지 2026',   deadline:'2026년 3월 31일' },
-    'iot-smart-home'   : { name:'스마트홈 IoT 콘테스트',      deadline:'2026년 4월 7일'  },
-    'renewable-energy' : { name:'지속가능 에너지 챌린지',     deadline:'2026년 4월 15일' },
-    '3d-printing-innovation': { name:'3D 프린팅 혁신 대회',  deadline:'2026년 3월 23일' },
-  };
+    var availableTags = ['로봇공학', 'AI', '라즈베리파이', 'Arduino', 'OpenCV', '자율주행', '머신러닝', 'IoT', 'Python', 'C++', 'ROS', 'TensorFlow', 'Raspberry Pi', 'ESP32', '센서'];
+    var selectedTags = [];
+    var contestData = {
+      'ai-robot-2026': { name: 'AI 로봇공학 챌린지 2026', deadline: '2026년 3월 31일' },
+      'iot-smart-home': { name: '스마트홈 IoT 콘테스트', deadline: '2026년 4월 7일' },
+      'renewable-energy': { name: '지속가능 에너지 챌린지', deadline: '2026년 4월 15일' },
+      '3d-printing-innovation': { name: '3D 프린팅 혁신 대회', deadline: '2026년 3월 23일' },
+    };
 
-  /* ── Tag Rendering ── */
-  function renderTags() {
-    var html = availableTags.map(function(t) {
-      var sel = selectedTags.indexOf(t) !== -1;
-      return '<span class="badge rounded-pill border tag-btn py-2 px-3 '
-        + (sel ? 'selected' : 'bg-light text-secondary border-secondary')
-        + '" data-tag="' + t + '">' + t + (sel ? ' ✓' : '') + '</span>';
-    }).join('');
-    $('#tag-container').html(html);
-    $('#tagCount').text(selectedTags.length);
-  }
-
-  /* ── Char Counters ── */
-  function bindCharCount(inputId, countId, warnAt) {
-    $('#' + inputId).on('input', function() {
-      var len = $(this).val().length;
-      $('#' + countId).text(len);
-      if (warnAt && len >= warnAt) $('#' + countId).addClass('text-danger');
-      else $('#' + countId).removeClass('text-danger');
-    });
-  }
-
-  /* ── Validation ── */
-  function validate() {
-    var errors = [];
-    if (!$.trim($('#projTitle').val()))   errors.push('프로젝트 제목');
-    if (!$.trim($('#projSummary').val())) errors.push('한줄 요약');
-    var desc = $.trim($('#projDesc').val());
-    if (!desc)               errors.push('상세 설명');
-    else if (desc.length < 50) errors.push('상세 설명 최소 50자');
-    if (!$('#projCategory').val()) errors.push('카테고리');
-    if (!$.trim($('#projTeam').val())) errors.push('팀명 / 작성자명');
-    var isContest = $('input[name="projectType"]:checked').val() === 'contest';
-    if (isContest && !$('#contestSelect').val()) errors.push('참가할 콘테스트');
-    return errors;
-  }
-
-  /* ── Type Switch ── */
-  function updateType() {
-    var type = $('input[name="projectType"]:checked').val();
-    var isContest = type === 'contest';
-    $('#type-contest').toggle(isContest);
-    $('#sidebar-contest-info, #sidebar-quest').toggleClass('d-none', !isContest);
-    if (isContest) {
-      $('#hero-badge').text('콘테스트 프로젝트 에디터');
-      $('#hero-title').text('콘테스트 프로젝트 시작하기');
-      $('#hero-sub').text('Quest를 단계별로 완료하며 프로젝트를 완성하세요');
-      $('#flow-step2').text('Quest 1–3 완료');
-      $('#flow-step2-sub').text('단계별로 프로젝트 완성');
-      $('#submitBtn').html('🚀 프로젝트 등록하고 Quest 시작');
-    } else {
-      $('#hero-badge').text('프로젝트 에디터');
-      $('#hero-title').text('새 프로젝트 등록하기');
-      $('#hero-sub').text('아이디어를 현실로 — 프로젝트를 공유해보세요');
-      $('#flow-step2').text('작업 진행');
-      $('#flow-step2-sub').text('자유롭게 프로젝트 완성');
-      $('#submitBtn').html('🚀 프로젝트 등록하기');
+    /* ── Tag Rendering ── */
+    function renderTags() {
+      var html = availableTags.map(function (t) {
+        var sel = selectedTags.indexOf(t) !== -1;
+        return '<span class="badge rounded-pill border tag-btn py-2 px-3 '
+          + (sel ? 'selected' : 'bg-light text-secondary border-secondary')
+          + '" data-tag="' + t + '">' + t + (sel ? ' ✓' : '') + '</span>';
+      }).join('');
+      $('#tag-container').html(html);
+      $('#tagCount').text(selectedTags.length);
     }
-  }
 
-  /* ── Image Upload Preview ── */
-  function initUploadZone(zoneId, inputId, previewId, placeholderId) {
-    $('#' + zoneId).on('click', function() { $('#' + inputId).click(); });
-    $('#' + inputId).on('change', function() {
-      var file = this.files[0];
-      if (!file) return;
-      var reader = new FileReader();
-      reader.onload = function(e) {
-        if (previewId) {
-          $('#' + previewId).attr('src', e.target.result).removeClass('d-none');
-          $('#' + placeholderId).addClass('d-none');
-        }
-      };
-      reader.readAsDataURL(file);
-    });
-  }
+    /* ── Char Counters ── */
+    function bindCharCount(inputId, countId, warnAt) {
+      $('#' + inputId).on('input', function () {
+        var len = $(this).val().length;
+        $('#' + countId).text(len);
+        if (warnAt && len >= warnAt) $('#' + countId).addClass('text-danger');
+        else $('#' + countId).removeClass('text-danger');
+      });
+    }
 
-  /* ── DOM Ready ── */
-  $(function() {
-    renderTags();
-    bindCharCount('projTitle',   'titleLen',   60);
-    bindCharCount('projSummary', 'summaryLen', 100);
+    /* ── Validation ── */
+    function validate() {
+      var errors = [];
+      if (!$.trim($('#projTitle').val())) errors.push('프로젝트 제목');
+      if (!$.trim($('#projSummary').val())) errors.push('한줄 요약');
+      var desc = $.trim($('#projDesc').val());
+      if (!desc) errors.push('상세 설명');
+      else if (desc.length < 50) errors.push('상세 설명 최소 50자');
+      if (!$('#projCategory').val()) errors.push('카테고리');
+      if (!$.trim($('#projTeam').val())) errors.push('팀명 / 작성자명');
+      var isContest = $('input[name="projectType"]:checked').val() === 'contest';
+      if (isContest && !$('#contestSelect').val()) errors.push('참가할 콘테스트');
+      return errors;
+    }
 
-    /* desc char count with color warning */
-    $('#projDesc').on('input', function() {
-      var len = $(this).val().length;
-      $('#descLen').text(len);
-      $('#descCount').toggleClass('text-danger', len > 0 && len < 50).toggleClass('text-success', len >= 50);
-    });
-
-    /* Tag toggle */
-    $(document).on('click', '.tag-btn', function() {
-      var tag = $(this).data('tag');
-      var idx = selectedTags.indexOf(tag);
-      if (idx !== -1) {
-        selectedTags.splice(idx, 1);
+    /* ── Type Switch ── */
+    function updateType() {
+      var type = $('input[name="projectType"]:checked').val();
+      var isContest = type === 'contest';
+      $('#type-contest').toggle(isContest);
+      $('#sidebar-contest-info, #sidebar-quest').toggleClass('d-none', !isContest);
+      if (isContest) {
+        $('#hero-badge').text('콘테스트 프로젝트 에디터');
+        $('#hero-title').text('콘테스트 프로젝트 시작하기');
+        $('#hero-sub').text('Quest를 단계별로 완료하며 프로젝트를 완성하세요');
+        $('#flow-step2').text('Quest 1–3 완료');
+        $('#flow-step2-sub').text('단계별로 프로젝트 완성');
+        $('#submitBtn').html('🚀 프로젝트 등록하고 Quest 시작');
       } else {
-        if (selectedTags.length >= 10) { alert('태그는 최대 10개까지 선택 가능합니다.'); return; }
-        selectedTags.push(tag);
+        $('#hero-badge').text('프로젝트 에디터');
+        $('#hero-title').text('새 프로젝트 등록하기');
+        $('#hero-sub').text('아이디어를 현실로 — 프로젝트를 공유해보세요');
+        $('#flow-step2').text('작업 진행');
+        $('#flow-step2-sub').text('자유롭게 프로젝트 완성');
+        $('#submitBtn').html('🚀 프로젝트 등록하기');
       }
+    }
+
+    /* ── Image Upload Preview ── */
+    function initUploadZone(zoneId, inputId, previewId, placeholderId) {
+      $('#' + zoneId).on('click', function () { $('#' + inputId).click(); });
+      $('#' + inputId).on('change', function () {
+        var file = this.files[0];
+        if (!file) return;
+        var reader = new FileReader();
+        reader.onload = function (e) {
+          if (previewId) {
+            $('#' + previewId).attr('src', e.target.result).removeClass('d-none');
+            $('#' + placeholderId).addClass('d-none');
+          }
+        };
+        reader.readAsDataURL(file);
+      });
+    }
+
+    /* ── DOM Ready ── */
+    $(function () {
       renderTags();
+      bindCharCount('projTitle', 'titleLen', 60);
+      bindCharCount('projSummary', 'summaryLen', 100);
+
+      /* desc char count with color warning */
+      $('#projDesc').on('input', function () {
+        var len = $(this).val().length;
+        $('#descLen').text(len);
+        $('#descCount').toggleClass('text-danger', len > 0 && len < 50).toggleClass('text-success', len >= 50);
+      });
+
+      /* Tag toggle */
+      $(document).on('click', '.tag-btn', function () {
+        var tag = $(this).data('tag');
+        var idx = selectedTags.indexOf(tag);
+        if (idx !== -1) {
+          selectedTags.splice(idx, 1);
+        } else {
+          if (selectedTags.length >= 10) { alert('태그는 최대 10개까지 선택 가능합니다.'); return; }
+          selectedTags.push(tag);
+        }
+        renderTags();
+      });
+
+      /* Type radio */
+      $('input[name="projectType"]').on('change', updateType);
+      updateType();
+
+      /* Contest select → sidebar */
+      $('#contestSelect').on('change', function () {
+        var val = $(this).val();
+        var info = contestData[val];
+        if (info) {
+          $('#sb-contest-name').text(info.name);
+          $('#sb-contest-deadline').text(info.deadline);
+        } else {
+          $('#sb-contest-name, #sb-contest-deadline').text('—');
+        }
+      });
+
+      /* Image preview */
+      initUploadZone('imgZone', 'imgInput', 'imgPreview', 'imgPlaceholder');
+
+      /* Doc upload zone */
+      $('#docZone').on('click', function () { $('#docInput').click(); });
+      $('#docInput').on('change', function () {
+        var file = this.files[0];
+        if (file) $('#docZone p').text('📎 ' + file.name + ' 업로드됨');
+      });
+
+      /* Submit */
+      $('#submitBtn').on('click', function () {
+        var errors = validate();
+        if (errors.length > 0) {
+          var items = errors.map(function (e) { return '<li>' + e + '</li>'; }).join('');
+          $('#warn-list').html(items);
+          $('#validation-warn').show();
+          $('html, body').animate({ scrollTop: $('#validation-warn').offset().top - 120 }, 300);
+          return;
+        }
+        $('#validation-warn').hide();
+        // TODO: 실제 프로젝트 생성 API 연결
+        window.location.href = 'project-detail.html';
+      });
+
+      /* Hide warning on any input */
+      $('#create-form').on('input change', function () {
+        if (validate().length === 0) $('#validation-warn').hide();
+      });
     });
-
-    /* Type radio */
-    $('input[name="projectType"]').on('change', updateType);
-    updateType();
-
-    /* Contest select → sidebar */
-    $('#contestSelect').on('change', function() {
-      var val = $(this).val();
-      var info = contestData[val];
-      if (info) {
-        $('#sb-contest-name').text(info.name);
-        $('#sb-contest-deadline').text(info.deadline);
-      } else {
-        $('#sb-contest-name, #sb-contest-deadline').text('—');
-      }
-    });
-
-    /* Image preview */
-    initUploadZone('imgZone', 'imgInput', 'imgPreview', 'imgPlaceholder');
-
-    /* Doc upload zone */
-    $('#docZone').on('click', function() { $('#docInput').click(); });
-    $('#docInput').on('change', function() {
-      var file = this.files[0];
-      if (file) $('#docZone p').text('📎 ' + file.name + ' 업로드됨');
-    });
-
-    /* Submit */
-    $('#submitBtn').on('click', function() {
-      var errors = validate();
-      if (errors.length > 0) {
-        var items = errors.map(function(e) { return '<li>' + e + '</li>'; }).join('');
-        $('#warn-list').html(items);
-        $('#validation-warn').show();
-        $('html, body').animate({ scrollTop: $('#validation-warn').offset().top - 120 }, 300);
-        return;
-      }
-      $('#validation-warn').hide();
-      // TODO: 실제 프로젝트 생성 API 연결
-      window.location.href = 'project-detail.html';
-    });
-
-    /* Hide warning on any input */
-    $('#create-form').on('input change', function() {
-      if (validate().length === 0) $('#validation-warn').hide();
-    });
-  });
   </script>
 </body>
+
 </html>
