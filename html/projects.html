@@ -187,7 +187,7 @@
 
         <!-- Sidebar -->
         <div class="col-lg-3">
-          <div class="card border-0 shadow-sm p-3 sticky-top sticky-top-110">
+          <div class="card border-0 shadow-sm p-3 sticky-top sticky-top-110 project-sidebar">
             <div class="sidebar-nav" id="category-list">
               <button class="sidebar-nav-item active-cat" data-cat="전체">
                 <span class="sidebar-nav-icon"><i class="fa-regular fa-list"></i></span>
@@ -226,8 +226,7 @@
               </button>
             </div>
             <hr class="my-3">
-            <h6 class="fw-semibold mb-2 px-2 text-muted"
-              style="font-size:0.78rem; letter-spacing:.05em; text-transform:uppercase;">정렬</h6>
+            <h6 class="fw-semibold mb-2 px-2 text-muted sidebar-sort-label">정렬</h6>
             <select class="form-select form-select-sm border-0 bg-light" id="sort-select">
               <option>인기순</option>
               <option>최신순</option>
@@ -265,20 +264,20 @@
               data-type="contest" data-status="completed" data-award="yes" data-likes="567" data-views="8930">
               <div class="card border-0 shadow-sm h-100 project-card cursor-pointer"
                 data-detail-url="project-detail.html?id=1">
-                <div class="position-relative overflow-hidden" style="height:180px">
+                <div class="position-relative overflow-hidden project-card-img">
                   <img src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=600"
                     alt="AI 음성인식 자율주행 로봇 프로젝트 대표 이미지" class="w-100 h-100 object-fit-cover">
                   <div class="position-absolute top-0 start-0 m-2 d-flex flex-wrap gap-1">
                     <span class="badge bg-light text-dark">로봇공학</span>
                     <span class="badge bg-success">완료</span>
-                    <span class="badge bg-warning text-dark">🏆 최우수상</span>
-                    <span class="badge text-white" style="background:#7c3aed">🏆 콘테스트</span>
+                    <span class="badge bg-warning text-dark"><i class="fa-regular fa-trophy"></i> 최우수상</span>
+                    <span class="badge text-white badge-contest"><i class="fa-regular fa-trophy"></i> 콘테스트</span>
                   </div>
                 </div>
                 <div class="card-body">
                   <div class="mb-3 p-2 rounded-2 border bg-success-subtle border-success-subtle">
                     <div class="d-flex justify-content-between small fw-semibold mb-1">
-                      <span>✅ 콘테스트 완료</span>
+                      <span><i class="fa-regular fa-circle-check text-success"></i> 콘테스트 완료</span>
                       <span>Quest 3/3</span>
                     </div>
                     <div class="progress">
@@ -286,8 +285,7 @@
                     </div>
                   </div>
                   <h6 class="fw-bold mb-1">AI 음성인식 자율주행 로봇</h6>
-                  <p class="text-muted small mb-3"
-                    style="display:-webkit-box;line-clamp:2;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden">
+                  <p class="text-muted small mb-3 text-clamp-2">
                     라즈베리파이와 OpenCV로 실내 자율주행이 가능한 배송 로봇. Quest 3까지 완료하여 최우수상 수상</p>
                   <div class="d-flex align-items-center justify-content-between">
                     <a href="maker-profile.html?id=kimmaker"
@@ -295,7 +293,7 @@
                       <span class="badge bg-primary-subtle text-primary rounded-circle p-2">김</span>김메이커
                     </a>
                     <div class="d-flex gap-2 text-muted small">
-                      <span>❤️ 567</span><span>👁 8930</span><span>💬 142</span>
+                      <span><i class="fa-regular fa-heart"></i>567</span><span><i class="fa-regular fa-eye"></i>8930</span><span><i class="fa-regular fa-comment"></i>142</span>
                     </div>
                   </div>
                 </div>
@@ -305,19 +303,19 @@
               data-type="contest" data-status="in-progress" data-award="no" data-likes="432" data-views="5420">
               <div class="card border-0 shadow-sm h-100 project-card cursor-pointer"
                 data-detail-url="project-detail.html?id=2">
-                <div class="position-relative overflow-hidden" style="height:180px">
+                <div class="position-relative overflow-hidden project-card-img">
                   <img src="https://images.unsplash.com/photo-1581092333203-42374bcf7d89?w=600"
                     alt="오픈소스 자율주행 로봇 프로젝트 대표 이미지" class="w-100 h-100 object-fit-cover">
                   <div class="position-absolute top-0 start-0 m-2 d-flex flex-wrap gap-1">
                     <span class="badge bg-light text-dark">로봇공학</span>
                     <span class="badge bg-warning text-dark">진행중</span>
-                    <span class="badge text-white" style="background:#7c3aed">🏆 콘테스트</span>
+                    <span class="badge text-white badge-contest"><i class="fa-regular fa-trophy"></i> 콘테스트</span>
                   </div>
                 </div>
                 <div class="card-body">
                   <div class="mb-3 p-2 rounded-2 border bg-warning-subtle border-warning-subtle">
                     <div class="d-flex justify-content-between small fw-semibold mb-1">
-                      <span>⏳ 진행중</span>
+                      <span><i class="fa-regular fa-clock text-warning"></i> 진행중</span>
                       <span>Quest 2/3</span>
                     </div>
                     <div class="progress">
@@ -325,8 +323,7 @@
                     </div>
                   </div>
                   <h6 class="fw-bold mb-1">오픈소스 자율주행 로봇</h6>
-                  <p class="text-muted small mb-3"
-                    style="display:-webkit-box;line-clamp:2;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden">
+                  <p class="text-muted small mb-3 text-clamp-2">
                     라즈베리파이와 AI 비전을 활용한 실내 자율주행 로봇 프로젝트. Quest 2를 진행 중입니다.</p>
                   <div class="d-flex align-items-center justify-content-between">
                     <a href="maker-profile.html?id=kimmaker"
@@ -334,7 +331,7 @@
                       <span class="badge bg-primary-subtle text-primary rounded-circle p-2">김</span>김메이커
                     </a>
                     <div class="d-flex gap-2 text-muted small">
-                      <span>❤️ 432</span><span>👁 5420</span><span>💬 89</span>
+                      <span><i class="fa-regular fa-heart"></i>432</span><span><i class="fa-regular fa-eye"></i>5420</span><span><i class="fa-regular fa-comment"></i>89</span>
                     </div>
                   </div>
                 </div>
@@ -344,7 +341,7 @@
               data-type="personal" data-status="completed" data-award="no" data-likes="289" data-views="3210">
               <div class="card border-0 shadow-sm h-100 project-card cursor-pointer"
                 data-detail-url="project-detail.html?id=3">
-                <div class="position-relative overflow-hidden" style="height:180px">
+                <div class="position-relative overflow-hidden project-card-img">
                   <img src="https://images.unsplash.com/photo-1753039495488-434a2fe53e41?w=600"
                     alt="ESP32 기반 스마트 화분 프로젝트 대표 이미지" class="w-100 h-100 object-fit-cover">
                   <div class="position-absolute top-0 start-0 m-2 d-flex flex-wrap gap-1">
@@ -355,8 +352,7 @@
                 </div>
                 <div class="card-body">
                   <h6 class="fw-bold mb-1">ESP32 기반 스마트 화분</h6>
-                  <p class="text-muted small mb-3"
-                    style="display:-webkit-box;line-clamp:2;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden">
+                  <p class="text-muted small mb-3 text-clamp-2">
                     토양 수분, 온도, 조도를 모니터링하고 자동으로 물을 주는 IoT 화분 프로젝트입니다.</p>
                   <div class="d-flex align-items-center justify-content-between">
                     <a href="maker-profile.html?id=leedev"
@@ -364,7 +360,7 @@
                       <span class="badge bg-primary-subtle text-primary rounded-circle p-2">이</span>이개발
                     </a>
                     <div class="d-flex gap-2 text-muted small">
-                      <span>❤️ 289</span><span>👁 3210</span><span>💬 54</span>
+                      <span><i class="fa-regular fa-heart"></i>289</span><span><i class="fa-regular fa-eye"></i>3210</span><span><i class="fa-regular fa-comment"></i>54</span>
                     </div>
                   </div>
                 </div>
@@ -374,7 +370,7 @@
               data-type="personal" data-status="in-progress" data-award="no" data-likes="267" data-views="2890">
               <div class="card border-0 shadow-sm h-100 project-card cursor-pointer"
                 data-detail-url="project-detail.html?id=4">
-                <div class="position-relative overflow-hidden" style="height:180px">
+                <div class="position-relative overflow-hidden project-card-img">
                   <img src="https://images.unsplash.com/photo-1703221561813-cdaa308cf9e7?w=600"
                     alt="3D 프린터 자동 레벨링 시스템 프로젝트 대표 이미지" class="w-100 h-100 object-fit-cover">
                   <div class="position-absolute top-0 start-0 m-2 d-flex flex-wrap gap-1">
@@ -385,8 +381,7 @@
                 </div>
                 <div class="card-body">
                   <h6 class="fw-bold mb-1">3D 프린터 자동 레벨링 시스템</h6>
-                  <p class="text-muted small mb-3"
-                    style="display:-webkit-box;line-clamp:2;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden">
+                  <p class="text-muted small mb-3 text-clamp-2">
                     AI 기반 자동 베드 레벨링으로 완벽한 첫 레이어를 만드는 3D 프린터 보정 시스템입니다.</p>
                   <div class="d-flex align-items-center justify-content-between">
                     <a href="maker-profile.html?id=parkengineer"
@@ -394,7 +389,7 @@
                       <span class="badge bg-primary-subtle text-primary rounded-circle p-2">박</span>박엔지니어
                     </a>
                     <div class="d-flex gap-2 text-muted small">
-                      <span>❤️ 267</span><span>👁 2890</span><span>💬 41</span>
+                      <span><i class="fa-regular fa-heart"></i>267</span><span><i class="fa-regular fa-eye"></i>2890</span><span><i class="fa-regular fa-comment"></i>41</span>
                     </div>
                   </div>
                 </div>
@@ -404,20 +399,20 @@
               data-type="contest" data-status="completed" data-award="yes" data-likes="345" data-views="4120">
               <div class="card border-0 shadow-sm h-100 project-card cursor-pointer"
                 data-detail-url="project-detail.html?id=5">
-                <div class="position-relative overflow-hidden" style="height:180px">
+                <div class="position-relative overflow-hidden project-card-img">
                   <img src="https://images.unsplash.com/photo-1758525747606-bd5d801ca87b?w=600"
                     alt="AI 음성인식 스마트 미러 프로젝트 대표 이미지" class="w-100 h-100 object-fit-cover">
                   <div class="position-absolute top-0 start-0 m-2 d-flex flex-wrap gap-1">
                     <span class="badge bg-light text-dark">AI</span>
                     <span class="badge bg-success">완료</span>
-                    <span class="badge bg-warning text-dark">🏆 우수상</span>
-                    <span class="badge text-white" style="background:#7c3aed">🏆 콘테스트</span>
+                    <span class="badge bg-warning text-dark"><i class="fa-regular fa-trophy"></i> 우수상</span>
+                    <span class="badge text-white badge-contest"><i class="fa-regular fa-trophy"></i> 콘테스트</span>
                   </div>
                 </div>
                 <div class="card-body">
                   <div class="mb-3 p-2 rounded-2 border bg-success-subtle border-success-subtle">
                     <div class="d-flex justify-content-between small fw-semibold mb-1">
-                      <span>✅ 콘테스트 완료</span>
+                      <span><i class="fa-regular fa-circle-check text-success"></i> 콘테스트 완료</span>
                       <span>Quest 3/3</span>
                     </div>
                     <div class="progress">
@@ -425,8 +420,7 @@
                     </div>
                   </div>
                   <h6 class="fw-bold mb-1">AI 음성인식 스마트 미러</h6>
-                  <p class="text-muted small mb-3"
-                    style="display:-webkit-box;line-clamp:2;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden">
+                  <p class="text-muted small mb-3 text-clamp-2">
                     거울에 날씨, 일정, 뉴스를 표시하고 음성으로 제어하는 스마트홈 디스플레이 프로젝트입니다.</p>
                   <div class="d-flex align-items-center justify-content-between">
                     <a href="maker-profile.html?id=choidev"
@@ -434,7 +428,7 @@
                       <span class="badge bg-primary-subtle text-primary rounded-circle p-2">최</span>최개발
                     </a>
                     <div class="d-flex gap-2 text-muted small">
-                      <span>❤️ 345</span><span>👁 4120</span><span>💬 67</span>
+                      <span><i class="fa-regular fa-heart"></i>345</span><span><i class="fa-regular fa-eye"></i>4120</span><span><i class="fa-regular fa-comment"></i>67</span>
                     </div>
                   </div>
                 </div>
@@ -444,7 +438,7 @@
               data-type="personal" data-status="draft" data-award="no" data-likes="45" data-views="234">
               <div class="card border-0 shadow-sm h-100 project-card cursor-pointer"
                 data-detail-url="project-detail.html?id=6">
-                <div class="position-relative overflow-hidden" style="height:180px">
+                <div class="position-relative overflow-hidden project-card-img">
                   <img src="https://images.unsplash.com/photo-1553408226-42ecf81a214c?w=600"
                     alt="아두이노 기반 날씨 관측소 프로젝트 대표 이미지" class="w-100 h-100 object-fit-cover">
                   <div class="position-absolute top-0 start-0 m-2 d-flex flex-wrap gap-1">
@@ -455,8 +449,7 @@
                 </div>
                 <div class="card-body">
                   <h6 class="fw-bold mb-1">아두이노 기반 날씨 관측소</h6>
-                  <p class="text-muted small mb-3"
-                    style="display:-webkit-box;line-clamp:2;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden">
+                  <p class="text-muted small mb-3 text-clamp-2">
                     온습도, 기압, 풍향풍속을 측정하고 실시간으로 데이터를 시각화하는 관측 시스템 초안입니다.</p>
                   <div class="d-flex align-items-center justify-content-between">
                     <a href="maker-profile.html?id=jungcoder"
@@ -464,7 +457,7 @@
                       <span class="badge bg-primary-subtle text-primary rounded-circle p-2">정</span>정코더
                     </a>
                     <div class="d-flex gap-2 text-muted small">
-                      <span>❤️ 45</span><span>👁 234</span><span>💬 8</span>
+                      <span><i class="fa-regular fa-heart"></i>45</span><span><i class="fa-regular fa-eye"></i>234</span><span><i class="fa-regular fa-comment"></i>8</span>
                     </div>
                   </div>
                 </div>

@@ -1296,7 +1296,8 @@ justify-content: space-evenly;
 
 /* ── Hero Banner ────────────────────────────────────── */
 .contest-hero {
-  background: linear-gradient(130deg, #1e0a5a 0%, #4c1d95 25%, #7c3aed 52%, #924eff 74%, #b083ff 100%);
+  background:
+  url('../img/bg_contest_main.jpg') center/cover no-repeat;
   padding: 2rem 0 1.8rem;
   position: relative;
   overflow: hidden;
@@ -1309,7 +1310,7 @@ justify-content: space-evenly;
   width: 420px;
   height: 420px;
   border-radius: 50%;
-  background: rgba(255,255,255,0.08);
+  background: rgba(255,255,255,0.01);
   pointer-events: none;
 }
 .contest-hero::after {
@@ -1423,7 +1424,6 @@ nav.navbar.px-0 {
 }
 .sticky-top-110 {
   top: 110px;
-  border: 1px solid #b0c2eb !important;
 }
 
 /* 공통 라인 클램프 */
@@ -1596,6 +1596,41 @@ nav.navbar.px-0 {
 /* ══════════════════════════════════════════════════════
    PROJECTS PAGE
    ══════════════════════════════════════════════════════ */
+
+.project-sidebar {
+  border: 1px solid #b0c2eb !important;
+  border-radius: 0.75rem !important;
+}
+
+.sidebar-sort-label {
+  font-size: 0.78rem;
+  letter-spacing: .05em;
+  text-transform: uppercase;
+}
+
+.project-card-img {
+  height: 180px;
+}
+
+.badge-contest {
+  background: #7c3aed;
+}
+
+.text-clamp-2 {
+  display: -webkit-box;
+  line-clamp: 2;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.project-item .card {
+  border-radius: 0.75rem !important;
+
+  & img {
+    border-radius: 0.75rem 0.75rem 0 0;
+  }
+}
 
 .project-card {
   cursor: pointer;
