@@ -3245,7 +3245,7 @@ nav.navbar.px-0 {
   display: none;
   position: fixed;
   inset: 0;
-  z-index: 400;
+  z-index: 1045;
   background: rgba(0,0,0,.4);
   opacity: 0;
   transition: opacity .25s;
@@ -3262,7 +3262,7 @@ nav.navbar.px-0 {
   bottom: 0;
   width: 100%;
   max-width: 680px;
-  z-index: 401;
+  z-index: 1046;
   background: #fff;
   box-shadow: -8px 0 40px rgba(0,0,0,.18);
   display: flex;
@@ -4024,5 +4024,185 @@ nav.navbar.px-0 {
   position: absolute;
   bottom: 0.75rem;
   left: 0.75rem;
+}
+
+
+/* ══════════════════════════════════════════════════════
+   CREATE PERSONAL PROJECT PAGE — 미정의 클래스 추가
+   ══════════════════════════════════════════════════════ */
+
+/* ── 레이아웃 ─────────────────────────────────────────── */
+/* 최대 너비 1100px 컨테이너 (좁은 폼 레이아웃) */
+.container-1100 {
+  max-width: 1100px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+/* select 가 input-group 안에서 내용 너비만 차지하도록 */
+.w-auto-shrink-0 {
+  width: auto;
+  flex-shrink: 0;
+}
+
+/* ── 폰트 크기 유틸리티 ───────────────────────────────── */
+.fs-250  { font-size: 2.5rem  !important; }
+.fs-78   { font-size: 0.78rem !important; }
+.fs-82   { font-size: 0.82rem !important; }
+.fs-83   { font-size: 0.83rem !important; }
+.fs-95   { font-size: 0.95rem !important; }
+.fs-72   { font-size: 0.72rem !important; }
+.fs-xs   { font-size: 0.72rem !important; color: inherit; }
+
+/* ── 텍스트 컬러 ──────────────────────────────────────── */
+.text-muted-light { color: #9ca3af !important; }
+
+/* ── 섹션 아이콘 색상 변형 ───────────────────────────── */
+/* .section-icon 기본형은 이미 make2026-styles.css 에 정의됨 */
+.section-icon-blue   { background: #eff6ff; color: #2563eb; }
+.section-icon-violet { background: #f5f3ff; color: #7c3aed; }
+.section-icon-pink   { background: #fdf2f8; color: #db2777; }
+.section-icon-green  { background: #f0fdf4; color: #16a34a; }
+.section-icon-orange { background: #fff7ed; color: #f97316; }
+.section-icon-indigo { background: #eef2ff; color: #4f46e5; }
+
+/* ── 카드 그라디언트 + 테두리 ────────────────────────── */
+/* 하단 액션 카드 — 파랑·보라 그라디언트 + 파랑 테두리 */
+.card-gradient-blue-violet-border2 {
+  background: linear-gradient(135deg, #eff6ff 0%, #f5f3ff 100%);
+  border: 1px solid #c7d2fe !important;
+}
+/* 사이드바 — 파랑 계열 그라디언트 + 파랑 테두리 */
+.card-gradient-blue-dblue-border1 {
+  background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+  border: 1px solid #bfdbfe !important;
+}
+/* 사이드바 체크리스트 — 연두 그라디언트 + 연두 테두리 */
+.card-gradient-green-border1 {
+  background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
+  border: 1px solid #bbf7d0 !important;
+}
+/* 사이드바 커뮤니티 — 보라·핑크 그라디언트 + 보라 테두리 */
+.card-gradient-violet-pink-border1 {
+  background: linear-gradient(135deg, #f5f3ff 0%, #fdf2f8 100%);
+  border: 1px solid #ddd6fe !important;
+}
+
+/* ── 하단 생성 버튼 그라디언트 ───────────────────────── */
+.btn-gradient-blue-violet {
+  background: linear-gradient(135deg, #2563eb, #7c3aed);
+  border: none;
+  color: #fff;
+}
+.btn-gradient-blue-violet:hover {
+  opacity: 0.9;
+  color: #fff;
+}
+
+/* ── 사이드바 타입 안내 ──────────────────────────────── */
+.sidebar-type-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  flex-shrink: 0;
+}
+.sidebar-type-icon-blue { background: #dbeafe; }
+
+.sidebar-type-badge {
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 0.15rem 0.55rem;
+  border-radius: 9999px;
+}
+.sidebar-type-badge-blue {
+  background: #dbeafe;
+  color: #1d4ed8;
+}
+
+/* ── Quest 단계 표시 (사이드바) ──────────────────────── */
+.quest-step-num {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #fff;
+  flex-shrink: 0;
+}
+.quest-step-blue   { background: #2563eb; }
+.quest-step-violet { background: #7c3aed; }
+.quest-step-green  { background: #16a34a; }
+
+/* ── 커뮤니티 버튼 아이콘 ────────────────────────────── */
+/* .comm-btn 기본형은 이미 정의됨 */
+.comm-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  flex-shrink: 0;
+}
+.comm-icon-blue   { background: #dbeafe; }
+.comm-icon-violet { background: #ede9fe; }
+.comm-icon-green  { background: #dcfce7; }
+.comm-icon-orange { background: #fed7aa; }
+
+/* ── 미리보기 패널 닫기 버튼 ─────────────────────────── */
+.preview-close-btn {
+  background: none;
+  border: 1px solid #e5e7eb;
+  border-radius: 0.5rem;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 0.9rem;
+  color: #6b7280;
+  transition: background 0.15s;
+}
+.preview-close-btn:hover {
+  background: #f3f4f6;
+}
+
+/* ── 커뮤니티 패널 너비 ──────────────────────────────── */
+/* .cpanel 기본형은 이미 정의됨 */
+.cpanel.content-w {
+  width: min(480px, 95vw);
+}
+
+/* ============================================================
+   community.html — 미정의 클래스 추가
+   ============================================================ */
+
+/* 히어로 그라디언트 배경 */
+.hero-gradient-blue-purple-h {
+  background: linear-gradient(135deg, #1d4ed8 0%, #7c3aed 100%);
+}
+
+/* 섹션 헤더 색상 변형 (section-header border-left 색) */
+.section-border-blue   { border-color: #2563eb; }
+.section-border-purple { border-color: #7c3aed; }
+.section-border-green  { border-color: #16a34a; }
+.section-border-amber  { border-color: #d97706; }
+
+/* 사이드바 카드 연한 파랑-보라 그라디언트 배경 */
+.bg-gradient-blue-violet-soft {
+  background: linear-gradient(135deg, #eff6ff 0%, #f5f3ff 100%);
 }
 
