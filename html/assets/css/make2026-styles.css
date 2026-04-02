@@ -1568,12 +1568,235 @@ nav.navbar.px-0 {
     border-color: #ddd6fe;
   }
 }
+/* ── my-make.html 새 프로젝트 모달 ──────────────────────
+   index.html 의 #modal-overlay / #projectCreationModal 과
+   동일한 동작 구조. JS 에서 display:block 후 .show 추가.
+──────────────────────────────────────────────────────── */
+
+/* 오버레이 (배경 dim) */
+.np-modal-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 1040;
+  background: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  transition: opacity 0.22s;
+}
 #np-modal-overlay.show {
   opacity: 1 !important;
+}
+
+/* 모달 다이얼로그 래퍼 */
+.np-modal-dialog {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 1050;
+  overflow-y: auto;
+  opacity: 0;
+  transition: opacity 0.22s;
 }
 #npProjectCreationModal.show {
   opacity: 1 !important;
 }
+
+/* 수직·수평 중앙 정렬 */
+.np-modal-centering {
+  min-height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+/* 모달 컨텐츠 박스 */
+.np-modal-content {
+  background: #fff;
+  border-radius: 1rem;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.3);
+  width: 100%;
+  max-width: 800px;
+  overflow: hidden;
+}
+
+/* 헤더 내부 텍스트 영역 */
+.np-modal-header-body {
+  text-align: center;
+  padding-bottom: 0.5rem;
+}
+
+/* 헤더 배지 */
+.np-modal-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 9999px;
+  padding: 0.3rem 0.9rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+  color: #fff;
+}
+
+/* 헤더 제목 */
+.np-modal-title {
+  font-size: 1.6rem;
+  margin-bottom: 0.25rem;
+  color: #fff;
+}
+
+/* 헤더 서브타이틀 */
+.np-modal-subtitle {
+  opacity: 0.85;
+  font-size: 0.95rem;
+  color: #fff;
+}
+
+/* 닫기 버튼 */
+.np-modal-close-btn {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  border-radius: 0.5rem;
+  color: #fff;
+  width: 36px;
+  height: 36px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.np-modal-close-btn:hover {
+  background: rgba(255, 255, 255, 0.35);
+}
+
+/* 바디 영역 */
+.np-modal-body {
+  padding: 2rem;
+}
+
+/* 카드 내 relative + overflow:hidden */
+.relative-overflow {
+  position: relative;
+  overflow: hidden;
+}
+
+/* 데코 원형 (배경 장식) */
+.np-type-deco-circle {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 8rem;
+  height: 8rem;
+  border-radius: 50%;
+  transform: translate(40%, -40%);
+  opacity: 0.45;
+  pointer-events: none;
+}
+.np-type-deco-blue   { background: #bfdbfe; }
+.np-type-deco-purple { background: #ddd6fe; }
+
+/* 프로젝트 타입 아이콘 박스 */
+.np-type-icon-box {
+  width: 64px;
+  height: 64px;
+  border-radius: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.75rem;
+  margin-bottom: 1rem;
+}
+.np-type-icon-blue   { background: linear-gradient(135deg, #3b82f6, #2563eb); }
+.np-type-icon-purple { background: linear-gradient(135deg, #7c3aed, #db2777); }
+
+/* 카드 제목 */
+.np-type-card-title {
+  font-size: 1.25rem;
+  color: #111827;
+  margin-bottom: 0.25rem;
+}
+
+/* 추천 대상 박스 */
+.np-type-recommend-box {
+  border-radius: 0.5rem;
+  padding: 0.75rem;
+  margin-bottom: 1rem;
+}
+.np-type-recommend-blue   { background: #eff6ff; }
+.np-type-recommend-purple { background: #faf5ff; }
+
+.np-type-recommend-label { font-size: 0.78rem; margin-bottom: 0.2rem; }
+.np-type-recommend-label-blue   { color: #1e3a8a; }
+.np-type-recommend-label-purple { color: #3b0764; }
+
+.np-type-recommend-text { font-size: 0.78rem; }
+.np-type-recommend-text-blue   { color: #1d4ed8; }
+.np-type-recommend-text-purple { color: #7c3aed; }
+
+/* CTA 버튼 (카드 하단) */
+.np-type-cta-btn {
+  border-radius: 0.5rem;
+  padding: 0.65rem 1rem;
+  text-align: center;
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: #fff;
+}
+.np-type-cta-blue   { background: #2563eb; }
+.np-type-cta-purple { background: linear-gradient(135deg, #7c3aed, #db2777); }
+
+/* 인기 배지 */
+.np-type-popular-badge {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  background: linear-gradient(135deg, #fbbf24, #f97316);
+  color: #fff;
+  border-radius: 9999px;
+  padding: 0.2rem 0.6rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+  z-index: 1;
+}
+
+/* 인포 박스 */
+.np-info-box {
+  background: #f0fdf4;
+  border: 1px solid #bbf7d0;
+  border-radius: 0.75rem;
+  padding: 1rem 1.25rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+}
+.np-info-icon {
+  font-size: 1.25rem;
+  flex-shrink: 0;
+  margin-top: 0.1rem;
+}
+
+/* 나중에 하기 버튼 */
+.np-later-btn {
+  background: none;
+  border: none;
+  color: #6b7280;
+  font-size: 0.9rem;
+  cursor: pointer;
+  text-decoration: underline;
+  margin-top: 1.25rem;
+}
+
+/* 어두운 muted 텍스트 */
+.text-muted-dark { color: #374151; }
+
+/* 라인 높이 유틸리티 */
+.lh-160 { line-height: 1.6 !important; }
 
 /* 코드 블록 */
 .code-block {
