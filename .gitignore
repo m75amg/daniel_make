@@ -13,3 +13,8 @@
 *.log
 
 .claude/
+
+.venv/
+_analysis/
+_history/
+
