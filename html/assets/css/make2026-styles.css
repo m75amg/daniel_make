@@ -4206,3 +4206,47 @@ nav.navbar.px-0 {
   background: linear-gradient(135deg, #eff6ff 0%, #f5f3ff 100%);
 }
 
+
+/* ══════════════════════════════════════════════════════
+   CONTEST RESULT PAGE — 미정의 클래스 추가
+   (contest-result.html 에서 사용되나 기존 CSS에 없던 클래스)
+   ══════════════════════════════════════════════════════ */
+
+/* 히어로 앰버→레드 그라디언트 배경 */
+.hero-gradient-amber-red {
+  background: linear-gradient(135deg, #f59e0b 0%, #dc2626 100%);
+}
+
+/* 썸네일 이미지 높이 고정 */
+.thumb-100h {
+  height: 100px;
+  object-fit: cover;
+}
+.thumb-120h {
+  height: 120px;
+  object-fit: cover;
+}
+
+/* Bootstrap border 색상 확장 — 실버 / 브론즈 */
+.border-silver {
+  --bs-border-color: #9ca3af !important;
+  border-color: #9ca3af !important;
+}
+.border-bronze {
+  --bs-border-color: #cd7f32 !important;
+  border-color: #cd7f32 !important;
+}
+
+/* 브론즈 배경 / 텍스트 */
+.bg-bronze {
+  background-color: #cd7f32 !important;
+  color: #fff !important;
+}
+.text-bronze {
+  color: #cd7f32 !important;
+}
+
+/* 흰색 75% 불투명 텍스트 */
+.text-white-75 {
+  color: rgba(255, 255, 255, 0.75) !important;
+}
