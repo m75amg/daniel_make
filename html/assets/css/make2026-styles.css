@@ -3352,6 +3352,31 @@ nav.navbar.px-0 {
   opacity: 1;
 }
 
+/* ══════════════════════════════════════════════════════
+   INDEX PAGE — 미정의 클래스 추가
+   (index.html 에서 사용되나 기존 CSS에 없던 클래스)
+   ══════════════════════════════════════════════════════ */
+
+/* project-card-avatar 의 biotech 변형
+   (index-styles.css 에 정의되어 있으나 index.html 에서 해당 파일을 로드하지 않아 미적용) */
+.project-card-avatar.biotech {
+  background: #fef9c3;
+  color: #854d0e;
+}
+
+/* CTA 배너 버튼 — 흰색 배경 + 네이비 텍스트 */
+.btn-white-navy {
+  background-color: #fff;
+  color: #1e3a8a;
+  border-color: #fff;
+}
+.btn-white-navy:hover {
+  background-color: #dbeafe;
+  color: #1e3a8a;
+  border-color: #dbeafe;
+}
+
+
 /* ── Tailwind 미지원 유틸리티 (Bootstrap 대체) ──────────── */
 /* min-w-0 대체: flex 자식 요소 텍스트 말줄임 처리용 */
 .flex-min-0 { min-width: 0; }
