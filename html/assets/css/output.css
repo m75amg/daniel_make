@@ -22,9 +22,13 @@
   --btn-border-width: 1px;
   --btn-transition: all 0.2s ease;
 
-  /* blue */
+  /* blue 
   --color-blue: #5b6cff;
-  --color-blue-hover: #243afe;
+  --color-blue-hover: #243afe;*/
+
+    /* blue */
+  --color-blue: #0b7af8;
+  --color-blue-hover: #173cf8;
 
   /* purple */
   --color-purple: #924eff;

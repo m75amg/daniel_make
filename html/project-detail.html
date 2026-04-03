@@ -157,24 +157,36 @@
 
     <!-- Contest Project Banner -->
     <div class="contest-banner">
-      <div class="container-xl py-4">
+      <!-- 우측 원호 데코 -->
+      <div class="contest-banner-arc"></div>
+      <div class="contest-banner-arc2"></div>
+
+      <div class="container-xl position-relative">
         <div class="d-flex align-items-center justify-content-between flex-wrap gap-3">
-          <div class="d-flex align-items-center gap-3">
-            <div
-              class="rounded-circle bg-white bg-opacity-25 d-flex align-items-center justify-content-center flex-shrink-0 banner-icon-48">
-              🏆</div>
-            <div>
-              <div class="d-flex align-items-center gap-2 mb-1">
-                <h6 class="fw-bold mb-0">콘테스트 프로젝트</h6>
-                <span class="badge badge-green-500">✓ 완성</span>
-              </div>
-              <p class="small mb-0 text-white-80">AI 로봇 챌린지 2026 &nbsp;·&nbsp; Quest 3/3 완료</p>
+
+          <!-- 좌측: 정보 -->
+          <div>
+            <div class="d-flex align-items-center gap-2 mb-2">
+              <span class="banner-label">콘테스트 프로젝트</span>
+              <span class="banner-badge-done"><i class="fa-solid fa-circle-check pe-1"></i> 완성</span>
             </div>
+            <h5 class="fw-bold text-white mb-1 project-detail-top-title">AI 로봇 챌린지 2026</h5>
+            <p class="mb-0 banner-sub">Quest 3/3 완료 &nbsp;·&nbsp; 최우수상 수상</p>
           </div>
-          <a href="contest-detail.html" class="btn btn-outline-light btn-sm">콘테스트 페이지 →</a>
-        </div>
-        <div class="banner-progress mt-3">
-          <div class="banner-progress-bar banner-progress-bar-full"></div>
+
+          <!-- 우측: 버튼 -->
+          <div class="d-flex align-items-center gap-3">
+            <div class="banner-progress-wrap">
+              <div class="banner-progress-inner">
+                <div class="banner-progress-fill"></div>
+              </div>
+              <span class="banner-progress-label">100%</span>
+            </div>
+            <a href="contest-detail.html" class="btn banner-btn">
+              콘테스트 페이지 <i class="fa-regular fa-arrow-right ms-1"></i>
+            </a>
+          </div>
+
         </div>
       </div>
     </div>
@@ -188,10 +200,10 @@
           <div class="col-lg-8">
             <!-- Badges -->
             <div class="d-flex flex-wrap gap-2 mb-3">
-              <span class="badge fs-6 px-3 py-2 bg-purple">🏆 콘테스트 프로젝트</span>
-              <span class="badge fs-6 px-3 py-2 bg-success">✓ 완료</span>
-              <span class="badge fs-6 px-3 py-2 badge-grad-amber-orange">🏆 최우수상</span>
-              <span class="badge fs-6 px-3 py-2 bg-light text-dark border">로봇공학</span>
+              <span class="badge px-3 py-2 badge-outline-purple"><i class="fa-regular fa-trophy me-1"></i>콘테스트 프로젝트</span>
+              <span class="badge px-3 py-2 bg-success badge-project">✓ 완료</span>
+              <span class="badge px-3 py-2 badge-grad-amber-orange badge-project"><i class="fa-regular fa-trophy me-1"></i>최우수상</span>
+              <span class="badge px-3 py-2 bg-light text-dark border badge-project">로봇공학</span>
             </div>
 
             <!-- Title -->
@@ -199,17 +211,17 @@
             <p class="text-muted fs-5 mb-4">라즈베리파이와 OpenCV로 실내 자율주행이 가능한 배송 로봇</p>
 
             <!-- Completed Info Bar -->
-            <div class="completed-bar d-flex flex-wrap gap-4 mb-4">
-              <div class="d-flex align-items-center gap-2">
-                <span class="text-blue">👥</span>
+            <div class="completed-bar d-flex flex-wrap gap-5 mb-4">
+              <div class="d-flex align-items-center gap-3">
+                <span class="text-blue"><i class="fa-regular fa-users"></i></span>
                 <span class="small fw-semibold">팀: AI 로봇팀</span>
               </div>
-              <div class="d-flex align-items-center gap-2">
-                <span class="text-green-600">📅</span>
+              <div class="d-flex align-items-center gap-3">
+                <span class="text-green-600"><i class="fa-regular fa-calendar"></i></span>
                 <span class="small fw-semibold">완료: 2026년 3월 13일</span>
               </div>
-              <div class="d-flex align-items-center gap-2">
-                <span class="text-purple-700">🏆</span>
+              <div class="d-flex align-items-center gap-3">
+                <span class="text-purple-700"><i class="fa-regular fa-trophy"></i></span>
                 <span class="small fw-semibold">AI 로봇 챌린지 2026</span>
               </div>
             </div>
@@ -225,7 +237,7 @@
                 <div>
                   <div class="d-flex align-items-center gap-2 mb-1">
                     <span class="fw-bold">김메이커</span>
-                    <a href="maker-profile.html" class="author-link-badge">👤 마이메이크 방문</a>
+                    <a href="maker-profile.html" class="author-link-badge"><i class="fa-regular fa-user"></i> 마이메이크 방문</a>
                   </div>
                   <small class="text-muted">2026년 3월 5일에 시작</small>
                 </div>
@@ -259,22 +271,22 @@
 
             <!-- Features Grid -->
             <div class="card border-0 shadow-sm p-4 mb-4 card-gradient-gray-blue">
-              <h5 class="fw-bold mb-3">✨ 주요 기능</h5>
+              <h5 class="fw-bold mb-3"><i class="fa-regular fa-sparkles"></i> 주요 기능</h5>
               <div class="row g-3">
                 <div class="col-md-6">
                   <div class="feature-card">
-                    <div class="feature-icon">🎯</div>
+                    <div class="feature-icon"><i class="fa-regular fa-bullseye"></i></div>
                     <div>
-                      <div class="fw-semibold small mb-1">실시간 장애물 감지 및 회피</div>
+                      <div class="fw-semibold mb-1">실시간 장애물 감지 및 회피</div>
                       <div class="text-muted fs-80">초음파 센서와 AI 비전을 결합한 360도 장애물 감지</div>
                     </div>
                   </div>
                 </div>
                 <div class="col-md-6">
                   <div class="feature-card">
-                    <div class="feature-icon">⚡</div>
+                    <div class="feature-icon"><i class="fa-regular fa-bolt"></i></div>
                     <div>
-                      <div class="fw-semibold small mb-1">A* 경로 최적화</div>
+                      <div class="fw-semibold mb-1">A* 경로 최적화</div>
                       <div class="text-muted fs-80">목적지까지 최단 경로를 실시간으로 계산</div>
                     </div>
                   </div>
@@ -283,16 +295,16 @@
                   <div class="feature-card">
                     <div class="feature-icon">🎙️</div>
                     <div>
-                      <div class="fw-semibold small mb-1">음성 명령 제어</div>
+                      <div class="fw-semibold mb-1">음성 명령 제어</div>
                       <div class="text-muted fs-80">한국어 음성으로 목적지 설정 및 로봇 제어</div>
                     </div>
                   </div>
                 </div>
                 <div class="col-md-6">
                   <div class="feature-card">
-                    <div class="feature-icon">📊</div>
+                    <div class="feature-icon"><i class="fa-regular fa-chart-bar"></i></div>
                     <div>
-                      <div class="fw-semibold small mb-1">웹 모니터링</div>
+                      <div class="fw-semibold mb-1">웹 모니터링</div>
                       <div class="text-muted fs-80">실시간 영상 스트리밍 및 상태 모니터링</div>
                     </div>
                   </div>
@@ -301,15 +313,15 @@
             </div>
 
             <!-- Tech Stack -->
-            <div class="card border-0 shadow-sm p-4">
-              <h5 class="fw-bold mb-3">💻 사용 기술</h5>
+            <div class="card-tech-stack p-4">
+              <h5 class="fw-bold mb-3"><i class="fa-regular fa-laptop-code"></i> 사용 기술</h5>
               <div class="d-flex flex-wrap gap-2">
-                <span class="badge px-3 py-2 badge-purple">AI</span>
-                <span class="badge px-3 py-2 badge-purple">라즈베리파이</span>
-                <span class="badge px-3 py-2 badge-purple">OpenCV</span>
-                <span class="badge px-3 py-2 badge-purple">자율주행</span>
-                <span class="badge px-3 py-2 badge-purple">Python</span>
-                <span class="badge px-3 py-2 badge-purple">ROS</span>
+                <span class="badge px-3 py-2 badge-indigo">AI</span>
+                <span class="badge px-3 py-2 badge-indigo">라즈베리파이</span>
+                <span class="badge px-3 py-2 badge-indigo">OpenCV</span>
+                <span class="badge px-3 py-2 badge-indigo">자율주행</span>
+                <span class="badge px-3 py-2 badge-indigo">Python</span>
+                <span class="badge px-3 py-2 badge-indigo">ROS</span>
               </div>
             </div>
           </div>
@@ -319,37 +331,46 @@
             <div class="sticky-sidebar">
 
               <!-- Like / Save / Share -->
-              <div class="card border-0 shadow-sm rounded-4 p-4 mb-3">
+              <div class="sidebar-card mb-3">
                 <div class="d-grid gap-2">
-                  <button class="btn btn-primary" id="btn-like">❤️ 좋아요</button>
-                  <button class="btn btn-outline-secondary" id="btn-save">🔖 저장하기</button>
-                  <button class="btn btn-outline-secondary" id="btn-share">🔗 공유하기</button>
+                  <button class="btn btn-primary sidebar-action-btn" id="btn-like">
+                    <i class="fa-regular fa-heart me-2"></i>좋아요
+                  </button>
+                  <button class="btn sidebar-outline-btn" id="btn-save">
+                    <i class="fa-regular fa-bookmark me-2"></i>저장하기
+                  </button>
+                  <button class="btn sidebar-outline-btn" id="btn-share">
+                    <i class="fa-regular fa-share-nodes me-2"></i>공유하기
+                  </button>
                 </div>
               </div>
 
               <!-- Project Links -->
-              <div class="card border-0 shadow-sm rounded-4 p-4 mb-3">
-                <h6 class="fw-bold mb-3">프로젝트 링크</h6>
+              <div class="sidebar-card mb-3">
+                <h6 class="sidebar-card-title mb-3">프로젝트 링크</h6>
                 <div class="d-grid gap-2">
-                  <a href="https://github.com/example/project" target="_blank"
-                    class="btn btn-outline-secondary text-start btn-sm">
-                    <span class="me-2">🐙</span>GitHub 저장소
+                  <a href="https://github.com/example/project" target="_blank" class="sidebar-link-btn">
+                    <i class="fa-brands fa-github sidebar-link-icon"></i>
+                    <span>GitHub 저장소</span>
                   </a>
-                  <a href="https://youtube.com/watch?v=demo" target="_blank"
-                    class="btn btn-outline-secondary text-start btn-sm">
-                    <span class="me-2">▶</span>시연 영상
+                  <a href="https://youtube.com/watch?v=demo" target="_blank" class="sidebar-link-btn">
+                    <i class="fa-regular fa-circle-play sidebar-link-icon"></i>
+                    <span>시연 영상</span>
                   </a>
-                  <button class="btn btn-outline-secondary text-start btn-sm" onclick="alert('문서 다운로드 준비 중입니다.')">
-                    <span class="me-2">📄</span>문서 다운로드
+                  <button class="sidebar-link-btn" onclick="alert('문서 다운로드 준비 중입니다.')">
+                    <i class="fa-regular fa-file-lines sidebar-link-icon"></i>
+                    <span>문서 다운로드</span>
                   </button>
                 </div>
               </div>
 
               <!-- Contest Info -->
-              <div class="card border-0 shadow-sm rounded-4 p-4 bg-primary-subtle">
-                <h6 class="fw-bold mb-2">콘테스트 정보</h6>
-                <p class="small mb-1 fw-semibold text-primary">AI 로봇 챌린지 2026</p>
-                <p class="small text-muted mb-2">🏆 최우수상 수상</p>
+              <div class="sidebar-card sidebar-card-contest">
+                <h6 class="sidebar-card-title mb-3">콘테스트 정보</h6>
+                <p class="fw-semibold text-primary mb-1" style="font-size:0.9rem">AI 로봇 챌린지 2026</p>
+                <p class="small text-muted mb-3">
+                  <i class="fa-regular fa-trophy me-1"></i>최우수상 수상
+                </p>
                 <a href="contest-detail.html" class="btn btn-primary btn-sm w-100">콘테스트 보기</a>
               </div>
 
@@ -363,16 +384,16 @@
     <!-- Content Tabs -->
     <div class="container-xl py-5">
       <ul class="nav border-bottom mb-5 detail-tabs flex-nowrap overflow-auto" id="detailTabs">
-        <li class="nav-item"><button class="detail-tab-btn nav-link active" data-target="#tab-quest">⚡ Quest 진행
+        <li class="nav-item"><button class="detail-tab-btn nav-link active" data-target="#tab-quest"><i class="fa-regular fa-bolt"></i> Quest 진행
             기록</button></li>
-        <li class="nav-item"><button class="detail-tab-btn nav-link" data-target="#tab-gallery">🖼️ 갤러리</button></li>
-        <li class="nav-item"><button class="detail-tab-btn nav-link" data-target="#tab-resources">📚 자료실</button></li>
-        <li class="nav-item"><button class="detail-tab-btn nav-link" data-target="#tab-story">📖 프로젝트 스토리</button></li>
-        <li class="nav-item"><button class="detail-tab-btn nav-link" data-target="#tab-build">🔧 제작 과정</button></li>
-        <li class="nav-item"><button class="detail-tab-btn nav-link" data-target="#tab-code">💻 코드 &amp; 회로</button>
+        <li class="nav-item"><button class="detail-tab-btn nav-link" data-target="#tab-gallery"><i class="fa-regular fa-images"></i> 갤러리</button></li>
+        <li class="nav-item"><button class="detail-tab-btn nav-link" data-target="#tab-resources"><i class="fa-regular fa-books"></i> 자료실</button></li>
+        <li class="nav-item"><button class="detail-tab-btn nav-link" data-target="#tab-story"><i class="fa-regular fa-book-open"></i> 프로젝트 스토리</button></li>
+        <li class="nav-item"><button class="detail-tab-btn nav-link" data-target="#tab-build"><i class="fa-regular fa-wrench"></i> 제작 과정</button></li>
+        <li class="nav-item"><button class="detail-tab-btn nav-link" data-target="#tab-code"><i class="fa-regular fa-code"></i> 코드 &amp; 회로</button>
         </li>
         <li class="nav-item"><button class="detail-tab-btn nav-link" id="tab-btn-comments"
-            data-target="#tab-comments">💬 댓글 <span class="badge bg-primary ms-1">142</span></button></li>
+            data-target="#tab-comments"><i class="fa-regular fa-comment"></i> 댓글 <span class="badge bg-primary ms-1">142</span></button></li>
       </ul>
 
       <div class="tab-content">
@@ -384,7 +405,7 @@
             <div class="d-flex gap-4">
               <div
                 class="rounded-circle text-white d-flex align-items-center justify-content-center flex-shrink-0 quest-hero-icon">
-                🚀</div>
+                <i class="fa-regular fa-rocket"></i></div>
               <div class="flex-grow-1">
                 <h5 class="fw-bold mb-2">콘테스트 프로젝트 진행 상황</h5>
                 <p class="text-muted small mb-3">이 프로젝트는 <strong>AI 로봇 챌린지 2026</strong>을 통해 단계적으로 완성되었습니다. 각 Quest를 통해
@@ -408,9 +429,9 @@
                   ✓</div>
                 <div class="flex-grow-1">
                   <h5 class="fw-bold mb-1">Quest 1: 프로젝트 기획 및 설계</h5>
-                  <small class="text-muted">📅 2026년 3월 5일에 완료</small>
+                  <small class="text-muted"><i class="fa-regular fa-calendar"></i> 2026년 3월 5일에 완료</small>
                 </div>
-                <span class="badge bg-success">완료</span>
+                <span class="badge badge-indigo-solid">완료</span>
               </div>
             </div>
             <div class="card-body p-4">
@@ -451,9 +472,9 @@
                   ✓</div>
                 <div class="flex-grow-1">
                   <h5 class="fw-bold mb-1">Quest 2: 프로토타입 제작</h5>
-                  <small class="text-muted">📅 2026년 3월 10일에 완료</small>
+                  <small class="text-muted"><i class="fa-regular fa-calendar"></i> 2026년 3월 10일에 완료</small>
                 </div>
-                <span class="badge bg-success">완료</span>
+                <span class="badge badge-indigo-solid">완료</span>
               </div>
             </div>
             <div class="card-body p-4">
@@ -499,9 +520,9 @@
                   ✓</div>
                 <div class="flex-grow-1">
                   <h5 class="fw-bold mb-1">Quest 3: 최종 프로젝트 완성</h5>
-                  <small class="text-muted">📅 2026년 3월 13일에 완료</small>
+                  <small class="text-muted"><i class="fa-regular fa-calendar"></i> 2026년 3월 13일에 완료</small>
                 </div>
-                <span class="badge bg-success">완료</span>
+                <span class="badge badge-indigo-solid">완료</span>
               </div>
             </div>
             <div class="card-body p-4">
@@ -547,21 +568,20 @@
           </div>
 
           <!-- All Quests Complete Card -->
-          <div class="card border-warning p-5 text-center card-gradient-amber-light">
-            <div
-              class="rounded-circle bg-warning d-flex align-items-center justify-content-center mx-auto mb-3 icon-circle-64-2rem">
-              ✨</div>
-            <h4 class="fw-bold mb-2">🎉 모든 Quest 완료!</h4>
+          <div class="card p-5 text-center card-gradient-amber-light position-relative" style="z-index:0">
+            <div class="rounded-circle quest-complete-icon d-flex align-items-center justify-content-center mx-auto mb-3 icon-circle-64-2rem">
+              <i class="fa-regular fa-sparkles text-white"></i></div>
+            <h4 class="fw-bold mb-2 quest-complete-title"><i class="fa-regular fa-party-horn"></i> 모든 Quest 완료!</h4>
             <p class="text-muted mb-4">축하합니다! 콘테스트의 모든 단계를 완료하여 프로젝트가 완성되었습니다.<br>이제 이 프로젝트는 플랫폼의 영구 자산으로 등록되어 다른 메이커들과
               공유됩니다.</p>
-            <a href="contest-detail.html" class="btn btn-primary">🏆 콘테스트 페이지로 이동</a>
+            <a href="contest-detail.html" class="btn quest-complete-btn d-inline-flex align-items-center mx-auto"><i class="fa-regular fa-trophy me-2"></i> 콘테스트 페이지로 이동</a>
           </div>
         </div>
 
         <!-- Tab: 갤러리 -->
         <div class="tab-pane" id="tab-gallery">
           <div class="card border-0 shadow-sm p-5">
-            <h4 class="fw-bold mb-2">🖼️ 프로젝트 갤러리</h4>
+            <h4 class="fw-bold mb-2"><i class="fa-regular fa-images"></i> 프로젝트 갤러리</h4>
             <p class="text-muted mb-4">프로젝트 제작 과정과 최종 결과물을 담은 이미지 갤러리입니다.</p>
             <div class="row g-3" id="gallery-grid">
               <div class="col-4">
@@ -607,7 +627,7 @@
         <!-- Tab: 자료실 -->
         <div class="tab-pane" id="tab-resources">
           <div class="card border-0 shadow-sm p-5">
-            <h4 class="fw-bold mb-2">📚 프로젝트 자료실</h4>
+            <h4 class="fw-bold mb-2"><i class="fa-regular fa-books"></i> 프로젝트 자료실</h4>
             <p class="text-muted mb-5">프로젝트를 재현하거나 학습하는데 필요한 모든 자료를 제공합니다.</p>
             <div class="row g-4">
               <div class="col-md-6">
@@ -665,7 +685,7 @@
             <!-- Open Source Notice -->
             <div class="mt-5 p-4 rounded-3 card-gradient-green-blue-86efac">
               <div class="d-flex gap-3">
-                <span class="fs-4 flex-shrink-0 mt-1">✨</span>
+                <span class="fs-4 flex-shrink-0 mt-1"><i class="fa-regular fa-sparkles"></i></span>
                 <div>
                   <h6 class="fw-bold mb-2">오픈소스 프로젝트</h6>
                   <p class="small text-muted mb-3">이 프로젝트는 MIT 라이선스로 공개되어 있어 누구나 자유롭게 사용, 수정, 배포할 수 있습니다. 커뮤니티의 기여를
@@ -892,7 +912,7 @@ def plan_path(obstacles, target):
                         class="rounded-circle bg-primary-subtle text-primary d-flex align-items-center justify-content-center fw-bold icon-box-24">이</span>
                       <span>이개발</span>
                     </div>
-                    <span>❤️ 289</span>
+                    <span><i class="fa-regular fa-heart"></i>289</span>
                   </div>
                 </div>
               </div>
@@ -916,7 +936,7 @@ def plan_path(obstacles, target):
                         class="rounded-circle bg-primary-subtle text-primary d-flex align-items-center justify-content-center fw-bold icon-box-24">박</span>
                       <span>박엔지니어</span>
                     </div>
-                    <span>❤️ 267</span>
+                    <span><i class="fa-regular fa-heart"></i>267</span>
                   </div>
                 </div>
               </div>
@@ -940,7 +960,7 @@ def plan_path(obstacles, target):
                         class="rounded-circle bg-primary-subtle text-primary d-flex align-items-center justify-content-center fw-bold icon-box-24">최</span>
                       <span>최개발</span>
                     </div>
-                    <span>❤️ 345</span>
+                    <span><i class="fa-regular fa-heart"></i>345</span>
                   </div>
                 </div>
               </div>
@@ -1038,7 +1058,7 @@ def plan_path(obstacles, target):
         liked = !liked;
         $('#btn-like')
           .toggleClass('btn-primary btn-danger')
-          .text(liked ? '❤️ 좋아요 취소' : '❤️ 좋아요');
+          .html(liked ? '<i class="fa-regular fa-heart"></i> 좋아요 취소' : '<i class="fa-regular fa-heart"></i> 좋아요');
       });
     });
 
@@ -1048,7 +1068,7 @@ def plan_path(obstacles, target):
         $('#btn-save')
           .toggleClass('btn-outline-secondary', !saved)
           .toggleClass('btn-warning', saved)
-          .text(saved ? '🔖 저장됨' : '🔖 저장하기');
+          .html(saved ? '<i class="fa-regular fa-bookmark"></i> 저장됨' : '<i class="fa-regular fa-bookmark"></i> 저장하기');
       });
     });
 
