@@ -267,16 +267,18 @@ justify-content: space-evenly;
 
 /* ── Project Creation Modal ───────────────────────────── */
 .modal-gradient-header {
-  background: linear-gradient(135deg, #2563eb 0%, #7c3aed 50%, #ec4899 100%);
+  background: url('../img/bg_contest_detail_top2.jpg') center/cover no-repeat;
   color: #fff;
   padding: 1.5rem;
   border-radius: 0.5rem 0.5rem 0 0;
 }
 
 .project-type-card {
+  position: relative;
+  overflow: hidden;
   border: 2px solid transparent;
   border-radius: 0.75rem;
-  padding: 1.25rem;
+  padding: 1.5rem;
   cursor: pointer;
   transition: all 0.2s;
 
@@ -860,7 +862,7 @@ justify-content: space-evenly;
   border-radius: 1rem;
   box-shadow: 0 25px 60px rgba(0, 0, 0, 0.3);
   width: 100%;
-  max-width: 800px;
+  max-width: 870px;
   overflow: hidden;
 }
 
@@ -959,14 +961,16 @@ justify-content: space-evenly;
   align-items: center;
   justify-content: center;
   font-size: 1.75rem;
-  margin-bottom: 1rem;
+  margin-bottom: 0.75rem;
 
   &.personal {
-    background: linear-gradient(135deg, #3b82f6, #2563eb);
+    background: var(--color-blue);
+    color: #fff;
   }
 
   &.contest {
-    background: linear-gradient(135deg, #7c3aed, #db2777);
+    background: var(--color-purple);
+    color: #fff;
   }
 }
 
@@ -984,6 +988,7 @@ justify-content: space-evenly;
 
 .checklist-items {
   color: #374151;
+  font-size: 1rem;
   margin-bottom: 1rem;
 
   li {
@@ -996,11 +1001,11 @@ justify-content: space-evenly;
       font-size: 0.85rem;
 
       &.personal-check {
-        color: #2563eb;
+        color: var(--color-blue);
       }
 
       &.contest-check {
-        color: #7c3aed;
+        color: var(--color-purple);
       }
     }
   }
@@ -1015,13 +1020,13 @@ justify-content: space-evenly;
     background: #eff6ff;
 
     .rec-label {
-      font-size: 0.78rem;
+      font-size: 0.88rem;
       color: #1e3a8a;
       margin-bottom: 0.2rem;
     }
 
     .rec-text {
-      font-size: 0.78rem;
+      font-size: 0.88rem;
       color: #1d4ed8;
     }
   }
@@ -1030,35 +1035,35 @@ justify-content: space-evenly;
     background: #faf5ff;
 
     .rec-label {
-      font-size: 0.78rem;
+      font-size: 0.88rem;
       color: #3b0764;
       margin-bottom: 0.2rem;
     }
 
     .rec-text {
-      font-size: 0.78rem;
+      font-size: 0.88rem;
       color: #7c3aed;
     }
   }
 }
 
 .project-action-btn {
-  background: #2563eb;
+  background: var(--color-blue);
   color: #fff;
   border-radius: 0.5rem;
   padding: 0.65rem 1rem;
   text-align: center;
   font-weight: 600;
-  font-size: 0.9rem;
+  font-size: 1rem;
 
   &.contest {
-    background: linear-gradient(135deg, #7c3aed, #db2777);
+    background: var(--color-purple);
   }
 }
 
 .modal-info-box {
   background: #f0fdf4;
-  border: 1px solid #bbf7d0;
+  border: 1px solid var(--color-green);
   border-radius: 0.75rem;
   padding: 1rem 1.25rem;
   display: flex;
@@ -1068,7 +1073,8 @@ justify-content: space-evenly;
   .info-icon {
     width: 36px;
     height: 36px;
-    background: #dcfce7;
+    background: var(--color-green);
+    color: #fff;
     border-radius: 0.5rem;
     display: flex;
     align-items: center;
@@ -1080,11 +1086,13 @@ justify-content: space-evenly;
     .info-title {
       color: #111827;
       margin-bottom: 0.25rem;
+      font-size: 0.95rem;
     }
 
     .info-text {
       color: #4b5563;
       line-height: 1.6;
+      font-size: 0.88rem;
     }
   }
 }
@@ -1186,6 +1194,7 @@ justify-content: space-evenly;
   position: absolute;
   top: 0.75rem;
   right: 0.75rem;
+  z-index: 10;
   background: linear-gradient(135deg, #fbbf24, #f97316);
   color: #fff;
   border-radius: 9999px;
@@ -1239,11 +1248,11 @@ justify-content: space-evenly;
 
 /* ── List Item Checkmarks ────────────────────── */
 .checkmark-personal {
-  color: #2563eb;
+  color: var(--color-blue);
 }
 
 .checkmark-contest {
-  color: #7c3aed;
+  color: var(--color-purple);
 }
 
 
@@ -1275,14 +1284,102 @@ justify-content: space-evenly;
    CONTESTS PAGE
    ══════════════════════════════════════════════════════ */
 
+.btn-purple {
+  background: var(--color-purple);
+  color: #fff;
+  border: none;
+
+  &:hover {
+    background: #6d28d9;
+    color: #fff;
+  }
+
+  &:focus,
+  &:active,
+  &:focus-visible {
+    background: #6d28d9;
+    color: #fff;
+    box-shadow: 0 0 0 .25rem rgba(124, 58, 237, .4);
+  }
+}
+
 /* ── Contest Card ───────────────────────────────────── */
+.contest-card-info {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+
+  & i {
+    width: 1rem;
+    text-align: center;
+    flex-shrink: 0;
+  }
+}
 .contest-card {
   cursor: pointer;
   transition: transform .2s, box-shadow .2s;
+  border-radius: 1rem !important;
+  overflow: hidden;
+
+  & img {
+    border-radius: 1rem 1rem 0 0;
+  }
+
+  & h6 {
+    font-size: 1.1rem;
+  }
 }
 .contest-card:hover {
   transform: translateY(-4px);
   box-shadow: 0 .75rem 1.5rem rgba(0,0,0,.12) !important;
+}
+
+#contest-grid {
+  display: grid !important;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+#contest-grid .contest-item {
+  width: 100% !important;
+  max-width: 100% !important;
+  padding: 0 !important;
+  flex: none !important;
+}
+
+@media (max-width: 991px) {
+  #contest-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 575px) {
+  #contest-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* contest-item 뱃지 — projects.html 스타일 통일 */
+.contest-item .badge {
+  border-radius: 9999px !important;
+  font-weight: 600;
+}
+.contest-item .badge.bg-success {
+  background: #dcfce7 !important;
+  color: #15803d !important;
+}
+.contest-item .badge.bg-warning {
+  background: #fef9c3 !important;
+  color: #854d0e !important;
+}
+.contest-item .badge.bg-danger {
+  background: #dc2626 !important;
+  color: #fee2e2 !important;
+}
+.contest-item .badge.bg-light {
+  background: #f1f5f9 !important;
+  color: #1f2937 !important;
+  border: 1px solid #e2e8f0 !important;
 }
 .contest-thumb {
   height: 180px;
@@ -1294,12 +1391,31 @@ justify-content: space-evenly;
   border: none;
   border-bottom: 2px solid transparent;
   background: transparent;
-  padding: .75rem .5rem;
-  font-weight: 600;
+  padding: 1rem 2.5rem;
+  font-size: 1.05rem;
+  font-weight: 500;
+  color: #374151;
+  position: relative;
+  transition: color 0.15s;
+
+  &:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 25%;
+    height: 50%;
+    width: 1px;
+    background: #e5e7eb;
+  }
+
+  &:hover {
+    color: #2563eb;
+  }
 }
 .tab-underline.active {
-  border-color: #2563eb;
+  border-bottom: 2px solid #2563eb;
   color: #2563eb;
+  font-weight: 600;
 }
 .contest-tabs-sticky {
   top: 100px;
@@ -1405,12 +1521,14 @@ justify-content: space-evenly;
   font-weight: 800;
   line-height: 1.15;
   letter-spacing: -0.02em;
+  color: #fff;
 }
 .glass-stat .stat-label {
   font-size: 0.78rem;
   font-weight: 500;
   opacity: 0.78;
   margin-top: 0.3rem;
+  color: #fff;
 }
 
 
@@ -1554,7 +1672,7 @@ nav.navbar.px-0 {
 
 /* 새 프로젝트 모달 (index, my-make 공용) */
 .modal-gradient-header {
-  background: linear-gradient(135deg, #2563eb 0%, #7c3aed 50%, #ec4899 100%);
+  background: url('../img/bg_contest_detail_top2.jpg') center/cover no-repeat;
   color: #fff;
   padding: 1.5rem;
   border-radius: .5rem .5rem 0 0;
@@ -1831,6 +1949,24 @@ nav.navbar.px-0 {
 /* ══════════════════════════════════════════════════════
    PROJECTS PAGE
    ══════════════════════════════════════════════════════ */
+
+.badge.bg-warning.text-dark {
+  color: #78350f !important;
+}
+
+.border-success-subtle {
+  border-color: #bbf7d0 !important;
+}
+
+.project-card .badge {
+  border-radius: 9999px !important;
+}
+
+.project-card .badge.bg-info {
+  background: var(--color-blue) !important;
+  color: #fff !important;
+  font-weight: 500 !important;
+}
 
 .project-sidebar {
   border: 1px solid #b0c2eb !important;
@@ -2528,10 +2664,25 @@ nav.navbar.px-0 {
     border-bottom: none;
   }
 }
+.cd-tabs .nav-item {
+  position: relative;
+
+  &:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 1px;
+    height: 1.25rem;
+    background: #e5e7eb;
+  }
+}
 .cd-tabs .nav-link {
   color: #6b7280;
   font-weight: 500;
-  padding: .75rem 1.25rem;
+  font-size: 1.05rem;
+  padding: .75rem 2.75rem;
   border: none;
   border-bottom: 2px solid transparent;
   background: transparent;
@@ -2548,8 +2699,44 @@ nav.navbar.px-0 {
   }
 }
 .contest-detail-hero {
-  background: linear-gradient(135deg, #2563eb 0%, #7c3aed 60%, #db2777 100%);
+  padding-top: 2.5rem !important;
+  background:
+              linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)),
+              url('../img/bg_contest_detail_top.jpg') center/cover no-repeat;
+
+  & .badge {
+    font-size: 0.95rem;
+    padding: 0.5em 1em !important;
+    border-radius: 9999px !important;
+    line-height: 1.4;
+  }
 }
+.btn-hero-primary {
+  background-color: #fff;
+  color: #7c3aed;
+  border-color: #fff;
+  transition: background-color 0.2s, color 0.2s, transform 0.15s;
+}
+.btn-hero-primary:hover {
+  background-color: #ede9fe;
+  color: #5b21b6;
+  border-color: #ede9fe;
+  transform: translateY(-2px);
+}
+
+.btn-hero-secondary {
+  background-color: rgba(255,255,255,0.15);
+  color: #fff;
+  border: 2px solid rgba(255,255,255,0.7);
+  transition: background-color 0.2s, border-color 0.2s, transform 0.15s;
+}
+.btn-hero-secondary:hover {
+  background-color: rgba(255,255,255,0.28);
+  border-color: #fff;
+  color: #fff;
+  transform: translateY(-2px);
+}
+
 .contest-detail-hero-img-wrap {
   border-radius: 1rem;
   overflow: hidden;
@@ -2809,14 +2996,14 @@ nav.navbar.px-0 {
 }
 .contest-item {
   border: 1px solid #e5e7eb;
-  border-radius: .5rem;
+  border-radius: 1rem;
   padding: .75rem;
   cursor: pointer;
   transition: all .15s;
 
   &:hover {
-    border-color: #93c5fd;
-    background: #eff6ff;
+    border-color: #c4b5fd;
+    background: #f5f3ff;
   }
 }
 .av-sm {
@@ -3779,6 +3966,7 @@ nav.navbar.px-0 {
 /* ── Hero ─────────────────────────────────────────────── */
 /* 히어로 설명 텍스트 — 반투명 흰색 */
 .contest-hero-desc {
+  font-size: 1.1rem;
   color: rgba(255, 255, 255, 0.9);
 }
 

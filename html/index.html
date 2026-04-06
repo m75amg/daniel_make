@@ -14,7 +14,7 @@
     integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
   <link rel="stylesheet" href="assets/css/custom.css">
   <link rel="stylesheet" href="assets/css/output.css">
   <link rel="stylesheet" href="assets/css/make2026-styles.css">
@@ -239,11 +239,11 @@
           <!-- Gradient Header -->
           <div class="modal-gradient-header modal-gradient-header-wrapper">
             <div class="header-text-center">
-              <div class="project-badge">✨ 새 프로젝트 시작</div>
+              <div class="project-badge" style="color:#fff;"><i class="fa-regular fa-sparkles me-1"></i> 새 프로젝트 시작</div>
               <div class="fw-bold modal-title">어떤 프로젝트를 시작할까요?</div>
               <div class="modal-subtitle">프로젝트 타입을 선택하고 메이킹을 시작하세요</div>
             </div>
-            <button onclick="closeProjectModal()" class="modal-close-btn">✕</button>
+            <button onclick="closeProjectModal()" class="modal-close-btn"><i class="fa-regular fa-xmark"></i></button>
           </div>
 
           <!-- Body -->
@@ -254,15 +254,15 @@
               <div class="col-md-6 modal-col">
                 <a href="create-personal-project.html" class="text-decoration-none">
                   <div class="project-type-card personal h-100">
-                    <div class="decorative-circle blue position-relative"></div>
-                    <div class="project-icon personal">👤</div>
+                    <div class="decorative-circle blue"></div>
+                    <div class="project-icon personal"><i class="fa-regular fa-user"></i></div>
                     <div class="project-title fw-bold">개인 프로젝트</div>
                     <div class="project-description text-muted small">자유롭게 나만의 프로젝트를 시작하세요</div>
                     <ul class="list-unstyled small mb-4 checklist-items">
-                      <li><span class="checkmark-personal">✔</span> 자유로운 주제 선택</li>
-                      <li><span class="checkmark-personal">✔</span> 나만의 속도로 진행</li>
-                      <li><span class="checkmark-personal">✔</span> 언제든지 수정 가능</li>
-                      <li><span class="checkmark-personal">✔</span> 포트폴리오로 활용</li>
+                      <li><span class="checkmark-personal"><i class="fa-regular fa-circle-check"></i></span> 자유로운 주제 선택</li>
+                      <li><span class="checkmark-personal"><i class="fa-regular fa-circle-check"></i></span> 나만의 속도로 진행</li>
+                      <li><span class="checkmark-personal"><i class="fa-regular fa-circle-check"></i></span> 언제든지 수정 가능</li>
+                      <li><span class="checkmark-personal"><i class="fa-regular fa-circle-check"></i></span> 포트폴리오로 활용</li>
                     </ul>
                     <div class="recommendation-box personal">
                       <div class="fw-semibold rec-label">추천 대상</div>
@@ -278,16 +278,16 @@
                 <a href="contests.html" class="text-decoration-none">
                   <div class="project-type-card contest h-100">
                     <!-- 인기 배지 -->
-                    <div class="popularity-badge">🌟 인기</div>
-                    <div class="decorative-circle purple position-relative"></div>
-                    <div class="project-icon contest">🏆</div>
+                    <div class="popularity-badge"><i class="fa-solid fa-star me-1"></i> 인기</div>
+                    <div class="decorative-circle purple"></div>
+                    <div class="project-icon contest"><i class="fa-regular fa-trophy"></i></div>
                     <div class="project-title fw-bold">콘테스트 프로젝트</div>
                     <div class="project-description text-muted small">콘테스트에 참가하며 프로젝트를 완성하세요</div>
                     <ul class="list-unstyled small mb-4 checklist-items">
-                      <li><span class="checkmark-contest">✔</span> Quest 단계별 가이드</li>
-                      <li><span class="checkmark-contest">✔</span> 상금 및 경품 획득 기회</li>
-                      <li><span class="checkmark-contest">✔</span> 구조화된 프로젝트 관리</li>
-                      <li><span class="checkmark-contest">✔</span> 커뮤니티 피드백</li>
+                      <li><span class="checkmark-contest"><i class="fa-regular fa-circle-check"></i></span> Quest 단계별 가이드</li>
+                      <li><span class="checkmark-contest"><i class="fa-regular fa-circle-check"></i></span> 상금 및 경품 획득 기회</li>
+                      <li><span class="checkmark-contest"><i class="fa-regular fa-circle-check"></i></span> 구조화된 프로젝트 관리</li>
+                      <li><span class="checkmark-contest"><i class="fa-regular fa-circle-check"></i></span> 커뮤니티 피드백</li>
                     </ul>
                     <div class="recommendation-box contest">
                       <div class="fw-semibold rec-label">추천 대상</div>
@@ -302,7 +302,7 @@
 
             <!-- Info box -->
             <div class="modal-info-box">
-              <div class="info-icon">🎯</div>
+              <div class="info-icon"><i class="fa-regular fa-bullseye-arrow"></i></div>
               <div class="info-content">
                 <div class="fw-semibold small mb-1 info-title">프로젝트는 통합 관리됩니다</div>
                 <div class="small info-text">
