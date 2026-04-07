@@ -20,3 +20,5 @@ _history/
 
 ~$*.*
 *.py
+legacy/
+sql/

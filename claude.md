@@ -1,24 +1,19 @@
-# 프로젝트 지침
+# Project: Website
 
-## 작업 범위
-- 이 프로젝트의 작업 범위는 현재 폴더(/프로젝트명) 및 하위 폴더로 제한합니다.
-- 상위 디렉토리(../)는 절대 접근하지 마세요.
-- 외부 시스템 명령 실행은 명시적으로 요청받은 경우에만 허용합니다.
+## Tech Stack
+- Frontend: HTML, CSS, JavaScript, jQuery (CDN)
+- Backend: Classic ASP (Server-side)
+- DB: MSSQL 2008
+- Test: VS Code, Live Server / Local IIS
 
-## 프로젝트 개요
-- 언어: HTML/CSS
-- DB: Microsoft SQL Server 2008
-- 구성: HTML 파일 30여 개, 정적 웹사이트
-- 주요 작업: ① CSS 통합, ② HTML 구조 분석 및 DB 테이블 설계
-- DB 설계 대상: 콘텐츠/게시물, 폼 입력 데이터 (회원, 문의 등)
+## Code Style
+- Web Standard HTML5 & CSS3
+- Semantic Tags for SEO
 
----
+## Important Notes
+- Work Scope: Current folder and subfolders only
+- Restriction: Do not approach parent folders (Root-relative paths only)
+- Encoding: UTF-8 (ASP default is often ANSI, manual setting required)
 
-## 공통 원칙
-
-- 한 번 요청에 처리할 파일은 **3~5개 이하**로 제한
-- 파일을 읽을 때 **CSS 스타일 정보와 HTML 구조 정보를 동시에 추출**하여 작업 1, 2에 함께 활용 (같은 파일을 두 번 읽지 않음)
-- 작업 완료 파일은 각 섹션 체크리스트에 즉시 `[x]` 로 표시
-- 세션이 바뀌어도 이 파일의 체크리스트와 산출물 섹션을 참조하여 이어서 작업
-
- 
+## Project Summary
+- Engineering developers community website
