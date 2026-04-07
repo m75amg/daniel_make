@@ -236,11 +236,11 @@
                 <h5 class="fw-bold mb-0"><i class="fa-regular fa-users me-1"></i> 최근 팀원 찾기</h5>
                 <small class="text-muted">프로젝트 협업 · 팀원 모집</small>
               </div>
-              <button class="btn btn-outline-success btn-sm" onclick="openQuickAction('teammate')">전체 보기</button>
+              <button class="btn btn-sm" style="border:1px solid var(--color-green-hover);color:var(--color-green-hover);" onclick="openQuickAction('teammate')">전체 보기</button>
             </div>
             <div id="teammate-list" class="d-flex flex-column gap-3"></div>
             <div class="text-center mt-3">
-              <button class="btn btn-outline-success btn-sm px-4" onclick="openQuickAction('teammate')">내 팀원 모집
+              <button class="btn btn-sm px-4" style="border:1px solid var(--color-green-hover);color:var(--color-green-hover);" onclick="openQuickAction('teammate')">내 팀원 모집
                 올리기</button>
             </div>
           </div>
@@ -252,11 +252,11 @@
                 <h5 class="fw-bold mb-0"><i class="fa-regular fa-folder me-1"></i> 최근 자료 공유</h5>
                 <small class="text-muted">유용한 자료 · 템플릿 · 코드</small>
               </div>
-              <button class="btn btn-outline-warning btn-sm" onclick="openQuickAction('resource')">전체 보기</button>
+              <button class="btn btn-sm" style="border:1px solid #ea580c;color:#ea580c;" onclick="openQuickAction('resource')">전체 보기</button>
             </div>
             <div id="resource-list" class="d-flex flex-column gap-3"></div>
             <div class="text-center mt-3">
-              <button class="btn btn-outline-warning btn-sm px-4" onclick="openQuickAction('resource')">내 자료
+              <button class="btn btn-sm px-4" style="border:1px solid #ea580c;color:#ea580c;" onclick="openQuickAction('resource')">내 자료
                 공유하기</button>
             </div>
           </div>
@@ -762,7 +762,7 @@
       $list.empty();
       teammates.forEach(function (t) {
         var avatarColor = avatarColors(t.author.charAt(0));
-        var skillsHtml = t.skills.map(function (s) { return '<span class="badge bg-success-subtle text-success me-1">' + s + '</span>'; }).join('');
+        var skillsHtml = t.skills.map(function (s) { return '<span class="badge me-1" style="background:rgba(1,146,118,0.12);color:var(--color-green-hover);">' + s + '</span>'; }).join('');
         var deadlineColor = t.deadline === 'D-3' ? 'bg-danger' : t.deadline === 'D-7' ? 'bg-warning text-dark' : 'bg-secondary';
 
         var html = '<div class="card border-0 shadow-sm activity-card">' +
@@ -771,7 +771,7 @@
           '<div class="avatar-circle text-white flex-shrink-0" style="background:' + avatarColor + ';">' + getInitial(t.author) + '</div>' +
           '<div class="flex-grow-1 min-w-0">' +
           '<div class="d-flex flex-wrap align-items-center gap-1 mb-1">' +
-          '<span class="badge bg-success-subtle text-success"><i class="fa-regular fa-users me-1"></i> 팀원찾기</span>' +
+          '<span class="badge" style="background:rgba(1,146,118,0.12);color:var(--color-green-hover);"><i class="fa-regular fa-users me-1"></i> 팀원찾기</span>' +
           '<span class="badge ' + deadlineColor + '">' + t.deadline + '</span>' +
           (t.project ? '<a href="#" class="badge bg-light text-muted text-decoration-none border ms-1" onclick="event.stopPropagation()"><i class="fa-regular fa-link me-1"></i>' + t.project + '</a>' : '') +
           '<span class="text-muted small ms-auto">' + t.time + '</span>' +
@@ -785,7 +785,7 @@
           '<span><i class="fa-regular fa-users me-1"></i>지원자 ' + t.applicants + '명</span>' +
           '<span>' + t.time + '</span>' +
           '</div>' +
-          '<button class="btn btn-success btn-sm" onclick="event.stopPropagation();$(\'#applyModal\').modal(\'show\')">지원하기</button>' +
+          '<button class="btn btn-sm" style="background:var(--color-green-hover);color:#fff;" onclick="event.stopPropagation();$(\'#applyModal\').modal(\'show\')">지원하기</button>' +
           '</div>' +
           '</div>' +
           '</div>' +
@@ -804,10 +804,10 @@
         var html = '<div class="card border-0 shadow-sm activity-card" onclick="location.href=\'community-detail.html?id=' + r.id + '\'">' +
           '<div class="card-body">' +
           '<div class="d-flex gap-3 align-items-center">' +
-          '<div class="rounded-3 bg-warning-subtle d-flex align-items-center justify-content-center flex-shrink-0 text-warning-emphasis" style="width:48px;height:48px;font-size:1.5rem;"><i class="fa-regular fa-folder"></i></div>' +
+          '<div class="rounded-3 d-flex align-items-center justify-content-center flex-shrink-0" style="width:48px;height:48px;font-size:1.5rem;background:#fff7ed;color:#ea580c;"><i class="fa-regular fa-folder"></i></div>' +
           '<div class="flex-grow-1 min-w-0">' +
           '<div class="d-flex flex-wrap align-items-center gap-1 mb-1">' +
-          '<span class="badge bg-warning-subtle text-warning-emphasis"><i class="fa-regular fa-folder me-1"></i> 자료공유</span>' +
+          '<span class="badge" style="background:#fff7ed;color:#ea580c;"><i class="fa-regular fa-folder me-1"></i> 자료공유</span>' +
           '<span class="badge bg-secondary-subtle text-secondary">' + r.resourceType + '</span>' +
           (r.resourceFormat ? '<span class="badge bg-light border text-muted">' + r.resourceFormat + '</span>' : '') +
           (r.project ? '<a href="#" class="badge bg-light text-muted text-decoration-none border ms-1" onclick="event.stopPropagation()"><i class="fa-regular fa-link me-1"></i>' + r.project + '</a>' : '') +
@@ -821,7 +821,7 @@
           '<span><i class="fa-regular fa-heart me-1"></i>' + r.likes + '</span>' +
           '<span>' + r.time + '</span>' +
           '</div>' +
-          '<button class="btn btn-outline-secondary btn-sm" onclick="event.stopPropagation()">다운로드</button>' +
+          '<button class="btn btn-sm" style="background:#ea580c;color:#fff;" onclick="event.stopPropagation()">다운로드</button>' +
           '</div>' +
           '</div>' +
           '</div>' +
