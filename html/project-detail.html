@@ -203,7 +203,7 @@
               <span class="badge px-3 py-2 badge-outline-purple"><i class="fa-regular fa-trophy me-1"></i>콘테스트 프로젝트</span>
               <span class="badge px-3 py-2 bg-success badge-project">✓ 완료</span>
               <span class="badge px-3 py-2 badge-grad-amber-orange badge-project"><i class="fa-regular fa-trophy me-1"></i>최우수상</span>
-              <span class="badge px-3 py-2 bg-light text-dark border badge-project">로봇공학</span>
+              <span class="badge px-3 py-2 badge-project" style="background:#e7f0ff;color:#5b6cff;">로봇공학</span>
             </div>
 
             <!-- Title -->
@@ -214,28 +214,28 @@
             <div class="completed-bar d-flex flex-wrap gap-5 mb-4">
               <div class="d-flex align-items-center gap-3">
                 <span class="text-blue"><i class="fa-regular fa-users"></i></span>
-                <span class="small fw-semibold">팀: AI 로봇팀</span>
+                <span class="small fw-medium">팀: AI 로봇팀</span>
               </div>
               <div class="d-flex align-items-center gap-3">
                 <span class="text-green-600"><i class="fa-regular fa-calendar"></i></span>
-                <span class="small fw-semibold">완료: 2026년 3월 13일</span>
+                <span class="small fw-medium">완료: 2026년 3월 13일</span>
               </div>
               <div class="d-flex align-items-center gap-3">
                 <span class="text-purple-700"><i class="fa-regular fa-trophy"></i></span>
-                <span class="small fw-semibold">AI 로봇 챌린지 2026</span>
+                <span class="small fw-medium">AI 로봇 챌린지 2026</span>
               </div>
             </div>
 
             <!-- Author + Stats -->
-            <div class="d-flex align-items-center justify-content-between py-3 border-top border-bottom mb-4">
-              <div class="d-flex align-items-center gap-3">
+            <div class="d-flex align-items-center justify-content-between py-4 border-top border-bottom mb-4">
+              <div class="d-flex align-items-center gap-4">
                 <a href="maker-profile.html" class="text-decoration-none">
                   <div
                     class="rounded-circle bg-primary text-white d-flex align-items-center justify-content-center fw-bold author-avatar-48">
                     김</div>
                 </a>
                 <div>
-                  <div class="d-flex align-items-center gap-2 mb-1">
+                  <div class="d-flex align-items-center gap-3 mb-1">
                     <span class="fw-bold">김메이커</span>
                     <a href="maker-profile.html" class="author-link-badge"><i class="fa-regular fa-user"></i> 마이메이크 방문</a>
                   </div>
@@ -244,15 +244,15 @@
               </div>
               <div class="d-flex gap-4">
                 <div class="text-center">
-                  <div class="stat-num">567</div>
+                  <div class="stat-num"><i class="fa-regular fa-heart me-1" style="color:#f43f5e;font-size:0.85rem;"></i>567</div>
                   <div class="stat-label">좋아요</div>
                 </div>
                 <div class="text-center">
-                  <div class="stat-num">8.9K</div>
+                  <div class="stat-num"><i class="fa-regular fa-eye me-1" style="color:#6b7280;font-size:0.85rem;"></i>8.9K</div>
                   <div class="stat-label">조회</div>
                 </div>
                 <div class="text-center">
-                  <div class="stat-num">142</div>
+                  <div class="stat-num"><i class="fa-regular fa-comment me-1" style="color:#3b82f6;font-size:0.85rem;"></i>142</div>
                   <div class="stat-label">댓글</div>
                 </div>
               </div>
@@ -346,7 +346,7 @@
               </div>
 
               <!-- Project Links -->
-              <div class="sidebar-card mb-3">
+              <div class="sidebar-card mb-3" style="background:#eaf7fe;">
                 <h6 class="sidebar-card-title mb-3">프로젝트 링크</h6>
                 <div class="d-grid gap-2">
                   <a href="https://github.com/example/project" target="_blank" class="sidebar-link-btn">
@@ -366,12 +366,14 @@
 
               <!-- Contest Info -->
               <div class="sidebar-card sidebar-card-contest">
-                <h6 class="sidebar-card-title mb-3">콘테스트 정보</h6>
-                <p class="fw-semibold text-primary mb-1" style="font-size:0.9rem">AI 로봇 챌린지 2026</p>
-                <p class="small text-muted mb-3">
-                  <i class="fa-regular fa-trophy me-1"></i>최우수상 수상
+                <div class="sidebar-contest-header mb-3">
+                  <span class="sidebar-contest-badge"><i class="fa-solid fa-trophy me-1"></i>콘테스트</span>
+                </div>
+                <p class="fw-bold mb-1 ps-1 sidebar-contest-name">AI 로봇 챌린지 2026</p>
+                <p class="small mb-3 ps-1 sidebar-contest-award">
+                  <i class="fa-solid fa-award me-1"></i>최우수상 수상
                 </p>
-                <a href="contest-detail.html" class="btn btn-primary btn-sm w-100">콘테스트 보기</a>
+                <a href="contest-detail.html" class="btn btn-purple btn-sm w-100">콘테스트 보기</a>
               </div>
 
             </div>
@@ -401,20 +403,41 @@
         <!-- Tab: Quest 진행 기록 -->
         <div class="tab-pane active" id="tab-quest">
           <!-- Overview banner -->
-          <div class="rounded-4 p-5 mb-4 card-gradient-violet-pink-d8b4fe">
-            <div class="d-flex gap-4">
-              <div
-                class="rounded-circle text-white d-flex align-items-center justify-content-center flex-shrink-0 quest-hero-icon">
-                <i class="fa-regular fa-rocket"></i></div>
+          <div class="contest-progress-hero rounded-4 mb-4">
+            <div class="d-flex gap-4 position-relative">
+              <div class="contest-progress-icon">
+                <i class="fa-solid fa-rocket"></i>
+              </div>
               <div class="flex-grow-1">
-                <h5 class="fw-bold mb-2">콘테스트 프로젝트 진행 상황</h5>
-                <p class="text-muted small mb-3">이 프로젝트는 <strong>AI 로봇 챌린지 2026</strong>을 통해 단계적으로 완성되었습니다. 각 Quest를 통해
-                  프로젝트가 발전하는 과정을 확인하세요.</p>
-                <div class="d-flex align-items-center gap-3">
-                  <div class="flex-grow-1 bg-white rounded-pill quest-progress-track">
-                    <div class="quest-progress-bar-full"></div>
+                <div class="d-flex align-items-center gap-2 mb-2">
+                  <span class="contest-progress-tag"><i class="fa-regular fa-trophy me-1"></i>AI 로봇 챌린지 2026</span>
+                  <span class="contest-progress-tag-done"><i class="fa-regular fa-circle-check me-1"></i>완료</span>
+                </div>
+                <h5 class="fw-bold mb-1 text-white">콘테스트 프로젝트 진행 상황</h5>
+                <p class="mb-3 small" style="color:rgba(255,255,255,0.62);">각 Quest를 단계적으로 완성한 프로젝트입니다. 최종 심사에서 <strong style="color:#e9d5ff;">최우수상</strong>을 수상했습니다.</p>
+                <!-- Quest 단계 -->
+                <div class="d-flex align-items-center mb-3">
+                  <div class="quest-step-item quest-step-done">
+                    <div class="quest-step-circle"><i class="fa-solid fa-check"></i></div>
+                    <span>Quest 1</span>
                   </div>
-                  <span class="fw-bold text-purple text-purple">3/3 완료</span>
+                  <div class="quest-step-divider"></div>
+                  <div class="quest-step-item quest-step-done">
+                    <div class="quest-step-circle"><i class="fa-solid fa-check"></i></div>
+                    <span>Quest 2</span>
+                  </div>
+                  <div class="quest-step-divider"></div>
+                  <div class="quest-step-item quest-step-done">
+                    <div class="quest-step-circle"><i class="fa-solid fa-check"></i></div>
+                    <span>Quest 3</span>
+                  </div>
+                </div>
+                <!-- 진행 바 -->
+                <div class="d-flex align-items-center gap-3">
+                  <div class="flex-grow-1 rounded-pill" style="height:6px;background:rgba(255,255,255,0.2);">
+                    <div style="width:100%;height:6px;background:linear-gradient(90deg,#c4b5fd,#fff);border-radius:9999px;"></div>
+                  </div>
+                  <span class="fw-bold text-white small">3 / 3 완료</span>
                 </div>
               </div>
             </div>
@@ -633,12 +656,12 @@
               <div class="col-md-6">
                 <div class="resource-card">
                   <div class="d-flex gap-4">
-                    <div class="resource-icon">🐙</div>
+                    <div class="resource-icon"><i class="fa-brands fa-github"></i></div>
                     <div>
                       <h5 class="fw-bold mb-1">GitHub 저장소</h5>
                       <p class="small text-muted mb-3">전체 소스코드 및 회로도</p>
                       <a href="https://github.com/example/robot" target="_blank"
-                        class="text-primary small fw-semibold text-decoration-none">다운로드 ↓</a>
+                        class="small fw-semibold text-decoration-none" style="color:#4338ca;">다운로드 ↓</a>
                     </div>
                   </div>
                 </div>
@@ -646,12 +669,12 @@
               <div class="col-md-6">
                 <div class="resource-card">
                   <div class="d-flex gap-4">
-                    <div class="resource-icon">▶</div>
+                    <div class="resource-icon"><i class="fa-regular fa-circle-play"></i></div>
                     <div>
                       <h5 class="fw-bold mb-1">데모 영상</h5>
                       <p class="small text-muted mb-3">실제 동작 시연 영상</p>
                       <a href="https://youtube.com/demo" target="_blank"
-                        class="text-primary small fw-semibold text-decoration-none">다운로드 ↓</a>
+                        class="small fw-semibold text-decoration-none" style="color:#4338ca;">다운로드 ↓</a>
                     </div>
                   </div>
                 </div>
@@ -659,11 +682,11 @@
               <div class="col-md-6">
                 <div class="resource-card">
                   <div class="d-flex gap-4">
-                    <div class="resource-icon">📄</div>
+                    <div class="resource-icon"><i class="fa-regular fa-file-lines"></i></div>
                     <div>
                       <h5 class="fw-bold mb-1">기술 문서</h5>
                       <p class="small text-muted mb-3">상세한 제작 가이드 (PDF)</p>
-                      <span class="text-primary small fw-semibold cursor-pointer">다운로드 ↓</span>
+                      <span class="small fw-semibold cursor-pointer" style="color:#4338ca;">다운로드 ↓</span>
                     </div>
                   </div>
                 </div>
@@ -671,11 +694,11 @@
               <div class="col-md-6">
                 <div class="resource-card">
                   <div class="d-flex gap-4">
-                    <div class="resource-icon">🔌</div>
+                    <div class="resource-icon"><i class="fa-regular fa-plug"></i></div>
                     <div>
                       <h5 class="fw-bold mb-1">회로도</h5>
                       <p class="small text-muted mb-3">Fritzing 회로도 파일</p>
-                      <span class="text-primary small fw-semibold cursor-pointer">다운로드 ↓</span>
+                      <span class="small fw-semibold cursor-pointer" style="color:#4338ca;">다운로드 ↓</span>
                     </div>
                   </div>
                 </div>
@@ -690,7 +713,7 @@
                   <h6 class="fw-bold mb-2">오픈소스 프로젝트</h6>
                   <p class="small text-muted mb-3">이 프로젝트는 MIT 라이선스로 공개되어 있어 누구나 자유롭게 사용, 수정, 배포할 수 있습니다. 커뮤니티의 기여를
                     환영합니다!</p>
-                  <a href="https://github.com/example/robot" target="_blank" class="btn btn-success btn-sm">🐙 기여하기</a>
+                  <a href="https://github.com/example/robot" target="_blank" class="btn btn-success btn-sm"><i class="fa-brands fa-github me-1"></i>기여하기</a>
                 </div>
               </div>
             </div>
@@ -1058,7 +1081,7 @@ def plan_path(obstacles, target):
         liked = !liked;
         $('#btn-like')
           .toggleClass('btn-primary btn-danger')
-          .html(liked ? '<i class="fa-regular fa-heart"></i> 좋아요 취소' : '<i class="fa-regular fa-heart"></i> 좋아요');
+          .html(liked ? '<i class="fa-regular fa-heart me-2"></i>좋아요 취소' : '<i class="fa-regular fa-heart me-2"></i>좋아요');
       });
     });
 
@@ -1068,7 +1091,7 @@ def plan_path(obstacles, target):
         $('#btn-save')
           .toggleClass('btn-outline-secondary', !saved)
           .toggleClass('btn-warning', saved)
-          .html(saved ? '<i class="fa-regular fa-bookmark"></i> 저장됨' : '<i class="fa-regular fa-bookmark"></i> 저장하기');
+          .html(saved ? '<i class="fa-regular fa-bookmark me-2"></i>저장됨' : '<i class="fa-regular fa-bookmark me-2"></i>저장하기');
       });
     });
 
