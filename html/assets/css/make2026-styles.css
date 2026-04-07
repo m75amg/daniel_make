@@ -1496,7 +1496,7 @@ justify-content: space-evenly;
 
 /* ── Glass Stat Cards ───────────────────────────────── */
 .glass-stat {
-  background: rgba(255,255,255,0.10);
+  background: rgba(255,255,255,0.01);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   border: 1px solid rgba(255,255,255,0.22);
@@ -1524,7 +1524,7 @@ justify-content: space-evenly;
   color: #fff;
 }
 .glass-stat .stat-label {
-  font-size: 0.78rem;
+  font-size: 0.94rem;
   font-weight: 500;
   opacity: 0.78;
   margin-top: 0.3rem;
@@ -2681,7 +2681,7 @@ nav.navbar.px-0 {
 .cd-tabs .nav-link {
   color: #6b7280;
   font-weight: 500;
-  font-size: 1.05rem;
+  font-size: 1.15rem;
   padding: .75rem 2.75rem;
   border: none;
   border-bottom: 2px solid transparent;
@@ -4645,7 +4645,35 @@ nav.navbar.px-0 {
 
 /* 히어로 그라디언트 배경 */
 .hero-gradient-blue-purple-h {
-  background: linear-gradient(135deg, #1d4ed8 0%, #7c3aed 100%);
+  background: url('../img/bg_community.jpg') center/cover no-repeat;
+}
+
+.btn-hero-active {
+  background-color: #fff;
+  color: var(--color-green-hover);
+  border-color: #fff;
+  font-weight: 600;
+  transition: background-color 0.2s, color 0.2s, transform 0.15s;
+}
+.btn-hero-active:hover {
+  background-color: #e6faf6;
+  color: var(--color-green-hover);
+  border-color: #e6faf6;
+  transform: translateY(-2px);
+}
+
+.btn-glass-hero {
+  background: rgba(255,255,255,0.15);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  color: #fff;
+  border: 1px solid rgba(255,255,255,0.45);
+  transition: background 0.2s, transform 0.15s;
+}
+.btn-glass-hero:hover {
+  background: rgba(255,255,255,0.28);
+  color: #fff;
+  transform: translateY(-2px);
 }
 
 /* 섹션 헤더 색상 변형 (section-header border-left 색) */
@@ -4702,4 +4730,124 @@ nav.navbar.px-0 {
 /* 흰색 75% 불투명 텍스트 */
 .text-white-75 {
   color: rgba(255, 255, 255, 0.75) !important;
+}
+
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  line-clamp: 2;
+}
+
+/* ══════════════════════════════════════════════════════
+   COMMUNITY — 빠른 액션 사이드바 버튼
+   ══════════════════════════════════════════════════════ */
+.quick-action-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  padding: 0.6rem 0.85rem;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 0.875rem;
+  border: none;
+  transition: all 0.2s ease;
+  width: 100%;
+}
+
+.quick-action-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  font-size: 0.95rem;
+  transition: background 0.2s ease;
+}
+
+.quick-action-btn .qa-arrow {
+  margin-left: auto;
+  opacity: 0.5;
+  font-size: 0.75rem;
+  transition: opacity 0.2s, transform 0.2s;
+}
+
+.quick-action-btn:hover .qa-arrow {
+  opacity: 1;
+  transform: translateX(2px);
+}
+
+/* 파란색 — 질문 올리기 */
+.quick-action-btn-blue {
+  background: #eff6ff;
+  color: var(--color-blue);
+}
+.quick-action-btn-blue .quick-action-icon {
+  background: var(--color-blue);
+  color: #fff;
+}
+.quick-action-btn-blue:hover {
+  background: var(--color-blue);
+  color: #fff;
+}
+.quick-action-btn-blue:hover .quick-action-icon {
+  background: rgba(255, 255, 255, 0.25);
+  color: #fff;
+}
+
+/* 초록색 — 진행 상황 공유 */
+.quick-action-btn-green {
+  background: #f0fdf9;
+  color: var(--color-green);
+}
+.quick-action-btn-green .quick-action-icon {
+  background: var(--color-green);
+  color: #fff;
+}
+.quick-action-btn-green:hover {
+  background: var(--color-green);
+  color: #fff;
+}
+.quick-action-btn-green:hover .quick-action-icon {
+  background: rgba(255, 255, 255, 0.25);
+  color: #fff;
+}
+
+/* 보라색 — 팀원 모집 */
+.quick-action-btn-purple {
+  background: #faf5ff;
+  color: var(--color-purple);
+}
+.quick-action-btn-purple .quick-action-icon {
+  background: var(--color-purple);
+  color: #fff;
+}
+.quick-action-btn-purple:hover {
+  background: var(--color-purple);
+  color: #fff;
+}
+.quick-action-btn-purple:hover .quick-action-icon {
+  background: rgba(255, 255, 255, 0.25);
+  color: #fff;
+}
+
+/* 주황색 — 자료 업로드 */
+.quick-action-btn-orange {
+  background: #fff7ed;
+  color: #ea580c;
+}
+.quick-action-btn-orange .quick-action-icon {
+  background: #ea580c;
+  color: #fff;
+}
+.quick-action-btn-orange:hover {
+  background: #ea580c;
+  color: #fff;
+}
+.quick-action-btn-orange:hover .quick-action-icon {
+  background: rgba(255, 255, 255, 0.25);
+  color: #fff;
 }

@@ -214,10 +214,10 @@
             <div class="card border-0 shadow-sm">
               <div class="card-body">
                 <div class="d-flex flex-column gap-2">
-                  <button class="btn btn-outline-secondary action-btn" id="like-btn">❤️ 좋아요 <span
+                  <button class="btn btn-outline-secondary action-btn" id="like-btn"><i class="fa-regular fa-heart me-1"></i> 좋아요 <span
                       id="like-count">0</span></button>
-                  <button class="btn btn-outline-secondary action-btn" id="save-btn">🔖 저장하기</button>
-                  <button class="btn btn-outline-secondary action-btn" id="share-btn">🔗 공유하기</button>
+                  <button class="btn btn-outline-secondary action-btn" id="save-btn"><i class="fa-regular fa-bookmark me-1"></i> 저장하기</button>
+                  <button class="btn btn-outline-secondary action-btn" id="share-btn"><i class="fa-regular fa-link me-1"></i> 공유하기</button>
                   <a href="community.html" class="btn btn-outline-secondary">← 목록으로</a>
                 </div>
               </div>
@@ -235,7 +235,7 @@
     <div class="modal-dialog modal-dialog-centered">
       <div class="modal-content">
         <div class="modal-header border-0 pb-0">
-          <h5 class="modal-title fw-bold" id="applyModalLabel">👥 팀원 지원하기</h5>
+          <h5 class="modal-title fw-bold" id="applyModalLabel"><i class="fa-regular fa-users me-1"></i> 팀원 지원하기</h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
         </div>
         <div class="modal-body">
@@ -453,7 +453,7 @@
         description: '자주 사용하는 ESP32 센서 연동 회로도를 Fritzing 파일로 정리했습니다.\n\nDHT22, BMP280, MPU6050, HC-SR04 센서의 회로도가 포함되어 있습니다. 저도 처음 IoT 프로젝트를 시작할 때 회로도 참고 자료가 없어 많이 헤맸는데, 이 자료로 바로 연결 방법을 확인할 수 있습니다.',
         whyHelpful: '**이 자료가 도움되는 이유:**\n\n1. **바로 사용 가능**: Fritzing 파일로 제공되어 바로 회로도에 활용 가능\n2. **핀맵 정리**: 각 센서별 ESP32 핀 연결 정보를 한눈에 파악\n3. **다양한 센서 포함**: IoT 프로젝트에서 자주 쓰는 4가지 센서 회로도 수록\n4. **공식 문서 링크**: 각 센서 데이터시트 및 라이브러리 링크 포함',
         usefulFor: '**어떤 Quest에 유용한가요?**\n\n✅ **Quest 1 - 하드웨어 설정**: 센서 선택 및 기본 연결 방법 참고\n✅ **Quest 2 - 센서 연동**: 핀맵과 회로도를 바탕으로 실제 연결 구현\n✅ **Quest 3 - 데이터 수집**: 여러 센서를 동시에 연결할 때 핀 충돌 방지\n\n**이런 상황에서 보세요:**\n- 처음 센서를 연결할 때\n- 핀 번호가 헷갈릴 때\n- 여러 센서를 동시에 쓰고 싶을 때',
-        cautions: '**참고할 때 주의사항:**\n\n⚠️ **전압 주의**: ESP32는 3.3V 로직이므로 5V 센서 연결 시 레벨 시프터 필요\n⚠️ **I2C 주소 충돌**: BMP280과 MPU6050 함께 쓸 때 주소 설정 확인 필요\n⚠️ **Fritzing 버전**: Fritzing 0.9.10 이상 버전에서 열기 권장',
+        cautions: '**참고할 때 주의사항:**\n\n※ **전압 주의**: ESP32는 3.3V 로직이므로 5V 센서 연결 시 레벨 시프터 필요\n※ **I2C 주소 충돌**: BMP280과 MPU6050 함께 쓸 때 주소 설정 확인 필요\n※ **Fritzing 버전**: Fritzing 0.9.10 이상 버전에서 열기 권장',
         images: ['https://images.unsplash.com/photo-1518770660439-4636190af475?w=800', 'https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=800'],
         resources: [
           { type: 'pdf', title: 'ESP32_센서_회로도.fzz', description: 'Fritzing 회로도 파일 (DHT22, BMP280, MPU6050 포함)', url: '#', size: '1.2MB', tags: ['Fritzing', '회로도'] },
@@ -489,7 +489,7 @@
         description: '보안 카메라 프로젝트에서 사용한 객체 추적 알고리즘 코드입니다.\n\nSORT, DeepSORT 알고리즘을 적용한 실전 예제를 주석과 함께 공유합니다. 라즈베리파이 4 환경에서 실제 동작 검증을 완료한 코드입니다.',
         whyHelpful: '**이 코드가 도움되는 이유:**\n\n1. **실제 프로젝트에서 검증**: 제 보안 카메라 프로젝트에서 실제로 사용하고 검증한 코드\n2. **두 가지 알고리즘 제공**: 간단한 SORT부터 정확도 높은 DeepSORT까지 선택 가능\n3. **상세 주석**: 각 함수와 파라미터에 설명 주석 포함\n4. **라즈베리파이 최적화**: ARM 환경에서 최대 성능을 내도록 최적화',
         usefulFor: '**어떤 Quest에 유용한가요?**\n\n✅ **Quest 2 - AI 비전 기초**: SORT로 간단한 추적 구현\n✅ **Quest 3 - 정밀 추적**: DeepSORT로 Re-ID 기반 정확한 추적\n✅ **Quest 4 - 최적화**: 라즈베리파이 성능 튜닝 참고\n\n**이런 분들께 추천:**\n- OpenCV 기초는 알지만 추적 알고리즘을 처음 접하는 분\n- 기존 코드가 느려서 최적화가 필요한 분',
-        cautions: '**사용 시 주의사항:**\n\n⚠️ **Python 버전**: Python 3.8 이상 권장 (3.6 이하 미지원)\n⚠️ **OpenCV 버전**: OpenCV 4.5 이상 필요\n⚠️ **DeepSORT 의존성**: torch, torchvision 설치 필요 (용량 큼)\n⚠️ **라즈베리파이**: DeepSORT는 Pi 4 이상에서만 실용적인 fps 가능',
+        cautions: '**사용 시 주의사항:**\n\n※ **Python 버전**: Python 3.8 이상 권장 (3.6 이하 미지원)\n※ **OpenCV 버전**: OpenCV 4.5 이상 필요\n※ **DeepSORT 의존성**: torch, torchvision 설치 필요 (용량 큼)\n※ **라즈베리파이**: DeepSORT는 Pi 4 이상에서만 실용적인 fps 가능',
         images: ['https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800'],
         resources: [
           { type: 'github', title: 'object-tracking-example', description: 'SORT 알고리즘 기반 객체 추적 예제 (Python)', url: '#', stars: '1.2k', tags: ['GitHub', 'Python', 'SORT'], thumbnail: 'https://images.unsplash.com/photo-1618401479427-c8ef9465fbe1?w=400' },
@@ -561,13 +561,13 @@
     /* ── RENDER QUESTION ─────────────────────────────────────────── */
     function renderQuestion(a) {
       var qTypeConfig = {
-        technical: { label: '기술 문제', color: '#2563eb', bg: '#eff6ff', border: '#bfdbfe', icon: '💻' },
-        implementation: { label: '구현 방법', color: '#7c3aed', bg: '#f5f3ff', border: '#ddd6fe', icon: '🎯' },
-        design: { label: '설계 고민', color: '#ec4899', bg: '#fdf2f8', border: '#fbcfe8', icon: '💡' },
-        submission: { label: '제출 관련', color: '#16a34a', bg: '#f0fdf4', border: '#bbf7d0', icon: '📄' },
-        feedback: { label: '피드백 요청', color: '#ea580c', bg: '#fff7ed', border: '#fed7aa', icon: '💬' }
+        technical: { label: '기술 문제', color: '#2563eb', bg: '#eff6ff', border: '#bfdbfe', icon: '<i class="fa-regular fa-laptop-code"></i>' },
+        implementation: { label: '구현 방법', color: '#7c3aed', bg: '#f5f3ff', border: '#ddd6fe', icon: '<i class="fa-regular fa-bullseye-arrow"></i>' },
+        design: { label: '설계 고민', color: '#ec4899', bg: '#fdf2f8', border: '#fbcfe8', icon: '<i class="fa-regular fa-lightbulb"></i>' },
+        submission: { label: '제출 관련', color: '#16a34a', bg: '#f0fdf4', border: '#bbf7d0', icon: '<i class="fa-regular fa-file"></i>' },
+        feedback: { label: '피드백 요청', color: '#ea580c', bg: '#fff7ed', border: '#fed7aa', icon: '<i class="fa-regular fa-comment"></i>' }
       };
-      var qtc = qTypeConfig[a.questionType] || { label: '일반 질문', color: '#6b7280', bg: '#f9fafb', border: '#e5e7eb', icon: '❓' };
+      var qtc = qTypeConfig[a.questionType] || { label: '일반 질문', color: '#6b7280', bg: '#f9fafb', border: '#e5e7eb', icon: '<i class="fa-regular fa-circle-question"></i>' };
       var stats = a.stats || { views: a.views || 0, likes: a.likes || 0, answers: 0, bookmarks: 0 };
 
       function fmtMd(text) {
@@ -579,11 +579,11 @@
       /* ── Header Card ── */
       var html = '<div class="card-body p-4">' +
         '<div class="d-flex flex-wrap align-items-center gap-2 mb-3">' +
-        '<span class="badge bg-primary-subtle text-primary">❓ 질문하기</span>' +
+        '<span class="badge bg-primary-subtle text-primary"><i class="fa-regular fa-circle-question me-1"></i> 질문하기</span>' +
         (a.questionType ? '<span class="badge" style="background:' + qtc.bg + ';color:' + qtc.color + ';border:1px solid ' + qtc.border + ';">' + qtc.icon + ' ' + qtc.label + '</span>' : '') +
         (a.status === 'open'
-          ? '<span class="badge bg-warning-subtle text-warning-emphasis">⏳ 해결중</span>'
-          : '<span class="badge bg-success-subtle text-success">✅ 해결됨</span>') +
+          ? '<span class="badge bg-warning-subtle text-warning-emphasis"><i class="fa-regular fa-hourglass me-1"></i> 해결중</span>'
+          : '<span class="badge bg-success-subtle text-success"><i class="fa-regular fa-circle-check me-1"></i> 해결됨</span>') +
         (a.questNumber ? '<span class="badge border text-secondary">Quest ' + a.questNumber + '</span>' : '') +
         '</div>' +
         '<h2 class="fw-bold mb-3" style="font-size:1.5rem;">' + a.title + '</h2>' +
@@ -596,13 +596,13 @@
         '</div>' +
         '</div>' +
         '<span style="opacity:.35;">|</span>' +
-        '<span>⏰ ' + a.date + '</span>' +
-        '<span>👁 ' + stats.views + ' 조회</span>' +
-        '<span class="fw-semibold text-primary">💬 ' + stats.answers + '개 답변</span>' +
+        '<span><i class="fa-regular fa-clock me-1"></i>' + a.date + '</span>' +
+        '<span><i class="fa-regular fa-eye me-1"></i>' + stats.views + ' 조회</span>' +
+        '<span class="fw-semibold text-primary"><i class="fa-regular fa-comment me-1"></i>' + stats.answers + '개 답변</span>' +
         '</div>' +
         (a.project ?
           '<div class="rounded-3 p-3 mb-4" style="background:linear-gradient(to right,#eff6ff,#eef2ff);border:1px solid #bfdbfe;">' +
-          '<div class="d-flex align-items-center gap-2 mb-2"><span class="text-blue">🎯</span><span class="fw-semibold small">진행 중인 Quest</span></div>' +
+          '<div class="d-flex align-items-center gap-2 mb-2"><span class="text-blue"><i class="fa-regular fa-bullseye-arrow"></i></span><span class="fw-semibold small">진행 중인 Quest</span></div>' +
           '<a href="project-detail.html?id=' + a.project.id + '" class="fw-bold text-primary text-decoration-none d-block mb-1">' + a.project.name + '</a>' +
           (a.questTitle ? '<div class="small text-dark mb-2">' + a.questTitle + '</div>' : '') +
           (a.contest ? '<span class="badge border text-secondary small">' + a.contest.name + '</span>' : '') +
@@ -619,7 +619,7 @@
         extra += '<div class="card mb-4 border-0 shadow-sm">' +
           '<div class="card-body p-4">' +
           '<div class="d-flex align-items-center gap-3 mb-4">' +
-          '<div class="rounded-3 d-flex align-items-center justify-content-center" style="width:40px;height:40px;background:#dbeafe;flex-shrink:0;"><span style="color:#2563eb;font-size:1.1rem;">🔧</span></div>' +
+          '<div class="rounded-3 d-flex align-items-center justify-content-center" style="width:40px;height:40px;background:#dbeafe;flex-shrink:0;color:#2563eb;font-size:1.1rem;"><i class="fa-regular fa-wrench"></i></div>' +
           '<div><h5 class="fw-bold mb-0">어떤 작업을 하고 있나요?</h5><div class="text-muted small">Current work context</div></div>' +
           '</div>' +
           '<p class="text-dark mb-0" style="line-height:1.8;white-space:pre-wrap;">' + fmtMd(a.currentWork) + '</p>' +
@@ -632,7 +632,7 @@
         extra += '<div class="card mb-4 border-0 shadow-sm" style="border:2px solid #fecaca!important;background:#fff5f5;">' +
           '<div class="card-body p-4">' +
           '<div class="d-flex align-items-center gap-3 mb-4">' +
-          '<div class="rounded-3 d-flex align-items-center justify-content-center" style="width:40px;height:40px;background:#fee2e2;flex-shrink:0;"><span style="color:#dc2626;font-size:1.1rem;">⚠️</span></div>' +
+          '<div class="rounded-3 d-flex align-items-center justify-content-center" style="width:40px;height:40px;background:#fee2e2;flex-shrink:0;color:#dc2626;font-size:1.1rem;"><i class="fa-regular fa-triangle-exclamation"></i></div>' +
           '<div><h5 class="fw-bold mb-0">어떤 문제가 있나요?</h5><div class="text-muted small">Problem description</div></div>' +
           '</div>' +
           '<div class="rounded-3 p-3" style="background:#fff;border:1px solid #fecaca;white-space:pre-wrap;line-height:1.8;">' + fmtMd(a.problem) + '</div>' +
@@ -645,7 +645,7 @@
         extra += '<div class="card mb-4 border-0 shadow-sm">' +
           '<div class="card-body p-4">' +
           '<div class="d-flex align-items-center gap-3 mb-4">' +
-          '<div class="rounded-3 d-flex align-items-center justify-content-center" style="width:40px;height:40px;background:#ede9fe;flex-shrink:0;"><span style="color:#7c3aed;font-size:1.1rem;">✅</span></div>' +
+          '<div class="rounded-3 d-flex align-items-center justify-content-center" style="width:40px;height:40px;background:#ede9fe;flex-shrink:0;color:#7c3aed;font-size:1.1rem;"><i class="fa-regular fa-circle-check"></i></div>' +
           '<div><h5 class="fw-bold mb-0">무엇을 시도했나요?</h5><div class="text-muted small">What I\'ve tried</div></div>' +
           '</div>' +
           '<div class="rounded-3 p-3" style="background:#f5f3ff;border:1px solid #ddd6fe;white-space:pre-wrap;line-height:1.8;">' + fmtMd(a.attempts) + '</div>' +
@@ -658,7 +658,7 @@
         extra += '<div class="card mb-4 border-0 shadow-sm">' +
           '<div class="card-body p-4">' +
           '<div class="d-flex align-items-center gap-3 mb-4">' +
-          '<div class="rounded-3 d-flex align-items-center justify-content-center" style="width:40px;height:40px;background:#dcfce7;flex-shrink:0;"><span style="color:#16a34a;font-size:1.1rem;">💡</span></div>' +
+          '<div class="rounded-3 d-flex align-items-center justify-content-center" style="width:40px;height:40px;background:#dcfce7;flex-shrink:0;color:#16a34a;font-size:1.1rem;"><i class="fa-regular fa-lightbulb"></i></div>' +
           '<div><h5 class="fw-bold mb-0">어떤 도움을 받고 싶나요?</h5><div class="text-muted small">What help is needed</div></div>' +
           '</div>' +
           '<div class="rounded-3 p-3" style="background:#f0fdf4;border:1px solid #bbf7d0;white-space:pre-wrap;line-height:1.8;">' + fmtMd(a.helpNeeded) + '</div>' +
@@ -671,7 +671,7 @@
         extra += '<div class="card mb-4 border-0 shadow-sm">' +
           '<div class="card-body p-4">' +
           '<div class="d-flex align-items-center gap-3 mb-4">' +
-          '<div class="rounded-3 d-flex align-items-center justify-content-center" style="width:40px;height:40px;background:#f3f4f6;flex-shrink:0;"><span style="color:#6b7280;font-size:1.1rem;">📄</span></div>' +
+          '<div class="rounded-3 d-flex align-items-center justify-content-center" style="width:40px;height:40px;background:#f3f4f6;flex-shrink:0;color:#6b7280;font-size:1.1rem;"><i class="fa-regular fa-file-lines"></i></div>' +
           '<div><h5 class="fw-bold mb-0">추가 정보 및 코드</h5><div class="text-muted small">Additional details</div></div>' +
           '</div>' +
           '<div class="lh-180">' + a.content + '</div>' +
@@ -683,7 +683,7 @@
       var hasImg = a.images && a.images.length > 0;
       var hasFile = a.attachments && a.attachments.length > 0;
       if (hasImg || hasFile) {
-        extra += '<div class="card mb-4 border-0 shadow-sm"><div class="card-body p-4"><h5 class="fw-bold mb-4">📎 첨부 파일</h5>';
+        extra += '<div class="card mb-4 border-0 shadow-sm"><div class="card-body p-4"><h5 class="fw-bold mb-4"><i class="fa-regular fa-paperclip me-1"></i> 첨부 파일</h5>';
         if (hasImg) {
           extra += '<div class="mb-3"><div class="text-muted small mb-2">이미지</div><div class="row g-2">';
           a.images.forEach(function (img) {
@@ -695,9 +695,9 @@
           extra += '<div><div class="text-muted small mb-2">파일</div><div class="d-flex flex-column gap-2">';
           a.attachments.forEach(function (file) {
             extra += '<div class="d-flex align-items-center gap-3 p-3 rounded-3" style="background:#f9fafb;border:1px solid #e5e7eb;">' +
-              '<span style="color:#2563eb;font-size:1.1rem;">💻</span>' +
+              '<i class="fa-regular fa-laptop" style="color:#2563eb;font-size:1.1rem;"></i>' +
               '<div class="flex-grow-1"><div class="fw-semibold small">' + file.name + '</div><div class="text-muted fs-xs">' + file.size + '</div></div>' +
-              '<button class="btn btn-outline-secondary btn-sm">⬇️ 다운로드</button>' +
+              '<button class="btn btn-outline-secondary btn-sm"><i class="fa-regular fa-arrow-down-to-line me-1"></i>다운로드</button>' +
               '</div>';
           });
           extra += '</div></div>';
@@ -713,7 +713,7 @@
       extra += '<div class="card mb-4 border-0 shadow-sm"><div class="card-body p-4">' +
         '<div class="d-flex align-items-center justify-content-between mb-4">' +
         '<h5 class="fw-bold mb-0">답변 <span class="text-primary">' + answers.length + '</span></h5>' +
-        (a.status === 'solved' ? '<span class="badge bg-success-subtle text-success">✅ 해결됨</span>' : '') +
+        (a.status === 'solved' ? '<span class="badge bg-success-subtle text-success"><i class="fa-regular fa-circle-check me-1"></i> 해결됨</span>' : '') +
         '</div>' +
         '<div class="d-flex flex-column gap-3 mb-4" id="answers-list">';
 
@@ -727,15 +727,15 @@
           '<div class="flex-grow-1">' +
           '<div class="d-flex align-items-center gap-2 mb-2 flex-wrap">' +
           '<span class="fw-bold">' + ans.author.name + '</span>' +
-          (ans.author.isExpert ? '<span class="badge" style="background:#f5f3ff;color:#7c3aed;border:1px solid #ddd6fe;">🏆 전문가</span>' : '') +
-          (ans.isHelpful ? '<span class="badge bg-success text-white">✅ 채택된 답변</span>' : '') +
+          (ans.author.isExpert ? '<span class="badge" style="background:#f5f3ff;color:#7c3aed;border:1px solid #ddd6fe;"><i class="fa-regular fa-trophy me-1"></i>전문가</span>' : '') +
+          (ans.isHelpful ? '<span class="badge bg-success text-white"><i class="fa-regular fa-circle-check me-1"></i> 채택된 답변</span>' : '') +
           '<span class="text-muted small ms-auto">2일 전</span>' +
           '</div>' +
           '<div class="text-dark mb-3" style="white-space:pre-wrap;line-height:1.8;">' + fmtMd(ans.content) + '</div>' +
           '<div class="d-flex align-items-center gap-2">' +
-          '<button class="btn btn-sm btn-outline-secondary">👍 도움됨 ' + (ans.likes || 0) + '</button>' +
-          '<button class="btn btn-sm btn-outline-secondary">💬 댓글 ' + (ans.replies || 0) + '</button>' +
-          (!ans.isHelpful && a.status === 'open' ? '<button class="btn btn-sm btn-outline-success ms-auto">✅ 답변 채택</button>' : '') +
+          '<button class="btn btn-sm btn-outline-secondary"><i class="fa-regular fa-thumbs-up me-1"></i> 도움됨 ' + (ans.likes || 0) + '</button>' +
+          '<button class="btn btn-sm btn-outline-secondary"><i class="fa-regular fa-comment me-1"></i> 댓글 ' + (ans.replies || 0) + '</button>' +
+          (!ans.isHelpful && a.status === 'open' ? '<button class="btn btn-sm btn-outline-success ms-auto"><i class="fa-regular fa-circle-check me-1"></i> 답변 채택</button>' : '') +
           '</div>' +
           '</div>' +
           '</div>' +
@@ -744,16 +744,16 @@
 
       extra += '</div>' +
         '<div class="border-top pt-4">' +
-        '<h5 class="fw-bold mb-1">💡 답변 작성하기</h5>' +
+        '<h5 class="fw-bold mb-1"><i class="fa-regular fa-lightbulb me-1"></i> 답변 작성하기</h5>' +
         '<p class="text-muted small mb-3">구체적이고 실행 가능한 답변을 남겨주세요. 코드 예제나 참고 자료를 함께 제공하면 더욱 좋습니다.</p>' +
         '<textarea class="form-control mb-3" id="answer-input" rows="6" style="font-family:monospace;font-size:.875rem;" placeholder="답변을 작성해주세요..."></textarea>' +
         '<div class="d-flex align-items-center justify-content-between flex-wrap gap-2">' +
         '<div class="d-flex gap-2">' +
-        '<button class="btn btn-outline-secondary btn-sm">💻 코드 추가</button>' +
-        '<button class="btn btn-outline-secondary btn-sm">🖼️ 이미지 추가</button>' +
-        '<button class="btn btn-outline-secondary btn-sm">🔗 링크 추가</button>' +
+        '<button class="btn btn-outline-secondary btn-sm"><i class="fa-regular fa-code me-1"></i> 코드 추가</button>' +
+        '<button class="btn btn-outline-secondary btn-sm"><i class="fa-regular fa-image me-1"></i> 이미지 추가</button>' +
+        '<button class="btn btn-outline-secondary btn-sm"><i class="fa-regular fa-link me-1"></i> 링크 추가</button>' +
         '</div>' +
-        '<button class="btn btn-primary" id="answer-submit-btn">💡 답변 작성하기</button>' +
+        '<button class="btn btn-primary" id="answer-submit-btn"><i class="fa-regular fa-lightbulb me-1"></i> 답변 작성하기</button>' +
         '</div>' +
         '</div>' +
         '</div></div>';
@@ -770,7 +770,7 @@
           '<div class="flex-grow-1">' +
           '<div class="fw-bold mb-2">나 <span class="text-muted small fw-normal">방금 전</span></div>' +
           '<div class="text-dark mb-3" style="white-space:pre-wrap;line-height:1.8;">' + text + '</div>' +
-          '<div class="d-flex gap-2"><button class="btn btn-sm btn-outline-secondary">👍 도움됨 0</button><button class="btn btn-sm btn-outline-secondary">💬 댓글 0</button></div>' +
+          '<div class="d-flex gap-2"><button class="btn btn-sm btn-outline-secondary"><i class="fa-regular fa-thumbs-up me-1"></i> 도움됨 0</button><button class="btn btn-sm btn-outline-secondary"><i class="fa-regular fa-comment me-1"></i> 댓글 0</button></div>' +
           '</div>' +
           '</div>' +
           '</div>';
@@ -788,13 +788,13 @@
         '<h6 class="fw-bold mb-3">빠른 액션</h6>' +
         '<div class="d-flex flex-column gap-2 mb-3">' +
         '<div class="d-flex align-items-center gap-2 small">' +
-        (a.status === 'open' ? '<span class="text-orange-500">⏰</span> <span>해결중</span>' : '<span class="text-green-600">✅</span> <span>해결됨</span>') +
+        (a.status === 'open' ? '<span class="text-orange-500"><i class="fa-regular fa-clock"></i></span> <span>해결중</span>' : '<span class="text-green-600"><i class="fa-regular fa-circle-check"></i></span> <span>해결됨</span>') +
         '</div>' +
-        '<div class="d-flex align-items-center gap-2 small"><span class="text-blue">💬</span> <span>' + stats.answers + '개 답변</span></div>' +
-        '<div class="d-flex align-items-center gap-2 small"><span class="text-blue">👍</span> <span>' + stats.likes + '명 도움됨</span></div>' +
+        '<div class="d-flex align-items-center gap-2 small"><span class="text-blue"><i class="fa-regular fa-comment"></i></span> <span>' + stats.answers + '개 답변</span></div>' +
+        '<div class="d-flex align-items-center gap-2 small"><span class="text-blue"><i class="fa-regular fa-thumbs-up"></i></span> <span>' + stats.likes + '명 도움됨</span></div>' +
         '</div>' +
-        '<button class="btn btn-primary w-100 mb-2" id="q-save-btn">🔖 저장하기</button>' +
-        '<button class="btn btn-outline-secondary w-100" id="q-share-btn">🔗 공유하기</button>' +
+        '<button class="btn btn-primary w-100 mb-2" id="q-save-btn"><i class="fa-regular fa-bookmark me-1"></i> 저장하기</button>' +
+        '<button class="btn btn-outline-secondary w-100" id="q-share-btn"><i class="fa-regular fa-link me-1"></i> 공유하기</button>' +
         '</div>' +
         '</div>';
 
@@ -835,7 +835,7 @@
           '<div class="card-body p-3">' +
           '<div class="fw-bold small mb-1">연결된 프로젝트</div>' +
           '<a href="project-detail.html?id=' + a.project.id + '" class="fw-bold text-primary text-decoration-none d-block mb-2">' + a.project.name + '</a>' +
-          (a.questNumber ? '<div class="text-muted small mb-1">🚀 Quest ' + a.questNumber + ' 진행중</div>' : '') +
+          (a.questNumber ? '<div class="text-muted small mb-1"><i class="fa-regular fa-rocket me-1"></i> Quest ' + a.questNumber + ' 진행중</div>' : '') +
           (a.questTitle ? '<div class="text-muted small mb-2 fs-xs">' + a.questTitle + '</div>' : '') +
           (a.contest ? '<div class="border-bottom pb-2 mb-2"><div class="text-muted fs-xs">참여 콘테스트</div><a href="#" class="text-primary text-decoration-none small fw-semibold">' + a.contest.name + '</a></div>' : '') +
           '<a href="project-detail.html?id=' + a.project.id + '" class="btn btn-primary btn-sm w-100">프로젝트 보기</a>' +
@@ -848,10 +848,10 @@
         '<div class="card-body p-4">' +
         '<h6 class="fw-bold mb-3">통계</h6>' +
         '<div class="d-flex flex-column gap-2">' +
-        '<div class="d-flex justify-content-between small"><span class="text-muted">👁 조회수</span><span class="fw-semibold">' + stats.views + '</span></div>' +
-        '<div class="d-flex justify-content-between small"><span class="text-muted">💬 답변</span><span class="fw-semibold text-primary">' + stats.answers + '</span></div>' +
-        '<div class="d-flex justify-content-between small"><span class="text-muted">👍 도움됨</span><span class="fw-semibold">' + stats.likes + '</span></div>' +
-        '<div class="d-flex justify-content-between small"><span class="text-muted">🔖 저장</span><span class="fw-semibold">' + stats.bookmarks + '</span></div>' +
+        '<div class="d-flex justify-content-between small"><span class="text-muted"><i class="fa-regular fa-eye me-1"></i> 조회수</span><span class="fw-semibold">' + stats.views + '</span></div>' +
+        '<div class="d-flex justify-content-between small"><span class="text-muted"><i class="fa-regular fa-comment me-1"></i> 답변</span><span class="fw-semibold text-primary">' + stats.answers + '</span></div>' +
+        '<div class="d-flex justify-content-between small"><span class="text-muted"><i class="fa-regular fa-thumbs-up me-1"></i> 도움됨</span><span class="fw-semibold">' + stats.likes + '</span></div>' +
+        '<div class="d-flex justify-content-between small"><span class="text-muted"><i class="fa-regular fa-bookmark me-1"></i> 저장</span><span class="fw-semibold">' + stats.bookmarks + '</span></div>' +
         '</div>' +
         '</div>' +
         '</div>' +
@@ -862,14 +862,14 @@
         '<div class="avatar-circle-lg text-white" style="background:' + avatarBg(a.initial) + ';">' + a.initial + '</div>' +
         '<div><div class="fw-bold">' + a.author + '</div><div class="text-muted small">프로젝트 ' + a.authorProjects + '개</div></div>' +
         '</div>' +
-        '<button class="btn btn-outline-secondary btn-sm w-100">📧 메시지 보내기</button>' +
+        '<button class="btn btn-outline-secondary btn-sm w-100"><i class="fa-regular fa-envelope me-1"></i> 메시지 보내기</button>' +
         '</div>' +
         '</div>';
 
       $('#sidebar-sticky').html(sidebarHtml);
 
       $(document).off('click', '#q-save-btn').on('click', '#q-save-btn', function () {
-        $(this).text($(this).text().trim() === '🔖 저장하기' ? '🔖 저장됨' : '🔖 저장하기');
+        $(this).html($(this).text().trim().includes('저장하기') ? '<i class="fa-regular fa-bookmark me-1"></i> 저장됨' : '<i class="fa-regular fa-bookmark me-1"></i> 저장하기');
       });
       $(document).off('click', '#q-share-btn').on('click', '#q-share-btn', function () {
         if (navigator.clipboard) navigator.clipboard.writeText(window.location.href);
@@ -890,10 +890,10 @@
       /* ── Header Card ── */
       var html = '<div class="card-body p-4">' +
         '<div class="d-flex flex-wrap align-items-center gap-2 mb-3">' +
-        '<span class="badge" style="background:#7c3aed;color:#fff;">🚀 진행공유</span>' +
+        '<span class="badge" style="background:#7c3aed;color:#fff;"><i class="fa-regular fa-rocket me-1"></i> 진행공유</span>' +
         (a.status === 'completed'
-          ? '<span class="badge bg-success-subtle text-success">✅ 완료</span>'
-          : '<span class="badge bg-primary-subtle text-primary">⏳ 진행중</span>') +
+          ? '<span class="badge bg-success-subtle text-success"><i class="fa-regular fa-circle-check me-1"></i> 완료</span>'
+          : '<span class="badge bg-primary-subtle text-primary"><i class="fa-regular fa-hourglass me-1"></i> 진행중</span>') +
         (a.questNumber ? '<span class="badge border text-secondary">Quest ' + a.questNumber + '/' + a.questTotal + '</span>' : '') +
         '</div>' +
         '<h2 class="fw-bold mb-3" style="font-size:1.5rem;">' + a.title + '</h2>' +
@@ -906,21 +906,21 @@
         '</div>' +
         '</div>' +
         '<span style="opacity:.35;">|</span>' +
-        '<span>📅 ' + a.date + '</span>' +
-        '<span>👁 ' + stats.views + ' 조회</span>' +
-        '<span class="fw-semibold text-purple">❤️ ' + stats.likes + ' 좋아요</span>' +
+        '<span><i class="fa-regular fa-calendar me-1"></i>' + a.date + '</span>' +
+        '<span><i class="fa-regular fa-eye me-1"></i>' + stats.views + ' 조회</span>' +
+        '<span class="fw-semibold text-purple"><i class="fa-regular fa-heart me-1"></i>' + stats.likes + ' 좋아요</span>' +
         '</div>' +
         (a.project ?
           '<div class="rounded-3 p-3 mb-4" style="background:linear-gradient(to right,#f5f3ff,#fdf4ff);border:1px solid #ddd6fe;">' +
-          '<div class="d-flex align-items-center gap-2 mb-2"><span class="text-purple">🎯</span><span class="fw-semibold small">진행 중인 프로젝트</span></div>' +
+          '<div class="d-flex align-items-center gap-2 mb-2"><span class="text-purple"><i class="fa-regular fa-bullseye-arrow"></i></span><span class="fw-semibold small">진행 중인 프로젝트</span></div>' +
           '<a href="project-detail.html?id=' + a.project.id + '" class="fw-bold text-decoration-none d-block mb-1 text-purple">' + a.project.name + '</a>' +
           (a.questTitle ? '<div class="small text-dark mb-2">' + a.questTitle + '</div>' : '') +
           (a.contest ? '<span class="badge border text-secondary small">' + a.contest.name + '</span>' : '') +
           '</div>' : '') +
         '<div class="d-flex flex-wrap gap-2 pt-3 border-top">' +
-        '<button class="btn btn-outline-danger btn-sm" id="prog-like-btn">❤️ 좋아요 ' + stats.likes + '</button>' +
-        '<button class="btn btn-outline-secondary btn-sm" id="prog-save-btn">🔖 저장하기</button>' +
-        '<button class="btn btn-outline-secondary btn-sm" id="prog-share-btn">🔗 공유하기</button>' +
+        '<button class="btn btn-outline-danger btn-sm" id="prog-like-btn"><i class="fa-regular fa-heart me-1"></i> 좋아요 ' + stats.likes + '</button>' +
+        '<button class="btn btn-outline-secondary btn-sm" id="prog-save-btn"><i class="fa-regular fa-bookmark me-1"></i> 저장하기</button>' +
+        '<button class="btn btn-outline-secondary btn-sm" id="prog-share-btn"><i class="fa-regular fa-link me-1"></i> 공유하기</button>' +
         '</div>' +
         '</div>';
       $('#activity-card').html(html);
@@ -933,7 +933,7 @@
         extra += '<div class="card mb-4 border-0 shadow-sm">' +
           '<div class="card-body p-4">' +
           '<div class="d-flex align-items-center gap-3 mb-4">' +
-          '<div class="rounded-3 d-flex align-items-center justify-content-center" style="width:40px;height:40px;background:#dbeafe;flex-shrink:0;"><span style="color:#2563eb;font-size:1.1rem;">⚡</span></div>' +
+          '<div class="rounded-3 d-flex align-items-center justify-content-center" style="width:40px;height:40px;background:#dbeafe;flex-shrink:0;color:#2563eb;font-size:1.1rem;"><i class="fa-regular fa-bolt"></i></div>' +
           '<div><h5 class="fw-bold mb-0">이번 단계에서 한 일</h5><div class="text-muted small">What I did</div></div>' +
           '</div>' +
           '<div class="rounded-3 p-4" style="background:#eff6ff;border:1px solid #bfdbfe;white-space:pre-wrap;line-height:1.8;">' + fmtMd(a.whatIDid) + '</div>' +
@@ -945,14 +945,14 @@
       if (a.completed && a.completed.length > 0) {
         var checkItems = a.completed.map(function (item) {
           return '<div class="d-flex align-items-start gap-3 p-3 rounded-3 mb-2" style="background:#f0fdf4;border:1px solid #bbf7d0;">' +
-            '<span style="color:#16a34a;font-size:1rem;flex-shrink:0;">✅</span>' +
+            '<span style="color:#16a34a;font-size:1rem;flex-shrink:0;"><i class="fa-regular fa-circle-check"></i></span>' +
             '<span class="text-dark">' + item.replace(/^✅\s*/, '') + '</span>' +
             '</div>';
         }).join('');
         extra += '<div class="card mb-4 border-0 shadow-sm">' +
           '<div class="card-body p-4">' +
           '<div class="d-flex align-items-center gap-3 mb-4">' +
-          '<div class="rounded-3 d-flex align-items-center justify-content-center" style="width:40px;height:40px;background:#dcfce7;flex-shrink:0;"><span style="color:#16a34a;font-size:1.1rem;">✅</span></div>' +
+          '<div class="rounded-3 d-flex align-items-center justify-content-center" style="width:40px;height:40px;background:#dcfce7;flex-shrink:0;color:#16a34a;font-size:1.1rem;"><i class="fa-regular fa-circle-check"></i></div>' +
           '<div><h5 class="fw-bold mb-0">현재까지 완료한 내용</h5><div class="text-muted small">Completed tasks</div></div>' +
           '</div>' +
           '<div>' + checkItems + '</div>' +
@@ -965,7 +965,7 @@
         extra += '<div class="card mb-4 border-0 shadow-sm">' +
           '<div class="card-body p-4">' +
           '<div class="d-flex align-items-center gap-3 mb-4">' +
-          '<div class="rounded-3 d-flex align-items-center justify-content-center" style="width:40px;height:40px;background:#ffedd5;flex-shrink:0;"><span style="color:#ea580c;font-size:1.1rem;">⚠️</span></div>' +
+          '<div class="rounded-3 d-flex align-items-center justify-content-center" style="width:40px;height:40px;background:#ffedd5;flex-shrink:0;color:#ea580c;font-size:1.1rem;"><i class="fa-regular fa-triangle-exclamation"></i></div>' +
           '<div><h5 class="fw-bold mb-0">막힌 점 또는 고민</h5><div class="text-muted small">Challenges &amp; thoughts</div></div>' +
           '</div>' +
           '<div class="rounded-3 p-4" style="background:#fff7ed;border:1px solid #fed7aa;white-space:pre-wrap;line-height:1.8;">' + fmtMd(a.challenges) + '</div>' +
@@ -978,7 +978,7 @@
         extra += '<div class="card mb-4 border-0 shadow-sm">' +
           '<div class="card-body p-4">' +
           '<div class="d-flex align-items-center gap-3 mb-4">' +
-          '<div class="rounded-3 d-flex align-items-center justify-content-center" style="width:40px;height:40px;background:#ede9fe;flex-shrink:0;"><span style="color:#7c3aed;font-size:1.1rem;">📈</span></div>' +
+          '<div class="rounded-3 d-flex align-items-center justify-content-center" style="width:40px;height:40px;background:#ede9fe;flex-shrink:0;color:#7c3aed;font-size:1.1rem;"><i class="fa-regular fa-arrow-trend-up"></i></div>' +
           '<div><h5 class="fw-bold mb-0">다음에 할 일</h5><div class="text-muted small">Next steps</div></div>' +
           '</div>' +
           '<div class="rounded-3 p-4" style="background:#f5f3ff;border:1px solid #ddd6fe;white-space:pre-wrap;line-height:1.8;">' + fmtMd(a.nextSteps) + '</div>' +
@@ -993,7 +993,7 @@
         }).join('');
         extra += '<div class="card mb-4 border-0 shadow-sm">' +
           '<div class="card-body p-4">' +
-          '<h5 class="fw-bold mb-4">🖼️ 진행 사진</h5>' +
+          '<h5 class="fw-bold mb-4"><i class="fa-regular fa-image me-1"></i> 진행 사진</h5>' +
           '<div class="row g-3">' + imgGrid + '</div>' +
           '</div>' +
           '</div>';
@@ -1004,7 +1004,7 @@
         var linksHtml = a.links.map(function (link) {
           return '<div class="p-4 rounded-3 mb-2" style="background:#f9fafb;border:1px solid #e5e7eb;">' +
             '<div class="d-flex align-items-start gap-3">' +
-            '<span style="font-size:1.1rem;flex-shrink:0;">' + (link.type === 'github' ? '🐙' : '🔗') + '</span>' +
+            '<span style="font-size:1.1rem;flex-shrink:0;">' + (link.type === 'github' ? '<i class="fa-brands fa-github"></i>' : '<i class="fa-regular fa-link"></i>') + '</span>' +
             '<div class="flex-grow-1">' +
             '<div class="fw-semibold mb-1">' + link.title + '</div>' +
             '<div class="text-muted small mb-2">' + link.description + '</div>' +
@@ -1015,7 +1015,7 @@
         }).join('');
         extra += '<div class="card mb-4 border-0 shadow-sm">' +
           '<div class="card-body p-4">' +
-          '<h5 class="fw-bold mb-4">🔗 참고 링크</h5>' +
+          '<h5 class="fw-bold mb-4"><i class="fa-regular fa-link me-1"></i> 참고 링크</h5>' +
           linksHtml +
           '</div>' +
           '</div>';
@@ -1036,7 +1036,7 @@
             '</div>' +
             '<p class="small text-dark mb-2">' + c.content + '</p>' +
             '<div class="d-flex gap-2">' +
-            '<button class="btn btn-sm btn-link text-muted p-0 small">👍 ' + c.likes + '</button>' +
+            '<button class="btn btn-sm btn-link text-muted p-0 small"><i class="fa-regular fa-thumbs-up me-1"></i>' + c.likes + '</button>' +
             '<button class="btn btn-sm btn-link text-muted p-0 small">답글</button>' +
             '</div>' +
             '</div>' +
@@ -1052,11 +1052,11 @@
         $btn.toggleClass('btn-danger btn-outline-danger', !liked).toggleClass('btn-outline-danger btn-danger', liked);
         $btn.toggleClass('btn-danger', !liked).toggleClass('btn-outline-danger', liked);
         var cur = parseInt($btn.text().replace(/[^0-9]/g, '')) || stats.likes;
-        $btn.html('❤️ 좋아요 ' + (liked ? stats.likes : stats.likes + 1));
+        $btn.html('<i class="fa-regular fa-heart me-1"></i> 좋아요 ' + (liked ? stats.likes : stats.likes + 1));
       });
       $(document).off('click', '#prog-save-btn').on('click', '#prog-save-btn', function () {
         var saved = $(this).hasClass('btn-primary');
-        $(this).toggleClass('btn-primary btn-outline-secondary').text(saved ? '🔖 저장하기' : '🔖 저장됨');
+        $(this).toggleClass('btn-primary btn-outline-secondary').html(saved ? '<i class="fa-regular fa-bookmark me-1"></i> 저장하기' : '<i class="fa-regular fa-bookmark me-1"></i> 저장됨');
       });
       $(document).off('click', '#prog-share-btn').on('click', '#prog-share-btn', function () {
         if (navigator.clipboard) navigator.clipboard.writeText(window.location.href);
@@ -1072,12 +1072,12 @@
         '<div class="card-body p-4">' +
         '<h6 class="fw-bold mb-3">빠른 반응</h6>' +
         '<div class="d-flex flex-column gap-2 mb-3">' +
-        '<div class="d-flex align-items-center gap-2 small"><span class="text-purple">❤️</span> <span>' + stats.likes + '개 좋아요</span></div>' +
-        '<div class="d-flex align-items-center gap-2 small"><span class="text-purple">💬</span> <span>' + stats.comments + '개 댓글</span></div>' +
-        '<div class="d-flex align-items-center gap-2 small"><span class="text-purple">👁</span> <span>' + stats.views + ' 조회</span></div>' +
+        '<div class="d-flex align-items-center gap-2 small"><span class="text-purple"><i class="fa-regular fa-heart"></i></span> <span>' + stats.likes + '개 좋아요</span></div>' +
+        '<div class="d-flex align-items-center gap-2 small"><span class="text-purple"><i class="fa-regular fa-comment"></i></span> <span>' + stats.comments + '개 댓글</span></div>' +
+        '<div class="d-flex align-items-center gap-2 small"><span class="text-purple"><i class="fa-regular fa-eye"></i></span> <span>' + stats.views + ' 조회</span></div>' +
         '</div>' +
-        '<button class="btn w-100 mb-2 text-white bg-purple" id="ps-like-btn">❤️ 좋아요</button>' +
-        '<button class="btn btn-outline-secondary w-100" id="ps-save-btn">🔖 저장하기</button>' +
+        '<button class="btn w-100 mb-2 text-white bg-purple" id="ps-like-btn"><i class="fa-regular fa-heart me-1"></i> 좋아요</button>' +
+        '<button class="btn btn-outline-secondary w-100" id="ps-save-btn"><i class="fa-regular fa-bookmark me-1"></i> 저장하기</button>' +
         '</div>' +
         '</div>';
 
@@ -1094,7 +1094,7 @@
           '<div class="card-body p-3">' +
           '<div class="fw-bold small mb-1">연결된 프로젝트</div>' +
           '<a href="project-detail.html?id=' + a.project.id + '" class="fw-bold text-decoration-none d-block mb-2 text-purple">' + a.project.name + '</a>' +
-          '<div class="text-muted small mb-2 d-flex align-items-center gap-2"><span class="text-purple">🚀</span><span>' + (a.project.quest || a.project.status || '') + '</span></div>' +
+          '<div class="text-muted small mb-2 d-flex align-items-center gap-2"><span class="text-purple"><i class="fa-regular fa-rocket"></i></span><span>' + (a.project.quest || a.project.status || '') + '</span></div>' +
           (a.contest ? '<div class="border-bottom pb-2 mb-2"><div class="text-muted fs-xs">참여 콘테스트</div><a href="#" class="text-primary text-decoration-none small fw-semibold">' + a.contest.name + '</a></div>' : '') +
           '<a href="project-detail.html?id=' + a.project.id + '" class="btn btn-sm w-100 text-white bg-purple">프로젝트 보기</a>' +
           '</div>' +
@@ -1120,10 +1120,10 @@
         '<div class="card-body p-4">' +
         '<h6 class="fw-bold mb-3">통계</h6>' +
         '<div class="d-flex flex-column gap-2">' +
-        '<div class="d-flex justify-content-between small"><span class="text-muted">👁 조회수</span><span class="fw-semibold">' + stats.views + '</span></div>' +
-        '<div class="d-flex justify-content-between small"><span class="text-muted">❤️ 좋아요</span><span class="fw-semibold text-purple">' + stats.likes + '</span></div>' +
-        '<div class="d-flex justify-content-between small"><span class="text-muted">💬 댓글</span><span class="fw-semibold">' + stats.comments + '</span></div>' +
-        '<div class="d-flex justify-content-between small"><span class="text-muted">🔖 저장</span><span class="fw-semibold">' + (stats.bookmarks || 0) + '</span></div>' +
+        '<div class="d-flex justify-content-between small"><span class="text-muted"><i class="fa-regular fa-eye me-1"></i> 조회수</span><span class="fw-semibold">' + stats.views + '</span></div>' +
+        '<div class="d-flex justify-content-between small"><span class="text-muted"><i class="fa-regular fa-heart me-1"></i> 좋아요</span><span class="fw-semibold text-purple">' + stats.likes + '</span></div>' +
+        '<div class="d-flex justify-content-between small"><span class="text-muted"><i class="fa-regular fa-comment me-1"></i> 댓글</span><span class="fw-semibold">' + stats.comments + '</span></div>' +
+        '<div class="d-flex justify-content-between small"><span class="text-muted"><i class="fa-regular fa-bookmark me-1"></i> 저장</span><span class="fw-semibold">' + (stats.bookmarks || 0) + '</span></div>' +
         '</div>' +
         '</div>' +
         '</div>' +
@@ -1134,7 +1134,7 @@
         '<div class="avatar-circle-lg text-white" style="background:' + avatarBg(a.initial) + ';">' + a.initial + '</div>' +
         '<div><div class="fw-bold">' + a.author + '</div><div class="text-muted small">프로젝트 ' + a.authorProjects + '개 완료</div></div>' +
         '</div>' +
-        '<button class="btn btn-outline-secondary btn-sm w-100">📧 메시지 보내기</button>' +
+        '<button class="btn btn-outline-secondary btn-sm w-100"><i class="fa-regular fa-envelope me-1"></i> 메시지 보내기</button>' +
         '</div>' +
         '</div>';
 
@@ -1142,11 +1142,11 @@
 
       $(document).off('click', '#ps-like-btn').on('click', '#ps-like-btn', function () {
         var liked = $(this).data('liked');
-        $(this).data('liked', !liked).text(liked ? '❤️ 좋아요' : '❤️ 좋아요 취소');
+        $(this).data('liked', !liked).html(liked ? '<i class="fa-regular fa-heart me-1"></i> 좋아요' : '<i class="fa-regular fa-heart me-1"></i> 좋아요 취소');
       });
       $(document).off('click', '#ps-save-btn').on('click', '#ps-save-btn', function () {
         var saved = $(this).hasClass('btn-primary');
-        $(this).toggleClass('btn-primary btn-outline-secondary').text(saved ? '🔖 저장하기' : '🔖 저장됨');
+        $(this).toggleClass('btn-primary btn-outline-secondary').html(saved ? '<i class="fa-regular fa-bookmark me-1"></i> 저장하기' : '<i class="fa-regular fa-bookmark me-1"></i> 저장됨');
       });
     }
 
@@ -1164,8 +1164,8 @@
       /* ── Header Card ── */
       var html = '<div class="card-body p-4">' +
         '<div class="d-flex flex-wrap align-items-center gap-2 mb-3">' +
-        '<span class="badge bg-success-subtle text-success">👥 팀원찾기</span>' +
-        '<span class="badge bg-danger-subtle text-danger">⏰ ' + (a.deadline || '') + ' 마감</span>' +
+        '<span class="badge bg-success-subtle text-success"><i class="fa-regular fa-users me-1"></i> 팀원찾기</span>' +
+        '<span class="badge bg-danger-subtle text-danger"><i class="fa-regular fa-clock me-1"></i> ' + (a.deadline || '') + ' 마감</span>' +
         '<span class="badge bg-primary-subtle text-primary">모집중</span>' +
         (a.questNumber ? '<span class="badge border text-secondary">Quest ' + a.questNumber + '</span>' : '') +
         '</div>' +
@@ -1179,21 +1179,21 @@
         '</div>' +
         '</div>' +
         '<span style="opacity:.35;">|</span>' +
-        '<span>📅 1일 전 작성</span>' +
-        '<span>👁 ' + stats.views + ' 조회</span>' +
-        '<span class="fw-semibold text-success">👥 ' + stats.applicants + '명 지원</span>' +
+        '<span><i class="fa-regular fa-calendar me-1"></i> 1일 전 작성</span>' +
+        '<span><i class="fa-regular fa-eye me-1"></i>' + stats.views + ' 조회</span>' +
+        '<span class="fw-semibold text-success"><i class="fa-regular fa-users me-1"></i>' + stats.applicants + '명 지원</span>' +
         '</div>' +
         '<div class="rounded-3 p-3 mb-4" style="background:linear-gradient(to right,#f0fdf4,#eff6ff);border:1px solid #bbf7d0;">' +
-        '<div class="d-flex align-items-center gap-2 mb-2"><span class="text-green-600">🎯</span><span class="fw-semibold small">협업할 프로젝트</span></div>' +
+        '<div class="d-flex align-items-center gap-2 mb-2"><span class="text-green-600"><i class="fa-regular fa-bullseye-arrow"></i></span><span class="fw-semibold small">협업할 프로젝트</span></div>' +
         (a.project ? '<a href="project-detail.html?id=' + a.project.id + '" class="fw-bold text-success text-decoration-none d-block mb-1">' + a.project.name + '</a>' : '') +
         (a.questTitle ? '<div class="small text-dark mb-2">' + a.questTitle + '</div>' : '') +
         (a.contest ? '<span class="badge border text-secondary small">' + a.contest.name + '</span>' : '') +
         '</div>' +
         '<div class="border-top pt-3" id="header-actions">' +
         '<div class="row g-2">' +
-        '<div class="col-12 col-md-4"><button class="btn btn-success w-100" id="apply-toggle-btn">🤝 참여 의사 있습니다</button></div>' +
-        '<div class="col-6 col-md-4"><button class="btn btn-outline-secondary w-100">💬 질문하기</button></div>' +
-        '<div class="col-6 col-md-4"><button class="btn btn-outline-secondary w-100" id="header-share-btn">🔗 공유하기</button></div>' +
+        '<div class="col-12 col-md-4"><button class="btn btn-success w-100" id="apply-toggle-btn"><i class="fa-regular fa-handshake me-1"></i> 참여 의사 있습니다</button></div>' +
+        '<div class="col-6 col-md-4"><button class="btn btn-outline-secondary w-100"><i class="fa-regular fa-comment me-1"></i> 질문하기</button></div>' +
+        '<div class="col-6 col-md-4"><button class="btn btn-outline-secondary w-100" id="header-share-btn"><i class="fa-regular fa-link me-1"></i> 공유하기</button></div>' +
         '</div>' +
         '</div>' +
         '</div>';
@@ -1205,7 +1205,7 @@
       /* Apply Form (hidden) */
       extra += '<div class="card mb-4 border-0 shadow-sm d-none" id="apply-form-card" style="border:2px solid #bbf7d0!important;background:#f0fdf4;">' +
         '<div class="card-body p-4">' +
-        '<h5 class="fw-bold mb-1">👥 참여 신청하기</h5>' +
+        '<h5 class="fw-bold mb-1"><i class="fa-regular fa-users me-1"></i> 참여 신청하기</h5>' +
         '<p class="text-muted small mb-3">자기소개와 함께 어떤 역할로 기여할 수 있는지 작성해주세요. 신청 후 모집자의 My Make에 알림이 전송됩니다.</p>' +
         '<div class="mb-3"><label class="form-label fw-semibold small">자기소개 및 기여 내용 <span class="text-danger">*</span></label>' +
         '<textarea class="form-control bg-white" id="apply-message-inline" rows="5" placeholder="예: 안녕하세요! 드론 하드웨어 설계 경력 3년차 엔지니어입니다. Pixhawk 기반 드론 개발 경험이 있고..."></textarea></div>' +
@@ -1214,7 +1214,7 @@
         '<div class="mb-3"><label class="form-label fw-semibold small">포트폴리오 / GitHub <span class="text-muted fw-normal">(선택)</span></label>' +
         '<input type="text" class="form-control bg-white" id="apply-portfolio-inline" placeholder="예: github.com/username"></div>' +
         '<div class="d-flex align-items-center gap-2 pt-3 border-top" style="border-color:#bbf7d0!important;">' +
-        '<button class="btn btn-success" id="apply-send-btn">📨 참여 신청 보내기</button>' +
+        '<button class="btn btn-success" id="apply-send-btn"><i class="fa-regular fa-paper-plane me-1"></i> 참여 신청 보내기</button>' +
         '<button class="btn btn-outline-secondary" id="apply-cancel-btn">취소</button>' +
         '<small class="text-muted ms-auto">신청 시 모집자에게 알림이 전송됩니다</small>' +
         '</div>' +
@@ -1225,7 +1225,7 @@
       extra += '<div class="card mb-4 border-0 shadow-sm">' +
         '<div class="card-body p-4">' +
         '<div class="d-flex align-items-center gap-3 mb-4">' +
-        '<div class="rounded-3 d-flex align-items-center justify-content-center" style="width:40px;height:40px;background:#dbeafe;flex-shrink:0;"><span style="color:#2563eb;font-size:1.1rem;">💡</span></div>' +
+        '<div class="rounded-3 d-flex align-items-center justify-content-center" style="width:40px;height:40px;background:#dbeafe;flex-shrink:0;color:#2563eb;font-size:1.1rem;"><i class="fa-regular fa-lightbulb"></i></div>' +
         '<div><h5 class="fw-bold mb-0">프로젝트 소개</h5><div class="text-muted small">What we\'re building</div></div>' +
         '</div>' +
         '<p class="text-dark mb-0 lh-180">' + (a.projectIntro || '') + '</p>' +
@@ -1236,7 +1236,7 @@
       extra += '<div class="card mb-4 border-0 shadow-sm">' +
         '<div class="card-body p-4">' +
         '<div class="d-flex align-items-center gap-3 mb-4">' +
-        '<div class="rounded-3 d-flex align-items-center justify-content-center" style="width:40px;height:40px;background:#ede9fe;flex-shrink:0;"><span style="color:#7c3aed;font-size:1.1rem;">🎯</span></div>' +
+        '<div class="rounded-3 d-flex align-items-center justify-content-center" style="width:40px;height:40px;background:#ede9fe;flex-shrink:0;color:#7c3aed;font-size:1.1rem;"><i class="fa-regular fa-bullseye-arrow"></i></div>' +
         '<div><h5 class="fw-bold mb-0">현재 진행 단계</h5><div class="text-muted small">Current progress</div></div>' +
         '</div>' +
         '<p class="text-dark mb-0 lh-180">' + (a.currentStage || '') + '</p>' +
@@ -1247,7 +1247,7 @@
       extra += '<div class="card mb-4 border-0 shadow-sm">' +
         '<div class="card-body p-4">' +
         '<div class="d-flex align-items-center gap-3 mb-4">' +
-        '<div class="rounded-3 d-flex align-items-center justify-content-center" style="width:40px;height:40px;background:#ffedd5;flex-shrink:0;"><span style="color:#ea580c;font-size:1.1rem;">⚠️</span></div>' +
+        '<div class="rounded-3 d-flex align-items-center justify-content-center" style="width:40px;height:40px;background:#ffedd5;flex-shrink:0;color:#ea580c;font-size:1.1rem;"><i class="fa-regular fa-triangle-exclamation"></i></div>' +
         '<div><h5 class="fw-bold mb-0">어떤 도움이 필요한가요?</h5><div class="text-muted small">What we need</div></div>' +
         '</div>' +
         '<div class="rounded-3 p-3" style="background:#fff7ed;border:1px solid #fed7aa;white-space:pre-wrap;line-height:1.8;">' + formatMd(a.helpNeeded || '') + '</div>' +
@@ -1270,7 +1270,7 @@
         extra += '<div class="card mb-4 border-0 shadow-sm">' +
           '<div class="card-body p-4">' +
           '<div class="d-flex align-items-center gap-3 mb-4">' +
-          '<div class="rounded-3 d-flex align-items-center justify-content-center" style="width:40px;height:40px;background:#dcfce7;flex-shrink:0;"><span style="color:#16a34a;font-size:1.1rem;">💼</span></div>' +
+          '<div class="rounded-3 d-flex align-items-center justify-content-center" style="width:40px;height:40px;background:#dcfce7;flex-shrink:0;color:#16a34a;font-size:1.1rem;"><i class="fa-regular fa-briefcase"></i></div>' +
           '<div><h5 class="fw-bold mb-0">모집 역할</h5><div class="text-muted small">Positions needed</div></div>' +
           '</div>' +
           '<div class="d-flex flex-column gap-3">' + rolesHtml + '</div>' +
@@ -1282,17 +1282,17 @@
       extra += '<div class="card mb-4 border-0 shadow-sm">' +
         '<div class="card-body p-4">' +
         '<div class="mb-4">' +
-        '<div class="d-flex align-items-center gap-2 mb-2"><span>📅</span><span class="fw-bold">협업 기간</span></div>' +
+        '<div class="d-flex align-items-center gap-2 mb-2"><i class="fa-regular fa-calendar"></i><span class="fw-bold">협업 기간</span></div>' +
         '<p class="text-dark mb-0">' + (a.duration || '-') + '</p>' +
         '</div>' +
         '<hr>' +
         '<div class="mb-4">' +
-        '<div class="d-flex align-items-center gap-2 mb-3"><span>🎥</span><span class="fw-bold">협업 방식 및 혜택</span></div>' +
+        '<div class="d-flex align-items-center gap-2 mb-3"><i class="fa-regular fa-video"></i><span class="fw-bold">협업 방식 및 혜택</span></div>' +
         '<div class="rounded-3 p-3" style="background:#eff6ff;border:1px solid #bfdbfe;white-space:pre-wrap;line-height:1.8;">' + formatMd(a.collaborationMethod || '') + '</div>' +
         '</div>' +
         '<hr>' +
         '<div>' +
-        '<div class="d-flex align-items-center gap-2 mb-3"><span>📧</span><span class="fw-bold">연락 방법</span></div>' +
+        '<div class="d-flex align-items-center gap-2 mb-3"><i class="fa-regular fa-envelope"></i><span class="fw-bold">연락 방법</span></div>' +
         '<div class="text-dark" style="white-space:pre-wrap;line-height:1.8;">' + formatMd(a.contactMethod || '') + '</div>' +
         '</div>' +
         '</div>' +
@@ -1313,7 +1313,7 @@
           '</div>' +
           '<p class="small text-dark mb-2">' + ap.message + '</p>' +
           '<div class="d-flex flex-wrap gap-1 mb-2">' + ap.skills.map(function (s) { return '<span class="badge" style="background:#f0fdf4;color:#16a34a;border:1px solid #bbf7d0;">' + s + '</span>'; }).join('') + '</div>' +
-          '<div class="d-flex align-items-center gap-2 small"><span class="text-blue">🔗</span><a href="#" class="text-primary text-decoration-none">' + ap.portfolio + '</a></div>' +
+          '<div class="d-flex align-items-center gap-2 small"><span class="text-blue"><i class="fa-regular fa-link"></i></span><a href="#" class="text-primary text-decoration-none">' + ap.portfolio + '</a></div>' +
           '</div>' +
           '</div>' +
           '</div>';
@@ -1339,7 +1339,7 @@
             '</div>' +
             '<p class="small text-dark mb-2">' + c.content + '</p>' +
             '<div class="d-flex gap-2">' +
-            '<button class="btn btn-sm btn-link text-muted p-0 small">👍 ' + c.likes + '</button>' +
+            '<button class="btn btn-sm btn-link text-muted p-0 small"><i class="fa-regular fa-thumbs-up me-1"></i>' + c.likes + '</button>' +
             '<button class="btn btn-sm btn-link text-muted p-0 small">답글</button>' +
             '</div>' +
             '</div>' +
@@ -1364,7 +1364,7 @@
         $('#apply-form-card').addClass('d-none');
         $('#header-actions').html(
           '<div class="d-flex align-items-center gap-3 py-2 px-3 rounded-3" style="background:#f0fdf4;border:1px solid #bbf7d0;">' +
-          '<span style="color:#16a34a;font-size:1.2rem;">✅</span>' +
+          '<span style="color:#16a34a;font-size:1.2rem;"><i class="fa-regular fa-circle-check"></i></span>' +
           '<div><div class="fw-semibold small text-success">참여 신청이 완료되었습니다!</div>' +
           '<div class="text-muted fs-xs">모집자가 검토 후 수락/거절 알림을 드립니다.</div></div>' +
           '</div>'
@@ -1381,12 +1381,12 @@
         '<div class="card-body p-4">' +
         '<h6 class="fw-bold mb-3">빠른 참여</h6>' +
         '<div class="d-flex flex-column gap-2 mb-3">' +
-        '<div class="d-flex align-items-center gap-2 small"><span class="text-green-600">✅</span> <span>모집중</span></div>' +
-        '<div class="d-flex align-items-center gap-2 small"><span class="text-orange-500">📅</span> <span>' + (a.deadline || '') + ' 마감</span></div>' +
-        '<div class="d-flex align-items-center gap-2 small"><span class="text-green-600">👥</span> <span>' + stats.applicants + '명 지원</span></div>' +
+        '<div class="d-flex align-items-center gap-2 small"><span class="text-green-600"><i class="fa-regular fa-circle-check"></i></span> <span>모집중</span></div>' +
+        '<div class="d-flex align-items-center gap-2 small"><span class="text-orange-500"><i class="fa-regular fa-calendar"></i></span> <span>' + (a.deadline || '') + ' 마감</span></div>' +
+        '<div class="d-flex align-items-center gap-2 small"><span class="text-green-600"><i class="fa-regular fa-users"></i></span> <span>' + stats.applicants + '명 지원</span></div>' +
         '</div>' +
-        '<button class="btn btn-success w-100 mb-2" id="sidebar-apply-btn">🤝 참여 신청하기</button>' +
-        '<button class="btn btn-outline-secondary w-100">🔖 나중에 보기</button>' +
+        '<button class="btn btn-success w-100 mb-2" id="sidebar-apply-btn"><i class="fa-regular fa-handshake me-1"></i> 참여 신청하기</button>' +
+        '<button class="btn btn-outline-secondary w-100"><i class="fa-regular fa-bookmark me-1"></i> 나중에 보기</button>' +
         '</div>' +
         '</div>';
 
@@ -1403,7 +1403,7 @@
           '<div class="card-body p-3">' +
           '<div class="fw-bold small mb-1">연결된 프로젝트</div>' +
           '<a href="project-detail.html?id=' + a.project.id + '" class="fw-bold text-success text-decoration-none d-block mb-2">' + a.project.name + '</a>' +
-          '<div class="text-muted small mb-2">🚀 ' + (a.project.status || a.project.quest || '') + '</div>' +
+          '<div class="text-muted small mb-2"><i class="fa-regular fa-rocket me-1"></i>' + (a.project.status || a.project.quest || '') + '</div>' +
           (a.contest ? '<div class="border-bottom pb-2 mb-2"><div class="text-muted fs-xs">참여 콘테스트</div><a href="#" class="text-primary text-decoration-none small fw-semibold">' + a.contest.name + '</a></div>' : '') +
           '<a href="project-detail.html?id=' + a.project.id + '" class="btn btn-success btn-sm w-100">프로젝트 보기</a>' +
           '</div>' +
@@ -1415,10 +1415,10 @@
         '<div class="card-body p-4">' +
         '<h6 class="fw-bold mb-3">통계</h6>' +
         '<div class="d-flex flex-column gap-2">' +
-        '<div class="d-flex justify-content-between small"><span class="text-muted">👁 조회수</span><span class="fw-semibold">' + stats.views + '</span></div>' +
-        '<div class="d-flex justify-content-between small"><span class="text-muted">👥 지원자</span><span class="fw-semibold text-success">' + stats.applicants + '</span></div>' +
-        '<div class="d-flex justify-content-between small"><span class="text-muted">💬 댓글</span><span class="fw-semibold">' + stats.comments + '</span></div>' +
-        '<div class="d-flex justify-content-between small"><span class="text-muted">🔖 저장</span><span class="fw-semibold">' + stats.bookmarks + '</span></div>' +
+        '<div class="d-flex justify-content-between small"><span class="text-muted"><i class="fa-regular fa-eye me-1"></i> 조회수</span><span class="fw-semibold">' + stats.views + '</span></div>' +
+        '<div class="d-flex justify-content-between small"><span class="text-muted"><i class="fa-regular fa-users me-1"></i> 지원자</span><span class="fw-semibold text-success">' + stats.applicants + '</span></div>' +
+        '<div class="d-flex justify-content-between small"><span class="text-muted"><i class="fa-regular fa-comment me-1"></i> 댓글</span><span class="fw-semibold">' + stats.comments + '</span></div>' +
+        '<div class="d-flex justify-content-between small"><span class="text-muted"><i class="fa-regular fa-bookmark me-1"></i> 저장</span><span class="fw-semibold">' + stats.bookmarks + '</span></div>' +
         '</div>' +
         '</div>' +
         '</div>' +
@@ -1429,7 +1429,7 @@
         '<div class="avatar-circle-lg text-white" style="background:' + avatarBg(a.initial) + ';">' + a.initial + '</div>' +
         '<div><div class="fw-bold">' + a.author + '</div><div class="text-muted small">프로젝트 ' + a.authorProjects + '개 완료</div></div>' +
         '</div>' +
-        '<button class="btn btn-outline-secondary btn-sm w-100">📧 메시지 보내기</button>' +
+        '<button class="btn btn-outline-secondary btn-sm w-100"><i class="fa-regular fa-envelope me-1"></i> 메시지 보내기</button>' +
         '</div>' +
         '</div>';
 
@@ -1453,20 +1453,20 @@
 
       function resourceTypeConfig(type) {
         var cfg = {
-          github: { icon: '🐙', label: 'GitHub', border: '#374151', bg: '#f9fafb', btnBg: '#1f2937', btnText: 'GitHub 보기' },
+          github: { icon: '<i class="fa-brands fa-github"></i>', label: 'GitHub', border: '#374151', bg: '#f9fafb', btnBg: '#1f2937', btnText: 'GitHub 보기' },
           youtube: { icon: '▶️', label: 'YouTube', border: '#dc2626', bg: '#fff5f5', btnBg: '#dc2626', btnText: '영상 보기' },
           docs: { icon: '📄', label: '문서', border: '#2563eb', bg: '#eff6ff', btnBg: '#2563eb', btnText: '바로가기' },
           pdf: { icon: '📋', label: 'PDF', border: '#7c3aed', bg: '#f5f3ff', btnBg: '#7c3aed', btnText: '다운로드' },
-          blog: { icon: '🔗', label: '블로그', border: '#16a34a', bg: '#f0fdf4', btnBg: '#16a34a', btnText: '바로가기' }
+          blog: { icon: '<i class="fa-regular fa-link"></i>', label: '블로그', border: '#16a34a', bg: '#f0fdf4', btnBg: '#16a34a', btnText: '바로가기' }
         };
-        return cfg[type] || { icon: '🔗', label: '링크', border: '#9ca3af', bg: '#f9fafb', btnBg: '#6b7280', btnText: '바로가기' };
+        return cfg[type] || { icon: '<i class="fa-regular fa-link"></i>', label: '링크', border: '#9ca3af', bg: '#f9fafb', btnBg: '#6b7280', btnText: '바로가기' };
       }
 
       /* ── Header Card ── */
       var html = '<div class="card-body p-4">' +
         '<div class="d-flex flex-wrap align-items-center gap-2 mb-3">' +
-        '<span class="badge" style="background:#d97706;color:#fff;">📁 자료공유</span>' +
-        (a.status === 'recommended' ? '<span class="badge" style="background:linear-gradient(to right,#f59e0b,#f97316);color:#fff;">⭐ 추천 자료</span>' : '') +
+        '<span class="badge" style="background:#d97706;color:#fff;"><i class="fa-regular fa-folder me-1"></i> 자료공유</span>' +
+        (a.status === 'recommended' ? '<span class="badge" style="background:linear-gradient(to right,#f59e0b,#f97316);color:#fff;"><i class="fa-regular fa-star me-1"></i> 추천 자료</span>' : '') +
         (a.questNumber ? '<span class="badge border text-secondary">Quest ' + a.questNumber + '</span>' : '') +
         '</div>' +
         '<h2 class="fw-bold mb-3" style="font-size:1.5rem;">' + a.title + '</h2>' +
@@ -1479,21 +1479,21 @@
         '</div>' +
         '</div>' +
         '<span style="opacity:.35;">|</span>' +
-        '<span>📅 ' + a.date + '</span>' +
-        '<span>👁 ' + stats.views + ' 조회</span>' +
-        '<span class="fw-semibold" style="color:#d97706;">🔖 ' + stats.bookmarks + ' 저장</span>' +
+        '<span><i class="fa-regular fa-calendar me-1"></i>' + a.date + '</span>' +
+        '<span><i class="fa-regular fa-eye me-1"></i>' + stats.views + ' 조회</span>' +
+        '<span class="fw-semibold" style="color:#d97706;"><i class="fa-regular fa-bookmark me-1"></i>' + stats.bookmarks + ' 저장</span>' +
         '</div>' +
         (a.project ?
           '<div class="rounded-3 p-3 mb-4" style="background:linear-gradient(to right,#fffbeb,#fefce8);border:1px solid #fde68a;">' +
-          '<div class="d-flex align-items-center gap-2 mb-2"><span style="color:#d97706;">🎯</span><span class="fw-semibold small">연결된 프로젝트</span></div>' +
+          '<div class="d-flex align-items-center gap-2 mb-2"><span style="color:#d97706;"><i class="fa-regular fa-bullseye-arrow"></i></span><span class="fw-semibold small">연결된 프로젝트</span></div>' +
           '<a href="project-detail.html?id=' + a.project.id + '" class="fw-bold text-decoration-none d-block mb-1" style="color:#d97706;">' + a.project.name + '</a>' +
           (a.questTitle ? '<div class="small text-dark mb-2">' + a.questTitle + '</div>' : '') +
           (a.contest ? '<span class="badge border text-secondary small">' + a.contest.name + '</span>' : '') +
           '</div>' : '') +
         '<div class="d-flex flex-wrap gap-2 pt-3 border-top">' +
-        '<button class="btn btn-outline-warning btn-sm" id="res-save-btn" style="color:#d97706;border-color:#d97706;">🔖 저장하기 ' + stats.bookmarks + '</button>' +
-        '<button class="btn btn-outline-danger btn-sm" id="res-like-btn">❤️ 좋아요 ' + stats.likes + '</button>' +
-        '<button class="btn btn-outline-secondary btn-sm" id="res-share-btn">🔗 공유하기</button>' +
+        '<button class="btn btn-outline-warning btn-sm" id="res-save-btn" style="color:#d97706;border-color:#d97706;"><i class="fa-regular fa-bookmark me-1"></i> 저장하기 ' + stats.bookmarks + '</button>' +
+        '<button class="btn btn-outline-danger btn-sm" id="res-like-btn"><i class="fa-regular fa-heart me-1"></i> 좋아요 ' + stats.likes + '</button>' +
+        '<button class="btn btn-outline-secondary btn-sm" id="res-share-btn"><i class="fa-regular fa-link me-1"></i> 공유하기</button>' +
         '</div>' +
         '</div>';
       $('#activity-card').html(html);
@@ -1506,7 +1506,7 @@
         extra += '<div class="card mb-4 border-0 shadow-sm">' +
           '<div class="card-body p-4">' +
           '<div class="d-flex align-items-center gap-3 mb-4">' +
-          '<div class="rounded-3 d-flex align-items-center justify-content-center" style="width:40px;height:40px;background:#dbeafe;flex-shrink:0;"><span style="color:#2563eb;font-size:1.1rem;">📄</span></div>' +
+          '<div class="rounded-3 d-flex align-items-center justify-content-center" style="width:40px;height:40px;background:#dbeafe;flex-shrink:0;color:#2563eb;font-size:1.1rem;"><i class="fa-regular fa-file-lines"></i></div>' +
           '<div><h5 class="fw-bold mb-0">자료 설명</h5><div class="text-muted small">Resource overview</div></div>' +
           '</div>' +
           '<div style="white-space:pre-wrap;line-height:1.8;">' + fmtMd(a.description) + '</div>' +
@@ -1519,7 +1519,7 @@
         extra += '<div class="card mb-4 border-0 shadow-sm">' +
           '<div class="card-body p-4">' +
           '<div class="d-flex align-items-center gap-3 mb-4">' +
-          '<div class="rounded-3 d-flex align-items-center justify-content-center" style="width:40px;height:40px;background:#dcfce7;flex-shrink:0;"><span style="color:#16a34a;font-size:1.1rem;">💡</span></div>' +
+          '<div class="rounded-3 d-flex align-items-center justify-content-center" style="width:40px;height:40px;background:#dcfce7;flex-shrink:0;color:#16a34a;font-size:1.1rem;"><i class="fa-regular fa-lightbulb"></i></div>' +
           '<div><h5 class="fw-bold mb-0">왜 도움이 되는가?</h5><div class="text-muted small">Why it\'s helpful</div></div>' +
           '</div>' +
           '<div class="rounded-3 p-4" style="background:#f0fdf4;border:1px solid #bbf7d0;white-space:pre-wrap;line-height:1.8;">' + fmtMd(a.whyHelpful) + '</div>' +
@@ -1532,7 +1532,7 @@
         extra += '<div class="card mb-4 border-0 shadow-sm">' +
           '<div class="card-body p-4">' +
           '<div class="d-flex align-items-center gap-3 mb-4">' +
-          '<div class="rounded-3 d-flex align-items-center justify-content-center" style="width:40px;height:40px;background:#ede9fe;flex-shrink:0;"><span style="color:#7c3aed;font-size:1.1rem;">🎯</span></div>' +
+          '<div class="rounded-3 d-flex align-items-center justify-content-center" style="width:40px;height:40px;background:#ede9fe;flex-shrink:0;color:#7c3aed;font-size:1.1rem;"><i class="fa-regular fa-bullseye-arrow"></i></div>' +
           '<div><h5 class="fw-bold mb-0">어떤 단계에 유용한가?</h5><div class="text-muted small">When to use</div></div>' +
           '</div>' +
           '<div class="rounded-3 p-4" style="background:#f5f3ff;border:1px solid #ddd6fe;white-space:pre-wrap;line-height:1.8;">' + fmtMd(a.usefulFor) + '</div>' +
@@ -1545,7 +1545,7 @@
         extra += '<div class="card mb-4 shadow-sm" style="border:2px solid #fed7aa!important;background:#fff7ed;">' +
           '<div class="card-body p-4">' +
           '<div class="d-flex align-items-center gap-3 mb-4">' +
-          '<div class="rounded-3 d-flex align-items-center justify-content-center" style="width:40px;height:40px;background:#ffedd5;flex-shrink:0;"><span style="color:#ea580c;font-size:1.1rem;">⚠️</span></div>' +
+          '<div class="rounded-3 d-flex align-items-center justify-content-center" style="width:40px;height:40px;background:#ffedd5;flex-shrink:0;color:#ea580c;font-size:1.1rem;"><i class="fa-regular fa-triangle-exclamation"></i></div>' +
           '<div><h5 class="fw-bold mb-0">참고할 때 주의사항</h5><div class="text-muted small">Important notes</div></div>' +
           '</div>' +
           '<div class="rounded-3 p-4" style="background:#fff;border:1px solid #fed7aa;white-space:pre-wrap;line-height:1.8;">' + fmtMd(a.cautions) + '</div>' +
@@ -1558,7 +1558,7 @@
       extra += '<div class="card mb-4 border-0 shadow-sm">' +
         '<div class="card-body p-4">' +
         '<div class="d-flex align-items-center gap-3 mb-4">' +
-        '<div class="rounded-3 d-flex align-items-center justify-content-center" style="width:40px;height:40px;background:#fef3c7;flex-shrink:0;"><span style="color:#d97706;font-size:1.1rem;">✨</span></div>' +
+        '<div class="rounded-3 d-flex align-items-center justify-content-center" style="width:40px;height:40px;background:#fef3c7;flex-shrink:0;color:#d97706;font-size:1.1rem;"><i class="fa-regular fa-sparkles"></i></div>' +
         '<div><h5 class="fw-bold mb-0">공유 자료 <span style="color:#d97706;">' + resCount + '개</span></h5><div class="text-muted small">Shared resources</div></div>' +
         '</div>' +
         '<div class="d-flex flex-column gap-3">';
@@ -1575,7 +1575,7 @@
           '<div class="text-muted small mb-2">' + r.description + '</div>' +
           '<div class="d-flex flex-wrap gap-1">' +
           (r.tags || []).map(function (t) { return '<span class="badge border text-secondary fs-70">' + t + '</span>'; }).join('') +
-          (r.stars ? '<span class="text-muted small">⭐ ' + r.stars + '</span>' : '') +
+          (r.stars ? '<span class="text-muted small"><i class="fa-regular fa-star me-1"></i>' + r.stars + '</span>' : '') +
           (r.duration ? '<span class="text-muted small">⏱ ' + r.duration + '</span>' : '') +
           (r.size ? '<span class="text-muted small">⬇️ ' + r.size + '</span>' : '') +
           '</div>' +
@@ -1584,8 +1584,8 @@
           '</div></div>' +
           '<div class="px-3 pb-3 d-flex gap-2">' +
           '<a href="' + (r.url || '#') + '" target="_blank" class="btn btn-sm flex-grow-1 text-white" style="background:' + tc.btnBg + ';">' + tc.btnText + '</a>' +
-          '<button class="btn btn-sm btn-outline-secondary">🔖</button>' +
-          '<button class="btn btn-sm btn-outline-secondary">🔗</button>' +
+          '<button class="btn btn-sm btn-outline-secondary"><i class="fa-regular fa-bookmark"></i></button>' +
+          '<button class="btn btn-sm btn-outline-secondary"><i class="fa-regular fa-link"></i></button>' +
           '</div>' +
           '</div>';
       });
@@ -1601,7 +1601,7 @@
         }).join('');
         extra += '<div class="card mb-4 border-0 shadow-sm">' +
           '<div class="card-body p-4">' +
-          '<h5 class="fw-bold mb-4">🖼️ 참고 이미지 및 회로도</h5>' +
+          '<h5 class="fw-bold mb-4"><i class="fa-regular fa-image me-1"></i> 참고 이미지 및 회로도</h5>' +
           '<div class="row g-3">' + imgGrid + '</div>' +
           '</div>' +
           '</div>';
@@ -1622,7 +1622,7 @@
             '</div>' +
             '<p class="small text-dark mb-2">' + c.content + '</p>' +
             '<div class="d-flex gap-2">' +
-            '<button class="btn btn-sm btn-link text-muted p-0 small">👍 ' + c.likes + '</button>' +
+            '<button class="btn btn-sm btn-link text-muted p-0 small"><i class="fa-regular fa-thumbs-up me-1"></i>' + c.likes + '</button>' +
             '<button class="btn btn-sm btn-link text-muted p-0 small">답글</button>' +
             '</div>' +
             '</div>' +
@@ -1635,13 +1635,13 @@
       $(document).off('click', '#res-like-btn').on('click', '#res-like-btn', function () {
         var liked = $(this).hasClass('btn-danger');
         $(this).toggleClass('btn-danger btn-outline-danger');
-        $(this).html(liked ? '❤️ 좋아요 ' + stats.likes : '❤️ 좋아요 ' + (stats.likes + 1));
+        $(this).html(liked ? '<i class="fa-regular fa-heart me-1"></i> 좋아요 ' + stats.likes : '<i class="fa-regular fa-heart me-1"></i> 좋아요 ' + (stats.likes + 1));
       });
       $(document).off('click', '#res-save-btn').on('click', '#res-save-btn', function () {
         var saved = $(this).data('saved');
         $(this).data('saved', !saved);
         $(this).toggleClass('btn-warning btn-outline-warning').css('color', saved ? '#d97706' : '#fff');
-        $(this).html(saved ? '🔖 저장하기 ' + stats.bookmarks : '🔖 저장됨 ' + (stats.bookmarks + 1));
+        $(this).html(saved ? '<i class="fa-regular fa-bookmark me-1"></i> 저장하기 ' + stats.bookmarks : '<i class="fa-regular fa-bookmark me-1"></i> 저장됨 ' + (stats.bookmarks + 1));
       });
       $(document).off('click', '#res-share-btn').on('click', '#res-share-btn', function () {
         if (navigator.clipboard) navigator.clipboard.writeText(window.location.href);
@@ -1664,12 +1664,12 @@
         '<div class="card-body p-4">' +
         '<h6 class="fw-bold mb-3">빠른 액션</h6>' +
         '<div class="d-flex flex-column gap-2 mb-3">' +
-        '<div class="d-flex align-items-center gap-2 small"><span style="color:#d97706;">🔖</span> <span>' + stats.bookmarks + '명 저장</span></div>' +
-        '<div class="d-flex align-items-center gap-2 small"><span style="color:#d97706;">❤️</span> <span>' + stats.likes + '개 좋아요</span></div>' +
-        '<div class="d-flex align-items-center gap-2 small"><span style="color:#d97706;">⬇️</span> <span>' + stats.downloads + '회 다운로드</span></div>' +
+        '<div class="d-flex align-items-center gap-2 small"><span style="color:#d97706;"><i class="fa-regular fa-bookmark"></i></span> <span>' + stats.bookmarks + '명 저장</span></div>' +
+        '<div class="d-flex align-items-center gap-2 small"><span style="color:#d97706;"><i class="fa-regular fa-heart"></i></span> <span>' + stats.likes + '개 좋아요</span></div>' +
+        '<div class="d-flex align-items-center gap-2 small"><span style="color:#d97706;"><i class="fa-regular fa-arrow-down"></i></span> <span>' + stats.downloads + '회 다운로드</span></div>' +
         '</div>' +
-        '<button class="btn w-100 mb-2 text-white" style="background:#d97706;" id="rs-save-btn">🔖 저장하기</button>' +
-        '<button class="btn btn-outline-secondary w-100" id="rs-like-btn">❤️ 좋아요</button>' +
+        '<button class="btn w-100 mb-2 text-white" style="background:#d97706;" id="rs-save-btn"><i class="fa-regular fa-bookmark me-1"></i> 저장하기</button>' +
+        '<button class="btn btn-outline-secondary w-100" id="rs-like-btn"><i class="fa-regular fa-heart me-1"></i> 좋아요</button>' +
         '</div>' +
         '</div>' +
 
@@ -1679,11 +1679,11 @@
         '<div class="d-flex justify-content-between small mb-3"><span class="text-muted">총 자료 수</span><span class="fw-semibold" style="color:#d97706;">' + resources.length + '개</span></div>' +
         '<hr class="my-2">' +
         '<div class="d-flex flex-column gap-2">' +
-        (githubCount > 0 ? '<div class="d-flex justify-content-between small"><span class="text-muted">🐙 GitHub</span><span class="fw-semibold">' + githubCount + '</span></div>' : '') +
+        (githubCount > 0 ? '<div class="d-flex justify-content-between small"><span class="text-muted"><i class="fa-brands fa-github me-1"></i> GitHub</span><span class="fw-semibold">' + githubCount + '</span></div>' : '') +
         (youtubeCount > 0 ? '<div class="d-flex justify-content-between small"><span class="text-muted">▶️ 영상</span><span class="fw-semibold">' + youtubeCount + '</span></div>' : '') +
         (docsCount > 0 ? '<div class="d-flex justify-content-between small"><span class="text-muted">📄 문서</span><span class="fw-semibold">' + docsCount + '</span></div>' : '') +
         (pdfCount > 0 ? '<div class="d-flex justify-content-between small"><span class="text-muted">📋 PDF</span><span class="fw-semibold">' + pdfCount + '</span></div>' : '') +
-        (blogCount > 0 ? '<div class="d-flex justify-content-between small"><span class="text-muted">🔗 블로그</span><span class="fw-semibold">' + blogCount + '</span></div>' : '') +
+        (blogCount > 0 ? '<div class="d-flex justify-content-between small"><span class="text-muted"><i class="fa-regular fa-link me-1"></i> 블로그</span><span class="fw-semibold">' + blogCount + '</span></div>' : '') +
         '</div>' +
         '</div>' +
         '</div>';
@@ -1701,7 +1701,7 @@
           '<div class="card-body p-3">' +
           '<div class="fw-bold small mb-1">연결된 프로젝트</div>' +
           '<a href="project-detail.html?id=' + a.project.id + '" class="fw-bold text-decoration-none d-block mb-2" style="color:#d97706;">' + a.project.name + '</a>' +
-          '<div class="text-muted small mb-2 d-flex align-items-center gap-2"><span style="color:#d97706;">🚀</span><span>' + (a.project.status || a.project.quest || '') + '</span></div>' +
+          '<div class="text-muted small mb-2 d-flex align-items-center gap-2"><span style="color:#d97706;"><i class="fa-regular fa-rocket"></i></span><span>' + (a.project.status || a.project.quest || '') + '</span></div>' +
           (a.contest ? '<div class="border-bottom pb-2 mb-2"><div class="text-muted fs-xs">참여 콘테스트</div><a href="#" class="text-primary text-decoration-none small fw-semibold">' + a.contest.name + '</a></div>' : '') +
           '<a href="project-detail.html?id=' + a.project.id + '" class="btn btn-sm w-100 text-white" style="background:#d97706;">프로젝트 보기</a>' +
           '</div>' +
@@ -1713,11 +1713,11 @@
         '<div class="card-body p-4">' +
         '<h6 class="fw-bold mb-3">통계</h6>' +
         '<div class="d-flex flex-column gap-2">' +
-        '<div class="d-flex justify-content-between small"><span class="text-muted">👁 조회수</span><span class="fw-semibold">' + stats.views + '</span></div>' +
-        '<div class="d-flex justify-content-between small"><span class="text-muted">🔖 저장</span><span class="fw-semibold" style="color:#d97706;">' + stats.bookmarks + '</span></div>' +
-        '<div class="d-flex justify-content-between small"><span class="text-muted">❤️ 좋아요</span><span class="fw-semibold">' + stats.likes + '</span></div>' +
-        '<div class="d-flex justify-content-between small"><span class="text-muted">⬇️ 다운로드</span><span class="fw-semibold">' + stats.downloads + '</span></div>' +
-        '<div class="d-flex justify-content-between small"><span class="text-muted">💬 댓글</span><span class="fw-semibold">' + (stats.comments || 0) + '</span></div>' +
+        '<div class="d-flex justify-content-between small"><span class="text-muted"><i class="fa-regular fa-eye me-1"></i> 조회수</span><span class="fw-semibold">' + stats.views + '</span></div>' +
+        '<div class="d-flex justify-content-between small"><span class="text-muted"><i class="fa-regular fa-bookmark me-1"></i> 저장</span><span class="fw-semibold" style="color:#d97706;">' + stats.bookmarks + '</span></div>' +
+        '<div class="d-flex justify-content-between small"><span class="text-muted"><i class="fa-regular fa-heart me-1"></i> 좋아요</span><span class="fw-semibold">' + stats.likes + '</span></div>' +
+        '<div class="d-flex justify-content-between small"><span class="text-muted"><i class="fa-regular fa-arrow-down me-1"></i> 다운로드</span><span class="fw-semibold">' + stats.downloads + '</span></div>' +
+        '<div class="d-flex justify-content-between small"><span class="text-muted"><i class="fa-regular fa-comment me-1"></i> 댓글</span><span class="fw-semibold">' + (stats.comments || 0) + '</span></div>' +
         '</div>' +
         '</div>' +
         '</div>' +
@@ -1728,7 +1728,7 @@
         '<div class="avatar-circle-lg text-white" style="background:' + avatarBg(a.initial) + ';">' + a.initial + '</div>' +
         '<div><div class="fw-bold">' + a.author + '</div><div class="text-muted small">프로젝트 ' + a.authorProjects + '개 완료</div></div>' +
         '</div>' +
-        '<button class="btn btn-outline-secondary btn-sm w-100">📧 메시지 보내기</button>' +
+        '<button class="btn btn-outline-secondary btn-sm w-100"><i class="fa-regular fa-envelope me-1"></i> 메시지 보내기</button>' +
         '</div>' +
         '</div>';
 
@@ -1737,11 +1737,11 @@
       $(document).off('click', '#rs-save-btn').on('click', '#rs-save-btn', function () {
         var saved = $(this).data('saved');
         $(this).data('saved', !saved);
-        $(this).toggleClass('btn-warning').css('background', saved ? '#d97706' : '').text(saved ? '🔖 저장하기' : '🔖 저장됨');
+        $(this).toggleClass('btn-warning').css('background', saved ? '#d97706' : '').html(saved ? '<i class="fa-regular fa-bookmark me-1"></i> 저장하기' : '<i class="fa-regular fa-bookmark me-1"></i> 저장됨');
       });
       $(document).off('click', '#rs-like-btn').on('click', '#rs-like-btn', function () {
         var liked = $(this).data('liked');
-        $(this).data('liked', !liked).toggleClass('btn-danger btn-outline-secondary').text(liked ? '❤️ 좋아요' : '❤️ 좋아요 취소');
+        $(this).data('liked', !liked).toggleClass('btn-danger btn-outline-secondary').html(liked ? '<i class="fa-regular fa-heart me-1"></i> 좋아요' : '<i class="fa-regular fa-heart me-1"></i> 좋아요 취소');
       });
     }
 
@@ -1811,7 +1811,7 @@
     });
     $('#save-btn').on('click', function () {
       saved = !saved;
-      $(this).toggleClass('saved', saved).text(saved ? '🔖 저장됨' : '🔖 저장하기');
+      $(this).toggleClass('saved', saved).html(saved ? '<i class="fa-regular fa-bookmark me-1"></i> 저장됨' : '<i class="fa-regular fa-bookmark me-1"></i> 저장하기');
     });
     $('#share-btn').on('click', function () {
       if (navigator.clipboard) { navigator.clipboard.writeText(window.location.href); }
