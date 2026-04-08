@@ -17,3 +17,17 @@
 
 ## Project Summary
 - Engineering developers community website
+
+
+# Assistant Rules
+
+## Output Format
+- Answer only what is asked. No preamble, no sign-off.
+- Code requests → code block only, no explanation unless asked
+- If answer fits in one sentence, use one sentence
+
+## Verbosity
+- Default: concise
+- Use bullet points only when 3+ items
+- No "Great question!", "Certainly!", "Of course!" type phrases
+

@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quest 2 완료! 음성 인식 모듈 통합 성공 — e4ds make</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+  <link rel="stylesheet" href="assets/css/custom.css">
+  <link rel="stylesheet" href="assets/css/output.css">
+  <link rel="stylesheet" href="assets/css/make2026-styles.css">
+  <script src="https://kit.fontawesome.com/38e89eef65.js" crossorigin="anonymous"></script>
+  <style>
+    body { font-family: 'Pretendard', sans-serif; }
+    .section-block { border-radius: 8px; padding: 1rem 1.25rem; margin-bottom: 1rem; }
+    .section-block h6 { font-size: 0.85rem; font-weight: 700; margin-bottom: 0.6rem; }
+    .section-block p,
+    .section-block ul,
+    .section-block li { font-size: 0.85rem; line-height: 1.7; }
+    .section-block ul { padding-left: 1.2rem; margin-bottom: 0; }
+    .block-blue   { background-color: #eef2ff; }
+    .block-green  { background-color: #f0fdf4; }
+    .block-orange { background-color: #fff7ed; }
+    .block-purple { background-color: #faf5ff; }
+    .block-teal   { background-color: #f0fdfa; }
+    .sidebar-card { background: #f8f9fa; border-radius: 8px; padding: 1rem; margin-bottom: 1rem; }
+    .sidebar-card h6 { font-size: 0.8rem; font-weight: 700; margin-bottom: 0.75rem; }
+    .stat-row { display: flex; justify-content: space-between; font-size: 0.82rem; padding: 0.25rem 0; }
+    .comment-avatar { width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.8rem; font-weight: 700; flex-shrink: 0; }
+  </style>
+</head>
+
+<body class="bg-light">
+
+  <!-- HEADER -->
+  <header id="platform-header" class="bg-white border-bottom sticky-top shadow-sm">
+    <div class="border-bottom border-light">
+      <div class="container-xl">
+        <div class="d-flex align-items-center justify-content-between topbar-inner">
+          <small class="text-muted" id="header-date"></small>
+          <div class="d-flex align-items-center gap-3">
+            <a href="login.html" class="text-secondary text-decoration-none small header-toplink auth-loggedout-only">로그인</a>
+            <a href="signup.html" class="text-secondary text-decoration-none small header-toplink auth-loggedout-only">회원가입</a>
+            <a href="support.html" class="text-secondary text-decoration-none small header-toplink">고객센터</a>
+            <a href="#" class="text-secondary text-decoration-none small header-toplink">홈사이트</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container-xl">
+      <nav class="navbar navbar-expand-lg px-0">
+        <a class="navbar-brand fw-bold fs-5 me-4" href="index.html">
+          <span class="text-dark">e</span><span class="text-warning">4</span><span class="text-dark">ds</span>
+          <span class="fw-normal text-secondary ms-1 brand-text">make</span>
+        </a>
+        <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavCollapse" aria-controls="mainNavCollapse" aria-expanded="false" aria-label="메뉴 열기">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="mainNavCollapse">
+          <ul class="navbar-nav me-auto">
+            <li class="nav-item"><a class="nav-link fw-medium text-dark" href="community.html">커뮤니티</a></li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Breadcrumb -->
+    <div class="bg-white border-bottom">
+      <div class="container-xl py-3">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb mb-0 small">
+            <li class="breadcrumb-item"><a href="index.html" class="text-decoration-none">홈</a></li>
+            <li class="breadcrumb-item"><a href="community.html" class="text-decoration-none">커뮤니티</a></li>
+            <li class="breadcrumb-item"><a href="community-share.html" class="text-decoration-none">진행공유</a></li>
+            <li class="breadcrumb-item active">Quest 2 완료!</li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+
+    <div class="container-xl py-4">
+      <div class="row g-4">
+
+        <!-- ===== MAIN CONTENT ===== -->
+        <article class="col-lg-8">
+          <div class="bg-white rounded-3 shadow-sm p-4">
+
+            <!-- Post Meta Badges -->
+            <div class="d-flex gap-2 mb-3">
+              <span class="badge bg-primary-subtle text-primary" style="font-size:0.75rem;">진행공유</span>
+              <span class="badge bg-success-subtle text-success" style="font-size:0.75rem;">✅ 완료</span>
+            </div>
+
+            <!-- Title -->
+            <h1 class="fw-bold mb-3" style="font-size:1.2rem; line-height:1.5;">Quest 2 완료! 음성 인식 모듈 통합 성공 🎉</h1>
+
+            <!-- Author + Date -->
+            <div class="d-flex align-items-center gap-2 mb-4">
+              <div class="avatar-circle bg-warning text-white" style="width:36px;height:36px;font-size:0.85rem;">최</div>
+              <div>
+                <div class="fw-semibold" style="font-size:0.875rem;">최메이커</div>
+                <div class="text-muted" style="font-size:0.8rem;">프로젝트 6 · 기여 28 · <time datetime="2026-04-07T15:30:00">30분 전</time></div>
+              </div>
+            </div>
+
+            <!-- Stats Bar -->
+            <div class="d-flex gap-4 border-top border-bottom py-2 mb-4" style="font-size:0.82rem;">
+              <span class="text-muted">👁️ 조회 <strong class="text-dark">234</strong></span>
+              <span class="text-muted">👍 좋아요 <strong class="text-dark">56</strong></span>
+              <span class="text-muted">💬 댓글 <strong class="text-dark">18</strong></span>
+              <span class="text-muted">🔖 저장 <strong class="text-dark">23</strong></span>
+            </div>
+
+            <!-- Section 1: 이번 Quest에서는 (blue) -->
+            <div class="section-block block-blue">
+              <h6>📌 이번 Quest에서는</h6>
+              <p class="mb-2">스마트 미러에 음성 인식 기능을 통합하는 작업을 진행했습니다.</p>
+              <h6 class="mt-3">주요 작업 내용</h6>
+              <ul>
+                <li>Google Speech-to-Text API 연동</li>
+                <li>한국어 음성 명령어 파싱 로직 구현</li>
+                <li>Wake Word 감지 기능 추가 ("거울아" 호출어 설정)</li>
+                <li>마이크 배치 최적화 및 노이즈 캔슬링</li>
+              </ul>
+              <h6 class="mt-3">기술 스택</h6>
+              <ul>
+                <li>Google Cloud Speech API</li>
+                <li>Python 3.9 / PyAudio</li>
+                <li>라즈베리파이 4B (4GB RAM)</li>
+              </ul>
+            </div>
+
+            <!-- Section 2: 완료된 작업 목록 (green) -->
+            <div class="section-block block-green">
+              <h6>✅ 완료된 작업</h6>
+              <ul>
+                <li>Google Cloud 프로젝트 생성 및 API 키 발급</li>
+                <li>Speech-to-Text API 연동 및 테스트</li>
+                <li>실시간 오디오 스트리밍 파이프라인 구축</li>
+                <li>Wake Word 감지 알고리즘 구현</li>
+                <li>한국어 명령어 인식률 테스트 (목표: 90% 이상) ✅ 달성</li>
+                <li>마이크 위치 최적화 (거울 상단 중앙 배치)</li>
+                <li>노이즈 필터링 구현 (배경 소음 제거)</li>
+                <li>응답 속도 최적화 (평균 0.8초 내)</li>
+              </ul>
+            </div>
+
+            <!-- Section 3: 기술 상세 (orange) -->
+            <div class="section-block block-orange">
+              <h6>🔧 기술 상세 내용</h6>
+              <p class="mb-2">Google Cloud Speech API를 활용하여 실시간 한국어 음성 인식 시스템을 구축했습니다.</p>
+              <h6 class="mt-3">구현 세부 사항</h6>
+              <ul>
+                <li>Streaming Recognition API를 이용한 실시간 처리</li>
+                <li>PyAudio로 마이크 입력 스트리밍 파이프라인 구성</li>
+                <li>WebRTC VAD 라이브러리로 음성 감지 구현</li>
+                <li>Porcupine으로 "거울아" Wake Word 감지 구현</li>
+              </ul>
+            </div>
+
+            <!-- Section 4: 단계별 진행 (purple) -->
+            <div class="section-block block-purple">
+              <h6>🗂️ 단계별 진행 상황</h6>
+              <ul>
+                <li>1단계: Google Cloud 환경 설정 및 API 키 발급 완료</li>
+                <li>2단계: 기본 음성 인식 테스트 완료 (정확도 72%)</li>
+                <li>3단계: Wake Word 시스템 구현 완료</li>
+                <li>4단계: 노이즈 캔슬링 적용 후 정확도 향상 (90% 달성)</li>
+                <li>5단계: 마이크 위치 최적화 및 최종 테스트 완료</li>
+              </ul>
+            </div>
+
+            <!-- Section 5: 사용 도구 (teal) -->
+            <div class="section-block block-teal">
+              <h6>🛠️ 사용 도구</h6>
+              <ul>
+                <li><strong>IDE:</strong> VS Code + Python Extension</li>
+                <li><strong>음성처리:</strong> Google Cloud Speech-to-Text API</li>
+                <li><strong>오디오:</strong> PyAudio, SpeechRecognition</li>
+                <li><strong>Wake Word:</strong> Porcupine (Picovoice)</li>
+                <li><strong>하드웨어:</strong> Raspberry Pi 4B, USB Microphone</li>
+              </ul>
+            </div>
+
+            <!-- Images -->
+            <div class="mb-4">
+              <div class="row g-2">
+                <div class="col-6">
+                  <div class="rounded-2 overflow-hidden" style="height:130px;background:linear-gradient(135deg,#cfd8e8,#b0bec5);">
+                    <div class="w-100 h-100 d-flex align-items-center justify-content-center text-muted small">마이크 설치 사진</div>
+                  </div>
+                </div>
+                <div class="col-6">
+                  <div class="rounded-2 overflow-hidden" style="height:130px;background:linear-gradient(135deg,#1a1a2e,#16213e);">
+                    <div class="w-100 h-100 d-flex align-items-center justify-content-center text-white small">터미널 화면</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Section 6: 다음 Quest -->
+            <div class="section-block block-blue">
+              <h6>🎯 Quest 3 준비 작업</h6>
+              <ul>
+                <li>음성 응답 TTS 시스템 구축 (착수 완료)</li>
+                <li>날씨, 뉴스 등 외부 API 연동</li>
+                <li>일정 관리 기능 구현</li>
+                <li>UI 개선 및 애니메이션 추가</li>
+              </ul>
+            </div>
+
+            <!-- Hashtags -->
+            <div class="mb-4 mt-3" style="font-size:0.82rem;">
+              <span class="badge border text-secondary me-2 fw-normal px-2 py-1">#AI</span>
+              <span class="badge border text-secondary me-2 fw-normal px-2 py-1">#음성인식</span>
+              <span class="badge border text-secondary me-2 fw-normal px-2 py-1">#Quest2</span>
+              <span class="badge border text-secondary fw-normal px-2 py-1">#스마트미러</span>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="d-flex gap-2 pt-3 border-top">
+              <button class="btn btn-outline-secondary btn-sm" style="font-size:0.82rem;">👍 좋아요</button>
+              <button class="btn btn-outline-secondary btn-sm" style="font-size:0.82rem;">🔖 저장하기</button>
+              <button class="btn btn-outline-secondary btn-sm" style="font-size:0.82rem;">🔗 공유</button>
+            </div>
+          </div>
+
+          <!-- ===== COMMENTS ===== -->
+          <div class="bg-white rounded-3 shadow-sm p-4 mt-4">
+            <h6 class="fw-bold mb-4" style="font-size:0.95rem;">댓글 <span class="text-muted fw-normal">2개</span></h6>
+
+            <!-- Comment Input -->
+            <div class="d-flex gap-3 mb-4">
+              <div class="comment-avatar bg-primary text-white">나</div>
+              <div class="flex-grow-1">
+                <textarea class="form-control mb-2" rows="2" placeholder="댓글을 작성하세요..." style="font-size:0.85rem; resize:none;"></textarea>
+                <button class="btn btn-primary btn-sm" style="font-size:0.82rem;">댓글 달기</button>
+              </div>
+            </div>
+
+            <!-- Comments -->
+            <div class="border-top pt-3">
+              <div class="d-flex gap-3 mb-4">
+                <div class="comment-avatar bg-info text-white">이</div>
+                <div>
+                  <div class="fw-semibold" style="font-size:0.875rem;">이개발 <span class="text-muted fw-normal" style="font-size:0.8rem;">· 1시간 전</span></div>
+                  <p style="font-size:0.85rem; margin-top:0.35rem; margin-bottom:0;">음성인식 90% 달성 정말 대단하네요! Wake Word 구현이 특히 인상적입니다.</p>
+                </div>
+              </div>
+              <div class="d-flex gap-3">
+                <div class="comment-avatar bg-success text-white">박</div>
+                <div>
+                  <div class="fw-semibold" style="font-size:0.875rem;">박메이커 <span class="text-muted fw-normal" style="font-size:0.8rem;">· 30분 전</span></div>
+                  <p style="font-size:0.85rem; margin-top:0.35rem; margin-bottom:0;">라즈베리파이에서 이 정도 구현이라니 대단합니다. 노이즈 캔슬링 알고리즘이 궁금합니다!</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- ===== SIDEBAR ===== -->
+        <aside class="col-lg-4">
+          <div class="sticky-top sticky-top-110">
+
+            <!-- Author Card -->
+            <div class="sidebar-card">
+              <h6>작성자</h6>
+              <div class="d-flex align-items-center gap-3 mb-3">
+                <div class="avatar-circle bg-warning text-white" style="width:46px;height:46px;">최</div>
+                <div>
+                  <div class="fw-bold" style="font-size:0.9rem;">최메이커</div>
+                  <div class="text-muted" style="font-size:0.8rem;">프로젝트 6 · 기여 28</div>
+                </div>
+              </div>
+              <button class="btn btn-outline-secondary btn-sm w-100" style="font-size:0.82rem;">프로필 보기</button>
+            </div>
+
+            <!-- Project Card (gradient) -->
+            <div class="mb-3 rounded-3 overflow-hidden shadow-sm">
+              <div style="height:100px; background:linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);"></div>
+              <div class="bg-white p-3">
+                <div class="fw-bold mb-1" style="font-size:0.875rem;">스마트 미러 v2</div>
+                <span class="badge bg-primary-subtle text-primary mb-2" style="font-size:0.75rem;">Quest 2/3 진행중</span>
+                <div><a href="#" class="btn btn-outline-primary btn-sm w-100" style="font-size:0.82rem;">프로젝트 보기</a></div>
+              </div>
+            </div>
+
+            <!-- Write + Subscribe Buttons -->
+            <div class="mb-3">
+              <button class="btn btn-primary w-100 mb-2" style="font-size:0.875rem;">✏️ 진행공유 작성</button>
+              <button class="btn btn-outline-secondary w-100" style="font-size:0.875rem;">🔔 구독하기</button>
+            </div>
+
+            <!-- Stats Info -->
+            <div class="sidebar-card">
+              <h6>통계</h6>
+              <div class="stat-row border-bottom pb-2 mb-2">
+                <span class="text-muted">조회수</span>
+                <span class="fw-semibold">234</span>
+              </div>
+              <div class="stat-row border-bottom pb-2 mb-2">
+                <span class="text-muted">좋아요</span>
+                <span class="fw-semibold">56</span>
+              </div>
+              <div class="stat-row">
+                <span class="text-muted">댓글</span>
+                <span class="fw-semibold">2</span>
+              </div>
+            </div>
+
+            <!-- Tip -->
+            <div class="sidebar-card">
+              <h6>💡 팁</h6>
+              <p class="text-muted mb-0" style="font-size:0.8rem; line-height:1.6;">자신의 경험과 배운 점을 공유하면 다른 사람들에게 큰 도움이 됩니다. 실패담도 가치있는 경험입니다!</p>
+            </div>
+
+          </div>
+        </aside>
+
+      </div>
+    </div>
+  </main>
+
+  <footer class="bg-dark text-light py-5 mt-5">
+    <div class="container-xl">
+      <div class="row g-4">
+        <div class="col-md-4">
+          <h6 class="fw-bold mb-3">e4ds make</h6>
+          <p class="small text-muted mb-0">메이커를 위한 통합 플랫폼</p>
+        </div>
+        <div class="col-md-4">
+          <h6 class="fw-bold mb-3">빠른 링크</h6>
+          <ul class="list-unstyled small mb-0">
+            <li><a href="community.html" class="text-light text-decoration-none">커뮤니티</a></li>
+            <li><a href="projects.html" class="text-light text-decoration-none">프로젝트</a></li>
+            <li><a href="contests.html" class="text-light text-decoration-none">콘테스트</a></li>
+          </ul>
+        </div>
+        <div class="col-md-4">
+          <h6 class="fw-bold mb-3">지원</h6>
+          <ul class="list-unstyled small mb-0">
+            <li><a href="#" class="text-light text-decoration-none">고객센터</a></li>
+            <li><a href="#" class="text-light text-decoration-none">이용약관</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="border-top border-secondary mt-4 pt-4">
+        <small class="text-muted">© 2026 e4ds make. All rights reserved.</small>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55ND4ssVP5YctiAiYigxPStZWNvGbS" crossorigin="anonymous"></script>
+  <script src="assets/js/main.js"></script>
+  <script>
+    $('#header-date').text(new Date().toLocaleDateString('ko-KR', { weekday: 'long', month: 'long', day: 'numeric' }));
+  </script>
+</body>
+
+</html>
