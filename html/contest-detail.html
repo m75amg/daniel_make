@@ -372,11 +372,11 @@
         <div class="tab-pane fade" id="tab-quests">
 
           <!-- Info Box -->
-          <div class="rounded-4 p-4 mb-5 d-flex gap-4 card-bg-blue-border1">
-            <div class="step-circle bg-primary text-white flex-shrink-0"><i class="fa-regular fa-lightbulb"></i></div>
-            <div>
-              <h5 class="fw-bold mb-2">Quest는 프로젝트를 완성하는 단계별 여정입니다</h5>
-              <p class="text-secondary mb-0 lh-180">
+          <div class="cd-quest-infobox mb-5">
+            <div class="cd-quest-infobox-icon"><i class="fa-regular fa-lightbulb"></i></div>
+            <div class="cd-quest-infobox-body">
+              <p class="cd-quest-infobox-title">Quest는 프로젝트를 완성하는 단계별 여정입니다</p>
+              <p class="cd-quest-infobox-text">
                 각 Quest는 독립된 제출물이 아닌, <strong>하나의 프로젝트를 발전시키는 과정</strong>입니다.
                 Quest 1에서 시작한 프로젝트가 Quest 2, 3를 거치며 점점 완성되어 갑니다.
                 모든 Quest를 완료하면 플랫폼에 등록된 완성된 프로젝트 하나가 탄생합니다.
@@ -385,107 +385,90 @@
           </div>
 
           <!-- Quest 1 (완료) -->
-          <div class="card border-0 shadow-sm mb-4 rounded-4 overflow-hidden quest-card-done">
-            <div class="p-5 quest-card-done-header">
-              <div class="d-flex align-items-start justify-content-between gap-3">
-                <div class="d-flex align-items-start gap-4 flex-grow-1">
-                  <div class="quest-circle bg-success text-white"><i class="fa-regular fa-check"></i></div>
-                  <div class="flex-grow-1">
-                    <h3 class="fw-bold fs-4 mb-1">Quest 1: 프로젝트 기획 및 설계</h3>
-                    <p class="text-secondary mb-3">로봇의 컨셉과 기능을 정의하고 설계도를 작성하세요</p>
-                    <div class="d-flex flex-column gap-1 small text-secondary">
-                      <div class="d-flex align-items-center gap-2"><i class="fa-regular fa-calendar text-primary"></i><span class="fw-semibold">시작일:</span><span>2026-03-01</span></div>
-                      <div class="d-flex align-items-center gap-2"><i class="fa-regular fa-circle-check text-success"></i><span class="fw-semibold">정상 마감:</span><span>2026-03-25</span></div>
-                      <div class="d-flex align-items-center gap-2"><i class="fa-regular fa-triangle-exclamation text-warning"></i><span class="fw-semibold">지각 제출 가능:</span><span>2026-03-30까지</span></div>
-                    </div>
-                  </div>
+          <div class="qc qc-done mb-4">
+            <div class="qc-hero">
+              <div class="qc-num qc-num-done"><i class="fa-solid fa-check"></i></div>
+              <div class="qc-hero-info">
+                <div class="d-flex align-items-center gap-2 mb-2">
+                  <span class="qc-status-badge qc-status-done"><i class="fa-solid fa-circle-check me-1"></i>완료</span>
+                  <span class="qc-score">100점</span>
                 </div>
-                <div class="text-end flex-shrink-0">
-                  <span class="badge bg-success px-3 py-2 mb-2 d-block"><i class="fa-regular fa-check me-1"></i> 완료</span>
-                  <div class="fw-bold fs-3 text-dark">100점</div>
+                <h3 class="qc-title">Quest 1 · 프로젝트 기획 및 설계</h3>
+                <p class="qc-desc">로봇의 컨셉과 기능을 정의하고 설계도를 작성하세요</p>
+                <div class="qc-dates">
+                  <span><i class="fa-regular fa-calendar me-1"></i>2026-03-01 ~ 2026-03-25</span>
+                  <span class="qc-date-late"><i class="fa-regular fa-triangle-exclamation me-1"></i>지각 마감 3월 30일</span>
                 </div>
               </div>
             </div>
-            <div class="card-body p-5">
-              <h6 class="fw-bold mb-3">제출 요구사항</h6>
-              <ul class="list-unstyled d-flex flex-column gap-2 mb-0">
-                <li class="d-flex align-items-start gap-3"><i class="fa-regular fa-circle-check text-success mt-1"></i><span class="text-secondary">프로젝트 목표 및 컨셉 정의</span></li>
-                <li class="d-flex align-items-start gap-3"><i class="fa-regular fa-circle-check text-success mt-1"></i><span class="text-secondary">하드웨어 구성도 작성</span></li>
-                <li class="d-flex align-items-start gap-3"><i class="fa-regular fa-circle-check text-success mt-1"></i><span class="text-secondary">소프트웨어 아키텍처 설계</span></li>
-                <li class="d-flex align-items-start gap-3"><i class="fa-regular fa-circle-check text-success mt-1"></i><span class="text-secondary">예상 타임라인 작성</span></li>
+            <div class="qc-body">
+              <p class="qc-req-label"><i class="fa-regular fa-list-check me-1"></i>제출 요구사항</p>
+              <ul class="qc-req-list">
+                <li><i class="fa-solid fa-check"></i>프로젝트 목표 및 컨셉 정의</li>
+                <li><i class="fa-solid fa-check"></i>하드웨어 구성도 작성</li>
+                <li><i class="fa-solid fa-check"></i>소프트웨어 아키텍처 설계</li>
+                <li><i class="fa-solid fa-check"></i>예상 타임라인 작성</li>
               </ul>
             </div>
           </div>
 
           <!-- Quest 2 (정상 제출 가능) -->
-          <div class="card border-0 shadow-sm mb-4 rounded-4 overflow-hidden">
-            <div class="p-5 bg-light border-bottom">
-              <div class="d-flex align-items-start justify-content-between gap-3">
-                <div class="d-flex align-items-start gap-4 flex-grow-1">
-                  <div class="quest-circle bg-primary text-white fw-bold">2</div>
-                  <div class="flex-grow-1">
-                    <h3 class="fw-bold fs-4 mb-1">Quest 2: 프로토타입 제작</h3>
-                    <p class="text-secondary mb-3">설계한 로봇의 초기 프로토타입을 제작하고 기본 동작을 구현하세요</p>
-                    <div class="d-flex flex-column gap-1 small text-secondary">
-                      <div class="d-flex align-items-center gap-2"><i class="fa-regular fa-calendar text-primary"></i><span class="fw-semibold">시작일:</span><span>2026-03-26</span></div>
-                      <div class="d-flex align-items-center gap-2 align-items-center">
-                        <i class="fa-regular fa-circle-check text-success"></i><span class="fw-semibold">정상 마감:</span><span>2026-04-10</span>
-                        <span class="badge bg-success-subtle text-success ms-1">14일 남음</span>
-                      </div>
-                      <div class="d-flex align-items-center gap-2"><i class="fa-regular fa-triangle-exclamation text-warning"></i><span class="fw-semibold">지각 제출 가능:</span><span>2026-04-13까지</span></div>
-                    </div>
-                  </div>
+          <div class="qc qc-active mb-4">
+            <div class="qc-hero">
+              <div class="qc-num qc-num-active">2</div>
+              <div class="qc-hero-info">
+                <div class="d-flex align-items-center gap-2 mb-2">
+                  <span class="qc-status-badge qc-status-active"><i class="fa-regular fa-clock me-1"></i>정상 제출 가능</span>
+                  <span class="qc-score">150점</span>
+                  <span class="qc-dday">D-14</span>
                 </div>
-                <div class="text-end flex-shrink-0">
-                  <span class="badge bg-primary px-3 py-2 mb-2 d-block"><i class="fa-regular fa-clock me-1"></i> 정상 제출 가능</span>
-                  <div class="fw-bold fs-3 text-dark">150점</div>
+                <h3 class="qc-title">Quest 2 · 프로토타입 제작</h3>
+                <p class="qc-desc">설계한 로봇의 초기 프로토타입을 제작하고 기본 동작을 구현하세요</p>
+                <div class="qc-dates">
+                  <span><i class="fa-regular fa-calendar me-1"></i>2026-03-26 ~ 2026-04-10</span>
+                  <span class="qc-date-late"><i class="fa-regular fa-triangle-exclamation me-1"></i>지각 마감 4월 13일</span>
                 </div>
               </div>
             </div>
-            <div class="card-body p-5">
-              <h6 class="fw-bold mb-3">제출 요구사항</h6>
-              <ul class="list-unstyled d-flex flex-column gap-2 mb-4">
-                <li class="d-flex align-items-start gap-3"><i class="fa-regular fa-square text-muted mt-1"></i><span class="text-secondary">하드웨어 조립 및 배선</span></li>
-                <li class="d-flex align-items-start gap-3"><i class="fa-regular fa-square text-muted mt-1"></i><span class="text-secondary">기본 센서 테스트</span></li>
-                <li class="d-flex align-items-start gap-3"><i class="fa-regular fa-square text-muted mt-1"></i><span class="text-secondary">모터 제어 구현</span></li>
-                <li class="d-flex align-items-start gap-3"><i class="fa-regular fa-square text-muted mt-1"></i><span class="text-secondary">프로토타입 영상 촬영</span></li>
+            <div class="qc-body">
+              <p class="qc-req-label"><i class="fa-regular fa-list-check me-1"></i>제출 요구사항</p>
+              <ul class="qc-req-list">
+                <li><i class="fa-regular fa-square"></i>하드웨어 조립 및 배선</li>
+                <li><i class="fa-regular fa-square"></i>기본 센서 테스트</li>
+                <li><i class="fa-regular fa-square"></i>모터 제어 구현</li>
+                <li><i class="fa-regular fa-square"></i>프로토타입 영상 촬영</li>
               </ul>
-              <a href="#" onclick="Auth.requireLogin(function(){ window.location.href='create-contest-project.html'; }); return false;" class="btn btn-primary w-100"><i class="fa-regular fa-upload me-1"></i> 제출하기</a>
+              <a href="#" onclick="Auth.requireLogin(function(){ window.location.href='create-contest-project.html'; }); return false;" class="btn qc-submit-btn mt-3"><i class="fa-regular fa-upload me-2"></i>제출하기</a>
             </div>
           </div>
 
           <!-- Quest 3 (시작 전) -->
-          <div class="card border-0 shadow-sm mb-4 rounded-4 overflow-hidden opacity-80">
-            <div class="p-5 border-bottom bg-gray-100">
-              <div class="d-flex align-items-start justify-content-between gap-3">
-                <div class="d-flex align-items-start gap-4 flex-grow-1">
-                  <div class="quest-circle text-white fw-bold bg-gray-400">3</div>
-                  <div class="flex-grow-1">
-                    <h3 class="fw-bold fs-4 mb-1">Quest 3: 최종 프로젝트 완성</h3>
-                    <p class="text-secondary mb-3">AI 기능을 통합하고 최종 테스트를 완료하여 프로젝트를 완성하세요</p>
-                    <div class="d-flex flex-column gap-1 small text-secondary">
-                      <div class="d-flex align-items-center gap-2"><i class="fa-regular fa-calendar text-primary"></i><span class="fw-semibold">시작일:</span><span>2026-04-11</span></div>
-                      <div class="d-flex align-items-center gap-2"><i class="fa-regular fa-circle-check text-success"></i><span class="fw-semibold">정상 마감:</span><span>2026-04-25</span></div>
-                      <div class="d-flex align-items-center gap-2"><i class="fa-regular fa-triangle-exclamation text-warning"></i><span class="fw-semibold">지각 제출 가능:</span><span>2026-04-27까지</span></div>
-                    </div>
-                  </div>
+          <div class="qc qc-pending mb-4">
+            <div class="qc-hero">
+              <div class="qc-num qc-num-pending">3</div>
+              <div class="qc-hero-info">
+                <div class="d-flex align-items-center gap-2 mb-2">
+                  <span class="qc-status-badge qc-status-pending"><i class="fa-regular fa-hourglass me-1"></i>시작 전</span>
+                  <span class="qc-score">200점</span>
                 </div>
-                <div class="text-end flex-shrink-0">
-                  <span class="badge px-3 py-2 mb-2 d-block text-white bg-gray-400"><i class="fa-regular fa-hourglass me-1"></i> 시작 전</span>
-                  <div class="fw-bold fs-3 text-dark">200점</div>
+                <h3 class="qc-title">Quest 3 · 최종 프로젝트 완성</h3>
+                <p class="qc-desc">AI 기능을 통합하고 최종 테스트를 완료하여 프로젝트를 완성하세요</p>
+                <div class="qc-dates">
+                  <span><i class="fa-regular fa-calendar me-1"></i>2026-04-11 ~ 2026-04-25</span>
+                  <span class="qc-date-late"><i class="fa-regular fa-triangle-exclamation me-1"></i>지각 마감 4월 27일</span>
                 </div>
               </div>
             </div>
-            <div class="card-body p-5">
-              <h6 class="fw-bold mb-3">제출 요구사항</h6>
-              <ul class="list-unstyled d-flex flex-column gap-2 mb-4">
-                <li class="d-flex align-items-start gap-3"><i class="fa-regular fa-square text-muted mt-1"></i><span class="text-secondary">AI 비전 또는 음성인식 통합</span></li>
-                <li class="d-flex align-items-start gap-3"><i class="fa-regular fa-square text-muted mt-1"></i><span class="text-secondary">자율주행 또는 장애물 회피 구현</span></li>
-                <li class="d-flex align-items-start gap-3"><i class="fa-regular fa-square text-muted mt-1"></i><span class="text-secondary">최종 테스트 및 디버깅</span></li>
-                <li class="d-flex align-items-start gap-3"><i class="fa-regular fa-square text-muted mt-1"></i><span class="text-secondary">완성된 프로젝트 문서화</span></li>
-                <li class="d-flex align-items-start gap-3"><i class="fa-regular fa-square text-muted mt-1"></i><span class="text-secondary">시연 영상 제작</span></li>
+            <div class="qc-body">
+              <p class="qc-req-label"><i class="fa-regular fa-list-check me-1"></i>제출 요구사항</p>
+              <ul class="qc-req-list">
+                <li><i class="fa-regular fa-square"></i>AI 비전 또는 음성인식 통합</li>
+                <li><i class="fa-regular fa-square"></i>자율주행 또는 장애물 회피 구현</li>
+                <li><i class="fa-regular fa-square"></i>최종 테스트 및 디버깅</li>
+                <li><i class="fa-regular fa-square"></i>완성된 프로젝트 문서화</li>
+                <li><i class="fa-regular fa-square"></i>시연 영상 제작</li>
               </ul>
-              <button class="btn w-100 text-white bg-gray-400" disabled><i class="fa-regular fa-hourglass me-1"></i> 아직 시작 전입니다</button>
+              <button class="btn qc-disabled-btn mt-3" disabled><i class="fa-regular fa-hourglass me-2"></i>아직 시작 전입니다</button>
             </div>
           </div>
         </div>

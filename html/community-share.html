@@ -6,10 +6,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>커뮤니티 - 진행공유 — e4ds make</title>
   <meta name="description" content="e4ds make 커뮤니티의 프로젝트 진행 공유. Quest 진행 상황, 경험 공유, 학습 과정.">
-  <meta name="keywords" content="커뮤니티, 진행공유, Quest, 프로젝트, 경험공유">
+  <meta property="og:title" content="커뮤니티 진행공유 — e4ds make">
+  <meta property="og:type" content="article">
 
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
   <link rel="stylesheet" href="assets/css/custom.css">
   <link rel="stylesheet" href="assets/css/output.css">
   <link rel="stylesheet" href="assets/css/make2026-styles.css">
@@ -18,7 +20,7 @@
 
 <body class="bg-light">
 
-  <!-- HEADER -->
+  <!-- ===== PLATFORM HEADER ===== -->
   <header id="platform-header" class="bg-white border-bottom sticky-top shadow-sm">
     <div class="border-bottom border-light">
       <div class="container-xl">
@@ -44,13 +46,63 @@
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="mainNavCollapse">
-          <ul class="navbar-nav me-auto">
+          <ul class="navbar-nav me-auto gap-lg-1">
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle fw-medium text-dark" href="#" data-bs-toggle="dropdown">News</a>
+              <ul class="dropdown-menu shadow-sm border-0">
+                <li><a class="dropdown-item" href="#">최신 뉴스</a></li>
+                <li><a class="dropdown-item" href="notices.html">공지사항</a></li>
+              </ul>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle fw-medium text-dark" href="#" data-bs-toggle="dropdown">Technologies</a>
+              <ul class="dropdown-menu shadow-sm border-0">
+                <li><a class="dropdown-item" href="#">임베디드</a></li>
+                <li><a class="dropdown-item" href="#">IoT</a></li>
+                <li><a class="dropdown-item" href="#">AI/ML</a></li>
+              </ul>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle fw-medium text-dark" href="#" data-bs-toggle="dropdown">Industries</a>
+              <ul class="dropdown-menu shadow-sm border-0">
+                <li><a class="dropdown-item" href="#">자동차</a></li>
+                <li><a class="dropdown-item" href="#">의료</a></li>
+                <li><a class="dropdown-item" href="#">산업자동화</a></li>
+              </ul>
+            </li>
             <li class="nav-item">
-              <a class="nav-link fw-medium text-dark" href="community.html">커뮤니티</a>
+              <a class="nav-link fw-medium text-dark" href="events.html">EEWebinar</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle fw-medium text-dark active" href="#" data-bs-toggle="dropdown">Maker's Zone</a>
+              <ul class="dropdown-menu shadow-sm border-0">
+                <li><a class="dropdown-item" href="projects.html">프로젝트</a></li>
+                <li><a class="dropdown-item" href="contests.html">콘테스트</a></li>
+                <li><a class="dropdown-item active" href="community.html">커뮤니티</a></li>
+                <li><a class="dropdown-item" href="my-make.html">마이메이크</a></li>
+              </ul>
             </li>
           </ul>
+          <div class="d-flex align-items-center gap-2 ms-lg-2">
+            <button class="btn btn-light btn-sm p-2 rounded-3" id="header-search-btn" title="검색">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+            </button>
+            <button class="btn btn-light btn-sm p-2 rounded-3" id="header-user-btn" title="프로필">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            </button>
+          </div>
         </div>
       </nav>
+    </div>
+
+    <div id="header-search-bar" class="border-top bg-light d-none">
+      <div class="container-xl py-2">
+        <form class="d-flex gap-2">
+          <input type="search" class="form-control form-control-sm" placeholder="검색어를 입력하세요...">
+          <button type="submit" class="btn btn-primary btn-sm px-3">검색</button>
+          <button type="button" class="btn btn-light btn-sm" id="header-search-close">닫기</button>
+        </form>
+      </div>
     </div>
   </header>
 
@@ -70,192 +122,342 @@
 
     <div class="container-xl py-4">
       <div class="row g-4">
-        <!-- Main Content -->
-        <article class="col-lg-8">
-          <div class="card border-0 shadow-sm">
+
+        <!-- ══════════════════════════════════════
+             MAIN CONTENT
+        ══════════════════════════════════════ -->
+        <div class="col-lg-8">
+
+          <!-- 헤더 카드 -->
+          <div class="card mb-4 border-0 shadow-sm">
             <div class="card-body p-4">
-              <!-- Header -->
-              <div class="mb-4">
-                <div class="d-flex gap-2 mb-3">
-                  <span class="badge bg-primary-subtle text-primary">진행공유</span>
-                  <span class="badge bg-success-subtle text-success">✅ 완료</span>
-                </div>
-                <h1 class="fw-bold mb-3" style="font-size:1.3rem;">Quest 2 완료! 음성 인식 모듈 통합 성공 🎉</h1>
-                <div class="d-flex align-items-center gap-2 small text-muted mb-3">
-                  <div class="avatar-circle text-white bg-warning" style="width:40px;height:40px;">최</div>
+              <div class="d-flex flex-wrap align-items-center gap-2 mb-3">
+                <span class="badge bg-primary-subtle text-primary"><i class="fa-regular fa-share-nodes me-1"></i> 진행공유</span>
+                <span class="badge bg-success-subtle text-success"><i class="fa-regular fa-circle-check me-1"></i> 완료</span>
+                <span class="badge border text-secondary">Quest 2</span>
+              </div>
+              <h1 class="fw-bold mb-3 quest-title">Quest 2 완료! 음성 인식 모듈 통합 성공</h1>
+              <div class="d-flex flex-wrap align-items-center gap-3 mb-4 small text-muted">
+                <div class="d-flex align-items-center gap-2">
+                  <div class="avatar-circle text-white bg-warning">최</div>
                   <div>
                     <div class="fw-semibold text-dark">최메이커</div>
-                    <small>프로젝트 6 · 기여 28</small>
+                    <div class="fs-xs">프로젝트 6 · 기여 28</div>
                   </div>
                 </div>
-                <small class="text-muted">⏰ 30분 전</small>
+                <span class="divider-light">|</span>
+                <span><i class="fa-regular fa-clock me-1"></i>30분 전</span>
+                <span><i class="fa-regular fa-eye me-1"></i>234 조회</span>
+                <span class="fw-semibold text-primary"><i class="fa-regular fa-comment me-1"></i>18개 댓글</span>
               </div>
-
-              <!-- Stats Bar -->
-              <div class="d-flex gap-4 mb-4 small border-top border-bottom py-3">
-                <span>👁️ 조회 <strong>234</strong></span>
-                <span>👍 좋아요 <strong>56</strong></span>
-                <span>💬 댓글 <strong>18</strong></span>
+              <!-- Quest 연결 정보 -->
+              <div class="rounded-3 p-3 mb-4 quest-info-box">
+                <div class="d-flex align-items-center gap-2 mb-2">
+                  <span class="text-purple"><i class="fa-regular fa-bullseye-arrow"></i></span>
+                  <span class="fw-semibold small">진행 중인 Quest</span>
+                </div>
+                <a href="project-detail.html" class="fw-bold text-decoration-none d-block mb-1 text-purple">스마트 미러 v2</a>
+                <div class="small text-dark mb-2">Quest 2: 음성 인식 모듈 통합</div>
+                <span class="badge border text-secondary small">AI 로봇 챌린지 2026</span>
               </div>
-
-              <!-- Content Sections -->
-              <div class="mb-4">
-                <!-- 📌 Overview Section -->
-                <div class="p-3 rounded mb-3" style="background-color: #f0f4ff; border-left: 4px solid #5b5bff;">
-                  <h6 class="fw-bold mb-2 small">📌 이번 Quest에서는</h6>
-                  <p class="small mb-0">스마트 미러에 음성 인식 기능을 통합하는 작업을 진행했습니다.</p>
-                </div>
-
-                <!-- 📝 Key Tasks Section -->
-                <div class="p-3 rounded mb-3" style="background-color: #faf4f0; border-left: 4px solid #ff8b5b;">
-                  <h6 class="fw-bold mb-2 small">📝 주요 작업 내용</h6>
-                  <ul class="ps-3 mb-0 small">
-                    <li>Google Speech-to-Text API 연동</li>
-                    <li>한국어 음성 명령어 파싱 로직 구현</li>
-                    <li>Wake Word 감지 기능 추가 ("거울아" 호출어 설정)</li>
-                    <li>마이크 배치 최적화 및 노이즈 캔슬링</li>
-                  </ul>
-                </div>
-
-                <!-- 🛠️ Tech Stack Section -->
-                <div class="p-3 rounded mb-3" style="background-color: #f4f9ff; border-left: 4px solid #4ba3ff;">
-                  <h6 class="fw-bold mb-2 small">🛠️ 기술 스택</h6>
-                  <ul class="ps-3 mb-0 small">
-                    <li>Google Cloud Speech API</li>
-                    <li>Python 3.9 / PyAudio</li>
-                    <li>라즈베리파이 4B (4GB RAM)</li>
-                  </ul>
-                </div>
-
-                <!-- ✅ Completed Section -->
-                <div class="p-3 rounded mb-3" style="background-color: #f0fff5; border-left: 4px solid #4fba4f;">
-                  <h6 class="fw-bold mb-2 small">✅ 완료된 작업</h6>
-                  <ul class="ps-3 mb-0 small">
-                    <li>Google Cloud 프로젝트 생성 및 API 키 발급</li>
-                    <li>Speech-to-Text API 연동 및 테스트</li>
-                    <li>실시간 오디오 스트리밍 파이프라인 구축</li>
-                    <li>Wake Word 감지 알고리즘 구현</li>
-                    <li>한국어 명령어 인식률 테스트 (목표: 90% 이상) ✅ 달성</li>
-                    <li>마이크 위치 최적화 (거울 상단 중앙 배치)</li>
-                    <li>노이즈 필터링 구현 (배경 소음 제거)</li>
-                    <li>응답 속도 최적화 (평균 0.8초 내)</li>
-                  </ul>
-                </div>
-
-                <!-- 🎯 Next Quest Section -->
-                <div class="p-3 rounded" style="background-color: #fffaf0; border-left: 4px solid #ffb84d;">
-                  <h6 class="fw-bold mb-2 small">🎯 Quest 3 준비 작업</h6>
-                  <ul class="ps-3 mb-0 small">
-                    <li>음성 응답 TTS 시스템 구축 (착수 완료)</li>
-                    <li>날씨, 뉴스 등 외부 API 연동</li>
-                    <li>일정 관리 기능 구현</li>
-                    <li>UI 개선 및 애니메이션 추가</li>
-                  </ul>
-                </div>
-              </div>
-
-              <!-- Hashtags -->
-              <div class="mb-4">
-                <span class="badge bg-secondary-subtle text-secondary me-2">#AI</span>
-                <span class="badge bg-secondary-subtle text-secondary me-2">#음성인식</span>
-                <span class="badge bg-secondary-subtle text-secondary me-2">#Quest2</span>
+              <!-- 태그 -->
+              <div class="d-flex flex-wrap gap-1 pt-3 border-top">
+                <span class="badge bg-secondary-subtle text-secondary">#AI</span>
+                <span class="badge bg-secondary-subtle text-secondary">#음성인식</span>
+                <span class="badge bg-secondary-subtle text-secondary">#Quest2</span>
                 <span class="badge bg-secondary-subtle text-secondary">#스마트미러</span>
               </div>
+            </div>
+          </div>
 
-              <!-- Action Buttons -->
-              <div class="d-flex gap-2 pt-3 border-top">
-                <button class="btn btn-outline-secondary btn-sm">👍 좋아요</button>
-                <button class="btn btn-outline-secondary btn-sm">🔖 저장하기</button>
-                <button class="btn btn-outline-secondary btn-sm">🔗 공유</button>
+          <!-- 섹션 1: 이번 Quest에서는 (파란 아이콘) -->
+          <div class="card mb-4 border-0 shadow-sm">
+            <div class="card-body p-4">
+              <div class="d-flex align-items-center gap-3 mb-4">
+                <div class="rounded-3 icon-box-blue"><i class="fa-regular fa-rocket"></i></div>
+                <div><h5 class="fw-bold mb-0">이번 Quest에서는</h5><div class="text-muted small">What I worked on this Quest</div></div>
+              </div>
+              <div class="rounded-3 p-3 section-bg-blue">
+                <p class="text-dark mb-0 lh-18">스마트 미러에 음성 인식 기능을 통합하는 작업을 진행했습니다. Google Speech-to-Text API를 활용하여 한국어 음성 명령을 인식하고 처리하는 시스템을 구축했습니다.</p>
               </div>
             </div>
           </div>
-        </article>
 
-        <!-- Sidebar -->
-        <aside class="col-lg-4">
-          <div class="sticky-top sticky-top-110">
-            <!-- Author Card -->
-            <div class="card border-0 shadow-sm mb-3">
-              <div class="card-body">
-                <h6 class="fw-bold mb-3 small">작성자</h6>
-                <div class="d-flex align-items-center gap-3 mb-3">
-                  <div class="avatar-circle text-white bg-warning" style="width:50px;height:50px;">최</div>
-                  <div>
-                    <div class="fw-bold text-dark">최메이커</div>
-                    <small class="text-muted">프로젝트 6 · 기여 28</small>
+          <!-- 섹션 2: 주요 작업 내용 (오렌지 아이콘) -->
+          <div class="card mb-4 border-0 shadow-sm">
+            <div class="card-body p-4">
+              <div class="d-flex align-items-center gap-3 mb-4">
+                <div class="rounded-3 icon-box-orange"><i class="fa-regular fa-list-check"></i></div>
+                <div><h5 class="fw-bold mb-0">주요 작업 내용</h5><div class="text-muted small">Key tasks completed</div></div>
+              </div>
+              <ul class="mb-0 lh-20">
+                <li>Google Speech-to-Text API 연동</li>
+                <li>한국어 음성 명령어 파싱 로직 구현</li>
+                <li>Wake Word 감지 기능 추가 ("거울아" 호출어 설정)</li>
+                <li>마이크 배치 최적화 및 노이즈 캔슬링</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- 섹션 3: 기술 스택 (보라 아이콘) -->
+          <div class="card mb-4 border-0 shadow-sm">
+            <div class="card-body p-4">
+              <div class="d-flex align-items-center gap-3 mb-4">
+                <div class="rounded-3 icon-box-purple"><i class="fa-regular fa-microchip"></i></div>
+                <div><h5 class="fw-bold mb-0">기술 스택</h5><div class="text-muted small">Tech stack used</div></div>
+              </div>
+              <div class="rounded-3 p-3 section-bg-purple lh-18">
+                <div class="d-flex flex-wrap gap-2">
+                  <span class="badge badge-purple">Google Cloud Speech API</span>
+                  <span class="badge badge-purple">Python 3.9 / PyAudio</span>
+                  <span class="badge badge-purple">라즈베리파이 4B (4GB RAM)</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 섹션 4: 완료된 작업 (초록 아이콘) -->
+          <div class="card mb-4 border-0 shadow-sm">
+            <div class="card-body p-4">
+              <div class="d-flex align-items-center gap-3 mb-4">
+                <div class="rounded-3 icon-box-green"><i class="fa-regular fa-circle-check"></i></div>
+                <div><h5 class="fw-bold mb-0">완료된 작업</h5><div class="text-muted small">Completed items</div></div>
+              </div>
+              <div class="rounded-3 p-3 section-bg-purple">
+                <ul class="mb-0 lh-22">
+                  <li>Google Cloud 프로젝트 생성 및 API 키 발급</li>
+                  <li>Speech-to-Text API 연동 및 테스트</li>
+                  <li>실시간 오디오 스트리밍 파이프라인 구축</li>
+                  <li>Wake Word 감지 알고리즘 구현</li>
+                  <li>한국어 명령어 인식률 테스트 (목표: 90% 이상) — <strong class="text-purple">달성</strong></li>
+                  <li>마이크 위치 최적화 (거울 상단 중앙 배치)</li>
+                  <li>노이즈 필터링 구현 (배경 소음 제거)</li>
+                  <li>응답 속도 최적화 (평균 0.8초 내)</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- 섹션 5: Quest 3 준비 (회색 아이콘) -->
+          <div class="card mb-4 border-0 shadow-sm">
+            <div class="card-body p-4">
+              <div class="d-flex align-items-center gap-3 mb-4">
+                <div class="rounded-3 icon-box-gray"><i class="fa-regular fa-flag"></i></div>
+                <div><h5 class="fw-bold mb-0">Quest 3 준비 작업</h5><div class="text-muted small">Next steps planned</div></div>
+              </div>
+              <div class="lh-180">
+                <ul class="mb-0 lh-20">
+                  <li>음성 응답 TTS 시스템 구축 <span class="badge bg-primary-subtle text-primary ms-1">착수 완료</span></li>
+                  <li>날씨, 뉴스 등 외부 API 연동</li>
+                  <li>일정 관리 기능 구현</li>
+                  <li>UI 개선 및 애니메이션 추가</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- 댓글 -->
+          <div class="card mb-4 border-0 shadow-sm">
+            <div class="card-body p-4">
+              <h6 class="fw-bold mb-4">댓글 18개</h6>
+
+              <div class="d-flex flex-column gap-3 mb-4">
+                <div class="p-4 rounded-3 comment-bg-purple">
+                  <div class="d-flex align-items-start gap-3">
+                    <div class="avatar-circle-lg text-white flex-shrink-0 text-purple" style="background:#7c3aed;">김</div>
+                    <div class="flex-grow-1">
+                      <div class="d-flex align-items-center gap-2 mb-2 flex-wrap">
+                        <span class="fw-bold">김메이커</span>
+                        <span class="text-muted small ms-auto">20분 전</span>
+                      </div>
+                      <div class="text-dark mb-3 lh-18">와, Wake Word 구현까지 성공하셨군요! 저도 비슷한 프로젝트를 진행 중인데 많은 참고가 됐습니다. 노이즈 캔슬링은 어떤 방법을 사용하셨나요?</div>
+                      <div class="d-flex align-items-center gap-2">
+                        <button class="btn btn-sm btn-outline-secondary"><i class="fa-regular fa-thumbs-up me-1"></i> 도움됨 8</button>
+                        <button class="btn btn-sm btn-outline-secondary"><i class="fa-regular fa-comment me-1"></i> 답글</button>
+                      </div>
+                    </div>
                   </div>
                 </div>
-                <button class="btn btn-outline-secondary btn-sm w-100">프로필 보기</button>
-              </div>
-            </div>
 
-            <!-- Project Card -->
-            <div class="card border-0 shadow-sm mb-3">
-              <img src="assets/images/smart-mirror.png" alt="스마트 미러 프로젝트" class="card-img-top" style="height:120px;object-fit:cover;">
-              <div class="card-body">
-                <div class="fw-bold small mb-2">프로젝트: 스마트 미러 v2</div>
-                <span class="badge bg-primary-subtle text-primary small mb-2">Quest 2/3</span>
-                <button class="btn btn-outline-primary btn-sm w-100">프로젝트 보기</button>
+                <div class="p-4 rounded-3 comment-bg-gray">
+                  <div class="d-flex align-items-start gap-3">
+                    <div class="avatar-circle-lg text-white flex-shrink-0" style="background:#ea580c;">박</div>
+                    <div class="flex-grow-1">
+                      <div class="d-flex align-items-center gap-2 mb-2 flex-wrap">
+                        <span class="fw-bold">박개발</span>
+                        <span class="text-muted small ms-auto">15분 전</span>
+                      </div>
+                      <div class="text-dark mb-3 lh-18">응답 속도 0.8초는 정말 인상적이에요. PyAudio 설정 공유해주실 수 있나요?</div>
+                      <div class="d-flex align-items-center gap-2">
+                        <button class="btn btn-sm btn-outline-secondary"><i class="fa-regular fa-thumbs-up me-1"></i> 도움됨 3</button>
+                        <button class="btn btn-sm btn-outline-secondary"><i class="fa-regular fa-comment me-1"></i> 답글</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
-            </div>
 
-            <!-- Action Buttons -->
-            <div class="card border-0 shadow-sm mb-3">
-              <div class="card-body">
-                <button class="btn btn-primary w-100 mb-2">✏️ 진행공유 작성</button>
-                <button class="btn btn-outline-secondary w-100">🔔 구독하기</button>
-              </div>
-            </div>
-
-            <!-- Tip Card -->
-            <div class="card border-0 shadow-sm">
-              <div class="card-body">
-                <h6 class="fw-bold mb-3 small">💡 팁</h6>
-                <small class="text-muted">자신의 경험과 배운 점을 공유하면 다른 사람들에게 큰 도움이 됩니다. 실패담도 가치있는 경험입니다!</small>
+              <!-- 댓글 작성 폼 -->
+              <div class="border-top pt-4">
+                <h6 class="fw-bold mb-1"><i class="fa-regular fa-comment me-1"></i> 댓글 작성하기</h6>
+                <p class="text-muted small mb-3">경험이나 질문을 공유해주세요. 함께 성장하는 커뮤니티를 만들어 갑니다.</p>
+                <div class="d-flex gap-3">
+                  <div class="avatar-circle bg-primary text-white flex-shrink-0">나</div>
+                  <div class="flex-grow-1">
+                    <textarea class="form-control mb-2" rows="3" placeholder="댓글을 작성하세요..."></textarea>
+                    <div class="d-flex align-items-center justify-content-between flex-wrap gap-2">
+                      <div class="d-flex gap-2">
+                        <button class="btn btn-outline-secondary btn-sm"><i class="fa-regular fa-image me-1"></i> 이미지 추가</button>
+                        <button class="btn btn-outline-secondary btn-sm"><i class="fa-regular fa-link me-1"></i> 링크 추가</button>
+                      </div>
+                      <button class="btn btn-primary btn-sm"><i class="fa-regular fa-paper-plane me-1"></i> 댓글 달기</button>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
+
+        </div><!-- /col-lg-8 -->
+
+
+        <!-- ══════════════════════════════════════
+             SIDEBAR
+        ══════════════════════════════════════ -->
+        <aside class="col-lg-4">
+          <div class="sticky-top sticky-top-110">
+
+            <!-- 빠른 액션 (그라디언트) -->
+            <div class="card mb-3 border-0 shadow-sm sidebar-gradient-box">
+              <div class="card-body p-4">
+                <h6 class="fw-bold mb-3">빠른 액션</h6>
+                <div class="d-flex flex-column gap-2 mb-3">
+                  <div class="d-flex align-items-center gap-2 small">
+                    <span class="text-purple"><i class="fa-regular fa-circle-check"></i></span> <span>Quest 2 완료</span>
+                  </div>
+                  <div class="d-flex align-items-center gap-2 small">
+                    <span class="text-purple"><i class="fa-regular fa-comment"></i></span> <span>18개 댓글</span>
+                  </div>
+                  <div class="d-flex align-items-center gap-2 small">
+                    <span class="text-purple"><i class="fa-regular fa-thumbs-up"></i></span> <span>56명 도움됨</span>
+                  </div>
+                </div>
+                <button class="btn btn-purple w-100 mb-2"><i class="fa-regular fa-bookmark me-1"></i> 저장하기</button>
+                <button class="btn btn-outline-secondary w-100"><i class="fa-regular fa-link me-1"></i> 공유하기</button>
+              </div>
+            </div>
+
+            <!-- 연결된 프로젝트 (오버레이 이미지) -->
+            <div class="card mb-3 border-0 shadow-sm overflow-hidden">
+              <div class="img-overlay-relative">
+                <img src="assets/images/smart-mirror.png" alt="스마트 미러 프로젝트" class="img-cover-fade">
+                <div class="gradient-overlay"></div>
+                <div class="badge-absolute">
+                  <span class="badge text-white badge-light">AI/ML</span>
+                </div>
+              </div>
+              <div class="card-body p-3">
+                <div class="fw-bold small mb-1">연결된 프로젝트</div>
+                <a href="project-detail.html" class="fw-bold text-decoration-none d-block mb-2 text-purple">스마트 미러 v2</a>
+                <div class="text-muted small mb-1"><i class="fa-regular fa-rocket me-1"></i> Quest 2 완료 · Quest 3 진행중</div>
+                <div class="text-muted small mb-2 fs-xs">Quest 2: 음성 인식 모듈 통합</div>
+                <div class="border-bottom pb-2 mb-2">
+                  <div class="text-muted text-small-75">참여 콘테스트</div>
+                  <a href="contest-detail.html" class="text-decoration-none small fw-semibold text-purple">AI 로봇 챌린지 2026</a>
+                </div>
+                <a href="project-detail.html" class="btn btn-purple btn-sm w-100">프로젝트 보기</a>
+              </div>
+            </div>
+
+            <!-- 통계 카드 -->
+            <div class="card mb-3 border-0 shadow-sm">
+              <div class="card-body p-4">
+                <h6 class="fw-bold mb-3">통계</h6>
+                <div class="d-flex flex-column gap-2">
+                  <div class="d-flex justify-content-between small"><span class="text-muted"><i class="fa-regular fa-eye me-1"></i> 조회수</span><span class="fw-semibold">234</span></div>
+                  <div class="d-flex justify-content-between small"><span class="text-muted"><i class="fa-regular fa-comment me-1"></i> 댓글</span><span class="fw-semibold text-primary">18</span></div>
+                  <div class="d-flex justify-content-between small"><span class="text-muted"><i class="fa-regular fa-thumbs-up me-1"></i> 도움됨</span><span class="fw-semibold">56</span></div>
+                  <div class="d-flex justify-content-between small"><span class="text-muted"><i class="fa-regular fa-bookmark me-1"></i> 저장</span><span class="fw-semibold">23</span></div>
+                </div>
+              </div>
+            </div>
+
+            <!-- 작성자 정보 -->
+            <div class="card border-0 shadow-sm">
+              <div class="card-body p-4">
+                <h6 class="fw-bold mb-3">작성자 정보</h6>
+                <div class="d-flex align-items-center gap-3 mb-3">
+                  <div class="avatar-circle-lg text-white bg-warning">최</div>
+                  <div>
+                    <div class="fw-bold">최메이커</div>
+                    <div class="text-muted small">프로젝트 6개 · 기여 28</div>
+                  </div>
+                </div>
+                <button class="btn btn-outline-secondary btn-sm w-100"><i class="fa-regular fa-envelope me-1"></i> 메시지 보내기</button>
+              </div>
+            </div>
+
+          </div>
         </aside>
+
       </div>
     </div>
   </main>
 
-  <footer class="bg-dark text-light py-5 mt-5">
-    <div class="container-xl">
-      <div class="row g-4">
-        <div class="col-md-4">
-          <h6 class="fw-bold mb-3">e4ds make</h6>
-          <p class="small text-muted">메이커를 위한 통합 플랫폼</p>
-        </div>
-        <div class="col-md-4">
-          <h6 class="fw-bold mb-3">빠른 링크</h6>
-          <ul class="list-unstyled small">
-            <li><a href="community.html" class="text-light text-decoration-none">커뮤니티</a></li>
-            <li><a href="projects.html" class="text-light text-decoration-none">프로젝트</a></li>
-            <li><a href="contests.html" class="text-light text-decoration-none">콘테스트</a></li>
-          </ul>
-        </div>
-        <div class="col-md-4">
-          <h6 class="fw-bold mb-3">지원</h6>
-          <ul class="list-unstyled small">
-            <li><a href="#" class="text-light text-decoration-none">고객센터</a></li>
-            <li><a href="#" class="text-light text-decoration-none">이용약관</a></li>
-          </ul>
+
+  <!-- ===== PLATFORM FOOTER ===== -->
+  <footer id="platform-footer">
+    <div class="bg-light border-top border-bottom py-4">
+      <div class="container-xl">
+        <p class="text-center text-muted small mb-3">Sponsored Company</p>
+        <div class="d-flex flex-wrap align-items-center justify-content-center gap-4">
+          <span class="fw-medium text-secondary small">CREAFORM</span>
+          <span class="fw-medium text-secondary small">Infineon</span>
+          <span class="fw-bold text-dark small">KETI</span>
+          <span class="fw-medium text-secondary small">KEYSIGHT</span>
+          <span class="fw-medium text-secondary small">Microchip</span>
+          <span class="fw-medium text-primary small">mouser.com</span>
+          <span class="fw-medium text-secondary small">NATIONAL INSTRUMENTS</span>
+          <span class="fw-bold text-white bg-danger px-2 py-1 rounded small">ROHM</span>
+          <span class="fw-medium text-secondary small">ST</span>
+          <span class="fw-medium text-dark small">Tektronix</span>
         </div>
       </div>
-      <div class="border-top border-dark mt-4 pt-4">
-        <small class="text-muted">© 2026 e4ds make. All rights reserved.</small>
+    </div>
+    <div class="bg-black text-secondary py-5">
+      <div class="container-xl">
+        <div class="d-flex flex-column flex-lg-row align-items-start align-items-lg-center justify-content-between gap-3 mb-4">
+          <div class="d-flex flex-wrap align-items-center gap-2 small">
+            <a href="support.html" class="footer-link text-secondary text-decoration-none">e4ds 소개</a>
+            <span class="text-muted">|</span>
+            <a href="notices.html" class="footer-link text-secondary text-decoration-none">개인정보처리방침</a>
+            <span class="text-muted">|</span>
+            <a href="faq.html" class="footer-link text-secondary text-decoration-none">이용약관</a>
+            <span class="text-muted">|</span>
+            <a href="contact.html" class="footer-link text-secondary text-decoration-none">청소년보호정책</a>
+            <span class="text-muted">|</span>
+            <a href="careers.html" class="footer-link text-secondary text-decoration-none">가족사이트</a>
+            <span class="text-muted">|</span>
+            <a href="#" class="footer-link text-secondary text-decoration-none">저작권</a>
+            <span class="text-muted">|</span>
+            <a href="#" class="footer-link text-secondary text-decoration-none">e4ds인터내셔널</a>
+          </div>
+        </div>
+        <div class="small text-muted lh-lg">
+          <p class="mb-1">(주)디지털데일리 | 등록번호 : 경기 아51470 | 등록: 2008.10.20 | 발행: 2026.05.19 | 표: 김제호</p>
+          <p class="mb-1">주소 : 경기도 성남시 분당구 대왕판교로 660번길 8 | 전화 : 02-883-9797 | 팩스 : 02-6280-9957</p>
+          <p class="mb-1 text-secondary">본 콘텐츠의 저작권은 (주)디지털데일리에 있으며 무단 전재 및 재배포를 금지합니다.</p>
+          <p class="mt-3 mb-0">Copyright &copy; 2026 e4ds News. All Rights Reserved</p>
+        </div>
       </div>
     </div>
   </footer>
 
   <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55ND4ssVP5YctiAiYigxPStZWNvGbS" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
   <script src="assets/js/main.js"></script>
   <script>
-    var today = new Date();
-    $('#header-date').text(today.toLocaleDateString('ko-KR', { weekday: 'long', month: 'long', day: 'numeric' }));
+    $('#header-date').text(new Date().toLocaleDateString('ko-KR', { weekday: 'long', month: 'long', day: 'numeric' }));
   </script>
 </body>
 

@@ -113,6 +113,246 @@ justify-content: space-evenly;
   }
 }
 
+/* ── Community Share Page ────────────────────────────── */
+.quest-title {
+  font-size: 1.5rem;
+}
+
+.divider-light {
+  opacity: 0.35;
+}
+
+.quest-info-box {
+  background: linear-gradient(to right, #f5f3ff, #faf5ff);
+  border: 1px solid #ddd6fe;
+}
+
+.text-purple {
+  color: #7c3aed;
+}
+
+.icon-box,
+.icon-box-blue,
+.icon-box-orange,
+.icon-box-purple,
+.icon-box-green,
+.icon-box-gray {
+  width: 40px;
+  height: 40px;
+  border-radius: 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  font-size: 1.1rem;
+}
+
+.icon-box-blue {
+  background: #dbeafe;
+  color: #2563eb;
+}
+
+.icon-box-orange {
+  background: #ffedd5;
+  color: #ea580c;
+}
+
+.icon-box-purple {
+  background: #ede9fe;
+  color: #7c3aed;
+}
+
+.icon-box-green {
+  background: #dcfce7;
+  color: #16a34a;
+}
+
+.icon-box-gray {
+  background: #f3f4f6;
+  color: #6b7280;
+}
+
+.icon-box-red {
+  width: 40px;
+  height: 40px;
+  border-radius: 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  font-size: 1.1rem;
+  background: #fee2e2;
+  color: #dc2626;
+}
+
+.lh-18 {
+  line-height: 1.8;
+}
+
+.lh-20 {
+  line-height: 2;
+}
+
+.lh-22 {
+  line-height: 2.2;
+}
+
+.section-bg-purple {
+  background: #f5f3ff;
+  border: 1px solid #ddd6fe;
+}
+
+.section-bg-blue {
+  background: #dbeafe;
+}
+
+.badge-purple {
+  background: #ede9fe;
+  color: #7c3aed;
+  font-size: 0.85rem;
+  padding: 0.4rem 0.75rem;
+}
+
+.comment-bg-purple {
+  background: #f5f3ff;
+  border: 2px solid #ddd6fe;
+}
+
+.comment-bg-gray {
+  background: #f9fafb;
+  border: 2px solid #e5e7eb;
+}
+
+.sidebar-gradient-box {
+  background: linear-gradient(to bottom right, #f5f3ff, #faf5ff);
+  border: 1px solid #ddd6fe !important;
+}
+
+.img-overlay-relative {
+  position: relative;
+  height: 128px;
+}
+
+.img-cover-fade {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.5;
+}
+
+.gradient-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(109, 40, 217, 0.5), rgba(124, 58, 237, 0.5));
+}
+
+.badge-absolute {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+}
+
+.badge-light {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.text-small-75 {
+  font-size: 0.75rem;
+}
+
+/* ── Q&A Page Styles ────────────────────────────── */
+.badge-blue {
+  background: #eff6ff;
+  color: #2563eb;
+  border: 1px solid #bfdbfe;
+}
+
+.badge-purple-light {
+  background: #f5f3ff;
+  color: #7c3aed;
+  border: 1px solid #ddd6fe;
+}
+
+.section-bg-blue-light {
+  background: linear-gradient(to right, #eff6ff, #eef2ff);
+  border: 1px solid #bfdbfe;
+}
+
+.section-bg-white-red {
+  background: #fff;
+  border: 1px solid #fecaca;
+}
+
+.section-bg-red {
+  background: #fff5f5;
+  border: 2px solid #fecaca;
+}
+
+.section-bg-green {
+  background: #f0fdf4;
+  border: 1px solid #bbf7d0;
+}
+
+.section-bg-gray {
+  background: #f9fafb;
+  border: 1px solid #e5e7eb;
+}
+
+.section-bg-gray-2 {
+  background: #f9fafb;
+  border: 2px solid #e5e7eb;
+}
+
+.section-bg-green-2 {
+  background: #f0fdf4;
+  border: 2px solid #bbf7d0;
+}
+
+.code-block {
+  background: #1e1e2e;
+  color: #cdd6f4;
+  font-size: 0.875rem;
+}
+
+.text-blue {
+  color: #2563eb;
+}
+
+.text-orange {
+  color: #ea580c;
+}
+
+.text-green {
+  color: #16a34a;
+}
+
+.text-red {
+  color: #dc2626;
+}
+
+.textarea-monospace {
+  font-family: monospace;
+  font-size: 0.875rem;
+}
+
+.text-small-85 {
+  font-size: 0.85rem;
+}
+
+.avatar-40 {
+  width: 40px;
+  height: 40px;
+}
+
+.alert-warning-custom {
+  background: #fffbeb;
+  border: 1px solid #fde68a;
+}
+
+.border-warning-custom {
+  border: 1px solid #fecaca;
+}
+
 /**/
 .hero-right{
   display: flex;
@@ -3282,9 +3522,307 @@ nav.navbar.px-0 {
    ══════════════════════════════════════════════════════ */
 
 .contest-create-hero {
-  background: linear-gradient(135deg, #2563eb 0%, #7c3aed 100%);
+  background: linear-gradient(135deg, #1d4ed8 0%, #6d28d9 100%);
   color: #fff;
-  padding: 3rem 0;
+  padding: 3.5rem 0;
+}
+
+/* ── CCP: Hero 아이콘 & 배지 ─────────────────────── */
+.ccp-hero-icon {
+  width: 80px;
+  height: 80px;
+  background: rgba(255,255,255,.18);
+  border: 2px solid rgba(255,255,255,.4);
+  backdrop-filter: blur(8px);
+  font-size: 2rem;
+  color: #fff;
+  flex-shrink: 0;
+}
+
+.ccp-hero-badge {
+  background: rgba(255,255,255,.2);
+  border: 1px solid rgba(255,255,255,.45);
+  color: #fff;
+  font-size: .88rem;
+  font-weight: 600;
+  padding: .35rem 1rem;
+  border-radius: 9999px;
+  letter-spacing: .01em;
+  margin-bottom: .6rem;
+}
+
+.ccp-hero-title {
+  font-size: 2rem;
+  line-height: 1.2;
+}
+
+.ccp-hero-desc {
+  font-size: 1.05rem;
+  opacity: .9;
+  line-height: 1.7;
+}
+
+/* ── CCP: Key Message 카드 ───────────────────────── */
+.ccp-key-message {
+  background: linear-gradient(135deg, #eff6ff 0%, #f5f3ff 100%);
+  border: 1.5px solid #bfdbfe !important;
+}
+
+.ccp-key-icon {
+  width: 56px;
+  height: 56px;
+  background: linear-gradient(135deg, #2563eb, #7c3aed);
+  color: #fff;
+  font-size: 1.4rem;
+}
+
+.ccp-key-title {
+  font-size: 1rem;
+  color: #1e3a8a;
+}
+
+.ccp-key-list {
+  display: flex;
+  flex-direction: column;
+  gap: .55rem;
+}
+
+.ccp-key-list li {
+  font-size: .92rem;
+  color: #374151;
+  line-height: 1.55;
+}
+
+.ccp-key-list i {
+  color: #2563eb;
+}
+
+/* ── CCP: 사이드바 공통 카드 아이콘 ─────────────── */
+.ccp-scard-icon {
+  width: 42px;
+  height: 42px;
+  border-radius: .65rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  flex-shrink: 0;
+}
+.ccp-scard-icon-purple { background: #ede9fe; color: #7c3aed; }
+.ccp-scard-icon-blue   { background: #dbeafe; color: #2563eb; }
+.ccp-scard-icon-green  { background: #dcfce7; color: #16a34a; }
+.ccp-scard-icon-violet { background: #f5f3ff; color: #6d28d9; }
+
+/* ── CCP: 콘테스트 정보 카드 ─────────────────────── */
+.ccp-sidebar-contest {
+  background: linear-gradient(135deg, #f5f3ff 0%, #fdf2f8 100%);
+  border: 1.5px solid #ddd6fe !important;
+}
+
+.ccp-contest-name {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #1e1b4b;
+}
+
+.ccp-deadline-box {
+  background: linear-gradient(135deg, #4f46e5, #7c3aed);
+  border-radius: .75rem;
+  padding: .85rem 1.1rem;
+  color: #fff;
+}
+
+.ccp-deadline-label {
+  font-size: .78rem;
+  font-weight: 600;
+  opacity: .8;
+  text-transform: uppercase;
+  letter-spacing: .06em;
+  margin-bottom: .3rem;
+}
+
+.ccp-deadline-date {
+  font-size: 1.05rem;
+  font-weight: 700;
+}
+
+/* ── CCP: Quest 진행 구조 ────────────────────────── */
+.ccp-quest-step {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  position: relative;
+  padding-bottom: 1.25rem;
+}
+
+.ccp-quest-step:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  left: 18px;
+  top: 40px;
+  bottom: 0;
+  width: 2px;
+  background: #e5e7eb;
+}
+
+.ccp-quest-num {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: .95rem;
+  font-weight: 800;
+  z-index: 1;
+}
+
+.ccp-quest-num-active {
+  background: linear-gradient(135deg, #2563eb, #4f46e5);
+  color: #fff;
+  box-shadow: 0 3px 10px rgba(37,99,235,.4);
+}
+
+.ccp-quest-num-inactive {
+  background: #f3f4f6;
+  color: #9ca3af;
+  border: 2px solid #e5e7eb;
+}
+
+.ccp-quest-body { padding-top: .4rem; }
+
+.ccp-quest-title {
+  font-size: .95rem;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: .2rem;
+}
+
+.ccp-quest-desc {
+  font-size: .85rem;
+  color: #6b7280;
+  line-height: 1.5;
+  margin-bottom: .3rem;
+}
+
+.ccp-quest-date {
+  font-size: .82rem;
+  color: #9ca3af;
+}
+
+/* ── CCP: 프로젝트 진행 흐름 ─────────────────────── */
+.ccp-flow-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.ccp-flow-step {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  position: relative;
+  padding-bottom: 1.1rem;
+}
+
+.ccp-flow-step:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  left: 17px;
+  top: 38px;
+  bottom: 0;
+  width: 2px;
+  background: #e5e7eb;
+}
+
+.ccp-flow-num {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: .88rem;
+  font-weight: 800;
+  z-index: 1;
+}
+
+.ccp-flow-num-active {
+  background: linear-gradient(135deg, #7c3aed, #6d28d9);
+  color: #fff;
+  box-shadow: 0 3px 10px rgba(124,58,237,.4);
+}
+
+.ccp-flow-num-inactive {
+  background: #f3f4f6;
+  color: #9ca3af;
+  border: 2px solid #e5e7eb;
+}
+
+.ccp-flow-body { padding-top: .35rem; }
+
+.ccp-flow-title {
+  font-size: .92rem;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: .15rem;
+}
+
+.ccp-flow-sub {
+  font-size: .82rem;
+  color: #6b7280;
+}
+
+/* ── CCP: 커뮤니티 도움받기 카드 ────────────────── */
+.ccp-community-card {
+  background: linear-gradient(135deg, #faf5ff 0%, #f5f3ff 100%);
+  border: 1.5px solid #ddd6fe !important;
+}
+
+.ccp-comm-btn {
+  width: 100%;
+  text-align: left;
+  border-radius: .65rem;
+  padding: .7rem 1rem;
+  display: flex;
+  align-items: center;
+  gap: .75rem;
+  font-size: .92rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all .15s;
+  border: 1.5px solid transparent;
+  background: #fff;
+  box-shadow: 0 1px 3px rgba(0,0,0,.06);
+}
+
+.ccp-comm-btn-icon {
+  width: 30px;
+  height: 30px;
+  border-radius: .45rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: .88rem;
+  flex-shrink: 0;
+}
+
+.ccp-comm-btn-blue .ccp-comm-btn-icon  { background: #dbeafe; color: #2563eb; }
+.ccp-comm-btn-green .ccp-comm-btn-icon { background: #dcfce7; color: #16a34a; }
+.ccp-comm-btn-orange .ccp-comm-btn-icon{ background: #ffedd5; color: #ea580c; }
+.ccp-comm-btn-purple .ccp-comm-btn-icon{ background: #ede9fe; color: #7c3aed; }
+
+.ccp-comm-btn-blue:hover  { border-color: #bfdbfe; background: #eff6ff; }
+.ccp-comm-btn-green:hover { border-color: #bbf7d0; background: #f0fdf4; }
+.ccp-comm-btn-orange:hover{ border-color: #fed7aa; background: #fff7ed; }
+.ccp-comm-btn-purple:hover{ border-color: #ddd6fe; background: #f5f3ff; }
+
+/* ── CCP: 도움말 카드 ────────────────────────────── */
+.ccp-help-card {
+  background: #eff6ff;
+  border: 1.5px solid #bfdbfe !important;
 }
 
 
@@ -4115,12 +4653,221 @@ nav.navbar.px-0 {
   border: 1px solid #bfdbfe !important;
 }
 
+.cd-quest-infobox {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.25rem;
+  background: linear-gradient(135deg, #f0f7ff 0%, #f5f3ff 100%);
+  border: 1px solid #ddd6fe;
+  border-left: 4px solid var(--color-purple);
+  border-radius: 0.75rem;
+  padding: 1.5rem 1.75rem;
+}
+
+.cd-quest-infobox-icon {
+  width: 44px;
+  height: 44px;
+  background: linear-gradient(135deg, var(--color-purple), #b87fff);
+  color: #fff;
+  border-radius: 0.6rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  flex-shrink: 0;
+  box-shadow: 0 3px 8px rgba(146,78,255,0.3);
+}
+
+.cd-quest-infobox-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--color-20);
+  margin-bottom: 0.5rem;
+}
+
+.cd-quest-infobox-text {
+  font-size: 1rem;
+  color: #4b5563;
+  line-height: 1.75;
+  margin-bottom: 0;
+
+  strong { color: var(--color-purple); font-weight: 700; }
+}
+
 /* ── Quest 완료 카드 ─────────────────────────────────── */
 .quest-card-done {
   border: 2px solid #86efac !important;
 }
 .quest-card-done-header {
   background: linear-gradient(135deg, #f0fdf4, #dcfce7);
+}
+
+/* ── Quest 카드 (qc) ─────────────────────────────────── */
+.qc {
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 1px 6px rgba(0,0,0,0.07);
+  background: #fff;
+}
+
+/* 히어로 영역 (번호 + 정보) */
+.qc-hero {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.5rem;
+  padding: 1.75rem 2rem;
+}
+
+/* 본문 영역 (요구사항) */
+.qc-body {
+  padding: 1.25rem 2rem 1.75rem;
+  border-top: 1px solid #f3f4f6;
+}
+
+/* 상태별 색상 */
+.qc-done   { border: 1.5px solid #bbf7d0; }
+.qc-active { border: 1.5px solid #c7d2fe; }
+.qc-pending{ border: 1.5px solid #e5e7eb; opacity: 0.85; }
+
+.qc-done   .qc-hero { background: linear-gradient(135deg, #f0fdf4 0%, #f5fffe 100%); }
+.qc-active .qc-hero { background: linear-gradient(135deg, #f5f3ff 0%, #eff6ff 100%); }
+.qc-pending .qc-hero{ background: #f9fafb; }
+
+.qc-done   .qc-body { border-color: #d1fae5; }
+.qc-active .qc-body { border-color: #e0e7ff; }
+.qc-pending .qc-body{ border-color: #e5e7eb; }
+
+/* 번호 원 */
+.qc-num {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.qc-num-done    { background: linear-gradient(135deg, var(--color-green), #0ab88a); color: #fff; box-shadow: 0 4px 10px rgba(22,188,156,0.3); }
+.qc-num-active  { background: linear-gradient(135deg, var(--color-purple), #b87fff); color: #fff; box-shadow: 0 4px 10px rgba(146,78,255,0.3); }
+.qc-num-pending { background: #d1d5db; color: #fff; }
+
+.qc-hero-info { flex: 1; }
+
+/* 상태 배지 */
+.qc-status-badge {
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.82rem;
+  font-weight: 600;
+  padding: 0.22rem 0.7rem;
+  border-radius: 9999px;
+}
+
+.qc-status-done    { background: #dcfce7; color: #16a34a; }
+.qc-status-active  { background: #ede9fe; color: var(--color-purple); }
+.qc-status-pending { background: #e5e7eb; color: #6b7280; }
+
+.qc-score {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: #6b7280;
+}
+
+.qc-dday {
+  font-size: 0.75rem;
+  font-weight: 700;
+  background: #fef9c3;
+  color: #b45309;
+  padding: 0.15rem 0.5rem;
+  border-radius: 9999px;
+}
+
+.qc-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--color-20);
+  margin-top: 0.5rem;
+  margin-bottom: 0.4rem;
+}
+
+.qc-desc {
+  font-size: 0.95rem;
+  color: #6b7280;
+  margin-bottom: 0.75rem;
+  line-height: 1.6;
+}
+
+.qc-dates {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  font-size: 0.85rem;
+  color: #9ca3af;
+}
+
+.qc-date-late { color: #d97706; }
+
+/* 요구사항 */
+.qc-req-label {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #9ca3af;
+  margin-bottom: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.qc-req-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  background: #f9fafb;
+  border-radius: 0.65rem;
+  padding: 1rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+
+  li {
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+    font-size: 0.95rem;
+    color: #374151;
+  }
+
+  i {
+    font-size: 0.75rem;
+    flex-shrink: 0;
+    .qc-done & { color: var(--color-green); }
+    .qc-active & { color: #c4b5fd; }
+    .qc-pending & { color: #d1d5db; }
+  }
+}
+
+.qc-submit-btn {
+  background: linear-gradient(135deg, var(--color-purple), #b87fff);
+  color: #fff;
+  font-weight: 600;
+  font-size: 0.95rem;
+  padding: 0.6rem 1.5rem;
+  border: none;
+  border-radius: 0.5rem;
+
+  &:hover { background: linear-gradient(135deg, #7c3aed, var(--color-purple)); color: #fff; }
+}
+
+.qc-disabled-btn {
+  background: #e5e7eb;
+  color: #9ca3af;
+  font-size: 0.95rem;
+  padding: 0.6rem 1.5rem;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: not-allowed;
 }
 
 /* ── Step Circle 보라색 변형 ─────────────────────────── */
@@ -4159,7 +4906,7 @@ nav.navbar.px-0 {
   flex-shrink: 0;
 }
 
-.cjs-icon-green  { background: #dcfce7; color: #16a34a; }
+.cjs-icon-green  { background: #dcfce7; color: var(--color-green); }
 .cjs-icon-blue   { background: #dbeafe; color: #2563eb; }
 .cjs-icon-purple { background: #ede9fe; color: var(--color-purple); }
 
@@ -4408,7 +5155,7 @@ nav.navbar.px-0 {
 }
 
 .cd-req-label {
-  font-size: 1rem;
+  font-size: 1.1rem;
   font-weight: 700;
   color: var(--color-20);
 }
@@ -4425,7 +5172,7 @@ nav.navbar.px-0 {
     display: flex;
     align-items: flex-start;
     gap: 0.6rem;
-    font-size: 0.875rem;
+    font-size: 0.94rem;
     color: #374151;
     line-height: 1.5;
   }

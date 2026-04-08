@@ -129,19 +129,6 @@
         ══════════════════════════════════════ -->
         <div class="col-lg-8">
 
-          <!-- Tab Navigation -->
-          <div class="nav nav-tabs border-bottom mb-4" role="tablist">
-            <button class="nav-link active" id="q1-tab" data-bs-toggle="tab" data-bs-target="#q1-panel" type="button" role="tab" aria-selected="true">
-              <small>Q1. ESP32 MQTT</small>
-            </button>
-            <button class="nav-link" id="q2-tab" data-bs-toggle="tab" data-bs-target="#q2-panel" type="button" role="tab" aria-selected="false">
-              <small>Q2. OpenCV FPS</small>
-            </button>
-            <button class="nav-link" id="q3-tab" data-bs-toggle="tab" data-bs-target="#q3-panel" type="button" role="tab" aria-selected="false">
-              <small>Q3. TensorFlow ✅</small>
-            </button>
-          </div>
-
           <div class="tab-content">
 
             <!-- ══════════════════════════════════════
@@ -154,11 +141,11 @@
                 <div class="card-body p-4">
                   <div class="d-flex flex-wrap align-items-center gap-2 mb-3">
                     <span class="badge bg-primary-subtle text-primary"><i class="fa-regular fa-circle-question me-1"></i> 질문하기</span>
-                    <span class="badge" style="background:#eff6ff;color:#2563eb;border:1px solid #bfdbfe;"><i class="fa-regular fa-laptop-code"></i> 기술 문제</span>
+                    <span class="badge badge-blue"><i class="fa-regular fa-laptop-code"></i> 기술 문제</span>
                     <span class="badge bg-warning-subtle text-warning-emphasis"><i class="fa-regular fa-hourglass me-1"></i> 해결중</span>
                     <span class="badge border text-secondary">Quest 2</span>
                   </div>
-                  <h1 class="fw-bold mb-3" style="font-size:1.5rem;">ESP32에서 MQTT 브로커 연결이 자꾸 끊기는 현상 해결 방법</h1>
+                  <h1 class="fw-bold mb-3 quest-title">ESP32에서 MQTT 브로커 연결이 자꾸 끊기는 현상 해결 방법</h1>
                   <div class="d-flex flex-wrap align-items-center gap-3 mb-4 small text-muted">
                     <div class="d-flex align-items-center gap-2">
                       <div class="avatar-circle text-white" style="background:#2563eb;">이</div>
@@ -167,15 +154,15 @@
                         <div class="fs-xs">프로젝트 12 · 기여 34</div>
                       </div>
                     </div>
-                    <span style="opacity:.35;">|</span>
+                    <span class="divider-light">|</span>
                     <span><i class="fa-regular fa-clock me-1"></i>2시간 전</span>
                     <span><i class="fa-regular fa-eye me-1"></i>127 조회</span>
                     <span class="fw-semibold text-primary"><i class="fa-regular fa-comment me-1"></i>2개 답변</span>
                   </div>
                   <!-- Quest 연결 정보 -->
-                  <div class="rounded-3 p-3 mb-4" style="background:linear-gradient(to right,#eff6ff,#eef2ff);border:1px solid #bfdbfe;">
+                  <div class="rounded-3 p-3 mb-4 section-bg-blue-light">
                     <div class="d-flex align-items-center gap-2 mb-2">
-                      <span style="color:#2563eb;"><i class="fa-regular fa-bullseye-arrow"></i></span>
+                      <span class="text-blue"><i class="fa-regular fa-bullseye-arrow"></i></span>
                       <span class="fw-semibold small">진행 중인 Quest</span>
                     </div>
                     <a href="project-detail.html" class="fw-bold text-primary text-decoration-none d-block mb-1">IoT 스마트 화분 시스템</a>
@@ -196,21 +183,21 @@
               <div class="card mb-4 border-0 shadow-sm">
                 <div class="card-body p-4">
                   <div class="d-flex align-items-center gap-3 mb-4">
-                    <div class="rounded-3 d-flex align-items-center justify-content-center flex-shrink-0" style="width:40px;height:40px;background:#dbeafe;color:#2563eb;font-size:1.1rem;"><i class="fa-regular fa-wrench"></i></div>
+                    <div class="rounded-3 icon-box-blue"><i class="fa-regular fa-wrench"></i></div>
                     <div><h5 class="fw-bold mb-0">어떤 작업을 하고 있나요?</h5><div class="text-muted small">Current work context</div></div>
                   </div>
-                  <p class="text-dark mb-0" style="line-height:1.8;">Quest 2에서 ESP32와 MQTT 브로커를 연결하는 작업을 하고 있습니다. AWS IoT Core를 사용 중이며, 센서 데이터를 5초마다 전송해야 하는 상황입니다.</p>
+                  <p class="text-dark mb-0 lh-18">Quest 2에서 ESP32와 MQTT 브로커를 연결하는 작업을 하고 있습니다. AWS IoT Core를 사용 중이며, 센서 데이터를 5초마다 전송해야 하는 상황입니다.</p>
                 </div>
               </div>
 
               <!-- 섹션 2: 문제 (빨간 카드) -->
-              <div class="card mb-4 border-0 shadow-sm" style="border:2px solid #fecaca!important;background:#fff5f5;">
+              <div class="card mb-4 border-0 shadow-sm section-bg-red">
                 <div class="card-body p-4">
                   <div class="d-flex align-items-center gap-3 mb-4">
-                    <div class="rounded-3 d-flex align-items-center justify-content-center flex-shrink-0" style="width:40px;height:40px;background:#fee2e2;color:#dc2626;font-size:1.1rem;"><i class="fa-regular fa-triangle-exclamation"></i></div>
+                    <div class="rounded-3 icon-box-red"><i class="fa-regular fa-triangle-exclamation"></i></div>
                     <div><h5 class="fw-bold mb-0">어떤 문제가 있나요?</h5><div class="text-muted small">Problem description</div></div>
                   </div>
-                  <div class="rounded-3 p-3" style="background:#fff;border:1px solid #fecaca;line-height:1.8;">
+                  <div class="rounded-3 p-3 section-bg-white-red lh-18">
                     Wi-Fi 연결은 정상인데 MQTT 브로커로의 연결이 5-10분마다 자동으로 끊깁니다. 연결이 끊길 때 Error code -2가 계속 발생하며, 재연결 시도는 성공하지만 다시 끊기는 현상이 반복됩니다.
                   </div>
                 </div>
@@ -220,10 +207,10 @@
               <div class="card mb-4 border-0 shadow-sm">
                 <div class="card-body p-4">
                   <div class="d-flex align-items-center gap-3 mb-4">
-                    <div class="rounded-3 d-flex align-items-center justify-content-center flex-shrink-0" style="width:40px;height:40px;background:#ede9fe;color:#7c3aed;font-size:1.1rem;"><i class="fa-regular fa-circle-check"></i></div>
+                    <div class="rounded-3 icon-box-purple"><i class="fa-regular fa-circle-check"></i></div>
                     <div><h5 class="fw-bold mb-0">무엇을 시도했나요?</h5><div class="text-muted small">What I've tried</div></div>
                   </div>
-                  <div class="rounded-3 p-3" style="background:#f5f3ff;border:1px solid #ddd6fe;line-height:1.8;white-space:pre-wrap;">1. Keep-alive 시간을 기본 15초에서 60초로 늘려봤습니다
+                  <div class="rounded-3 p-3 section-bg-purple lh-18" style="white-space:pre-wrap;">1. Keep-alive 시간을 기본 15초에서 60초로 늘려봤습니다
 2. QoS 레벨을 0, 1, 2로 각각 시도해봤습니다
 3. WiFi 재연결 코드를 추가했습니다
 4. MQTT 브로커 로그를 확인했지만 특별한 오류가 없었습니다
@@ -235,10 +222,10 @@
               <div class="card mb-4 border-0 shadow-sm">
                 <div class="card-body p-4">
                   <div class="d-flex align-items-center gap-3 mb-4">
-                    <div class="rounded-3 d-flex align-items-center justify-content-center flex-shrink-0" style="width:40px;height:40px;background:#dcfce7;color:#16a34a;font-size:1.1rem;"><i class="fa-regular fa-lightbulb"></i></div>
+                    <div class="rounded-3 icon-box-green"><i class="fa-regular fa-lightbulb"></i></div>
                     <div><h5 class="fw-bold mb-0">어떤 도움을 받고 싶나요?</h5><div class="text-muted small">What help is needed</div></div>
                   </div>
-                  <div class="rounded-3 p-3" style="background:#f0fdf4;border:1px solid #bbf7d0;line-height:1.8;">
+                  <div class="rounded-3 p-3 section-bg-green lh-18">
                     연결이 끊기는 근본적인 원인을 찾고 싶습니다. ESP32 설정이나 코드에서 놓친 부분이 있는지 확인 부탁드립니다. 특히 전력 관리나 WiFi 설정 관련해서 조언해주시면 감사하겠습니다.
                   </div>
                 </div>
@@ -248,7 +235,7 @@
               <div class="card mb-4 border-0 shadow-sm">
                 <div class="card-body p-4">
                   <div class="d-flex align-items-center gap-3 mb-4">
-                    <div class="rounded-3 d-flex align-items-center justify-content-center flex-shrink-0" style="width:40px;height:40px;background:#f3f4f6;color:#6b7280;font-size:1.1rem;"><i class="fa-regular fa-file-lines"></i></div>
+                    <div class="rounded-3 icon-box-gray"><i class="fa-regular fa-file-lines"></i></div>
                     <div><h5 class="fw-bold mb-0">추가 정보 및 코드</h5><div class="text-muted small">Additional details</div></div>
                   </div>
                   <div class="lh-180">
@@ -257,7 +244,7 @@
                     • MQTT 브로커: AWS IoT Core<br>
                     • 연결은 되지만 5-10분 사이에 랜덤하게 끊김<br>
                     • Error code -2 발생</p>
-                    <pre class="rounded-3 p-3 mt-3" style="background:#1e1e2e;color:#cdd6f4;font-size:.875rem;"><code>void reconnect() {
+                    <pre class="rounded-3 p-3 mt-3 code-block"><code>void reconnect() {
   while (!client.connected()) {
     if (client.connect("ESP32Client")) {
       client.subscribe("home/sensor");
@@ -276,17 +263,17 @@
                     <div class="text-muted small mb-2">이미지</div>
                     <div class="row g-2">
                       <div class="col-6">
-                        <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=800" class="img-fluid rounded-3" style="object-fit:cover;max-height:200px;width:100%;" alt="ESP32 첨부 이미지">
+                        <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=800" class="img-fluid rounded-3" style="object-fit: cover; max-height: 200px; width: 100%;" alt="ESP32 첨부 이미지">
                       </div>
                     </div>
                   </div>
                   <div>
                     <div class="text-muted small mb-2">파일</div>
-                    <div class="d-flex align-items-center gap-3 p-3 rounded-3" style="background:#f9fafb;border:1px solid #e5e7eb;">
-                      <i class="fa-regular fa-laptop" style="color:#2563eb;font-size:1.1rem;"></i>
+                    <div class="d-flex align-items-center gap-3 p-3 rounded-3 section-bg-gray">
+                      <i class="fa-regular fa-laptop text-blue" style="font-size:1.1rem;"></i>
                       <div class="flex-grow-1">
                         <div class="fw-semibold small">esp32_mqtt_config.ino</div>
-                        <div class="text-muted" style="font-size:.75rem;">2.4 KB</div>
+                        <div class="text-muted text-small-75">2.4 KB</div>
                       </div>
                       <button class="btn btn-outline-secondary btn-sm"><i class="fa-regular fa-arrow-down-to-line me-1"></i>다운로드</button>
                     </div>
@@ -303,7 +290,7 @@
                   <div class="d-flex flex-column gap-3 mb-4">
 
                     <!-- 답변 1: 도움됨 (초록 배경) -->
-                    <div class="p-4 rounded-3" style="background:#f0fdf4;border:2px solid #bbf7d0;">
+                    <div class="p-4 rounded-3 section-bg-green-2">
                       <div class="d-flex align-items-start gap-3">
                         <div class="avatar-circle-lg text-white flex-shrink-0" style="background:#16a34a;">박</div>
                         <div class="flex-grow-1">
@@ -325,7 +312,7 @@
                     </div>
 
                     <!-- 답변 2 -->
-                    <div class="p-4 rounded-3" style="background:#f9fafb;border:2px solid #e5e7eb;">
+                    <div class="p-4 rounded-3 section-bg-gray-2">
                       <div class="d-flex align-items-start gap-3">
                         <div class="avatar-circle-lg text-white flex-shrink-0" style="background:#ea580c;">최</div>
                         <div class="flex-grow-1">
@@ -350,7 +337,7 @@
                   <div class="border-top pt-4">
                     <h5 class="fw-bold mb-1"><i class="fa-regular fa-lightbulb me-1"></i> 답변 작성하기</h5>
                     <p class="text-muted small mb-3">구체적이고 실행 가능한 답변을 남겨주세요. 코드 예제나 참고 자료를 함께 제공하면 더욱 좋습니다.</p>
-                    <textarea class="form-control mb-3" rows="6" style="font-family:monospace;font-size:.875rem;" placeholder="답변을 작성해주세요..."></textarea>
+                    <textarea class="form-control mb-3 textarea-monospace" rows="6" placeholder="답변을 작성해주세요..."></textarea>
                     <div class="d-flex align-items-center justify-content-between flex-wrap gap-2">
                       <div class="d-flex gap-2">
                         <button class="btn btn-outline-secondary btn-sm"><i class="fa-regular fa-code me-1"></i> 코드 추가</button>
@@ -388,7 +375,7 @@
                 <div class="card-body p-4">
                   <div class="d-flex flex-wrap align-items-center gap-2 mb-3">
                     <span class="badge bg-primary-subtle text-primary"><i class="fa-regular fa-circle-question me-1"></i> 질문하기</span>
-                    <span class="badge" style="background:#f5f3ff;color:#7c3aed;border:1px solid #ddd6fe;"><i class="fa-regular fa-bullseye-arrow"></i> 구현 방법</span>
+                    <span class="badge badge-purple-light"><i class="fa-regular fa-bullseye-arrow"></i> 구현 방법</span>
                     <span class="badge bg-warning-subtle text-warning-emphasis"><i class="fa-regular fa-hourglass me-1"></i> 해결중</span>
                     <span class="badge border text-secondary">Quest 2</span>
                   </div>
@@ -401,14 +388,14 @@
                         <div class="fs-xs">프로젝트 8 · 기여 21</div>
                       </div>
                     </div>
-                    <span style="opacity:.35;">|</span>
+                    <span class="divider-light">|</span>
                     <span><i class="fa-regular fa-clock me-1"></i>1시간 전</span>
                     <span><i class="fa-regular fa-eye me-1"></i>45 조회</span>
                     <span class="fw-semibold text-primary"><i class="fa-regular fa-comment me-1"></i>0개 답변</span>
                   </div>
-                  <div class="rounded-3 p-3 mb-4" style="background:linear-gradient(to right,#eff6ff,#eef2ff);border:1px solid #bfdbfe;">
+                  <div class="rounded-3 p-3 mb-4 section-bg-blue-light">
                     <div class="d-flex align-items-center gap-2 mb-2">
-                      <span style="color:#2563eb;"><i class="fa-regular fa-bullseye-arrow"></i></span>
+                      <span class="text-blue"><i class="fa-regular fa-bullseye-arrow"></i></span>
                       <span class="fw-semibold small">진행 중인 Quest</span>
                     </div>
                     <a href="project-detail.html" class="fw-bold text-primary text-decoration-none d-block mb-1">AI 음성인식 자율주행 로봇</a>
@@ -427,20 +414,20 @@
               <div class="card mb-4 border-0 shadow-sm">
                 <div class="card-body p-4">
                   <div class="d-flex align-items-center gap-3 mb-4">
-                    <div class="rounded-3 d-flex align-items-center justify-content-center flex-shrink-0" style="width:40px;height:40px;background:#dbeafe;color:#2563eb;font-size:1.1rem;"><i class="fa-regular fa-wrench"></i></div>
+                    <div class="rounded-3 icon-box-blue"><i class="fa-regular fa-wrench"></i></div>
                     <div><h5 class="fw-bold mb-0">어떤 작업을 하고 있나요?</h5><div class="text-muted small">Current work context</div></div>
                   </div>
-                  <p class="text-dark mb-0" style="line-height:1.8;">Raspberry Pi 4에서 OpenCV로 실시간 객체 추적을 구현 중입니다. SORT 알고리즘을 사용하고 있으며 Quest 2 목표인 실시간 영상 처리(20fps 이상)를 달성해야 합니다.</p>
+                  <p class="text-dark mb-0 lh-18">Raspberry Pi 4에서 OpenCV로 실시간 객체 추적을 구현 중입니다. SORT 알고리즘을 사용하고 있으며 Quest 2 목표인 실시간 영상 처리(20fps 이상)를 달성해야 합니다.</p>
                 </div>
               </div>
 
-              <div class="card mb-4 border-0 shadow-sm" style="border:2px solid #fecaca!important;background:#fff5f5;">
+              <div class="card mb-4 border-0 shadow-sm section-bg-red">
                 <div class="card-body p-4">
                   <div class="d-flex align-items-center gap-3 mb-4">
-                    <div class="rounded-3 d-flex align-items-center justify-content-center flex-shrink-0" style="width:40px;height:40px;background:#fee2e2;color:#dc2626;font-size:1.1rem;"><i class="fa-regular fa-triangle-exclamation"></i></div>
+                    <div class="rounded-3 icon-box-red"><i class="fa-regular fa-triangle-exclamation"></i></div>
                     <div><h5 class="fw-bold mb-0">어떤 문제가 있나요?</h5><div class="text-muted small">Problem description</div></div>
                   </div>
-                  <div class="rounded-3 p-3" style="background:#fff;border:1px solid #fecaca;line-height:1.8;">
+                  <div class="rounded-3 p-3 section-bg-white-red lh-18">
                     현재 5-8fps 정도 나오는데 최소 20fps는 되어야 합니다. CPU 사용률이 95%에 달하고 있습니다.
                   </div>
                 </div>
@@ -449,10 +436,10 @@
               <div class="card mb-4 border-0 shadow-sm">
                 <div class="card-body p-4">
                   <div class="d-flex align-items-center gap-3 mb-4">
-                    <div class="rounded-3 d-flex align-items-center justify-content-center flex-shrink-0" style="width:40px;height:40px;background:#ede9fe;color:#7c3aed;font-size:1.1rem;"><i class="fa-regular fa-circle-check"></i></div>
+                    <div class="rounded-3 icon-box-purple"><i class="fa-regular fa-circle-check"></i></div>
                     <div><h5 class="fw-bold mb-0">무엇을 시도했나요?</h5><div class="text-muted small">What I've tried</div></div>
                   </div>
-                  <div class="rounded-3 p-3" style="background:#f5f3ff;border:1px solid #ddd6fe;line-height:1.8;white-space:pre-wrap;">1. 이미지 해상도를 640x480으로 낮춰봤습니다
+                  <div class="rounded-3 p-3 section-bg-purple lh-18" style="white-space:pre-wrap;">1. 이미지 해상도를 640x480으로 낮춰봤습니다
 2. 프레임 스킵(2프레임마다 처리)을 적용해봤습니다
 3. OpenCV 빌드 시 NEON 최적화 옵션을 활성화했습니다</div>
                 </div>
@@ -461,10 +448,10 @@
               <div class="card mb-4 border-0 shadow-sm">
                 <div class="card-body p-4">
                   <div class="d-flex align-items-center gap-3 mb-4">
-                    <div class="rounded-3 d-flex align-items-center justify-content-center flex-shrink-0" style="width:40px;height:40px;background:#dcfce7;color:#16a34a;font-size:1.1rem;"><i class="fa-regular fa-lightbulb"></i></div>
+                    <div class="rounded-3 icon-box-green"><i class="fa-regular fa-lightbulb"></i></div>
                     <div><h5 class="fw-bold mb-0">어떤 도움을 받고 싶나요?</h5><div class="text-muted small">What help is needed</div></div>
                   </div>
-                  <div class="rounded-3 p-3" style="background:#f0fdf4;border:1px solid #bbf7d0;line-height:1.8;">
+                  <div class="rounded-3 p-3 section-bg-green lh-18">
                     라즈베리파이에서 OpenCV 실시간 처리 성능을 높이는 방법이 알고 싶습니다. 멀티프로세싱이나 GPU 가속을 사용하는 방법도 궁금합니다.
                   </div>
                 </div>
@@ -473,7 +460,7 @@
               <div class="card mb-4 border-0 shadow-sm">
                 <div class="card-body p-4">
                   <div class="d-flex align-items-center gap-3 mb-4">
-                    <div class="rounded-3 d-flex align-items-center justify-content-center flex-shrink-0" style="width:40px;height:40px;background:#f3f4f6;color:#6b7280;font-size:1.1rem;"><i class="fa-regular fa-file-lines"></i></div>
+                    <div class="rounded-3 icon-box-gray"><i class="fa-regular fa-file-lines"></i></div>
                     <div><h5 class="fw-bold mb-0">추가 정보 및 코드</h5><div class="text-muted small">Additional details</div></div>
                   </div>
                   <div class="lh-180">
@@ -496,7 +483,7 @@
                   <div class="border-top pt-4">
                     <h5 class="fw-bold mb-1"><i class="fa-regular fa-lightbulb me-1"></i> 답변 작성하기</h5>
                     <p class="text-muted small mb-3">구체적이고 실행 가능한 답변을 남겨주세요.</p>
-                    <textarea class="form-control mb-3" rows="6" style="font-family:monospace;font-size:.875rem;" placeholder="답변을 작성해주세요..."></textarea>
+                    <textarea class="form-control mb-3 textarea-monospace" rows="6" placeholder="답변을 작성해주세요..."></textarea>
                     <div class="d-flex align-items-center justify-content-between flex-wrap gap-2">
                       <div class="d-flex gap-2">
                         <button class="btn btn-outline-secondary btn-sm"><i class="fa-regular fa-code me-1"></i> 코드 추가</button>
@@ -533,7 +520,7 @@
                 <div class="card-body p-4">
                   <div class="d-flex flex-wrap align-items-center gap-2 mb-3">
                     <span class="badge bg-primary-subtle text-primary"><i class="fa-regular fa-circle-question me-1"></i> 질문하기</span>
-                    <span class="badge" style="background:#eff6ff;color:#2563eb;border:1px solid #bfdbfe;"><i class="fa-regular fa-laptop-code"></i> 기술 문제</span>
+                    <span class="badge badge-blue"><i class="fa-regular fa-laptop-code"></i> 기술 문제</span>
                     <span class="badge bg-success-subtle text-success"><i class="fa-regular fa-circle-check me-1"></i> 해결됨</span>
                     <span class="badge border text-secondary">Quest 3</span>
                   </div>
@@ -546,14 +533,14 @@
                         <div class="fs-xs">프로젝트 15 · 기여 56</div>
                       </div>
                     </div>
-                    <span style="opacity:.35;">|</span>
+                    <span class="divider-light">|</span>
                     <span><i class="fa-regular fa-clock me-1"></i>3시간 전</span>
                     <span><i class="fa-regular fa-eye me-1"></i>156 조회</span>
                     <span class="fw-semibold text-primary"><i class="fa-regular fa-comment me-1"></i>2개 답변</span>
                   </div>
-                  <div class="rounded-3 p-3 mb-4" style="background:linear-gradient(to right,#eff6ff,#eef2ff);border:1px solid #bfdbfe;">
+                  <div class="rounded-3 p-3 mb-4 section-bg-blue-light">
                     <div class="d-flex align-items-center gap-2 mb-2">
-                      <span style="color:#2563eb;"><i class="fa-regular fa-bullseye-arrow"></i></span>
+                      <span class="text-blue"><i class="fa-regular fa-bullseye-arrow"></i></span>
                       <span class="fw-semibold small">진행 중인 Quest</span>
                     </div>
                     <a href="project-detail.html" class="fw-bold text-primary text-decoration-none d-block mb-1">얼굴 인식 출입 시스템</a>
@@ -572,20 +559,20 @@
               <div class="card mb-4 border-0 shadow-sm">
                 <div class="card-body p-4">
                   <div class="d-flex align-items-center gap-3 mb-4">
-                    <div class="rounded-3 d-flex align-items-center justify-content-center flex-shrink-0" style="width:40px;height:40px;background:#dbeafe;color:#2563eb;font-size:1.1rem;"><i class="fa-regular fa-wrench"></i></div>
+                    <div class="rounded-3 icon-box-blue"><i class="fa-regular fa-wrench"></i></div>
                     <div><h5 class="fw-bold mb-0">어떤 작업을 하고 있나요?</h5><div class="text-muted small">Current work context</div></div>
                   </div>
-                  <p class="text-dark mb-0" style="line-height:1.8;">PC에서 TensorFlow로 학습한 얼굴 인식 모델을 라즈베리파이에 배포하려고 합니다. 모델을 TFLite로 변환하는 것까지는 완료했습니다.</p>
+                  <p class="text-dark mb-0 lh-18">PC에서 TensorFlow로 학습한 얼굴 인식 모델을 라즈베리파이에 배포하려고 합니다. 모델을 TFLite로 변환하는 것까지는 완료했습니다.</p>
                 </div>
               </div>
 
-              <div class="card mb-4 border-0 shadow-sm" style="border:2px solid #fecaca!important;background:#fff5f5;">
+              <div class="card mb-4 border-0 shadow-sm section-bg-red">
                 <div class="card-body p-4">
                   <div class="d-flex align-items-center gap-3 mb-4">
-                    <div class="rounded-3 d-flex align-items-center justify-content-center flex-shrink-0" style="width:40px;height:40px;background:#fee2e2;color:#dc2626;font-size:1.1rem;"><i class="fa-regular fa-triangle-exclamation"></i></div>
+                    <div class="rounded-3 icon-box-red"><i class="fa-regular fa-triangle-exclamation"></i></div>
                     <div><h5 class="fw-bold mb-0">어떤 문제가 있나요?</h5><div class="text-muted small">Problem description</div></div>
                   </div>
-                  <div class="rounded-3 p-3" style="background:#fff;border:1px solid #fecaca;line-height:1.8;">
+                  <div class="rounded-3 p-3 section-bg-white-red lh-18">
                     TFLite 모델을 라즈베리파이에서 실행할 때 <code>"RuntimeError: Failed to load delegate from libedgetpu.so.1"</code> 오류가 발생합니다. EdgeTPU를 사용하지 않아도 같은 오류가 납니다.
                   </div>
                 </div>
@@ -594,10 +581,10 @@
               <div class="card mb-4 border-0 shadow-sm">
                 <div class="card-body p-4">
                   <div class="d-flex align-items-center gap-3 mb-4">
-                    <div class="rounded-3 d-flex align-items-center justify-content-center flex-shrink-0" style="width:40px;height:40px;background:#ede9fe;color:#7c3aed;font-size:1.1rem;"><i class="fa-regular fa-circle-check"></i></div>
+                    <div class="rounded-3 icon-box-purple"><i class="fa-regular fa-circle-check"></i></div>
                     <div><h5 class="fw-bold mb-0">무엇을 시도했나요?</h5><div class="text-muted small">What I've tried</div></div>
                   </div>
-                  <div class="rounded-3 p-3" style="background:#f5f3ff;border:1px solid #ddd6fe;line-height:1.8;white-space:pre-wrap;">1. pip install tflite-runtime 설치 시도
+                  <div class="rounded-3 p-3 section-bg-purple lh-18" style="white-space:pre-wrap;">1. pip install tflite-runtime 설치 시도
 2. tensorflow 전체를 설치해봤지만 ARM 호환 오류 발생
 3. libedgetpu 라이브러리 수동 설치 시도
 4. Python 버전을 3.9에서 3.8로 낮춰봤습니다</div>
@@ -607,10 +594,10 @@
               <div class="card mb-4 border-0 shadow-sm">
                 <div class="card-body p-4">
                   <div class="d-flex align-items-center gap-3 mb-4">
-                    <div class="rounded-3 d-flex align-items-center justify-content-center flex-shrink-0" style="width:40px;height:40px;background:#dcfce7;color:#16a34a;font-size:1.1rem;"><i class="fa-regular fa-lightbulb"></i></div>
+                    <div class="rounded-3 icon-box-green"><i class="fa-regular fa-lightbulb"></i></div>
                     <div><h5 class="fw-bold mb-0">어떤 도움을 받고 싶나요?</h5><div class="text-muted small">What help is needed</div></div>
                   </div>
-                  <div class="rounded-3 p-3" style="background:#f0fdf4;border:1px solid #bbf7d0;line-height:1.8;">
+                  <div class="rounded-3 p-3 section-bg-green lh-18">
                     EdgeTPU 없이 TFLite 모델만으로 라즈베리파이에서 실행하는 방법이 알고 싶습니다. 올바른 패키지 설치 방법과 추론 코드 예제도 부탁드립니다.
                   </div>
                 </div>
@@ -619,7 +606,7 @@
               <div class="card mb-4 border-0 shadow-sm">
                 <div class="card-body p-4">
                   <div class="d-flex align-items-center gap-3 mb-4">
-                    <div class="rounded-3 d-flex align-items-center justify-content-center flex-shrink-0" style="width:40px;height:40px;background:#f3f4f6;color:#6b7280;font-size:1.1rem;"><i class="fa-regular fa-file-lines"></i></div>
+                    <div class="rounded-3 icon-box-gray"><i class="fa-regular fa-file-lines"></i></div>
                     <div><h5 class="fw-bold mb-0">추가 정보 및 코드</h5><div class="text-muted small">Additional details</div></div>
                   </div>
                   <div class="lh-180">
@@ -639,7 +626,7 @@
                   </div>
                   <div class="d-flex flex-column gap-3 mb-4">
 
-                    <div class="p-4 rounded-3" style="background:#f0fdf4;border:2px solid #bbf7d0;">
+                    <div class="p-4 rounded-3 section-bg-green-2">
                       <div class="d-flex align-items-start gap-3">
                         <div class="avatar-circle-lg text-white flex-shrink-0" style="background:#2563eb;">김</div>
                         <div class="flex-grow-1">
@@ -660,7 +647,7 @@
                       </div>
                     </div>
 
-                    <div class="p-4 rounded-3" style="background:#f9fafb;border:2px solid #e5e7eb;">
+                    <div class="p-4 rounded-3 section-bg-gray-2">
                       <div class="d-flex align-items-start gap-3">
                         <div class="avatar-circle-lg text-white flex-shrink-0" style="background:#2563eb;">이</div>
                         <div class="flex-grow-1">
@@ -683,7 +670,7 @@
                   <div class="border-top pt-4">
                     <h5 class="fw-bold mb-1"><i class="fa-regular fa-lightbulb me-1"></i> 답변 작성하기</h5>
                     <p class="text-muted small mb-3">구체적이고 실행 가능한 답변을 남겨주세요.</p>
-                    <textarea class="form-control mb-3" rows="6" style="font-family:monospace;font-size:.875rem;" placeholder="답변을 작성해주세요..."></textarea>
+                    <textarea class="form-control mb-3 textarea-monospace" rows="6" placeholder="답변을 작성해주세요..."></textarea>
                     <div class="d-flex align-items-center justify-content-between flex-wrap gap-2">
                       <div class="d-flex gap-2">
                         <button class="btn btn-outline-secondary btn-sm"><i class="fa-regular fa-code me-1"></i> 코드 추가</button>
@@ -721,12 +708,12 @@
           <div class="sticky-top sticky-top-110" id="sidebar-sticky">
 
             <!-- 빠른 액션 (그라디언트) -->
-            <div class="card mb-3 border-0 shadow-sm" id="sidebar-quick" style="background:linear-gradient(to bottom right,#eff6ff,#eef2ff);border:1px solid #bfdbfe!important;">
+            <div class="card mb-3 border-0 shadow-sm" id="sidebar-quick" style="background: linear-gradient(to bottom right, #eff6ff, #eef2ff); border: 1px solid #bfdbfe !important;">
               <div class="card-body p-4">
                 <h6 class="fw-bold mb-3">빠른 액션</h6>
                 <div class="d-flex flex-column gap-2 mb-3">
                   <div class="d-flex align-items-center gap-2 small" id="sidebar-status">
-                    <span style="color:#ea580c;"><i class="fa-regular fa-clock"></i></span> <span>해결중</span>
+                    <span class="text-orange"><i class="fa-regular fa-clock"></i></span> <span>해결중</span>
                   </div>
                   <div class="d-flex align-items-center gap-2 small" id="sidebar-answers">
                     <span style="color:#2563eb;"><i class="fa-regular fa-comment"></i></span> <span>2개 답변</span>
@@ -744,11 +731,11 @@
             <div class="card mb-3 border-0 shadow-sm">
               <div class="card-body p-4">
                 <h6 class="fw-bold mb-3">질문 유형</h6>
-                <div class="rounded-3 p-3" id="sidebar-qtype" style="background:#eff6ff;border:1px solid #bfdbfe;">
+                <div class="rounded-3 p-3" id="sidebar-qtype" style="background: #eff6ff; border: 1px solid #bfdbfe;">
                   <div class="d-flex align-items-center gap-3">
                     <span style="font-size:1.4rem;" id="sidebar-qtype-icon"><i class="fa-regular fa-laptop-code"></i></span>
                     <div>
-                      <div class="fw-semibold" id="sidebar-qtype-label" style="color:#2563eb;">기술 문제</div>
+                      <div class="fw-semibold text-blue" id="sidebar-qtype-label">기술 문제</div>
                       <div class="text-muted small mt-1" id="sidebar-qtype-desc">기술적인 문제 해결이 필요한 질문</div>
                     </div>
                   </div>
@@ -758,11 +745,11 @@
 
             <!-- 연결된 프로젝트 (오버레이 이미지) -->
             <div class="card mb-3 border-0 shadow-sm overflow-hidden">
-              <div style="position:relative;height:128px;">
-                <img id="proj-img" src="https://images.unsplash.com/photo-1466692476868-aef1dfb1e735?w=400" alt="" style="width:100%;height:100%;object-fit:cover;opacity:.5;">
-                <div style="position:absolute;inset:0;background:linear-gradient(to bottom,rgba(37,99,235,.5),rgba(99,102,241,.5));"></div>
-                <div style="position:absolute;bottom:12px;left:12px;">
-                  <span class="badge text-white" style="background:rgba(255,255,255,.2);" id="proj-category">IoT</span>
+              <div class="img-overlay-relative">
+                <img id="proj-img" src="https://images.unsplash.com/photo-1466692476868-aef1dfb1e735?w=400" alt="" class="img-cover-fade">
+                <div class="gradient-overlay" style="background: linear-gradient(to bottom, rgba(37, 99, 235, 0.5), rgba(99, 102, 241, 0.5));"></div>
+                <div class="badge-absolute">
+                  <span class="badge text-white badge-light" id="proj-category">IoT</span>
                 </div>
               </div>
               <div class="card-body p-3">
@@ -771,7 +758,7 @@
                 <div class="text-muted small mb-1" id="proj-quest"><i class="fa-regular fa-rocket me-1"></i> Quest 2 진행중</div>
                 <div class="text-muted small mb-2 fs-xs" id="proj-title">Quest 2: 센서 데이터 수집 및 전송</div>
                 <div class="border-bottom pb-2 mb-2" id="proj-contest-wrap">
-                  <div class="text-muted" style="font-size:.75rem;">참여 콘테스트</div>
+                  <div class="text-muted text-small-75">참여 콘테스트</div>
                   <a href="#" class="text-primary text-decoration-none small fw-semibold" id="proj-contest">IoT 혁신 챌린지 2026</a>
                 </div>
                 <a href="project-detail.html" class="btn btn-primary btn-sm w-100">프로젝트 보기</a>
