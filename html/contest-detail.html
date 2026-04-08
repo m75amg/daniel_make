@@ -220,37 +220,39 @@
         <div class="tab-pane fade show active" id="tab-overview">
 
           <!-- 콘테스트 참가 = 프로젝트 생성 -->
-          <div class="card border-0 shadow-sm mb-4 rounded-4 card-gradient-blue-violet-border-imp">
-            <div class="card-body p-5">
-              <div class="d-flex align-items-center gap-3 mb-4">
-                <div class="step-circle bg-primary text-white"><i class="fa-regular fa-lightbulb"></i></div>
+          <div class="card border-0 shadow-sm mb-4 rounded-4" style="background:#fff;">
+            <div class="card-body p-4 p-md-5">
+              <div class="d-flex align-items-center gap-2 mb-4">
+                <span class="cd-section-badge"><i class="fa-regular fa-lightbulb me-1"></i>참가 안내</span>
                 <h2 class="fw-bold fs-4 mb-0">콘테스트 참가 = 프로젝트 생성</h2>
               </div>
-              <p class="text-secondary mb-5 lh-180 fs-105">
+              <p class="text-secondary mb-4 lh-180 fs-105">
                 이 콘테스트는 단순한 공모전이 아닙니다. <strong class="text-dark">참가 신청과 동시에 하나의 프로젝트가 생성되며</strong>,
                 3개의 Quest를 완료하면서 점진적으로 프로젝트를 완성해 나갑니다.
                 완성된 프로젝트는 <strong class="text-dark">콘테스트 종료 후에도 플랫폼에 영구 보관</strong>되어 여러분의 포트폴리오가 됩니다.
               </p>
-              <div class="row g-4">
-                <div class="col-md-4">
-                  <div class="bg-white rounded-3 p-4 h-100 shadow-sm">
-                    <div class="step-circle bg-success-subtle text-success mb-3"><i class="fa-regular fa-rocket"></i></div>
-                    <h5 class="fw-bold mb-2">1. 참가 신청</h5>
-                    <p class="text-muted small mb-0">참가 버튼을 누르면 여러분의 콘테스트 프로젝트가 자동으로 생성됩니다</p>
+              <div class="contest-join-steps">
+                <div class="contest-join-step">
+                  <div class="cjs-icon cjs-icon-green"><i class="fa-regular fa-rocket"></i></div>
+                  <div class="cjs-body">
+                    <h5 class="cjs-title">1. 참가 신청</h5>
+                    <p class="cjs-desc">참가 버튼을 누르면 여러분의 콘테스트 프로젝트가 자동으로 생성됩니다</p>
                   </div>
                 </div>
-                <div class="col-md-4">
-                  <div class="bg-white rounded-3 p-4 h-100 shadow-sm">
-                    <div class="step-circle bg-primary-subtle text-primary mb-3"><i class="fa-regular fa-code-branch"></i></div>
-                    <h5 class="fw-bold mb-2">2. 단계별 완성</h5>
-                    <p class="text-muted small mb-0">Quest 1, 2, 3을 순차적으로 완료하며 같은 프로젝트를 발전시킵니다</p>
+                <div class="cjs-divider"><i class="fa-regular fa-chevron-right"></i></div>
+                <div class="contest-join-step">
+                  <div class="cjs-icon cjs-icon-blue"><i class="fa-regular fa-code-branch"></i></div>
+                  <div class="cjs-body">
+                    <h5 class="cjs-title">2. 단계별 완성</h5>
+                    <p class="cjs-desc">Quest 1, 2, 3을 순차적으로 완료하며 같은 프로젝트를 발전시킵니다</p>
                   </div>
                 </div>
-                <div class="col-md-4">
-                  <div class="bg-white rounded-3 p-4 h-100 shadow-sm">
-                    <div class="step-circle mb-3 step-circle-violet"><i class="fa-regular fa-trophy"></i></div>
-                    <h5 class="fw-bold mb-2">3. 영구 자산화</h5>
-                    <p class="text-muted small mb-0">완성된 프로젝트는 플랫폼의 영구 자산으로 남아 포트폴리오가 됩니다</p>
+                <div class="cjs-divider"><i class="fa-regular fa-chevron-right"></i></div>
+                <div class="contest-join-step">
+                  <div class="cjs-icon cjs-icon-purple"><i class="fa-regular fa-trophy"></i></div>
+                  <div class="cjs-body">
+                    <h5 class="cjs-title">3. 영구 자산화</h5>
+                    <p class="cjs-desc">완성된 프로젝트는 플랫폼의 영구 자산으로 남아 포트폴리오가 됩니다</p>
                   </div>
                 </div>
               </div>
@@ -259,36 +261,52 @@
 
           <!-- 콘테스트 소개 -->
           <div class="card border-0 shadow-sm mb-4 rounded-4">
-            <div class="card-body p-5">
-              <h2 class="fw-bold fs-4 mb-4">콘테스트 소개</h2>
-              <div class="text-secondary lh-190">
+            <div class="card-body p-4 p-md-5">
+              <div class="d-flex align-items-center gap-2 mb-4">
+                <span class="cd-section-badge"><i class="fa-regular fa-flag me-1"></i>소개</span>
+                <h2 class="fw-bold fs-4 mb-0">AI 로봇 챌린지 2026</h2>
+              </div>
+              <div class="cd-prose">
                 <p>AI 로봇 챌린지 2026은 인공지능과 로봇공학의 융합을 통해 미래 기술을 선도할 메이커들을 위한 대회입니다.</p>
                 <p>참가자들은 라즈베리파이, Arduino, ESP32 등의 플랫폼과 다양한 AI 라이브러리를 활용하여 실내 자율주행, 물체 인식, 음성 제어 등의 기능을 가진 로봇을 제작합니다.</p>
-                <p class="mb-0">이 콘테스트의 핵심은 <strong class="text-dark">프로젝트 중심의 학습과 성장</strong>입니다. 3개의 Quest를 통해 기획부터 설계, 프로토타입 제작, 최종 완성까지 전체 개발 프로세스를 경험하며, 하나의 완성된 프로젝트를 만들어 갑니다.</p>
+                <p>이 콘테스트의 핵심은 <strong>프로젝트 중심의 학습과 성장</strong>입니다. 3개의 Quest를 통해 기획부터 설계, 프로토타입 제작, 최종 완성까지 전체 개발 프로세스를 경험하며, 하나의 완성된 프로젝트를 만들어 갑니다.</p>
               </div>
             </div>
           </div>
 
           <!-- 참가 조건 -->
           <div class="card border-0 shadow-sm mb-4 rounded-4">
-            <div class="card-body p-5">
-              <h2 class="fw-bold fs-4 mb-4">참가 조건</h2>
-              <div class="row g-4">
+            <div class="card-body p-4 p-md-5">
+              <div class="d-flex align-items-center gap-2 mb-4">
+                <span class="cd-section-badge"><i class="fa-regular fa-clipboard-list me-1"></i>참가 조건</span>
+                <h2 class="fw-bold fs-4 mb-0">누가 참가할 수 있나요?</h2>
+              </div>
+              <div class="row g-3">
                 <div class="col-md-6">
-                  <h5 class="fw-bold d-flex align-items-center gap-2 mb-3"><i class="fa-regular fa-circle-check text-success"></i> 필수 요구사항</h5>
-                  <ul class="list-unstyled text-secondary lh-200">
-                    <li class="d-flex gap-2"><span class="text-primary mt-1">•</span><span>로봇공학 또는 프로그래밍 기초 지식</span></li>
-                    <li class="d-flex gap-2"><span class="text-primary mt-1">•</span><span>라즈베리파이, Arduino 등 개발 보드 보유</span></li>
-                    <li class="d-flex gap-2"><span class="text-primary mt-1">•</span><span>Make 2.0 플랫폼 계정 (프로젝트 생성용)</span></li>
-                  </ul>
+                  <div class="cd-req-card cd-req-card-required">
+                    <div class="cd-req-header">
+                      <div class="cd-req-icon"><i class="fa-regular fa-circle-check"></i></div>
+                      <span class="cd-req-label">필수 요구사항</span>
+                    </div>
+                    <ul class="cd-req-list">
+                      <li><i class="fa-solid fa-check"></i><span>로봇공학 또는 프로그래밍 기초 지식</span></li>
+                      <li><i class="fa-solid fa-check"></i><span>라즈베리파이, Arduino 등 개발 보드 보유</span></li>
+                      <li><i class="fa-solid fa-check"></i><span>Make 2.0 플랫폼 계정 (프로젝트 생성용)</span></li>
+                    </ul>
+                  </div>
                 </div>
                 <div class="col-md-6">
-                  <h5 class="fw-bold d-flex align-items-center gap-2 mb-3"><i class="fa-regular fa-star text-warning"></i> 권장 사항</h5>
-                  <ul class="list-unstyled text-secondary lh-200">
-                    <li class="d-flex gap-2"><span class="text-purple mt-1">•</span><span>Python 또는 C++ 프로그래밍 경험</span></li>
-                    <li class="d-flex gap-2"><span class="text-purple mt-1">•</span><span>OpenCV, TensorFlow 등 AI 라이브러리 경험</span></li>
-                    <li class="d-flex gap-2"><span class="text-purple mt-1">•</span><span>3D 프린터 또는 레이저 커터 사용 가능</span></li>
-                  </ul>
+                  <div class="cd-req-card cd-req-card-optional">
+                    <div class="cd-req-header">
+                      <div class="cd-req-icon"><i class="fa-regular fa-star"></i></div>
+                      <span class="cd-req-label">권장 사항</span>
+                    </div>
+                    <ul class="cd-req-list">
+                      <li><i class="fa-solid fa-plus"></i><span>Python 또는 C++ 프로그래밍 경험</span></li>
+                      <li><i class="fa-solid fa-plus"></i><span>OpenCV, TensorFlow 등 AI 라이브러리 경험</span></li>
+                      <li><i class="fa-solid fa-plus"></i><span>3D 프린터 또는 레이저 커터 사용 가능</span></li>
+                    </ul>
+                  </div>
                 </div>
               </div>
             </div>
@@ -296,42 +314,53 @@
 
           <!-- 진행 일정 -->
           <div class="card border-0 shadow-sm rounded-4">
-            <div class="card-body p-5">
-              <h2 class="fw-bold fs-4 mb-4">진행 일정</h2>
-              <div class="d-flex flex-column gap-4">
-                <div class="d-flex align-items-center gap-4 pb-4 border-bottom">
-                  <div class="timeline-circle bg-success text-white fw-bold"><i class="fa-regular fa-check"></i></div>
-                  <div>
-                    <div class="fw-bold">참가 접수</div>
-                    <div class="text-muted small">2026년 3월 1일 ~ 3월 20일</div>
+            <div class="card-body p-4 p-md-5">
+              <div class="d-flex align-items-center gap-2 mb-4">
+                <span class="cd-section-badge"><i class="fa-regular fa-calendar me-1"></i>일정</span>
+                <h2 class="fw-bold fs-4 mb-0">진행 일정</h2>
+              </div>
+              <div class="cd-timeline">
+                <div class="cd-timeline-item cd-tl-done">
+                  <div class="cd-tl-node"><i class="fa-solid fa-check"></i></div>
+                  <div class="cd-tl-connector"></div>
+                  <div class="cd-tl-content">
+                    <span class="cd-tl-date">3월 1일 ~ 3월 20일</span>
+                    <p class="cd-tl-title">참가 접수</p>
                   </div>
                 </div>
-                <div class="d-flex align-items-center gap-4 pb-4 border-bottom">
-                  <div class="timeline-circle bg-primary text-white fw-bold">1</div>
-                  <div>
-                    <div class="fw-bold">Quest 1 제출</div>
-                    <div class="text-muted small">프로젝트 기획 및 설계 ~ 3월 25일</div>
+                <div class="cd-timeline-item cd-tl-active">
+                  <div class="cd-tl-node">1</div>
+                  <div class="cd-tl-connector"></div>
+                  <div class="cd-tl-content">
+                    <span class="cd-tl-date">~ 3월 25일</span>
+                    <p class="cd-tl-title">Quest 1 제출</p>
+                    <p class="cd-tl-sub">프로젝트 기획 및 설계</p>
                   </div>
                 </div>
-                <div class="d-flex align-items-center gap-4 pb-4 border-bottom">
-                  <div class="timeline-circle bg-primary text-white fw-bold">2</div>
-                  <div>
-                    <div class="fw-bold">Quest 2 제출</div>
-                    <div class="text-muted small">프로토타입 제작 ~ 4월 5일</div>
+                <div class="cd-timeline-item">
+                  <div class="cd-tl-node">2</div>
+                  <div class="cd-tl-connector"></div>
+                  <div class="cd-tl-content">
+                    <span class="cd-tl-date">~ 4월 5일</span>
+                    <p class="cd-tl-title">Quest 2 제출</p>
+                    <p class="cd-tl-sub">프로토타입 제작</p>
                   </div>
                 </div>
-                <div class="d-flex align-items-center gap-4 pb-4 border-bottom">
-                  <div class="timeline-circle bg-primary text-white fw-bold">3</div>
-                  <div>
-                    <div class="fw-bold">Quest 3 제출 (최종 마감)</div>
-                    <div class="text-muted small">최종 프로젝트 완성 ~ 4월 25일</div>
+                <div class="cd-timeline-item">
+                  <div class="cd-tl-node">3</div>
+                  <div class="cd-tl-connector"></div>
+                  <div class="cd-tl-content">
+                    <span class="cd-tl-date">~ 4월 25일</span>
+                    <p class="cd-tl-title">Quest 3 제출</p>
+                    <p class="cd-tl-sub">최종 프로젝트 완성</p>
                   </div>
                 </div>
-                <div class="d-flex align-items-center gap-4">
-                  <div class="timeline-circle bg-warning text-white"><i class="fa-regular fa-trophy"></i></div>
-                  <div>
-                    <div class="fw-bold">결과 발표</div>
-                    <div class="text-muted small">2026년 5월 1일</div>
+                
+                <div class="cd-timeline-item cd-tl-final">
+                  <div class="cd-tl-node"><i class="fa-solid fa-trophy"></i></div>
+                  <div class="cd-tl-content">
+                    <span class="cd-tl-date">5월 1일</span>
+                    <p class="cd-tl-title">결과 발표</p>
                   </div>
                 </div>
               </div>
