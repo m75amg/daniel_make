@@ -2718,8 +2718,8 @@ nav.navbar.px-0 {
   border-radius: 0;
 
   &.active {
-    color: #2563eb;
-    border-bottom-color: #2563eb;
+    color: var(--color-purple);
+    border-bottom-color: var(--color-purple);
     font-weight: 600;
   }
 
@@ -4127,6 +4127,335 @@ nav.navbar.px-0 {
 .step-circle-violet {
   background: linear-gradient(135deg, #7c3aed, #db2777);
   color: #fff;
+}
+
+/* ── 콘테스트 참가 3단계 ─────────────────────────────── */
+.contest-join-steps {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.contest-join-step {
+  flex: 1;
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  background: linear-gradient(#fff, #fff) padding-box,
+              linear-gradient(135deg, #60a5fa, #a78bfa) border-box;
+  border: 1.5px solid transparent;
+  border-radius: 0.75rem;
+  padding: 1.25rem;
+}
+
+.cjs-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 0.6rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  flex-shrink: 0;
+}
+
+.cjs-icon-green  { background: #dcfce7; color: #16a34a; }
+.cjs-icon-blue   { background: #dbeafe; color: #2563eb; }
+.cjs-icon-purple { background: #ede9fe; color: var(--color-purple); }
+
+.cjs-body { flex: 1; }
+
+.cjs-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--color-20);
+  margin-bottom: 0.3rem;
+}
+
+.cjs-desc {
+  font-size: 0.875rem;
+  color: #6b7280;
+  margin-bottom: 0;
+  line-height: 1.5;
+}
+
+.cjs-divider {
+  color: #d1d5db;
+  font-size: 0.8rem;
+  flex-shrink: 0;
+}
+
+@media (max-width: 767.98px) {
+  .contest-join-steps {
+    flex-direction: column;
+  }
+  .cjs-divider {
+    transform: rotate(90deg);
+  }
+}
+
+/* ── 콘테스트 소개 섹션 배지 ──────────────────────────── */
+.cd-section-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  background: transparent;
+  color: #ea580c;
+  font-size: 0.88rem;
+  font-weight: 700;
+  padding: 0;
+  margin-right: 0.5rem;
+  border-radius: 0;
+  border-bottom: 1px solid #ea580c;
+  flex-shrink: 0;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.cd-section-badge-blue {
+  color: var(--color-blue);
+  border-bottom-color: var(--color-blue);
+}
+
+/* ── 진행 일정 타임라인 (기본: 가로 1줄) ─────────────── */
+.cd-timeline {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 0;
+  margin-top: 2rem;
+}
+
+.cd-timeline-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+  position: relative;
+}
+
+.cd-tl-node {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  font-weight: 700;
+  background: #f3f4f6;
+  color: #d1d5db;
+  border: 2px solid #e5e7eb;
+  z-index: 1;
+  flex-shrink: 0;
+  transition: all 0.2s;
+
+  .cd-tl-done & {
+    background: linear-gradient(135deg, var(--color-green), #0ab88a);
+    border-color: transparent;
+    color: #fff;
+    box-shadow: 0 3px 10px rgba(22,188,156,0.35);
+  }
+
+  .cd-tl-active & {
+    background: linear-gradient(135deg, var(--color-purple), #b87fff);
+    border-color: transparent;
+    color: #fff;
+    box-shadow: 0 3px 10px rgba(146,78,255,0.35), 0 0 0 4px rgba(146,78,255,0.12);
+  }
+
+  .cd-tl-final & {
+    background: linear-gradient(135deg, #f59e0b, #fbbf24);
+    border-color: transparent;
+    color: #fff;
+    box-shadow: 0 3px 10px rgba(251,191,36,0.35);
+  }
+}
+
+/* 가로 연결선 + 화살표 */
+.cd-tl-connector {
+  position: absolute;
+  top: 20px;
+  left: calc(50% + 22px);
+  right: calc(-50% + 22px);
+  height: 2px;
+  background: #e5e7eb;
+
+  .cd-tl-done & { background: var(--color-green); }
+  .cd-tl-active & { background: linear-gradient(to right, var(--color-purple), #e5e7eb); }
+
+  &::after {
+    content: "\f054";
+    font-family: "Font Awesome 6 Pro", "Font Awesome 6 Free";
+    font-weight: 900;
+    font-size: 0.8rem;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    color: #d1d5db;
+    line-height: 1;
+  }
+
+  .cd-tl-done &::after { color: var(--color-green); }
+  .cd-tl-active &::after { color: #d1d5db; }
+}
+
+.cd-timeline-item:last-child .cd-tl-connector { display: none; }
+
+.cd-tl-content {
+  text-align: center;
+  margin-top: 0.75rem;
+  padding: 0 0.25rem;
+}
+
+/* 퀘스트 4개 이상(총 6개 이상) → 2줄 flex wrap (3개씩) */
+.cd-timeline:has(.cd-timeline-item:nth-child(6)) {
+  flex-wrap: wrap;
+  row-gap: 2rem;
+}
+
+.cd-timeline:has(.cd-timeline-item:nth-child(6)) .cd-timeline-item {
+  flex: 1 1 calc(33.333% - 1px);
+}
+
+/* 각 행 마지막(3번째, 6번째...) 아이템의 연결선 숨김 */
+.cd-timeline:has(.cd-timeline-item:nth-child(6)) .cd-timeline-item:nth-child(3n) .cd-tl-connector { display: none; }
+
+.cd-tl-date {
+  font-size: 0.9rem;
+  color: #9ca3af;
+  font-weight: 500;
+  display: block;
+  margin-bottom: 0.25rem;
+}
+
+.cd-tl-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--color-20);
+  margin-bottom: 0.15rem;
+}
+
+.cd-tl-sub {
+  font-size: 0.95rem;
+  color: #6b7280;
+  margin-bottom: 0;
+}
+
+@media (max-width: 575.98px) {
+  .cd-timeline {
+    flex-direction: column;
+    gap: 0;
+  }
+  .cd-timeline-item {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 1rem;
+    flex: unset;
+    width: 100%;
+    padding-bottom: 1.5rem;
+  }
+  .cd-tl-connector {
+    width: 2px;
+    height: calc(100% - 42px);
+    top: 42px;
+    left: 20px;
+    right: auto;
+  }
+  .cd-tl-content {
+    text-align: left;
+    margin-top: 0.5rem;
+  }
+}
+
+/* ── 참가 조건 카드 ───────────────────────────────────── */
+.cd-req-card {
+  border-radius: 0.75rem;
+  padding: 1.25rem 1.25rem 1.25rem 1.75rem;
+  height: 100%;
+}
+
+.cd-req-card-required {
+  background: #f5f3ff;
+  border: 1px solid #ddd6fe;
+}
+
+.cd-req-card-optional {
+  background: #fefce8;
+  border: 1px solid #fde68a;
+}
+
+.cd-req-header {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-bottom: 1rem;
+}
+
+.cd-req-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.9rem;
+  flex-shrink: 0;
+
+  .cd-req-card-required & { background: var(--color-purple); color: #fff; }
+  .cd-req-card-optional & { background: #d97706; color: #fff; }
+}
+
+.cd-req-label {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--color-20);
+}
+
+.cd-req-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+
+  li {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.6rem;
+    font-size: 0.875rem;
+    color: #374151;
+    line-height: 1.5;
+  }
+
+  i {
+    font-size: 0.7rem;
+    margin-top: 0.3rem;
+    flex-shrink: 0;
+
+    .cd-req-card-required & { color: var(--color-purple); }
+    .cd-req-card-optional & { color: #d97706; }
+  }
+}
+
+/* ── 콘테스트 소개 서술형 본문 ───────────────────────── */
+.cd-prose {
+  color: #4b5563;
+  line-height: 1.85;
+  font-size: 1.05rem;
+
+  p {
+    margin-bottom: 1rem;
+
+    &:last-child { margin-bottom: 0; }
+
+    strong {
+      color: var(--color-20);
+      font-weight: 700;
+    }
+  }
 }
 
 /* ── 참가 프로젝트 카드 ──────────────────────────────── */
