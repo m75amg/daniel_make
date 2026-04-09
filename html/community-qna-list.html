@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>질문 전체보기 — e4ds make</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+  <link rel="stylesheet"
+    href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+  <link rel="stylesheet" href="assets/css/custom.css">
+  <link rel="stylesheet" href="assets/css/output.css">
+  <link rel="stylesheet" href="assets/css/make2026-styles.css">
+  <script src="https://kit.fontawesome.com/38e89eef65.js" crossorigin="anonymous"></script>
+</head>
+
+<body class="bg-light">
+
+  <!-- ===== PLATFORM HEADER ===== -->
+  <header id="platform-header" class="bg-white border-bottom sticky-top shadow-sm">
+    <div class="border-bottom border-light">
+      <div class="container-xl">
+        <div class="d-flex align-items-center justify-content-between topbar-inner">
+          <small class="text-muted" id="header-date"></small>
+          <div class="d-flex align-items-center gap-3">
+            <a href="login.html" class="text-secondary text-decoration-none small header-toplink auth-loggedout-only">로그인</a>
+            <a href="signup.html" class="text-secondary text-decoration-none small header-toplink auth-loggedout-only">회원가입</a>
+            <a href="support.html" class="text-secondary text-decoration-none small header-toplink">고객센터</a>
+            <a href="#" class="text-secondary text-decoration-none small header-toplink">홈사이트</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container-xl">
+      <nav class="navbar navbar-expand-lg px-0">
+        <a class="navbar-brand fw-bold fs-5 me-4" href="index.html">
+          <span class="text-dark">e</span><span class="text-warning">4</span><span class="text-dark">ds</span>
+          <span class="fw-normal text-secondary ms-1 brand-text">make</span>
+        </a>
+        <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavCollapse"
+          aria-controls="mainNavCollapse" aria-expanded="false" aria-label="메뉴 열기">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="mainNavCollapse">
+          <ul class="navbar-nav me-auto gap-lg-1">
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle fw-medium text-dark" href="#" data-bs-toggle="dropdown">News</a>
+              <ul class="dropdown-menu shadow-sm border-0">
+                <li><a class="dropdown-item" href="#">최신 뉴스</a></li>
+                <li><a class="dropdown-item" href="notices.html">공지사항</a></li>
+              </ul>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle fw-medium text-dark" href="#" data-bs-toggle="dropdown">Technologies</a>
+              <ul class="dropdown-menu shadow-sm border-0">
+                <li><a class="dropdown-item" href="#">임베디드</a></li>
+                <li><a class="dropdown-item" href="#">IoT</a></li>
+                <li><a class="dropdown-item" href="#">AI/ML</a></li>
+              </ul>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle fw-medium text-dark" href="#" data-bs-toggle="dropdown">Industries</a>
+              <ul class="dropdown-menu shadow-sm border-0">
+                <li><a class="dropdown-item" href="#">자동차</a></li>
+                <li><a class="dropdown-item" href="#">의료</a></li>
+                <li><a class="dropdown-item" href="#">산업자동화</a></li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link fw-medium text-dark" href="events.html">EEWebinar</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle fw-medium text-dark" href="#" data-bs-toggle="dropdown">Maker's Zone</a>
+              <ul class="dropdown-menu shadow-sm border-0">
+                <li><a class="dropdown-item" href="projects.html">프로젝트</a></li>
+                <li><a class="dropdown-item" href="contests.html">콘테스트</a></li>
+                <li><a class="dropdown-item active" href="community.html">커뮤니티</a></li>
+                <li><a class="dropdown-item" href="my-make.html">마이메이크</a></li>
+              </ul>
+            </li>
+          </ul>
+          <div class="d-flex align-items-center gap-2 ms-lg-2">
+            <button class="btn btn-light btn-sm p-2 rounded-3" id="header-search-btn" title="검색">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="11" cy="11" r="8" /><line x1="21" y1="21" x2="16.65" y2="16.65" />
+              </svg>
+            </button>
+            <button class="btn btn-light btn-sm p-2 rounded-3" id="header-user-btn" title="프로필">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" /><circle cx="12" cy="7" r="4" />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </nav>
+    </div>
+    <div id="header-search-bar" class="border-top bg-light d-none">
+      <div class="container-xl py-2">
+        <form class="d-flex gap-2" id="header-search-form">
+          <input type="search" class="form-control form-control-sm" placeholder="검색어를 입력하세요..." id="header-search-input">
+          <button type="submit" class="btn btn-primary btn-sm px-3">검색</button>
+          <button type="button" class="btn btn-light btn-sm" id="header-search-close">닫기</button>
+        </form>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Breadcrumb -->
+    <div class="bg-white border-bottom">
+      <div class="container-xl py-3">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb mb-0 small">
+            <li class="breadcrumb-item"><a href="index.html" class="text-decoration-none">홈</a></li>
+            <li class="breadcrumb-item"><a href="community.html" class="text-decoration-none">커뮤니티</a></li>
+            <li class="breadcrumb-item active">질문 전체보기</li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+
+    <!-- Page Header -->
+    <div class="bg-white border-bottom">
+      <div class="container-xl py-4">
+        <div class="d-flex align-items-center justify-content-between">
+          <div>
+            <h2 class="fw-bold mb-1"><i class="fa-regular fa-circle-question me-2 text-primary"></i> 질문 전체보기</h2>
+            <p class="text-muted mb-0 small">커뮤니티 질문 · 빠른 답변 · 총 <strong>324</strong>개</p>
+          </div>
+          <button class="btn btn-primary" onclick="openQuickAction('question')">
+            <i class="fa-regular fa-pen me-1"></i> 질문하기
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Filter Bar -->
+    <div class="bg-white border-bottom shadow-sm">
+      <div class="container-xl py-3">
+        <div class="d-flex align-items-center gap-2 flex-wrap">
+          <div class="input-group qna-search-group">
+            <span class="input-group-text bg-white border-end-0"><i class="fa-regular fa-magnifying-glass text-muted"></i></span>
+            <input type="text" class="form-control border-start-0" placeholder="질문 검색...">
+          </div>
+          <div class="d-flex gap-2 ms-auto flex-wrap align-items-center">
+            <select class="form-select form-select-sm qna-filter-select">
+              <option>전체 상태</option>
+              <option>해결중</option>
+              <option>해결됨</option>
+            </select>
+            <select class="form-select form-select-sm qna-filter-select">
+              <option>최신순</option>
+              <option>답변 많은 순</option>
+              <option>조회 많은 순</option>
+              <option>좋아요 많은 순</option>
+            </select>
+            <div class="d-flex gap-1">
+              <button class="btn btn-sm btn-outline-secondary active px-3">#ESP32</button>
+              <button class="btn btn-sm btn-outline-secondary px-3">#AI</button>
+              <button class="btn btn-sm btn-outline-secondary px-3">#Python</button>
+              <button class="btn btn-sm btn-outline-secondary px-3">#IoT</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main Layout -->
+    <div class="container-xl py-4">
+      <div class="row g-4">
+
+        <!-- Left: Q&A List -->
+        <div class="col-lg-8">
+          <div class="d-flex flex-column gap-3">
+
+            <!-- Q1 -->
+            <a href="community-qna.html" class="card border-0 shadow-sm text-decoration-none text-dark hover-lift hover-card">
+              <div class="card-body">
+                <div class="d-flex align-items-start gap-3">
+                  <div class="community-avatar avatar-blue text-white flex-shrink-0">이</div>
+                  <div class="flex-grow-1">
+                    <div class="d-flex align-items-center gap-2 flex-wrap mb-2">
+                      <span class="badge bg-warning-subtle text-warning-emphasis me-2"><i class="fa-regular fa-hourglass me-1"></i> 해결중</span>
+                      <span class="small text-purple me-2">AI 로봇 챌린지 2026</span>
+                      <span class="badge badge-quest">Quest 1</span>
+                      <small class="text-muted ms-auto text-nowrap">2시간 전</small>
+                    </div>
+                    <div class="fw-bold mb-1">ESP32에서 MQTT 브로커 연결이 자꾸 끊기는 현상 해결 방법</div>
+                    <div class="small text-muted mb-2">WiFi 연결은 정상인데 MQTT 브로커로의 연결이 5-10분마다 자동으로 끊깁니다...</div>
+                    <div class="d-flex gap-4 fs-xs text-muted mb-2">
+                      <span>이개발</span>
+                      <span><i class="fa-regular fa-comment me-1"></i>2</span>
+                      <span><i class="fa-regular fa-arrow-trend-up me-1"></i>8</span>
+                    </div>
+                    <div class="d-flex gap-1 flex-wrap">
+                      <span class="badge bg-secondary-subtle text-secondary popular-tag tag-badge">#WiFi</span>
+                      <span class="badge bg-secondary-subtle text-secondary popular-tag tag-badge">#MQTT</span>
+                      <span class="badge bg-secondary-subtle text-secondary popular-tag tag-badge">#ESP32</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </a>
+
+            <!-- Q2 -->
+            <a href="community-qna.html" class="card border-0 shadow-sm text-decoration-none text-dark hover-lift hover-card">
+              <div class="card-body">
+                <div class="d-flex align-items-start gap-3">
+                  <div class="community-avatar avatar-violet text-white flex-shrink-0">이</div>
+                  <div class="flex-grow-1">
+                    <div class="d-flex align-items-center gap-2 flex-wrap mb-2">
+                      <span class="badge bg-warning-subtle text-warning-emphasis me-2"><i class="fa-regular fa-hourglass me-1"></i> 해결중</span>
+                      <span class="small text-purple me-2">AI 로봇 챌린지 2026</span>
+                      <span class="badge badge-quest">Quest 2</span>
+                      <small class="text-muted ms-auto text-nowrap">1시간 전</small>
+                    </div>
+                    <div class="fw-bold mb-1">OpenCV로 객체 추적 시 fps가 너무 낮아요</div>
+                    <div class="small text-muted mb-2">Python에서 OpenCV를 사용하는데 실시간 처리 속도가 너무 느립니다. 최적화 방법이 있을까요?</div>
+                    <div class="d-flex gap-4 fs-xs text-muted mb-2">
+                      <span>이개발</span>
+                      <span><i class="fa-regular fa-comment me-1"></i>3</span>
+                      <span><i class="fa-regular fa-arrow-trend-up me-1"></i>28</span>
+                    </div>
+                    <div class="d-flex gap-1 flex-wrap">
+                      <span class="badge bg-secondary-subtle text-secondary popular-tag tag-badge">#OpenCV</span>
+                      <span class="badge bg-secondary-subtle text-secondary popular-tag tag-badge">#Python</span>
+                      <span class="badge bg-secondary-subtle text-secondary popular-tag tag-badge">#최적화</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </a>
+
+            <!-- Q3 -->
+            <a href="community-qna.html" class="card border-0 shadow-sm text-decoration-none text-dark hover-lift hover-card">
+              <div class="card-body">
+                <div class="d-flex align-items-start gap-3">
+                  <div class="community-avatar avatar-green text-white flex-shrink-0">박</div>
+                  <div class="flex-grow-1">
+                    <div class="d-flex align-items-center gap-2 flex-wrap mb-2">
+                      <span class="badge bg-success-subtle text-success me-2"><i class="fa-regular fa-circle-check me-1"></i> 해결됨</span>
+                      <span class="small text-purple me-2">AI 로봇 챌린지 2026</span>
+                      <span class="badge badge-quest">Quest 3</span>
+                      <small class="text-muted ms-auto text-nowrap">3시간 전</small>
+                    </div>
+                    <div class="fw-bold mb-1">TensorFlow Lite 모델을 라즈베리파이에 배포하는 방법</div>
+                    <div class="small text-muted mb-2">학습한 모델을 TFLite로 변환했는데 라즈베리파이에서 실행하는 방법을 모르겠습니다.</div>
+                    <div class="d-flex gap-4 fs-xs text-muted mb-2">
+                      <span>박엔지니어</span>
+                      <span><i class="fa-regular fa-comment me-1"></i>12</span>
+                      <span><i class="fa-regular fa-arrow-trend-up me-1"></i>156</span>
+                      <span><i class="fa-regular fa-heart me-1"></i>34</span>
+                    </div>
+                    <div class="d-flex gap-1 flex-wrap mb-2">
+                      <span class="badge bg-secondary-subtle text-secondary popular-tag tag-badge">#TensorFlow</span>
+                      <span class="badge bg-secondary-subtle text-secondary popular-tag tag-badge">#라즈베리파이</span>
+                      <span class="badge bg-secondary-subtle text-secondary popular-tag tag-badge">#AI</span>
+                    </div>
+                    <div class="small text-muted">콘테스트: AI 로봇 챌린지 2026</div>
+                  </div>
+                </div>
+              </div>
+            </a>
+
+            <!-- Q4 -->
+            <a href="community-qna.html" class="card border-0 shadow-sm text-decoration-none text-dark hover-lift hover-card">
+              <div class="card-body">
+                <div class="d-flex align-items-start gap-3">
+                  <div class="community-avatar avatar-blue text-white flex-shrink-0">김</div>
+                  <div class="flex-grow-1">
+                    <div class="d-flex align-items-center gap-2 flex-wrap mb-2">
+                      <span class="badge bg-warning-subtle text-warning-emphasis me-2"><i class="fa-regular fa-hourglass me-1"></i> 해결중</span>
+                      <span class="small text-purple me-2">AI 로봇 챌린지 2026</span>
+                      <span class="badge badge-quest">Quest 1</span>
+                      <small class="text-muted ms-auto text-nowrap">5시간 전</small>
+                    </div>
+                    <div class="fw-bold mb-1">ROS2 노드 간 통신 시 메시지 손실 문제</div>
+                    <div class="small text-muted mb-2">퍼블리셔-서브스크라이버 패턴으로 구현했는데 일부 메시지가 수신되지 않습니다...</div>
+                    <div class="d-flex gap-4 fs-xs text-muted mb-2">
+                      <span>김메이커</span>
+                      <span><i class="fa-regular fa-comment me-1"></i>5</span>
+                      <span><i class="fa-regular fa-arrow-trend-up me-1"></i>19</span>
+                    </div>
+                    <div class="d-flex gap-1 flex-wrap">
+                      <span class="badge bg-secondary-subtle text-secondary popular-tag tag-badge">#ROS</span>
+                      <span class="badge bg-secondary-subtle text-secondary popular-tag tag-badge">#ROS2</span>
+                      <span class="badge bg-secondary-subtle text-secondary popular-tag tag-badge">#통신</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </a>
+
+            <!-- Q5 -->
+            <a href="community-qna.html" class="card border-0 shadow-sm text-decoration-none text-dark hover-lift hover-card">
+              <div class="card-body">
+                <div class="d-flex align-items-start gap-3">
+                  <div class="community-avatar avatar-violet text-white flex-shrink-0">최</div>
+                  <div class="flex-grow-1">
+                    <div class="d-flex align-items-center gap-2 flex-wrap mb-2">
+                      <span class="badge bg-success-subtle text-success me-2"><i class="fa-regular fa-circle-check me-1"></i> 해결됨</span>
+                      <span class="small text-purple me-2">AI 로봇 챌린지 2026</span>
+                      <span class="badge badge-quest">Quest 2</span>
+                      <small class="text-muted ms-auto text-nowrap">6시간 전</small>
+                    </div>
+                    <div class="fw-bold mb-1">Arduino에서 I2C 통신으로 여러 센서 연결하기</div>
+                    <div class="small text-muted mb-2">같은 I2C 버스에 동일한 주소의 센서 2개를 연결해야 하는데 충돌이 발생합니다...</div>
+                    <div class="d-flex gap-4 fs-xs text-muted mb-2">
+                      <span>최엔지니어</span>
+                      <span><i class="fa-regular fa-comment me-1"></i>8</span>
+                      <span><i class="fa-regular fa-arrow-trend-up me-1"></i>42</span>
+                      <span><i class="fa-regular fa-heart me-1"></i>11</span>
+                    </div>
+                    <div class="d-flex gap-1 flex-wrap">
+                      <span class="badge bg-secondary-subtle text-secondary popular-tag tag-badge">#Arduino</span>
+                      <span class="badge bg-secondary-subtle text-secondary popular-tag tag-badge">#I2C</span>
+                      <span class="badge bg-secondary-subtle text-secondary popular-tag tag-badge">#센서</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </a>
+
+            <!-- Q6 -->
+            <a href="community-qna.html" class="card border-0 shadow-sm text-decoration-none text-dark hover-lift hover-card">
+              <div class="card-body">
+                <div class="d-flex align-items-start gap-3">
+                  <div class="community-avatar avatar-green text-white flex-shrink-0">정</div>
+                  <div class="flex-grow-1">
+                    <div class="d-flex align-items-center gap-2 flex-wrap mb-2">
+                      <span class="badge bg-warning-subtle text-warning-emphasis me-2"><i class="fa-regular fa-hourglass me-1"></i> 해결중</span>
+                      <span class="small text-purple me-2">AI 로봇 챌린지 2026</span>
+                      <span class="badge badge-quest">Quest 3</span>
+                      <small class="text-muted ms-auto text-nowrap">어제</small>
+                    </div>
+                    <div class="fw-bold mb-1">3D 프린터 출력물 레이어 분리 현상 원인 및 해결법</div>
+                    <div class="small text-muted mb-2">PLA 필라멘트로 출력 시 중간 레이어가 분리됩니다. 온도나 속도 문제인지 확인이 필요합니다...</div>
+                    <div class="d-flex gap-4 fs-xs text-muted mb-2">
+                      <span>정메이커</span>
+                      <span><i class="fa-regular fa-comment me-1"></i>4</span>
+                      <span><i class="fa-regular fa-arrow-trend-up me-1"></i>31</span>
+                    </div>
+                    <div class="d-flex gap-1 flex-wrap">
+                      <span class="badge bg-secondary-subtle text-secondary popular-tag tag-badge">#3D프린팅</span>
+                      <span class="badge bg-secondary-subtle text-secondary popular-tag tag-badge">#PLA</span>
+                      <span class="badge bg-secondary-subtle text-secondary popular-tag tag-badge">#출력품질</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </a>
+
+            <!-- Q7 -->
+            <a href="community-qna.html" class="card border-0 shadow-sm text-decoration-none text-dark hover-lift hover-card">
+              <div class="card-body">
+                <div class="d-flex align-items-start gap-3">
+                  <div class="community-avatar avatar-blue text-white flex-shrink-0">한</div>
+                  <div class="flex-grow-1">
+                    <div class="d-flex align-items-center gap-2 flex-wrap mb-2">
+                      <span class="badge bg-success-subtle text-success me-2"><i class="fa-regular fa-circle-check me-1"></i> 해결됨</span>
+                      <span class="small text-purple me-2">AI 로봇 챌린지 2026</span>
+                      <span class="badge badge-quest">Quest 1</span>
+                      <small class="text-muted ms-auto text-nowrap">어제</small>
+                    </div>
+                    <div class="fw-bold mb-1">Raspberry Pi 카메라 모듈 OpenCV 연동 방법</div>
+                    <div class="small text-muted mb-2">Pi Camera v2를 OpenCV로 읽으려는데 VideoCapture(0)로 접근이 안 됩니다...</div>
+                    <div class="d-flex gap-4 fs-xs text-muted mb-2">
+                      <span>한개발자</span>
+                      <span><i class="fa-regular fa-comment me-1"></i>7</span>
+                      <span><i class="fa-regular fa-arrow-trend-up me-1"></i>63</span>
+                      <span><i class="fa-regular fa-heart me-1"></i>15</span>
+                    </div>
+                    <div class="d-flex gap-1 flex-wrap">
+                      <span class="badge bg-secondary-subtle text-secondary popular-tag tag-badge">#라즈베리파이</span>
+                      <span class="badge bg-secondary-subtle text-secondary popular-tag tag-badge">#OpenCV</span>
+                      <span class="badge bg-secondary-subtle text-secondary popular-tag tag-badge">#카메라</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </a>
+
+            <!-- Q8 -->
+            <a href="community-qna.html" class="card border-0 shadow-sm text-decoration-none text-dark hover-lift hover-card">
+              <div class="card-body">
+                <div class="d-flex align-items-start gap-3">
+                  <div class="community-avatar avatar-violet text-white flex-shrink-0">서</div>
+                  <div class="flex-grow-1">
+                    <div class="d-flex align-items-center gap-2 flex-wrap mb-2">
+                      <span class="badge bg-warning-subtle text-warning-emphasis me-2"><i class="fa-regular fa-hourglass me-1"></i> 해결중</span>
+                      <span class="small text-purple me-2">AI 로봇 챌린지 2026</span>
+                      <span class="badge badge-quest">Quest 2</span>
+                      <small class="text-muted ms-auto text-nowrap">2일 전</small>
+                    </div>
+                    <div class="fw-bold mb-1">STM32 PWM으로 서보모터 정밀 제어가 안 돼요</div>
+                    <div class="small text-muted mb-2">HAL 라이브러리로 PWM을 설정했는데 서보 각도가 정확하지 않습니다. 타이머 설정 문제인지...</div>
+                    <div class="d-flex gap-4 fs-xs text-muted mb-2">
+                      <span>서메이커</span>
+                      <span><i class="fa-regular fa-comment me-1"></i>1</span>
+                      <span><i class="fa-regular fa-arrow-trend-up me-1"></i>14</span>
+                    </div>
+                    <div class="d-flex gap-1 flex-wrap">
+                      <span class="badge bg-secondary-subtle text-secondary popular-tag tag-badge">#STM32</span>
+                      <span class="badge bg-secondary-subtle text-secondary popular-tag tag-badge">#PWM</span>
+                      <span class="badge bg-secondary-subtle text-secondary popular-tag tag-badge">#서보모터</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </a>
+
+            <!-- Q9 -->
+            <a href="community-qna.html" class="card border-0 shadow-sm text-decoration-none text-dark hover-lift hover-card">
+              <div class="card-body">
+                <div class="d-flex align-items-start gap-3">
+                  <div class="community-avatar avatar-green text-white flex-shrink-0">임</div>
+                  <div class="flex-grow-1">
+                    <div class="d-flex align-items-center gap-2 flex-wrap mb-2">
+                      <span class="badge bg-success-subtle text-success me-2"><i class="fa-regular fa-circle-check me-1"></i> 해결됨</span>
+                      <span class="small text-purple me-2">AI 로봇 챌린지 2026</span>
+                      <span class="badge badge-quest">Quest 1</span>
+                      <small class="text-muted ms-auto text-nowrap">2일 전</small>
+                    </div>
+                    <div class="fw-bold mb-1">YOLO 모델 학습 시 Loss가 수렴하지 않는 문제</div>
+                    <div class="small text-muted mb-2">커스텀 데이터셋으로 YOLOv8 학습을 진행하는데 50 epoch 이후로 loss가 줄지 않습니다...</div>
+                    <div class="d-flex gap-4 fs-xs text-muted mb-2">
+                      <span>임개발</span>
+                      <span><i class="fa-regular fa-comment me-1"></i>9</span>
+                      <span><i class="fa-regular fa-arrow-trend-up me-1"></i>87</span>
+                      <span><i class="fa-regular fa-heart me-1"></i>22</span>
+                    </div>
+                    <div class="d-flex gap-1 flex-wrap">
+                      <span class="badge bg-secondary-subtle text-secondary popular-tag tag-badge">#AI</span>
+                      <span class="badge bg-secondary-subtle text-secondary popular-tag tag-badge">#YOLO</span>
+                      <span class="badge bg-secondary-subtle text-secondary popular-tag tag-badge">#딥러닝</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </a>
+
+            <!-- Q10 -->
+            <a href="community-qna.html" class="card border-0 shadow-sm text-decoration-none text-dark hover-lift hover-card">
+              <div class="card-body">
+                <div class="d-flex align-items-start gap-3">
+                  <div class="community-avatar avatar-blue text-white flex-shrink-0">오</div>
+                  <div class="flex-grow-1">
+                    <div class="d-flex align-items-center gap-2 flex-wrap mb-2">
+                      <span class="badge bg-warning-subtle text-warning-emphasis me-2"><i class="fa-regular fa-hourglass me-1"></i> 해결중</span>
+                      <span class="small text-purple me-2">AI 로봇 챌린지 2026</span>
+                      <span class="badge badge-quest">Quest 3</span>
+                      <small class="text-muted ms-auto text-nowrap">3일 전</small>
+                    </div>
+                    <div class="fw-bold mb-1">Jetson Nano에서 CUDA 가속 사용 방법</div>
+                    <div class="small text-muted mb-2">Jetson Nano에서 OpenCV를 빌드했는데 CUDA 가속이 적용되지 않는 것 같습니다...</div>
+                    <div class="d-flex gap-4 fs-xs text-muted mb-2">
+                      <span>오메이커</span>
+                      <span><i class="fa-regular fa-comment me-1"></i>6</span>
+                      <span><i class="fa-regular fa-arrow-trend-up me-1"></i>53</span>
+                    </div>
+                    <div class="d-flex gap-1 flex-wrap">
+                      <span class="badge bg-secondary-subtle text-secondary popular-tag tag-badge">#Jetson</span>
+                      <span class="badge bg-secondary-subtle text-secondary popular-tag tag-badge">#CUDA</span>
+                      <span class="badge bg-secondary-subtle text-secondary popular-tag tag-badge">#GPU</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </a>
+
+          </div>
+
+          <!-- Pagination -->
+          <nav class="mt-4" aria-label="페이지 네비게이션">
+            <ul class="pagination justify-content-center">
+              <li class="page-item disabled">
+                <a class="page-link" href="#" aria-label="이전"><i class="fa-regular fa-chevron-left"></i></a>
+              </li>
+              <li class="page-item active"><a class="page-link" href="#">1</a></li>
+              <li class="page-item"><a class="page-link" href="#">2</a></li>
+              <li class="page-item"><a class="page-link" href="#">3</a></li>
+              <li class="page-item"><a class="page-link" href="#">4</a></li>
+              <li class="page-item"><a class="page-link" href="#">5</a></li>
+              <li class="page-item disabled"><a class="page-link">···</a></li>
+              <li class="page-item"><a class="page-link" href="#">33</a></li>
+              <li class="page-item">
+                <a class="page-link" href="#" aria-label="다음"><i class="fa-regular fa-chevron-right"></i></a>
+              </li>
+            </ul>
+          </nav>
+
+        </div>
+
+        <!-- Right Sidebar -->
+        <div class="col-lg-4 sidebar-ps">
+          <div class="sticky-top sticky-top-110">
+
+            <!-- 빠른 액션 -->
+            <div class="card sidebar-card mb-3 border-0 shadow-sm">
+              <div class="card-body p-3">
+                <h6 class="fw-bold mb-3 d-flex align-items-center gap-2">
+                  <span class="sidebar-header-icon"><i class="fa-solid fa-bolt"></i></span>
+                  빠른 액션
+                </h6>
+                <div class="d-flex flex-column gap-2">
+                  <button class="quick-action-btn quick-action-btn-blue" onclick="openQuickAction('question')">
+                    <span class="quick-action-icon"><i class="fa-regular fa-comment"></i></span>
+                    <span>질문 올리기</span>
+                    <i class="fa-regular fa-chevron-right qa-arrow"></i>
+                  </button>
+                  <button class="quick-action-btn quick-action-btn-green" onclick="openQuickAction('progress')">
+                    <span class="quick-action-icon"><i class="fa-regular fa-rocket"></i></span>
+                    <span>진행 상황 공유</span>
+                    <i class="fa-regular fa-chevron-right qa-arrow"></i>
+                  </button>
+                  <button class="quick-action-btn quick-action-btn-purple" onclick="openQuickAction('teammate')">
+                    <span class="quick-action-icon"><i class="fa-regular fa-users"></i></span>
+                    <span>팀원 모집</span>
+                    <i class="fa-regular fa-chevron-right qa-arrow"></i>
+                  </button>
+                  <button class="quick-action-btn quick-action-btn-orange" onclick="openQuickAction('resource')">
+                    <span class="quick-action-icon"><i class="fa-regular fa-folder"></i></span>
+                    <span>자료 업로드</span>
+                    <i class="fa-regular fa-chevron-right qa-arrow"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- 공지/FAQ -->
+            <div class="card sidebar-card mb-3 border-0 shadow-sm">
+              <div class="card-body">
+                <h6 class="fw-bold mb-3 fs-6"><i class="fa-regular fa-bell me-1"></i> 공지 / FAQ</h6>
+                <div class="d-flex flex-column gap-3">
+                  <div class="notice-item-danger">
+                    <span class="badge bg-danger-subtle text-danger me-1 mb-1">중요</span>
+                    <div class="small fw-semibold mb-1">AI 로봇 챌린지 2026 Quest 1 마감일 연장 안내</div>
+                    <small class="text-muted">1일 전</small>
+                  </div>
+                  <div class="notice-item-info">
+                    <span class="badge me-1 mb-1 badge-faq">FAQ</span>
+                    <div class="small fw-semibold mb-1">Quest 제출 시 자주 하는 실수 TOP 5</div>
+                    <small class="text-muted">3일 전</small>
+                  </div>
+                </div>
+                <button class="btn btn-outline-secondary btn-sm w-100 mt-3">전체 공지 보기</button>
+              </div>
+            </div>
+
+            <!-- 인기 태그 -->
+            <div class="card sidebar-card border-0 shadow-sm">
+              <div class="card-body">
+                <h6 class="fw-bold mb-3"><i class="fa-regular fa-tag me-1"></i> 인기 태그</h6>
+                <div class="d-flex flex-wrap gap-2">
+                  <span class="badge bg-secondary-subtle text-secondary popular-tag tag-badge">#라즈베리파이</span>
+                  <span class="badge bg-secondary-subtle text-secondary popular-tag tag-badge">#Arduino</span>
+                  <span class="badge bg-secondary-subtle text-secondary popular-tag tag-badge">#AI</span>
+                  <span class="badge bg-secondary-subtle text-secondary popular-tag tag-badge">#OpenCV</span>
+                  <span class="badge bg-secondary-subtle text-secondary popular-tag tag-badge">#ESP32</span>
+                  <span class="badge bg-secondary-subtle text-secondary popular-tag tag-badge">#IoT</span>
+                  <span class="badge bg-secondary-subtle text-secondary popular-tag tag-badge">#3D프린팅</span>
+                  <span class="badge bg-secondary-subtle text-secondary popular-tag tag-badge">#ROS</span>
+                  <span class="badge bg-secondary-subtle text-secondary popular-tag tag-badge">#Python</span>
+                  <span class="badge bg-secondary-subtle text-secondary popular-tag tag-badge">#TensorFlow</span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+  <!-- ===== PLATFORM FOOTER ===== -->
+  <footer id="platform-footer">
+    <div class="bg-light border-top border-bottom py-4">
+      <div class="container-xl">
+        <p class="text-center text-muted small mb-3">Sponsored Company</p>
+        <div class="d-flex flex-wrap align-items-center justify-content-center gap-4">
+          <span class="fw-medium text-secondary small">CREAFORM</span>
+          <span class="fw-medium text-secondary small">Infineon</span>
+          <span class="fw-bold text-dark small">KETI</span>
+          <span class="fw-medium text-secondary small">KEYSIGHT</span>
+          <span class="fw-medium text-secondary small">Microchip</span>
+          <span class="fw-medium text-primary small">mouser.com</span>
+          <span class="fw-medium text-secondary small">NATIONAL INSTRUMENTS</span>
+          <span class="fw-bold text-white bg-danger px-2 py-1 rounded small">ROHM</span>
+          <span class="fw-medium text-secondary small">ST</span>
+          <span class="fw-medium text-dark small">Tektronix</span>
+        </div>
+      </div>
+    </div>
+    <div class="bg-black text-secondary py-5">
+      <div class="container-xl">
+        <div class="d-flex flex-column flex-lg-row align-items-start align-items-lg-center justify-content-between gap-3 mb-4">
+          <div class="d-flex flex-wrap align-items-center gap-2 small">
+            <a href="support.html" class="footer-link text-secondary text-decoration-none">e4ds 소개</a>
+            <span class="text-muted">|</span>
+            <a href="notices.html" class="footer-link text-secondary text-decoration-none">개인정보처리방침</a>
+            <span class="text-muted">|</span>
+            <a href="faq.html" class="footer-link text-secondary text-decoration-none">이용약관</a>
+            <span class="text-muted">|</span>
+            <a href="contact.html" class="footer-link text-secondary text-decoration-none">청소년보호정책</a>
+            <span class="text-muted">|</span>
+            <a href="careers.html" class="footer-link text-secondary text-decoration-none">가족사이트</a>
+            <span class="text-muted">|</span>
+            <a href="#" class="footer-link text-secondary text-decoration-none">저작권</a>
+            <span class="text-muted">|</span>
+            <a href="#" class="footer-link text-secondary text-decoration-none">e4ds인터내셔널</a>
+          </div>
+        </div>
+        <div class="small text-muted lh-lg">
+          <p class="mb-1">(주)디지털데일리 | 등록번호 : 경기 아51470 | 등록: 2008.10.20 | 발행: 2026.05.19 | 표: 김제호</p>
+          <p class="mb-1">주소 : 경기도 성남시 분당구 대왕판교로 660번길 8 | 전화 : 02-883-9797 | 팩스 : 02-6280-9957</p>
+          <p class="mb-1 text-secondary footer-copyright">본 콘텐츠의 저작권은 (주)디지털데일리에 있으며 무단 전재 및 재배포를 금지합니다.</p>
+          <p class="mt-3 mb-0">Copyright &copy; 2026 e4ds News. All Rights Reserved</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+    integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
+  <script src="assets/js/main.js"></script>
+  <script>
+    var today = new Date();
+    $("#header-date").text(today.toLocaleDateString("ko-KR", { weekday: "long", month: "long", day: "numeric" }));
+  </script>
+
+</body>
+</html>
