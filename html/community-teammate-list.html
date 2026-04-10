@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>질문 전체보기 — e4ds make</title>
+  <title>팀원 찾기 전체보기 — e4ds make</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
     integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
@@ -117,7 +117,7 @@
           <ol class="breadcrumb mb-0 small">
             <li class="breadcrumb-item"><a href="index.html" class="text-decoration-none">홈</a></li>
             <li class="breadcrumb-item"><a href="community.html" class="text-decoration-none">커뮤니티</a></li>
-            <li class="breadcrumb-item active">질문 전체보기</li>
+            <li class="breadcrumb-item active">팀원 찾기 전체보기</li>
           </ol>
         </nav>
       </div>
@@ -128,8 +128,8 @@
       <div class="container-xl py-4">
         <div class="d-flex align-items-center justify-content-between">
           <div>
-            <h2 class="fw-bold mb-1"><i class="fa-regular fa-circle-question me-2 text-primary"></i> 질문 전체보기</h2>
-            <p class="text-muted mb-0 small">커뮤니티 질문 · 빠른 답변 · 총 <strong>324</strong>개</p>
+            <h2 class="fw-bold mb-1"><i class="fa-regular fa-users me-2" style="color:var(--color-green)"></i> 팀원 찾기 전체보기</h2>
+            <p class="text-muted mb-0 small">프로젝트 협업 · 팀원 모집 · 총 <strong>84</strong>개</p>
           </div>
         </div>
       </div>
@@ -141,22 +141,22 @@
         <div class="qna-filter-bar">
           <div class="input-group qna-search-group">
             <span class="input-group-text bg-white border-end-0"><i class="fa-regular fa-magnifying-glass text-muted"></i></span>
-            <input type="text" class="form-control border-start-0" placeholder="질문 검색...">
+            <input type="text" class="form-control border-start-0" placeholder="팀원 찾기 검색...">
           </div>
           <div class="qna-filter-divider d-none d-md-block"></div>
           <i class="fa-regular fa-filter text-muted d-none d-md-block"></i>
           <div class="qna-status-group">
             <button class="qna-status-btn active">전체</button>
-            <button class="qna-status-btn"><i class="fa-regular fa-clock"></i> 진행중</button>
-            <button class="qna-status-btn"><i class="fa-regular fa-circle-check"></i> 해결됨</button>
+            <button class="qna-status-btn"><i class="fa-regular fa-trophy me-1"></i> 콘테스트</button>
+            <button class="qna-status-btn"><i class="fa-regular fa-user me-1"></i> 개인</button>
           </div>
           <div class="qna-filter-divider d-none d-md-block"></div>
           <i class="fa-regular fa-arrow-trend-up text-muted d-none d-md-block"></i>
           <select class="form-select form-select-sm qna-filter-select">
             <option>최신순</option>
-            <option>답변 많은 순</option>
+            <option>마감 임박순</option>
+            <option>지원 많은 순</option>
             <option>조회 많은 순</option>
-            <option>좋아요 많은 순</option>
           </select>
         </div>
       </div>
@@ -166,304 +166,281 @@
     <div class="container-xl py-4">
       <div class="row g-4">
 
-        <!-- Left: Q&A List -->
+        <!-- Left: Teammate List -->
         <div class="col-lg-8">
           <div class="d-flex flex-column gap-3">
 
-            <!-- Q1 -->
-            <a href="community-qna.html" class="card border-0 shadow-sm text-decoration-none text-dark hover-lift hover-card">
+            <!-- Teammate 1 -->
+            <div class="card border-0 shadow-sm">
               <div class="card-body">
-                <div class="d-flex align-items-start gap-3">
-                  <div class="user-avatar avatar-blue text-white flex-shrink-0">이</div>
+                <div class="d-flex gap-3 align-items-start">
+                  <div class="user-avatar user-avatar-sm flex-shrink-0"><img src="assets/img/user.png" alt="임메이커"></div>
                   <div class="flex-grow-1">
-                    <div class="d-flex align-items-center gap-2 flex-wrap mb-2">
-                      <span class="badge bg-warning-subtle text-warning-emphasis me-2"><i class="fa-regular fa-hourglass me-1"></i> 해결중</span>
-                      <span class="small text-purple me-2">AI 로봇 챌린지 2026</span>
-                      <span class="badge badge-quest">Quest 1</span>
-                      <small class="text-muted ms-auto text-nowrap">2시간 전</small>
+                    <div class="d-flex flex-wrap align-items-center gap-1 mb-1">
+                      <span class="badge bg-danger-subtle text-danger">D-15</span>
+                      <span class="badge badge-amber fw-normal">AI 기반 농업용 드론</span>
+                      <span class="text-muted small ms-auto">1시간 전</span>
                     </div>
-                    <div class="fw-bold mb-1">ESP32에서 MQTT 브로커 연결이 자꾸 끊기는 현상 해결 방법</div>
-                    <div class="small text-muted mb-2">WiFi 연결은 정상인데 MQTT 브로커로의 연결이 5-10분마다 자동으로 끊깁니다...</div>
-                    <div class="d-flex gap-4 fs-xs text-muted mb-2">
-                      <span>이개발</span>
-                      <span><i class="fa-regular fa-comment me-1"></i>2</span>
-                      <span><i class="fa-regular fa-arrow-trend-up me-1"></i>8</span>
+                    <div class="fw-semibold mb-1 mt-2">드론 자율비행 프로젝트 - 하드웨어 엔지니어 구합니다</div>
+                    <div class="text-muted small mb-2">농업용 드론 프로젝트 진행 중. 비행 제어 시스템 설계 경험자 구합니다. PX4 또는 ArduPilot 경험자 우대.</div>
+                    <div class="mb-2">
+                      <span class="badge bg-light border text-secondary rounded-pill me-1">하드웨어</span>
+                      <span class="badge bg-light border text-secondary rounded-pill me-1">회로 설계</span>
+                      <span class="badge bg-light border text-secondary rounded-pill me-1">드론</span>
+                      <span class="badge bg-light border text-secondary rounded-pill me-1">PX4</span>
                     </div>
-                    <div class="d-flex gap-1 flex-wrap">
-                      <span class="badge bg-secondary-subtle text-secondary popular-tag tag-badge">#WiFi</span>
-                      <span class="badge bg-secondary-subtle text-secondary popular-tag tag-badge">#MQTT</span>
-                      <span class="badge bg-secondary-subtle text-secondary popular-tag tag-badge">#ESP32</span>
+                    <div class="d-flex align-items-center justify-content-between mb-1">
+                      <div class="d-flex align-items-center gap-2 text-muted small">
+                        <span class="fw-semibold text-dark me-2">임메이커</span>
+                        <span><i class="fa-regular fa-user-group me-1" style="color:var(--color-green-hover)"></i>3명 지원</span>
+                        <span>· 1시간 전</span>
+                      </div>
+                      <button class="btn btn-sm bg-success-subtle text-success fw-semibold btn-apply" data-bs-toggle="modal"
+                        data-bs-target="#applyModal"><i class="fa-regular fa-paper-plane me-1"></i>지원하기</button>
                     </div>
+                    <div class="small text-muted"><span class="fw-medium text-secondary">콘테스트:</span> AI 기반 농업용 드론 챌린지 2026</div>
                   </div>
                 </div>
               </div>
-            </a>
+            </div>
 
-            <!-- Q2 -->
-            <a href="community-qna.html" class="card border-0 shadow-sm text-decoration-none text-dark hover-lift hover-card">
+            <!-- Teammate 2 -->
+            <div class="card border-0 shadow-sm">
               <div class="card-body">
-                <div class="d-flex align-items-start gap-3">
-                  <div class="user-avatar avatar-violet text-white flex-shrink-0">이</div>
+                <div class="d-flex gap-3 align-items-start">
+                  <div class="user-avatar user-avatar-sm flex-shrink-0"><img src="assets/img/user.png" alt="한개발"></div>
                   <div class="flex-grow-1">
-                    <div class="d-flex align-items-center gap-2 flex-wrap mb-2">
-                      <span class="badge bg-warning-subtle text-warning-emphasis me-2"><i class="fa-regular fa-hourglass me-1"></i> 해결중</span>
-                      <span class="small text-purple me-2">AI 로봇 챌린지 2026</span>
-                      <span class="badge badge-quest">Quest 2</span>
-                      <small class="text-muted ms-auto text-nowrap">1시간 전</small>
+                    <div class="d-flex flex-wrap align-items-center gap-1 mb-1">
+                      <span class="badge bg-danger-subtle text-danger">D-7</span>
+                      <span class="badge badge-amber fw-normal">스마트 홈 자동화 시스템</span>
+                      <span class="text-muted small ms-auto">4시간 전</span>
                     </div>
-                    <div class="fw-bold mb-1">OpenCV로 객체 추적 시 fps가 너무 낮아요</div>
-                    <div class="small text-muted mb-2">Python에서 OpenCV를 사용하는데 실시간 처리 속도가 너무 느립니다. 최적화 방법이 있을까요?</div>
-                    <div class="d-flex gap-4 fs-xs text-muted mb-2">
-                      <span>이개발</span>
-                      <span><i class="fa-regular fa-comment me-1"></i>3</span>
-                      <span><i class="fa-regular fa-arrow-trend-up me-1"></i>28</span>
+                    <div class="fw-semibold mb-1 mt-2">IoT 프로젝트 함께할 백엔드 개발자 찾아요</div>
+                    <div class="text-muted small mb-2">스마트 홈 시스템 서버 개발 함께할 분. MQTT 실시간 데이터 처리 경험 우대.</div>
+                    <div class="mb-2">
+                      <span class="badge bg-light border text-secondary rounded-pill me-1">Node.js</span>
+                      <span class="badge bg-light border text-secondary rounded-pill me-1">MQTT</span>
+                      <span class="badge bg-light border text-secondary rounded-pill me-1">AWS</span>
+                      <span class="badge bg-light border text-secondary rounded-pill me-1">REST API</span>
                     </div>
-                    <div class="d-flex gap-1 flex-wrap">
-                      <span class="badge bg-secondary-subtle text-secondary popular-tag tag-badge">#OpenCV</span>
-                      <span class="badge bg-secondary-subtle text-secondary popular-tag tag-badge">#Python</span>
-                      <span class="badge bg-secondary-subtle text-secondary popular-tag tag-badge">#최적화</span>
+                    <div class="d-flex align-items-center justify-content-between mb-1">
+                      <div class="d-flex align-items-center gap-2 text-muted small">
+                        <span class="fw-semibold text-dark me-2">한개발</span>
+                        <span><i class="fa-regular fa-user-group me-1" style="color:var(--color-green-hover)"></i>5명 지원</span>
+                        <span>· 4시간 전</span>
+                      </div>
+                      <button class="btn btn-sm bg-success-subtle text-success fw-semibold btn-apply" data-bs-toggle="modal"
+                        data-bs-target="#applyModal"><i class="fa-regular fa-paper-plane me-1"></i>지원하기</button>
                     </div>
+                    <div class="small text-muted"><span class="fw-medium text-secondary">콘테스트:</span> IoT 혁신 챌린지 2026</div>
                   </div>
                 </div>
               </div>
-            </a>
+            </div>
 
-            <!-- Q3 -->
-            <a href="community-qna.html" class="card border-0 shadow-sm text-decoration-none text-dark hover-lift hover-card">
+            <!-- Teammate 3 -->
+            <div class="card border-0 shadow-sm">
               <div class="card-body">
-                <div class="d-flex align-items-start gap-3">
-                  <div class="user-avatar avatar-green text-white flex-shrink-0">박</div>
+                <div class="d-flex gap-3 align-items-start">
+                  <div class="user-avatar user-avatar-sm flex-shrink-0"><img src="assets/img/user.png" alt="윤메이커"></div>
                   <div class="flex-grow-1">
-                    <div class="d-flex align-items-center gap-2 flex-wrap mb-2">
-                      <span class="badge bg-success-subtle text-success me-2"><i class="fa-regular fa-circle-check me-1"></i> 해결됨</span>
-                      <span class="small text-purple me-2">AI 로봇 챌린지 2026</span>
-                      <span class="badge badge-quest">Quest 3</span>
-                      <small class="text-muted ms-auto text-nowrap">3시간 전</small>
+                    <div class="d-flex flex-wrap align-items-center gap-1 mb-1">
+                      <span class="badge bg-danger-subtle text-danger">D-3</span>
+                      <span class="badge badge-amber fw-normal">로봇 팔 제어 시스템</span>
+                      <span class="text-muted small ms-auto">1일 전</span>
                     </div>
-                    <div class="fw-bold mb-1">TensorFlow Lite 모델을 라즈베리파이에 배포하는 방법</div>
-                    <div class="small text-muted mb-2">학습한 모델을 TFLite로 변환했는데 라즈베리파이에서 실행하는 방법을 모르겠습니다.</div>
-                    <div class="d-flex gap-4 fs-xs text-muted mb-2">
-                      <span>박엔지니어</span>
-                      <span><i class="fa-regular fa-comment me-1"></i>12</span>
-                      <span><i class="fa-regular fa-arrow-trend-up me-1"></i>156</span>
-                      <span><i class="fa-regular fa-heart me-1"></i>34</span>
+                    <div class="fw-semibold mb-1 mt-2">6축 로봇 팔 프로젝트 - 임베디드 SW 개발자 모집</div>
+                    <div class="text-muted small mb-2">역기구학 알고리즘 구현 완료, 모션 플래닝 함께 개발할 분 찾습니다. ROS2 경험자 우대.</div>
+                    <div class="mb-2">
+                      <span class="badge bg-light border text-secondary rounded-pill me-1">ROS2</span>
+                      <span class="badge bg-light border text-secondary rounded-pill me-1">C++</span>
+                      <span class="badge bg-light border text-secondary rounded-pill me-1">임베디드</span>
+                      <span class="badge bg-light border text-secondary rounded-pill me-1">STM32</span>
                     </div>
-                    <div class="d-flex gap-1 flex-wrap mb-2">
-                      <span class="badge bg-secondary-subtle text-secondary popular-tag tag-badge">#TensorFlow</span>
-                      <span class="badge bg-secondary-subtle text-secondary popular-tag tag-badge">#라즈베리파이</span>
-                      <span class="badge bg-secondary-subtle text-secondary popular-tag tag-badge">#AI</span>
+                    <div class="d-flex align-items-center justify-content-between mb-1">
+                      <div class="d-flex align-items-center gap-2 text-muted small">
+                        <span class="fw-semibold text-dark me-2">윤메이커</span>
+                        <span><i class="fa-regular fa-user-group me-1" style="color:var(--color-green-hover)"></i>2명 지원</span>
+                        <span>· 1일 전</span>
+                      </div>
+                      <button class="btn btn-sm bg-success-subtle text-success fw-semibold btn-apply" data-bs-toggle="modal"
+                        data-bs-target="#applyModal"><i class="fa-regular fa-paper-plane me-1"></i>지원하기</button>
                     </div>
-                    <div class="small text-muted">콘테스트: AI 로봇 챌린지 2026</div>
+                    <div class="small text-muted"><span class="fw-medium text-secondary">콘테스트:</span> AI 로봇 챌린지 2026</div>
                   </div>
                 </div>
               </div>
-            </a>
+            </div>
 
-            <!-- Q4 -->
-            <a href="community-qna.html" class="card border-0 shadow-sm text-decoration-none text-dark hover-lift hover-card">
+            <!-- Teammate 4 -->
+            <div class="card border-0 shadow-sm">
               <div class="card-body">
-                <div class="d-flex align-items-start gap-3">
-                  <div class="user-avatar avatar-blue text-white flex-shrink-0">김</div>
+                <div class="d-flex gap-3 align-items-start">
+                  <div class="user-avatar user-avatar-sm flex-shrink-0"><img src="assets/img/user.png" alt="김메이커"></div>
                   <div class="flex-grow-1">
-                    <div class="d-flex align-items-center gap-2 flex-wrap mb-2">
-                      <span class="badge bg-warning-subtle text-warning-emphasis me-2"><i class="fa-regular fa-hourglass me-1"></i> 해결중</span>
-                      <span class="small text-purple me-2">AI 로봇 챌린지 2026</span>
-                      <span class="badge badge-quest">Quest 1</span>
-                      <small class="text-muted ms-auto text-nowrap">5시간 전</small>
+                    <div class="d-flex flex-wrap align-items-center gap-1 mb-1">
+                      <span class="badge bg-danger-subtle text-danger">D-20</span>
+                      <span class="badge badge-amber fw-normal">자율주행 소형 로봇</span>
+                      <span class="text-muted small ms-auto">2일 전</span>
                     </div>
-                    <div class="fw-bold mb-1">ROS2 노드 간 통신 시 메시지 손실 문제</div>
-                    <div class="small text-muted mb-2">퍼블리셔-서브스크라이버 패턴으로 구현했는데 일부 메시지가 수신되지 않습니다...</div>
-                    <div class="d-flex gap-4 fs-xs text-muted mb-2">
-                      <span>김메이커</span>
-                      <span><i class="fa-regular fa-comment me-1"></i>5</span>
-                      <span><i class="fa-regular fa-arrow-trend-up me-1"></i>19</span>
+                    <div class="fw-semibold mb-1 mt-2">SLAM 기반 자율주행 로봇 - AI/ML 전문가 구합니다</div>
+                    <div class="text-muted small mb-2">라이다 센서 기반 실내 자율주행 로봇 개발 중. 객체 인식 및 경로 계획 알고리즘 담당자 필요.</div>
+                    <div class="mb-2">
+                      <span class="badge bg-light border text-secondary rounded-pill me-1">Python</span>
+                      <span class="badge bg-light border text-secondary rounded-pill me-1">TensorFlow</span>
+                      <span class="badge bg-light border text-secondary rounded-pill me-1">SLAM</span>
+                      <span class="badge bg-light border text-secondary rounded-pill me-1">LiDAR</span>
                     </div>
-                    <div class="d-flex gap-1 flex-wrap">
-                      <span class="badge bg-secondary-subtle text-secondary popular-tag tag-badge">#ROS</span>
-                      <span class="badge bg-secondary-subtle text-secondary popular-tag tag-badge">#ROS2</span>
-                      <span class="badge bg-secondary-subtle text-secondary popular-tag tag-badge">#통신</span>
+                    <div class="d-flex align-items-center justify-content-between mb-1">
+                      <div class="d-flex align-items-center gap-2 text-muted small">
+                        <span class="fw-semibold text-dark me-2">김메이커</span>
+                        <span><i class="fa-regular fa-user-group me-1" style="color:var(--color-green-hover)"></i>8명 지원</span>
+                        <span>· 2일 전</span>
+                      </div>
+                      <button class="btn btn-sm bg-success-subtle text-success fw-semibold btn-apply" data-bs-toggle="modal"
+                        data-bs-target="#applyModal"><i class="fa-regular fa-paper-plane me-1"></i>지원하기</button>
                     </div>
+                    <div class="small text-muted"><span class="fw-medium text-secondary">콘테스트:</span> AI 로봇 챌린지 2026</div>
                   </div>
                 </div>
               </div>
-            </a>
+            </div>
 
-            <!-- Q5 -->
-            <a href="community-qna.html" class="card border-0 shadow-sm text-decoration-none text-dark hover-lift hover-card">
+            <!-- Teammate 5 -->
+            <div class="card border-0 shadow-sm">
               <div class="card-body">
-                <div class="d-flex align-items-start gap-3">
-                  <div class="user-avatar avatar-violet text-white flex-shrink-0">최</div>
+                <div class="d-flex gap-3 align-items-start">
+                  <div class="user-avatar user-avatar-sm flex-shrink-0"><img src="assets/img/user.png" alt="이엔지"></div>
                   <div class="flex-grow-1">
-                    <div class="d-flex align-items-center gap-2 flex-wrap mb-2">
-                      <span class="badge bg-success-subtle text-success me-2"><i class="fa-regular fa-circle-check me-1"></i> 해결됨</span>
-                      <span class="small text-purple me-2">AI 로봇 챌린지 2026</span>
-                      <span class="badge badge-quest">Quest 2</span>
-                      <small class="text-muted ms-auto text-nowrap">6시간 전</small>
+                    <div class="d-flex flex-wrap align-items-center gap-1 mb-1">
+                      <span class="badge bg-danger-subtle text-danger">D-30</span>
+                      <span class="badge badge-amber fw-normal">스마트 에너지 모니터링</span>
+                      <span class="text-muted small ms-auto">3일 전</span>
                     </div>
-                    <div class="fw-bold mb-1">Arduino에서 I2C 통신으로 여러 센서 연결하기</div>
-                    <div class="small text-muted mb-2">같은 I2C 버스에 동일한 주소의 센서 2개를 연결해야 하는데 충돌이 발생합니다...</div>
-                    <div class="d-flex gap-4 fs-xs text-muted mb-2">
-                      <span>최엔지니어</span>
-                      <span><i class="fa-regular fa-comment me-1"></i>8</span>
-                      <span><i class="fa-regular fa-arrow-trend-up me-1"></i>42</span>
-                      <span><i class="fa-regular fa-heart me-1"></i>11</span>
+                    <div class="fw-semibold mb-1 mt-2">에너지 모니터링 시스템 - PCB 설계 엔지니어 모집</div>
+                    <div class="text-muted small mb-2">가정용 전력 모니터링 디바이스 개발 프로젝트. KiCad 이용 PCB 설계 및 제조 경험자 우대.</div>
+                    <div class="mb-2">
+                      <span class="badge bg-light border text-secondary rounded-pill me-1">PCB 설계</span>
+                      <span class="badge bg-light border text-secondary rounded-pill me-1">KiCad</span>
+                      <span class="badge bg-light border text-secondary rounded-pill me-1">ESP32</span>
+                      <span class="badge bg-light border text-secondary rounded-pill me-1">회로 설계</span>
                     </div>
-                    <div class="d-flex gap-1 flex-wrap">
-                      <span class="badge bg-secondary-subtle text-secondary popular-tag tag-badge">#Arduino</span>
-                      <span class="badge bg-secondary-subtle text-secondary popular-tag tag-badge">#I2C</span>
-                      <span class="badge bg-secondary-subtle text-secondary popular-tag tag-badge">#센서</span>
+                    <div class="d-flex align-items-center justify-content-between mb-1">
+                      <div class="d-flex align-items-center gap-2 text-muted small">
+                        <span class="fw-semibold text-dark me-2">이엔지</span>
+                        <span><i class="fa-regular fa-user-group me-1" style="color:var(--color-green-hover)"></i>4명 지원</span>
+                        <span>· 3일 전</span>
+                      </div>
+                      <button class="btn btn-sm bg-success-subtle text-success fw-semibold btn-apply" data-bs-toggle="modal"
+                        data-bs-target="#applyModal"><i class="fa-regular fa-paper-plane me-1"></i>지원하기</button>
                     </div>
+                    <div class="small text-muted"><span class="fw-medium text-secondary">콘테스트:</span> IoT 혁신 챌린지 2026</div>
                   </div>
                 </div>
               </div>
-            </a>
+            </div>
 
-            <!-- Q6 -->
-            <a href="community-qna.html" class="card border-0 shadow-sm text-decoration-none text-dark hover-lift hover-card">
+            <!-- Teammate 6 -->
+            <div class="card border-0 shadow-sm">
               <div class="card-body">
-                <div class="d-flex align-items-start gap-3">
-                  <div class="user-avatar avatar-green text-white flex-shrink-0">정</div>
+                <div class="d-flex gap-3 align-items-start">
+                  <div class="user-avatar user-avatar-sm flex-shrink-0"><img src="assets/img/user.png" alt="박개발"></div>
                   <div class="flex-grow-1">
-                    <div class="d-flex align-items-center gap-2 flex-wrap mb-2">
-                      <span class="badge bg-warning-subtle text-warning-emphasis me-2"><i class="fa-regular fa-hourglass me-1"></i> 해결중</span>
-                      <span class="small text-purple me-2">AI 로봇 챌린지 2026</span>
-                      <span class="badge badge-quest">Quest 3</span>
-                      <small class="text-muted ms-auto text-nowrap">어제</small>
+                    <div class="d-flex flex-wrap align-items-center gap-1 mb-1">
+                      <span class="badge bg-danger-subtle text-danger">D-45</span>
+                      <span class="badge badge-amber fw-normal">오픈소스 음성인식 로봇</span>
+                      <span class="text-muted small ms-auto">4일 전</span>
                     </div>
-                    <div class="fw-bold mb-1">3D 프린터 출력물 레이어 분리 현상 원인 및 해결법</div>
-                    <div class="small text-muted mb-2">PLA 필라멘트로 출력 시 중간 레이어가 분리됩니다. 온도나 속도 문제인지 확인이 필요합니다...</div>
-                    <div class="d-flex gap-4 fs-xs text-muted mb-2">
-                      <span>정메이커</span>
-                      <span><i class="fa-regular fa-comment me-1"></i>4</span>
-                      <span><i class="fa-regular fa-arrow-trend-up me-1"></i>31</span>
+                    <div class="fw-semibold mb-1 mt-2">음성인식 홈 로봇 프로젝트 - UI/앱 개발자 구합니다</div>
+                    <div class="text-muted small mb-2">음성 명령 기반 홈 서비스 로봇 개발 중. Flutter 앱으로 제어 인터페이스 만들 분 찾아요.</div>
+                    <div class="mb-2">
+                      <span class="badge bg-light border text-secondary rounded-pill me-1">Flutter</span>
+                      <span class="badge bg-light border text-secondary rounded-pill me-1">Firebase</span>
+                      <span class="badge bg-light border text-secondary rounded-pill me-1">UI/UX</span>
+                      <span class="badge bg-light border text-secondary rounded-pill me-1">Dart</span>
                     </div>
-                    <div class="d-flex gap-1 flex-wrap">
-                      <span class="badge bg-secondary-subtle text-secondary popular-tag tag-badge">#3D프린팅</span>
-                      <span class="badge bg-secondary-subtle text-secondary popular-tag tag-badge">#PLA</span>
-                      <span class="badge bg-secondary-subtle text-secondary popular-tag tag-badge">#출력품질</span>
+                    <div class="d-flex align-items-center justify-content-between mb-1">
+                      <div class="d-flex align-items-center gap-2 text-muted small">
+                        <span class="fw-semibold text-dark me-2">박개발</span>
+                        <span><i class="fa-regular fa-user-group me-1" style="color:var(--color-green-hover)"></i>6명 지원</span>
+                        <span>· 4일 전</span>
+                      </div>
+                      <button class="btn btn-sm bg-success-subtle text-success fw-semibold btn-apply" data-bs-toggle="modal"
+                        data-bs-target="#applyModal"><i class="fa-regular fa-paper-plane me-1"></i>지원하기</button>
                     </div>
+                    <div class="small text-muted"><span class="fw-medium text-secondary">콘테스트:</span> AI 로봇 챌린지 2026</div>
                   </div>
                 </div>
               </div>
-            </a>
+            </div>
 
-            <!-- Q7 -->
-            <a href="community-qna.html" class="card border-0 shadow-sm text-decoration-none text-dark hover-lift hover-card">
+            <!-- Teammate 7 -->
+            <div class="card border-0 shadow-sm">
               <div class="card-body">
-                <div class="d-flex align-items-start gap-3">
-                  <div class="user-avatar avatar-blue text-white flex-shrink-0">한</div>
+                <div class="d-flex gap-3 align-items-start">
+                  <div class="user-avatar user-avatar-sm flex-shrink-0"><img src="assets/img/user.png" alt="최로봇"></div>
                   <div class="flex-grow-1">
-                    <div class="d-flex align-items-center gap-2 flex-wrap mb-2">
-                      <span class="badge bg-success-subtle text-success me-2"><i class="fa-regular fa-circle-check me-1"></i> 해결됨</span>
-                      <span class="small text-purple me-2">AI 로봇 챌린지 2026</span>
-                      <span class="badge badge-quest">Quest 1</span>
-                      <small class="text-muted ms-auto text-nowrap">어제</small>
+                    <div class="d-flex flex-wrap align-items-center gap-1 mb-1">
+                      <span class="badge bg-danger-subtle text-danger">D-60</span>
+                      <span class="badge badge-amber fw-normal">3D 스캐너 DIY 키트</span>
+                      <span class="text-muted small ms-auto">5일 전</span>
                     </div>
-                    <div class="fw-bold mb-1">Raspberry Pi 카메라 모듈 OpenCV 연동 방법</div>
-                    <div class="small text-muted mb-2">Pi Camera v2를 OpenCV로 읽으려는데 VideoCapture(0)로 접근이 안 됩니다...</div>
-                    <div class="d-flex gap-4 fs-xs text-muted mb-2">
-                      <span>한개발자</span>
-                      <span><i class="fa-regular fa-comment me-1"></i>7</span>
-                      <span><i class="fa-regular fa-arrow-trend-up me-1"></i>63</span>
-                      <span><i class="fa-regular fa-heart me-1"></i>15</span>
+                    <div class="fw-semibold mb-1 mt-2">저가형 3D 스캐너 개발 - 광학/영상처리 전문가 모집</div>
+                    <div class="text-muted small mb-2">구조광 방식 3D 스캐너 DIY 키트 개발 중. OpenCV 기반 포인트클라우드 처리 경험자 우대.</div>
+                    <div class="mb-2">
+                      <span class="badge bg-light border text-secondary rounded-pill me-1">OpenCV</span>
+                      <span class="badge bg-light border text-secondary rounded-pill me-1">Python</span>
+                      <span class="badge bg-light border text-secondary rounded-pill me-1">3D 스캔</span>
+                      <span class="badge bg-light border text-secondary rounded-pill me-1">영상처리</span>
                     </div>
-                    <div class="d-flex gap-1 flex-wrap">
-                      <span class="badge bg-secondary-subtle text-secondary popular-tag tag-badge">#라즈베리파이</span>
-                      <span class="badge bg-secondary-subtle text-secondary popular-tag tag-badge">#OpenCV</span>
-                      <span class="badge bg-secondary-subtle text-secondary popular-tag tag-badge">#카메라</span>
+                    <div class="d-flex align-items-center justify-content-between mb-1">
+                      <div class="d-flex align-items-center gap-2 text-muted small">
+                        <span class="fw-semibold text-dark me-2">최로봇</span>
+                        <span><i class="fa-regular fa-user-group me-1" style="color:var(--color-green-hover)"></i>1명 지원</span>
+                        <span>· 5일 전</span>
+                      </div>
+                      <button class="btn btn-sm bg-success-subtle text-success fw-semibold btn-apply" data-bs-toggle="modal"
+                        data-bs-target="#applyModal"><i class="fa-regular fa-paper-plane me-1"></i>지원하기</button>
                     </div>
+                    <div class="small text-muted"><span class="fw-medium text-secondary">개인 프로젝트</span></div>
                   </div>
                 </div>
               </div>
-            </a>
+            </div>
 
-            <!-- Q8 -->
-            <a href="community-qna.html" class="card border-0 shadow-sm text-decoration-none text-dark hover-lift hover-card">
+            <!-- Teammate 8 -->
+            <div class="card border-0 shadow-sm">
               <div class="card-body">
-                <div class="d-flex align-items-start gap-3">
-                  <div class="user-avatar avatar-violet text-white flex-shrink-0">서</div>
+                <div class="d-flex gap-3 align-items-start">
+                  <div class="user-avatar user-avatar-sm flex-shrink-0"><img src="assets/img/user.png" alt="강엔지"></div>
                   <div class="flex-grow-1">
-                    <div class="d-flex align-items-center gap-2 flex-wrap mb-2">
-                      <span class="badge bg-warning-subtle text-warning-emphasis me-2"><i class="fa-regular fa-hourglass me-1"></i> 해결중</span>
-                      <span class="small text-purple me-2">AI 로봇 챌린지 2026</span>
-                      <span class="badge badge-quest">Quest 2</span>
-                      <small class="text-muted ms-auto text-nowrap">2일 전</small>
+                    <div class="d-flex flex-wrap align-items-center gap-1 mb-1">
+                      <span class="badge bg-danger-subtle text-danger">D-12</span>
+                      <span class="badge badge-amber fw-normal">웨어러블 헬스케어 기기</span>
+                      <span class="text-muted small ms-auto">1주일 전</span>
                     </div>
-                    <div class="fw-bold mb-1">STM32 PWM으로 서보모터 정밀 제어가 안 돼요</div>
-                    <div class="small text-muted mb-2">HAL 라이브러리로 PWM을 설정했는데 서보 각도가 정확하지 않습니다. 타이머 설정 문제인지...</div>
-                    <div class="d-flex gap-4 fs-xs text-muted mb-2">
-                      <span>서메이커</span>
-                      <span><i class="fa-regular fa-comment me-1"></i>1</span>
-                      <span><i class="fa-regular fa-arrow-trend-up me-1"></i>14</span>
+                    <div class="fw-semibold mb-1 mt-2">헬스케어 웨어러블 - 펌웨어 개발자 구합니다</div>
+                    <div class="text-muted small mb-2">심박수·산소포화도 모니터링 웨어러블 기기 개발. nRF52840 BLE 펌웨어 개발 경험자 우대.</div>
+                    <div class="mb-2">
+                      <span class="badge bg-light border text-secondary rounded-pill me-1">nRF52840</span>
+                      <span class="badge bg-light border text-secondary rounded-pill me-1">BLE</span>
+                      <span class="badge bg-light border text-secondary rounded-pill me-1">펌웨어</span>
+                      <span class="badge bg-light border text-secondary rounded-pill me-1">C</span>
                     </div>
-                    <div class="d-flex gap-1 flex-wrap">
-                      <span class="badge bg-secondary-subtle text-secondary popular-tag tag-badge">#STM32</span>
-                      <span class="badge bg-secondary-subtle text-secondary popular-tag tag-badge">#PWM</span>
-                      <span class="badge bg-secondary-subtle text-secondary popular-tag tag-badge">#서보모터</span>
+                    <div class="d-flex align-items-center justify-content-between mb-1">
+                      <div class="d-flex align-items-center gap-2 text-muted small">
+                        <span class="fw-semibold text-dark me-2">강엔지</span>
+                        <span><i class="fa-regular fa-user-group me-1" style="color:var(--color-green-hover)"></i>7명 지원</span>
+                        <span>· 1주일 전</span>
+                      </div>
+                      <button class="btn btn-sm bg-success-subtle text-success fw-semibold btn-apply" data-bs-toggle="modal"
+                        data-bs-target="#applyModal"><i class="fa-regular fa-paper-plane me-1"></i>지원하기</button>
                     </div>
+                    <div class="small text-muted"><span class="fw-medium text-secondary">콘테스트:</span> 바이오·헬스케어 메이커 챌린지</div>
                   </div>
                 </div>
               </div>
-            </a>
-
-            <!-- Q9 -->
-            <a href="community-qna.html" class="card border-0 shadow-sm text-decoration-none text-dark hover-lift hover-card">
-              <div class="card-body">
-                <div class="d-flex align-items-start gap-3">
-                  <div class="user-avatar avatar-green text-white flex-shrink-0">임</div>
-                  <div class="flex-grow-1">
-                    <div class="d-flex align-items-center gap-2 flex-wrap mb-2">
-                      <span class="badge bg-success-subtle text-success me-2"><i class="fa-regular fa-circle-check me-1"></i> 해결됨</span>
-                      <span class="small text-purple me-2">AI 로봇 챌린지 2026</span>
-                      <span class="badge badge-quest">Quest 1</span>
-                      <small class="text-muted ms-auto text-nowrap">2일 전</small>
-                    </div>
-                    <div class="fw-bold mb-1">YOLO 모델 학습 시 Loss가 수렴하지 않는 문제</div>
-                    <div class="small text-muted mb-2">커스텀 데이터셋으로 YOLOv8 학습을 진행하는데 50 epoch 이후로 loss가 줄지 않습니다...</div>
-                    <div class="d-flex gap-4 fs-xs text-muted mb-2">
-                      <span>임개발</span>
-                      <span><i class="fa-regular fa-comment me-1"></i>9</span>
-                      <span><i class="fa-regular fa-arrow-trend-up me-1"></i>87</span>
-                      <span><i class="fa-regular fa-heart me-1"></i>22</span>
-                    </div>
-                    <div class="d-flex gap-1 flex-wrap">
-                      <span class="badge bg-secondary-subtle text-secondary popular-tag tag-badge">#AI</span>
-                      <span class="badge bg-secondary-subtle text-secondary popular-tag tag-badge">#YOLO</span>
-                      <span class="badge bg-secondary-subtle text-secondary popular-tag tag-badge">#딥러닝</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </a>
-
-            <!-- Q10 -->
-            <a href="community-qna.html" class="card border-0 shadow-sm text-decoration-none text-dark hover-lift hover-card">
-              <div class="card-body">
-                <div class="d-flex align-items-start gap-3">
-                  <div class="user-avatar avatar-blue text-white flex-shrink-0">오</div>
-                  <div class="flex-grow-1">
-                    <div class="d-flex align-items-center gap-2 flex-wrap mb-2">
-                      <span class="badge bg-warning-subtle text-warning-emphasis me-2"><i class="fa-regular fa-hourglass me-1"></i> 해결중</span>
-                      <span class="small text-purple me-2">AI 로봇 챌린지 2026</span>
-                      <span class="badge badge-quest">Quest 3</span>
-                      <small class="text-muted ms-auto text-nowrap">3일 전</small>
-                    </div>
-                    <div class="fw-bold mb-1">Jetson Nano에서 CUDA 가속 사용 방법</div>
-                    <div class="small text-muted mb-2">Jetson Nano에서 OpenCV를 빌드했는데 CUDA 가속이 적용되지 않는 것 같습니다...</div>
-                    <div class="d-flex gap-4 fs-xs text-muted mb-2">
-                      <span>오메이커</span>
-                      <span><i class="fa-regular fa-comment me-1"></i>6</span>
-                      <span><i class="fa-regular fa-arrow-trend-up me-1"></i>53</span>
-                    </div>
-                    <div class="d-flex gap-1 flex-wrap">
-                      <span class="badge bg-secondary-subtle text-secondary popular-tag tag-badge">#Jetson</span>
-                      <span class="badge bg-secondary-subtle text-secondary popular-tag tag-badge">#CUDA</span>
-                      <span class="badge bg-secondary-subtle text-secondary popular-tag tag-badge">#GPU</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </a>
+            </div>
 
           </div>
 
@@ -479,7 +456,7 @@
               <li class="page-item"><a class="page-link" href="#">4</a></li>
               <li class="page-item"><a class="page-link" href="#">5</a></li>
               <li class="page-item disabled"><a class="page-link">···</a></li>
-              <li class="page-item"><a class="page-link" href="#">33</a></li>
+              <li class="page-item"><a class="page-link" href="#">12</a></li>
               <li class="page-item">
                 <a class="page-link" href="#" aria-label="다음"><i class="fa-regular fa-chevron-right"></i></a>
               </li>
@@ -536,7 +513,7 @@
                   </div>
                   <div class="notice-item-info">
                     <span class="badge me-1 mb-1 badge-faq">FAQ</span>
-                    <div class="small fw-semibold mb-1">Quest 제출 시 자주 하는 실수 TOP 5</div>
+                    <div class="small fw-semibold mb-1">팀원 모집 글 작성 가이드</div>
                     <small class="text-muted">3일 전</small>
                   </div>
                 </div>
@@ -544,21 +521,21 @@
               </div>
             </div>
 
-            <!-- 인기 태그 -->
+            <!-- 자주 찾는 기술 -->
             <div class="card sidebar-card border-0 shadow-sm">
               <div class="card-body">
-                <h6 class="fw-bold mb-3"><i class="fa-regular fa-tag me-1"></i> 인기 태그</h6>
+                <h6 class="fw-bold mb-3"><i class="fa-regular fa-code me-1"></i> 자주 찾는 기술</h6>
                 <div class="d-flex flex-wrap gap-2">
-                  <span class="badge bg-secondary-subtle text-secondary popular-tag tag-badge">#라즈베리파이</span>
                   <span class="badge bg-secondary-subtle text-secondary popular-tag tag-badge">#Arduino</span>
-                  <span class="badge bg-secondary-subtle text-secondary popular-tag tag-badge">#AI</span>
-                  <span class="badge bg-secondary-subtle text-secondary popular-tag tag-badge">#OpenCV</span>
                   <span class="badge bg-secondary-subtle text-secondary popular-tag tag-badge">#ESP32</span>
-                  <span class="badge bg-secondary-subtle text-secondary popular-tag tag-badge">#IoT</span>
-                  <span class="badge bg-secondary-subtle text-secondary popular-tag tag-badge">#3D프린팅</span>
-                  <span class="badge bg-secondary-subtle text-secondary popular-tag tag-badge">#ROS</span>
+                  <span class="badge bg-secondary-subtle text-secondary popular-tag tag-badge">#ROS2</span>
                   <span class="badge bg-secondary-subtle text-secondary popular-tag tag-badge">#Python</span>
-                  <span class="badge bg-secondary-subtle text-secondary popular-tag tag-badge">#TensorFlow</span>
+                  <span class="badge bg-secondary-subtle text-secondary popular-tag tag-badge">#C++</span>
+                  <span class="badge bg-secondary-subtle text-secondary popular-tag tag-badge">#STM32</span>
+                  <span class="badge bg-secondary-subtle text-secondary popular-tag tag-badge">#AI/ML</span>
+                  <span class="badge bg-secondary-subtle text-secondary popular-tag tag-badge">#PCB설계</span>
+                  <span class="badge bg-secondary-subtle text-secondary popular-tag tag-badge">#Flutter</span>
+                  <span class="badge bg-secondary-subtle text-secondary popular-tag tag-badge">#OpenCV</span>
                 </div>
               </div>
             </div>
@@ -618,6 +595,33 @@
     </div>
   </footer>
 
+  <!-- ===== Apply Modal ===== -->
+  <div class="modal fade" id="applyModal" tabindex="-1" aria-labelledby="applyModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header border-0 pb-0">
+          <h5 class="modal-title fw-bold" id="applyModalLabel"><i class="fa-regular fa-paper-plane me-2 text-success"></i>팀원 지원하기</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="닫기"></button>
+        </div>
+        <div class="modal-body pt-2">
+          <p class="text-muted small mb-3">지원 메시지를 작성해 주세요. 프로젝트 리더에게 전달됩니다.</p>
+          <div class="mb-3">
+            <label class="fw-bold small d-block mb-2">자기소개 및 지원 동기 <span class="text-danger">*</span></label>
+            <textarea class="form-control" rows="4" placeholder="예: 안녕하세요. 임베디드 개발 3년 차입니다. ROS2와 STM32 경험이 있으며 이 프로젝트에 기여하고 싶습니다."></textarea>
+          </div>
+          <div class="mb-3">
+            <label class="fw-bold small d-block mb-2">관련 경험 / 포트폴리오 링크 <span class="text-muted fw-normal">(선택)</span></label>
+            <input type="url" class="form-control form-control-sm" placeholder="GitHub, Notion, 블로그 등">
+          </div>
+        </div>
+        <div class="modal-footer border-0 pt-0">
+          <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">취소</button>
+          <button type="button" class="btn btn-success" onclick="alert('지원이 완료되었습니다!'); bootstrap.Modal.getInstance(document.getElementById('applyModal')).hide()"><i class="fa-regular fa-paper-plane me-1"></i>지원 완료</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <!-- ══ Community Quick Action Panel ══ -->
   <div class="cpanel-backdrop" id="quickActionBackdrop" onclick="hideQuickAction()"></div>
   <div class="cpanel content-w" id="quickActionOffcanvas">
@@ -637,7 +641,7 @@
               <div><h6 class="fw-bold mb-1">연결된 프로젝트</h6><p class="text-muted small mb-0">내 프로젝트를 선택하면 자동으로 연결됩니다</p></div>
             </div>
             <select class="form-select form-select-sm mb-3 panel-select-blue"><option value="">내 프로젝트 선택 (선택사항)</option><option>AI 음성인식 자율주행 로봇</option><option>오픈소스 자율주행 로봇</option><option>ESP32 기반 스마트 화분</option></select>
-            <div class="bg-white rounded-3 p-3 small text-muted">커뮤니티 Q&A에 등록되며, 프로젝트 상세에서도 확인할 수 있습니다</div>
+            <div class="bg-white rounded-3 p-3 small text-muted">커뮤니티 Q&amp;A에 등록되며, 프로젝트 상세에서도 확인할 수 있습니다</div>
           </div>
           <div><label class="fw-bold small d-block mb-2">질문 제목 <span class="text-danger">*</span></label><input type="text" class="form-control" placeholder="예: ESP32에서 MQTT 연결이 계속 끊기는 문제"></div>
           <div><label class="fw-bold small d-block mb-2">1. 지금 어떤 작업을 하고 있나요? <span class="text-danger">*</span></label><textarea class="form-control" rows="3" placeholder="예: Quest 2에서 ESP32와 MQTT 브로커를 연결하는 작업을 하고 있습니다."></textarea></div>
@@ -725,6 +729,7 @@
       $('.qna-status-btn').removeClass('active');
       $(this).addClass('active');
     });
+
     var today = new Date();
     $("#header-date").text(today.toLocaleDateString("ko-KR", { weekday: "long", month: "long", day: "numeric" }));
 
@@ -746,7 +751,17 @@
       document.getElementById('quickActionOffcanvas').classList.remove('cpanel-show');
       document.getElementById('quickActionBackdrop').classList.remove('cpanel-show');
     }
+
+    // URL ?action= 파라미터로 패널 자동 오픈
+    (function () {
+      var params = new URLSearchParams(window.location.search);
+      var action = params.get('action');
+      if (action && ['question', 'progress', 'teammate', 'resource'].includes(action)) {
+        openQuickAction(action);
+      }
+    })();
   </script>
 
 </body>
+
 </html>

@@ -778,21 +778,22 @@ justify-content: space-evenly;
     font-weight: 600;
   }
 
-  &[data-filter="all"]:hover    { border-color: #6b7280; color: #6b7280; }
-  &[data-filter="question"]:hover  { border-color: #2563eb; color: #2563eb; }
-  &[data-filter="progress"]:hover  { border-color: #16a34a; color: #16a34a; }
-  &[data-filter="teammate"]:hover  { border-color: #eab308; color: #eab308; }
-  &[data-filter="resource"]:hover  { border-color: var(--color-purple); color: var(--color-purple); }
+  &[data-filter="all"]:hover       { border-color: #6b7280; color: #6b7280; }
+  &[data-filter="question"]:hover  { border-color: var(--color-blue); color: var(--color-blue); }
+  &[data-filter="progress"]:hover  { border-color: var(--color-purple); color: var(--color-purple); }
+  &[data-filter="teammate"]:hover  { border-color: var(--color-green-hover); color: var(--color-green-hover); }
+  &[data-filter="resource"]:hover  { border-color: #ea580c; color: #ea580c; }
 
   &.active {
     color: #fff;
     .filter-count { color: rgba(255,255,255,0.85); }
   }
+  &.active:hover { color: #fff; }
   &[data-filter="all"].active      { background: #6b7280; border-color: #6b7280; }
-  &[data-filter="question"].active { background: #2563eb; border-color: #2563eb; }
-  &[data-filter="progress"].active { background: #16a34a; border-color: #16a34a; }
-  &[data-filter="teammate"].active { background: #eab308; border-color: #eab308; }
-  &[data-filter="resource"].active { background: var(--color-purple); border-color: var(--color-purple); }
+  &[data-filter="question"].active { background: var(--color-blue); border-color: var(--color-blue); }
+  &[data-filter="progress"].active { background: var(--color-purple); border-color: var(--color-purple); }
+  &[data-filter="teammate"].active { background: var(--color-green-hover); border-color: var(--color-green-hover); }
+  &[data-filter="resource"].active { background: #ea580c; border-color: #ea580c; }
 }
 
 .community-card-wrap {
@@ -800,19 +801,19 @@ justify-content: space-evenly;
 }
 
 .community-card-wrap[data-type="question"] .community-card {
-  border-left: 3px solid #2563eb;
+  border-left: 3px solid var(--color-blue);
 }
 
 .community-card-wrap[data-type="progress"] .community-card {
-  border-left: 3px solid #16a34a;
+  border-left: 3px solid var(--color-purple);
 }
 
 .community-card-wrap[data-type="teammate"] .community-card {
-  border-left: 3px solid #eab308;
+  border-left: 3px solid var(--color-green-hover);
 }
 
 .community-card-wrap[data-type="resource"] .community-card {
-  border-left: 3px solid var(--color-purple);
+  border-left: 3px solid #ea580c;
 }
 
 .community-card {
@@ -856,28 +857,28 @@ justify-content: space-evenly;
   border-radius: 9999px;
 
   &.question {
-    background: #eff6ff;
-    color: #2563eb;
+    background: #e8f3ff;
+    color: var(--color-blue);
     border: 1px solid #bfdbfe;
   }
 
   &.progress {
     --bs-progress-height: auto;
-    background: #f0fdf4;
-    color: #16a34a;
-    border: 1px solid #bbf7d0;
-  }
-
-  &.teammate {
-    background: #fefce8;
-    color: #a16207;
-    border: 1px solid #fde68a;
-  }
-
-  &.resource {
     background: #f5f3ff;
     color: var(--color-purple);
     border: 1px solid #ddd6fe;
+  }
+
+  &.teammate {
+    background: #e6f7f4;
+    color: var(--color-green-hover);
+    border: 1px solid #a7f3d0;
+  }
+
+  &.resource {
+    background: #fff7ed;
+    color: #ea580c;
+    border: 1px solid #fed7aa;
   }
 }
 
@@ -1087,6 +1088,29 @@ justify-content: space-evenly;
 }
 
 
+
+.card-body .small i[class*="fa-"] {
+  margin-right: 0.3rem;
+}
+
+.data-icon-box {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  font-size: 1.05rem;
+}
+
+.share-card-thumb {
+  height: 160px;
+  overflow: hidden;
+  position: relative;
+  border-radius: calc(var(--bs-card-border-radius) - 1px) calc(var(--bs-card-border-radius) - 1px) 0 0;
+}
+.share-card-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
 
 .ev-tag {
   font-size: 0.75rem;
@@ -1496,7 +1520,7 @@ justify-content: space-evenly;
 }
 
 /* ── Community Card Avatars ────────────────────── */
-.community-avatar {
+.user-avatar {
   width: 42px;
   height: 42px;
   border-radius: 50%;
@@ -1508,12 +1532,17 @@ justify-content: space-evenly;
   flex-shrink: 0;
   overflow: hidden;
 }
-.community-avatar img {
+.user-avatar img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
-.community-avatar {
+.user-avatar.user-avatar-sm {
+  width: 28px;
+  height: 28px;
+  font-size: 0.72rem;
+}
+.user-avatar {
 
   &.question {
     background: #ede9fe;
@@ -6077,6 +6106,27 @@ nav.navbar.px-0 {
 .section-border-green  { border-color: var(--color-green-hover); }
 .section-border-amber  { border-color: #d97706; }
 
+/* 아이콘 박스형 섹션 헤더 */
+.section-header-icon {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+.sh-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.35rem;
+  flex-shrink: 0;
+}
+.sh-icon-blue   { background: #eff6ff; color: var(--color-blue);         border: 1px solid #bfdbfe; }
+.sh-icon-purple { background: #f5f3ff; color: var(--color-purple);       border: 1px solid #ddd6fe; }
+.sh-icon-green  { background: #e6f7f4; color: var(--color-green-hover);  border: 1px solid #a7f3d0; }
+.sh-icon-amber  { background: #fff7ed; color: #ea580c;                   border: 1px solid #fed7aa; }
+
 /* 사이드바 카드 연한 파랑-보라 그라디언트 배경 */
 .bg-gradient-blue-violet-soft {
   background: linear-gradient(135deg, #eff6ff 0%, #f5f3ff 100%);
@@ -6437,8 +6487,42 @@ nav.navbar.px-0 {
 .badge-quest { background: #ede9fe; color: #7c3aed; font-weight: 500; margin-right: 1rem; }
 
 /* ── community-qna 필터바 ─────────────────── */
-.qna-search-group { max-width: 300px; }
+.qna-search-group { max-width: 420px; flex: 1; }
 .qna-filter-select { width: auto; }
+.qna-filter-bar { display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap; }
+.qna-status-group {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  background: #f3f4f6;
+  border-radius: 9999px;
+  padding: 0.2rem;
+}
+.qna-status-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.3rem 0.85rem;
+  border-radius: 9999px;
+  border: none;
+  background: transparent;
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: #6b7280;
+  cursor: pointer;
+  transition: all 0.15s;
+  white-space: nowrap;
+}
+.qna-status-btn.active {
+  background: #111827;
+  color: #fff;
+}
+.qna-filter-divider {
+  width: 1px;
+  height: 20px;
+  background: #e5e7eb;
+  flex-shrink: 0;
+}
 
 /* ── community-teammate 섹션 아이콘 박스 ─────────────────── */
 .section-icon-box {
