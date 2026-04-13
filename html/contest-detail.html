@@ -609,32 +609,45 @@
         <div class="tab-pane fade" id="tab-prizes">
           <div class="card border-0 shadow-sm rounded-4">
             <div class="card-body p-5">
-              <h2 class="fw-bold fs-4 mb-5">시상 내역</h2>
-              <div class="d-flex flex-column gap-3">
+              <h2 class="fw-bold fs-4 mb-4">시상 내역</h2>
+              <div class="prize-grid">
+
                 <!-- 대상 -->
-                <div class="d-flex align-items-center gap-4 p-4 rounded-3 prize-row-gold">
-                  <div class="prize-icon prize-icon-gold"><i class="fa-regular fa-trophy"></i></div>
-                  <div class="flex-grow-1">
-                    <h3 class="fw-bold fs-5 mb-1">대상 (1팀)</h3>
-                    <p class="text-secondary mb-0">₩15,000,000 + 후원사 특별상</p>
-                  </div>
+                <div class="prize-card prize-card-gold">
+                  <div class="prize-card-icon prize-card-icon-gold"><i class="fa-regular fa-trophy"></i></div>
+                  <span class="prize-card-rank prize-card-rank-gold">GRAND PRIZE</span>
+                  <div class="prize-card-title">대상 <span class="fw-normal text-muted fs-sm">(1팀)</span></div>
+                  <div class="prize-card-amount">₩15,000,000</div>
+                  <div class="prize-card-note">+ 후원사 특별상</div>
                 </div>
+
                 <!-- 최우수상 -->
-                <div class="d-flex align-items-center gap-4 p-4 rounded-3 bg-light border">
-                  <div class="prize-icon prize-icon-silver"><i class="fa-regular fa-medal"></i></div>
-                  <div class="flex-grow-1">
-                    <h3 class="fw-bold fs-5 mb-1">최우수상 (2팀)</h3>
-                    <p class="text-secondary mb-0">₩8,000,000</p>
-                  </div>
+                <div class="prize-card prize-card-silver">
+                  <div class="prize-card-icon prize-card-icon-silver"><i class="fa-regular fa-medal"></i></div>
+                  <span class="prize-card-rank prize-card-rank-silver">EXCELLENCE</span>
+                  <div class="prize-card-title">최우수상 <span class="fw-normal text-muted fs-sm">(2팀)</span></div>
+                  <div class="prize-card-amount">₩8,000,000</div>
+                  <div class="prize-card-note">각 팀</div>
                 </div>
+
                 <!-- 우수상 -->
-                <div class="d-flex align-items-center gap-4 p-4 rounded-3 bg-light border">
-                  <div class="prize-icon prize-icon-bronze"><i class="fa-regular fa-star"></i></div>
-                  <div class="flex-grow-1">
-                    <h3 class="fw-bold fs-5 mb-1">우수상 (3팀)</h3>
-                    <p class="text-secondary mb-0">₩4,000,000</p>
-                  </div>
+                <div class="prize-card prize-card-bronze">
+                  <div class="prize-card-icon prize-card-icon-bronze"><i class="fa-regular fa-star"></i></div>
+                  <span class="prize-card-rank prize-card-rank-bronze">MERIT</span>
+                  <div class="prize-card-title">우수상 <span class="fw-normal text-muted fs-sm">(3팀)</span></div>
+                  <div class="prize-card-amount">₩4,000,000</div>
+                  <div class="prize-card-note">각 팀</div>
                 </div>
+
+                <!-- 장려상 -->
+                <div class="prize-card prize-card-default">
+                  <div class="prize-card-icon prize-card-icon-default"><i class="fa-regular fa-award"></i></div>
+                  <span class="prize-card-rank prize-card-rank-default">ENCOURAGEMENT</span>
+                  <div class="prize-card-title">장려상 <span class="fw-normal text-muted fs-sm">(5팀)</span></div>
+                  <div class="prize-card-amount">₩1,000,000</div>
+                  <div class="prize-card-note">각 팀</div>
+                </div>
+
               </div>
             </div>
           </div>

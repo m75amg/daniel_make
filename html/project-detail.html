@@ -243,16 +243,16 @@
                 </div>
               </div>
               <div class="d-flex gap-4">
-                <div class="text-center">
-                  <div class="stat-num"><i class="fa-regular fa-heart me-1" style="color:#f43f5e;font-size:0.85rem;"></i>567</div>
+                <div class="text-center me-3">
+                  <div class="stat-num"><i class="fa-regular fa-heart me-1 icon-like"></i>567</div>
                   <div class="stat-label">좋아요</div>
                 </div>
-                <div class="text-center">
-                  <div class="stat-num"><i class="fa-regular fa-eye me-1" style="color:#6b7280;font-size:0.85rem;"></i>8.9K</div>
+                <div class="text-center me-3">
+                  <div class="stat-num"><i class="fa-regular fa-eye me-1 icon-view"></i>8.9K</div>
                   <div class="stat-label">조회</div>
                 </div>
-                <div class="text-center">
-                  <div class="stat-num"><i class="fa-regular fa-comment me-1" style="color:#3b82f6;font-size:0.85rem;"></i>142</div>
+                <div class="text-center me-3">
+                  <div class="stat-num"><i class="fa-regular fa-comment me-1 icon-comment"></i>142</div>
                   <div class="stat-label">댓글</div>
                 </div>
               </div>
@@ -332,17 +332,17 @@
 
               <!-- Like / Save / Share -->
               <div class="sidebar-card mb-3">
-                <div class="d-grid gap-2">
-                  <button class="btn btn-primary sidebar-action-btn" id="btn-like">
+                <div class="sidebar-btn-row">
+                  <button class="btn sidebar-action-btn btn-like-action" id="btn-like">
                     <i class="fa-regular fa-heart me-2"></i>좋아요
                   </button>
-                  <button class="btn sidebar-outline-btn" id="btn-save">
+                  <button class="btn sidebar-outline-btn btn-save-action" id="btn-save">
                     <i class="fa-regular fa-bookmark me-2"></i>저장하기
                   </button>
-                  <button class="btn sidebar-outline-btn" id="btn-share">
-                    <i class="fa-regular fa-share-nodes me-2"></i>공유하기
-                  </button>
                 </div>
+                <button class="btn sidebar-outline-btn btn-share-action btn-share-full" id="btn-share">
+                  <i class="fa-regular fa-share-nodes me-2"></i>공유하기
+                </button>
               </div>
 
               <!-- Project Links -->
@@ -414,7 +414,7 @@
                   <span class="contest-progress-tag-done"><i class="fa-regular fa-circle-check me-1"></i>완료</span>
                 </div>
                 <h5 class="fw-bold mb-1 text-white">콘테스트 프로젝트 진행 상황</h5>
-                <p class="mb-3 small" style="color:rgba(255,255,255,0.62);">각 Quest를 단계적으로 완성한 프로젝트입니다. 최종 심사에서 <strong style="color:#e9d5ff;">최우수상</strong>을 수상했습니다.</p>
+                <p class="mb-3 small text-white-muted">각 Quest를 단계적으로 완성한 프로젝트입니다. 최종 심사에서 <strong class="text-lavender">최우수상</strong>을 수상했습니다.</p>
                 <!-- Quest 단계 -->
                 <div class="d-flex align-items-center mb-3">
                   <div class="quest-step-item quest-step-done">
@@ -661,7 +661,7 @@
                       <h5 class="fw-bold mb-1">GitHub 저장소</h5>
                       <p class="small text-muted mb-3">전체 소스코드 및 회로도</p>
                       <a href="https://github.com/example/robot" target="_blank"
-                        class="small fw-semibold text-decoration-none" style="color:#4338ca;">다운로드 ↓</a>
+                        class="small fw-semibold text-decoration-none" class="text-indigo">다운로드 ↓</a>
                     </div>
                   </div>
                 </div>
@@ -674,7 +674,7 @@
                       <h5 class="fw-bold mb-1">데모 영상</h5>
                       <p class="small text-muted mb-3">실제 동작 시연 영상</p>
                       <a href="https://youtube.com/demo" target="_blank"
-                        class="small fw-semibold text-decoration-none" style="color:#4338ca;">다운로드 ↓</a>
+                        class="small fw-semibold text-decoration-none" class="text-indigo">다운로드 ↓</a>
                     </div>
                   </div>
                 </div>
@@ -686,7 +686,7 @@
                     <div>
                       <h5 class="fw-bold mb-1">기술 문서</h5>
                       <p class="small text-muted mb-3">상세한 제작 가이드 (PDF)</p>
-                      <span class="small fw-semibold cursor-pointer" style="color:#4338ca;">다운로드 ↓</span>
+                      <span class="small fw-semibold cursor-pointer" class="text-indigo">다운로드 ↓</span>
                     </div>
                   </div>
                 </div>
@@ -698,7 +698,7 @@
                     <div>
                       <h5 class="fw-bold mb-1">회로도</h5>
                       <p class="small text-muted mb-3">Fritzing 회로도 파일</p>
-                      <span class="small fw-semibold cursor-pointer" style="color:#4338ca;">다운로드 ↓</span>
+                      <span class="small fw-semibold cursor-pointer" class="text-indigo">다운로드 ↓</span>
                     </div>
                   </div>
                 </div>
