@@ -145,67 +145,142 @@
     </div>
 
     <!-- Hero -->
-    <section class="py-5 hero-gradient-amber-red">
-      <div class="container-xl text-center text-white py-3">
-        <div class="fs-1 mb-3">🏆</div>
-        <h1 class="fw-bold display-5 mb-2">아두이노 입문자 대회 2025</h1>
-        <p class="fs-5 text-white-75 mb-4">수상자를 발표합니다!</p>
-        <div class="row g-3 justify-content-center">
-          <div class="col-auto"><div class="bg-white bg-opacity-25 rounded-3 px-4 py-3"><div class="fw-bold fs-4">342</div><small>참가팀</small></div></div>
-          <div class="col-auto"><div class="bg-white bg-opacity-25 rounded-3 px-4 py-3"><div class="fw-bold fs-4">300만원</div><small>총 상금</small></div></div>
-          <div class="col-auto"><div class="bg-white bg-opacity-25 rounded-3 px-4 py-3"><div class="fw-bold fs-4">8팀</div><small>수상팀</small></div></div>
+    <section class="contest-result-hero hero-gradient-amber-red">
+      <div class="container-xl text-white text-center">
+        <div class="d-flex align-items-center justify-content-center mb-2">
+          <span class="crs-hero-tag">수상자 발표 · 2026년 1월 10일</span>
+        </div>
+        <h1 class="fw-bold mb-4">아두이노 입문자 대회 2025</h1>
+        <div class="contest-result-stats">
+          <div class="crs-item"><i class="fa-solid fa-users crs-icon"></i><div class="crs-item-text"><span class="crs-value">342</span><span class="crs-label">참가팀</span></div></div>
+          <div class="crs-divider"></div>
+          <div class="crs-item"><i class="fa-solid fa-coins crs-icon"></i><div class="crs-item-text"><span class="crs-value">300만원</span><span class="crs-label">총 상금</span></div></div>
+          <div class="crs-divider"></div>
+          <div class="crs-item"><i class="fa-solid fa-medal crs-icon"></i><div class="crs-item-text"><span class="crs-value">8팀</span><span class="crs-label">수상팀</span></div></div>
         </div>
       </div>
     </section>
 
     <div class="container-xl py-5">
+
       <!-- Podium -->
-      <h3 class="fw-bold text-center mb-5">🥇 시상 결과</h3>
-      <div class="row g-4 justify-content-center mb-5">
-        <div class="col-md-4 order-md-1">
-          <div class="card border-0 shadow rounded-4 p-4 text-center border-top border-4 border-silver">
-            <div class="fs-1">🥈</div>
-            <div class="badge bg-secondary mb-2">우수상</div>
-            <img src="https://images.unsplash.com/photo-1553408226-42ecf81a214c?w=300" class="rounded-3 img-fluid mb-2 thumb-100h" alt="">
-            <h6 class="fw-bold">스마트 온실 자동화 시스템</h6>
-            <p class="small text-muted">이개발 팀</p>
-            <span class="fw-bold text-secondary">100만원</span>
+      <div class="crs-section-label">
+        <span>시상 결과</span>
+      </div>
+      <div class="crs-podium-list mb-5">
+
+        <!-- 1위 -->
+        <div class="crs-podium-card crs-podium-gold">
+          <img src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800" class="crs-podium-img" alt="">
+          <div class="crs-podium-body">
+            <div class="crs-podium-top">
+              <span class="crs-award-badge crs-badge-gold"><i class="fa-solid fa-trophy me-1"></i>최우수상 · 150만원</span>
+            </div>
+            <h5 class="crs-podium-title">IoT 환경 모니터링 스테이션</h5>
+            <p class="crs-podium-desc">아두이노와 센서를 활용해 실시간 환경 데이터를 수집·분석하는 IoT 모니터링 시스템. 온도·습도·미세먼지를 원격으로 제어 가능.</p>
+            <blockquote class="crs-podium-review">"완성도와 실용성이 뛰어나며, 초보자임에도 불구하고 시스템 설계와 코드 품질이 매우 훌륭합니다." <cite>— 심사위원 총평</cite></blockquote>
+            <div class="crs-podium-tags">
+              <span>Arduino</span><span>IoT</span><span>Sensor</span>
+            </div>
+            <div class="crs-podium-bottom">
+              <span class="crs-podium-team"><span class="user-avatar user-avatar-sm flex-shrink-0"><img src="assets/img/user.png" alt=""></span>김메이커 팀</span>
+              <a href="project-detail.html" class="crs-podium-btn">수상 프로젝트 보기 <i class="fa-solid fa-arrow-right ms-1"></i></a>
+            </div>
           </div>
         </div>
-        <div class="col-md-4 order-md-0">
-          <div class="card border-0 shadow-lg rounded-4 p-4 text-center border-top border-5 border-warning">
-            <div class="fs-1">🥇</div>
-            <div class="badge bg-warning text-dark mb-2">최우수상</div>
-            <img src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=300" class="rounded-3 img-fluid mb-2 thumb-120h" alt="">
-            <h6 class="fw-bold">IoT 환경 모니터링 스테이션</h6>
-            <p class="small text-muted">김메이커 팀</p>
-            <span class="fw-bold text-warning-emphasis fs-5">150만원</span>
+
+        <!-- 2위 -->
+        <div class="crs-podium-card crs-podium-silver">
+          <img src="https://images.unsplash.com/photo-1553408226-42ecf81a214c?w=800" class="crs-podium-img" alt="">
+          <div class="crs-podium-body">
+            <div class="crs-podium-top">
+              <span class="crs-award-badge crs-badge-silver"><i class="fa-solid fa-medal me-1"></i>우수상 · 100만원</span>
+            </div>
+            <h5 class="crs-podium-title">스마트 온실 자동화 시스템</h5>
+            <p class="crs-podium-desc">센서 데이터를 기반으로 온실 환경을 자동 제어하는 시스템. 실시간 pH·습도·광량 조절로 작물 생산성을 최적화.</p>
+            <blockquote class="crs-podium-review">"농업과 기술의 융합이 인상적이며, 실제 현장 적용 가능성이 높은 완성도 있는 작품입니다." <cite>— 심사위원 총평</cite></blockquote>
+            <div class="crs-podium-tags">
+              <span>Arduino</span><span>IoT</span><span>Agriculture</span>
+            </div>
+            <div class="crs-podium-bottom">
+              <span class="crs-podium-team"><span class="user-avatar user-avatar-sm flex-shrink-0"><img src="assets/img/user.png" alt=""></span>이개발 팀</span>
+              <a href="project-detail.html" class="crs-podium-btn">수상 프로젝트 보기 <i class="fa-solid fa-arrow-right ms-1"></i></a>
+            </div>
           </div>
         </div>
-        <div class="col-md-4 order-md-2">
-          <div class="card border-0 shadow rounded-4 p-4 text-center border-top border-4 border-bronze">
-            <div class="fs-1">🥉</div>
-            <div class="badge bg-warning text-dark mb-2 bg-bronze">장려상</div>
-            <img src="https://images.unsplash.com/photo-1703221561813-cdaa308cf9e7?w=300" class="rounded-3 img-fluid mb-2 thumb-100h" alt="">
-            <h6 class="fw-bold">자동 급수 스마트 화분</h6>
-            <p class="small text-muted">박엔지니어 팀</p>
-            <span class="fw-bold text-bronze">30만원</span>
+
+        <!-- 3위 -->
+        <div class="crs-podium-card crs-podium-bronze">
+          <img src="https://images.unsplash.com/photo-1703221561813-cdaa308cf9e7?w=800" class="crs-podium-img" alt="">
+          <div class="crs-podium-body">
+            <div class="crs-podium-top">
+              <span class="crs-award-badge crs-badge-bronze"><i class="fa-solid fa-medal me-1"></i>장려상 · 30만원</span>
+            </div>
+            <h5 class="crs-podium-title">자동 급수 스마트 화분</h5>
+            <p class="crs-podium-desc">토양 수분 센서로 화분 상태를 감지해 자동으로 물을 공급하는 스마트 화분. 앱 연동으로 원격 모니터링 지원.</p>
+            <blockquote class="crs-podium-review">"아이디어가 참신하고 구현 완성도가 높아 일상에서 바로 활용 가능한 실용적인 작품입니다." <cite>— 심사위원 총평</cite></blockquote>
+            <div class="crs-podium-tags">
+              <span>Arduino</span><span>IoT</span><span>Plant</span>
+            </div>
+            <div class="crs-podium-bottom">
+              <span class="crs-podium-team"><span class="user-avatar user-avatar-sm flex-shrink-0"><img src="assets/img/user.png" alt=""></span>박엔지니어 팀</span>
+              <a href="project-detail.html" class="crs-podium-btn">수상 프로젝트 보기 <i class="fa-solid fa-arrow-right ms-1"></i></a>
+            </div>
           </div>
         </div>
+
       </div>
 
       <!-- All Winners -->
-      <h4 class="fw-bold mb-3">전체 수상 목록</h4>
-      <div class="table-responsive">
-        <table class="table table-hover bg-white rounded-4 shadow-sm overflow-hidden">
-          <thead class="table-dark"><tr><th>순위</th><th>팀/개인</th><th>프로젝트명</th><th>상금</th></tr></thead>
-          <tbody>
-            <tr><td>🥇 최우수상</td><td>김메이커 팀</td><td><a href="project-detail.html" class="text-decoration-none">IoT 환경 모니터링 스테이션</a></td><td class="fw-bold">150만원</td></tr>
-            <tr><td>🥈 우수상</td><td>이개발 팀</td><td><a href="project-detail.html" class="text-decoration-none">스마트 온실 자동화 시스템</a></td><td>100만원</td></tr>
-            <tr><td>🥉 장려상</td><td>박엔지니어</td><td><a href="project-detail.html" class="text-decoration-none">자동 급수 스마트 화분</a></td><td>30만원</td></tr>
-            <tr><td>특별상</td><td>최개발 팀</td><td><a href="project-detail.html" class="text-decoration-none">아두이노 RC카 제어 시스템</a></td><td>현물 지원</td></tr>
-          </tbody>
-        </table>
+      <div class="crs-section-label">
+        <span>전체 수상 목록</span>
+      </div>
+      <div class="crs-winner-list">
+
+        <div class="crs-winner-item crs-winner-item--gold">
+          <div class="crs-winner-top">
+            <span class="crs-award-badge crs-badge-gold"><i class="fa-solid fa-trophy me-1"></i>최우수상 · 150만원</span>
+          </div>
+          <a href="project-detail.html" class="crs-winner-project">IoT 환경 모니터링 스테이션</a>
+          <div class="crs-winner-bottom">
+            <span class="crs-winner-team"><span class="user-avatar user-avatar-sm flex-shrink-0"><img src="assets/img/user.png" alt=""></span>김메이커 팀</span>
+            <a href="project-detail.html" class="crs-podium-btn">수상 프로젝트 보기 <i class="fa-solid fa-arrow-right ms-1"></i></a>
+          </div>
+        </div>
+
+        <div class="crs-winner-item crs-winner-item--silver">
+          <div class="crs-winner-top">
+            <span class="crs-award-badge crs-badge-silver"><i class="fa-solid fa-medal me-1"></i>우수상 · 100만원</span>
+          </div>
+          <a href="project-detail.html" class="crs-winner-project">스마트 온실 자동화 시스템</a>
+          <div class="crs-winner-bottom">
+            <span class="crs-winner-team"><span class="user-avatar user-avatar-sm flex-shrink-0"><img src="assets/img/user.png" alt=""></span>이개발 팀</span>
+            <a href="project-detail.html" class="crs-podium-btn">수상 프로젝트 보기 <i class="fa-solid fa-arrow-right ms-1"></i></a>
+          </div>
+        </div>
+
+        <div class="crs-winner-item crs-winner-item--bronze">
+          <div class="crs-winner-top">
+            <span class="crs-award-badge crs-badge-bronze"><i class="fa-solid fa-medal me-1"></i>장려상 · 30만원</span>
+          </div>
+          <a href="project-detail.html" class="crs-winner-project">자동 급수 스마트 화분</a>
+          <div class="crs-winner-bottom">
+            <span class="crs-winner-team"><span class="user-avatar user-avatar-sm flex-shrink-0"><img src="assets/img/user.png" alt=""></span>박엔지니어 팀</span>
+            <a href="project-detail.html" class="crs-podium-btn">수상 프로젝트 보기 <i class="fa-solid fa-arrow-right ms-1"></i></a>
+          </div>
+        </div>
+
+        <div class="crs-winner-item crs-winner-item--special">
+          <div class="crs-winner-top">
+            <span class="crs-award-badge crs-badge-special"><i class="fa-solid fa-star me-1"></i>특별상 · 현물 지원</span>
+          </div>
+          <a href="project-detail.html" class="crs-winner-project">아두이노 RC카 제어 시스템</a>
+          <div class="crs-winner-bottom">
+            <span class="crs-winner-team"><span class="user-avatar user-avatar-sm flex-shrink-0"><img src="assets/img/user.png" alt=""></span>최개발 팀</span>
+            <a href="project-detail.html" class="crs-podium-btn">수상 프로젝트 보기 <i class="fa-solid fa-arrow-right ms-1"></i></a>
+          </div>
+        </div>
+
       </div>
 
       <div class="text-center mt-5">

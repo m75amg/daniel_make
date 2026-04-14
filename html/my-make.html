@@ -139,7 +139,7 @@
 
   <main>
     <!-- ── Hero ── -->
-    <section class="hero-gradient text-white py-5">
+    <section class="hero-gradient-blue-purple-h text-white py-5">
       <div class="container-xl">
         <div
           class="d-flex flex-column flex-md-row align-items-start align-items-md-center justify-content-between gap-4">
@@ -149,16 +149,15 @@
               <h1 class="fw-bold fs-2 mb-1">김메이커</h1>
               <p class="text-white opacity-75 mb-2 fs-105">로봇공학과 AI를 좋아하는 메이커입니다</p>
               <div class="d-flex flex-wrap gap-3 small">
-                <span>📄 프로젝트 12개</span>
-                <span>👥 팔로워 1,234명</span>
-                <button class="btn btn-link text-white p-0 small text-decoration-none" id="hero-following-btn">👤 팔로잉
-                  2명</button>
-                <span>❤️ 총 좋아요 5,678</span>
+                <span><i class="fa-regular fa-file me-1"></i>프로젝트 12개</span>
+                <span><i class="fa-regular fa-users me-1"></i>팔로워 1,234명</span>
+                <button class="btn btn-link text-white p-0 small text-decoration-none" id="hero-following-btn"><i class="fa-regular fa-user me-1"></i>팔로잉 2명</button>
+                <span><i class="fa-regular fa-heart me-1"></i>총 좋아요 5,678</span>
               </div>
             </div>
           </div>
           <button class="btn btn-light btn-sm fw-semibold" onclick="showProfileEdit()">
-            ⚙️ 프로필 편집
+            <i class="fa-regular fa-gear me-1"></i>프로필 편집
           </button>
         </div>
       </div>
@@ -172,7 +171,7 @@
           <div class="col-6 col-md-3">
             <div class="my-make-summary-card rounded-3 p-3 h-100" id="card-inprogress">
               <div class="d-flex align-items-center gap-2 mb-2">
-                <div class="rounded-2 d-flex align-items-center justify-content-center icon-box-36-blue">🚀</div>
+                <div class="rounded-2 d-flex align-items-center justify-content-center icon-box-36-blue"><i class="fa-regular fa-rocket"></i></div>
                 <div class="fw-bold fs-4 text-primary" id="sc-inprogress-count">2</div>
               </div>
               <div class="small fw-semibold text-dark mb-1">진행 중 프로젝트</div>
@@ -183,7 +182,7 @@
           <div class="col-6 col-md-3">
             <div class="my-make-summary-card rounded-3 p-3 h-100" id="card-quest">
               <div class="d-flex align-items-center gap-2 mb-2">
-                <div class="rounded-2 d-flex align-items-center justify-content-center icon-box-36-violet">🎯</div>
+                <div class="rounded-2 d-flex align-items-center justify-content-center icon-box-36-violet"><i class="fa-regular fa-circle-dot"></i></div>
                 <div class="fw-bold fs-4 text-purple text-purple" id="sc-quest-count">3</div>
               </div>
               <div class="small fw-semibold text-dark mb-1">미완료 Quest</div>
@@ -194,7 +193,7 @@
           <div class="col-6 col-md-3">
             <div class="my-make-summary-card rounded-3 p-3 h-100" id="card-answers">
               <div class="d-flex align-items-center gap-2 mb-2">
-                <div class="rounded-2 d-flex align-items-center justify-content-center icon-box-36-green">💬</div>
+                <div class="rounded-2 d-flex align-items-center justify-content-center icon-box-36-green"><i class="fa-regular fa-comment"></i></div>
                 <div class="fw-bold fs-4 text-success">8</div>
                 <span class="badge bg-danger fs-70">2</span>
               </div>
@@ -206,7 +205,7 @@
           <div class="col-6 col-md-3">
             <div class="my-make-summary-card rounded-3 p-3 h-100" id="card-applicants">
               <div class="d-flex align-items-center gap-2 mb-2">
-                <div class="rounded-2 d-flex align-items-center justify-content-center icon-box-36-orange">👤</div>
+                <div class="rounded-2 d-flex align-items-center justify-content-center icon-box-36-orange"><i class="fa-regular fa-user-plus"></i></div>
                 <div class="fw-bold fs-4 text-warning-emphasis">5</div>
                 <span class="badge bg-danger fs-70">5</span>
               </div>
@@ -227,10 +226,13 @@
 
           <!-- ═══ 내 프로젝트 섹션 ═══ -->
           <div id="project-section">
-            <div class="d-flex align-items-start justify-content-between mb-3">
-              <div>
-                <h2 class="fw-bold fs-4 mb-1">내 프로젝트</h2>
-                <p class="text-muted small mb-0">프로젝트 중심으로 활동을 관리하세요</p>
+            <div class="d-flex align-items-center justify-content-between mb-3">
+              <div class="section-header-icon">
+                <div class="sh-icon sh-icon-blue"><i class="fa-regular fa-folder-open"></i></div>
+                <div>
+                  <h5 class="fw-bold mb-0">내 프로젝트</h5>
+                  <small class="text-muted">프로젝트 중심으로 활동을 관리하세요</small>
+                </div>
               </div>
               <button class="btn btn-primary btn-sm fw-semibold" onclick="openNewProjectModal()">+ 새 프로젝트</button>
             </div>
@@ -250,9 +252,14 @@
 
           <!-- ═══ 커뮤니티 활동 섹션 ═══ -->
           <div class="section-divider" id="community-section">
-            <div class="mb-3">
-              <h2 class="fw-bold fs-4 mb-1">프로젝트 관련 커뮤니티 활동</h2>
-              <p class="text-muted small mb-0">프로젝트를 진행하며 나눈 대화와 협업</p>
+            <div class="d-flex align-items-center justify-content-between mb-3">
+              <div class="section-header-icon">
+                <div class="sh-icon sh-icon-purple"><i class="fa-regular fa-comments"></i></div>
+                <div>
+                  <h5 class="fw-bold mb-0">프로젝트 관련 커뮤니티 활동</h5>
+                  <small class="text-muted">프로젝트를 진행하며 나눈 대화와 협업</small>
+                </div>
+              </div>
             </div>
 
             <!-- Community Filter Tabs -->
@@ -279,16 +286,19 @@
 
           <!-- ═══ 좋아요 & 저장 섹션 ═══ -->
           <div class="section-divider">
-            <div class="mb-3">
-              <h2 class="fw-bold fs-4 mb-1">좋아요 &amp; 저장 내역</h2>
-              <p class="text-muted small mb-0">관심 있는 프로젝트와 커뮤니티 글을 모아봐요</p>
+            <div class="d-flex align-items-center justify-content-between mb-3">
+              <div class="section-header-icon">
+                <div class="sh-icon sh-icon-amber"><i class="fa-regular fa-heart"></i></div>
+                <div>
+                  <h5 class="fw-bold mb-0">좋아요 &amp; 저장 내역</h5>
+                  <small class="text-muted">관심 있는 프로젝트와 커뮤니티 글을 모아봐요</small>
+                </div>
+              </div>
             </div>
 
             <div class="d-flex gap-2 mb-4">
-              <button class="like-tab-btn active" id="tab-liked-btn">❤️ 좋아요 <span
-                  class="badge bg-danger ms-1">2</span></button>
-              <button class="save-tab-btn" id="tab-saved-btn">🔖 저장 <span
-                  class="badge bg-warning text-dark ms-1">0</span></button>
+              <button class="like-tab-btn active" id="tab-liked-btn"><i class="fa-regular fa-heart me-1"></i>좋아요 <span class="badge bg-danger ms-1">2</span></button>
+              <button class="save-tab-btn" id="tab-saved-btn"><i class="fa-regular fa-bookmark me-1"></i>저장 <span class="badge bg-warning text-dark ms-1">0</span></button>
             </div>
 
             <div id="liked-content">
@@ -300,8 +310,8 @@
                     <div class="card-body p-3">
                       <p class="fw-bold small mb-1">오픈소스 자율주행 로봇</p>
                       <div class="d-flex justify-content-between align-items-center">
-                        <small class="text-muted">❤️ 432 · 👁 5,420</small>
-                        <button class="btn btn-link btn-sm text-danger p-0 small like-remove-btn">♥ 취소</button>
+                        <small class="text-muted"><i class="fa-regular fa-heart me-1"></i>432 · <i class="fa-regular fa-eye me-1"></i>5,420</small>
+                        <button class="btn btn-link btn-sm text-danger p-0 small like-remove-btn"><i class="fa-regular fa-heart-crack me-1"></i>취소</button>
                       </div>
                     </div>
                   </div>
@@ -313,8 +323,8 @@
                     <div class="card-body p-3">
                       <p class="fw-bold small mb-1">AI 음성인식 스마트 미러</p>
                       <div class="d-flex justify-content-between align-items-center">
-                        <small class="text-muted">❤️ 345 · 👁 4,120</small>
-                        <button class="btn btn-link btn-sm text-danger p-0 small like-remove-btn">♥ 취소</button>
+                        <small class="text-muted"><i class="fa-regular fa-heart me-1"></i>345 · <i class="fa-regular fa-eye me-1"></i>4,120</small>
+                        <button class="btn btn-link btn-sm text-danger p-0 small like-remove-btn"><i class="fa-regular fa-heart-crack me-1"></i>취소</button>
                       </div>
                     </div>
                   </div>
@@ -324,7 +334,7 @@
 
             <div id="saved-content" class="d-none">
               <div class="text-center py-5 bg-white rounded-3 border">
-                <div class="fs-2 mb-2">🔖</div>
+                <div class="fs-2 mb-2 text-muted"><i class="fa-regular fa-bookmark"></i></div>
                 <p class="text-muted small">아직 저장한 항목이 없습니다</p>
               </div>
             </div>
@@ -337,192 +347,190 @@
           <div class="sticky-sidebar d-flex flex-column gap-3">
 
             <!-- 커뮤니티 빠른 액션 -->
-            <div class="card border-0 shadow-sm rounded-4 p-4 quick-action-card">
-              <div class="d-flex align-items-center gap-2 mb-1">
-                <span>⚡</span>
-                <h6 class="fw-bold mb-0">커뮤니티 빠른 액션</h6>
+            <div class="card sidebar-card mb-3 border-0 shadow-sm">
+              <div class="card-body p-3">
+                <h6 class="fw-bold mb-1 d-flex align-items-center gap-2">
+                  <span class="sidebar-header-icon"><i class="fa-solid fa-bolt"></i></span>
+                  커뮤니티 빠른 액션
+                </h6>
+                <p class="text-muted small mb-3">막히는 부분이 있거나 공유하고 싶은 내용이 있으신가요?</p>
+                <div class="d-flex flex-column gap-2">
+                  <button class="quick-action-btn quick-action-btn-blue" onclick="openQuickAction('question')">
+                    <span class="quick-action-icon"><i class="fa-regular fa-comment"></i></span>
+                    <span>질문하기</span>
+                    <i class="fa-regular fa-chevron-right qa-arrow"></i>
+                  </button>
+                  <button class="quick-action-btn quick-action-btn-green" onclick="openQuickAction('progress')">
+                    <span class="quick-action-icon"><i class="fa-regular fa-rocket"></i></span>
+                    <span>진행 상황 공유</span>
+                    <i class="fa-regular fa-chevron-right qa-arrow"></i>
+                  </button>
+                  <button class="quick-action-btn quick-action-btn-purple" onclick="openQuickAction('teammate')">
+                    <span class="quick-action-icon"><i class="fa-regular fa-users"></i></span>
+                    <span>팀원 모집</span>
+                    <i class="fa-regular fa-chevron-right qa-arrow"></i>
+                  </button>
+                  <button class="quick-action-btn quick-action-btn-orange" onclick="openQuickAction('resource')">
+                    <span class="quick-action-icon"><i class="fa-regular fa-folder"></i></span>
+                    <span>자료 공유</span>
+                    <i class="fa-regular fa-chevron-right qa-arrow"></i>
+                  </button>
+                </div>
+                <p class="text-muted small mt-3 mb-0"><i class="fa-regular fa-circle-check me-1 text-success"></i> 내 프로젝트를 선택하면 자동으로 연결됩니다</p>
               </div>
-              <p class="text-muted small mb-3">막히는 부분이 있거나 공유하고 싶은 내용이 있으신가요?</p>
-              <div class="d-flex flex-column gap-2">
-                <button class="quick-btn" onclick="openQuickAction('question')">
-                  <span class="text-purple">💬</span> <span class="fw-bold">질문하기</span>
-                </button>
-                <button class="quick-btn" onclick="openQuickAction('progress')">
-                  <span class="text-blue">🚀</span> <span>진행 상황 공유</span>
-                </button>
-                <button class="quick-btn" onclick="openQuickAction('teammate')">
-                  <span class="text-green-600">👤</span> <span>팀원 모집</span>
-                </button>
-                <button class="quick-btn" onclick="openQuickAction('resource')">
-                  <span class="text-orange-500">📎</span> <span>자료 공유</span>
-                </button>
-              </div>
-              <p class="text-muted small mt-3 mb-0">✅ 내 프로젝트를 선택하면 자동으로 연결됩니다</p>
             </div>
 
             <!-- 새 반응 알림 -->
-            <div class="card border-0 shadow-sm rounded-4 p-4" id="reactions-section">
-              <div class="d-flex align-items-center justify-content-between mb-3">
-                <h6 class="fw-bold mb-0">새 반응 <span class="badge bg-danger-subtle text-danger ms-1"
-                    id="reaction-badge">2개</span></h6>
-                <button class="btn btn-link btn-sm text-primary p-0 small" id="mark-all-reactions">모두 확인</button>
-              </div>
-              <div id="reaction-list">
-                <div class="reaction-card mb-2" id="react-1">
-                  <div class="d-flex gap-2 mb-2">
-                    <div
-                      class="rounded-2 d-flex align-items-center justify-content-center flex-shrink-0 icon-box-32-blue">
-                      💬</div>
-                    <div class="flex-grow-1 min-w-0">
-                      <p class="fw-semibold small mb-0">내 질문에 새 답변이 달렸습니다</p>
-                      <p class="small text-primary mb-1 fs-78">ESP32에서 MQTT 연결이 계속 끊기는데...</p>
-                      <p class="small text-muted mb-0 fs-xs">IoT 스마트 화분 시스템 · Quest 2</p>
-                      <div class="d-flex justify-content-between mt-1 fs-xs">
-                        <span class="text-muted">박엔지니어 · 10분 전</span>
-                        <div class="w-2 h-2 rounded-circle bg-primary d-inline-block ms-1"></div>
+            <div class="card sidebar-card border-0 shadow-sm" id="reactions-section">
+              <div class="card-body p-3">
+                <div class="d-flex align-items-center justify-content-between mb-3">
+                  <h6 class="fw-bold mb-0 d-flex align-items-center gap-2">
+                    <span class="sidebar-header-icon"><i class="fa-regular fa-bell"></i></span>
+                    새 반응 <span class="badge bg-danger-subtle text-danger ms-1" id="reaction-badge">2개</span>
+                  </h6>
+                  <button class="btn btn-link btn-sm text-primary p-0 small" id="mark-all-reactions">모두 확인</button>
+                </div>
+                <div id="reaction-list">
+                  <div class="reaction-card mb-2" id="react-1">
+                    <div class="d-flex gap-2 mb-2">
+                      <div class="rounded-2 d-flex align-items-center justify-content-center flex-shrink-0 icon-box-32-blue">
+                        <i class="fa-regular fa-comment"></i></div>
+                      <div class="flex-grow-1 min-w-0">
+                        <p class="fw-semibold small mb-0">내 질문에 새 답변이 달렸습니다</p>
+                        <p class="small text-primary mb-1 fs-78">ESP32에서 MQTT 연결이 계속 끊기는데...</p>
+                        <p class="small text-muted mb-0 fs-xs">IoT 스마트 화분 시스템 · Quest 2</p>
+                        <div class="d-flex justify-content-between mt-1 fs-xs">
+                          <span class="text-muted">박엔지니어 · 10분 전</span>
+                          <div class="w-2 h-2 rounded-circle bg-primary d-inline-block ms-1"></div>
+                        </div>
                       </div>
                     </div>
-                  </div>
-                  <div class="d-flex gap-2 pt-2 border-top">
-                    <a href="community-detail.html?id=1"
-                      class="flex-grow-1 btn btn-link btn-sm text-primary p-0 text-start fs-80">💬 답변 보러가기</a>
-                    <button class="btn btn-primary btn-sm py-0 px-2 fs-xs" onclick="markReactionRead('react-1')">✓
-                      확인</button>
-                  </div>
-                </div>
-                <div class="reaction-card" id="react-2">
-                  <div class="d-flex gap-2 mb-2">
-                    <div
-                      class="rounded-2 d-flex align-items-center justify-content-center flex-shrink-0 icon-box-32-violet">
-                      💬</div>
-                    <div class="flex-grow-1 min-w-0">
-                      <p class="fw-semibold small mb-0">내 진행공유에 새 댓글이 달렸습니다</p>
-                      <p class="small text-primary mb-1 fs-78">Quest 2 완료! 음성 인식 모듈 통합 성공</p>
-                      <p class="small text-muted mb-0 fs-xs">AI 스마트 미러 · Quest 2</p>
-                      <div class="d-flex justify-content-between mt-1 fs-xs">
-                        <span class="text-muted">이메이커 · 1시간 전</span>
-                        <div class="w-2 h-2 rounded-circle bg-primary d-inline-block ms-1"></div>
-                      </div>
+                    <div class="d-flex gap-2 pt-2 border-top">
+                      <a href="community-detail.html?id=1"
+                        class="flex-grow-1 btn btn-link btn-sm text-primary p-0 text-start fs-80"><i class="fa-regular fa-comment me-1"></i>답변 보러가기</a>
+                      <button class="btn btn-primary btn-sm py-0 px-2 fs-xs" onclick="markReactionRead('react-1')">확인</button>
                     </div>
                   </div>
-                  <div class="d-flex gap-2 pt-2 border-top">
-                    <a href="community-detail.html?id=4"
-                      class="flex-grow-1 btn btn-link btn-sm text-primary p-0 text-start fs-80">💬 답변 보러가기</a>
-                    <button class="btn btn-primary btn-sm py-0 px-2 fs-xs" onclick="markReactionRead('react-2')">✓
-                      확인</button>
+                  <div class="reaction-card" id="react-2">
+                    <div class="d-flex gap-2 mb-2">
+                      <div class="rounded-2 d-flex align-items-center justify-content-center flex-shrink-0 icon-box-32-violet">
+                        <i class="fa-regular fa-rocket"></i></div>
+                      <div class="flex-grow-1 min-w-0">
+                        <p class="fw-semibold small mb-0">내 진행공유에 새 댓글이 달렸습니다</p>
+                        <p class="small text-primary mb-1 fs-78">Quest 2 완료! 음성 인식 모듈 통합 성공</p>
+                        <p class="small text-muted mb-0 fs-xs">AI 스마트 미러 · Quest 2</p>
+                        <div class="d-flex justify-content-between mt-1 fs-xs">
+                          <span class="text-muted">이메이커 · 1시간 전</span>
+                          <div class="w-2 h-2 rounded-circle bg-primary d-inline-block ms-1"></div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="d-flex gap-2 pt-2 border-top">
+                      <a href="community-detail.html?id=4"
+                        class="flex-grow-1 btn btn-link btn-sm text-primary p-0 text-start fs-80"><i class="fa-regular fa-comment me-1"></i>답변 보러가기</a>
+                      <button class="btn btn-primary btn-sm py-0 px-2 fs-xs" onclick="markReactionRead('react-2')">확인</button>
+                    </div>
                   </div>
                 </div>
-              </div>
-              <div id="reactions-empty" class="text-center py-4 d-none">
-                <div
-                  class="rounded-circle bg-success-subtle d-flex align-items-center justify-content-center mx-auto mb-2 icon-box-48-none">
-                  ✅</div>
-                <p class="fw-semibold small mb-1">모두 확인했습니다!</p>
-                <p class="text-muted fs-78">새로운 반응이 오면 여기에 표시됩니다</p>
+                <div id="reactions-empty" class="text-center py-4 d-none">
+                  <div class="rounded-circle bg-success-subtle d-flex align-items-center justify-content-center mx-auto mb-2 icon-box-48-none">
+                    <i class="fa-regular fa-circle-check text-success"></i></div>
+                  <p class="fw-semibold small mb-1">모두 확인했습니다!</p>
+                  <p class="text-muted fs-78">새로운 반응이 오면 여기에 표시됩니다</p>
+                </div>
               </div>
             </div>
 
             <!-- 팔로잉 업데이트 -->
-            <div class="card border-0 shadow-sm rounded-4 p-4" id="following-section">
-              <div class="d-flex align-items-center justify-content-between mb-3">
-                <h6 class="fw-bold mb-0">📡 팔로잉 업데이트 <span class="badge bg-danger fs-68">2</span></h6>
-                <button class="btn btn-link btn-sm text-primary p-0 small" id="mark-all-updates">모두 확인</button>
-              </div>
-              <div class="d-flex flex-column gap-2" id="following-list">
-
-                <!-- 이개발 -->
-                <div class="following-maker has-update">
-                  <div class="d-flex align-items-center gap-2 p-3 pb-2">
-                    <div
-                      class="rounded-circle d-flex align-items-center justify-content-center text-white fw-bold flex-shrink-0 icon-box-36-grad-blue-purple">
-                      이</div>
-                    <div class="flex-grow-1 min-w-0">
-                      <div class="d-flex align-items-center gap-1">
-                        <a href="maker-profile.html" class="fw-semibold small text-dark text-decoration-none">이개발</a>
-                        <span class="badge bg-danger rounded-pill fs-65">2</span>
-                      </div>
-                      <small class="text-muted">AI/ML 전문가</small>
-                    </div>
-                    <div class="d-flex align-items-center gap-1">
-                      <a href="maker-profile.html" class="btn btn-link btn-sm p-0 text-primary fs-xs">🔗</a>
-                      <button class="btn btn-link btn-sm p-0 text-muted unfollow-btn fs-78" data-name="이개발">언팔</button>
-                    </div>
-                  </div>
-                  <div class="px-3 pb-3 d-flex flex-column gap-1">
-                    <div class="d-flex gap-2 p-2 rounded-2 bg-white border border-blue-100-cursor">
-                      <div
-                        class="rounded-2 d-flex align-items-center justify-content-center flex-shrink-0 icon-box-24-blue">
-                        🚀</div>
-                      <div class="min-w-0">
-                        <p class="small mb-0 fw-medium"><span
-                            class="d-inline-block rounded-circle bg-danger me-1 icon-dot-sm"></span>YOLOv8 실시간 객체 감지
-                          Quest 완료</p>
-                        <small class="text-muted">오픈소스 비전 시스템 · 30분 전</small>
-                      </div>
-                    </div>
-                    <div class="d-flex gap-2 p-2 rounded-2 bg-white border border-blue-100-cursor">
-                      <div
-                        class="rounded-2 d-flex align-items-center justify-content-center flex-shrink-0 icon-box-24-violet">
-                        💬</div>
-                      <div class="min-w-0">
-                        <p class="small mb-0 fw-medium"><span
-                            class="d-inline-block rounded-circle bg-danger me-1 icon-dot-sm"></span>TensorFlow Lite 모델
-                          경량화 질문</p>
-                        <small class="text-muted">ML 최적화 · 2시간 전</small>
-                      </div>
-                    </div>
-                  </div>
+            <div class="card sidebar-card border-0 shadow-sm" id="following-section">
+              <div class="card-body p-3">
+                <div class="d-flex align-items-center justify-content-between mb-3">
+                  <h6 class="fw-bold mb-0 d-flex align-items-center gap-2">
+                    <span class="sidebar-header-icon"><i class="fa-regular fa-satellite-dish"></i></span>
+                    팔로잉 업데이트 <span class="badge bg-danger fs-68">2</span>
+                  </h6>
+                  <button class="btn btn-link btn-sm text-primary p-0 small" id="mark-all-updates">모두 확인</button>
                 </div>
+                <div class="d-flex flex-column gap-2" id="following-list">
 
-                <!-- 박엔지니어 -->
-                <div class="following-maker has-update">
-                  <div class="d-flex align-items-center gap-2 p-3 pb-2">
-                    <div
-                      class="rounded-circle d-flex align-items-center justify-content-center text-dark fw-bold flex-shrink-0 icon-box-36-grad-amber">
-                      박</div>
-                    <div class="flex-grow-1 min-w-0">
+                  <!-- 이개발 -->
+                  <div class="following-maker has-update">
+                    <div class="d-flex align-items-center gap-2 p-3 pb-2">
+                      <div class="rounded-circle d-flex align-items-center justify-content-center text-white fw-bold flex-shrink-0 icon-box-36-grad-blue-purple">이</div>
+                      <div class="flex-grow-1 min-w-0">
+                        <div class="d-flex align-items-center gap-1">
+                          <a href="maker-profile.html" class="fw-semibold small text-dark text-decoration-none">이개발</a>
+                          <span class="badge bg-danger rounded-pill fs-65">2</span>
+                        </div>
+                        <small class="text-muted">AI/ML 전문가</small>
+                      </div>
                       <div class="d-flex align-items-center gap-1">
-                        <a href="maker-profile.html" class="fw-semibold small text-dark text-decoration-none">박엔지니어</a>
-                        <span class="badge bg-danger rounded-pill fs-65">1</span>
+                        <a href="maker-profile.html" class="btn btn-link btn-sm p-0 text-primary fs-xs"><i class="fa-regular fa-arrow-up-right-from-square"></i></a>
+                        <button class="btn btn-link btn-sm p-0 text-muted unfollow-btn fs-78" data-name="이개발">언팔</button>
                       </div>
-                      <small class="text-muted">임베디드 전문가</small>
                     </div>
-                    <div class="d-flex align-items-center gap-1">
-                      <a href="maker-profile.html" class="btn btn-link btn-sm p-0 text-primary fs-xs">🔗</a>
-                      <button class="btn btn-link btn-sm p-0 text-muted unfollow-btn fs-78"
-                        data-name="박엔지니어">언팔</button>
-                    </div>
-                  </div>
-                  <div class="px-3 pb-3 d-flex flex-column gap-1">
-                    <div class="d-flex gap-2 p-2 rounded-2 bg-white border border-blue-100-cursor">
-                      <div
-                        class="rounded-2 d-flex align-items-center justify-content-center flex-shrink-0 icon-box-24-amber">
-                        🏆</div>
-                      <div class="min-w-0">
-                        <p class="small mb-0 fw-medium"><span
-                            class="d-inline-block rounded-circle bg-danger me-1 icon-dot-sm"></span>STM32 모터 제어 프로젝트 수상
-                        </p>
-                        <small class="text-muted">임베디드 챌린지 · 1일 전</small>
+                    <div class="px-3 pb-3 d-flex flex-column gap-1">
+                      <div class="d-flex gap-2 p-2 rounded-2 bg-white border border-blue-100-cursor">
+                        <div class="rounded-2 d-flex align-items-center justify-content-center flex-shrink-0 icon-box-24-blue"><i class="fa-regular fa-rocket"></i></div>
+                        <div class="min-w-0">
+                          <p class="small mb-0 fw-medium"><span class="d-inline-block rounded-circle bg-danger me-1 icon-dot-sm"></span>YOLOv8 실시간 객체 감지 Quest 완료</p>
+                          <small class="text-muted">오픈소스 비전 시스템 · 30분 전</small>
+                        </div>
+                      </div>
+                      <div class="d-flex gap-2 p-2 rounded-2 bg-white border border-blue-100-cursor">
+                        <div class="rounded-2 d-flex align-items-center justify-content-center flex-shrink-0 icon-box-24-violet"><i class="fa-regular fa-comment"></i></div>
+                        <div class="min-w-0">
+                          <p class="small mb-0 fw-medium"><span class="d-inline-block rounded-circle bg-danger me-1 icon-dot-sm"></span>TensorFlow Lite 모델 경량화 질문</p>
+                          <small class="text-muted">ML 최적화 · 2시간 전</small>
+                        </div>
                       </div>
                     </div>
                   </div>
-                </div>
 
-                <a href="projects.html" class="btn btn-link btn-sm text-center text-primary small">팔로잉 메이커 프로젝트 탐색 →</a>
+                  <!-- 박엔지니어 -->
+                  <div class="following-maker has-update">
+                    <div class="d-flex align-items-center gap-2 p-3 pb-2">
+                      <div class="rounded-circle d-flex align-items-center justify-content-center text-dark fw-bold flex-shrink-0 icon-box-36-grad-amber">박</div>
+                      <div class="flex-grow-1 min-w-0">
+                        <div class="d-flex align-items-center gap-1">
+                          <a href="maker-profile.html" class="fw-semibold small text-dark text-decoration-none">박엔지니어</a>
+                          <span class="badge bg-danger rounded-pill fs-65">1</span>
+                        </div>
+                        <small class="text-muted">임베디드 전문가</small>
+                      </div>
+                      <div class="d-flex align-items-center gap-1">
+                        <a href="maker-profile.html" class="btn btn-link btn-sm p-0 text-primary fs-xs"><i class="fa-regular fa-arrow-up-right-from-square"></i></a>
+                        <button class="btn btn-link btn-sm p-0 text-muted unfollow-btn fs-78" data-name="박엔지니어">언팔</button>
+                      </div>
+                    </div>
+                    <div class="px-3 pb-3 d-flex flex-column gap-1">
+                      <div class="d-flex gap-2 p-2 rounded-2 bg-white border border-blue-100-cursor">
+                        <div class="rounded-2 d-flex align-items-center justify-content-center flex-shrink-0 icon-box-24-amber"><i class="fa-regular fa-trophy"></i></div>
+                        <div class="min-w-0">
+                          <p class="small mb-0 fw-medium"><span class="d-inline-block rounded-circle bg-danger me-1 icon-dot-sm"></span>STM32 모터 제어 프로젝트 수상</p>
+                          <small class="text-muted">임베디드 챌린지 · 1일 전</small>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <a href="projects.html" class="btn btn-link btn-sm text-center text-primary small">팔로잉 메이커 프로젝트 탐색 <i class="fa-regular fa-arrow-right ms-1"></i></a>
+                </div>
               </div>
             </div>
 
             <!-- 이번 주 활동 -->
-            <div class="card border-0 shadow-sm rounded-4 p-4">
-              <h6 class="fw-bold mb-3">이번 주 활동</h6>
-              <div class="week-stat"><span class="small text-secondary">🚀 진행 중 프로젝트</span><span
-                  class="fw-semibold text-primary small">2개</span></div>
-              <div class="week-stat"><span class="small text-secondary">💬 작성한 질문</span><span
-                  class="fw-semibold small">3개</span></div>
-              <div class="week-stat"><span class="small text-secondary">💬 받은 답변</span><span
-                  class="fw-semibold text-success small">8개</span></div>
-              <div class="week-stat"><span class="small text-secondary">👤 받은 참여 요청</span><span
-                  class="fw-semibold text-warning-emphasis small">5개</span></div>
+            <div class="card sidebar-card border-0 shadow-sm">
+              <div class="card-body p-3">
+                <h6 class="fw-bold mb-3 d-flex align-items-center gap-2">
+                  <span class="sidebar-header-icon"><i class="fa-regular fa-chart-bar"></i></span>
+                  이번 주 활동
+                </h6>
+                <div class="week-stat"><span class="small text-secondary"><i class="fa-regular fa-rocket me-1 text-primary"></i> 진행 중 프로젝트</span><span class="fw-semibold text-primary small">2개</span></div>
+                <div class="week-stat"><span class="small text-secondary"><i class="fa-regular fa-comment me-1 text-secondary"></i> 작성한 질문</span><span class="fw-semibold small">3개</span></div>
+                <div class="week-stat"><span class="small text-secondary"><i class="fa-regular fa-comment-dots me-1 text-success"></i> 받은 답변</span><span class="fw-semibold text-success small">8개</span></div>
+                <div class="week-stat"><span class="small text-secondary"><i class="fa-regular fa-user-plus me-1 text-warning"></i> 받은 참여 요청</span><span class="fw-semibold text-warning-emphasis small">5개</span></div>
+              </div>
             </div>
 
           </div>
@@ -545,12 +553,10 @@
       </div>
       <!-- Section Tabs -->
       <div class="d-flex gap-1 w-100 bg-light rounded-3 p-1 mb-0">
-        <button class="flex-fill btn btn-sm rounded-2 fw-medium profile-sec-tab active fs-80" data-sec="basic">👤 기본
-          정보</button>
-        <button class="flex-fill btn btn-sm rounded-2 fw-medium profile-sec-tab fs-80" data-sec="skills">💡 기술</button>
-        <button class="flex-fill btn btn-sm rounded-2 fw-medium profile-sec-tab fs-80" data-sec="links">🔗 링크</button>
-        <button class="flex-fill btn btn-sm rounded-2 fw-medium profile-sec-tab fs-80" data-sec="settings">⚙️
-          공개</button>
+        <button class="flex-fill btn btn-sm rounded-2 fw-medium profile-sec-tab active fs-80" data-sec="basic"><i class="fa-regular fa-user me-1"></i>기본 정보</button>
+        <button class="flex-fill btn btn-sm rounded-2 fw-medium profile-sec-tab fs-80" data-sec="skills"><i class="fa-regular fa-lightbulb me-1"></i>기술</button>
+        <button class="flex-fill btn btn-sm rounded-2 fw-medium profile-sec-tab fs-80" data-sec="links"><i class="fa-regular fa-link me-1"></i>링크</button>
+        <button class="flex-fill btn btn-sm rounded-2 fw-medium profile-sec-tab fs-80" data-sec="settings"><i class="fa-regular fa-gear me-1"></i>공개</button>
       </div>
     </div>
 
@@ -564,7 +570,7 @@
               class="rounded-circle bg-primary text-white d-flex align-items-center justify-content-center fw-bold mx-auto icon-circle-80">
               김</div>
             <button class="btn btn-primary rounded-circle p-1 position-absolute icon-circle-28-btn"
-              title="사진 변경">📷</button>
+              title="사진 변경"><i class="fa-regular fa-camera"></i></button>
           </div>
           <p class="small text-muted mt-2 mb-0">프로필 사진 변경 · JPG, PNG 최대 5MB</p>
         </div>
@@ -619,11 +625,11 @@
         </div>
         <div class="row g-3">
           <div class="col-6">
-            <label class="form-label fw-semibold small">📍 위치</label>
+            <label class="form-label fw-semibold small"><i class="fa-regular fa-location-dot me-1"></i>위치</label>
             <input type="text" class="form-control form-control-sm" value="서울, 대한민국">
           </div>
           <div class="col-6">
-            <label class="form-label fw-semibold small">✉️ 이메일</label>
+            <label class="form-label fw-semibold small"><i class="fa-regular fa-envelope me-1"></i>이메일</label>
             <input type="email" class="form-control form-control-sm" value="kimmaker@example.com">
           </div>
         </div>
@@ -632,7 +638,7 @@
       <!-- 기술 & 관심사 -->
       <div id="sec-skills" class="d-none">
         <div class="mb-4">
-          <label class="form-label fw-semibold small">💻 기술 스택</label>
+          <label class="form-label fw-semibold small"><i class="fa-regular fa-laptop-code me-1"></i>기술 스택</label>
           <p class="text-muted small mb-2">사용할 수 있는 기술, 도구, 언어를 추가하세요</p>
           <div class="d-flex flex-wrap gap-2 p-3 bg-light rounded-3 border mb-2 min-h-48" id="skill-area"></div>
           <div class="input-group input-group-sm mb-2">
@@ -643,7 +649,7 @@
           <div class="d-flex flex-wrap gap-1" id="skill-suggestions"></div>
         </div>
         <div>
-          <label class="form-label fw-semibold small">🏷 관심 분야</label>
+          <label class="form-label fw-semibold small"><i class="fa-regular fa-tags me-1"></i>관심 분야</label>
           <p class="text-muted small mb-2">콘테스트 &amp; 프로젝트 추천에 활용됩니다</p>
           <div class="d-flex flex-wrap gap-2 p-3 bg-light rounded-3 border mb-2 min-h-48" id="interest-area"></div>
           <div class="input-group input-group-sm mb-2">
@@ -660,20 +666,20 @@
       <div id="sec-links" class="d-none">
         <p class="text-muted small mb-3">외부 프로필과 포트폴리오 링크를 연결하세요</p>
         <div class="d-flex flex-column gap-3">
-          <div><label class="form-label fw-semibold small">🐙 GitHub</label><input type="url"
+          <div><label class="form-label fw-semibold small"><i class="fa-brands fa-github me-1"></i>GitHub</label><input type="url"
               class="form-control form-control-sm" value="https://github.com/kimmaker92"
               placeholder="https://github.com/username"></div>
-          <div><label class="form-label fw-semibold small">💼 LinkedIn</label><input type="url"
+          <div><label class="form-label fw-semibold small"><i class="fa-brands fa-linkedin me-1"></i>LinkedIn</label><input type="url"
               class="form-control form-control-sm" value="https://linkedin.com/in/kimmaker92"
               placeholder="https://linkedin.com/in/username"></div>
-          <div><label class="form-label fw-semibold small">🌐 개인 웹사이트 / 포트폴리오</label><input type="url"
+          <div><label class="form-label fw-semibold small"><i class="fa-regular fa-globe me-1"></i>개인 웹사이트 / 포트폴리오</label><input type="url"
               class="form-control form-control-sm" value="https://kimmaker.dev" placeholder="https://myportfolio.com">
           </div>
-          <div><label class="form-label fw-semibold small">🐦 Twitter / X</label><input type="url"
+          <div><label class="form-label fw-semibold small"><i class="fa-brands fa-x-twitter me-1"></i>Twitter / X</label><input type="url"
               class="form-control form-control-sm" placeholder="https://twitter.com/username"></div>
-          <div><label class="form-label fw-semibold small">📷 Instagram</label><input type="url"
+          <div><label class="form-label fw-semibold small"><i class="fa-brands fa-instagram me-1"></i>Instagram</label><input type="url"
               class="form-control form-control-sm" placeholder="https://instagram.com/username"></div>
-          <div><label class="form-label fw-semibold small">▶️ YouTube</label><input type="url"
+          <div><label class="form-label fw-semibold small"><i class="fa-brands fa-youtube me-1"></i>YouTube</label><input type="url"
               class="form-control form-control-sm" placeholder="https://youtube.com/@channel"></div>
         </div>
       </div>
@@ -686,9 +692,9 @@
           <!-- rendered by JS -->
         </div>
         <div class="border border-danger rounded-3 p-3 mt-4 bg-red-light">
-          <h6 class="text-danger fw-semibold small mb-1">⚠️ 위험 영역</h6>
+          <h6 class="text-danger fw-semibold small mb-1"><i class="fa-regular fa-triangle-exclamation me-1"></i>위험 영역</h6>
           <p class="text-danger small mb-2">아래 작업은 되돌릴 수 없습니다. 신중하게 진행하세요.</p>
-          <button class="btn btn-outline-danger btn-sm w-100">🗑 계정 비활성화</button>
+          <button class="btn btn-outline-danger btn-sm w-100"><i class="fa-regular fa-trash me-1"></i>계정 비활성화</button>
         </div>
       </div>
 
@@ -696,7 +702,7 @@
 
     <div class="border-top p-3 bg-white d-flex gap-2">
       <button class="btn btn-outline-secondary flex-fill" onclick="hideProfileEdit()">취소</button>
-      <button class="btn btn-primary flex-fill" id="profile-save-btn">💾 변경사항 저장</button>
+      <button class="btn btn-primary flex-fill" id="profile-save-btn"><i class="fa-regular fa-floppy-disk me-1"></i>변경사항 저장</button>
     </div>
   </div>
 
@@ -809,10 +815,10 @@
     ];
 
     var typeInfo = {
-      question: { label: '질문', icon: '💬', color: 'primary', statusLabel: { open: '미해결', solved: '해결됨' } },
-      progress: { label: '진행공유', icon: '🚀', color: 'success', statusLabel: { completed: '완료' } },
-      teammate: { label: '팀원찾기', icon: '👥', color: 'warning', statusLabel: { recruiting: '모집중' } },
-      resource: { label: '자료공유', icon: '📎', color: 'info', statusLabel: { recommended: '추천' } },
+      question: { label: '질문', icon: '<i class="fa-regular fa-comment"></i>', color: 'primary', statusLabel: { open: '미해결', solved: '해결됨' } },
+      progress: { label: '진행공유', icon: '<i class="fa-regular fa-rocket"></i>', color: 'success', statusLabel: { completed: '완료' } },
+      teammate: { label: '팀원찾기', icon: '<i class="fa-regular fa-users"></i>', color: 'warning', statusLabel: { recruiting: '모집중' } },
+      resource: { label: '자료공유', icon: '<i class="fa-regular fa-paperclip"></i>', color: 'info', statusLabel: { recommended: '추천' } },
     };
 
     var currentProjTab = 'all';
@@ -835,23 +841,23 @@
 
       var html = list.map(function (p) {
         var typeBadge = p.type === 'contest'
-          ? '<span class="badge text-white me-1 bg-purple">🏆 콘테스트</span>'
+          ? '<span class="badge text-white me-1 bg-purple"><i class="fa-solid fa-trophy me-1"></i>콘테스트</span>'
           : '<span class="badge bg-primary-subtle text-primary me-1">개인</span>';
         var statusBadge = p.status === 'completed'
-          ? '<span class="badge bg-success">✅ 완료</span>'
-          : '<span class="badge bg-warning text-dark">⏳ 진행중</span>';
+          ? '<span class="badge bg-success"><i class="fa-regular fa-circle-check me-1"></i>완료</span>'
+          : '<span class="badge bg-warning text-dark"><i class="fa-regular fa-hourglass me-1"></i>진행중</span>';
 
         var contestHtml = p.contestName
-          ? '<div class="d-flex align-items-center gap-2 p-2 rounded-2 mb-2" style="background:#f5f3ff;border:1px solid #ede9fe;"><span class="text-purple">🏆</span><a href="contest-detail.html" class="small fw-semibold text-decoration-none text-purple" onclick="event.stopPropagation()">' + p.contestName + '</a></div>'
+          ? '<div class="d-flex align-items-center gap-2 p-2 rounded-2 mb-2" style="background:#f5f3ff;border:1px solid #ede9fe;"><i class="fa-solid fa-trophy text-purple"></i><a href="contest-detail.html" class="small fw-semibold text-decoration-none text-purple" onclick="event.stopPropagation()">' + p.contestName + '</a></div>'
           : '';
 
         var completedMsg = (p.questProgress === p.totalQuests && p.status === 'completed')
-          ? '<div class="d-flex align-items-center gap-2 p-2 rounded-2 mb-2" style="background:linear-gradient(90deg,#eff6ff,#f5f3ff);border:1px solid #bfdbfe;"><span>✅</span><span class="small fw-semibold">모든 Quest 완료! 플랫폼에 공개됨</span></div>'
+          ? '<div class="d-flex align-items-center gap-2 p-2 rounded-2 mb-2" style="background:linear-gradient(90deg,#eff6ff,#f5f3ff);border:1px solid #bfdbfe;"><i class="fa-regular fa-circle-check text-success"></i><span class="small fw-semibold">모든 Quest 완료! 플랫폼에 공개됨</span></div>'
           : '';
 
         var actionBtn = p.status === 'inprogress' && p.nextQuest
-          ? '<a href="quest' + p.nextQuest + '.html?projectId=' + p.id + '" class="quest-btn-primary text-decoration-none" onclick="event.stopPropagation()">🚀 Quest ' + p.nextQuest + ' 이어하기</a>'
-          : '<a href="project-detail.html?id=' + p.id + '" class="btn btn-primary btn-sm w-100" onclick="event.stopPropagation()">👁 프로젝트 보기</a>';
+          ? '<a href="quest' + p.nextQuest + '.html?projectId=' + p.id + '" class="quest-btn-primary text-decoration-none" onclick="event.stopPropagation()"><i class="fa-regular fa-rocket me-1"></i>Quest ' + p.nextQuest + ' 이어하기</a>'
+          : '<a href="project-detail.html?id=' + p.id + '" class="btn btn-primary btn-sm w-100" onclick="event.stopPropagation()"><i class="fa-regular fa-eye me-1"></i>프로젝트 보기</a>';
 
         return '<div class="col-md-6">'
           + '<div class="card border-0 shadow-sm my-make-project-card" onclick="window.location=\'project-detail.html?id=' + p.id + '\'">'
@@ -865,7 +871,7 @@
           + completedMsg
           + '<h6 class="fw-bold mb-2">' + p.title + '</h6>'
           + '<div class="d-flex justify-content-between text-muted small mb-3">'
-          + '<span>❤️ ' + p.likes + '</span><span>👁 ' + p.views + '</span><span>💬 ' + p.comments + '</span><span class="text-muted small">' + p.modified + '</span>'
+          + '<span><i class="fa-regular fa-heart me-1"></i>' + p.likes + '</span><span><i class="fa-regular fa-eye me-1"></i>' + p.views + '</span><span><i class="fa-regular fa-comment me-1"></i>' + p.comments + '</span><span class="text-muted small">' + p.modified + '</span>'
           + '</div>'
           + '<div class="pt-2 border-top">' + actionBtn + '</div>'
           + '</div></div></div>';
@@ -925,7 +931,7 @@
         var isNew = !app.isRead && app.status !== 'pending';
         var newBadge = isNew ? '<span class="badge bg-danger ms-1 small animate__animated animate__pulse">NEW</span>' : '';
         var roles = app.roles.map(function (r) { return '<span class="badge bg-light text-dark border me-1">' + r + '</span>'; }).join('');
-        var contest = app.contest ? '<span class="badge bg-primary-subtle text-primary me-1">🏆 ' + app.contest + '</span>' : '';
+        var contest = app.contest ? '<span class="badge bg-primary-subtle text-primary me-1"><i class="fa-solid fa-trophy me-1"></i>' + app.contest + '</span>' : '';
         var msgHtml = cfg.msg ? '<div class="mt-2 pt-2 border-top small fw-medium ' + (app.status === 'accepted' ? 'text-success' : 'text-danger') + '">' + cfg.msg + '</div>' : '';
         return '<div class="app-status-card p-3 mb-2 border ' + cfg.border + ' ' + cfg.bg + '">'
           + '<div class="d-flex justify-content-between align-items-center mb-2">'
@@ -1154,10 +1160,10 @@
     // Profile save
     $('#profile-save-btn').on('click', function () {
       var $btn = $(this);
-      $btn.html('✅ 저장됨!').addClass('btn-success').removeClass('btn-primary');
+      $btn.html('<i class="fa-regular fa-circle-check me-1"></i>저장됨!').addClass('btn-success').removeClass('btn-primary');
       setTimeout(function () {
         hideProfileEdit();
-        $btn.html('💾 변경사항 저장').removeClass('btn-success').addClass('btn-primary');
+        $btn.html('<i class="fa-regular fa-floppy-disk me-1"></i>변경사항 저장').removeClass('btn-success').addClass('btn-primary');
       }, 1200);
     });
 
@@ -1462,14 +1468,14 @@
                 <div class="project-type-card personal h-100 relative-overflow">
                   <div class="np-type-deco-circle np-type-deco-blue"></div>
                   <div class="position-relative">
-                    <div class="np-type-icon-box np-type-icon-blue">👤</div>
+                    <div class="np-type-icon-box np-type-icon-blue"><i class="fa-regular fa-user"></i></div>
                     <div class="fw-bold np-type-card-title">개인 프로젝트</div>
                     <div class="text-muted small mb-3">자유롭게 나만의 프로젝트를 시작하세요</div>
                     <ul class="list-unstyled small mb-4 text-muted-dark">
-                      <li class="mb-2 d-flex align-items-center gap-2"><span class="text-blue">✔</span> 자유로운 주제 선택</li>
-                      <li class="mb-2 d-flex align-items-center gap-2"><span class="text-blue">✔</span> 나만의 속도로 진행</li>
-                      <li class="mb-2 d-flex align-items-center gap-2"><span class="text-blue">✔</span> 언제든지 수정 가능</li>
-                      <li class="d-flex align-items-center gap-2"><span class="text-blue">✔</span> 포트폴리오로 활용</li>
+                      <li class="mb-2 d-flex align-items-center gap-2"><i class="fa-regular fa-circle-check text-blue"></i> 자유로운 주제 선택</li>
+                      <li class="mb-2 d-flex align-items-center gap-2"><i class="fa-regular fa-circle-check text-blue"></i> 나만의 속도로 진행</li>
+                      <li class="mb-2 d-flex align-items-center gap-2"><i class="fa-regular fa-circle-check text-blue"></i> 언제든지 수정 가능</li>
+                      <li class="d-flex align-items-center gap-2"><i class="fa-regular fa-circle-check text-blue"></i> 포트폴리오로 활용</li>
                     </ul>
                     <div class="np-type-recommend-box np-type-recommend-blue">
                       <div class="fw-semibold np-type-recommend-label np-type-recommend-label-blue">추천 대상</div>
@@ -1486,20 +1492,20 @@
               <a href="create-contest-project.html" class="text-decoration-none d-block h-100">
                 <div class="project-type-card contest h-100 relative-overflow">
                   <!-- 인기 뱃지 -->
-                  <div class="np-type-popular-badge">🏅 인기</div>
+                  <div class="np-type-popular-badge"><i class="fa-solid fa-medal me-1"></i>인기</div>
                   <div class="np-type-deco-circle np-type-deco-purple"></div>
                   <div class="position-relative">
-                    <div class="np-type-icon-box np-type-icon-purple">🏆</div>
+                    <div class="np-type-icon-box np-type-icon-purple"><i class="fa-solid fa-trophy"></i></div>
                     <div class="fw-bold np-type-card-title">콘테스트 프로젝트</div>
                     <div class="text-muted small mb-3">콘테스트에 참가하며 프로젝트를 완성하세요</div>
                     <ul class="list-unstyled small mb-4 text-muted-dark">
-                      <li class="mb-2 d-flex align-items-center gap-2"><span class="text-purple">✔</span> Quest 단계별 가이드
+                      <li class="mb-2 d-flex align-items-center gap-2"><i class="fa-regular fa-circle-check text-purple"></i> Quest 단계별 가이드
                       </li>
-                      <li class="mb-2 d-flex align-items-center gap-2"><span class="text-purple">✔</span> 상금 및 경품 획득 기회
+                      <li class="mb-2 d-flex align-items-center gap-2"><i class="fa-regular fa-circle-check text-purple"></i> 상금 및 경품 획득 기회
                       </li>
-                      <li class="mb-2 d-flex align-items-center gap-2"><span class="text-purple">✔</span> 구조화된 프로젝트 관리
+                      <li class="mb-2 d-flex align-items-center gap-2"><i class="fa-regular fa-circle-check text-purple"></i> 구조화된 프로젝트 관리
                       </li>
-                      <li class="d-flex align-items-center gap-2"><span class="text-purple">✔</span> 커뮤니티 피드백</li>
+                      <li class="d-flex align-items-center gap-2"><i class="fa-regular fa-circle-check text-purple"></i> 커뮤니티 피드백</li>
                     </ul>
                     <div class="np-type-recommend-box np-type-recommend-purple">
                       <div class="fw-semibold np-type-recommend-label np-type-recommend-label-purple">추천 대상</div>
@@ -1516,7 +1522,7 @@
 
           <!-- Info box -->
           <div class="np-info-box">
-            <div class="np-info-icon">🎯</div>
+            <div class="np-info-icon"><i class="fa-regular fa-circle-info"></i></div>
             <div>
               <div class="fw-semibold small mb-1 text-muted-dark">프로젝트는 통합 관리됩니다</div>
               <div class="small lh-160 text-body-secondary">
