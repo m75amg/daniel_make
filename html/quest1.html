@@ -12,7 +12,7 @@
   <link rel="stylesheet" href="assets/css/output.css">
   <script src="https://kit.fontawesome.com/38e89eef65.js" crossorigin="anonymous"></script>
 </head>
-<body class="bg-light">
+<body class="bg-light quest-page">
   <!-- ===== PLATFORM HEADER ===== -->
 <header id="platform-header" class="bg-white border-bottom sticky-top shadow-sm">
 
@@ -147,16 +147,18 @@
     </div>
 
     <!-- Hero -->
-    <section class="py-4 text-white bg-gradient-blue-purple">
+    <section class="contest-create-hero">
       <div class="container-xl">
-        <div class="d-flex align-items-center gap-4 mb-3">
-          <div class="rounded-circle bg-white bg-opacity-25 d-flex align-items-center justify-content-center flex-shrink-0 icon-box-64">💡</div>
+        <div class="d-flex align-items-center gap-4 mb-4">
+          <div class="ccp-hero-icon rounded-circle d-flex align-items-center justify-content-center flex-shrink-0">
+            <i class="fa-regular fa-lightbulb"></i>
+          </div>
           <div>
-            <span class="badge bg-white bg-opacity-25 text-white mb-1">🏆 Quest 1 에디터</span>
-            <h4 class="fw-bold mb-0">프로젝트 기획 및 설계 단계</h4>
+            <span class="ccp-hero-badge mb-2 d-inline-flex align-items-center gap-1"><i class="fa-regular fa-trophy"></i>Quest 1 에디터</span>
+            <h1 class="fw-bold mb-0 ccp-hero-title">프로젝트 기획 및 설계 단계</h1>
           </div>
         </div>
-        <p class="text-white-75 mb-0"><strong>AI 음성인식 자율주행 로봇</strong> 프로젝트의 Quest 1을 작성합니다. 프로젝트의 목표, 컨셉, 기능, 설계를 명확히 정의하세요.</p>
+        <p class="mb-0 ccp-hero-desc"><strong>AI 음성인식 자율주행 로봇</strong> 프로젝트의 Quest 1을 작성합니다. 프로젝트의 목표, 컨셉, 기능, 설계를 명확히 정의하세요.</p>
       </div>
     </section>
 
@@ -170,14 +172,14 @@
           <div class="card mb-4 border-primary bg-gradient-blue-violet-soft">
             <div class="card-body">
               <div class="d-flex gap-4">
-                <div class="rounded-circle bg-primary d-flex align-items-center justify-content-center flex-shrink-0 text-white icon-circle-md">✨</div>
+                <div class="rounded-circle bg-primary d-flex align-items-center justify-content-center flex-shrink-0 text-white icon-circle-md"><i class="fa-regular fa-sparkles"></i></div>
                 <div>
                   <h6 class="fw-bold mb-2">Quest 1: 프로젝트 기획 및 설계</h6>
                   <ul class="list-unstyled small text-muted mb-0 d-flex flex-column gap-1">
-                    <li>✅ <strong>프로젝트 목표와 컨셉을 명확히 정의하세요</strong> — 무엇을 만들고, 왜 만드는지</li>
-                    <li>✅ <strong>주요 기능과 특징을 나열하세요</strong> — 어떤 기능을 구현할 것인지</li>
-                    <li>✅ <strong>하드웨어/소프트웨어 아키텍처 설계</strong> — 전체 시스템 구조</li>
-                    <li>✅ <strong>개발 일정 계획</strong> — 단계별 목표와 타임라인</li>
+                    <li><i class="fa-regular fa-circle-check me-1"></i><strong>프로젝트 목표와 컨셉을 명확히 정의하세요</strong> — 무엇을 만들고, 왜 만드는지</li>
+                    <li><i class="fa-regular fa-circle-check me-1"></i><strong>주요 기능과 특징을 나열하세요</strong> — 어떤 기능을 구현할 것인지</li>
+                    <li><i class="fa-regular fa-circle-check me-1"></i><strong>하드웨어/소프트웨어 아키텍처 설계</strong> — 전체 시스템 구조</li>
+                    <li><i class="fa-regular fa-circle-check me-1"></i><strong>개발 일정 계획</strong> — 단계별 목표와 타임라인</li>
                   </ul>
                 </div>
               </div>
@@ -188,7 +190,7 @@
           <div class="card mb-4">
             <div class="card-body">
               <div class="d-flex align-items-center gap-3 mb-3">
-                <div class="rounded-3 bg-primary bg-opacity-10 d-flex align-items-center justify-content-center icon-box-40">🎯</div>
+                <div class="rounded-3 bg-primary bg-opacity-10 d-flex align-items-center justify-content-center icon-box-40"><i class="fa-regular fa-bullseye"></i></div>
                 <div><h6 class="fw-bold mb-0">프로젝트 목표</h6><small class="text-muted">이 프로젝트를 통해 달성하고자 하는 목표를 작성하세요</small></div>
               </div>
               <textarea class="form-control font-monospace" id="q1-goal" rows="4" placeholder="예: 음성 명령을 인식하여 실내에서 자율주행하며 물건을 배달할 수 있는 로봇을 제작합니다..."></textarea>
@@ -203,7 +205,7 @@
           <div class="card mb-4">
             <div class="card-body">
               <div class="d-flex align-items-center gap-3 mb-3">
-                <div class="rounded-3 d-flex align-items-center justify-content-center icon-box-40 bg-violet-100-imp">💡</div>
+                <div class="rounded-3 d-flex align-items-center justify-content-center icon-box-40 bg-violet-100-imp"><i class="fa-regular fa-lightbulb"></i></div>
                 <div><h6 class="fw-bold mb-0">프로젝트 컨셉 및 아이디어</h6><small class="text-muted">프로젝트의 핵심 아이디어와 차별점을 설명하세요</small></div>
               </div>
               <textarea class="form-control" id="q1-concept" rows="6" placeholder="예: 기존 배달 로봇과 달리, 음성인식 AI를 통해 누구나 쉽게 명령할 수 있고..."></textarea>
@@ -218,7 +220,7 @@
           <div class="card mb-4">
             <div class="card-body">
               <div class="d-flex align-items-center gap-3 mb-3">
-                <div class="rounded-3 bg-success bg-opacity-10 d-flex align-items-center justify-content-center icon-box-40">📋</div>
+                <div class="rounded-3 bg-success bg-opacity-10 d-flex align-items-center justify-content-center icon-box-40"><i class="fa-regular fa-clipboard"></i></div>
                 <div><h6 class="fw-bold mb-0">주요 기능 및 특징</h6><small class="text-muted">구현할 핵심 기능들을 나열하세요</small></div>
               </div>
               <textarea class="form-control font-monospace" id="q1-features" rows="7" placeholder="예:&#10;1. 음성 명령 인식 및 처리 (Google Speech API)&#10;2. 실내 자율주행 (SLAM 알고리즘)&#10;3. 장애물 감지 및 회피&#10;4. 물건 적재 및 배달 기능"></textarea>
@@ -233,7 +235,7 @@
           <div class="card mb-4">
             <div class="card-body">
               <div class="d-flex align-items-center gap-3 mb-3">
-                <div class="rounded-3 bg-warning bg-opacity-10 d-flex align-items-center justify-content-center icon-box-40">🔧</div>
+                <div class="rounded-3 bg-warning bg-opacity-10 d-flex align-items-center justify-content-center icon-box-40"><i class="fa-regular fa-screwdriver-wrench"></i></div>
                 <div><h6 class="fw-bold mb-0">하드웨어/소프트웨어 아키텍처</h6><small class="text-muted">전체 시스템 구조와 구성요소를 설명하세요</small></div>
               </div>
               <textarea class="form-control font-monospace" id="q1-arch" rows="10" placeholder="예:&#10;[하드웨어]&#10;- 메인보드: Raspberry Pi 4 (4GB)&#10;- 모터: DC 기어드 모터 x 4&#10;&#10;[소프트웨어]&#10;- 운영체제: Raspbian OS&#10;- 음성인식: Google Speech API"></textarea>
@@ -244,7 +246,7 @@
           <div class="card mb-4">
             <div class="card-body">
               <div class="d-flex align-items-center gap-3 mb-3">
-                <div class="rounded-3 bg-danger bg-opacity-10 d-flex align-items-center justify-content-center icon-box-40">📅</div>
+                <div class="rounded-3 bg-danger bg-opacity-10 d-flex align-items-center justify-content-center icon-box-40"><i class="fa-regular fa-calendar"></i></div>
                 <div><h6 class="fw-bold mb-0">개발 일정 계획</h6><small class="text-muted">단계별 개발 일정을 작성하세요</small></div>
               </div>
               <textarea class="form-control font-monospace" id="q1-timeline" rows="7" placeholder="예:&#10;Week 1-2: 하드웨어 설계 및 부품 구매&#10;Week 3-4: 하드웨어 조립 및 기본 동작 테스트&#10;Week 5-6: 음성인식 모듈 개발 및 통합"></textarea>
@@ -255,7 +257,7 @@
           <div class="card mb-4">
             <div class="card-body">
               <div class="d-flex align-items-center gap-3 mb-3">
-                <div class="rounded-3 bg-primary bg-opacity-10 d-flex align-items-center justify-content-center icon-box-40">📚</div>
+                <div class="rounded-3 bg-primary bg-opacity-10 d-flex align-items-center justify-content-center icon-box-40"><i class="fa-regular fa-book"></i></div>
                 <div><h6 class="fw-bold mb-0">참고 자료 및 링크 (선택)</h6><small class="text-muted">참고한 자료나 관련 링크를 추가하세요</small></div>
               </div>
               <label class="form-label small fw-semibold">GitHub 저장소 (선택)</label>
@@ -273,7 +275,7 @@
                 <small class="text-muted" id="submit-hint">필수 항목을 모두 작성해주세요</small>
               </div>
               <button class="btn btn-primary px-4" id="submit-btn" disabled>
-                ✅ Quest 1 제출
+                <i class="fa-regular fa-circle-check me-1"></i>Quest 1 제출
               </button>
             </div>
           </div>
@@ -286,7 +288,7 @@
             <!-- Quest 진행 -->
             <div class="card mb-3">
               <div class="card-body">
-                <h6 class="fw-bold mb-3">🏆 Quest 진행 상황</h6>
+                <h6 class="fw-bold mb-3"><i class="fa-regular fa-trophy me-1"></i>Quest 진행 상황</h6>
                 <div class="d-flex flex-column gap-3">
                   <div class="d-flex gap-3">
                     <div class="rounded-circle bg-primary text-white d-flex align-items-center justify-content-center fw-bold flex-shrink-0 icon-box-32">1</div>
@@ -316,12 +318,12 @@
             <!-- Tips -->
             <div class="card mb-3 border-primary bg-blue-50">
               <div class="card-body">
-                <h6 class="fw-bold mb-3">✨ 작성 팁</h6>
+                <h6 class="fw-bold mb-3"><i class="fa-regular fa-sparkles me-1"></i>작성 팁</h6>
                 <ul class="list-unstyled small text-muted mb-0 d-flex flex-column gap-1">
-                  <li>✅ 구체적이고 명확하게 작성하세요</li>
-                  <li>✅ 다이어그램이나 스케치를 첨부하면 더 좋습니다</li>
-                  <li>✅ 실현 가능한 목표를 설정하세요</li>
-                  <li>✅ 작성 내용은 자동 저장됩니다</li>
+                  <li><i class="fa-regular fa-circle-check me-1"></i>구체적이고 명확하게 작성하세요</li>
+                  <li><i class="fa-regular fa-circle-check me-1"></i>다이어그램이나 스케치를 첨부하면 더 좋습니다</li>
+                  <li><i class="fa-regular fa-circle-check me-1"></i>실현 가능한 목표를 설정하세요</li>
+                  <li><i class="fa-regular fa-circle-check me-1"></i>작성 내용은 자동 저장됩니다</li>
                 </ul>
               </div>
             </div>
@@ -329,15 +331,15 @@
             <!-- 커뮤니티 -->
             <div class="card mb-3 bg-gradient-violet-rose">
               <div class="card-body">
-                <h6 class="fw-bold mb-1">👥 커뮤니티 도움받기</h6>
+                <h6 class="fw-bold mb-1"><i class="fa-regular fa-user-group me-1"></i>커뮤니티 도움받기</h6>
                 <p class="small text-muted mb-3">막히는 부분이 있거나 도움이 필요하신가요?</p>
                 <div class="d-flex flex-column gap-2">
-                  <button onclick="openQuickAction('question')" class="btn btn-white border fw-semibold btn-sm text-start">❓ 질문하기</button>
-                  <button onclick="openQuickAction('progress')" class="btn btn-outline-secondary btn-sm text-start">🚀 진행 공유</button>
-                  <button onclick="openQuickAction('teammate')" class="btn btn-outline-secondary btn-sm text-start">👥 팀원 찾기</button>
-                  <button onclick="openQuickAction('resource')" class="btn btn-outline-secondary btn-sm text-start">📁 자료 공유</button>
+                  <button onclick="openQuickAction('question')" class="btn btn-white border fw-semibold btn-sm text-start"><i class="fa-regular fa-circle-question me-1"></i>질문하기</button>
+                  <button onclick="openQuickAction('progress')" class="btn btn-outline-secondary btn-sm text-start"><i class="fa-regular fa-rocket me-1"></i>진행 공유</button>
+                  <button onclick="openQuickAction('teammate')" class="btn btn-outline-secondary btn-sm text-start"><i class="fa-regular fa-user-group me-1"></i>팀원 찾기</button>
+                  <button onclick="openQuickAction('resource')" class="btn btn-outline-secondary btn-sm text-start"><i class="fa-regular fa-folder me-1"></i>자료 공유</button>
                 </div>
-                <small class="text-muted mt-2 d-block">✅ 현재 프로젝트와 자동으로 연결됩니다</small>
+                <small class="text-muted mt-2 d-block"><i class="fa-regular fa-circle-check me-1"></i>현재 프로젝트와 자동으로 연결됩니다</small>
               </div>
             </div>
 
@@ -345,7 +347,7 @@
             <div class="card border-warning bg-amber-50">
               <div class="card-body">
                 <div class="d-flex gap-2">
-                  <span>⚠️</span>
+                  <span><i class="fa-regular fa-triangle-exclamation"></i></span>
                   <div>
                     <div class="fw-bold small mb-1">마감일 안내</div>
                     <div class="small text-muted">정상 마감: <strong>2026년 3월 25일</strong><br>최종 마감: <strong>2026년 3월 30일</strong></div>
@@ -504,7 +506,7 @@
     }
     function qaGuideBox(color, items) {
       return '<div class="rounded-3 p-3 mb-3" style="background:'+color+';border:1px solid #e9d5ff;">'
-        +'<div class="small fw-semibold mb-2">✨ 작성 가이드</div>'
+        +'<div class="small fw-semibold mb-2"><i class="fa-regular fa-sparkles me-1"></i>작성 가이드</div>'
         +'<ul class="list-unstyled small text-muted mb-0">'+items.map(function(i){ return '<li>'+i+'</li>'; }).join('')+'</ul></div>';
     }
     window.selectQaType = function(el, val) {
@@ -515,7 +517,7 @@
 
     var qaConfigs = {
       question: {
-        title: '❓ 질문하기',
+        title: '<i class="fa-regular fa-circle-question me-1"></i>질문하기',
         subtitle: '프로젝트 진행 중 막히는 부분을 커뮤니티에 질문하세요',
         submitLabel: '질문 등록하기',
         submitBg: '#2563eb',
@@ -525,13 +527,13 @@
             + qaField('제목','text','qa-q-title','예: 라즈베리파이 GPIO 핀 연결 문제',true)
             + qaField('카테고리','text','qa-q-cat','',false)
             + '<div class="mb-3"><label class="form-label fw-semibold small">질문 유형 <span class="text-danger">*</span></label>'
-            + qaTypeGrid([{value:'hw',icon:'🔧',label:'하드웨어',desc:'회로·부품'},{value:'sw',icon:'💻',label:'소프트웨어',desc:'코드·알고리즘'},{value:'design',icon:'🎨',label:'설계',desc:'아이디어·설계'},{value:'other',icon:'💬',label:'기타',desc:'기타 질문'}], 'hw') + '</div>'
+            + qaTypeGrid([{value:'hw',icon:'<i class="fa-regular fa-screwdriver-wrench"></i>',label:'하드웨어',desc:'회로·부품'},{value:'sw',icon:'<i class="fa-regular fa-laptop"></i>',label:'소프트웨어',desc:'코드·알고리즘'},{value:'design',icon:'<i class="fa-regular fa-palette"></i>',label:'설계',desc:'아이디어·설계'},{value:'other',icon:'<i class="fa-regular fa-comment"></i>',label:'기타',desc:'기타 질문'}], 'hw') + '</div>'
             + qaField('질문 내용','textarea','qa-q-content','현재 상황과 문제를 자세히 설명해주세요...',true)
             + '<div class="mb-3"><label class="form-label fw-semibold small">첨부 자료</label>' + qaAttachBtns() + '</div>';
         }
       },
       progress: {
-        title: '🚀 진행 공유',
+        title: '<i class="fa-regular fa-rocket me-1"></i>진행 공유',
         subtitle: '프로젝트 진행 상황을 커뮤니티와 공유하세요',
         submitLabel: '공유하기',
         submitBg: '#10b981',
@@ -544,7 +546,7 @@
         }
       },
       teammate: {
-        title: '👥 팀원 찾기',
+        title: '<i class="fa-regular fa-user-group me-1"></i>팀원 찾기',
         subtitle: '함께 프로젝트를 진행할 팀원을 모집하세요',
         submitLabel: '모집 공고 올리기',
         submitBg: '#8b5cf6',
@@ -558,7 +560,7 @@
         }
       },
       resource: {
-        title: '📁 자료 공유',
+        title: '<i class="fa-regular fa-folder me-1"></i>자료 공유',
         subtitle: '프로젝트에 도움이 되는 자료를 커뮤니티와 공유하세요',
         submitLabel: '자료 공유하기',
         submitBg: '#f59e0b',
@@ -578,8 +580,8 @@
       Auth.requireLogin(function(){
         _currentQaType = type;
         var cfg = qaConfigs[type];
-        $('#qa-title').text(cfg.title);
-        $('#qa-subtitle').text(cfg.subtitle);
+        $('#qa-title').html(cfg.title);
+        $('#qa-subtitle').html(cfg.subtitle);
         $('#qa-body').html(cfg.body());
         $('#qa-submit-btn').text(cfg.submitLabel).css({'background':cfg.submitBg||'#2563eb','color':'#fff','border':'none'});
         var el = document.getElementById('quickActionOffcanvas');

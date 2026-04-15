@@ -432,7 +432,7 @@
                         <span class="badge badge-amber fw-normal">AI 기반 농업용 드론</span>
                         <span class="text-muted small ms-auto">1시간 전</span>
                       </div>
-                      <div class="fw-semibold mb-1 mt-2">드론 자율비행 프로젝트 - 하드웨어 엔지니어 구합니다</div>
+                      <a href="community-teammate-view.html" class="fw-semibold mb-1 mt-2 d-block text-dark text-decoration-none">드론 자율비행 프로젝트 - 하드웨어 엔지니어 구합니다</a>
                       <div class="text-muted small mb-2">농업용 드론 프로젝트 진행 중. 비행 제어 시스템 설계 경험자 구합니다.</div>
                       <div class="mb-2">
                         <span class="badge bg-light border text-secondary rounded-pill me-1">하드웨어</span>
@@ -464,7 +464,7 @@
                         <span class="badge badge-amber fw-normal">스마트 홈 자동화 시스템</span>
                         <span class="text-muted small ms-auto">4시간 전</span>
                       </div>
-                      <div class="fw-semibold mb-1 mt-2">IoT 프로젝트 함께할 백엔드 개발자 찾아요</div>
+                      <a href="community-teammate-view.html" class="fw-semibold mb-1 mt-2 d-block text-dark text-decoration-none">IoT 프로젝트 함께할 백엔드 개발자 찾아요</a>
                       <div class="text-muted small mb-2">스마트 홈 시스템 서버 개발 함께할 분. MQTT 실시간 데이터 처리 경험 우대.</div>
                       <div class="mb-2">
                         <span class="badge bg-light border text-secondary rounded-pill me-1">Node.js</span>
@@ -497,7 +497,7 @@
                         <span class="badge badge-amber fw-normal">로봇 팔 제어 시스템</span>
                         <span class="text-muted small ms-auto">1일 전</span>
                       </div>
-                      <div class="fw-semibold mb-1 mt-2">3D 모델링 도와주실 분 찾습니다 (단기)</div>
+                      <a href="community-teammate-view.html" class="fw-semibold mb-1 mt-2 d-block text-dark text-decoration-none">3D 모델링 도와주실 분 찾습니다 (단기)</a>
                       <div class="text-muted small mb-2">로봇 팔 구조 설계를 위한 3D 모델링. Fusion360 사용 가능하신 분 환영.</div>
                       <div class="mb-2">
                         <span class="badge bg-light border text-secondary rounded-pill me-1">Fusion360</span>
@@ -915,9 +915,12 @@
   <div class="cpanel-backdrop" id="quickActionBackdrop" onclick="hideQuickAction()"></div>
   <div class="cpanel content-w" id="quickActionOffcanvas">
     <div class="border-bottom px-4 py-3 bg-white d-flex align-items-center justify-content-between flex-shrink-0">
-      <div>
-        <h5 class="fw-bold mb-0" id="qa-title">질문하기</h5>
-        <small class="text-muted" id="qa-subtitle">커뮤니티에 질문을 등록합니다</small>
+      <div class="d-flex align-items-center gap-3">
+        <span class="cpanel-header-icon panel-icon-blue" id="qa-icon"><i class="fa-regular fa-comment"></i></span>
+        <div>
+          <h5 class="fw-bold mb-0" id="qa-title">질문하기</h5>
+          <small class="text-muted" id="qa-subtitle">커뮤니티에 질문을 등록합니다</small>
+        </div>
       </div>
       <button type="button" class="btn-close ms-auto" onclick="hideQuickAction()"></button>
     </div>
@@ -928,12 +931,9 @@
         <div class="p-4 d-flex flex-column gap-4">
           <!-- 연결 프로젝트 -->
           <div class="rounded-3 p-4 panel-project-box-blue">
-            <div class="d-flex gap-3 align-items-start mb-3">
-              <div class="rounded-2 d-flex align-items-center justify-content-center text-white flex-shrink-0 fs-6 panel-icon-box panel-icon-blue"><i class="bi bi-stars"></i></div>
-              <div>
-                <h6 class="fw-bold mb-1">연결된 프로젝트</h6>
-                <p class="panel-text-blue small mb-0">내 프로젝트를 선택하면 질문이 자동으로 연결됩니다</p>
-              </div>
+            <div class="mb-3">
+              <h6 class="fw-bold mb-1">연결된 프로젝트</h6>
+              <p class="panel-text-blue small mb-0">내 프로젝트를 선택하면 질문이 자동으로 연결됩니다</p>
             </div>
             <select class="form-select form-select-sm mb-3 panel-select-blue">
               <option value="">내 프로젝트 선택 (선택사항)</option>
@@ -1040,12 +1040,9 @@
         <div class="p-4 d-flex flex-column gap-4">
           <!-- 연결 프로젝트 -->
           <div class="rounded-3 p-4 panel-project-box-purple">
-            <div class="d-flex gap-3 align-items-start mb-3">
-              <div class="rounded-2 d-flex align-items-center justify-content-center text-white flex-shrink-0 fs-6 panel-icon-box panel-icon-purple"><i class="bi bi-rocket-takeoff"></i></div>
-              <div>
-                <h6 class="fw-bold mb-1">연결된 프로젝트</h6>
-                <p class="panel-text-purple small mb-0">내 프로젝트를 선택하면 진행 상황이 자동으로 연결됩니다</p>
-              </div>
+            <div class="mb-3">
+              <h6 class="fw-bold mb-1">연결된 프로젝트</h6>
+              <p class="panel-text-purple small mb-0">내 프로젝트를 선택하면 진행 상황이 자동으로 연결됩니다</p>
             </div>
             <select class="form-select form-select-sm mb-3 panel-select-purple">
               <option value="">내 프로젝트 선택 (선택사항)</option>
@@ -1129,12 +1126,9 @@
         <div class="p-4 d-flex flex-column gap-4">
           <!-- 연결 프로젝트 -->
           <div class="rounded-3 p-4 panel-project-box-green">
-            <div class="d-flex gap-3 align-items-start mb-3">
-              <div class="rounded-2 d-flex align-items-center justify-content-center text-white flex-shrink-0 fs-6 panel-icon-box panel-icon-green"><i class="bi bi-people-fill"></i></div>
-              <div>
-                <h6 class="fw-bold mb-1">연결된 프로젝트</h6>
-                <p class="panel-text-green small mb-0">내 프로젝트를 선택하면 팀원 모집이 자동으로 연결됩니다</p>
-              </div>
+            <div class="mb-3">
+              <h6 class="fw-bold mb-1">연결된 프로젝트</h6>
+              <p class="panel-text-green small mb-0">내 프로젝트를 선택하면 팀원 모집이 자동으로 연결됩니다</p>
             </div>
             <select class="form-select form-select-sm mb-3 panel-select-green">
               <option value="">내 프로젝트 선택 (선택사항)</option>
@@ -1238,12 +1232,9 @@
         <div class="p-4 d-flex flex-column gap-4">
           <!-- 연결 프로젝트 -->
           <div class="rounded-3 p-4 panel-project-box-amber">
-            <div class="d-flex gap-3 align-items-start mb-3">
-              <div class="rounded-2 d-flex align-items-center justify-content-center text-white flex-shrink-0 fs-6 panel-icon-box panel-icon-amber"><i class="bi bi-share-fill"></i></div>
-              <div>
-                <h6 class="fw-bold mb-1">연결된 프로젝트</h6>
-                <p class="panel-text-amber small mb-0">내 프로젝트를 선택하면 자료가 자동으로 연결됩니다</p>
-              </div>
+            <div class="mb-3">
+              <h6 class="fw-bold mb-1">연결된 프로젝트</h6>
+              <p class="panel-text-amber small mb-0">내 프로젝트를 선택하면 자료가 자동으로 연결됩니다</p>
             </div>
             <select class="form-select form-select-sm mb-3 panel-select-amber">
               <option value="">내 프로젝트 선택 (선택사항)</option>
@@ -1460,10 +1451,10 @@
     }
 
     var qaLabels = {
-      question: { title: '질문하기', subtitle: '커뮤니티에 질문을 등록합니다' },
-      progress: { title: '진행 공유하기', subtitle: '커뮤니티에 진행 상황을 공유합니다' },
-      teammate: { title: '팀원 찾기', subtitle: '커뮤니티에 팀원을 모집합니다' },
-      resource: { title: '자료 공유하기', subtitle: '커뮤니티에 유용한 자료를 공유합니다' }
+      question: { title: '질문하기',      subtitle: '커뮤니티에 질문을 등록합니다',           icon: 'fa-regular fa-comment', color: 'panel-icon-blue'   },
+      progress: { title: '진행 공유하기', subtitle: '커뮤니티에 진행 상황을 공유합니다',      icon: 'fa-regular fa-rocket',  color: 'panel-icon-purple' },
+      teammate: { title: '팀원 찾기',     subtitle: '커뮤니티에 팀원을 모집합니다',           icon: 'fa-regular fa-users',   color: 'panel-icon-green'  },
+      resource: { title: '자료 공유하기', subtitle: '커뮤니티에 유용한 자료를 공유합니다',   icon: 'fa-regular fa-folder',  color: 'panel-icon-amber'  }
     };
 
     function openQuickAction(type) {
@@ -1471,6 +1462,9 @@
       document.getElementById('panel-' + type).classList.remove('d-none');
       document.getElementById('qa-title').textContent = qaLabels[type].title;
       document.getElementById('qa-subtitle').textContent = qaLabels[type].subtitle;
+      var iconEl = document.getElementById('qa-icon');
+      iconEl.innerHTML = '<i class="' + qaLabels[type].icon + '"></i>';
+      iconEl.className = 'cpanel-header-icon ' + qaLabels[type].color;
       document.getElementById('quickActionOffcanvas').classList.add('cpanel-show');
       document.getElementById('quickActionBackdrop').classList.add('cpanel-show');
     }

@@ -144,8 +144,8 @@
     </div>
 
     <section class="text-white py-5 events-hero">
-      <div class="container-xl text-center py-3">
-        <span class="badge bg-white bg-opacity-25 rounded-pill px-3 py-2 mb-4 fs-6">✨ Make 2.0 이벤트</span>
+      <div class="container-xl text-center">
+        <span class="badge bg-white bg-opacity-25 rounded-pill px-3 py-2 mb-4 fs-6"><i class="fa-solid fa-wand-sparkles me-1"></i> Make 2.0 이벤트</span>
         <h1 class="fw-bold display-5 mb-3">메이커 커뮤니티 이벤트</h1>
         <p class="fs-5 text-white-50">워크숍, 밋업, 해커톤 등 다양한 오프라인/온라인 이벤트에 참여하세요</p>
       </div>
@@ -190,21 +190,37 @@
 <footer id="platform-footer">
 
   <!-- Sponsor Logos -->
-  <div class="bg-light border-top border-bottom py-4">
+  <div class="sponsor-bar">
+    <p class="sponsor-bar-title">Sponsored by</p>
     <div class="container-xl">
-      <p class="text-center text-muted small mb-3">Sponsored Company</p>
-      <div class="d-flex flex-wrap align-items-center justify-content-center gap-4">
-        <span class="fw-medium text-secondary small">CREAFORM</span>
-        <span class="fw-medium text-secondary small">Infineon</span>
-        <span class="fw-bold text-dark small">KETI</span>
-        <span class="fw-medium text-secondary small">KEYSIGHT</span>
-        <span class="fw-medium text-secondary small">Microchip</span>
-        <span class="fw-medium text-primary small">mouser.com</span>
-        <span class="fw-medium text-secondary small">NATIONAL INSTRUMENTS</span>
-        <span class="fw-bold text-white bg-danger px-2 py-1 rounded small">ROHM</span>
-        <span class="fw-medium text-secondary small">ST</span>
-        <span class="fw-medium text-dark small">Tektronix</span>
+    <div class="sponsor-track-wrap">
+      <!-- 원본 -->
+      <div class="sponsor-list" aria-hidden="false">
+        <span class="sponsor-item"><img src="assets/img/sponsors/creaform.png" alt="CREAFORM"></span>
+        <span class="sponsor-item"><img src="assets/img/sponsors/infineon.png" alt="Infineon"></span>
+        <span class="sponsor-item"><img src="assets/img/sponsors/keti.png" alt="KETI"></span>
+        <span class="sponsor-item"><img src="assets/img/sponsors/keysight.png" alt="KEYSIGHT"></span>
+        <span class="sponsor-item"><img src="assets/img/sponsors/microchip.png" alt="Microchip"></span>
+        <span class="sponsor-item"><img src="assets/img/sponsors/mouser.png" alt="Mouser"></span>
+        <span class="sponsor-item"><img src="assets/img/sponsors/ni.png" alt="National Instruments"></span>
+        <span class="sponsor-item"><img src="assets/img/sponsors/rohm.png" alt="ROHM"></span>
+        <span class="sponsor-item"><img src="assets/img/sponsors/st.png" alt="ST"></span>
+        <span class="sponsor-item"><img src="assets/img/sponsors/tektronix.png" alt="Tektronix"></span>
       </div>
+      <!-- 복제본 (무한 루프용) -->
+      <div class="sponsor-list" aria-hidden="true">
+        <span class="sponsor-item"><img src="assets/img/sponsors/creaform.png" alt=""></span>
+        <span class="sponsor-item"><img src="assets/img/sponsors/infineon.png" alt=""></span>
+        <span class="sponsor-item"><img src="assets/img/sponsors/keti.png" alt=""></span>
+        <span class="sponsor-item"><img src="assets/img/sponsors/keysight.png" alt=""></span>
+        <span class="sponsor-item"><img src="assets/img/sponsors/microchip.png" alt=""></span>
+        <span class="sponsor-item"><img src="assets/img/sponsors/mouser.png" alt=""></span>
+        <span class="sponsor-item"><img src="assets/img/sponsors/ni.png" alt=""></span>
+        <span class="sponsor-item"><img src="assets/img/sponsors/rohm.png" alt=""></span>
+        <span class="sponsor-item"><img src="assets/img/sponsors/st.png" alt=""></span>
+        <span class="sponsor-item"><img src="assets/img/sponsors/tektronix.png" alt=""></span>
+      </div>
+    </div>
     </div>
   </div>
 
@@ -260,19 +276,28 @@
   var typeColors = { 워크숍:'primary', 밋업:'success', 해커톤:'danger', 웨비나:'info' };
   $('#events-grid').html(events.map(function(e){
     var pct = Math.round(e.participants/e.max*100);
-    return '<div class="col-md-6 col-lg-4"><div class="card border-0 shadow-sm h-100">'
-      +'<img src="'+e.img+'" class="card-img-top event-card-img" alt="">'
-      +'<div class="card-body p-4">'
-      +'<div class="d-flex gap-2 mb-2"><span class="badge bg-'+typeColors[e.type]+'-subtle text-'+typeColors[e.type]+'">'+e.type+'</span><span class="badge bg-success">'+e.status+'</span></div>'
-      +'<h6 class="fw-bold mb-2">'+e.title+'</h6>'
-      +'<div class="small text-muted mb-1">📅 '+e.date+'</div>'
-      +'<div class="small text-muted mb-1">🕐 '+e.time+'</div>'
-      +'<div class="small text-muted mb-3">📍 '+e.location+'</div>'
-      +'<div class="d-flex justify-content-between small text-muted mb-1"><span>참가 현황</span><span>'+e.participants+'/'+e.max+'명</span></div>'
-      +'<div class="progress mb-3" style="height:6px"><div class="progress-bar bg-primary" style="width:'+pct+'%"></div></div>'
+    return '<div class="col-md-6 col-lg-4">'
+      +'<div class="card border-0 shadow events-card h-100">'
+      +'<div class="position-relative">'
+      +'<img src="'+e.img+'" class="card-img-top" alt="">'
+      +'<div class="position-absolute top-0 start-0 m-2 d-flex flex-wrap gap-1">'
+      +'<span class="badge event-badge-type">'+e.type+'</span>'
+      +'<span class="badge bg-success">'+e.status+'</span>'
       +'</div>'
-      +'<div class="card-footer bg-transparent border-0 px-4 pb-4"><button class="btn btn-primary btn-sm w-100">신청하기</button></div>'
-      +'</div></div>';
+      +'</div>'
+      +'<div class="card-body p-4">'
+      +'<h6 class="fw-bold mb-3">'+e.title+'</h6>'
+      +'<div class="small text-muted mb-1"><i class="fa-regular fa-calendar"></i>'+e.date+'</div>'
+      +'<div class="small text-muted mb-1"><i class="fa-regular fa-clock"></i>'+e.time+'</div>'
+      +'<div class="small text-muted mb-3"><i class="fa-solid fa-location-dot"></i>'+e.location+'</div>'
+      +'<div class="d-flex justify-content-between small text-muted mb-1"><span>참가 현황</span><span>'+e.participants+'/'+e.max+'명</span></div>'
+      +'<div class="progress event-progress"><div class="progress-bar bg-primary" style="width:'+pct+'%"></div></div>'
+      +'</div>'
+      +'<div class="card-footer border-0 px-4 pb-4 pt-0">'
+      +'<button class="btn btn-primary btn-sm w-100">신청하기</button>'
+      +'</div>'
+      +'</div>'
+      +'</div>';
   }).join(''));
   </script>
 </body>

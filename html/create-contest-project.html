@@ -200,21 +200,21 @@
             <div class="d-flex align-items-center gap-3 mb-4 pb-3 border-bottom">
               <div class="section-icon section-icon-blue"><i class="fa-regular fa-book-open"></i></div>
               <div>
-                <div class="fw-bold">프로젝트 기본 정보</div>
+                <div class="fw-bold form-section-title">프로젝트 기본 정보</div>
                 <div class="small text-muted">프로젝트의 핵심 내용을 입력하세요</div>
               </div>
             </div>
 
             <!-- 제목 -->
             <div class="mb-4">
-              <label class="form-label fw-semibold small">프로젝트 제목 <span class="text-danger">*</span></label>
+              <label class="form-label fw-medium">프로젝트 제목 <span class="text-danger">*</span></label>
               <input type="text" class="form-control" id="field-title" placeholder="예: AI 음성인식 자율주행 로봇">
               <div class="form-text">프로젝트의 핵심을 명확하게 표현하는 제목</div>
             </div>
 
             <!-- 한줄 요약 -->
             <div class="mb-4">
-              <label class="form-label fw-semibold small">한줄 요약 <span class="text-danger">*</span></label>
+              <label class="form-label fw-medium">한줄 요약 <span class="text-danger">*</span></label>
               <input type="text" class="form-control" id="field-summary"
                      placeholder="예: 라즈베리파이와 OpenCV로 실내 자율주행이 가능한 로봇" maxlength="100">
               <div class="form-text">프로젝트를 한 문장으로 소개 (최대 100자)</div>
@@ -222,7 +222,7 @@
 
             <!-- 상세 설명 -->
             <div class="mb-4">
-              <label class="form-label fw-semibold small">상세 설명 <span class="text-danger">*</span></label>
+              <label class="form-label fw-medium">상세 설명 <span class="text-danger">*</span></label>
               <textarea class="form-control" id="field-description" rows="8"
                 placeholder="어떤 문제를 해결하나요? 어떤 기술을 사용할 예정인가요? 프로젝트의 목표와 기대 효과는 무엇인가요?"></textarea>
               <div class="form-text">최소 50자 이상 · 현재: <span id="desc-len">0</span>자</div>
@@ -231,7 +231,7 @@
             <!-- 카테고리 & 팀명 -->
             <div class="row g-3 mb-4">
               <div class="col-md-6">
-                <label class="form-label fw-semibold small">카테고리 <span class="text-danger">*</span></label>
+                <label class="form-label fw-medium">카테고리 <span class="text-danger">*</span></label>
                 <select class="form-select" id="field-category">
                   <option value="">선택하세요</option>
                   <option>로봇공학</option>
@@ -245,14 +245,14 @@
                 </select>
               </div>
               <div class="col-md-6">
-                <label class="form-label fw-semibold small">팀명 / 작성자명 <span class="text-danger">*</span></label>
+                <label class="form-label fw-medium">팀명 / 작성자명 <span class="text-danger">*</span></label>
                 <input type="text" class="form-control" id="field-team" placeholder="예: 김메이커 또는 로봇팀">
               </div>
             </div>
 
             <!-- 기술 태그 -->
             <div class="mb-0">
-              <label class="form-label fw-semibold small">기술 태그 <span class="text-muted fw-normal">(최대 10개)</span></label>
+              <label class="form-label fw-medium">기술 태그 <span class="text-muted fw-normal">(최대 10개)</span></label>
               <div class="d-flex flex-wrap gap-2 mb-2" id="tag-pills">
                 <span class="tag-pill" data-tag="로봇공학">로봇공학</span>
                 <span class="tag-pill" data-tag="AI">AI</span>
@@ -278,28 +278,28 @@
             <div class="d-flex align-items-center gap-3 mb-4 pb-3 border-bottom">
               <div class="section-icon section-icon-green"><i class="fa-regular fa-link"></i></div>
               <div>
-                <div class="fw-bold">기술 자료 및 링크 (선택)</div>
+                <div class="fw-bold form-section-title">기술 자료 및 링크 (선택)</div>
                 <div class="small text-muted">프로젝트 관련 링크와 문서를 연결하세요</div>
               </div>
             </div>
 
             <div class="mb-4">
-              <label class="form-label fw-semibold small"><i class="fa-brands fa-github me-1"></i>GitHub 저장소 <span class="text-muted fw-normal">(선택사항)</span></label>
+              <label class="form-label fw-medium"><i class="fa-brands fa-github me-1"></i>GitHub 저장소 <span class="text-muted fw-normal">(선택사항)</span></label>
               <input type="url" class="form-control" id="field-github" placeholder="https://github.com/username/project">
             </div>
 
             <div class="mb-4">
-              <label class="form-label fw-semibold small"><i class="fa-regular fa-circle-play me-1"></i>데모 영상 링크 <span class="text-muted fw-normal">(선택사항)</span></label>
+              <label class="form-label fw-medium"><i class="fa-regular fa-circle-play me-1"></i>데모 영상 링크 <span class="text-muted fw-normal">(선택사항)</span></label>
               <input type="url" class="form-control" id="field-demo" placeholder="https://youtube.com/...">
             </div>
 
             <div class="mb-4">
-              <label class="form-label fw-semibold small"><i class="fa-regular fa-globe me-1"></i>참고 링크 <span class="text-muted fw-normal">(선택사항)</span></label>
+              <label class="form-label fw-medium"><i class="fa-regular fa-globe me-1"></i>참고 링크 <span class="text-muted fw-normal">(선택사항)</span></label>
               <input type="url" class="form-control" id="field-ref" placeholder="관련 자료, 블로그, 논문 등">
             </div>
 
             <div class="mb-4">
-              <label class="form-label fw-semibold small"><i class="fa-regular fa-paperclip me-1"></i>대표 이미지 <span class="text-muted fw-normal">(선택사항)</span></label>
+              <label class="form-label fw-medium"><i class="fa-regular fa-paperclip me-1"></i>대표 이미지 <span class="text-muted fw-normal">(선택사항)</span></label>
               <div class="upload-zone" id="upload-zone">
                 <div id="upload-placeholder">
                   <div class="fs-200 mb-2"><i class="fa-regular fa-folder-open"></i></div>
@@ -311,7 +311,7 @@
             </div>
 
             <div class="mb-0">
-              <label class="form-label fw-semibold small"><i class="fa-regular fa-file me-1"></i>첨부 문서 <span class="text-muted fw-normal">(선택사항)</span></label>
+              <label class="form-label fw-medium"><i class="fa-regular fa-file me-1"></i>첨부 문서 <span class="text-muted fw-normal">(선택사항)</span></label>
               <div class="upload-zone upload-zone-sm">
                 <div class="fs-150 mb-1"><i class="fa-regular fa-upload"></i></div>
                 <div class="small text-muted">설계 문서, 회로도 등을 업로드</div>
@@ -344,7 +344,7 @@
               <div class="card-body p-4">
                 <div class="d-flex align-items-center gap-3 mb-3">
                   <div class="ccp-scard-icon ccp-scard-icon-purple"><i class="fa-solid fa-trophy"></i></div>
-                  <div class="fw-bold">콘테스트 정보</div>
+                  <div class="fw-bold form-section-title">콘테스트 정보</div>
                 </div>
                 <div class="text-muted small mb-1">참가 중인 콘테스트</div>
                 <div class="ccp-contest-name mb-3">AI 로봇 챌린지 2026</div>
@@ -360,7 +360,7 @@
               <div class="card-body p-4">
                 <div class="d-flex align-items-center gap-3 mb-4">
                   <div class="ccp-scard-icon ccp-scard-icon-blue"><i class="fa-solid fa-list-check"></i></div>
-                  <div class="fw-bold">Quest 진행 구조</div>
+                  <div class="fw-bold form-section-title">Quest 진행 구조</div>
                 </div>
                 <div class="ccp-quest-step">
                   <div class="ccp-quest-num ccp-quest-num-active">1</div>
@@ -394,7 +394,7 @@
               <div class="card-body p-4">
                 <div class="d-flex align-items-center gap-3 mb-4">
                   <div class="ccp-scard-icon ccp-scard-icon-green"><i class="fa-solid fa-arrow-right-arrow-left"></i></div>
-                  <div class="fw-bold">프로젝트 진행 흐름</div>
+                  <div class="fw-bold form-section-title">프로젝트 진행 흐름</div>
                 </div>
                 <div class="ccp-flow-steps">
                   <div class="ccp-flow-step">
@@ -427,7 +427,7 @@
               <div class="card-body p-4">
                 <div class="d-flex align-items-center gap-3 mb-2">
                   <div class="ccp-scard-icon ccp-scard-icon-violet"><i class="fa-solid fa-users"></i></div>
-                  <div class="fw-bold">커뮤니티 도움받기</div>
+                  <div class="fw-bold form-section-title">커뮤니티 도움받기</div>
                 </div>
                 <p class="text-muted mb-3" style="font-size:.9rem;">막히는 부분이 있거나 도움이 필요하신가요?</p>
                 <div class="d-flex flex-column gap-2">
