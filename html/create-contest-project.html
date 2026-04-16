@@ -25,7 +25,14 @@
         <div class="d-flex align-items-center gap-3">
           <a href="login.html"   class="text-secondary text-decoration-none small header-toplink auth-loggedout-only">로그인</a>
           <a href="signup.html"  class="text-secondary text-decoration-none small header-toplink auth-loggedout-only">회원가입</a>
-          <a href="support.html" class="text-secondary text-decoration-none small header-toplink">고객센터</a>
+          <div class="dropdown d-inline-block">
+          <a href="#" class="text-secondary text-decoration-none small header-toplink dropdown-toggle"
+             data-bs-toggle="dropdown" aria-expanded="false">고객센터</a>
+          <ul class="dropdown-menu shadow-sm border-0 py-1" style="min-width:9rem;">
+            <li><a class="dropdown-item small" href="faq.html">자주 묻는 질문</a></li>
+            <li><a class="dropdown-item small" href="contact.html">문의하기</a></li>
+          </ul>
+        </div>
           <a href="#"            class="text-secondary text-decoration-none small header-toplink">홈사이트</a>
         </div>
       </div>
@@ -234,14 +241,9 @@
                 <label class="form-label fw-medium">카테고리 <span class="text-danger">*</span></label>
                 <select class="form-select" id="field-category">
                   <option value="">선택하세요</option>
-                  <option>로봇공학</option>
-                  <option>IoT</option>
-                  <option>AI/머신러닝</option>
-                  <option>3D프린팅</option>
-                  <option>웨어러블</option>
-                  <option>드론</option>
-                  <option>에너지</option>
-                  <option>기타</option>
+                  <option>AI &amp; 머신러닝</option><option>로봇공학</option><option>IoT</option>
+                  <option>임베디드</option><option>웹/앱 개발</option><option>하드웨어</option>
+                  <option>3D 프린팅</option><option>드론</option><option>스마트홈</option><option>기타</option>
                 </select>
               </div>
               <div class="col-md-6">
@@ -250,26 +252,19 @@
               </div>
             </div>
 
-            <!-- 기술 태그 -->
+            <!-- 카테고리 상세 (기타 선택 시) -->
+            <div id="field-category-detail-wrap" class="d-none mb-3">
+              <label class="form-label fw-medium">어떤 분야인가요?</label>
+              <input type="text" class="form-control" id="field-category-detail"
+                name="category_detail" placeholder="예: 바이오센서, 우주공학 등">
+            </div>
+            <!-- 태그 -->
             <div class="mb-0">
-              <label class="form-label fw-medium">기술 태그 <span class="text-muted fw-normal">(최대 10개)</span></label>
-              <div class="d-flex flex-wrap gap-2 mb-2" id="tag-pills">
-                <span class="tag-pill" data-tag="로봇공학">로봇공학</span>
-                <span class="tag-pill" data-tag="AI">AI</span>
-                <span class="tag-pill" data-tag="라즈베리파이">라즈베리파이</span>
-                <span class="tag-pill" data-tag="Arduino">Arduino</span>
-                <span class="tag-pill" data-tag="OpenCV">OpenCV</span>
-                <span class="tag-pill" data-tag="자율주행">자율주행</span>
-                <span class="tag-pill" data-tag="머신러닝">머신러닝</span>
-                <span class="tag-pill" data-tag="IoT">IoT</span>
-                <span class="tag-pill" data-tag="Python">Python</span>
-                <span class="tag-pill" data-tag="C++">C++</span>
-                <span class="tag-pill" data-tag="ROS">ROS</span>
-                <span class="tag-pill" data-tag="TensorFlow">TensorFlow</span>
-                <span class="tag-pill" data-tag="ESP32">ESP32</span>
-                <span class="tag-pill" data-tag="센서">센서</span>
-              </div>
-              <div class="form-text">선택된 태그: <span id="tag-count">0</span>/10</div>
+              <label class="form-label fw-medium">태그 <span class="text-muted fw-normal">(선택, 최대 5개)</span></label>
+              <input type="text" class="form-control mb-2" id="cat-tag-input"
+                placeholder="예: ESP32, MQTT, 실시간감지" maxlength="20">
+              <div id="cat-tag-list" class="d-flex flex-wrap gap-2 mb-1"></div>
+              <div class="form-text">Enter 또는 쉼표(,)로 추가 · 최대 5개 · 태그당 최대 20자</div>
             </div>
           </div>
 
@@ -504,17 +499,21 @@
         <div class="d-flex flex-wrap align-items-center gap-2 small">
           <a href="support.html"  class="footer-link text-secondary text-decoration-none">e4ds 소개</a>
           <span class="text-muted">|</span>
-          <a href="notices.html"  class="footer-link text-secondary text-decoration-none">개인정보처리방침</a>
+          <a href="#" class="footer-link text-secondary text-decoration-none">개인정보처리방침</a>
           <span class="text-muted">|</span>
-          <a href="faq.html"      class="footer-link text-secondary text-decoration-none">이용약관</a>
+          <a href="#" class="footer-link text-secondary text-decoration-none">이용약관</a>
           <span class="text-muted">|</span>
-          <a href="contact.html"  class="footer-link text-secondary text-decoration-none">청소년보호정책</a>
+          <a href="#" class="footer-link text-secondary text-decoration-none">청소년보호정책</a>
           <span class="text-muted">|</span>
           <a href="careers.html"  class="footer-link text-secondary text-decoration-none">가족사이트</a>
           <span class="text-muted">|</span>
           <a href="#"             class="footer-link text-secondary text-decoration-none">저작권</a>
           <span class="text-muted">|</span>
           <a href="#"             class="footer-link text-secondary text-decoration-none">e4ds인터내셔널</a>
+          <span class="text-muted">|</span>
+          <a href="faq.html" class="footer-link text-secondary text-decoration-none">자주 묻는 질문</a>
+          <span class="text-muted">|</span>
+          <a href="contact.html" class="footer-link text-secondary text-decoration-none">문의하기</a>
         </div>
       </div>
 
@@ -567,19 +566,36 @@
     });
     $('#field-title, #field-summary, #field-category, #field-team').on('input change', checkValidity);
 
-    /* ── tag pills ───────────────────────────────────── */
-    var selectedTags = [];
-    $(document).on('click', '.tag-pill', function () {
-      var tag = $(this).data('tag');
-      if ($(this).hasClass('selected')) {
-        $(this).removeClass('selected');
-        selectedTags = selectedTags.filter(function (t) { return t !== tag; });
-      } else {
-        if (selectedTags.length >= 10) return;
-        $(this).addClass('selected');
-        selectedTags.push(tag);
-      }
-      $('#tag-count').text(selectedTags.length);
+    /* ── category tags ───────────────────────────────── */
+    var catTagItems = [];
+    function addCatTag() {
+      var $input = $('#cat-tag-input');
+      var val = $.trim($input.val());
+      if (!val || catTagItems.indexOf(val) !== -1) return;
+      if (val.length > 20 || catTagItems.length >= 5) return;
+      catTagItems.push(val);
+      var safeVal = $('<span>').text(val).html();
+      $('#cat-tag-list').append(
+        '<span class="chip chip-green" data-tag="' + safeVal + '">'
+        + safeVal
+        + ' <button type="button" class="remove-x cat-tag-remove">✕</button>'
+        + '</span>'
+      );
+      $input.val('').focus();
+    }
+    $(document).on('click', '.cat-tag-remove', function() {
+      var $chip = $(this).closest('.chip');
+      catTagItems = catTagItems.filter(function(t) { return t !== $chip.data('tag'); });
+      $chip.remove();
+    });
+    $('#cat-tag-input').on('keydown', function(e) {
+      if (e.key === 'Enter' || e.key === ',') { e.preventDefault(); addCatTag(); }
+    });
+    /* ── 카테고리 "기타" 선택 시 상세 입력 토글 ────────── */
+    $('#field-category').on('change', function() {
+      var isEtc = $(this).val() === '기타';
+      $('#field-category-detail-wrap').toggleClass('d-none', !isEtc);
+      if (!isEtc) $('#field-category-detail').val('');
     });
 
     /* ── validity ────────────────────────────────────── */

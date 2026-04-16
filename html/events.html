@@ -23,7 +23,14 @@
         <div class="d-flex align-items-center gap-3">
           <a href="login.html"   class="text-secondary text-decoration-none small header-toplink auth-loggedout-only">로그인</a>
           <a href="signup.html"  class="text-secondary text-decoration-none small header-toplink auth-loggedout-only">회원가입</a>
-          <a href="support.html" class="text-secondary text-decoration-none small header-toplink">고객센터</a>
+          <div class="dropdown d-inline-block">
+          <a href="#" class="text-secondary text-decoration-none small header-toplink dropdown-toggle"
+             data-bs-toggle="dropdown" aria-expanded="false">고객센터</a>
+          <ul class="dropdown-menu shadow-sm border-0 py-1" style="min-width:9rem;">
+            <li><a class="dropdown-item small" href="faq.html">자주 묻는 질문</a></li>
+            <li><a class="dropdown-item small" href="contact.html">문의하기</a></li>
+          </ul>
+        </div>
           <a href="#"            class="text-secondary text-decoration-none small header-toplink">홈사이트</a>
         </div>
       </div>
@@ -152,10 +159,36 @@
     </section>
 
     <div class="container-xl py-5">
-      <h4 class="fw-bold mb-1">다가오는 이벤트</h4>
-      <p class="text-muted mb-4">메이커들과 함께 배우고 성장하는 시간</p>
-      <div class="row g-4" id="events-grid">
-        <!-- rendered by JS -->
+      <!-- 유형 필터 탭 -->
+      <div class="d-flex gap-2 flex-wrap mb-4" id="event-filter-tabs">
+        <button class="btn btn-sm btn-primary rounded-pill filter-tab-btn" data-filter="all">전체</button>
+        <button class="btn btn-sm btn-outline-secondary rounded-pill filter-tab-btn" data-filter="conference">컨퍼런스·세미나</button>
+        <button class="btn btn-sm btn-outline-secondary rounded-pill filter-tab-btn" data-filter="meetup">밋업</button>
+        <button class="btn btn-sm btn-outline-secondary rounded-pill filter-tab-btn" data-filter="workshop">워크숍·핸즈온</button>
+        <button class="btn btn-sm btn-outline-secondary rounded-pill filter-tab-btn" data-filter="hackathon">해커톤</button>
+        <button class="btn btn-sm btn-outline-secondary rounded-pill filter-tab-btn" data-filter="contest">공모전·챌린지</button>
+        <button class="btn btn-sm btn-outline-secondary rounded-pill filter-tab-btn" data-filter="etc">기타</button>
+      </div>
+      <!-- 진행중인 이벤트 -->
+      <div id="ongoing-section">
+        <h4 class="fw-bold mb-1">진행중인 이벤트</h4>
+        <p class="text-muted mb-4">지금 바로 참여할 수 있는 이벤트</p>
+        <div class="row g-4" id="ongoing-grid">
+          <!-- rendered by JS -->
+        </div>
+      </div>
+      <!-- 다가오는 이벤트 -->
+      <div id="upcoming-section" class="mt-5">
+        <div class="d-flex justify-content-between align-items-start mb-1">
+          <h4 class="fw-bold mb-0">다가오는 이벤트</h4>
+          <button class="btn btn-outline-primary btn-sm" id="btn-report-event">
+            <i class="fa-solid fa-plus me-1"></i>이벤트 제보하기
+          </button>
+        </div>
+        <p class="text-muted mb-4">메이커들과 함께 배우고 성장하는 시간</p>
+        <div class="row g-4" id="events-grid">
+          <!-- rendered by JS -->
+        </div>
       </div>
 
       <h4 class="fw-bold mt-5 mb-1">지난 이벤트</h4>
@@ -234,17 +267,21 @@
         <div class="d-flex flex-wrap align-items-center gap-2 small">
           <a href="support.html"  class="footer-link text-secondary text-decoration-none">e4ds 소개</a>
           <span class="text-muted">|</span>
-          <a href="notices.html"  class="footer-link text-secondary text-decoration-none">개인정보처리방침</a>
+          <a href="#" class="footer-link text-secondary text-decoration-none">개인정보처리방침</a>
           <span class="text-muted">|</span>
-          <a href="faq.html"      class="footer-link text-secondary text-decoration-none">이용약관</a>
+          <a href="#" class="footer-link text-secondary text-decoration-none">이용약관</a>
           <span class="text-muted">|</span>
-          <a href="contact.html"  class="footer-link text-secondary text-decoration-none">청소년보호정책</a>
+          <a href="#" class="footer-link text-secondary text-decoration-none">청소년보호정책</a>
           <span class="text-muted">|</span>
           <a href="careers.html"  class="footer-link text-secondary text-decoration-none">가족사이트</a>
           <span class="text-muted">|</span>
           <a href="#"             class="footer-link text-secondary text-decoration-none">저작권</a>
           <span class="text-muted">|</span>
           <a href="#"             class="footer-link text-secondary text-decoration-none">e4ds인터내셔널</a>
+          <span class="text-muted">|</span>
+          <a href="faq.html" class="footer-link text-secondary text-decoration-none">자주 묻는 질문</a>
+          <span class="text-muted">|</span>
+          <a href="contact.html" class="footer-link text-secondary text-decoration-none">문의하기</a>
         </div>
       </div>
 
@@ -267,38 +304,419 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
   <script src="assets/js/main.js"></script>
   <script>
+  /* ── 이벤트 데이터 ──────────────────────────────────────────
+     start_date / end_date : ISO 날짜 문자열 (YYYY-MM-DD)
+     event_type : 필터 키 (conference/meetup/workshop/hackathon/contest/etc)
+     source     : 'official' = 어드민 직접 등록, 'reported' = 회원 제보 승인
+     deadline   : 접수 마감일 (없으면 null)
+     external_url: 공식 페이지 URL
+     ──────────────────────────────────────────────────────────
+     ASP 쿼리 참고:
+       진행중: WHERE status='approved' AND start_date<=GETDATE() AND end_date>=GETDATE() ORDER BY end_date ASC
+       다가오는: WHERE status='approved' AND start_date>GETDATE() ORDER BY start_date ASC
+  ─────────────────────────────────────────────────────────── */
   var events = [
-    { title:'AI 로봇공학 워크숍', date:'2026년 3월 25일', time:'14:00–18:00', location:'서울 강남구 테헤란로', participants:45, max:50, type:'워크숍', status:'모집중', img:'https://images.unsplash.com/photo-1581092333203-42374bcf7d89?w=600' },
-    { title:'메이커 밋업: 3D 프린팅', date:'2026년 4월 5일', time:'13:00–17:00', location:'성남 판교 e4ds 본사', participants:23, max:30, type:'밋업', status:'모집중', img:'https://images.unsplash.com/photo-1703221561813-cdaa308cf9e7?w=600' },
-    { title:'IoT 해커톤 2026', date:'2026년 4월 19일–20일', time:'종일', location:'온라인', participants:88, max:200, type:'해커톤', status:'모집중', img:'https://images.unsplash.com/photo-1753039495488-434a2fe53e41?w=600' },
-    { title:'드론 기술 세미나', date:'2026년 5월 8일', time:'10:00–12:00', location:'온라인 웨비나', participants:210, max:500, type:'웨비나', status:'모집중', img:'https://images.unsplash.com/photo-1473968512647-3e447244af8f?w=600' },
+    // 진행중 (기준일: 2026-04-15)
+    {
+      title:'Make 스프린트 해커톤', organizer:'e4ds 메이커스',
+      date:'2026년 4월 12일–18일', time:'종일', location:'온라인',
+      start_date:'2026-04-12', end_date:'2026-04-18', deadline:null,
+      external_url:'#', participants:67, max:100,
+      event_type:'hackathon', type:'해커톤', source:'official',
+      img:'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=600'
+    },
+    {
+      title:'IoT 개발자 밋업 4월', organizer:'한국 IoT 개발자 그룹',
+      date:'2026년 4월 8일–15일', time:'19:00–22:00', location:'판교 스타트업 캠퍼스',
+      start_date:'2026-04-08', end_date:'2026-04-15', deadline:'2026-04-13',
+      external_url:'#', participants:28, max:40,
+      event_type:'meetup', type:'밋업', source:'reported',
+      img:'https://images.unsplash.com/photo-1515187029135-18ee286d815b?w=600'
+    },
+    // 다가오는
+    {
+      title:'AI 로봇공학 워크숍', organizer:'e4ds 메이커스 클럽',
+      date:'2026년 4월 25일', time:'14:00–18:00', location:'서울 강남구 테헤란로',
+      start_date:'2026-04-25', end_date:'2026-04-25', deadline:'2026-04-22',
+      external_url:'#', participants:45, max:50,
+      event_type:'workshop', type:'워크숍·핸즈온', source:'official',
+      img:'https://images.unsplash.com/photo-1581092333203-42374bcf7d89?w=600'
+    },
+    {
+      title:'메이커 밋업: 3D 프린팅', organizer:'e4ds 3D 메이커 그룹',
+      date:'2026년 5월 5일', time:'13:00–17:00', location:'성남 판교 e4ds 본사',
+      start_date:'2026-05-05', end_date:'2026-05-05', deadline:null,
+      external_url:'#', participants:23, max:30,
+      event_type:'meetup', type:'밋업', source:'official',
+      img:'https://images.unsplash.com/photo-1703221561813-cdaa308cf9e7?w=600'
+    },
+    {
+      title:'IoT 해커톤 2026', organizer:'e4ds & KETI',
+      date:'2026년 5월 19일–20일', time:'종일', location:'온라인',
+      start_date:'2026-05-19', end_date:'2026-05-20', deadline:'2026-05-12',
+      external_url:'#', participants:88, max:200,
+      event_type:'hackathon', type:'해커톤', source:'official',
+      img:'https://images.unsplash.com/photo-1753039495488-434a2fe53e41?w=600'
+    },
+    {
+      title:'드론 기술 세미나', organizer:'드론산업진흥협회',
+      date:'2026년 5월 28일', time:'10:00–12:00', location:'온라인 웨비나',
+      start_date:'2026-05-28', end_date:'2026-05-28', deadline:'2026-05-25',
+      external_url:'#', participants:210, max:500,
+      event_type:'conference', type:'컨퍼런스·세미나', source:'official',
+      img:'https://images.unsplash.com/photo-1473968512647-3e447244af8f?w=600'
+    },
+    {
+      title:'PyCon Korea 2026', organizer:'Python Korea',
+      date:'2026년 6월 1일–2일', time:'09:00–18:00', location:'코엑스 그랜드볼룸',
+      start_date:'2026-06-01', end_date:'2026-06-02', deadline:'2026-05-20',
+      external_url:'#', participants:350, max:600,
+      event_type:'conference', type:'컨퍼런스·세미나', source:'reported',
+      img:'https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=600'
+    },
   ];
-  var typeColors = { 워크숍:'primary', 밋업:'success', 해커톤:'danger', 웨비나:'info' };
-  $('#events-grid').html(events.map(function(e){
-    var pct = Math.round(e.participants/e.max*100);
+
+  var today = new Date(new Date().toDateString());
+
+  /* ── source 뱃지 공통 ────────────────────────────────────── */
+  function sourceBadgeHtml(source) {
+    return source === 'official'
+      ? '<span class="badge bg-white text-primary border" style="border-color:#bfdbfe!important;font-weight:500;">공식</span>'
+      : '<span class="badge bg-white text-success border" style="border-color:#bbf7d0!important;font-weight:500;">제보</span>';
+  }
+
+  /* ── ISO 날짜 → 한국어 표기 ──────────────────────────────── */
+  function fmtDate(iso) {
+    if (!iso) return '';
+    var d = new Date(iso);
+    return d.getFullYear() + '년 ' + (d.getMonth() + 1) + '월 ' + d.getDate() + '일';
+  }
+
+  /* ── 진행중 카드 ─────────────────────────────────────────── */
+  function ongoingCardHtml(e) {
+    var deadlineRow = e.deadline
+      ? '<div class="small text-muted mb-1"><i class="fa-regular fa-clock"></i>접수 마감 ' + fmtDate(e.deadline) + '</div>'
+      : '';
     return '<div class="col-md-6 col-lg-4">'
-      +'<div class="card border-0 shadow events-card h-100">'
-      +'<div class="position-relative">'
-      +'<img src="'+e.img+'" class="card-img-top" alt="">'
-      +'<div class="position-absolute top-0 start-0 m-2 d-flex flex-wrap gap-1">'
-      +'<span class="badge event-badge-type">'+e.type+'</span>'
-      +'<span class="badge bg-success">'+e.status+'</span>'
-      +'</div>'
-      +'</div>'
-      +'<div class="card-body p-4">'
-      +'<h6 class="fw-bold mb-3">'+e.title+'</h6>'
-      +'<div class="small text-muted mb-1"><i class="fa-regular fa-calendar"></i>'+e.date+'</div>'
-      +'<div class="small text-muted mb-1"><i class="fa-regular fa-clock"></i>'+e.time+'</div>'
-      +'<div class="small text-muted mb-3"><i class="fa-solid fa-location-dot"></i>'+e.location+'</div>'
-      +'<div class="d-flex justify-content-between small text-muted mb-1"><span>참가 현황</span><span>'+e.participants+'/'+e.max+'명</span></div>'
-      +'<div class="progress event-progress"><div class="progress-bar bg-primary" style="width:'+pct+'%"></div></div>'
-      +'</div>'
-      +'<div class="card-footer border-0 px-4 pb-4 pt-0">'
-      +'<button class="btn btn-primary btn-sm w-100">신청하기</button>'
-      +'</div>'
-      +'</div>'
-      +'</div>';
-  }).join(''));
+      + '<div class="card border-0 shadow events-card h-100">'
+      + '<div class="position-relative">'
+      + '<img src="' + e.img + '" class="card-img-top" alt="">'
+      + '<div class="position-absolute top-0 start-0 m-2 d-flex flex-wrap gap-1">'
+      + '<span class="badge bg-success">진행중</span>'
+      + '<span class="badge event-badge-type">' + e.type + '</span>'
+      + '</div>'
+      + '<div class="position-absolute top-0 end-0 m-2">' + sourceBadgeHtml(e.source) + '</div>'
+      + '</div>'
+      + '<div class="card-body p-4">'
+      + '<h6 class="fw-bold mb-1">' + e.title + '</h6>'
+      + '<p class="small text-muted mb-3">' + e.organizer + '</p>'
+      + '<div class="small text-muted mb-1"><i class="fa-regular fa-calendar"></i>' + e.date + '</div>'
+      + deadlineRow
+      + '<div class="small text-muted mb-0"><i class="fa-solid fa-location-dot"></i>' + e.location + '</div>'
+      + '</div>'
+      + '<div class="card-footer border-0 px-4 pb-4 pt-0">'
+      + '<a href="' + e.external_url + '" target="_blank" rel="noopener" class="btn btn-success btn-sm w-100">자세히 보기</a>'
+      + '</div>'
+      + '</div>'
+      + '</div>';
+  }
+
+  /* ── 다가오는 카드 ───────────────────────────────────────── */
+  function upcomingCardHtml(e) {
+    var pct = Math.round(e.participants / e.max * 100);
+    return '<div class="col-md-6 col-lg-4">'
+      + '<div class="card border-0 shadow events-card h-100">'
+      + '<div class="position-relative">'
+      + '<img src="' + e.img + '" class="card-img-top" alt="">'
+      + '<div class="position-absolute top-0 start-0 m-2 d-flex flex-wrap gap-1">'
+      + '<span class="badge event-badge-type">' + e.type + '</span>'
+      + '<span class="badge bg-warning text-dark">모집중</span>'
+      + '</div>'
+      + '<div class="position-absolute top-0 end-0 m-2">' + sourceBadgeHtml(e.source) + '</div>'
+      + '</div>'
+      + '<div class="card-body p-4">'
+      + '<h6 class="fw-bold mb-3">' + e.title + '</h6>'
+      + '<div class="small text-muted mb-1"><i class="fa-regular fa-calendar"></i>' + e.date + '</div>'
+      + '<div class="small text-muted mb-1"><i class="fa-regular fa-clock"></i>' + e.time + '</div>'
+      + '<div class="small text-muted mb-3"><i class="fa-solid fa-location-dot"></i>' + e.location + '</div>'
+      + '<div class="d-flex justify-content-between small text-muted mb-1"><span>참가 현황</span><span>' + e.participants + '/' + e.max + '명</span></div>'
+      + '<div class="progress event-progress"><div class="progress-bar bg-primary" style="width:' + pct + '%"></div></div>'
+      + '</div>'
+      + '<div class="card-footer border-0 px-4 pb-4 pt-0">'
+      + '<button class="btn btn-primary btn-sm w-100">신청하기</button>'
+      + '</div>'
+      + '</div>'
+      + '</div>';
+  }
+
+  /* ── 진행중 렌더링 ───────────────────────────────────────── */
+  function renderOngoing(filterType) {
+    var filtered = events.filter(function (e) {
+      var s = new Date(e.start_date), d = new Date(e.end_date);
+      return s <= today && today <= d;
+    });
+    if (filterType !== 'all') {
+      filtered = filtered.filter(function (e) { return e.event_type === filterType; });
+    }
+    if (filtered.length === 0) {
+      $('#ongoing-section').hide();
+      return;
+    }
+    $('#ongoing-section').show();
+    $('#ongoing-grid').html(filtered.map(ongoingCardHtml).join(''));
+  }
+
+  /* ── 다가오는 렌더링 ─────────────────────────────────────── */
+  function renderEvents(filterType) {
+    var filtered = events.filter(function (e) { return new Date(e.start_date) > today; });
+    if (filterType !== 'all') {
+      filtered = filtered.filter(function (e) { return e.event_type === filterType; });
+    }
+    if (filtered.length === 0) {
+      $('#events-grid').html('<div class="col-12 text-center text-muted py-5 small">해당 유형의 이벤트가 없습니다.</div>');
+      return;
+    }
+    $('#events-grid').html(filtered.map(upcomingCardHtml).join(''));
+  }
+
+  renderOngoing('all');
+  renderEvents('all');
+
+  /* ── 유형 필터 탭 ────────────────────────────────────────── */
+  $(document).on('click', '#event-filter-tabs .filter-tab-btn', function () {
+    $('#event-filter-tabs .filter-tab-btn')
+      .removeClass('btn-primary').addClass('btn-outline-secondary');
+    $(this).removeClass('btn-outline-secondary').addClass('btn-primary');
+    var ft = $(this).data('filter');
+    renderOngoing(ft);
+    renderEvents(ft);
+  });
+
+  /* ── 이벤트 제보하기 버튼 ────────────────────────────────── */
+  $('#btn-report-event').on('click', function () {
+    Auth.requireLogin(function () {
+      // 폼 초기화
+      document.getElementById('report-event-form').reset();
+      $('#report-event-form').removeClass('d-none');
+      $('#report-success').addClass('d-none');
+      $('#rep-img-preview').addClass('d-none');
+      $('#rep-desc-count').text('0');
+      $('.rep-type-btn').removeClass('btn-primary text-white').addClass('btn-outline-secondary');
+      $('#rep-submit-btn').removeClass('d-none');
+      $('#rep-cancel-btn').text('취소').attr('data-bs-dismiss', 'modal');
+      bootstrap.Modal.getOrCreateInstance(document.getElementById('reportEventModal')).show();
+    });
+  });
+
+  /* ── 제보 모달: 유형 버튼 선택 ──────────────────────────── */
+  $(document).on('click', '.rep-type-btn', function () {
+    $('.rep-type-btn').removeClass('btn-primary text-white').addClass('btn-outline-secondary');
+    $(this).removeClass('btn-outline-secondary').addClass('btn-primary text-white');
+    $(this).find('input[type="radio"]').prop('checked', true);
+  });
+
+  /* ── 제보 모달: 소개 글자 수 ─────────────────────────────── */
+  $(document).on('input', '#rep-desc', function () {
+    $('#rep-desc-count').text($(this).val().length);
+  });
+
+  /* ── 제보 모달: 이미지 미리보기 ─────────────────────────── */
+  $(document).on('change', '#rep-image', function () {
+    var file = this.files[0];
+    if (!file) { $('#rep-img-preview').addClass('d-none'); return; }
+    var reader = new FileReader();
+    reader.onload = function (ev) {
+      $('#rep-img-thumb').attr('src', ev.target.result);
+      $('#rep-img-preview').removeClass('d-none');
+    };
+    reader.readAsDataURL(file);
+  });
+
+  /* ── 제보 모달: 제출 ─────────────────────────────────────── */
+  $(document).on('click', '#rep-submit-btn', function () {
+    var title     = $.trim($('#rep-title').val());
+    var organizer = $.trim($('#rep-organizer').val());
+    var type      = $('input[name="rep-type"]:checked').val();
+    var startDate = $('#rep-start-date').val();
+    var endDate   = $('#rep-end-date').val();
+    var url       = $.trim($('#rep-url').val());
+
+    var missing = [];
+    if (!title)              missing.push('이벤트명');
+    if (!organizer)          missing.push('주최 기관');
+    if (!type)               missing.push('이벤트 유형');
+    if (!startDate || !endDate) missing.push('행사 일정');
+    if (!url)                missing.push('외부 링크');
+
+    if (missing.length) {
+      alert(missing.join(', ') + ' 항목을 입력해 주세요.');
+      return;
+    }
+
+    // ── AJAX 전송 (ASP 백엔드 연동 시 활성화) ──────────────
+    // var formData = new FormData(document.getElementById('report-event-form'));
+    // formData.append('rep_title', title);
+    // $.ajax({ url:'../asp/event_report.asp', method:'POST', data:formData,
+    //   processData:false, contentType:false,
+    //   success: function(){ showSuccess(); } });
+
+    showRepSuccess();
+  });
+
+  function showRepSuccess() {
+    $('#report-event-form').addClass('d-none');
+    $('#report-success').removeClass('d-none');
+    $('#rep-submit-btn').addClass('d-none');
+    $('#rep-cancel-btn').text('닫기').removeAttr('data-bs-dismiss');
+    $('#rep-cancel-btn').off('click.close').on('click.close', function () {
+      bootstrap.Modal.getInstance(document.getElementById('reportEventModal')).hide();
+    });
+  }
   </script>
+
+  <!-- ── 이벤트 제보하기 모달 ────────────────────────────── -->
+  <div class="modal fade" id="reportEventModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-scrollable">
+      <div class="modal-content rounded-4">
+
+        <div class="modal-header border-0 pb-1 pt-4 px-4">
+          <div>
+            <h5 class="modal-title fw-bold mb-1">이벤트 제보하기</h5>
+            <p class="text-muted small mb-0">알고 있는 외부 이벤트를 커뮤니티에 공유해보세요</p>
+          </div>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+
+        <div class="modal-body px-4 py-3">
+
+          <!-- 제출 완료 안내 (기본 hidden) -->
+          <div id="report-success" class="d-none text-center py-5">
+            <div class="mb-3" style="font-size:2.5rem;line-height:1;">✅</div>
+            <p class="fw-bold mb-1">제보해 주셔서 감사합니다.</p>
+            <p class="text-muted small mb-0">검토 후 게시됩니다. (보통 1~2일 내 처리)</p>
+          </div>
+
+          <!-- 제보 폼 -->
+          <form id="report-event-form" novalidate>
+
+            <!-- 1. 이벤트명 -->
+            <div class="mb-3">
+              <label class="form-label fw-medium">이벤트명 <span class="text-danger">*</span></label>
+              <input type="text" class="form-control" id="rep-title" placeholder="예: PyCon Korea 2025">
+            </div>
+
+            <!-- 2. 주최 기관 -->
+            <div class="mb-3">
+              <label class="form-label fw-medium">주최 기관 / 단체명 <span class="text-danger">*</span></label>
+              <input type="text" class="form-control" id="rep-organizer" placeholder="예: Python Korea">
+            </div>
+
+            <!-- 3. 이벤트 유형 -->
+            <div class="mb-3">
+              <label class="form-label fw-medium">이벤트 유형 <span class="text-danger">*</span></label>
+              <div class="row g-2">
+                <div class="col-6 col-md-4">
+                  <label class="btn btn-outline-secondary w-100 d-flex align-items-center gap-2 rep-type-btn py-2 text-start">
+                    <input type="radio" name="rep-type" value="conference" class="d-none">
+                    <i class="fa-solid fa-chalkboard-user fa-sm text-muted"></i>
+                    <span class="small">컨퍼런스 / 세미나</span>
+                  </label>
+                </div>
+                <div class="col-6 col-md-4">
+                  <label class="btn btn-outline-secondary w-100 d-flex align-items-center gap-2 rep-type-btn py-2 text-start">
+                    <input type="radio" name="rep-type" value="meetup" class="d-none">
+                    <i class="fa-solid fa-people-group fa-sm text-muted"></i>
+                    <span class="small">밋업</span>
+                  </label>
+                </div>
+                <div class="col-6 col-md-4">
+                  <label class="btn btn-outline-secondary w-100 d-flex align-items-center gap-2 rep-type-btn py-2 text-start">
+                    <input type="radio" name="rep-type" value="workshop" class="d-none">
+                    <i class="fa-solid fa-screwdriver-wrench fa-sm text-muted"></i>
+                    <span class="small">워크숍 / 핸즈온</span>
+                  </label>
+                </div>
+                <div class="col-6 col-md-4">
+                  <label class="btn btn-outline-secondary w-100 d-flex align-items-center gap-2 rep-type-btn py-2 text-start">
+                    <input type="radio" name="rep-type" value="hackathon" class="d-none">
+                    <i class="fa-solid fa-code fa-sm text-muted"></i>
+                    <span class="small">해커톤</span>
+                  </label>
+                </div>
+                <div class="col-6 col-md-4">
+                  <label class="btn btn-outline-secondary w-100 d-flex align-items-center gap-2 rep-type-btn py-2 text-start">
+                    <input type="radio" name="rep-type" value="contest" class="d-none">
+                    <i class="fa-solid fa-trophy fa-sm text-muted"></i>
+                    <span class="small">공모전 / 챌린지</span>
+                  </label>
+                </div>
+                <div class="col-6 col-md-4">
+                  <label class="btn btn-outline-secondary w-100 d-flex align-items-center gap-2 rep-type-btn py-2 text-start">
+                    <input type="radio" name="rep-type" value="etc" class="d-none">
+                    <i class="fa-solid fa-ellipsis fa-sm text-muted"></i>
+                    <span class="small">기타</span>
+                  </label>
+                </div>
+              </div>
+            </div>
+
+            <!-- 4. 행사 일정 -->
+            <div class="mb-3">
+              <label class="form-label fw-medium">행사 일정 <span class="text-danger">*</span></label>
+              <div class="d-flex align-items-center gap-2">
+                <input type="date" class="form-control" id="rep-start-date">
+                <span class="text-muted flex-shrink-0">~</span>
+                <input type="date" class="form-control" id="rep-end-date">
+              </div>
+            </div>
+
+            <!-- 5. 접수 마감일 -->
+            <div class="mb-3">
+              <label class="form-label fw-medium">접수 마감일 <span class="text-muted fw-normal small">(선택)</span></label>
+              <input type="date" class="form-control" id="rep-deadline">
+            </div>
+
+            <!-- 6. 행사 장소 -->
+            <div class="mb-3">
+              <label class="form-label fw-medium">행사 장소 <span class="text-muted fw-normal small">(선택)</span></label>
+              <input type="text" class="form-control" id="rep-location" placeholder="예: 온라인 / 서울 강남구">
+            </div>
+
+            <!-- 7. 외부 링크 -->
+            <div class="mb-3">
+              <label class="form-label fw-medium">외부 링크 <span class="text-danger">*</span></label>
+              <input type="url" class="form-control" id="rep-url" placeholder="공식 페이지 또는 접수 링크">
+            </div>
+
+            <!-- 8. 간단한 소개 -->
+            <div class="mb-3">
+              <label class="form-label fw-medium">간단한 소개 <span class="text-muted fw-normal small">(선택, 200자 이내)</span></label>
+              <textarea class="form-control" id="rep-desc" rows="3" maxlength="200"
+                placeholder="이벤트에 대해 간략히 소개해 주세요"></textarea>
+              <div class="form-text text-end"><span id="rep-desc-count">0</span>/200</div>
+            </div>
+
+            <!-- 9. 이미지 첨부 -->
+            <div class="mb-1">
+              <label class="form-label fw-medium">이미지 첨부 <span class="text-muted fw-normal small">(선택)</span></label>
+              <input type="file" class="form-control" id="rep-image" accept="image/*">
+              <div id="rep-img-preview" class="mt-2 d-none">
+                <img id="rep-img-thumb" src="" alt="" class="rounded"
+                  style="max-height:120px;max-width:100%;object-fit:cover;">
+              </div>
+            </div>
+
+          </form>
+        </div><!-- /modal-body -->
+
+        <div class="modal-footer border-0 px-4 pb-4 pt-2">
+          <button type="button" class="btn btn-light" id="rep-cancel-btn" data-bs-dismiss="modal">취소</button>
+          <button type="button" class="btn btn-primary px-4" id="rep-submit-btn">제보 등록</button>
+        </div>
+
+      </div>
+    </div>
+  </div><!-- /reportEventModal -->
+
 </body>
 </html>

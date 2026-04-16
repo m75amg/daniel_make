@@ -25,7 +25,14 @@
         <div class="d-flex align-items-center gap-3">
           <a href="login.html"   class="text-secondary text-decoration-none small header-toplink auth-loggedout-only">로그인</a>
           <a href="signup.html"  class="text-secondary text-decoration-none small header-toplink auth-loggedout-only">회원가입</a>
-          <a href="support.html" class="text-secondary text-decoration-none small header-toplink">고객센터</a>
+          <div class="dropdown d-inline-block">
+          <a href="#" class="text-secondary text-decoration-none small header-toplink dropdown-toggle"
+             data-bs-toggle="dropdown" aria-expanded="false">고객센터</a>
+          <ul class="dropdown-menu shadow-sm border-0 py-1" style="min-width:9rem;">
+            <li><a class="dropdown-item small" href="faq.html">자주 묻는 질문</a></li>
+            <li><a class="dropdown-item small" href="contact.html">문의하기</a></li>
+          </ul>
+        </div>
           <a href="#"            class="text-secondary text-decoration-none small header-toplink">홈사이트</a>
         </div>
       </div>
@@ -209,6 +216,20 @@
               </div>
             </div>
 
+            <div id="f-category-detail-wrap" class="mb-3 d-none">
+              <label class="form-label fw-medium">어떤 분야인가요?</label>
+              <input type="text" class="form-control" id="f-category-detail"
+                name="category_detail" placeholder="예: 바이오센서, 우주공학 등">
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label fw-medium">태그 <span class="text-muted fw-normal">(선택, 최대 5개)</span></label>
+              <input type="text" class="form-control mb-2" id="cat-tag-input"
+                placeholder="예: ESP32, MQTT, 실시간감지" maxlength="20">
+              <div id="cat-tag-list" class="d-flex flex-wrap gap-2 mb-1"></div>
+              <div class="form-text">Enter 또는 쉼표(,)로 추가 · 최대 5개 · 태그당 최대 20자</div>
+            </div>
+
             <div class="mb-3">
               <label class="form-label fw-medium">프로젝트 설명 <span class="text-danger">*</span></label>
               <textarea class="form-control" id="f-description" rows="6" oninput="syncCheck()"
@@ -276,21 +297,6 @@
             </div>
           </div>
 
-          <!-- 4. 태그 -->
-          <div class="card form-card p-4 mb-4">
-            <div class="d-flex align-items-center gap-3 mb-4">
-              <div class="section-icon section-icon-green"><i class="fa-regular fa-tag"></i></div>
-              <div><div class="fw-bold form-section-title">태그</div><div class="small text-muted">프로젝트 검색을 위한 태그를 추가하세요</div></div>
-            </div>
-            <div class="input-group mb-3">
-              <input type="text" class="form-control" id="tag-input" placeholder="태그 입력 후 추가 버튼 클릭">
-              <button class="btn btn-outline-secondary" type="button" onclick="addChip('tag')">추가</button>
-            </div>
-            <div id="tag-list" class="d-flex flex-wrap gap-2 mb-3"></div>
-            <div class="bg-light rounded p-2">
-              <span class="small text-muted"><strong>추천 태그:</strong> Arduino, ESP32, Raspberry Pi, 센서, AI, 딥러닝, IoT, 자동화</span>
-            </div>
-          </div>
 
           <!-- 5. 관련 링크 -->
           <div class="card form-card p-4 mb-4">
@@ -557,17 +563,21 @@
         <div class="d-flex flex-wrap align-items-center gap-2 small">
           <a href="support.html"  class="footer-link text-secondary text-decoration-none">e4ds 소개</a>
           <span class="text-muted">|</span>
-          <a href="notices.html"  class="footer-link text-secondary text-decoration-none">개인정보처리방침</a>
+          <a href="#" class="footer-link text-secondary text-decoration-none">개인정보처리방침</a>
           <span class="text-muted">|</span>
-          <a href="faq.html"      class="footer-link text-secondary text-decoration-none">이용약관</a>
+          <a href="#" class="footer-link text-secondary text-decoration-none">이용약관</a>
           <span class="text-muted">|</span>
-          <a href="contact.html"  class="footer-link text-secondary text-decoration-none">청소년보호정책</a>
+          <a href="#" class="footer-link text-secondary text-decoration-none">청소년보호정책</a>
           <span class="text-muted">|</span>
           <a href="careers.html"  class="footer-link text-secondary text-decoration-none">가족사이트</a>
           <span class="text-muted">|</span>
           <a href="#"             class="footer-link text-secondary text-decoration-none">저작권</a>
           <span class="text-muted">|</span>
           <a href="#"             class="footer-link text-secondary text-decoration-none">e4ds인터내셔널</a>
+          <span class="text-muted">|</span>
+          <a href="faq.html" class="footer-link text-secondary text-decoration-none">자주 묻는 질문</a>
+          <span class="text-muted">|</span>
+          <a href="contact.html" class="footer-link text-secondary text-decoration-none">문의하기</a>
         </div>
       </div>
 
@@ -607,6 +617,7 @@
       title    : $.trim($('#f-title').val()),
       subtitle : $.trim($('#f-subtitle').val()),
       category : $('#f-category').val(),
+      category_detail: $.trim($('#f-category-detail').val()),
       difficulty: $('#f-difficulty').val(),
       description: $.trim($('#f-description').val()),
       goal     : $.trim($('#f-goal').val()),
@@ -673,14 +684,15 @@
      CHIPS (hw / sw / tag)
   ══════════════════════════════════════════════════════════ */
   function addChip(type) {
-    var inputId = type === 'hw' ? '#hw-input' : (type === 'sw' ? '#sw-input' : '#tag-input');
-    var containerId = type === 'hw' ? '#hw-tags' : (type === 'sw' ? '#sw-tags' : '#tag-list');
+    var inputId = type === 'hw' ? '#hw-input' : (type === 'sw' ? '#sw-input' : '#cat-tag-input');
+    var containerId = type === 'hw' ? '#hw-tags' : (type === 'sw' ? '#sw-tags' : '#cat-tag-list');
     var arr = type === 'hw' ? hwItems : (type === 'sw' ? swItems : tagItems);
     var colorClass = type === 'hw' ? 'chip-purple' : (type === 'sw' ? 'chip-blue' : 'chip-green');
-    var prefix = type === 'tag' ? '#' : '';
+    var prefix = '';
 
     var val = $.trim($(inputId).val());
     if (!val || arr.indexOf(val) !== -1) return;
+    if (type === 'tag' && (val.length > 20 || arr.length >= 5)) return;
 
     arr.push(val);
     var html = '<span class="chip ' + colorClass + '" data-type="' + type + '" data-val="' + esc(val) + '">'
@@ -706,7 +718,15 @@
   // Enter 키 지원
   $('#hw-input').on('keydown', function(e)  { if (e.key==='Enter'){e.preventDefault();addChip('hw');} });
   $('#sw-input').on('keydown', function(e)  { if (e.key==='Enter'){e.preventDefault();addChip('sw');} });
-  $('#tag-input').on('keydown', function(e) { if (e.key==='Enter'){e.preventDefault();addChip('tag');} });
+  $('#cat-tag-input').on('keydown', function(e) {
+    if (e.key === 'Enter' || e.key === ',') { e.preventDefault(); addChip('tag'); }
+  });
+  // 카테고리 "기타" 선택 시 상세 입력 토글
+  $('#f-category').on('change', function() {
+    var isEtc = $(this).val() === '기타';
+    $('#f-category-detail-wrap').toggleClass('d-none', !isEtc);
+    if (!isEtc) $('#f-category-detail').val('');
+  });
 
   /* ══════════════════════════════════════════════════════════
      LINKS

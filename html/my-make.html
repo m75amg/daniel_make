@@ -30,7 +30,14 @@
               class="text-secondary text-decoration-none small header-toplink auth-loggedout-only">로그인</a>
             <a href="signup.html"
               class="text-secondary text-decoration-none small header-toplink auth-loggedout-only">회원가입</a>
-            <a href="support.html" class="text-secondary text-decoration-none small header-toplink">고객센터</a>
+            <div class="dropdown d-inline-block">
+          <a href="#" class="text-secondary text-decoration-none small header-toplink dropdown-toggle"
+             data-bs-toggle="dropdown" aria-expanded="false">고객센터</a>
+          <ul class="dropdown-menu shadow-sm border-0 py-1" style="min-width:9rem;">
+            <li><a class="dropdown-item small" href="faq.html">자주 묻는 질문</a></li>
+            <li><a class="dropdown-item small" href="contact.html">문의하기</a></li>
+          </ul>
+        </div>
             <a href="#" class="text-secondary text-decoration-none small header-toplink">홈사이트</a>
           </div>
         </div>
@@ -758,17 +765,21 @@
           <div class="d-flex flex-wrap align-items-center gap-2 small">
             <a href="support.html" class="footer-link text-secondary text-decoration-none">e4ds 소개</a>
             <span class="text-muted">|</span>
-            <a href="notices.html" class="footer-link text-secondary text-decoration-none">개인정보처리방침</a>
+            <a href="#" class="footer-link text-secondary text-decoration-none">개인정보처리방침</a>
             <span class="text-muted">|</span>
-            <a href="faq.html" class="footer-link text-secondary text-decoration-none">이용약관</a>
+            <a href="#" class="footer-link text-secondary text-decoration-none">이용약관</a>
             <span class="text-muted">|</span>
-            <a href="contact.html" class="footer-link text-secondary text-decoration-none">청소년보호정책</a>
+            <a href="#" class="footer-link text-secondary text-decoration-none">청소년보호정책</a>
             <span class="text-muted">|</span>
             <a href="careers.html" class="footer-link text-secondary text-decoration-none">가족사이트</a>
             <span class="text-muted">|</span>
             <a href="#" class="footer-link text-secondary text-decoration-none">저작권</a>
             <span class="text-muted">|</span>
             <a href="#" class="footer-link text-secondary text-decoration-none">e4ds인터내셔널</a>
+          <span class="text-muted">|</span>
+          <a href="faq.html" class="footer-link text-secondary text-decoration-none">자주 묻는 질문</a>
+          <span class="text-muted">|</span>
+          <a href="contact.html" class="footer-link text-secondary text-decoration-none">문의하기</a>
           </div>
         </div>
 
@@ -1174,12 +1185,12 @@
         + '<div class="rounded-2 d-flex align-items-center justify-content-center text-white flex-shrink-0 fs-6" style="width:40px;height:40px;background:' + accentColor + ';"><i class="' + iconCls + '"></i></div>'
         + '<div><h6 class="fw-bold mb-1">연결된 프로젝트</h6><p class="text-muted small mb-0">내 프로젝트를 선택하면 자동으로 연결됩니다</p></div>'
         + '</div>'
-        + '<select class="form-select form-select-sm mb-3" style="border:2px solid #bfdbfe;">'
-        + '<option value="">내 프로젝트 선택 (선택사항)</option>'
-        + '<option>AI 음성인식 자율주행 로봇</option>'
-        + '<option>오픈소스 자율주행 로봇</option>'
-        + '<option>ESP32 기반 스마트 화분</option>'
-        + '<option>3D 프린터 자동 레벨링</option>'
+        + '<select class="form-select form-select-sm mb-3 qa-project-select" style="border:2px solid #bfdbfe;">'
+        + '<option value="" data-type="">내 프로젝트 선택 (선택사항)</option>'
+        + '<option value="1" data-type="contest">AI 음성인식 자율주행 로봇</option>'
+        + '<option value="2" data-type="contest">오픈소스 자율주행 로봇</option>'
+        + '<option value="3" data-type="personal">ESP32 기반 스마트 화분</option>'
+        + '<option value="4" data-type="personal">3D 프린터 자동 레벨링</option>'
         + '</select>'
         + '<div class="bg-white rounded-3 p-3">'
         + '<div class="d-flex align-items-center gap-2 pb-2"><i class="bi bi-folder2-open text-secondary"></i>'
@@ -1192,7 +1203,7 @@
     function qaTypeGrid(items) {
       return '<div class="row g-2">'
         + items.map(function (t) {
-          return '<div class="col-6"><button class="btn qa-type-btn rounded-3 w-100 p-3 text-start" data-val="' + t.v + '">'
+          return '<div class="col-6"><button class="btn qa-type-btn rounded-3 w-100 p-3 text-start" data-val="' + t.v + '"' + (t.toggle ? ' data-role="submission-toggle"' : '') + '>'
             + '<i class="' + t.icon + ' d-block mb-1 fs-5 text-secondary qa-icon"></i>'
             + '<span class="fw-semibold small" style="color:#111;">' + t.l + '</span>'
             + '</button></div>';
@@ -1221,6 +1232,61 @@
             + (b.sub ? '<p class="mb-0" style="font-size:.72rem;color:#9ca3af;">' + b.sub + '</p>' : '')
             + '</button></div>';
         }).join('')
+        + '</div>';
+    }
+
+    function qaProgressAttachHtml() {
+      return '<input type="file" class="progress-img-input d-none" accept="image/*" multiple>'
+        + '<input type="file" class="progress-vid-input d-none" accept="video/*">'
+        + '<div class="row g-2 mb-3">'
+        + '<div class="col-4"><button type="button" class="btn attach-btn-dashed w-100 p-3 text-center rounded-3" data-attach="image">'
+        + '<i class="bi bi-image d-block fs-4 mb-1"></i>'
+        + '<p class="small fw-medium mb-0 attach-title">이미지</p>'
+        + '<p class="mb-0 attach-caption">사진 첨부</p></button></div>'
+        + '<div class="col-4"><button type="button" class="btn attach-btn-dashed w-100 p-3 text-center rounded-3" data-attach="video">'
+        + '<i class="bi bi-camera-video d-block fs-4 mb-1"></i>'
+        + '<p class="small fw-medium mb-0 attach-title">영상</p>'
+        + '<p class="mb-0 attach-caption">동작 영상</p></button></div>'
+        + '<div class="col-4"><button type="button" class="btn attach-btn-dashed w-100 p-3 text-center rounded-3" data-attach="link">'
+        + '<i class="bi bi-link-45deg d-block fs-4 mb-1"></i>'
+        + '<p class="small fw-medium mb-0 attach-title">링크</p>'
+        + '<p class="mb-0 attach-caption">외부 링크</p></button></div>'
+        + '</div>'
+        + '<div class="progress-img-preview d-flex flex-wrap gap-2 mb-2 d-none"></div>'
+        + '<div class="progress-vid-preview d-flex flex-column gap-1 mb-2 d-none"></div>'
+        + '<div class="progress-link-inputs d-flex flex-column gap-2">'
+        + '<input type="url" class="form-control form-control-sm" placeholder="GitHub 커밋 링크">'
+        + '<input type="url" class="form-control form-control-sm" placeholder="YouTube 데모 영상">'
+        + '</div>';
+    }
+
+    function resInputHtml(type) {
+      var row = '<tr>'
+        + '<td><input type="text" class="form-control form-control-sm" placeholder="부품명"></td>'
+        + '<td><input type="number" class="form-control form-control-sm" placeholder="1" min="1"></td>'
+        + '<td><input type="number" class="form-control form-control-sm" placeholder="0" min="0"></td>'
+        + '<td><input type="text" class="form-control form-control-sm" placeholder="구매처"></td>'
+        + '<td class="text-center align-middle"><button type="button" class="btn btn-sm btn-outline-danger py-0 px-1 parts-del-row"><i class="bi bi-x"></i></button></td>'
+        + '</tr>';
+      var partsTable = '<div class="table-responsive"><table class="table table-sm table-bordered parts-table mb-2">'
+        + '<thead class="table-light"><tr><th class="small">부품명</th><th class="small">수량</th><th class="small">단가(원)</th><th class="small">구매처</th><th style="width:36px;"></th></tr></thead>'
+        + '<tbody>' + row + '</tbody></table></div>'
+        + '<button type="button" class="btn btn-sm btn-outline-secondary w-100 parts-add-row"><i class="bi bi-plus me-1"></i>행 추가</button>';
+      var map = {
+        code:     { pri: '<label class="fw-semibold small d-block mb-2">GitHub 저장소 URL <span class="text-danger">*</span></label><input type="url" class="form-control" placeholder="https://github.com/username/repo">', secLabel: '.zip 파일로 업로드', sec: '<label class="fw-semibold small d-block mb-2">.zip 파일 업로드</label><input type="file" class="form-control" accept=".zip">' },
+        circuit:  { pri: '<label class="fw-semibold small d-block mb-2">파일 업로드 (.pdf, .png, .sch) <span class="text-danger">*</span></label><input type="file" class="form-control" accept=".pdf,.png,.sch,.svg,.jpg">', secLabel: 'URL로 입력', sec: '<label class="fw-semibold small d-block mb-2">회로/설계도 URL</label><input type="url" class="form-control" placeholder="https://">' },
+        document: { pri: '<label class="fw-semibold small d-block mb-2">파일 업로드 (.pdf, .pptx) <span class="text-danger">*</span></label><input type="file" class="form-control" accept=".pdf,.pptx,.ppt">', secLabel: 'Google Slides 등 URL로 입력', sec: '<label class="fw-semibold small d-block mb-2">프레젠테이션 URL</label><input type="url" class="form-control" placeholder="https://docs.google.com/presentation/...">' },
+        tutorial: { pri: '<label class="fw-semibold small d-block mb-2">튜토리얼 내용 직접 작성 <span class="text-danger">*</span></label><textarea class="form-control" rows="8" placeholder="단계별 방법을 순서대로 입력하세요..."></textarea>', secLabel: 'URL로 입력', sec: '<label class="fw-semibold small d-block mb-2">튜토리얼 URL</label><input type="url" class="form-control" placeholder="https://">' },
+        dataset:  { pri: '<label class="fw-semibold small d-block mb-2">파일 업로드 (.csv, .xlsx) <span class="text-danger">*</span></label><input type="file" class="form-control" accept=".csv,.xlsx,.xls">', secLabel: 'Google Sheets URL로 입력', sec: '<label class="fw-semibold small d-block mb-2">Google Sheets URL</label><input type="url" class="form-control" placeholder="https://docs.google.com/spreadsheets/...">' },
+        parts:    { pri: '<label class="fw-semibold small d-block mb-2">부품/예산 직접 입력 <span class="text-danger">*</span></label>' + partsTable, secLabel: '.xlsx 파일로 업로드', sec: '<label class="fw-semibold small d-block mb-2">엑셀 파일 (.xlsx)</label><input type="file" class="form-control" accept=".xlsx,.xls">' }
+      };
+      var c = map[type];
+      if (!c) return '';
+      return '<div class="d-flex flex-column gap-3 rounded-3 p-3" style="background:#fff7ed;border:1px solid #fed7aa;">'
+        + '<div class="res-primary-area">' + c.pri + '</div>'
+        + '<div><button type="button" class="btn btn-sm btn-link p-0 text-secondary res-secondary-toggle" style="text-decoration:none;font-size:.8rem;">'
+        + '<i class="bi bi-plus-circle me-1"></i>또는 ' + c.secLabel + '</button>'
+        + '<div class="res-secondary-area d-none mt-2">' + c.sec + '</div></div>'
         + '</div>';
     }
 
@@ -1253,7 +1319,7 @@
               { v: 'technical', l: '기술 문제', icon: 'bi-code-slash' },
               { v: 'implementation', l: '구현 방법', icon: 'bi-bullseye' },
               { v: 'design', l: '설계 고민', icon: 'bi-lightbulb' },
-              { v: 'submission', l: '제출 관련', icon: 'bi-file-text' },
+              { v: 'etc', l: '기타사항', icon: 'bi-file-text', toggle: true },
               { v: 'feedback', l: '피드백 요청', icon: 'bi-chat-dots' },
             ]))
             + '<div class="d-flex flex-column" style="gap:1rem;">'
@@ -1287,12 +1353,7 @@
             + qaField('3. 막힌 점 또는 고민이 있나요?', false, '<textarea class="form-control" rows="3" placeholder="예: 배터리로 동작시킬 때 전력 소모가 크고, 센서 값이 가끔 튀는 현상이 있습니다. Deep Sleep 모드 적용을 고민 중입니다."></textarea>')
             + qaField('4. 다음에 할 일은 무엇인가요?', true, '<textarea class="form-control" rows="4" placeholder="예:&#10;- Deep Sleep 모드 구현으로 전력 최적화&#10;- 센서 값 필터링 알고리즘 추가&#10;- 웹 대시보드에서 데이터 시각화"></textarea>')
             + '</div>'
-            + qaField('이미지 / 영상 / 링크 첨부', false,
-              qaAttachBtns([{ icon: 'bi-image', l: '이미지', sub: '사진 첨부' }, { icon: 'bi-camera-video', l: '영상', sub: '동작 영상' }, { icon: 'bi-link-45deg', l: '링크', sub: '외부 링크' }])
-              + '<div class="d-flex flex-column gap-2">'
-              + '<input type="url" class="form-control form-control-sm" placeholder="GitHub 커밋 링크">'
-              + '<input type="url" class="form-control form-control-sm" placeholder="YouTube 데모 영상">'
-              + '</div>')
+            + qaField('이미지 / 영상 / 링크 첨부', false, qaProgressAttachHtml())
             + '</div>';
         }
       },
@@ -1332,46 +1393,26 @@
       resource: {
         title: '자료 공유하기', subtitle: '커뮤니티에 유용한 자료를 공유합니다', submitLabel: '자료 공유', submitBg: '#ea580c',
         body: function () {
-          var questHtml = [
-            { v: 1, l: 'Quest 1: 기획/설계' }, { v: 2, l: 'Quest 2: 프로토타입' }, { v: 3, l: 'Quest 3: 최종 완성' }
-          ].map(function (q) {
-            return '<button class="btn qa-quest-btn d-flex align-items-center gap-3 w-100 p-3 rounded-3 text-start mb-2" data-val="' + q.v + '">'
-              + '<div class="quest-check rounded-2 border d-flex align-items-center justify-content-center flex-shrink-0" style="width:20px;height:20px;border-color:#9ca3af;">'
-              + '<i class="bi bi-check quest-check-icon d-none text-white fs-70"></i>'
-              + '</div>'
-              + '<span class="fw-semibold small quest-label">' + q.l + '</span>'
-              + '</button>';
-          }).join('');
           return '<div class="p-5 d-flex flex-column" style="gap:1.5rem;">'
             + projectSelectHtml('#ea580c', 'bi-share-fill', '커뮤니티 자료실에 등록되며, 다른 메이커들에게 도움이 됩니다')
             + qaField('자료 제목', true,
               '<input type="text" class="form-control" placeholder="예: ESP32 MQTT 안정적 연결을 위한 코드 라이브러리">'
               + '<p class="text-muted small mt-1 mb-0">자료의 내용을 명확하게 표현하세요</p>')
             + qaField('자료 유형', true, qaTypeGrid([
-              { v: 'code', l: '코드 라이브러리', icon: 'bi-code-slash' },
+              { v: 'code', l: '소스코드', icon: 'bi-code-slash' },
+              { v: 'circuit', l: '회로/설계도', icon: 'bi-cpu' },
+              { v: 'document', l: '발표/문서', icon: 'bi-file-earmark-slides' },
               { v: 'tutorial', l: '튜토리얼', icon: 'bi-book' },
-              { v: 'design', l: '설계 파일', icon: 'bi-file-earmark-text' },
-              { v: 'video', l: '영상 자료', icon: 'bi-camera-video' },
-              { v: 'data', l: '데이터셋', icon: 'bi-database' },
-              { v: 'etc', l: '기타', icon: 'bi-share' },
+              { v: 'dataset', l: '데이터셋', icon: 'bi-database' },
+              { v: 'parts', l: '부품/예산 정보', icon: 'bi-cart3' },
             ]))
+            + '<div id="res-input-area" class="d-none"></div>'
             + '<div class="d-flex flex-column" style="gap:1rem;">'
             + qaGuideBox('orange', '자료 공유 가이드', '구체적인 사용 방법과 도움이 되는 이유를 작성하면 더 많은 메이커들에게 도움이 됩니다')
             + qaField('1. 자료 설명', true, '<textarea class="form-control" rows="4" placeholder="예: ESP32에서 MQTT 연결이 끊기는 문제를 해결한 안정적인 라이브러리입니다. 자동 재연결, Keep-alive 최적화, 오류 처리 기능이 포함되어 있습니다."></textarea>')
             + qaField('2. 왜 이 자료가 도움이 되나요?', true, '<textarea class="form-control" rows="5" placeholder="예:&#10;- MQTT 연결 안정성 99% 이상 유지&#10;- 네트워크 불안정 환경에서도 자동 복구&#10;- 간단한 API로 5분 안에 적용 가능"></textarea>')
             + qaField('3. 어떤 상황/단계에 유용한가요?', false, '<textarea class="form-control" rows="4" placeholder="예:&#10;- IoT 프로젝트에서 ESP32 사용하시는 분&#10;- MQTT 연결 불안정 문제를 겪고 계신 분&#10;- 실제 배포 환경에서 안정성이 필요하신 분"></textarea>')
             + '</div>'
-            + '<div>'
-            + '<label class="fw-bold small d-block mb-2">4. 유용한 Quest 단계 <span class="text-danger">*</span></label>'
-            + questHtml
-            + '<p class="text-muted small mt-1 mb-0">복수 선택 가능합니다</p></div>'
-            + qaField('파일 또는 링크 첨부', true,
-              qaAttachBtns([{ icon: 'bi-file-earmark', l: '파일 첨부', sub: '코드, 문서 등' }, { icon: 'bi-image', l: '이미지', sub: '설명 이미지' }])
-              + '<div class="d-flex flex-column gap-2">'
-              + '<input type="url" class="form-control form-control-sm" placeholder="GitHub 저장소 링크 *">'
-              + '<input type="url" class="form-control form-control-sm" placeholder="다운로드 링크 또는 참고 문서">'
-              + '<input type="url" class="form-control form-control-sm" placeholder="데모 영상 링크 (선택)">'
-              + '</div>')
             + qaField('라이센스 정보', false,
               '<select class="form-select form-select-sm">'
               + '<option value="">라이센스를 선택하세요</option>'
@@ -1395,23 +1436,116 @@
       document.body.style.overflow = 'hidden';
     };
 
+    /* ── 진행 공유 패널 — 첨부 버튼 ────────────────────────── */
+    $(document).on('click', '#qa-body [data-attach="image"]', function () {
+      $(this).closest('#qa-body').find('.progress-img-input').trigger('click');
+    });
+    $(document).on('click', '#qa-body [data-attach="video"]', function () {
+      $(this).closest('#qa-body').find('.progress-vid-input').trigger('click');
+    });
+    $(document).on('click', '#qa-body [data-attach="link"]', function () {
+      var $inputs = $(this).closest('#qa-body').find('.progress-link-inputs');
+      $inputs.find('input').first().focus();
+      $(this).addClass('attach-selected');
+      $inputs.css({ outline: '2px solid #93c5fd', borderRadius: '8px', padding: '8px' });
+      setTimeout(function () { $inputs.css({ outline: '', borderRadius: '', padding: '' }); }, 1500);
+    });
+    $(document).on('change', '#qa-body .progress-img-input', function () {
+      var $body = $('#qa-body');
+      var files = Array.from(this.files);
+      if (!files.length) return;
+      var $preview = $body.find('.progress-img-preview');
+      $preview.removeClass('d-none');
+      files.forEach(function (file) {
+        var reader = new FileReader();
+        reader.onload = function (e) {
+          var $item = $('<div class="position-relative">'
+            + '<img src="' + e.target.result + '" style="width:72px;height:72px;object-fit:cover;border-radius:8px;border:1px solid #e5e7eb;">'
+            + '<button type="button" class="btn-close position-absolute bg-white rounded-circle" style="top:-6px;right:-6px;font-size:.55rem;width:20px;height:20px;padding:0;border:1px solid #d1d5db;"></button>'
+            + '</div>');
+          $item.find('.btn-close').on('click', function () {
+            $item.remove();
+            if ($preview.children().length === 0) {
+              $preview.addClass('d-none');
+              $body.find('[data-attach="image"]').removeClass('attach-selected');
+            }
+          });
+          $preview.append($item);
+        };
+        reader.readAsDataURL(file);
+      });
+      $body.find('[data-attach="image"]').addClass('attach-selected');
+      this.value = '';
+    });
+    $(document).on('change', '#qa-body .progress-vid-input', function () {
+      var $body = $('#qa-body');
+      var files = Array.from(this.files);
+      if (!files.length) return;
+      var $preview = $body.find('.progress-vid-preview');
+      $preview.removeClass('d-none');
+      files.forEach(function (file) {
+        var size = (file.size / (1024 * 1024)).toFixed(1) + ' MB';
+        var $item = $('<div class="d-flex align-items-center justify-content-between px-3 py-2 rounded-2 mb-1" style="background:#f9fafb;border:1px solid #e5e7eb;">'
+          + '<div class="d-flex align-items-center gap-2 overflow-hidden">'
+          + '<i class="bi bi-camera-video-fill text-primary flex-shrink-0"></i>'
+          + '<span class="small text-truncate">' + $('<span>').text(file.name).html() + '</span>'
+          + '<span style="font-size:.72rem;color:#9ca3af;white-space:nowrap;">(' + size + ')</span>'
+          + '</div>'
+          + '<button type="button" class="btn-close ms-2 flex-shrink-0" style="font-size:.6rem;"></button>'
+          + '</div>');
+        $item.find('.btn-close').on('click', function () {
+          $item.remove();
+          if ($preview.children().length === 0) {
+            $preview.addClass('d-none');
+            $body.find('[data-attach="video"]').removeClass('attach-selected');
+          }
+        });
+        $preview.append($item);
+      });
+      $body.find('[data-attach="video"]').addClass('attach-selected');
+      this.value = '';
+    });
+
+    // 프로젝트 유형에 따라 "제출 관련" / "기타사항" 전환
+    $(document).on('change', '#qa-body .qa-project-select', function () {
+      var isContest = $(this).find(':selected').data('type') === 'contest';
+      var $btn = $('#qa-body [data-role="submission-toggle"]');
+      $btn.attr('data-val', isContest ? 'submission' : 'etc')
+          .find('.fw-semibold').text(isContest ? '제출 관련' : '기타사항');
+    });
+
     // Type buttons (single-select per group)
     $(document).on('click', '.qa-type-btn', function () {
       $(this).closest('.row').find('.qa-type-btn').removeClass('qa-selected').find('.qa-icon').addClass('text-secondary').removeClass('text-primary');
       $(this).addClass('qa-selected').find('.qa-icon').removeClass('text-secondary').addClass('text-primary');
+      // 자료 공유 패널: 유형별 입력 영역 갱신
+      var $inputArea = $('#qa-body #res-input-area');
+      if ($inputArea.length) {
+        $inputArea.html(resInputHtml($(this).data('val'))).removeClass('d-none');
+      }
+    });
+    // 자료 공유 — secondary 토글
+    $(document).on('click', '.res-secondary-toggle', function () {
+      $(this).siblings('.res-secondary-area').toggleClass('d-none');
+      $(this).find('i').toggleClass('bi-plus-circle bi-dash-circle');
+    });
+    // 자료 공유 — 부품/예산 표 행 추가/삭제
+    $(document).on('click', '.parts-add-row', function () {
+      $(this).closest('.res-primary-area').find('.parts-table tbody').append(
+        '<tr><td><input type="text" class="form-control form-control-sm" placeholder="부품명"></td>'
+        + '<td><input type="number" class="form-control form-control-sm" placeholder="1" min="1"></td>'
+        + '<td><input type="number" class="form-control form-control-sm" placeholder="0" min="0"></td>'
+        + '<td><input type="text" class="form-control form-control-sm" placeholder="구매처"></td>'
+        + '<td class="text-center align-middle"><button type="button" class="btn btn-sm btn-outline-danger py-0 px-1 parts-del-row"><i class="bi bi-x"></i></button></td>'
+        + '</tr>');
+    });
+    $(document).on('click', '.parts-del-row', function () {
+      if ($(this).closest('tbody').find('tr').length > 1) $(this).closest('tr').remove();
     });
     // Role buttons (multi-select)
     $(document).on('click', '.qa-role-btn', function () {
       $(this).toggleClass('qa-selected');
       $(this).find('.qa-icon').toggleClass('text-secondary', !$(this).hasClass('qa-selected')).toggleClass('text-success', $(this).hasClass('qa-selected'));
-    });
-    // Quest stage buttons (multi-select)
-    $(document).on('click', '.qa-quest-btn', function () {
-      $(this).toggleClass('qa-selected');
-      var sel = $(this).hasClass('qa-selected');
-      $(this).find('.quest-check').css({ 'background': sel ? '#2563eb' : '', 'border-color': sel ? '#2563eb' : '#9ca3af' });
-      $(this).find('.quest-check-icon').toggleClass('d-none', !sel);
-      $(this).find('.quest-label').css('color', sel ? '#1e40af' : '#111');
     });
 
     // Quick action submit

@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Quest 1 — 프로젝트 기획 및 설계 — e4ds make</title>
+  <title>아이디어 제출 — e4ds make</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
   <link rel="stylesheet" href="assets/css/custom.css">
@@ -24,7 +24,14 @@
         <div class="d-flex align-items-center gap-3">
           <a href="login.html"   class="text-secondary text-decoration-none small header-toplink auth-loggedout-only">로그인</a>
           <a href="signup.html"  class="text-secondary text-decoration-none small header-toplink auth-loggedout-only">회원가입</a>
-          <a href="support.html" class="text-secondary text-decoration-none small header-toplink">고객센터</a>
+          <div class="dropdown d-inline-block">
+          <a href="#" class="text-secondary text-decoration-none small header-toplink dropdown-toggle"
+             data-bs-toggle="dropdown" aria-expanded="false">고객센터</a>
+          <ul class="dropdown-menu shadow-sm border-0 py-1" style="min-width:9rem;">
+            <li><a class="dropdown-item small" href="faq.html">자주 묻는 질문</a></li>
+            <li><a class="dropdown-item small" href="contact.html">문의하기</a></li>
+          </ul>
+        </div>
           <a href="#"            class="text-secondary text-decoration-none small header-toplink">홈사이트</a>
         </div>
       </div>
@@ -141,7 +148,7 @@
           <li class="breadcrumb-item"><a href="index.html" class="text-decoration-none">홈</a></li>
           <li class="breadcrumb-item"><a href="my-make.html" class="text-decoration-none">마이메이크</a></li>
           <li class="breadcrumb-item"><a href="project-detail.html" class="text-decoration-none">AI 음성인식 자율주행 로봇</a></li>
-          <li class="breadcrumb-item active">Quest 1 작성</li>
+          <li class="breadcrumb-item active">아이디어 제출</li>
         </ol></nav>
       </div>
     </div>
@@ -154,11 +161,11 @@
             <i class="fa-regular fa-lightbulb"></i>
           </div>
           <div>
-            <span class="ccp-hero-badge mb-2 d-inline-flex align-items-center gap-1"><i class="fa-regular fa-trophy"></i>Quest 1 에디터</span>
-            <h1 class="fw-bold mb-0 ccp-hero-title">프로젝트 기획 및 설계 단계</h1>
+            <span class="ccp-hero-badge mb-2 d-inline-flex align-items-center gap-1"><i class="fa-regular fa-trophy"></i>아이디어 제출 에디터</span>
+            <h1 class="fw-bold mb-0 ccp-hero-title">아이디어 제출</h1>
           </div>
         </div>
-        <p class="mb-0 ccp-hero-desc"><strong>AI 음성인식 자율주행 로봇</strong> 프로젝트의 Quest 1을 작성합니다. 프로젝트의 목표, 컨셉, 기능, 설계를 명확히 정의하세요.</p>
+        <p class="mb-0 ccp-hero-desc"><strong>AI 음성인식 자율주행 로봇</strong> 프로젝트의 아이디어를 제출합니다. 프로젝트의 목표, 컨셉, 기능, 설계를 명확히 정의하세요.</p>
       </div>
     </section>
 
@@ -174,7 +181,7 @@
               <div class="d-flex gap-4">
                 <div class="rounded-circle bg-primary d-flex align-items-center justify-content-center flex-shrink-0 text-white icon-circle-md"><i class="fa-regular fa-sparkles"></i></div>
                 <div>
-                  <h6 class="fw-bold mb-2">Quest 1: 프로젝트 기획 및 설계</h6>
+                  <h6 class="fw-bold mb-2">아이디어 제출</h6>
                   <ul class="list-unstyled small text-muted mb-0 d-flex flex-column gap-1">
                     <li><i class="fa-regular fa-circle-check me-1"></i><strong>프로젝트 목표와 컨셉을 명확히 정의하세요</strong> — 무엇을 만들고, 왜 만드는지</li>
                     <li><i class="fa-regular fa-circle-check me-1"></i><strong>주요 기능과 특징을 나열하세요</strong> — 어떤 기능을 구현할 것인지</li>
@@ -271,11 +278,11 @@
           <div class="card">
             <div class="card-body d-flex justify-content-between align-items-center">
               <div>
-                <h6 class="fw-bold mb-1">Quest 1 제출 준비</h6>
+                <h6 class="fw-bold mb-1">아이디어 제출 준비</h6>
                 <small class="text-muted" id="submit-hint">필수 항목을 모두 작성해주세요</small>
               </div>
               <button class="btn btn-primary px-4" id="submit-btn" disabled>
-                <i class="fa-regular fa-circle-check me-1"></i>Quest 1 제출
+                <i class="fa-regular fa-circle-check me-1"></i>아이디어 제출
               </button>
             </div>
           </div>
@@ -293,21 +300,21 @@
                   <div class="d-flex gap-3">
                     <div class="rounded-circle bg-primary text-white d-flex align-items-center justify-content-center fw-bold flex-shrink-0 icon-box-32">1</div>
                     <div>
-                      <div class="small fw-semibold text-primary">프로젝트 기획 및 설계</div>
+                      <div class="small fw-semibold text-primary">아이디어 제출</div>
                       <div class="text-muted fs-xs">작성 중 · ~ 2026년 3월 25일</div>
                     </div>
                   </div>
                   <div class="d-flex gap-3">
                     <div class="rounded-circle bg-light text-muted d-flex align-items-center justify-content-center fw-bold flex-shrink-0 icon-box-32">2</div>
                     <div>
-                      <div class="small text-muted">프로토타입 제작</div>
+                      <div class="small text-muted">제작 과정</div>
                       <div class="text-muted fs-xs">대기 중 · ~ 2026년 4월 10일</div>
                     </div>
                   </div>
                   <div class="d-flex gap-3">
                     <div class="rounded-circle bg-light text-muted d-flex align-items-center justify-content-center fw-bold flex-shrink-0 icon-box-32">3</div>
                     <div>
-                      <div class="small text-muted">최종 프로젝트 완성</div>
+                      <div class="small text-muted">최종 제출</div>
                       <div class="text-muted fs-xs">대기 중 · ~ 2026년 4월 25일</div>
                     </div>
                   </div>
@@ -393,17 +400,21 @@
         <div class="d-flex flex-wrap align-items-center gap-2 small">
           <a href="support.html"  class="footer-link text-secondary text-decoration-none">e4ds 소개</a>
           <span class="text-muted">|</span>
-          <a href="notices.html"  class="footer-link text-secondary text-decoration-none">개인정보처리방침</a>
+          <a href="#" class="footer-link text-secondary text-decoration-none">개인정보처리방침</a>
           <span class="text-muted">|</span>
-          <a href="faq.html"      class="footer-link text-secondary text-decoration-none">이용약관</a>
+          <a href="#" class="footer-link text-secondary text-decoration-none">이용약관</a>
           <span class="text-muted">|</span>
-          <a href="contact.html"  class="footer-link text-secondary text-decoration-none">청소년보호정책</a>
+          <a href="#" class="footer-link text-secondary text-decoration-none">청소년보호정책</a>
           <span class="text-muted">|</span>
           <a href="careers.html"  class="footer-link text-secondary text-decoration-none">가족사이트</a>
           <span class="text-muted">|</span>
           <a href="#"             class="footer-link text-secondary text-decoration-none">저작권</a>
           <span class="text-muted">|</span>
           <a href="#"             class="footer-link text-secondary text-decoration-none">e4ds인터내셔널</a>
+          <span class="text-muted">|</span>
+          <a href="faq.html" class="footer-link text-secondary text-decoration-none">자주 묻는 질문</a>
+          <span class="text-muted">|</span>
+          <a href="contact.html" class="footer-link text-secondary text-decoration-none">문의하기</a>
         </div>
       </div>
 
@@ -465,7 +476,7 @@
     }
 
     $('#submit-btn').on('click', function(){
-      if(confirm('Quest 1을 제출하시겠습니까? 제출 후 Quest 2가 활성화됩니다.')) {
+      if(confirm('아이디어를 제출하시겠습니까?')) {
         window.location.href = 'quest2.html';
       }
     });

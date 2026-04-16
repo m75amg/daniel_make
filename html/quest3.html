@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Quest 3 — 최종 프로젝트 완성 — e4ds make</title>
+  <title>최종 제출 — e4ds make</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
     integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
@@ -25,11 +25,17 @@
         <div class="d-flex align-items-center justify-content-between topbar-inner">
           <small class="text-muted" id="header-date"></small>
           <div class="d-flex align-items-center gap-3">
-            <a href="login.html"
-              class="text-secondary text-decoration-none small header-toplink auth-loggedout-only">로그인</a>
-            <a href="signup.html"
-              class="text-secondary text-decoration-none small header-toplink auth-loggedout-only">회원가입</a>
-            <a href="support.html" class="text-secondary text-decoration-none small header-toplink">고객센터</a>
+            <a href="login.html" class="text-secondary text-decoration-none small header-toplink auth-loggedout-only">로그인</a>
+            <a href="signup.html" class="text-secondary text-decoration-none small header-toplink auth-loggedout-only">회원가입</a>
+            <div class="dropdown d-inline-block">
+              <a href="#" class="text-secondary text-decoration-none small header-toplink dropdown-toggle"
+                 data-bs-toggle="dropdown" aria-expanded="false">고객센터</a>
+              <ul class="dropdown-menu shadow-sm border-0 py-1" style="min-width:9rem;">
+                <li><a class="dropdown-item small" href="notices.html">공지사항</a></li>
+                <li><a class="dropdown-item small" href="faq.html">자주 묻는 질문</a></li>
+                <li><a class="dropdown-item small" href="contact.html">문의하기</a></li>
+              </ul>
+            </div>
             <a href="#" class="text-secondary text-decoration-none small header-toplink">홈사이트</a>
           </div>
         </div>
@@ -39,24 +45,16 @@
     <!-- Main Nav -->
     <div class="container-xl">
       <nav class="navbar navbar-expand-lg px-0">
-
-        <!-- Logo -->
         <a class="navbar-brand fw-bold fs-5 me-4" href="index.html">
           <span class="text-dark">e</span><span class="text-warning">4</span><span class="text-dark">ds</span>
           <span class="fw-normal text-secondary ms-1 brand-text">make</span>
         </a>
-
-        <!-- Mobile toggler -->
         <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavCollapse"
           aria-controls="mainNavCollapse" aria-expanded="false" aria-label="메뉴 열기">
           <span class="navbar-toggler-icon"></span>
         </button>
-
         <div class="collapse navbar-collapse" id="mainNavCollapse">
-
-          <!-- Center Links -->
           <ul class="navbar-nav me-auto gap-lg-1">
-
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle fw-medium text-dark" href="#" data-bs-toggle="dropdown">News</a>
               <ul class="dropdown-menu shadow-sm border-0">
@@ -64,17 +62,14 @@
                 <li><a class="dropdown-item" href="notices.html">공지사항</a></li>
               </ul>
             </li>
-
             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle fw-medium text-dark" href="#"
-                data-bs-toggle="dropdown">Technologies</a>
+              <a class="nav-link dropdown-toggle fw-medium text-dark" href="#" data-bs-toggle="dropdown">Technologies</a>
               <ul class="dropdown-menu shadow-sm border-0">
                 <li><a class="dropdown-item" href="#">임베디드</a></li>
                 <li><a class="dropdown-item" href="#">IoT</a></li>
                 <li><a class="dropdown-item" href="#">AI/ML</a></li>
               </ul>
             </li>
-
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle fw-medium text-dark" href="#" data-bs-toggle="dropdown">Industries</a>
               <ul class="dropdown-menu shadow-sm border-0">
@@ -83,14 +78,11 @@
                 <li><a class="dropdown-item" href="#">산업자동화</a></li>
               </ul>
             </li>
-
             <li class="nav-item">
               <a class="nav-link fw-medium text-dark" href="events.html">EEWebinar</a>
             </li>
-
             <li class="nav-item dropdown" id="makers-zone-dropdown">
-              <a class="nav-link dropdown-toggle fw-medium text-dark" href="#" data-bs-toggle="dropdown">Maker's
-                Zone</a>
+              <a class="nav-link dropdown-toggle fw-medium text-dark" href="#" data-bs-toggle="dropdown">Maker's Zone</a>
               <ul class="dropdown-menu shadow-sm border-0">
                 <li><a class="dropdown-item" href="projects.html">프로젝트</a></li>
                 <li><a class="dropdown-item" href="contests.html">콘테스트</a></li>
@@ -99,26 +91,21 @@
               </ul>
             </li>
           </ul>
-
-          <!-- Right Actions -->
           <div class="d-flex align-items-center gap-2 ms-lg-2">
             <button class="btn btn-light btn-sm p-2 rounded-3" id="header-search-btn" title="검색">
               <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
                 stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <circle cx="11" cy="11" r="8" />
-                <line x1="21" y1="21" x2="16.65" y2="16.65" />
+                <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
               </svg>
             </button>
             <button class="btn btn-light btn-sm p-2 rounded-3" id="header-user-btn" title="프로필">
               <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
                 stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
-                <circle cx="12" cy="7" r="4" />
+                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/>
               </svg>
             </button>
           </div>
-
-        </div><!-- /collapse -->
+        </div>
       </nav>
     </div>
 
@@ -126,8 +113,7 @@
     <div id="header-search-bar" class="border-top bg-light d-none">
       <div class="container-xl py-2">
         <form class="d-flex gap-2" id="header-search-form">
-          <input type="search" class="form-control form-control-sm" placeholder="검색어를 입력하세요..."
-            id="header-search-input">
+          <input type="search" class="form-control form-control-sm" placeholder="검색어를 입력하세요..." id="header-search-input">
           <button type="submit" class="btn btn-primary btn-sm px-3">검색</button>
           <button type="button" class="btn btn-light btn-sm" id="header-search-close">닫기</button>
         </form>
@@ -142,9 +128,8 @@
           <ol class="breadcrumb mb-0 small">
             <li class="breadcrumb-item"><a href="index.html" class="text-decoration-none">홈</a></li>
             <li class="breadcrumb-item"><a href="my-make.html" class="text-decoration-none">마이메이크</a></li>
-            <li class="breadcrumb-item"><a href="project-detail.html" class="text-decoration-none">AI 음성인식 자율주행 로봇</a>
-            </li>
-            <li class="breadcrumb-item active">Quest 3 작성</li>
+            <li class="breadcrumb-item"><a href="project-detail.html" class="text-decoration-none">AI 음성인식 자율주행 로봇</a></li>
+            <li class="breadcrumb-item active">최종 제출</li>
           </ol>
         </nav>
       </div>
@@ -158,12 +143,11 @@
             <i class="fa-regular fa-rocket"></i>
           </div>
           <div>
-            <span class="ccp-hero-badge mb-2 d-inline-flex align-items-center gap-1"><i class="fa-regular fa-medal"></i>Quest 3 최종 제출 에디터</span>
-            <h1 class="fw-bold mb-0 ccp-hero-title">최종 프로젝트 완성 및 제출</h1>
+            <span class="ccp-hero-badge mb-2 d-inline-flex align-items-center gap-1"><i class="fa-regular fa-medal"></i>최종 제출 에디터</span>
+            <h1 class="fw-bold mb-0 ccp-hero-title">최종 자료 점검 및 제출</h1>
           </div>
         </div>
-        <p class="mb-0 ccp-hero-desc"><strong>AI 음성인식 자율주행 로봇</strong> 프로젝트의 최종 Quest를 작성합니다. 완성된 프로젝트와 그 성과를 자세히 소개하고,
-          콘테스트에 최종 제출하세요.</p>
+        <p class="mb-0 ccp-hero-desc"><strong>AI 음성인식 자율주행 로봇</strong> — 제출 전 마지막으로 자료를 점검하고 프로젝트를 완성하세요.</p>
       </div>
     </section>
 
@@ -171,205 +155,223 @@
       <div class="row g-4">
         <!-- Main Form -->
         <div class="col-lg-8">
-          <a href="project-detail.html" class="small text-muted text-decoration-none d-inline-block mb-4">← 프로젝트로
-            돌아가기</a>
+          <a href="project-detail.html" class="small text-muted text-decoration-none d-inline-block mb-4">← 프로젝트로 돌아가기</a>
 
-          <!-- Quest 3 안내 -->
-          <div class="card mb-4 card-gradient-amber-fcd34d">
-            <div class="card-body">
-              <div class="d-flex gap-4">
-                <div
-                  class="rounded-circle bg-warning d-flex align-items-center justify-content-center flex-shrink-0 icon-circle-md">
-                  <i class="fa-regular fa-medal"></i></div>
-                <div>
-                  <h6 class="fw-bold mb-2">Quest 3: 최종 프로젝트 완성</h6>
-                  <ul class="list-unstyled small text-muted mb-2 d-flex flex-column gap-1">
-                    <li><i class="fa-regular fa-circle-check me-1"></i><strong>완성된 프로젝트 전체 내용을 작성하세요</strong> — 처음부터 끝까지의 여정</li>
-                    <li><i class="fa-regular fa-circle-check me-1"></i><strong>데모 영상은 필수입니다</strong> — 완성된 동작을 반드시 보여주세요</li>
-                    <li><i class="fa-regular fa-circle-check me-1"></i><strong>프로젝트의 성과와 배운 점을 공유하세요</strong> — 다른 메이커에게 큰 가치가 됩니다</li>
-                    <li><i class="fa-regular fa-circle-check me-1"></i><strong>GitHub 저장소를 공개하면 가점이 있습니다</strong></li>
-                  </ul>
-                  <div class="small text-muted"><i class="fa-regular fa-calendar me-1"></i>마감: 2026년 4월 30일 &nbsp;·&nbsp; <i class="fa-regular fa-trophy me-1"></i>300점</div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- 최종 제작 내용 -->
-          <div class="card mb-4">
-            <div class="card-body">
-              <div class="d-flex align-items-center gap-3 mb-4 pb-3 border-bottom">
-                <div
-                  class="rounded-circle bg-warning bg-opacity-10 d-flex align-items-center justify-content-center icon-box-40">
-                  <i class="fa-regular fa-rocket"></i></div>
-                <div>
-                  <h6 class="fw-bold mb-0">최종 프로젝트 내용</h6><small class="text-muted">완성된 프로젝트를 상세히 작성하세요</small>
-                </div>
-              </div>
-
-              <div class="mb-3">
-                <label class="form-label fw-bold small">Quest 3 세부 제목 <span
-                    class="text-muted fw-normal">(선택)</span></label>
-                <input type="text" class="form-control" id="q3-title" placeholder="예: 최종 완성! AI 음성인식 자율주행 배송 로봇">
-              </div>
-
-              <div class="mb-3">
-                <label class="form-label fw-bold small">최종 프로젝트 내용 <span class="text-danger">*</span></label>
-                <textarea class="form-control font-monospace" id="q3-content" rows="16" placeholder="완성된 프로젝트 전체 내용을 작성하세요:
-
-## 프로젝트 개요
-최종 완성된 프로젝트에 대한 소개
-
-## 구현된 기능
-- 구현한 모든 기능 목록
-
-## 기술 스택
-사용한 하드웨어/소프트웨어 전체 목록
-
-## 제작 과정
-처음부터 끝까지의 제작 여정
-
-## 결과 및 성과
-프로젝트를 통해 달성한 것들
-
-## 배운 점
-이 프로젝트를 통해 얻은 인사이트"></textarea>
-                <small class="text-muted">최소 200자 이상 · 현재: <span id="content-count">0</span>자</small>
-              </div>
-
-              <!-- 이미지 갤러리 -->
-              <div class="mb-3">
-                <label class="form-label fw-bold small">완성 사진/영상 <span class="text-danger">*</span></label>
-                <div class="border rounded-3 p-5 text-center bg-light upload-dashed cursor-pointer"
-                  onclick="$('#final-media').click()">
-                  <div class="fs-3 mb-2"><i class="fa-regular fa-image"></i></div>
-                  <div class="small text-muted mb-1">완성된 프로젝트 사진/영상 업로드</div>
-                  <div class="text-muted fs-xs">PNG, JPG, MP4 (최대 50MB) · 여러 파일 업로드 가능</div>
-                  <input type="file" id="final-media" class="d-none" accept="image/*,video/*" multiple>
-                </div>
-                <div id="media-preview" class="d-flex flex-wrap gap-2 mt-2"></div>
-              </div>
-            </div>
-          </div>
-
-          <!-- 최종 요약 -->
-          <div class="card mb-4">
-            <div class="card-body">
-              <div class="d-flex align-items-center gap-3 mb-4 pb-3 border-bottom">
-                <div
-                  class="rounded-circle bg-success bg-opacity-10 d-flex align-items-center justify-content-center icon-box-40">
-                  <i class="fa-regular fa-star"></i></div>
-                <div>
-                  <h6 class="fw-bold mb-0">프로젝트 최종 요약</h6><small class="text-muted">심사위원과 방문자를 위한 핵심 요약</small>
-                </div>
-              </div>
-
-              <div class="mb-3">
-                <label class="form-label fw-bold small">한 줄 요약 <span class="text-danger">*</span></label>
-                <textarea class="form-control" id="q3-summary" rows="3"
-                  placeholder="이 프로젝트를 한두 문장으로 설명해주세요..."></textarea>
-                <small class="text-muted">최소 50자 이상 · 현재: <span id="summary-count">0</span>자</small>
-              </div>
-
-              <div class="mb-3">
-                <label class="form-label fw-bold small">주요 성과 및 특징</label>
-                <textarea class="form-control" id="q3-achievements" rows="5" placeholder="이 프로젝트에서 달성한 주요 성과들을 나열해주세요:
-• 음성 명령 인식률 95% 달성
-• 실내 자율주행 정확도 98%
-• 배달 성공률 100%"></textarea>
-              </div>
-
-              <div class="mb-3">
-                <label class="form-label fw-bold small">향후 개선 계획</label>
-                <textarea class="form-control" id="q3-future" rows="4"
-                  placeholder="앞으로 개선하고 싶은 부분이나 확장 계획을 작성해주세요..."></textarea>
-              </div>
-
+          <!-- ═══ 제출 완료 배너 (숨김 → 제출 후 표시) ═══ -->
+          <div class="d-none" id="complete-section">
+            <div class="alert alert-success d-flex gap-3 align-items-start mb-4">
+              <i class="fa-regular fa-circle-check fs-4 mt-1 flex-shrink-0 text-success"></i>
               <div>
-                <label class="form-label fw-bold small">팀원 기여도 (팀 프로젝트인 경우)</label>
-                <textarea class="form-control" id="q3-team" rows="3" placeholder="각 팀원의 역할과 기여도를 작성해주세요..."></textarea>
+                <div class="fw-bold fs-6 mb-1">콘테스트 최종 제출이 완료되었습니다! 심사 결과를 기다려주세요.</div>
               </div>
             </div>
-          </div>
-
-          <!-- 기술 링크 -->
-          <div class="card mb-4">
-            <div class="card-body">
-              <div class="d-flex align-items-center gap-3 mb-4 pb-3 border-bottom">
-                <div
-                  class="rounded-circle bg-primary bg-opacity-10 d-flex align-items-center justify-content-center icon-box-40">
-                  <i class="fa-regular fa-link"></i></div>
-                <div>
-                  <h6 class="fw-bold mb-0">최종 링크 및 자료</h6><small class="text-muted">완성된 프로젝트의 링크를 등록하세요</small>
+            <div class="card mb-4">
+              <div class="card-body">
+                <h6 class="fw-bold mb-3"><i class="fa-regular fa-clipboard-check me-1 text-success"></i>제출 정보 요약</h6>
+                <div class="d-flex flex-column gap-2 small">
+                  <div class="d-flex justify-content-between border-bottom pb-2">
+                    <span class="text-muted">프로젝트명</span>
+                    <span class="fw-semibold">AI 음성인식 자율주행 로봇</span>
+                  </div>
+                  <div class="d-flex justify-content-between border-bottom pb-2">
+                    <span class="text-muted">제출 일시</span>
+                    <span class="fw-semibold" id="complete-date">-</span>
+                  </div>
+                  <div class="d-flex justify-content-between border-bottom pb-2">
+                    <span class="text-muted">제작 로그 수</span>
+                    <span class="fw-semibold" id="complete-log-count">-</span>
+                  </div>
+                  <div class="d-flex justify-content-between">
+                    <span class="text-muted">콘테스트</span>
+                    <span class="fw-semibold">AI 로봇 챌린지 2026</span>
+                  </div>
+                </div>
+                <div class="mt-3">
+                  <a href="project-detail.html" class="btn btn-outline-success">프로젝트 상세 보기 <i class="fa-regular fa-arrow-right ms-1"></i></a>
                 </div>
               </div>
-              <div class="mb-3">
-                <label class="form-label small fw-semibold">데모 영상 링크 <span class="text-danger">*</span></label>
-                <input type="url" class="form-control" id="q3-demo" placeholder="https://youtube.com/... (필수)">
-                <small class="text-muted">YouTube, Vimeo 등 동작 영상 링크 (필수)</small>
-              </div>
-              <div class="mb-3">
-                <label class="form-label small fw-semibold">GitHub 저장소 (강력 권장)</label>
-                <input type="url" class="form-control" id="q3-github" placeholder="https://github.com/username/project">
-                <small class="text-muted">오픈소스 공개 시 가점 부여</small>
-              </div>
-              <div class="mb-3">
-                <label class="form-label small fw-semibold">발표 자료 링크 (선택)</label>
-                <input type="url" class="form-control" id="q3-slides" placeholder="https://slides.google.com/...">
-              </div>
-              <div>
-                <label class="form-label small fw-semibold">기타 참고 링크 (선택)</label>
-                <input type="url" class="form-control" id="q3-ref" placeholder="블로그, 논문, 관련 사이트 등">
-              </div>
             </div>
           </div>
 
-          <!-- 진행 상태 -->
-          <div class="card mb-4">
-            <div class="card-body">
-              <h6 class="fw-bold mb-3">Quest 3 진행 상태</h6>
-              <div class="d-flex gap-3" id="status-btns">
-                <button class="btn btn-outline-secondary flex-fill py-3" data-status="pending"
-                  onclick="setStatus(this)">
-                  <div class="brand-text"><i class="fa-regular fa-hourglass-half"></i></div>시작 전
-                </button>
-                <button class="btn btn-warning flex-fill py-3 active" data-status="in-progress"
-                  onclick="setStatus(this)">
-                  <div class="brand-text"><i class="fa-regular fa-bolt"></i></div>진행중
-                </button>
-                <button class="btn btn-outline-success flex-fill py-3" data-status="completed"
-                  onclick="setStatus(this)">
-                  <div class="brand-text"><i class="fa-regular fa-circle-check"></i></div>제출완료
-                </button>
+          <!-- ═══ 폼 영역 (제출 후 숨김) ═══ -->
+          <div id="form-content">
+
+            <!-- 안내 카드 -->
+            <div class="card mb-4 card-gradient-amber-fcd34d">
+              <div class="card-body">
+                <div class="d-flex gap-4">
+                  <div class="rounded-circle bg-warning d-flex align-items-center justify-content-center flex-shrink-0 icon-circle-md">
+                    <i class="fa-regular fa-medal"></i>
+                  </div>
+                  <div>
+                    <h6 class="fw-bold mb-2">최종 제출</h6>
+                    <ul class="list-unstyled small text-muted mb-2 d-flex flex-column gap-1">
+                      <li><i class="fa-regular fa-circle-check me-1"></i><strong>완성된 프로젝트를 간략하게 요약하세요</strong> — 주요 기능, 성과, 배운 점</li>
+                      <li><i class="fa-regular fa-circle-check me-1"></i><strong>GitHub 저장소를 공개하면 가점이 있습니다</strong></li>
+                      <li><i class="fa-regular fa-circle-check me-1"></i><strong>데모 영상을 첨부하면 심사에 유리합니다</strong></li>
+                    </ul>
+                    <div class="small text-muted"><i class="fa-regular fa-calendar me-1"></i>마감: 2026년 4월 30일 &nbsp;·&nbsp; <i class="fa-regular fa-trophy me-1"></i>300점</div>
+                  </div>
+                </div>
               </div>
             </div>
-          </div>
 
-          <!-- Final Submit Warning -->
-          <div class="alert alert-warning mb-4">
-            <h6 class="alert-heading fw-bold"><i class="fa-regular fa-triangle-exclamation me-1"></i>최종 제출 전 확인사항</h6>
-            <ul class="small mb-0">
-              <li>제출 후에도 결과 발표 전까지 수정이 가능합니다 (단, 심사는 첫 제출 기준)</li>
-              <li>데모 영상은 프로젝트의 실제 동작을 명확히 보여줘야 합니다</li>
-              <li>모든 내용은 본인의 창작물이어야 합니다</li>
-            </ul>
-          </div>
-
-          <!-- Actions -->
-          <div class="d-flex gap-3 mb-3">
-            <a href="project-detail.html" class="btn btn-outline-secondary flex-fill py-3">저장하지 않고 나가기</a>
-            <button class="btn flex-fill py-3 fw-semibold text-white bg-gradient-blue-purple" id="submit-btn" disabled
-              onclick="submitQuest3()"><i class="fa-regular fa-trophy me-1"></i>최종 제출하기</button>
-          </div>
-
-          <!-- Validation -->
-          <div class="alert alert-warning d-flex gap-2 d-none" id="val-msg">
-            <span><i class="fa-regular fa-triangle-exclamation"></i></span>
-            <div>
-              <div class="fw-semibold small">필수 항목을 입력해 주세요:</div>
-              <ul class="small mb-0 mt-1" id="val-list"></ul>
+            <!-- ─── 섹션 1: 제작 로그 요약 (읽기 전용) ─── -->
+            <div class="card mb-4">
+              <div class="card-body">
+                <div class="d-flex align-items-center gap-3 mb-4 pb-3 border-bottom">
+                  <div class="rounded-circle bg-success bg-opacity-10 d-flex align-items-center justify-content-center icon-box-40">
+                    <i class="fa-regular fa-clipboard-list text-success"></i>
+                  </div>
+                  <div>
+                    <h6 class="fw-bold mb-0">제작 로그 요약</h6>
+                    <small class="text-muted">quest2에서 기록한 제작 과정 요약 (읽기 전용)</small>
+                  </div>
+                </div>
+                <div class="row g-3 mb-3">
+                  <div class="col-4 text-center">
+                    <div class="fw-bold fs-5 text-primary" id="q2-log-count">-</div>
+                    <div class="small text-muted">총 로그</div>
+                  </div>
+                  <div class="col-4 text-center">
+                    <div class="fw-bold small text-dark lh-sm" id="q2-date-range">-</div>
+                    <div class="small text-muted">기간</div>
+                  </div>
+                  <div class="col-4 text-center">
+                    <div class="fw-bold fs-5 text-primary" id="q2-attach-count">-</div>
+                    <div class="small text-muted">첨부 이미지/영상</div>
+                  </div>
+                </div>
+                <a href="quest2.html" class="btn btn-outline-secondary btn-sm">
+                  <i class="fa-regular fa-eye me-1"></i>로그 내용 확인하기
+                </a>
+              </div>
             </div>
-          </div>
+
+            <!-- ─── 섹션 2: 최종 자료 입력 ─── -->
+            <div class="card mb-4">
+              <div class="card-body">
+                <div class="d-flex align-items-center gap-3 mb-4 pb-3 border-bottom">
+                  <div class="rounded-circle bg-warning bg-opacity-10 d-flex align-items-center justify-content-center icon-box-40">
+                    <i class="fa-regular fa-star"></i>
+                  </div>
+                  <div>
+                    <h6 class="fw-bold mb-0">최종 자료 입력</h6>
+                    <small class="text-muted">프로젝트 요약과 링크를 등록하세요</small>
+                  </div>
+                </div>
+
+                <div class="mb-4">
+                  <label class="form-label fw-bold small">프로젝트 최종 요약 <span class="text-danger">*</span></label>
+                  <textarea class="form-control" id="q3-summary" rows="6"
+                    placeholder="완성된 프로젝트를 간략하게 소개하세요 — 주요 기능, 성과, 배운 점"></textarea>
+                </div>
+
+                <div class="mb-4">
+                  <label class="form-label fw-bold small">
+                    <i class="fa-regular fa-trophy me-1 text-warning"></i>주요 성과 및 특징 <span class="text-danger">*</span>
+                  </label>
+                  <textarea class="form-control" id="q3-achievements" rows="5"
+                    placeholder="예:&#10;- 음성 인식 정확도 92% 달성&#10;- 실내 장애물 회피 성공률 98%&#10;- 기존 대비 전력 소비 30% 절감"></textarea>
+                  <small class="text-muted">완성된 프로젝트의 핵심 성과와 차별화된 특징을 작성하세요</small>
+                </div>
+
+                <div class="mb-4">
+                  <label class="form-label fw-bold small">
+                    <i class="fa-regular fa-road me-1 text-primary"></i>향후 개선 계획 <span class="text-muted fw-normal">(선택)</span>
+                  </label>
+                  <textarea class="form-control" id="q3-future" rows="4"
+                    placeholder="예:&#10;- 외부 환경 주행 기능 추가&#10;- 클라우드 연동으로 원격 제어 지원&#10;- 배터리 교체 없이 무선 충전 구현"></textarea>
+                  <small class="text-muted">프로젝트를 더 발전시킨다면 어떤 방향으로 개선하고 싶은지 작성하세요</small>
+                </div>
+
+                <!-- 팀원 기여도 — 팀 프로젝트인 경우만 표시 (JS로 제어) -->
+                <div class="mb-4" id="team-contribution-section" style="display:none;">
+                  <label class="form-label fw-bold small">
+                    <i class="fa-regular fa-users me-1 text-success"></i>팀원 기여도
+                  </label>
+                  <textarea class="form-control" id="q3-team" rows="5"
+                    placeholder="예:&#10;김메이커 — 하드웨어 설계 및 PCB 제작&#10;이소프트웨어 — 펌웨어 개발 및 알고리즘 구현&#10;박디자인 — UI/UX 설계 및 테스트"></textarea>
+                  <small class="text-muted">각 팀원의 역할과 기여 내용을 자유롭게 작성하세요</small>
+                </div>
+
+                <hr class="my-4">
+
+                <h6 class="fw-semibold mb-3 small text-muted text-uppercase">최종 링크 및 자료</h6>
+
+                <div class="mb-3">
+                  <label class="form-label small fw-semibold">GitHub 저장소 <span class="text-muted fw-normal">(선택)</span></label>
+                  <input type="url" class="form-control" id="q3-github" placeholder="https://github.com/username/project">
+                  <small class="text-muted">오픈소스 공개 시 가점 부여</small>
+                </div>
+                <div class="mb-3">
+                  <label class="form-label small fw-semibold">데모 영상 URL <span class="text-muted fw-normal">(선택)</span></label>
+                  <input type="url" class="form-control" id="q3-demo" placeholder="https://youtube.com/... (YouTube, Vimeo 등)">
+                </div>
+                <div class="mb-3">
+                  <label class="form-label small fw-semibold">발표자료 링크 <span class="text-muted fw-normal">(선택)</span></label>
+                  <input type="url" class="form-control" id="q3-slides" placeholder="예: Google Slides, SlideShare, Canva 링크">
+                  <small class="text-muted">발표 슬라이드 또는 포스터 링크를 입력하세요</small>
+                </div>
+                <div class="mb-3">
+                  <label class="form-label small fw-semibold">기타 참고 링크 <span class="text-muted fw-normal">(선택)</span></label>
+                  <input type="url" class="form-control" id="q3-ref" placeholder="블로그, 발표 자료, 논문 등">
+                </div>
+                <div>
+                  <label class="form-label small fw-semibold">최종 결과물 파일 첨부 <span class="text-muted fw-normal">(선택)</span></label>
+                  <div class="border rounded-3 p-4 text-center bg-light upload-dashed" style="cursor:pointer;" onclick="$('#q3-file').click()">
+                    <div><i class="fa-regular fa-paperclip me-1"></i><span class="small text-muted">결과물 파일 업로드 (PDF, ZIP, DOC 등 · 최대 50MB)</span></div>
+                    <input type="file" id="q3-file" class="d-none" multiple>
+                  </div>
+                  <div id="q3-file-preview" class="mt-2"></div>
+                </div>
+              </div>
+            </div>
+
+            <!-- ─── 섹션 3: 최종 제출 전 체크리스트 ─── -->
+            <div class="card mb-4">
+              <div class="card-body">
+                <div class="d-flex align-items-center gap-3 mb-4 pb-3 border-bottom">
+                  <div class="rounded-circle bg-primary bg-opacity-10 d-flex align-items-center justify-content-center icon-box-40">
+                    <i class="fa-regular fa-list-check text-primary"></i>
+                  </div>
+                  <div>
+                    <h6 class="fw-bold mb-0">최종 제출 전 체크리스트</h6>
+                    <small class="text-muted">모두 확인 후 제출 버튼이 활성화됩니다</small>
+                  </div>
+                </div>
+                <div class="d-flex flex-column gap-3">
+                  <div class="form-check">
+                    <input class="form-check-input final-check" type="checkbox" id="fc1" onchange="updateSubmitBtn()">
+                    <label class="form-check-label small" for="fc1">데모 영상(URL 또는 파일)을 첨부했습니다</label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input final-check" type="checkbox" id="fc2" onchange="updateSubmitBtn()">
+                    <label class="form-check-label small" for="fc2">프로젝트 최종 요약을 작성했습니다</label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input final-check" type="checkbox" id="fc3" onchange="updateSubmitBtn()">
+                    <label class="form-check-label small" for="fc3">GitHub 또는 소스코드 링크를 확인했습니다</label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input final-check" type="checkbox" id="fc4" onchange="updateSubmitBtn()">
+                    <label class="form-check-label small" for="fc4">제출 후에는 수정이 불가함을 확인했습니다</label>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- 하단 버튼 -->
+            <div class="d-flex gap-3 mb-3" id="action-buttons">
+              <button class="btn btn-outline-secondary flex-fill py-3" onclick="saveDraft()">
+                <i class="fa-regular fa-floppy-disk me-1"></i>임시 저장
+              </button>
+              <button class="btn btn-primary flex-fill py-3 fw-semibold" id="submit-btn" disabled onclick="submitQuest3()">
+                <i class="fa-regular fa-trophy me-1"></i>콘테스트 최종 제출
+              </button>
+            </div>
+
+          </div><!-- /#form-content -->
         </div>
 
         <!-- Sidebar -->
@@ -382,28 +384,24 @@
                 <h6 class="fw-bold mb-3"><i class="fa-regular fa-bullseye me-1"></i>Quest 진행 상황</h6>
                 <div class="d-flex flex-column gap-3">
                   <div class="d-flex gap-3">
-                    <div
-                      class="rounded-circle bg-success bg-opacity-10 text-success d-flex align-items-center justify-content-center fw-bold flex-shrink-0 icon-box-32">
-                      ✓</div>
+                    <div class="rounded-circle bg-success bg-opacity-10 text-success d-flex align-items-center justify-content-center fw-bold flex-shrink-0 icon-box-32">✓</div>
                     <div>
-                      <div class="small fw-semibold">Quest 1</div><span class="badge bg-success">완료</span>
+                      <div class="small fw-semibold">아이디어 제출</div>
+                      <span class="badge bg-success">완료</span>
                     </div>
                   </div>
                   <div class="d-flex gap-3">
-                    <div
-                      class="rounded-circle bg-success bg-opacity-10 text-success d-flex align-items-center justify-content-center fw-bold flex-shrink-0 icon-box-32">
-                      ✓</div>
+                    <div class="rounded-circle bg-success bg-opacity-10 text-success d-flex align-items-center justify-content-center fw-bold flex-shrink-0 icon-box-32">✓</div>
                     <div>
-                      <div class="small fw-semibold">Quest 2</div><span class="badge bg-success">완료</span>
+                      <div class="small fw-semibold">제작 과정</div>
+                      <span class="badge bg-success">완료</span>
                     </div>
                   </div>
                   <div class="d-flex gap-3">
-                    <div
-                      class="rounded-circle bg-warning bg-opacity-10 text-warning d-flex align-items-center justify-content-center fw-bold flex-shrink-0 icon-box-32">
-                      3</div>
+                    <div class="rounded-circle bg-warning bg-opacity-10 text-warning d-flex align-items-center justify-content-center fw-bold flex-shrink-0 icon-box-32">3</div>
                     <div>
-                      <div class="small fw-semibold text-primary">Quest 3</div><span
-                        class="badge bg-warning text-dark">진행중</span>
+                      <div class="small fw-semibold text-primary">최종 제출</div>
+                      <span class="badge bg-warning text-dark" id="sidebar-status-badge">진행중</span>
                     </div>
                   </div>
                 </div>
@@ -415,15 +413,12 @@
               <div class="card-body">
                 <h6 class="fw-bold mb-3"><i class="fa-regular fa-clipboard me-1"></i>심사 기준</h6>
                 <div class="d-flex flex-column gap-2 small">
-                  <div class="d-flex justify-content-between"><span>창의성 및 독창성</span><span class="fw-bold">30점</span>
-                  </div>
-                  <div class="d-flex justify-content-between"><span>기술 구현 수준</span><span class="fw-bold">30점</span>
-                  </div>
+                  <div class="d-flex justify-content-between"><span>창의성 및 독창성</span><span class="fw-bold">30점</span></div>
+                  <div class="d-flex justify-content-between"><span>기술 구현 수준</span><span class="fw-bold">30점</span></div>
                   <div class="d-flex justify-content-between"><span>완성도</span><span class="fw-bold">20점</span></div>
                   <div class="d-flex justify-content-between"><span>문서화 품질</span><span class="fw-bold">15점</span></div>
                   <div class="d-flex justify-content-between"><span>오픈소스 기여</span><span class="fw-bold">5점</span></div>
-                  <div class="border-top pt-2 d-flex justify-content-between fw-bold"><span>총점</span><span>100점</span>
-                  </div>
+                  <div class="border-top pt-2 d-flex justify-content-between fw-bold"><span>총점</span><span>100점</span></div>
                 </div>
               </div>
             </div>
@@ -433,10 +428,10 @@
               <div class="card-body">
                 <h6 class="fw-bold mb-2"><i class="fa-regular fa-trophy me-1"></i>최종 제출 팁</h6>
                 <ul class="list-unstyled small text-muted mb-0 d-flex flex-column gap-1">
+                  <li>• 요약은 핵심 기능과 성과 위주로</li>
                   <li>• 데모 영상은 3~5분 내외로 제작</li>
-                  <li>• 동작 전/후 비교를 보여주세요</li>
                   <li>• GitHub README를 잘 작성하면 가점</li>
-                  <li>• 한 줄 요약은 기억에 남는 문장으로</li>
+                  <li>• 체크리스트 모두 완료 후 제출 가능</li>
                 </ul>
               </div>
             </div>
@@ -447,8 +442,7 @@
                 <h6 class="fw-bold mb-1"><i class="fa-regular fa-user-group me-1"></i>커뮤니티 도움받기</h6>
                 <p class="small text-muted mb-3">마지막 단계, 막히는 부분이 있으신가요?</p>
                 <div class="d-flex flex-column gap-2">
-                  <button onclick="openQuickAction('question')"
-                    class="btn btn-white border fw-semibold btn-sm text-start"><i class="fa-regular fa-circle-question me-1"></i>질문하기</button>
+                  <button onclick="openQuickAction('question')" class="btn btn-white border fw-semibold btn-sm text-start"><i class="fa-regular fa-circle-question me-1"></i>질문하기</button>
                   <button onclick="openQuickAction('progress')" class="btn btn-outline-secondary btn-sm text-start"><i class="fa-regular fa-rocket me-1"></i>완성 공유</button>
                 </div>
               </div>
@@ -458,10 +452,9 @@
       </div>
     </div>
   </main>
+
   <!-- ===== PLATFORM FOOTER ===== -->
   <footer id="platform-footer">
-
-    <!-- Sponsor Logos -->
     <div class="bg-light border-top border-bottom py-4">
       <div class="container-xl">
         <p class="text-center text-muted small mb-3">Sponsored Company</p>
@@ -479,45 +472,39 @@
         </div>
       </div>
     </div>
-
-    <!-- Company Info -->
     <div class="bg-black text-secondary py-5">
       <div class="container-xl">
-
-        <!-- Links Row -->
-        <div class="d-flex flex-column flex-lg-row align-items-start align-items-lg-center
-                  justify-content-between gap-3 mb-4">
+        <div class="d-flex flex-column flex-lg-row align-items-start align-items-lg-center justify-content-between gap-3 mb-4">
           <div class="d-flex flex-wrap align-items-center gap-2 small">
             <a href="support.html" class="footer-link text-secondary text-decoration-none">e4ds 소개</a>
             <span class="text-muted">|</span>
-            <a href="notices.html" class="footer-link text-secondary text-decoration-none">개인정보처리방침</a>
+            <a href="#" class="footer-link text-secondary text-decoration-none">개인정보처리방침</a>
             <span class="text-muted">|</span>
-            <a href="faq.html" class="footer-link text-secondary text-decoration-none">이용약관</a>
+            <a href="#" class="footer-link text-secondary text-decoration-none">이용약관</a>
             <span class="text-muted">|</span>
-            <a href="contact.html" class="footer-link text-secondary text-decoration-none">청소년보호정책</a>
+            <a href="#" class="footer-link text-secondary text-decoration-none">청소년보호정책</a>
             <span class="text-muted">|</span>
             <a href="careers.html" class="footer-link text-secondary text-decoration-none">가족사이트</a>
             <span class="text-muted">|</span>
             <a href="#" class="footer-link text-secondary text-decoration-none">저작권</a>
             <span class="text-muted">|</span>
             <a href="#" class="footer-link text-secondary text-decoration-none">e4ds인터내셔널</a>
+            <span class="text-muted">|</span>
+            <a href="faq.html" class="footer-link text-secondary text-decoration-none">자주 묻는 질문</a>
+            <span class="text-muted">|</span>
+            <a href="contact.html" class="footer-link text-secondary text-decoration-none">문의하기</a>
           </div>
         </div>
-
-        <!-- Company Details -->
         <div class="small text-muted lh-lg">
           <p class="mb-1">(주)디지털데일리 | 등록번호 : 경기 아51470 | 등록: 2008.10.20 | 발행: 2026.05.19 | 표: 김제호</p>
           <p class="mb-1">주소 : 경기도 성남시 분당구 대왕판교로 660번길 8 | 전화 : 02-883-9797 | 팩스 : 02-6280-9957</p>
-          <p class="mb-1 text-secondary footer-copyright">
-            본 콘텐츠의 저작권은 (주)디지털데일리에 있으며 무단 전재 및 재배포를 금지합니다.
-          </p>
+          <p class="mb-1 text-secondary footer-copyright">본 콘텐츠의 저작권은 (주)디지털데일리에 있으며 무단 전재 및 재배포를 금지합니다.</p>
           <p class="mt-3 mb-0">Copyright &copy; 2026 e4ds News. All Rights Reserved</p>
         </div>
-
       </div>
     </div>
-
   </footer>
+
   <script src="https://code.jquery.com/jquery-3.7.1.min.js"
     integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
@@ -538,63 +525,122 @@
     <div class="cpanel-body p-4" id="qa-body"></div>
     <div class="p-4 border-top flex-shrink-0 d-flex gap-2">
       <button onclick="hideQuickAction()" class="btn btn-outline-secondary flex-fill">취소</button>
-      <button id="qa-submit-btn" class="btn flex-fill fw-semibold text-white bg-blue-solid"
-        onclick="submitQuickAction()">등록하기</button>
+      <button id="qa-submit-btn" class="btn flex-fill fw-semibold text-white bg-blue-solid" onclick="submitQuickAction()">등록하기</button>
+    </div>
+  </div>
+
+  <!-- 최종 확인 모달 -->
+  <div class="modal fade" id="finalModal" tabindex="-1" aria-labelledby="finalModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header border-0 pb-0">
+          <h5 class="modal-title fw-bold" id="finalModalLabel">
+            <i class="fa-regular fa-trophy text-warning me-2"></i>콘테스트 최종 제출
+          </h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="닫기"></button>
+        </div>
+        <div class="modal-body pt-2">
+          <p class="text-muted mb-0">지금 제출하면 더 이상 수정할 수 없습니다. 최종 제출하시겠습니까?</p>
+        </div>
+        <div class="modal-footer border-0">
+          <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">취소</button>
+          <button type="button" class="btn btn-primary fw-semibold px-4" onclick="confirmFinalSubmit()">제출하기</button>
+        </div>
+      </div>
     </div>
   </div>
 
   <script>
-    $(function () { Auth.requirePage(); });
+    $(function () {
+      Auth.requirePage();
 
-    function checkValidity() {
-      var content = $('#q3-content').val().length;
-      var summary = $('#q3-summary').val().length;
-      var demo = $('#q3-demo').val().trim();
-      var valid = content >= 200 && summary >= 50 && demo !== '';
-      $('#submit-btn').prop('disabled', !valid);
-    }
+      /* quest2 로그 요약 로드 */
+      try {
+        var raw = sessionStorage.getItem('q2summary');
+        if (raw) {
+          var s = JSON.parse(raw);
+          $('#q2-log-count').text(s.logCount + '개');
+          var dr = (!s.firstDate) ? '-'
+            : s.firstDate === s.lastDate ? s.firstDate
+            : s.firstDate + ' ~ ' + s.lastDate;
+          $('#q2-date-range').text(dr);
+          $('#q2-attach-count').text(s.attachCount + '개');
+        }
+      } catch (e) {}
 
-    $('#q3-content').on('input', function () { $('#content-count').text($(this).val().length); checkValidity(); });
-    $('#q3-summary').on('input', function () { $('#summary-count').text($(this).val().length); checkValidity(); });
-    $('#q3-demo').on('input', checkValidity);
+      /* 팀원 기여도 — true: 팀 프로젝트 / false: 개인 프로젝트 */
+      var isTeamProject = true;
+      var teamRowCount = 3; /* 공란 행 수 — 팀원 데이터 연동 전까지 빈 행 유지 */
+      if (isTeamProject) {
+        var rows = '';
+        for (var i = 0; i < teamRowCount; i++) {
+          rows += '<tr>'
+            + '<td><input type="text" class="form-control form-control-sm" id="team-name-' + i + '" placeholder="이름"></td>'
+            + '<td><input type="text" class="form-control form-control-sm" id="team-role-' + i + '" placeholder="예: 하드웨어 설계"></td>'
+            + '<td><input type="text" class="form-control form-control-sm" id="team-cont-' + i + '" placeholder="예: 회로 설계 및 PCB 제작 담당"></td>'
+            + '</tr>';
+        }
+        $('#team-tbody').html(rows);
+        $('#team-contribution-section').show();
+      }
+    });
 
-    window.setStatus = function (btn) {
-      $('#status-btns .btn').removeClass('btn-warning btn-success active').addClass('btn-outline-secondary');
-      var s = $(btn).data('status');
-      if (s === 'in-progress') $(btn).removeClass('btn-outline-secondary').addClass('btn-warning active');
-      else if (s === 'completed') $(btn).removeClass('btn-outline-secondary').addClass('btn-success active');
-      else $(btn).removeClass('btn-outline-secondary').addClass('btn-secondary active');
+    /* 파일 첨부 미리보기 */
+    $('#q3-file').on('change', function () {
+      var $preview = $('#q3-file-preview');
+      $preview.empty();
+      Array.from(this.files).forEach(function (f) {
+        $preview.append('<div class="badge bg-secondary me-1 mb-1 px-3 py-2"><i class="fa-regular fa-file me-1"></i>' + f.name + '</div>');
+      });
+    });
+
+    /* 체크리스트 → 버튼 활성화 */
+    window.updateSubmitBtn = function () {
+      var allChecked = $('.final-check').length === $('.final-check:checked').length;
+      $('#submit-btn').prop('disabled', !allChecked);
+    };
+
+    window.saveDraft = function () {
+      alert('임시 저장되었습니다.');
     };
 
     window.submitQuest3 = function () {
-      var errors = [];
-      if ($('#q3-content').val().length < 200) errors.push('프로젝트 최종 내용 (최소 200자)');
-      if ($('#q3-summary').val().length < 50) errors.push('한 줄 요약 (최소 50자)');
-      if (!$('#q3-demo').val().trim()) errors.push('데모 영상 링크 (필수)');
-      if (errors.length) {
-        $('#val-msg').removeClass('d-none');
-        $('#val-list').empty();
-        errors.forEach(function (e) { $('#val-list').append('<li>' + e + '</li>'); });
-      } else {
-        if (confirm('최종 제출하시겠습니까? 제출 후 프로젝트가 공식 완료 처리됩니다.')) {
-          window.location.href = 'project-completed.html';
-        }
+      if (!$('#q3-summary').val().trim()) {
+        alert('프로젝트 최종 요약을 작성해주세요.');
+        return;
       }
+      new bootstrap.Modal(document.getElementById('finalModal')).show();
     };
 
-    $('#final-media').on('change', function () {
-      var files = Array.from(this.files).slice(0, 10);
-      $('#media-preview').empty();
-      files.forEach(function (f) {
-        if (f.type.startsWith('image/')) {
-          var r = new FileReader();
-          r.onload = function (e) { $('#media-preview').append('<img src="' + e.target.result + '" class="rounded" style="height:80px;width:80px;object-fit:cover;">'); };
-          r.readAsDataURL(f);
-        } else {
-          $('#media-preview').append('<div class="badge bg-secondary px-3 py-2"><i class="fa-regular fa-film me-1"></i>' + f.name + '</div>');
-        }
-      });
-    });
+    window.confirmFinalSubmit = function () {
+      bootstrap.Modal.getInstance(document.getElementById('finalModal')).hide();
+
+      /* 제출 일시 */
+      var now = new Date();
+      var dateStr = now.getFullYear() + '.'
+        + String(now.getMonth() + 1).padStart(2, '0') + '.'
+        + String(now.getDate()).padStart(2, '0') + ' '
+        + String(now.getHours()).padStart(2, '0') + ':'
+        + String(now.getMinutes()).padStart(2, '0');
+
+      /* 로그 수 */
+      var logCount = '-';
+      try {
+        var raw = sessionStorage.getItem('q2summary');
+        if (raw) logCount = JSON.parse(raw).logCount + '개';
+      } catch (e) {}
+
+      $('#complete-date').text(dateStr);
+      $('#complete-log-count').text(logCount);
+
+      /* UI 전환 */
+      $('#form-content').addClass('d-none');
+      $('#action-buttons').addClass('d-none');
+      $('#complete-section').removeClass('d-none');
+      $('#sidebar-status-badge').removeClass('bg-warning text-dark').addClass('bg-success').text('제출완료');
+
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    };
 
     /* ── 커뮤니티 빠른 액션 패널 ─────────────────────────── */
     function projectSelectHtml(accentColor, iconCls) {
@@ -645,7 +691,7 @@
         submitLabel: '질문 등록하기', submitBg: '#2563eb',
         body: function () {
           return projectSelectHtml('#2563eb', 'bi bi-question-circle')
-            + qaGuideBox('#faf5ff', ['• 상황을 구체적으로 설명하면 빠른 답변을 받을 수 있어요', '• 시도한 방법과 에러 메시지를 포함해주세요', '• 관련 코드나 사진을 첨부하면 더 좋아요'])
+            + qaGuideBox('#faf5ff', ['• 상황을 구체적으로 설명하면 빠른 답변을 받을 수 있어요', '• 시도한 방법과 에러 메시지를 포함해주세요'])
             + qaField('제목', 'text', 'qa-q-title', '예: 최종 데모 영상 촬영 방법', true)
             + '<div class="mb-3"><label class="form-label fw-semibold small">질문 유형 <span class="text-danger">*</span></label>'
             + qaTypeGrid([{ value: 'hw', icon: '<i class="fa-regular fa-screwdriver-wrench"></i>', label: '하드웨어', desc: '회로·부품' }, { value: 'sw', icon: '<i class="fa-regular fa-laptop"></i>', label: '소프트웨어', desc: '코드·알고리즘' }, { value: 'design', icon: '<i class="fa-regular fa-palette"></i>', label: '설계', desc: '아이디어·설계' }, { value: 'other', icon: '<i class="fa-regular fa-comment"></i>', label: '기타', desc: '기타 질문' }], 'hw') + '</div>'
@@ -659,8 +705,8 @@
         submitLabel: '공유하기', submitBg: '#10b981',
         body: function () {
           return projectSelectHtml('#10b981', 'bi bi-trophy')
-            + qaGuideBox('#f0fdf4', ['• 완성된 프로젝트 사진/영상을 첨부해주세요', '• 제작 과정에서 배운 점을 공유해주세요', '• 다른 메이커들에게 격려와 영감을 주세요'])
-            + qaField('제목', 'text', 'qa-p-title', '예: 드디어 Quest 3 완성! AI 자율주행 로봇 완성기', true)
+            + qaGuideBox('#f0fdf4', ['• 완성된 프로젝트 사진/영상을 첨부해주세요', '• 제작 과정에서 배운 점을 공유해주세요'])
+            + qaField('제목', 'text', 'qa-p-title', '예: 드디어 완성! AI 자율주행 로봇 완성기', true)
             + qaField('내용', 'textarea', 'qa-p-content', '완성된 프로젝트를 자랑해주세요!', true)
             + '<div class="mb-3"><label class="form-label fw-semibold small">첨부 자료</label>' + qaAttachBtns() + '</div>';
         }
