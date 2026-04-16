@@ -374,6 +374,64 @@
       event_type:'conference', type:'컨퍼런스·세미나', source:'reported',
       img:'https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=600'
     },
+    // ── e4ds 웨비나 ──────────────────────────────────────────
+    {
+      title:'2026 고급 엔지니어 실무 마스터 클래스 – 저잡음/저전력 회로', organizer:'e4ds',
+      date:'2026년 4월 18일', time:'14:00–16:00', location:'온라인 웨비나',
+      start_date:'2026-04-18', end_date:'2026-04-18', deadline:'2026-04-17',
+      external_url:'https://www.e4ds.com/webinar_detail.asp?idx=973', participants:0, max:0,
+      event_type:'conference', type:'웨비나', source:'official',
+      img:'https://images.unsplash.com/photo-1518770660439-4636190af475?w=600'
+    },
+    {
+      title:'왜 내 회로는 불안정한가? TI로 풀어보는 저잡음 설계 해법', organizer:'Texas Instruments',
+      date:'2026년 4월 23일', time:'14:00–16:00', location:'온라인 웨비나',
+      start_date:'2026-04-23', end_date:'2026-04-23', deadline:'2026-04-22',
+      external_url:'https://www.e4ds.com/webinar_detail.asp?idx=988', participants:0, max:0,
+      event_type:'conference', type:'웨비나', source:'official',
+      img:'https://images.unsplash.com/photo-1581090464777-f3220bbe1b8b?w=600'
+    },
+    {
+      title:'ST SiC 솔루션: EV에서 AI 데이터센터까지', organizer:'ST Microelectronics',
+      date:'2026년 4월 30일', time:'14:00–16:00', location:'온라인 웨비나',
+      start_date:'2026-04-30', end_date:'2026-04-30', deadline:'2026-04-29',
+      external_url:'https://www.e4ds.com/webinar_detail.asp?idx=991', participants:0, max:0,
+      event_type:'conference', type:'웨비나', source:'official',
+      img:'https://images.unsplash.com/photo-1509391366360-2e959784a276?w=600'
+    },
+    {
+      title:'2026 중급 엔지니어 실무 마스터 클래스', organizer:'e4ds',
+      date:'2026년 5월 21일', time:'14:00–16:00', location:'온라인 웨비나',
+      start_date:'2026-05-21', end_date:'2026-05-21', deadline:'2026-05-20',
+      external_url:'https://www.e4ds.com/webinar_detail.asp?idx=992', participants:0, max:0,
+      event_type:'workshop', type:'웨비나', source:'official',
+      img:'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=600'
+    },
+    // ── e4ds 이벤트 ─────────────────────────────────────────
+    {
+      title:'무라타 SAW/LC 디바이스 샘플 제공 이벤트', organizer:'무라타',
+      date:'2026년 5월 1일–31일', time:'상시', location:'온라인 신청',
+      start_date:'2026-05-01', end_date:'2026-05-31', deadline:'2026-05-31',
+      external_url:'https://www.e4ds.com/event_view.asp?idx=88', participants:0, max:0,
+      event_type:'etc', type:'이벤트', source:'reported',
+      img:'https://images.unsplash.com/photo-1591696205602-2f950c417cb9?w=600'
+    },
+    {
+      title:'인피니언 EV Charging 보드 증정 이벤트', organizer:'인피니언',
+      date:'2026년 6월 1일–30일', time:'상시', location:'온라인 신청',
+      start_date:'2026-06-01', end_date:'2026-06-30', deadline:'2026-06-30',
+      external_url:'https://www.e4ds.com/event_view.asp?idx=87', participants:0, max:0,
+      event_type:'etc', type:'이벤트', source:'reported',
+      img:'https://images.unsplash.com/photo-1593941707882-a5bba14938c7?w=600'
+    },
+    {
+      title:'인피니언 ATV Lighting 보드 증정 이벤트', organizer:'인피니언',
+      date:'2026년 7월 1일–31일', time:'상시', location:'온라인 신청',
+      start_date:'2026-07-01', end_date:'2026-07-31', deadline:'2026-07-31',
+      external_url:'https://www.e4ds.com/event_view.asp?idx=86', participants:0, max:0,
+      event_type:'etc', type:'이벤트', source:'reported',
+      img:'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=600'
+    },
   ];
 
   var today = new Date(new Date().toDateString());
@@ -398,7 +456,7 @@
       ? '<div class="small text-muted mb-1"><i class="fa-regular fa-clock"></i>접수 마감 ' + fmtDate(e.deadline) + '</div>'
       : '';
     return '<div class="col-md-6 col-lg-4">'
-      + '<div class="card border-0 shadow events-card h-100">'
+      + '<div class="card border-0 shadow events-card h-100" data-url="' + e.external_url + '" style="cursor:pointer;">'
       + '<div class="position-relative">'
       + '<img src="' + e.img + '" class="card-img-top" alt="">'
       + '<div class="position-absolute top-0 start-0 m-2 d-flex flex-wrap gap-1">'
@@ -423,9 +481,8 @@
 
   /* ── 다가오는 카드 ───────────────────────────────────────── */
   function upcomingCardHtml(e) {
-    var pct = Math.round(e.participants / e.max * 100);
     return '<div class="col-md-6 col-lg-4">'
-      + '<div class="card border-0 shadow events-card h-100">'
+      + '<div class="card border-0 shadow events-card h-100" data-url="' + e.external_url + '" style="cursor:pointer;">'
       + '<div class="position-relative">'
       + '<img src="' + e.img + '" class="card-img-top" alt="">'
       + '<div class="position-absolute top-0 start-0 m-2 d-flex flex-wrap gap-1">'
@@ -438,12 +495,10 @@
       + '<h6 class="fw-bold mb-3">' + e.title + '</h6>'
       + '<div class="small text-muted mb-1"><i class="fa-regular fa-calendar"></i>' + e.date + '</div>'
       + '<div class="small text-muted mb-1"><i class="fa-regular fa-clock"></i>' + e.time + '</div>'
-      + '<div class="small text-muted mb-3"><i class="fa-solid fa-location-dot"></i>' + e.location + '</div>'
-      + '<div class="d-flex justify-content-between small text-muted mb-1"><span>참가 현황</span><span>' + e.participants + '/' + e.max + '명</span></div>'
-      + '<div class="progress event-progress"><div class="progress-bar bg-primary" style="width:' + pct + '%"></div></div>'
+      + '<div class="small text-muted mb-0"><i class="fa-solid fa-location-dot"></i>' + e.location + '</div>'
       + '</div>'
       + '<div class="card-footer border-0 px-4 pb-4 pt-0">'
-      + '<button class="btn btn-primary btn-sm w-100">신청하기</button>'
+      + '<a href="' + e.external_url + '" target="_blank" rel="noopener" class="btn btn-primary btn-sm w-100">신청하기</a>'
       + '</div>'
       + '</div>'
       + '</div>';
@@ -492,6 +547,13 @@
     renderEvents(ft);
   });
 
+  /* ── 이벤트 카드 클릭 → 아웃링크 ──────────────────────────── */
+  $(document).on('click', '.events-card', function (ev) {
+    if ($(ev.target).closest('a, button').length) return;
+    var url = $(this).data('url');
+    if (url && url !== '#') window.open(url, '_blank', 'noopener');
+  });
+
   /* ── 이벤트 제보하기 버튼 ────────────────────────────────── */
   $('#btn-report-event').on('click', function () {
     Auth.requireLogin(function () {
@@ -500,7 +562,6 @@
       $('#report-event-form').removeClass('d-none');
       $('#report-success').addClass('d-none');
       $('#rep-img-preview').addClass('d-none');
-      $('#rep-desc-count').text('0');
       $('.rep-type-btn').removeClass('btn-primary text-white').addClass('btn-outline-secondary');
       $('#rep-submit-btn').removeClass('d-none');
       $('#rep-cancel-btn').text('취소').attr('data-bs-dismiss', 'modal');
@@ -513,11 +574,6 @@
     $('.rep-type-btn').removeClass('btn-primary text-white').addClass('btn-outline-secondary');
     $(this).removeClass('btn-outline-secondary').addClass('btn-primary text-white');
     $(this).find('input[type="radio"]').prop('checked', true);
-  });
-
-  /* ── 제보 모달: 소개 글자 수 ─────────────────────────────── */
-  $(document).on('input', '#rep-desc', function () {
-    $('#rep-desc-count').text($(this).val().length);
   });
 
   /* ── 제보 모달: 이미지 미리보기 ─────────────────────────── */
@@ -534,19 +590,14 @@
 
   /* ── 제보 모달: 제출 ─────────────────────────────────────── */
   $(document).on('click', '#rep-submit-btn', function () {
-    var title     = $.trim($('#rep-title').val());
-    var organizer = $.trim($('#rep-organizer').val());
-    var type      = $('input[name="rep-type"]:checked').val();
-    var startDate = $('#rep-start-date').val();
-    var endDate   = $('#rep-end-date').val();
-    var url       = $.trim($('#rep-url').val());
+    var title = $.trim($('#rep-title').val());
+    var type  = $('input[name="rep-type"]:checked').val();
+    var url   = $.trim($('#rep-url').val());
 
     var missing = [];
-    if (!title)              missing.push('이벤트명');
-    if (!organizer)          missing.push('주최 기관');
-    if (!type)               missing.push('이벤트 유형');
-    if (!startDate || !endDate) missing.push('행사 일정');
-    if (!url)                missing.push('외부 링크');
+    if (!title) missing.push('이벤트명');
+    if (!type)  missing.push('이벤트 유형');
+    if (!url)   missing.push('외부 링크');
 
     if (missing.length) {
       alert(missing.join(', ') + ' 항목을 입력해 주세요.');
@@ -605,13 +656,7 @@
               <input type="text" class="form-control" id="rep-title" placeholder="예: PyCon Korea 2025">
             </div>
 
-            <!-- 2. 주최 기관 -->
-            <div class="mb-3">
-              <label class="form-label fw-medium">주최 기관 / 단체명 <span class="text-danger">*</span></label>
-              <input type="text" class="form-control" id="rep-organizer" placeholder="예: Python Korea">
-            </div>
-
-            <!-- 3. 이벤트 유형 -->
+            <!-- 2. 이벤트 유형 -->
             <div class="mb-3">
               <label class="form-label fw-medium">이벤트 유형 <span class="text-danger">*</span></label>
               <div class="row g-2">
@@ -660,17 +705,7 @@
               </div>
             </div>
 
-            <!-- 4. 행사 일정 -->
-            <div class="mb-3">
-              <label class="form-label fw-medium">행사 일정 <span class="text-danger">*</span></label>
-              <div class="d-flex align-items-center gap-2">
-                <input type="date" class="form-control" id="rep-start-date">
-                <span class="text-muted flex-shrink-0">~</span>
-                <input type="date" class="form-control" id="rep-end-date">
-              </div>
-            </div>
-
-            <!-- 5. 접수 마감일 -->
+            <!-- 3. 접수 마감일 -->
             <div class="mb-3">
               <label class="form-label fw-medium">접수 마감일 <span class="text-muted fw-normal small">(선택)</span></label>
               <input type="date" class="form-control" id="rep-deadline">
@@ -688,15 +723,7 @@
               <input type="url" class="form-control" id="rep-url" placeholder="공식 페이지 또는 접수 링크">
             </div>
 
-            <!-- 8. 간단한 소개 -->
-            <div class="mb-3">
-              <label class="form-label fw-medium">간단한 소개 <span class="text-muted fw-normal small">(선택, 200자 이내)</span></label>
-              <textarea class="form-control" id="rep-desc" rows="3" maxlength="200"
-                placeholder="이벤트에 대해 간략히 소개해 주세요"></textarea>
-              <div class="form-text text-end"><span id="rep-desc-count">0</span>/200</div>
-            </div>
-
-            <!-- 9. 이미지 첨부 -->
+            <!-- 6. 이미지 첨부 -->
             <div class="mb-1">
               <label class="form-label fw-medium">이미지 첨부 <span class="text-muted fw-normal small">(선택)</span></label>
               <input type="file" class="form-control" id="rep-image" accept="image/*">

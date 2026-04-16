@@ -1023,15 +1023,24 @@
           <!-- 첨부 -->
           <div>
             <label class="fw-bold small d-block mb-2">첨부 자료 <span class="text-muted fw-normal">(선택)</span></label>
+            <input type="file" id="qna-img-input" accept="image/*" multiple class="d-none">
             <div class="row g-2 mb-3">
-              <div class="col-6"><button type="button" class="btn w-100 p-3 text-center rounded-3 attach-btn-dashed"><i class="bi bi-image d-block fs-4 mb-1"></i>
+              <div class="col-6"><button type="button" id="btn-qna-image" class="btn w-100 p-3 text-center rounded-3 attach-btn-dashed"><i class="bi bi-image d-block fs-4 mb-1"></i>
                   <p class="small fw-medium mb-0 attach-title">이미지 첨부</p>
                   <p class="mb-0 attach-caption">스크린샷, 회로도</p>
                 </button></div>
-              <div class="col-6"><button type="button" class="btn w-100 p-3 text-center rounded-3 attach-btn-dashed"><i class="bi bi-code-slash d-block fs-4 mb-1"></i>
+              <div class="col-6"><button type="button" id="btn-qna-snippet" class="btn w-100 p-3 text-center rounded-3 attach-btn-dashed"><i class="bi bi-code-slash d-block fs-4 mb-1"></i>
                   <p class="small fw-medium mb-0 attach-title">코드 스니펫</p>
                   <p class="mb-0 attach-caption">문제 코드 붙여넣기</p>
                 </button></div>
+            </div>
+            <div id="qna-img-preview" class="d-flex flex-wrap gap-2 mb-2 d-none"></div>
+            <input type="hidden" id="qna-snippets-data" name="code_snippets">
+            <div id="qna-snippet-area" style="display:none;" class="mb-3">
+              <div class="d-flex flex-column" id="qna-snippet-blocks"></div>
+              <button type="button" class="btn btn-outline-secondary btn-sm mt-2" id="btn-add-qna-snippet">
+                <i class="bi bi-plus-lg me-1"></i> 코드 블록 추가
+              </button>
             </div>
             <div class="d-flex flex-column gap-2">
               <input type="url" class="form-control" placeholder="GitHub 링크">
@@ -1124,8 +1133,8 @@
             <div id="prog-img-preview" class="d-flex flex-wrap gap-2 mb-2 d-none"></div>
             <div id="prog-vid-preview" class="d-flex flex-column gap-1 mb-2 d-none"></div>
             <div id="prog-link-inputs" class="d-flex flex-column gap-2">
-              <input type="url" class="form-control" placeholder="GitHub 커밋 링크">
-              <input type="url" class="form-control" placeholder="YouTube 데모 영상">
+              <input type="url" class="form-control" placeholder="관련 링크">
+              <input type="url" class="form-control" id="prog-youtube-input" placeholder="YouTube 데모 영상">
             </div>
           </div>
         </div>
@@ -1416,6 +1425,158 @@
     crossorigin="anonymous"></script>
   <script src="assets/js/main.js"></script>
   <script>
+    /* ── 질문하기 코드 스니펫 ──────────────────────────── */
+    var QNA_LANGS = [
+      {v:'c',l:'C'},{v:'cpp',l:'C++'},{v:'arduino',l:'Arduino'},
+      {v:'python',l:'Python'},{v:'micropython',l:'MicroPython'},
+      {v:'javascript',l:'JavaScript'},{v:'bash',l:'Bash/Shell'},
+      {v:'json',l:'JSON'},{v:'yaml',l:'YAML'},{v:'plaintext',l:'기타'}
+    ];
+    var QNA_MAX_BLOCKS = 5;
+
+    function qnaLangOptions() {
+      return QNA_LANGS.map(function(o) {
+        return '<option value="' + o.v + '">' + o.l + '</option>';
+      }).join('');
+    }
+
+    function makeQnaSnippetBlock(num) {
+      var isFirst = (num === 1);
+      var actionBtn = isFirst
+        ? '<button type="button" class="qna-snippet-close" style="background:none;border:1px solid #9ca3af;border-radius:4px;color:#d1d5db;padding:2px 9px;font-size:.75rem;line-height:1.5;cursor:pointer;">× 닫기</button>'
+        : '<button type="button" class="qna-snippet-remove" style="background:none;border:1px solid #f87171;border-radius:4px;color:#f87171;padding:1px 7px;line-height:1.4;cursor:pointer;"><i class="bi bi-x-lg" style="font-size:.7rem;"></i></button>';
+      return '<div class="qna-snippet-block border rounded-3 overflow-hidden mb-3" data-snum="' + num + '">'
+        + '<div class="d-flex align-items-center justify-content-between px-3 py-2" style="background:#2d2d2d;">'
+        + '<div class="d-flex align-items-center gap-2">'
+        + '<span class="small" style="color:#9ca3af;">언어 선택</span>'
+        + '<select class="qna-snippet-lang" style="background:#3d3d3d;color:#e5e7eb;border:1px solid #555;border-radius:4px;font-size:.8rem;padding:2px 6px;">'
+        + qnaLangOptions()
+        + '</select>'
+        + '</div>'
+        + actionBtn
+        + '</div>'
+        + '<textarea class="qna-snippet-code border-0 w-100" rows="8" placeholder="/* 코드를 붙여넣거나 입력하세요 */" style="display:block;background:#1e1e1e;color:#d4d4d4;font-family:Consolas,\'Courier New\',monospace;font-size:13px;resize:vertical;padding:.75rem;outline:none;border-radius:0!important;"></textarea>'
+        + '<div class="d-flex justify-content-between px-3 py-1" style="background:#2d2d2d;">'
+        + '<span class="small" style="color:#6b7280;">Tab: 들여쓰기 2칸</span>'
+        + '<span class="small qna-snippet-lines" style="color:#6b7280;">줄: 0줄</span>'
+        + '</div>'
+        + '</div>';
+    }
+
+    function hasQnaContent() {
+      var found = false;
+      $('#qna-snippet-blocks .qna-snippet-code').each(function() {
+        if ($(this).val().trim()) { found = true; return false; }
+      });
+      return found;
+    }
+
+    function closeQnaSnippet() {
+      $('#qna-snippet-area').slideUp(200);
+      $('#btn-qna-snippet').removeClass('attach-selected');
+      $('#qna-snippet-blocks').empty();
+    }
+
+    /* 이미지 첨부 버튼 */
+    $(document).on('click', '#btn-qna-image', function () {
+      $('#qna-img-input').trigger('click');
+    });
+
+    $('#qna-img-input').on('change', function () {
+      var files = Array.from(this.files);
+      if (!files.length) return;
+      var $preview = $('#qna-img-preview');
+      $preview.removeClass('d-none');
+      files.forEach(function (file) {
+        var reader = new FileReader();
+        reader.onload = function (e) {
+          var $item = $('<div class="position-relative">'
+            + '<img src="' + e.target.result + '" style="width:72px;height:72px;object-fit:cover;border-radius:8px;border:1px solid #e5e7eb;">'
+            + '<button type="button" class="btn-close position-absolute bg-white rounded-circle" style="top:-6px;right:-6px;font-size:.55rem;width:20px;height:20px;padding:0;border:1px solid #d1d5db;"></button>'
+            + '</div>');
+          $item.find('.btn-close').on('click', function () {
+            $item.remove();
+            if ($preview.children().length === 0) {
+              $preview.addClass('d-none');
+              $('#btn-qna-image').removeClass('attach-selected');
+            }
+          });
+          $preview.append($item);
+        };
+        reader.readAsDataURL(file);
+      });
+      $('#btn-qna-image').addClass('attach-selected');
+      this.value = '';
+    });
+
+    /* 버튼 토글 */
+    $(document).on('click', '#btn-qna-snippet', function () {
+      var $area = $('#qna-snippet-area');
+      if ($area.is(':visible')) {
+        if (hasQnaContent() && !confirm('입력한 코드 내용을 삭제하시겠습니까?')) return;
+        closeQnaSnippet();
+        return;
+      }
+      if ($('#qna-snippet-blocks .qna-snippet-block').length === 0) {
+        $('#qna-snippet-blocks').html(makeQnaSnippetBlock(1));
+      }
+      $area.slideDown(200, function() {
+        var $scroll = $('#qa-body');
+        var offset = $area.offset().top - $scroll.offset().top;
+        $scroll.animate({ scrollTop: $scroll.scrollTop() + offset - 16 }, 200);
+      });
+      $(this).addClass('attach-selected');
+    });
+
+    /* 전체 닫기 */
+    $(document).on('click', '.qna-snippet-close', function () {
+      if (hasQnaContent() && !confirm('입력한 코드 내용을 삭제하시겠습니까?')) return;
+      closeQnaSnippet();
+    });
+
+    /* 블록 개별 삭제 */
+    $(document).on('click', '.qna-snippet-remove', function () {
+      $(this).closest('.qna-snippet-block').remove();
+      $('#qna-snippet-blocks .qna-snippet-block').each(function(i) {
+        $(this).attr('data-snum', i + 1);
+      });
+    });
+
+    /* 블록 추가 (최대 5개) */
+    $(document).on('click', '#btn-add-qna-snippet', function () {
+      var count = $('#qna-snippet-blocks .qna-snippet-block').length;
+      if (count >= QNA_MAX_BLOCKS) {
+        alert('코드 블록은 최대 ' + QNA_MAX_BLOCKS + '개까지 추가할 수 있습니다.');
+        return;
+      }
+      $('#qna-snippet-blocks').append(makeQnaSnippetBlock(count + 1));
+    });
+
+    /* Tab → 2칸 삽입 */
+    $(document).on('keydown', '#qna-snippet-area .qna-snippet-code', function (e) {
+      if (e.key !== 'Tab') return;
+      e.preventDefault();
+      var ta = this, s = ta.selectionStart, en = ta.selectionEnd;
+      ta.value = ta.value.slice(0, s) + '  ' + ta.value.slice(en);
+      ta.selectionStart = ta.selectionEnd = s + 2;
+    });
+
+    /* 줄 수 카운트 */
+    $(document).on('input', '#qna-snippet-area .qna-snippet-code', function () {
+      var cnt = this.value ? this.value.split('\n').length : 0;
+      $(this).closest('.qna-snippet-block').find('.qna-snippet-lines').text('줄: ' + cnt + '줄');
+    });
+
+    /* 폼 제출 시 직렬화 */
+    $(document).on('submit', 'form', function () {
+      var snippets = [];
+      $('#qna-snippet-blocks .qna-snippet-block').each(function () {
+        var code = $(this).find('.qna-snippet-code').val().trim();
+        if (code) snippets.push({ lang: $(this).find('.qna-snippet-lang').val(), code: code });
+      });
+      $('#qna-snippets-data').val(JSON.stringify(snippets));
+    });
+
     var today = new Date();
     $("#header-date").text(today.toLocaleDateString("ko-KR", { weekday: "long", month: "long", day: "numeric" }));
 
@@ -1480,7 +1641,11 @@
       $('#prog-img-input').trigger('click');
     });
     $(document).on('click', '#panel-progress [data-attach="video"]', function () {
-      $('#prog-vid-input').trigger('click');
+      var $ytInput = $('#prog-youtube-input');
+      $(this).addClass('attach-selected');
+      $ytInput.focus();
+      $ytInput.css({ outline: '2px solid #f87171', borderRadius: '6px' });
+      setTimeout(function () { $ytInput.css({ outline: '', borderRadius: '' }); }, 1500);
     });
     $(document).on('click', '#panel-progress [data-attach="link"]', function () {
       var $inputs = $('#prog-link-inputs');

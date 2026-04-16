@@ -17,6 +17,7 @@
   <link rel="stylesheet" href="assets/css/output.css">
   <link rel="stylesheet" href="assets/css/make2026-styles.css">
   <script src="https://kit.fontawesome.com/38e89eef65.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css">
 </head>
 
 <body class="bg-light">
@@ -251,7 +252,8 @@
                     • MQTT 브로커: AWS IoT Core<br>
                     • 연결은 되지만 5-10분 사이에 랜덤하게 끊김<br>
                     • Error code -2 발생</p>
-                    <pre class="rounded-3 p-3 mt-3 code-block"><code>void reconnect() {
+                    <div class="mb-1"><span class="badge rounded-pill" style="background:#2d2d2d;color:#e5e7eb;font-size:.75rem;">C++</span></div>
+                    <pre class="rounded-3 mt-1 code-block" style="padding:0;"><code class="language-cpp">void reconnect() {
   while (!client.connected()) {
     if (client.connect("ESP32Client")) {
       client.subscribe("home/sensor");
@@ -864,7 +866,14 @@
   <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
   <script src="assets/js/main.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
   <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      document.querySelectorAll('pre code').forEach(function (el) {
+        hljs.highlightElement(el);
+      });
+    });
+
     $('#header-date').text(new Date().toLocaleDateString('ko-KR', { weekday: 'long', month: 'long', day: 'numeric' }));
 
     // 탭 전환 시 사이드바 업데이트

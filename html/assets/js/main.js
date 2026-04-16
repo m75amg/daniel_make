@@ -298,7 +298,8 @@ function initHeader() {
   $(document).on('submit', '#header-search-form', function (e) {
     e.preventDefault();
     var q = $.trim($('#header-search-input').val());
-    if (q) alert('검색: ' + q);
+    if (!q) { $('#header-search-input').focus(); return; }
+    window.location.href = getBaseUrl() + 'search.html?q=' + encodeURIComponent(q);
   });
 
   // Profile button: my-make if logged in, else login modal
